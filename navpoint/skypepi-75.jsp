@@ -1141,7 +1141,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/myClass/skypepi-73">myClass</a></li>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
       </div>
     </div>
   </nav></td>
@@ -1433,6 +1433,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></td>
   <td  width='10'></td>
   <td  align='left' valign='top'><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
+  <td  width='10'></td>
+  <td ><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='underline';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBookings</a></td>
+  <td  width='10'></td>
+  <td ><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='underline';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></td>
  </tr>
 </table>
 </td>
@@ -1520,7 +1524,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.1 Build 20140317</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.2 Build 20140402</p></span></td>
  </tr>
  <tr>
   <td ></td>

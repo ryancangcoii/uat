@@ -798,7 +798,7 @@ try {
 </li></ul></li><li class="">
 <a href='/ttsvr/n/myOnlineBookings/skypepi-72'><span>myOnlineBookings</span></a>
 </li><li class="">
-<a href='/ttsvr/n/myClass/skypepi-73'><span>myClass</span></a>
+<a href='/ttsvr/n/home/skypepi-67'><span>myClass</span></a>
 </li></ul>
 </div><%
 } catch (Exception e) {

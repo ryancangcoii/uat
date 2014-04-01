@@ -258,7 +258,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%> <%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>

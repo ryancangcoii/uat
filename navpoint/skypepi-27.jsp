@@ -256,7 +256,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%> <%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -1063,6 +1063,7 @@ try {
 						<table width="100%">
 							<tr>
 								<td class="table-heading color-regular" valign="top">
+								<%--
 									<input type="checkbox" id="check-termsconditions"/><label id="lbl_check-termsconditions" for="check-termsconditions">
 									<% String contents = lang.getString("I have read and understood the", null, "");
 									   String termCon = lang.getString("terms and conditions", null, "");
@@ -1072,6 +1073,7 @@ try {
 									</label>
 									<br>
 									<div style="display: none;padding-bottom: 5px;padding-top: 5px;padding-left:20px;" id="divErrorMessage"><img src="/ttsvr/skypepi/images/icon_error.png" title="error" /> <span class="body-text color-red" style="line-height: 20px;vertical-align: top;"><%=lang.getString("Please accept the terms and conditions", null, "") %>.</span></div>
+								 --%>
 								</td>
 								<td align="right" valign="top">
 									<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" id="btnCancel" name="btnCancel"/>

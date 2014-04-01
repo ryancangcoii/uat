@@ -318,7 +318,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%> <%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -572,7 +572,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%> <%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -814,7 +814,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class=""><a href="/ttsvr/n/home/skypepi-91">Home</a></li><li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/MISSING_LINK/skypepi-94">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a></li><li class=""><a href="/ttsvr/n/myClass/skypepi-73">myClass</a></li>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a></li><li class=""><a href="/ttsvr/n/myClass/skypepi-73">myClass</a></li>        </ul>
       </div>
     </div>
   </nav></td>

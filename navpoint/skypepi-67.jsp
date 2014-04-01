@@ -107,7 +107,7 @@ try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_38Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("navpointId", "/ttsvr/n/home/skypepi-67");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("authenticatePage", "Yes");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("authenticatePage", "No");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("viewOption", "Name");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
@@ -123,7 +123,7 @@ try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_53Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("navpointId", "/ttsvr/n/home/skypepi-67");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("authenticatePage", "Yes");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("authenticatePage", "No");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("viewOption", "Student Dashboard Link");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
@@ -342,7 +342,7 @@ try {
 	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
-	String snippetVar_authenticatePage = "Yes";
+	String snippetVar_authenticatePage = "No";
 	String snippetVar_navpointId = "/ttsvr/n/home/skypepi-67";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
@@ -388,7 +388,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%> <%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -642,7 +642,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%> <%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -870,7 +870,7 @@ try {
 	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
-	String snippetVar_authenticatePage = "Yes";
+	String snippetVar_authenticatePage = "No";
 	String snippetVar_navpointId = "/ttsvr/n/home/skypepi-67";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@53";
@@ -916,7 +916,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%> <%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>

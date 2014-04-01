@@ -162,13 +162,13 @@ try {
 <!--<![endif]-->
 
 <!-- Respond.js proxy on external server -->
-    <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<!--     <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" /> -->
 
     <!-- Respond.js redirect location on local server -->
-    <link href="/path/to/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<!--     <link href="/path/to/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" /> -->
 
     <!-- Respond.js proxy script on local server -->
-    <script src="/path/to/respond.proxy.js"></script>
+<!--     <script src="/path/to/respond.proxy.js"></script> -->
 
 <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
@@ -210,6 +210,7 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->

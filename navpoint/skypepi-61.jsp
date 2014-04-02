@@ -366,10 +366,10 @@ var PaymentReceipt = function() {
 	            	   var tmp = data;
 	            	   
 	            	   jQuery(data).find("img").each(function(idx, obj) {
-	            		   var imgSrc = "";
-	            		   imgSrc = jQuery(obj).attr("src");
-	            		   console.log("imgSrc", imgSrc);
-	            		   data = data.replace(imgSrc, "?paymentId=<%=request.getParameter("paymentDetailID") %>&op=skypepi_widgets.paymentReceipt.paymentReceipts&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc) + "\" height=\"89\"");
+	            		   //var imgSrc = "";
+	            		   //imgSrc = jQuery(obj).attr("src");
+	            		   //console.log("imgSrc", imgSrc);
+	            		   //data = data.replace(imgSrc, "?paymentId=<%=request.getParameter("paymentDetailID") %>&op=skypepi_widgets.paymentReceipt.paymentReceipts&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc) + "\" height=\"89\"");
 	            	   });
 	            	   
 	            	   jQuery("#oReportCell").html(data);

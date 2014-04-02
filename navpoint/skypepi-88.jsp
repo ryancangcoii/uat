@@ -75,6 +75,22 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_headerNonRespo_38", e);
 }
 
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_headerNonRespo_48 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("navpointId", "/ttsvr/n/View-Marks-and-Grades/skypepi-88");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("authenticatePage", "Yes");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavPointId", "");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("viewOption", "Student Dashboard Link");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params);
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_headerNonRespo_48", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_footer_23 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_footer_23Params = new Properties();
@@ -743,7 +759,259 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='left' valign='top'>
 <img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
 </td>
-  <td  align='right'></td>
+  <td  align='right'><%-- Widget skypepi.zones.portal_z_headerNonRespo@48 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_headerNonRespo_48;
+	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavPointId = "";
+	String snippetVar_authenticatePage = "Yes";
+	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
+	String snippetVar_viewOption = "Student Dashboard Link";
+	String snippetVar_widgetName = "@48";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_headerNonRespo@48";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
+<%@page import="tooltwist.skypepi.bean.FetchPerson"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="com.dinaa.data.XNodes"%>
+<%@page import="org.w3c.dom.Element"%>
+
+<%
+	LogoutProductionHelper h = (LogoutProductionHelper) helper;
+	h = h.getCachedHelper();
+
+	AltLang lang = h.getAltLang();
+
+	boolean isLoggedIn = h.isLoggedIn();
+	boolean isParent = h.isParent();
+%>
+
+<%
+	if (isLoggedIn) {
+		FetchPerson fetchPerson = h.getFetchPerson();
+		String fullName = "";
+		String childId = h.getChildId();
+		if (fetchPerson instanceof FetchPerson) {
+			fullName = fetchPerson.getFullName(lang.getCurrentLangCode());
+		}
+%>
+
+<form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
+	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
+	<input type="hidden" id="homeNavId" name="homeNavId" value="<%=snippetVar_homeNavId%>"/>
+	<input type="hidden" id="studentDashBoardNavId" name="studentDashBoardNavId" value="<%=snippetVar_studentDashBoardNavId%>"/>
+
+	<%
+	if (snippetVar_viewOption.equals("Name")) {
+	%>
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
+	<%
+	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
+	%>
+		<%
+			if (isParent) {
+		%>
+		
+		<!-- Parent -->
+		<div style="position: relative;">
+		<table>
+			<tr>
+				<td align="right">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
+							<% if (isParent) { %>
+									<td style="padding-right: 5px;" align="right" class="color-white">
+										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									</td>	
+									<td><select class="hyjack" style="width: 150px;"
+										id="logout-childId">
+											<%
+												XData childData = h.getChildData();
+		
+												XNodes childs = childData.getNodes("//Child");
+
+												for (childs.first(); childs.next();) {
+													Element child = (Element) childs.getCurrentNode();
+													String firstName = child.getAttribute("FirstName");
+													String lastName = child.getAttribute("Surname");
+													String altFirstName = child.getAttribute("AltFirstName");
+													String altLastName = child.getAttribute("AltSurname");
+													String childID = child.getAttribute("ChildID");
+
+													String selected = "";
+													if (childID.equals(childId)) {
+														selected = "selected='selected'";
+													}
+													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
+												%>
+															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+												<% } else {%>
+															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+												<% } %>
+		
+											<%
+												}
+											%>
+									</select></td>
+									<%
+										}
+									%>
+							<% } else { %>
+								<% if (isParent) { %>
+									<td style="padding-right: 5px;" align="right" class="color-white">
+										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									</td>	
+									<td><select class="hyjack" style="width: 150px;"
+										id="logout-childId">
+											<%
+												XData childData = h.getChildData();
+		
+												XNodes childs = childData.getNodes("//Child");
+
+												for (childs.first(); childs.next();) {
+													Element child = (Element) childs.getCurrentNode();
+													String firstName = child.getAttribute("FirstName");
+													String lastName = child.getAttribute("Surname");
+													String altFirstName = child.getAttribute("AltFirstName");
+													String altLastName = child.getAttribute("AltSurname");
+													String childID = child.getAttribute("ChildID");
+
+													String selected = "";
+													if (childID.equals(childId)) {
+														selected = "selected='selected'";
+													}
+													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
+												%>
+															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+												<% } else {%>
+															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+												<% } %>
+		
+											<%
+												}
+											%>
+									</select></td>
+									<%
+										}
+									%>
+							<% } %>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+<% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
+<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
+<% } %>
+</div>
+		<!-- Parent -->
+		<%
+			}
+		%>
+	<%
+	} else {
+	%>
+		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
+	<%
+		}
+	%> 
+	</form>
+<%
+ 	}
+ %>
+ 
+ <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
+
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function() {
+
+				var childId = $("#logout-childId").val();
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/ttsvr/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				$('.hyjack').hyjack_select();
+				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>");
+				$(".stud-caption").click(function() {
+					//$(".hjsel_container").trigger("click");
+					//alert("click");
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").show();
+					}, 50);
+				});
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_headerNonRespo@48 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
+}
+%>
+</td>
  </tr>
 </table>
 </div>

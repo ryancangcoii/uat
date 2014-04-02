@@ -878,7 +878,7 @@ try {
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered">
 		<thead>
 			<tr>
-				<th colspan="6" class="left">Class Timetable</th>
+				<th colspan="6" class="left">Class Timetable<%=h.getClassName() %></th>
 			</tr>			
 			<tr class="grey">
 				<th width="10%">Date</th>

@@ -953,13 +953,31 @@ try {
 %>
 <style type="text/css">
 .input-cc {font-size: 16px; text-align: center;}
+.credit-card {
+	width: 100px !important;
+	margin-right: 10px;
+	text-align: center;
+	}
+	.color-red {
+		color: #FF0000 !important;
+	}
 </style>
-<script src="/ttsvr/skypepi/scripts/jquery.simplemodal.js"></script>
 <script src="/ttsvr/skypepi/scripts/jquery.validate.min.js"></script>
 <!-- ********** INSERT HTML HERE ********** -->
-<div <%=snippetVar_idDefinition%> class="student-container">
+<style>
+.portal-ribbon .left-edge.fork {
+	width: 130px;
+}
+</style>
+  
+<div class="bc-container portal-ribbon">
+	<div class="ribbon-wrap left-edge fork lblue"><span>payment</span></div>
+	
+	<br />
+	<br />
+	<br />
 
-	<form method="post" action="" id="transact_form">
+	<form method="post" action="" id="transact_form" class="bc-form">
 		<input type="hidden" value="<%=h.getId()%>" id="transact_id" name="transact_id"/>
 		<input type="hidden" value="<%=h.getFeeSelection()%>" id="transact_fs" name="transact_fs"/>
 		<input type="hidden" value="<%=paymentDesc%>" name="transact_description" />
@@ -991,29 +1009,41 @@ try {
 								<td>
 									<table style="border-spacing:5px">
 										<tr>
+											<td><label class="control-label"><%=lang.getString("Description", null, "") %>: </label></td>
+											<td>
+												<input  id="paymentDescription" name="paymentDescription" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
+											</td>
+										</tr>
+										<%--<tr>
 											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>:</label> </td>
 											<td class="add_space_left body-text">
 												<div class="form-input-medium-container">
 													<input type="text" value="<%=lang.getString(paymentDesc, null, "") %>" autocomplete="off" class="form-input-medium required" id="paymentDescription" name="paymentDescription" readonly="readonly"/>
 												</div>
 											</td>
-										</tr>
+										</tr>  --%>
 										<%-- <tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Balance", null, "") %>:</td>
 											<td class="add_space_left">
 												<div class="form-input-medium-container">
-													<input type="text" value="<%=StringUtil.formatCurrency(grossAmount) %>" autocomplete="off" class="form-input-small"  readonly="readonly"/>
+													<input type="text" value="<%=StringUtil.formatCurrency(grossAmount) %>" autocomplete="off" class=""  readonly="readonly"/>
 												</div>
 											</td>
 										</tr> --%>
 										<tr>
-											<td class="body-text color-regular add_margin_left"><%=lang.getString("Amount", null, "") %>:</td>
-											<td class="add_space_left">
-												<div class="form-input-small-container">
-													<input type="text" value="<%=StringUtil.formatCurrency(amount) %>" autocomplete="off" class="form-input-small" name="transact_amount" id="transact_amount" readonly="readonly"/>
-												</div>
+											<td><label class="control-label"><%=lang.getString("Amount", null, "") %>: </label></td>
+											<td>
+												<input  id="transact_amount" name="transact_amount" class="form-control" type="text" autocomplete="off" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
 											</td>
 										</tr>
+										<%--<tr>
+											<td class="body-text color-regular add_margin_left"><%=lang.getString("Amount", null, "") %>:</td>
+											<td class="add_space_left">
+												<div class="-container">
+													<input type="text" value="<%=StringUtil.formatCurrency(amount) %>" autocomplete="off" class="" name="transact_amount" id="transact_amount" readonly="readonly"/>
+												</div>
+											</td>
+										</tr>  --%>
 										<%-- <tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Payment Method", null, "") %>:</td>
 											<td class="add_space_left">
@@ -1044,42 +1074,34 @@ try {
 							</tr>
 							<tr>
 								<td>
-									<table style="border-spacing:5px">
+									<table style="border-spacing:5px" border="0">
 										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label id="lbl_creditcard_name" for="transact_creditcard"><%=lang.getString("Card Holder's Name", null, "") %>:</label> </td>
-											<td class="add_space_left" colspan="3">
-												<table cellpadding="0" cellspacing="0">
-													<tr>
-														<td>
-															<div class="form-input-medium-container">
-																<input type="text" name="creditcard_name" id="creditcard_name" value="" autocomplete="off" class="form-input-medium required"/>
-															</div>
-														</td>
-													</tr>
-												</table>
+											<td><label class="control-label" for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Card Holder's Name", null, "") %>: </label></td>
+											<td>
+												<input  id="creditcard_name" name="creditcard_name" class="form-control required" type="text" autocomplete="off" style="width: 429px;" />
 											</td>
 										</tr>
 										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label id="lbl_transact_creditcard" for="transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>:</label> </td>
-											<td class="add_space_left" colspan="3">
+											<td><label class="control-label" for="transact_creditcard" id="lbl_transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>: </label></td>
+											<td class="add_space_left" colspan="2">
 												<input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
 												<table cellpadding="0" cellspacing="0">
 													<tr>
 														<td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard1" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard1" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td><td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard2" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard2" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td><td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard3" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard3" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td><td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard4" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard4" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td>
 													</tr>
@@ -1087,22 +1109,31 @@ try {
 											</td>
 										</tr>
 										<tr>
-											<td class="body-text color-regular add_margin_left"><label id="lbl_expiryDate"><%=lang.getString("Expiry Date", null, "") %>: </label> </td>
+											<td><label class="control-label" id="lbl_transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label></td>
+											<td class="add_space_left">
+												<select name="transact_creditcard_type" class="form-control" style="width: 150px;">
+													<option value="Master">Master Card</option>
+													<option value="VISA">Visa</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td><label class="control-label"><%=lang.getString("Expiry Date", null, "") %>: </label></td>
 											<td>
 												<table>
 													<tr>
-														<td class="body-text color-regular add_space_left"><%=lang.getString("Month", null, "") %></td>
+														<td><label class="control-label"  id="lbl_transact_month"><%=lang.getString("Month", null, "") %>: </label></td>
 														<td class="add_space_left">
-															<select id="transact_month" name="transact_month">
+															<select id="transact_month" name="transact_month" class="form-control" style="width: 80px">
 															<% for(JSONObject mon : h.getMonth()) { %>
 																<option value="<%=mon.get("id")%>"><%=mon.get("desc")%></option> 
 															<% } %>
 															</select>
 														</td>
 														
-														<td class="add_space_left body-text color-regular add_space_left"><%=lang.getString("Year", null, "") %></td>
+														<td><label class="control-label" id="lbl_transact_year"><%=lang.getString("Year", null, "") %>: </label></td>
 														<td class="add_space_left">
-															<select id="transact_year" name="transact_year">
+															<select id="transact_year" name="transact_year" class="form-control" style="width: 80px">
 																<% for(JSONObject year : h.getYear()) { %>
 																<option value="<%=year.get("yr")%>"><%=year.get("year")%></option> 
 															<% } %>
@@ -1111,27 +1142,16 @@ try {
 													</tr>
 												</table>
 											</td>
-											<td class="body-text color-regular add_space_left" style="padding-right:5px"><label id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "") %>:</label> </td>
-											<td class="add_space_left">
-												<div class="form-input-small-container">
-													<input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class="form-input-small required input-cc"/>
+										</tr>
+										<tr>
+											<td><label class="control-label"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label></td>
+												<td class="add_space_left">
+												<div class="-container">
+													<input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required input-cc"/>
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left"><%=lang.getString("Credit Card Type", null, "") %>:</td>
-											<td class="add_space_left">
-												<select name="transact_creditcard_type">
-<!-- 													<option value="Amex">Amex</option> -->
-<!-- 													<option value="BankCard">Bank Card</option> -->
-<!-- 													<option value="Diners">Diners Club</option> -->
-<!-- 													<option value="Discover">Discover</option> -->
-<!-- 													<option value="JCB">JCB</option> -->
-													<option value="Master">Master Card</option>
-													<option value="VISA">Visa</option>
-												</select>
-											</td>
-										</tr>
+										
 									</table>
 								</td>
 							</tr>
@@ -1151,8 +1171,12 @@ try {
 								<td>
 									<table style="border-spacing:5px">
 										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px"> <input type="checkbox"  id="chk-taxNumber"/> <label for="chk-taxNumber" id="lbl_chk-taxNumber"><%=lang.getString("Do you need company tax ID number on your local government tax receipt (GUI)", null, "") %>?</label> </td>
-										</tr>
+												<td class="body-text color-regular add_margin_left"
+													style="padding-right: 5px"><input type="checkbox"
+													id="chk-taxNumber" /> <label for="chk-taxNumber"
+													id="lbl_chk-taxNumber"><%=lang.getString("Do you need company tax ID number on your local government tax receipt (GUI)",null, "")%>?</label>
+												</td>
+											</tr>
 									</table>
 								</td>							
 							</tr>
@@ -1162,8 +1186,8 @@ try {
 										<tr>
 											<td style="padding-left: 25px;"  class="body-text color-regular add_margin_left" id="lbl_taxNumber"><%=lang.getString("My company tax ID number is", null, "") %>:</td>
 											<td class="add_space_left body-text" >
-												<div class="form-input-small-container">
-													<input type="text" value="" autocomplete="off" class="form-input-small" id="taxNumber" name="taxNumber"/>
+												<div class="-container">
+													<input type="text" value="" autocomplete="off" class="" id="taxNumber" name="taxNumber"/>
 												</div>
 											</td>
 										</tr>
@@ -1444,7 +1468,7 @@ var TransactPayment = function() {
 						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
 						jQuery("#msgButtonClose").click(function() {
 							Progress.showProgress();
-							window.location.href = jQuery("#selectionNavpoint").val() + "?paymentDetailID=" + $("#paymentDetailID").val();
+							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
 						});
 						
 					}

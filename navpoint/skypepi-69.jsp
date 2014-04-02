@@ -903,11 +903,11 @@ try {
 													<tr  class="grey">
 														<%-- <th width="370px" class="table-header color-regular column-text"><%=lang.getString("Stream Name", null, "") %></th> --%>
 														<th width="20%" ><%=lang.getString("Class Name", null, "") %></th>
-														<th width="30%"><%=lang.getString("Description", null, "") %></th>
+														<th width="20%"><%=lang.getString("Description", null, "") %></th>
 														<th width=""><%=lang.getString("Start Date", null, "") %></th>
 														<th width=""><%=lang.getString("Venue", null, "") %></th>
 														<th width=""><%=lang.getString("Teacher", null, "") %></th>
-														<th width=""><%=lang.getString("Action", null, "") %></th>
+														<th width="21%"><%=lang.getString("Action", null, "") %></th>
 													</tr>
 													<%
 													if (enrolledStreamUnits.size() > 0) {
@@ -924,18 +924,27 @@ try {
 															String enrolmentId = enrolledStreamUnit.getEnrolmentID();
 															enrolledStreamUnitsCnt++;
 															String classTag = ((enrolledStreamUnitsCnt % 2) == 0) ? "blue" : "white";
+															
+															String streamID = enrolledStreamUnit.getStreamId();
+															String[] streamData = h.getStreamData(streamID);
+															
+															String teacher = streamData[0];
+															String venue = streamData[1];
+															String classTime = streamData[2];
+															String classDay = streamData[3];
+															
 														%>
 														<tr class="<%=classTag %>">
 															<%-- <td class="table-data color-regular column-text"><%=code %></td> --%>
 															<td class="table-data color-regular column-text"><%=code %></td>
 															<td class="table-data color-regular column-text"><%=name %></td>
 															<td class="table-data color-regular column-date" rowspan="3"><%=start %></td>
-															<td class="table-data color-regular column-date"  rowspan="3"><%="" %></td>
-															<td class="table-data color-regular column-date"  rowspan="3"><%="" %></td>
+															<td class="table-data color-regular column-date"  rowspan="3"><%=venue %></td>
+															<td class="table-data color-regular column-date"  rowspan="3"><%=teacher %></td>
 															<td class="table-data color-regular" rowspan="3">
 																<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																<span class="regular-link-underline-light-blue">
-																	<a href="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=enrolledStreamUnit.getStreamId() %>">
+																	<a href="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>">
 																		<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
 																</span>
 																<br />
@@ -963,8 +972,8 @@ try {
 															<th width=""><%=lang.getString("Class Day", null, "") %></th>
 														</tr>
 														<tr class="<%=classTag %>">
-															<td><%=lang.getString("-", null, "") %></td>
-															<td><%=lang.getString("-", null, "") %></td>
+															<td><%=classTime %></td>
+															<td><%=classDay %></td>
 														</tr>
 														<%
 														}

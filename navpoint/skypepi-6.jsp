@@ -1311,7 +1311,6 @@ try {
 											<option <%=addressType.equals("Home") ? "selected" : "" %>>Home</option>
 											<option <%=addressType.equals("Office") ? "selected" : "" %>>Office</option>
 											<option <%=addressType.equals("Postal") ? "selected" : "" %>>Postal</option>
-											<option <%=addressType.equals("Emergency") ? "selected" : "" %>>Emergency (ERROR)</option>
 											<option <%=addressType.equals("Others") ? "selected" : "" %>>Others</option>
 									</select>
 									</td>
@@ -1397,7 +1396,6 @@ try {
 										<option>Home</option>
 										<option>Office</option>
 										<option>Postal</option>
-										<option>Emergency (ERROR)</option>
 										<option>Others</option>
 									</select>
 								</td>
@@ -1642,7 +1640,6 @@ try {
 											<option <%=emailType.equals("Personal") ? "selected" : "" %>>Personal</option>
 											<option <%=emailType.equals("Office") ? "selected" : "" %>>Office</option>
 											<option <%=emailType.equals("Temporary") ? "selected" : "" %>>Temporary</option>
-											<option <%=emailType.equals("Emergency") ? "selected" : "" %>>Emergency (ERROR)</option>
 											<option <%=emailType.equals("Other") ? "selected" : "" %>>Other</option>
 									</select>
 									</td>
@@ -1705,7 +1702,6 @@ try {
 										<option>Personal</option>
 										<option>Office</option>
 										<option>Temporary</option>
-										<option>Emergency (ERROR)</option>
 										<option>Other</option>
 									</select>
 								</td>

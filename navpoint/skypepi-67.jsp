@@ -44,6 +44,7 @@
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
 
 <%
 	String jspName = "skypepi-67";
@@ -141,6 +142,15 @@ try {
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_37.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
+}
+
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapHome_19 = null;
+try {
+	Properties productionHelper_skypepi_pages_portal_p_bstrapHome_19Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapHome_19 = new tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapHome_19Params);
+	productionHelper_skypepi_pages_portal_p_bstrapHome_19.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapHome_19", e);
 }
 
 
@@ -1252,6 +1262,105 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   </a>
 </div>
 </div></div>
+<%-- Widget skypepi.pages.portal_p_bstrapHome@19 (type=tooltwist.skypepi.widgets.StudentHomeWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapHome_19;
+	String snippetVar_snippets = "Welcome";
+	String snippetVar_widgetName = "@19";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapHome@19";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.wbd.WbdCache"%>
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+<%
+	// Get the production helper for this widget
+	StudentHomeProductionHelper h = (StudentHomeProductionHelper) helper;
+	XData data = h.getData(jh);
+	AltLang lang = h.getAltLang();
+	String parentId = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.SIGN_ON_PARENT, "0");
+	Boolean isParent = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_PARENT, false);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div>
+	
+	<% if("Welcome".equals(snippetVar_snippets)) { %>
+	
+	<table class="">
+			<tr>
+				<td width="" align="left" class="heading color-blue" colspan="2"><%=lang.getString("Welcome", null, "") %>&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="30"></td>
+			</tr>
+			<tr class="body-text color-regular">
+				<td style="padding: 20px;"><img alt="British Council" src="/ttsvr/skypepi/images/brtishcouncil.png" title="British Council" width="190"/></td>
+				<td valign="top" style="padding: 20px;"><%=lang.getString("Welcome to the British Council's new online payment portal. We hope you enjoy using it!", null, "") %></td>
+			</tr>
+		</table>
+	<% } else { %>
+	
+	<table width="730">
+			<tr>
+				<td width="" align="left" class="heading color-blue"><%=lang.getString("Re-registration details", null, "") %>&nbsp;</td>
+				<td width="" align="right"></td>
+			</tr>
+			<tr>
+				<td height="30"></td>
+			</tr>
+			<tr class="body-text color-regular">
+				<td valign="top" style="padding: 20px;" colspan="2" align="center">
+					<div style="width: 400px;"><%=lang.getString("Click on the link below for an easy step guide on how to use the re-registration tool. It's easy and it's fast... try it out!", null, "") %>
+						<br><br>
+					<% if(!isParent) { %>
+						<% 
+						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
+						{
+						%>
+							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_tw.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
+						<%
+						} else {			
+						%>
+							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_en.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
+						<%
+						}
+						%>
+					<% } else { %>
+						<% 
+						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
+						{
+						%>
+							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_chinese_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
+						<%
+						} else {			
+						%>
+							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_english_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
+						<%
+						}
+						%>
+					<% } %>
+					</div>
+				</td>
+			</tr>
+		</table>
+	
+	<% } %>
+</div>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapHome@19 (type=tooltwist.skypepi.widgets.StudentHomeWidget)", e);
+}
+%>
 <div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>

@@ -1109,9 +1109,9 @@ try {
 											</td>
 										</tr>
 										<tr>
-											<td><label class="control-label" id="lbl_transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label></td>
+											<td><label class="control-label" id="lbl_transact_creditcard_type" for="transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label></td>
 											<td class="add_space_left">
-												<select name="transact_creditcard_type" class="form-control" style="width: 150px;">
+												<select name="transact_creditcard_type" class="form-control required" style="width: 150px;">
 													<option value="Master">Master Card</option>
 													<option value="VISA">Visa</option>
 												</select>
@@ -1144,10 +1144,10 @@ try {
 											</td>
 										</tr>
 										<tr>
-											<td><label class="control-label"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label></td>
+											<td><label class="control-label" id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label></td>
 												<td class="add_space_left">
 												<div class="-container">
-													<input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required input-cc"/>
+													<input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required form-control" style="width: 100px;"/>
 												</div>
 											</td>
 										</tr>
@@ -1665,7 +1665,6 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
  </tr>
 </table>
 
-<script type="text/javascript"></script>
 <script type="text/javascript">
 var Progress = function() {
 	return {

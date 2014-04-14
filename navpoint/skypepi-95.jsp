@@ -42,6 +42,7 @@
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_reportTemplate_2 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_reportTemplate_2Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_reportTemplate_2Params.setProperty("backPage", "");
 	productionHelper_skypepi_pages_portal_p_reportTemplate_2Params.setProperty("buttonLabel", "Back");
 	productionHelper_skypepi_pages_portal_p_reportTemplate_2 = new tooltwist.skypepi.productionHelpers.TimetableProductionhelper(productionHelper_skypepi_pages_portal_p_reportTemplate_2Params);
 	productionHelper_skypepi_pages_portal_p_reportTemplate_2.callPreFetch(jh);
@@ -110,6 +111,7 @@ try {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_reportTemplate_2;
 	String snippetVar_buttonLabel = "Back";
+	String snippetVar_backPage = "";
 	String snippetVar_widgetName = "@2";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_reportTemplate@2";
 	String snippetVar_elementId = "";
@@ -134,7 +136,7 @@ try {
 <div class="ribbon-wrap left-edge fork lblue"><span>Timetable</span></div>
 <br><br><br>
 <div style="text-align: right;">
-	<a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">
+	<a href="<%=snippetVar_backPage%>">
 		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" />
 	</a>
 	&nbsp;

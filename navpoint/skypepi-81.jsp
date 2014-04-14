@@ -114,6 +114,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_viewTimetable_14 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_viewTimetable_14Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_viewTimetable_14Params.setProperty("backPage", "skypepi-69");
 	productionHelper_skypepi_pages_portal_p_viewTimetable_14Params.setProperty("buttonLabel", "Back");
 	productionHelper_skypepi_pages_portal_p_viewTimetable_14 = new tooltwist.skypepi.productionHelpers.TimetableProductionhelper(productionHelper_skypepi_pages_portal_p_viewTimetable_14Params);
 	productionHelper_skypepi_pages_portal_p_viewTimetable_14.callPreFetch(jh);
@@ -1108,6 +1109,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_viewTimetable_14;
 	String snippetVar_buttonLabel = "Back";
+	String snippetVar_backPage = "skypepi-69";
 	String snippetVar_widgetName = "@14";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_viewTimetable@14";
 	String snippetVar_elementId = "";
@@ -1132,7 +1134,7 @@ try {
 <div class="ribbon-wrap left-edge fork lblue"><span>Timetable</span></div>
 <br><br><br>
 <div style="text-align: right;">
-	<a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">
+	<a href="<%=snippetVar_backPage%>">
 		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" />
 	</a>
 	&nbsp;

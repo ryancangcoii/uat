@@ -879,6 +879,7 @@ try {
 	String snippetVar_myDetailsOp = "skypepi.widgets.reEnrolment.reEnrolment";
 	String snippetVar_navpointId = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_concludeAndConfirm = "skypepi-35";
+	String snippetVar_viewTimetable = "";
 	String snippetVar_widgetName = "@70";
 	String snippetVar_widgetPath = "skypepi.pages.skypepi_reenrolment@70";
 	String snippetVar_elementId = "";
@@ -1045,6 +1046,8 @@ try {
 																		Start - End Date: <%=startDate %> - <%=endDate %> <br>
 																		Start - End Time: <%=sessionTimes %> <br>
 																		Session Days: <%=sessionTimes %>
+																		<br/>
+																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %> %>">View Timetable</a>
 																	</td>
 																	<td rowspan="2" class="right"><%=fee %></td>
 																	<td rowspan="2" class="right"><%=discount %></td>

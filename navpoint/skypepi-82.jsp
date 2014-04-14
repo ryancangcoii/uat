@@ -1153,7 +1153,7 @@ try {
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered">
 		<thead>
 			<tr>
-				<th class="left" colspan="8">Attendance Record</th>
+				<th class="left" colspan="6">Attendance Record</th>
 			</tr>
 			<tr class="grey">
 				<th width="10%">Date</th>
@@ -1162,8 +1162,6 @@ try {
 				<th width="10%">Ending</th>
 				<th width="20%">Room</th>
 				<th width="10%">Attended</th>
-				<th width="10%" class="right">Minutes</th>
-				<th>Comments</th>
 			</tr>
 		</thead>
 		<tbody id="attendance">
@@ -1185,8 +1183,6 @@ try {
 					<img src="/ttsvr/cropImage/skypepi.images.portal_i_cross.png" />
 					<% } %>
 				</td>
-				<td class="right"><%=att.get("minutes")%></td>
-				<td><%=att.get("comments")%></td>
 			</tr>
 			<%
 				clazz = (clazz.equals("white") ? "blue" : "white");

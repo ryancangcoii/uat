@@ -1150,7 +1150,7 @@ try {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="Back" />
 									</a>
-									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&amp;enrolmentID=<%=request.getParameter("enrolmentID") %>">
+									<a  href="https://reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Certification&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
 										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Marks & Grades", null, "") %>" />
 									</a>
 									
@@ -1161,7 +1161,7 @@ try {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<iframe src="https://reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Certification&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf" style="height: 860px; width: 100%; border: none;"></iframe>
+						<iframe src="https://ReportUser:Report5User@reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Certification&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 860px; width: 100%; border: none;"></iframe>
 							
 						</td>
 					</tr>

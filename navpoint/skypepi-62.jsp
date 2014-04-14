@@ -949,7 +949,7 @@ try {
 														<%
 														int enrolledStreamUnitsCnt = 0;
 														for(int i = 0; i < enrolledStreamUnits.size(); i++) {
-															EnrolledStreamUnits enrolledStreamUnit = enrolledStreamUnits.get(0);
+															EnrolledStreamUnits enrolledStreamUnit = enrolledStreamUnits.get(i);
 															/* String code = enrolledStreamUnit.getCourseName(); */
 															String name = enrolledStreamUnit.getStreamName();
 															String status = enrolledStreamUnit.getStatus();
@@ -958,6 +958,7 @@ try {
 															String paymentId = enrolledStreamUnit.getPaymentID();
 															String enrolmentId = enrolledStreamUnit.getEnrolmentID();
 															enrolledStreamUnitsCnt++;
+															System.out.println("name:" + name );
 															String classTag = ((enrolledStreamUnitsCnt % 2) == 0) ? "blue" : "white";
 														%>
 														<tr class="<%=classTag %>">

@@ -1105,6 +1105,7 @@ try {
 	String snippetVar_myDetailsOp = "skypepi.widgets.reEnrolment.reEnrolment";
 	String snippetVar_navpointId = "/ttsvr/n/myOnlineBookings/skypepi-72";
 	String snippetVar_concludeAndConfirm = "skypepi-79";
+	String snippetVar_viewTimetable = "skypepi-90";
 	String snippetVar_widgetName = "@15";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_myOnlineBookings@15";
 	String snippetVar_elementId = "";
@@ -1271,6 +1272,8 @@ try {
 																		Start - End Date: <%=startDate %> - <%=endDate %> <br>
 																		Start - End Time: <%=sessionTimes %> <br>
 																		Session Days: <%=sessionTimes %>
+																		<br/>
+																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %> %>">View Timetable</a>
 																	</td>
 																	<td rowspan="2" class="right"><%=fee %></td>
 																	<td rowspan="2" class="right"><%=discount %></td>

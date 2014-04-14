@@ -284,7 +284,7 @@ try {
 											<a href="<%=snippetVar_viewReceipts%>">
 												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 											</a>
-											<a href="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=<%=request.getParameter("paymentDetailID") %>" target="_blank">
+											<a href="https://reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Receipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=request.getParameter("paymentDetailID") %>&rs:Format=pdf" target="_blank">
 												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
 											</a>
 										</td>

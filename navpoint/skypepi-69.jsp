@@ -1202,7 +1202,7 @@ try {
 															java.sql.Date dtTo = java.sql.Date.valueOf(end);
 															java.sql.Date dtFr = java.sql.Date.valueOf(start);
 															if (!(dt.after(dtFr) &&  dt.before(dtTo))) {
-																//continue;
+																continue;
 															}
 															String[] streamData = h.getStreamData(streamID);
 															String teacher = streamData[0];
@@ -1210,12 +1210,9 @@ try {
 															String classTime = streamData[2];
 															String classDay = streamData[3];
 															
-															if (teacher.equals("")) continue;
-															
-															
+// 															if (teacher.equals("")) continue;
 															
 															enrolledStreamUnitsCnt++;
-															
 															
 															
 														%>

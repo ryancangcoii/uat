@@ -263,18 +263,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -311,7 +311,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -1029,6 +1029,8 @@ try {
 												<input type="hidden" name="enrolmentId<%=streamId %>" id="enrolmentId<%=streamId %>" value="<%=enrolmentId %>"/>
 												<input type="hidden" name="discount<%=streamId %>" id="discount<%=streamId %>" value="<%=discount %>"/>
 												<input type="hidden" name="totalAmount<%=streamId %>" id="totalAmount<%=streamId %>" value="<%=total %>"/>
+												<input type="hidden" name="streamName<%=streamId %>" id="streamName<%=streamId %>" value="<%=streamName %>"/>
+												
 											</td>
 										</tr>
 										<tr class="<%=classTag %>">
@@ -1264,7 +1266,6 @@ var ConcludeAndConfirm = function() {
 		init: function() {
 			var self = this;
 			jQuery("#concludeAndConfirm #btnNext").click(function() {
-				//document.getElementById("streamIds").value="";
 				self.submitForm();
 			});
 			
@@ -1421,7 +1422,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

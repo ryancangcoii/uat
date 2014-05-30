@@ -274,18 +274,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -322,7 +322,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -984,7 +984,7 @@ try {
 	
 	<% }  else {%>
 
-	<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
+		<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
 		<tbody>
 			
 			<% XData announcements = h.getAnnouncements(); 
@@ -997,73 +997,37 @@ try {
 				   String title = announce.getAttribute("Title");
 				   String note = announce.getAttribute("Note");
 				   String displayIn = announce.getAttribute("DisplayIn");
-				   if (!"Portal".equals(displayIn)) continue;
+				  if (!"Portal".equals(displayIn)) continue;
 			%>
 			
 			<tr>
 				<td align="left" valign="top">
-					<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
-						<tbody>
-							<tr>
-								<td align="left" valign="top"><table border="0" cellpadding="0" cellspacing="0">
-										<tbody>
-											<tr>
-												<td class="skypepi_studentHome@63_NW"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: 0 0; width: 10; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_N"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_X.png); background-repeat: repeat-x; background-position: 0 0; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_NE"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: -10 0; width: 10; height: 10;" nowrap=""></td>
-											</tr>
-											<tr>
-												<td class="skypepi_studentHome@63_W1"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_Y.png); background-repeat: repeat-y; background-position: 0 0; width: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_M1" style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_0.png); background-repeat: repeat;" nowrap=""><table border="0"
-														cellpadding="0" cellspacing="0" width="730" align="center" valign="top">
-														<tbody>
-															<tr>
-																<td align="center" valign="top">
-																	<!-- ********** INSERT HTML HERE ********** -->
-																	<div>
+					<div class="bc-container portal-ribbon" style="max-width: 960px;">
+							<table width="100%">
+								<tbody>
+									<tr>
+										<td width="" align="left" class="heading color-blue"
+											colspan="2"><%=title%>&nbsp;</td>
+									</tr>
+									<tr>
+										<td height="10"></td>
+									</tr>
+									<tr class="body-text color-regular">
+										<td style="padding: 20px;"><%=note%></td>
+									</tr>
+								</tbody>
+							</table>
 
-																		<table width="100%">
-																			<tbody>
-																				<tr>
-																					<td width="" align="left" class="heading color-blue" colspan="2"><%=title %>&nbsp;</td>
-																				</tr>
-																				<tr>
-																					<td height="10"></td>
-																				</tr>
-																				<tr class="body-text color-regular">
-																					<td style="padding: 20px;"><%=note %></td>
-																				</tr>
-																			</tbody>
-																		</table>
-																	</div></td>
-															</tr>
-														</tbody>
-													</table></td>
-												<td class="skypepi_studentHome@63_E1"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_Y.png); background-repeat: repeat-y; background-position: -10 0; width: 10;" nowrap=""></td>
-											</tr>
-											<tr>
-												<td class="skypepi_studentHome@63_SW"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: -20 0; width: 10; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_S"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_X.png); background-repeat: repeat-x; background-position: 0 -10; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_SE"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: -30 0; width: 10; height: 10;" nowrap=""></td>
-											</tr>
-										</tbody>
-									</table></td>
-							</tr>
-						</tbody>
-					</table></td>
+						</div>
+		
+					</td>
 			</tr>
 			<tr>
 				<td height="10"></td>
 			</tr>
-		<% } %>
+		<%
+			}
+		%>
 			
 		</tbody>
 	</table>
@@ -1205,7 +1169,7 @@ try {
 	
 	<% }  else {%>
 
-	<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
+		<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
 		<tbody>
 			
 			<% XData announcements = h.getAnnouncements(); 
@@ -1218,73 +1182,37 @@ try {
 				   String title = announce.getAttribute("Title");
 				   String note = announce.getAttribute("Note");
 				   String displayIn = announce.getAttribute("DisplayIn");
-				   if (!"Portal".equals(displayIn)) continue;
+				  if (!"Portal".equals(displayIn)) continue;
 			%>
 			
 			<tr>
 				<td align="left" valign="top">
-					<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
-						<tbody>
-							<tr>
-								<td align="left" valign="top"><table border="0" cellpadding="0" cellspacing="0">
-										<tbody>
-											<tr>
-												<td class="skypepi_studentHome@63_NW"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: 0 0; width: 10; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_N"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_X.png); background-repeat: repeat-x; background-position: 0 0; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_NE"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: -10 0; width: 10; height: 10;" nowrap=""></td>
-											</tr>
-											<tr>
-												<td class="skypepi_studentHome@63_W1"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_Y.png); background-repeat: repeat-y; background-position: 0 0; width: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_M1" style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_0.png); background-repeat: repeat;" nowrap=""><table border="0"
-														cellpadding="0" cellspacing="0" width="730" align="center" valign="top">
-														<tbody>
-															<tr>
-																<td align="center" valign="top">
-																	<!-- ********** INSERT HTML HERE ********** -->
-																	<div>
+					<div class="bc-container portal-ribbon" style="max-width: 960px;">
+							<table width="100%">
+								<tbody>
+									<tr>
+										<td width="" align="left" class="heading color-blue"
+											colspan="2"><%=title%>&nbsp;</td>
+									</tr>
+									<tr>
+										<td height="10"></td>
+									</tr>
+									<tr class="body-text color-regular">
+										<td style="padding: 20px;"><%=note%></td>
+									</tr>
+								</tbody>
+							</table>
 
-																		<table width="100%">
-																			<tbody>
-																				<tr>
-																					<td width="" align="left" class="heading color-blue" colspan="2"><%=title %>&nbsp;</td>
-																				</tr>
-																				<tr>
-																					<td height="10"></td>
-																				</tr>
-																				<tr class="body-text color-regular">
-																					<td style="padding: 20px;"><%=note %></td>
-																				</tr>
-																			</tbody>
-																		</table>
-																	</div></td>
-															</tr>
-														</tbody>
-													</table></td>
-												<td class="skypepi_studentHome@63_E1"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_Y.png); background-repeat: repeat-y; background-position: -10 0; width: 10;" nowrap=""></td>
-											</tr>
-											<tr>
-												<td class="skypepi_studentHome@63_SW"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: -20 0; width: 10; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_S"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_X.png); background-repeat: repeat-x; background-position: 0 -10; height: 10;" nowrap=""></td>
-												<td class="skypepi_studentHome@63_SE"
-													style="background-image: url(/ttsvr/sprite/skypepi_pages.skypepi_myDetails_F.png); background-repeat: no-repeat; background-position: -30 0; width: 10; height: 10;" nowrap=""></td>
-											</tr>
-										</tbody>
-									</table></td>
-							</tr>
-						</tbody>
-					</table></td>
+						</div>
+		
+					</td>
 			</tr>
 			<tr>
 				<td height="10"></td>
 			</tr>
-		<% } %>
+		<%
+			}
+		%>
 			
 		</tbody>
 	</table>
@@ -1540,7 +1468,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

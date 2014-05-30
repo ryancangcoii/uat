@@ -263,18 +263,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -311,7 +311,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -973,7 +973,7 @@ try {
 		<div>
 			<!--  --><table width="100%">
 				<tr>
-					<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %>)</span></td>
+					<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %></span></td>
 					<td width="" align="right">
 					</td>
 				</tr>
@@ -1355,24 +1355,30 @@ try {
 				</tr>
 				<tr id="newAddressEntry" style="display: none;">
 					<td colspan="4" class="">
-						<table width="100%">
-							<tr>
-								<td width="150px"><label class="control-label"><%=lang.getString("Address Line 1", null, "") %>: </label></td>
-								<td>
-									<input  id="line1New" name="line1New" class="form-control" type="text" autocomplete="off"/>
-								</td>	
-							</tr>
-							<tr>
-								<td class=" lbl-address"><label class="control-label"><%=lang.getString("Address Line 2", null, "") %>: </label></td>
-								<td>
-									<input  id="line2New" name="line2New" class="form-control" type="text" autocomplete="off"/>
-								</td>	
-								
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Country", null, "") %>: </label></td>
-								<td>
-									<div>
+						<div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Address Line 1", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            <input  id="line1New" name="line1New" class="form-control" type="text" autocomplete="off"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Address Line 2", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            <input  id="line2New" name="line2New" class="form-control" type="text" autocomplete="off"/>
+                            </div>
+                        </div>
+                        
+                         <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Country", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            
 												<%  country = h.getCountryOptions(); 
 													cid = "value=\"202\"";
 													option = country.replace(cid, cid + " selected=\"selected\"");
@@ -1380,30 +1386,34 @@ try {
 										<select id="countryNew"  class="form-control" style="width: 280px">
 											<%=option %>														
 										</select>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label></td>
-								<td colspan="2">
-									<input  id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off"/>
-								</td>
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Address Type", null, "") %>: </label></td>
-								<td colspan="2">
-									<select id="addressTypeNew" style="width: 280px;" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            <input  id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off"/>
+                            </div>
+                        </div>
+                        
+                         <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Address Type", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+							<select id="addressTypeNew" style="width: 280px;" class="form-control">
 										<option>Home</option>
 										<option>Office</option>
 										<option>Postal</option>
 										<option>Others</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>
-									<input type="hidden" id="hd-address" value="<%=lang.getString("Address", null, "") %>"/>
+									</select>                            
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top:10px">
+                        <input type="hidden" id="hd-address" value="<%=lang.getString("Address", null, "") %>"/>
 									<input type="hidden" id="hd-primary" value="<%=lang.getString("Primary", null, "") %>"/>
 									<input type="hidden" id="hd-action" value="<%=lang.getString("Action", null, "") %>"/>
 									<input type="hidden" id="hd-country" value="<%=lang.getString("Country", null, "") %>"/>
@@ -1415,10 +1425,8 @@ try {
 									 <div align="right">
 									 	<input onclick="javascript:MyDetails.saveNewAddress();" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
 									 	<input onclick="javascript:MyDetails.addNewAddress();" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue buttonSmall"/>
-									 </div>
-								</td>
-							</tr>
-						</table>
+                        </div>
+
 					</td>
 				</tr>
 				
@@ -1538,37 +1546,33 @@ try {
 						</table></td>
 				</tr>
 				<tr id="newPhoneNumberEntry" style="display: none;">
-					<td colspan="4" class="btnContainer"> 
-						<table width="60%">
-							<tr>
-								<td width="150"><label class="control-label"><%=lang.getString("Number", null, "") %>:</label></td>
-								<td>
-									<div class="">
-										<input  id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label></td>
-								<td>
-									<div>
-										<select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
+					<td colspan="4" class="btnContainer" style="padding:0 2%"> 
+						<div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Number", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            	<input  id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            <select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
 											<option value="Home"><%=lang.getString("Home", null, "") %></option>
 											<option value="Office"><%=lang.getString("Office", null, "") %></option>
 											<option value="Mobile"><%=lang.getString("Mobile", null, "") %></option>
 										</select>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<div align="right">
+                            </div>
+                        </div>
+                        
+                         <div align="right" style="margin:10px 0px">
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewPhoneNumber();"/>
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewPhoneNumber();"/>
 									</div>
-								</td>
-							</tr>
-						</table>
 					</td>
 				</tr>
 			</table>
@@ -1683,35 +1687,36 @@ try {
 				</tr>
 				<tr id="newEmailAddressEntry" style="display: none;">
 					<td colspan="4" class="btnContainer">
-						<table width="60%">
+						<table width="100%">
 							<tr>
-								<td height="5"></td>
-							</tr>
-							<tr>
-								<td class="control-label" valign="top" width="150"><%=lang.getString("Email", null, "") %>:</td>
-								<td valign="top">
-									<div class="">
-										<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value=""/>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="control-label"><%=lang.getString("Email Type", null, "") %></td>
-								<td>
-									<select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
+								<td height="">
+								  <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Email", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            	<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value=""/>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Email Type", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            <select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
 										<option>Personal</option>
 										<option>Office</option>
 										<option>Temporary</option>
 										<option>Other</option>
 									</select>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<div align="right">
+                            </div>
+                        </div>
+                        
+                         <div align="right" style="margin-top:10px;">
 										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewEmailAddress();"/>
 										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewEmailAddress();"/>
-									</div>
+						</div>
 								</td>
 							</tr>
 						</table>
@@ -2045,7 +2050,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			setTimeout(function(){
 				jQuery('#div_changepassword').modal({
 					closeHTML: "",
-					minHeight: 400,
+					minHeight: 420,
 					minWidth: 442,
 					position: ["20%",],
 					overlayId: 'process-overlay',
@@ -3030,7 +3035,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

@@ -264,18 +264,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -312,7 +312,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -924,24 +924,19 @@ try {
 							<tr>
 								<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=h.getFullName() %></span></td>
 							</tr>
-							<tr>
-								<td class="">&nbsp;</td>
-							</tr>
-							<tr>
-								<td>
-									<span id="enrolment-container">
-									
-									<table width="100%" border="0" align="center" cellpadding="1" cellspacing="0">
-										<tr>
-										    <td colspan="3">
-										    <div class="table-responsive portalTable">
+						</table>
+					</form>
+			</td>
+		</tr>
+	</table>
+	<div class="table-responsive portalTable">
 											    <table class="table" cellpadding="0" cellspacing="0" id="table-bookings">
 													<tr class="list-header">
 														<%-- <th width="370px" class="table-header color-regular column-text"><%=lang.getString("Stream Name", null, "") %></th> --%>
 														<th width="" class="table-header color-regular column-text"><%=lang.getString("Class", null, "") %></th>
-														<th width="60px"><%=lang.getString("Start Date", null, "") %></th>
-														<th width="60px"><%=lang.getString("End Date", null, "") %></th>
-														<th width="160px"><%=lang.getString("Action", null, "") %></th>
+														<th width="120px"><%=lang.getString("Start Date", null, "") %></th>
+														<th width="120px"><%=lang.getString("End Date", null, "") %></th>
+														<th width="180px"><%=lang.getString("Action", null, "") %></th>
 													</tr>
 													<%
 													if (enrolledStreamUnits.size() > 0) {
@@ -951,7 +946,7 @@ try {
 														for(int i = 0; i < enrolledStreamUnits.size(); i++) {
 															EnrolledStreamUnits enrolledStreamUnit = enrolledStreamUnits.get(i);
 															/* String code = enrolledStreamUnit.getCourseName(); */
-															String name = enrolledStreamUnit.getStreamName();
+															String name = enrolledStreamUnit.getCourseName();
 															String status = enrolledStreamUnit.getStatus();
 															String start = enrolledStreamUnit.getStartDate();
 															String end = enrolledStreamUnit.getEndDate();
@@ -991,6 +986,7 @@ try {
 																		<span class="body-text"><%=lang.getString("View Marks and Grades", null, "") %></span></a>
 																</span>
 															</td>
+												
 														<%
 														}
 														%>
@@ -1006,31 +1002,12 @@ try {
 													<%
 													}
 													%>
-													
-													
-													
-												</table>
+													</table>
 												</div>
-												<br/>
-												<div id="bookings-navi"></div>
-										    </td>
-										</tr>
-										<tr>
-											<td height="10"></td>
-										</tr>
-										<tr class="line-separator">
-											<td></td>
-										</tr>
-									</table>
-									
-								</td>
-							</tr>
-							<tr><td>&nbsp;</td></tr>
-						</table>
-					</form>
-			</td>
-		</tr>
-	</table>
+													<div id="bookings-navi"></div>
+													
+												<div class="line-separator" style="margin-top:30px"></div>
+												
 </div>
 
 <%
@@ -1310,7 +1287,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

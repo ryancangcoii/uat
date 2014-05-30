@@ -263,18 +263,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -311,7 +311,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -921,10 +921,11 @@ try {
 <div class="bc-container portal-ribbon">
 <div class="ribbon-wrap left-edge fork lblue"><span>myOnlineBookings</span></div>
 <br><br><br>
+<form id="reEnrolment" name="reEnrolment" method="post">
 <table width="100%">
 	<tr>
 		<td>
-				<form id="reEnrolment" name="reEnrolment" method="post">
+				
 				<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
 				<input type="hidden" name="op" id="op" value="<%=snippetVar_myDetailsOp%>"/>
 				<input type="hidden" name="alternate" id="alternate" value="<%=h.getAlternate() %>"/>
@@ -937,34 +938,21 @@ try {
 						<tr>
 							<td class="heading" align="left" width="800px" style="padding-left:10px;">
 							<span class="color-regular"><%=h.getFullName() %></span>
-							<p class="table-heading color-regular" style="float: right;position: relative;">
-								<img  src="/ttsvr/skypepi/images/pdf.png" width="20" style="position: absolute;left: -17; top: -5;">&nbsp;
-					    	<% 
-								if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
-								{
-								%>
-									<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_tw.pdf" target="_blank">
-										<%=lang.getString("Download the easy step guide", null, "") %>
-									</a>
-								<%
-								} else {			
-								%>
-									<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_en.pdf" target="_blank">
-										<%=lang.getString("Download the easy step guide", null, "") %>    
-									</a>
-								<%
-								}
-								%>
-							&nbsp;&nbsp;&nbsp;</p>
+							
 							</td>
 						</tr>
-						<tr>
-							<td>
+						</table>
+						
+						</td>
+						</tr>
+						</table>
+						
+								
 								<div style="display: none;padding-bottom: 5px;padding-top: 5px;" id="divErrorMessage"><img src="/ttsvr/skypepi/images/icon_error.png" title="error" /> <span class="body-text color-red" style="line-height: 20px;vertical-align: top;"><%=lang.getString("No stream(s) selected", null, "") %>.</span></div>
-								<span id="enrolment-container">
 								<%--Table Start --%>
+								<span id="enrolment-container">
 									    	 <div class="table-responsive portalTable" style="border-bottom: none;">
-												<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered" style="margin-bottom: 0px; " id="table-reenrolment">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table" style="margin-bottom: 0px; " id="table-reenrolment">
 																<thead>
 																	<tr>
 																		<th width="100%" align="left" colspan="7">Available Classes</th>
@@ -1047,7 +1035,7 @@ try {
 																		Start - End Time: <%=sessionTimes %> <br>
 																		Session Days: <%=sessionTimes %>
 																		<br/>
-																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %> %>">View Timetable</a>
+																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %>">View Timetable</a>
 																	</td>
 																	<td rowspan="2" class="right"><%=fee %></td>
 																	<td rowspan="2" class="right"><%=discount %></td>
@@ -1063,13 +1051,10 @@ try {
 																%>
 															</table>
 											</div>
-											<%--
-											<br>
-											<div id="reenrolment-navi"></div>  --%>
 									    	 <%--Table End --%>
-								</span>
-							</td>
-						</tr>
+									 
+										</span>
+						<table width="100%">
 						<tr><td>&nbsp;</td></tr>
 						<tr>
 							<td align="right">
@@ -1079,7 +1064,7 @@ try {
 											
 										</td>
 										<td valign="top" align="right" width="320">
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Next", null, "") %>" id="btnNext" name="btnNext"/>
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Next", null, "") %>" id="btnNext" name="btnNext" style="float:right"/>
 											<br><br><br>
 										</td>
 									</tr>
@@ -1087,10 +1072,7 @@ try {
 							</td>
 						</tr>
 					</table>
-				</form>
-		</td>
-	</tr>
-</table>
+			</form>
 </div>
 
 <%
@@ -1411,7 +1393,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

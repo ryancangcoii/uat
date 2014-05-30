@@ -296,18 +296,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -344,7 +344,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -550,18 +550,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -598,7 +598,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -820,18 +820,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -868,7 +868,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -1057,9 +1057,21 @@ try {
 <a href='/ttsvr/n/home/skypepi-67'><span>home</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myDetails/skypepi-68'><span>myDetails</span></a>
-</li><li class="">
+</li><li class=" has-sub">
 <a href='/ttsvr/n/myCurrentEnrollment/skypepi-69'><span>myCurrentEnrollment</span></a>
+<ul><li class=" has-sub">
+<a href='/ttsvr/n/Views/skypepi-77'><span>Views</span></a>
+<ul><li class=" has-sub">
+<a href='/ttsvr/n/View-Receipt/skypepi-76'><span>View Receipt</span></a>
+<ul><li class="">
+<a href='/ttsvr/n/Receipt-Preview/skypepi-92'><span>Receipt Preview</span></a>
+</li></ul></li><li class="">
+<a href='/ttsvr/n/View-Certificate/skypepi-80'><span>View Certificate</span></a>
 </li><li class="">
+<a href='/ttsvr/n/View-TimeTable/skypepi-81'><span>View TimeTable</span></a>
+</li><li class="">
+<a href='/ttsvr/n/View-Attendance-Record/skypepi-82'><span>View Attendance Record</span></a>
+</li></ul></li></ul></li><li class="">
 <a href='/ttsvr/n/myProgressions/skypepi-70'><span>myProgressions</span></a>
 </li><li class=" has-sub">
 <% if (h.isHasForum()) { %>
@@ -1130,7 +1142,7 @@ try {
 </style>
   
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>marksAndGrades</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span>certificate</span></div>
 <br><br><br>
 
 	<input type="hidden" value="<%=request.getParameter("enrolmentID") %>" id="enrolmentID"/>
@@ -1150,8 +1162,8 @@ try {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="Back" />
 									</a>
-									<a  href="https://reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Certification&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
-										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Marks & Grades", null, "") %>" />
+									<a  href="http://rpt.skysoftware.com/ReportServer_SQL2008?/PEPiTAFE/Quick%20Link%20Reports/Certificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
+										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
 									</a>
 									
 									</td>
@@ -1161,7 +1173,7 @@ try {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<iframe src="https://ReportUser:Report5User@reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Certification&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 860px; width: 100%; border: none;"></iframe>
+						<iframe src="http://ReportUser:Report5User@rpt.skysoftware.com/ReportServer_SQL2008?/PEPiTAFE/Quick%20Link%20Reports/Certificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
 							
 						</td>
 					</tr>
@@ -1204,7 +1216,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
   <td  align='center' valign='middle'><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgressions</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myForum/skypepi-71" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
   <td  align='center' valign='middle'><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBookings</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
@@ -1504,7 +1516,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

@@ -244,18 +244,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -292,7 +292,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -567,7 +567,7 @@ try {
 </style>
   
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>marksAndGrades</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span>certificate</span></div>
 <br><br><br>
 
 	<input type="hidden" value="<%=request.getParameter("enrolmentID") %>" id="enrolmentID"/>
@@ -587,8 +587,8 @@ try {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="Back" />
 									</a>
-									<a  href="https://reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Certification&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
-										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Marks & Grades", null, "") %>" />
+									<a  href="http://rpt.skysoftware.com/ReportServer_SQL2008?/PEPiTAFE/Quick%20Link%20Reports/Certificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
+										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
 									</a>
 									
 									</td>
@@ -598,7 +598,7 @@ try {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<iframe src="https://ReportUser:Report5User@reports.skysoftware.com/ReportServer_SQL2008?/UAT/Custom%20UAT%20Reports/Certification&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 860px; width: 100%; border: none;"></iframe>
+						<iframe src="http://ReportUser:Report5User@rpt.skysoftware.com/ReportServer_SQL2008?/PEPiTAFE/Quick%20Link%20Reports/Certificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
 							
 						</td>
 					</tr>
@@ -877,7 +877,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

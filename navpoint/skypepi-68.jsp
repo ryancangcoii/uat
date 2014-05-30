@@ -51,15 +51,6 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_35", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_48 = null;
-try {
-	Properties productionHelper_skypepi_zones_portal_z_header_48Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_48 = new tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper(productionHelper_skypepi_zones_portal_z_header_48Params);
-	productionHelper_skypepi_zones_portal_z_header_48.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_48", e);
-}
-
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_37Params = new Properties();
@@ -108,6 +99,22 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_50", e);
 }
 
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_51Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/myDetails/skypepi-68");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("viewOption", "Student Dashboard Link");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_51 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_51Params);
+	productionHelper_skypepi_zones_portal_z_header_51.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_51", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_myDetails_10 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_btstrap_myDetails_10Params = new Properties();
@@ -131,8 +138,10 @@ try {
 %>
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
@@ -158,6 +167,9 @@ try {
 
 <style type='text/css'>
 /* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -222,7 +234,7 @@ try {
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='left' valign='middle'>
  <tr>
-  <td  class='magic2' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_35;
@@ -341,18 +353,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -389,7 +401,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -595,18 +607,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -643,7 +655,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -796,14 +808,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
  <tr>
-  <td  height='75' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+  <td  class='magic2' height='75' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
+<a href="/ttsvr/n/home/skypepi-67">
+	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
+</a>
 </td>
-  <td  align='right'><%-- Widget skypepi.zones.portal_z_header@50 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
+  <td  class='magic2' align='right'><%-- Widget skypepi.zones.portal_z_header@50 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_50;
@@ -864,18 +878,18 @@ try {
 		<%
 			if (isParent) {
 		%>
-		
-		<!-- Parent -->
-		<div style="position: relative;">
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
 		<table>
 			<tr>
-				<td align="right">
-					<table border="0" cellpadding="0" cellspacing="0">
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
 										id="logout-childId">
@@ -912,7 +926,7 @@ try {
 									%>
 							<% } else { %>
 								<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-white">
+									<td style="padding-right:6px;" align="right" class="color-white">
 										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
 									</td>	
 									<td><select class="hyjack" style="width: 150px;"
@@ -1074,71 +1088,21 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/ttsvr/MISSING_LINK/skypepi-94"></a>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a><span></span></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/MISSING_LINK/skypepi-94">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
       </div>
     </div>
   </nav></td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
-  <td  class='magic' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header@48 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_48;
-	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/myDetails/skypepi-68";
-	String snippetVar_widgetName = "@48";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@48";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
-<%
-	LanguageSelectorProductionHelper h = (LanguageSelectorProductionHelper) helper;
-	String languageSelectorGUI = h.getLanguageSelectorGUI();
-	
-// 	String params = "";
-// 	for (String param: request.getParameterMap().keySet()) {
-// 		params += (params.length() == 0) ? "" : "&";
-// 		params += param + "=" + request.getParameter(param);
-// 	}
-	
-%>
-<form id="form-languageSelector" method="post" action="<%=snippetVar_navpointId%>" style="height: 24px;margin: 0px; padding: 0px;">
-	<input type="hidden" name="op" value="<%=snippetVar_languageSelectorOp%>"/>
-	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
-	<%=languageSelectorGUI %>
-</form>
-<script>
-
-var LanguageSelector = function() {
-	return {
-		changeLanguage: function(languageCode) {
-			var formLanguageSelector = $("#form-languageSelector");
-			formLanguageSelector.attr('action','<%=snippetVar_navpointId%>'+'?languageCode='+languageCode+'&enrolmentID=<%=request.getParameter("enrolmentID") %>');
-			formLanguageSelector.submit();
-		},
-
-		init: function() {
-		}
-	};
-}();
-
-</script>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@48 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget)", e);
-}
-%>
+  <td  class='magic' align='left' valign='middle'>
+<a href="/ttsvr/n/home/skypepi-67">
+	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
+</a>
 </td>
  </tr>
 </table>
@@ -1152,7 +1116,259 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
  <tr>
-  <td  height='15'></td>
+  <td  class='magic' width='100%' align='left' valign='middle'><%-- Widget skypepi.zones.portal_z_header@51 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_51;
+	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavPointId = "";
+	String snippetVar_authenticatePage = "Yes";
+	String snippetVar_navpointId = "/ttsvr/n/myDetails/skypepi-68";
+	String snippetVar_viewOption = "Student Dashboard Link";
+	String snippetVar_widgetName = "@51";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
+<%@page import="tooltwist.skypepi.bean.FetchPerson"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="com.dinaa.data.XNodes"%>
+<%@page import="org.w3c.dom.Element"%>
+
+<%
+	LogoutProductionHelper h = (LogoutProductionHelper) helper;
+	h = h.getCachedHelper();
+
+	AltLang lang = h.getAltLang();
+
+	boolean isLoggedIn = h.isLoggedIn();
+	boolean isParent = h.isParent();
+%>
+
+<%
+	if (isLoggedIn) {
+		FetchPerson fetchPerson = h.getFetchPerson();
+		String fullName = "";
+		String childId = h.getChildId();
+		if (fetchPerson instanceof FetchPerson) {
+			fullName = fetchPerson.getFullName(lang.getCurrentLangCode());
+		}
+%>
+
+<form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
+	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
+	<input type="hidden" id="homeNavId" name="homeNavId" value="<%=snippetVar_homeNavId%>"/>
+	<input type="hidden" id="studentDashBoardNavId" name="studentDashBoardNavId" value="<%=snippetVar_studentDashBoardNavId%>"/>
+
+	<%
+	if (snippetVar_viewOption.equals("Name")) {
+	%>
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
+	<%
+	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
+	%>
+		<%
+			if (isParent) {
+		%>
+			
+			<!-- Parent -->
+		<div style="position: relative;width:100%;" class="drop-selection-color">
+		<table>
+			<tr>
+				<td align="left">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+						<tr>
+							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
+							<% if (isParent) { %>
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+										<span class="magic2">If you have more than one student studying with us, please select here</span>
+									</td>	
+									<td><select class="hyjack" style="width: 150px;"
+										id="logout-childId">
+											<%
+												XData childData = h.getChildData();
+		
+												XNodes childs = childData.getNodes("//Child");
+
+												for (childs.first(); childs.next();) {
+													Element child = (Element) childs.getCurrentNode();
+													String firstName = child.getAttribute("FirstName");
+													String lastName = child.getAttribute("Surname");
+													String altFirstName = child.getAttribute("AltFirstName");
+													String altLastName = child.getAttribute("AltSurname");
+													String childID = child.getAttribute("ChildID");
+
+													String selected = "";
+													if (childID.equals(childId)) {
+														selected = "selected='selected'";
+													}
+													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
+												%>
+															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+												<% } else {%>
+															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+												<% } %>
+		
+											<%
+												}
+											%>
+									</select></td>
+									<%
+										}
+									%>
+							<% } else { %>
+								<% if (isParent) { %>
+									<td style="padding-right:6px;" align="right" class="color-white">
+										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
+									</td>	
+									<td><select class="hyjack" style="width: 150px;"
+										id="logout-childId">
+											<%
+												XData childData = h.getChildData();
+		
+												XNodes childs = childData.getNodes("//Child");
+
+												for (childs.first(); childs.next();) {
+													Element child = (Element) childs.getCurrentNode();
+													String firstName = child.getAttribute("FirstName");
+													String lastName = child.getAttribute("Surname");
+													String altFirstName = child.getAttribute("AltFirstName");
+													String altLastName = child.getAttribute("AltSurname");
+													String childID = child.getAttribute("ChildID");
+
+													String selected = "";
+													if (childID.equals(childId)) {
+														selected = "selected='selected'";
+													}
+													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
+												%>
+															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+												<% } else {%>
+															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+												<% } %>
+		
+											<%
+												}
+											%>
+									</select></td>
+									<%
+										}
+									%>
+							<% } %>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+<% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
+<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
+<% } %>
+</div>
+		<!-- Parent -->
+		<%
+			}
+		%>
+	<%
+	} else {
+	%>
+		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
+	<%
+		}
+	%> 
+	</form>
+<%
+ 	}
+ %>
+ 
+ <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
+
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function() {
+
+				var childId = $("#logout-childId").val();
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/ttsvr/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				$('.hyjack').hyjack_select();
+				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>");
+				$(".stud-caption").click(function() {
+					//$(".hjsel_container").trigger("click");
+					//alert("click");
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").show();
+					}, 50);
+				});
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@51 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
+}
+%>
+</td>
  </tr>
 </table>
 </td>
@@ -1257,7 +1473,7 @@ try {
 		<div>
 			<!--  --><table width="100%">
 				<tr>
-					<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %>)</span></td>
+					<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %></span></td>
 					<td width="" align="right">
 					</td>
 				</tr>
@@ -1639,24 +1855,30 @@ try {
 				</tr>
 				<tr id="newAddressEntry" style="display: none;">
 					<td colspan="4" class="">
-						<table width="100%">
-							<tr>
-								<td width="150px"><label class="control-label"><%=lang.getString("Address Line 1", null, "") %>: </label></td>
-								<td>
-									<input  id="line1New" name="line1New" class="form-control" type="text" autocomplete="off"/>
-								</td>	
-							</tr>
-							<tr>
-								<td class=" lbl-address"><label class="control-label"><%=lang.getString("Address Line 2", null, "") %>: </label></td>
-								<td>
-									<input  id="line2New" name="line2New" class="form-control" type="text" autocomplete="off"/>
-								</td>	
-								
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Country", null, "") %>: </label></td>
-								<td>
-									<div>
+						<div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Address Line 1", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            <input  id="line1New" name="line1New" class="form-control" type="text" autocomplete="off"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Address Line 2", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            <input  id="line2New" name="line2New" class="form-control" type="text" autocomplete="off"/>
+                            </div>
+                        </div>
+                        
+                         <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Country", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            
 												<%  country = h.getCountryOptions(); 
 													cid = "value=\"202\"";
 													option = country.replace(cid, cid + " selected=\"selected\"");
@@ -1664,30 +1886,34 @@ try {
 										<select id="countryNew"  class="form-control" style="width: 280px">
 											<%=option %>														
 										</select>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label></td>
-								<td colspan="2">
-									<input  id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off"/>
-								</td>
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Address Type", null, "") %>: </label></td>
-								<td colspan="2">
-									<select id="addressTypeNew" style="width: 280px;" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+                            <input  id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off"/>
+                            </div>
+                        </div>
+                        
+                         <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Address Type", null, "") %>: </label>
+                            </div>
+                            <div class="col-md-8">
+							<select id="addressTypeNew" style="width: 280px;" class="form-control">
 										<option>Home</option>
 										<option>Office</option>
 										<option>Postal</option>
 										<option>Others</option>
-									</select>
-								</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>
-									<input type="hidden" id="hd-address" value="<%=lang.getString("Address", null, "") %>"/>
+									</select>                            
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top:10px">
+                        <input type="hidden" id="hd-address" value="<%=lang.getString("Address", null, "") %>"/>
 									<input type="hidden" id="hd-primary" value="<%=lang.getString("Primary", null, "") %>"/>
 									<input type="hidden" id="hd-action" value="<%=lang.getString("Action", null, "") %>"/>
 									<input type="hidden" id="hd-country" value="<%=lang.getString("Country", null, "") %>"/>
@@ -1699,10 +1925,8 @@ try {
 									 <div align="right">
 									 	<input onclick="javascript:MyDetails.saveNewAddress();" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
 									 	<input onclick="javascript:MyDetails.addNewAddress();" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue buttonSmall"/>
-									 </div>
-								</td>
-							</tr>
-						</table>
+                        </div>
+
 					</td>
 				</tr>
 				
@@ -1822,37 +2046,33 @@ try {
 						</table></td>
 				</tr>
 				<tr id="newPhoneNumberEntry" style="display: none;">
-					<td colspan="4" class="btnContainer"> 
-						<table width="60%">
-							<tr>
-								<td width="150"><label class="control-label"><%=lang.getString("Number", null, "") %>:</label></td>
-								<td>
-									<div class="">
-										<input  id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class=""><label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label></td>
-								<td>
-									<div>
-										<select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
+					<td colspan="4" class="btnContainer" style="padding:0 2%"> 
+						<div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Number", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            	<input  id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            <select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
 											<option value="Home"><%=lang.getString("Home", null, "") %></option>
 											<option value="Office"><%=lang.getString("Office", null, "") %></option>
 											<option value="Mobile"><%=lang.getString("Mobile", null, "") %></option>
 										</select>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<div align="right">
+                            </div>
+                        </div>
+                        
+                         <div align="right" style="margin:10px 0px">
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewPhoneNumber();"/>
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewPhoneNumber();"/>
 									</div>
-								</td>
-							</tr>
-						</table>
 					</td>
 				</tr>
 			</table>
@@ -1967,35 +2187,36 @@ try {
 				</tr>
 				<tr id="newEmailAddressEntry" style="display: none;">
 					<td colspan="4" class="btnContainer">
-						<table width="60%">
+						<table width="100%">
 							<tr>
-								<td height="5"></td>
-							</tr>
-							<tr>
-								<td class="control-label" valign="top" width="150"><%=lang.getString("Email", null, "") %>:</td>
-								<td valign="top">
-									<div class="">
-										<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value=""/>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="control-label"><%=lang.getString("Email Type", null, "") %></td>
-								<td>
-									<select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
+								<td height="">
+								  <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Email", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            	<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value=""/>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                        	<div class="col-md-4">
+                            <label class="control-label"><%=lang.getString("Email Type", null, "") %>:</label>
+                            </div>
+                            <div class="col-md-8">
+                            <select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
 										<option>Personal</option>
 										<option>Office</option>
 										<option>Temporary</option>
 										<option>Other</option>
 									</select>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<div align="right">
+                            </div>
+                        </div>
+                        
+                         <div align="right" style="margin-top:10px;">
 										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewEmailAddress();"/>
 										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewEmailAddress();"/>
-									</div>
+						</div>
 								</td>
 							</tr>
 						</table>
@@ -2157,27 +2378,32 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  height='20' align='left' valign='top'></td>
  </tr>
  <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='left' valign='top'>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></td>
-  <td  width='10'></td>
-  <td  align='left' valign='top'><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></td>
-  <td  width='10'></td>
-  <td  align='left' valign='top'><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></td>
-  <td  width='10'></td>
-  <td  align='left' valign='top'><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></td>
-  <td  width='10'></td>
-  <td  align='left' valign='top'><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
-  <td  width='10'></td>
-  <td ><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='underline';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBookings</a></td>
-  <td  width='10'></td>
-  <td ><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='underline';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></td>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
+<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
+</div>
+<div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
+</div>
+</td>
  </tr>
 </table>
 </td>
  </tr>
  <tr>
-  <td  height='20'></td>
+  <td  height='20'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'></td>
+  <td ></td>
+  <td ></td>
+  <td ></td>
+ </tr>
+</table>
+</td>
  </tr>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-2"><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
@@ -2259,7 +2485,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.2 Build 20140402</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.1 Build 20140317</p></span></td>
  </tr>
  <tr>
   <td ></td>
@@ -2451,7 +2677,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 			setTimeout(function(){
 				jQuery('#div_changepassword').modal({
 					closeHTML: "",
-					minHeight: 400,
+					minHeight: 420,
 					minWidth: 442,
 					position: ["20%",],
 					overlayId: 'process-overlay',
@@ -3436,7 +3662,7 @@ var Progress = function() {
 			setTimeout(function(){
 				jQuery('#div_message').modal({
 					closeHTML: "",
-					minHeight: 200,
+					minHeight: 220,
 					position: ["20%",],
 					overlayId: 'process-overlays',
 					containerId: 'process-containers', 

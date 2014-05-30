@@ -55,8 +55,10 @@ try {
 %>
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />

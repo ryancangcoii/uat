@@ -1,0 +1,68 @@
+/*Header*/
+
+form {margin-bottom: 0px;}
+
+
+.blackheader {
+	background-color:000000;
+}
+
+
+.header_gradient {
+	background-image:url('/ttsvr/cropImage/skypepi.images.header_repeat.png?now=1312524185042');
+        background-repeat:repeat-x;
+}
+
+
+.header_menu {
+	background-color:7b7b7b;
+}
+
+
+
+/*Body*/
+
+
+.needhelp_bg {
+	background-image:url('/ttsvr/cropImage/skypepi.images.needhelp_banner.png?now=1312525574903');
+        background-repeat:no-repeat;
+        height: 189px;
+        width: 320px;
+}
+
+
+.needhelp_text {
+        color: 666666;
+	font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: regular;       
+}
+
+
+.needhelp_title {
+        color: 1575b0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: bold;       
+}
+
+
+/*Footer*/
+
+
+
+.footer {
+	background-image:url('/ttsvr/cropImage/skypepi.images.footer_repeat.png?now=1312525231829');
+        background-repeat:repeat-x;
+}
+
+
+.footer_text {
+        color: ffffff;
+	font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: regular;  
+}

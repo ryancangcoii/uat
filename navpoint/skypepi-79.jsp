@@ -1093,7 +1093,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/MISSING_LINK/skypepi-94">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
       </div>
     </div>
   </nav></td>
@@ -1380,7 +1380,7 @@ try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_concludeAndConfirm_13;
 	String snippetVar_concludeAndConfirmOp = "skypepi.widgets.concludeAndConfirm.concludeAndConfirm";
 	String snippetVar_navpointId = "skypepi-89";
-	String snippetVar_cancelNavpointId = "skypepi-33";
+	String snippetVar_cancelNavpointId = "skypepi-72";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_concludeAndConfirm@13";
 	String snippetVar_elementId = "";

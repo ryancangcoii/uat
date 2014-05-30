@@ -34,12 +34,7 @@
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@page import="com.github.mustachejava.DefaultMustacheFactory"%>
-<%@page import="com.github.mustachejava.Mustache"%>
-<%@page import="com.github.mustachejava.MustacheFactory"%>
-<%@page import="java.io.StringReader"%>
-<%@page import="java.io.StringWriter"%>
-<%@page import="tooltwist.bootstrap.viewHelpers.CarouselViewHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.CodeOfConductProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
@@ -47,15 +42,16 @@
 <%
 	String jspName = "skypepi-74";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9 = null;
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13 = null;
 try {
-	Properties productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9Params.setProperty("navpointId", "skypepi-74");
-	productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9Params.setProperty("pageDataSection", "carousel");
-	productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9 = new tooltwist.bootstrap.viewHelpers.CarouselViewHelper(productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9Params);
-	productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9.callPreFetch(jh);
+	Properties productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params.setProperty("option", "text");
+	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params.setProperty("target", "coc");
+	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params.setProperty("notAccNav", "skypepi-68");
+	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13 = new tooltwist.skypepi.productionHelpers.CodeOfConductProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params);
+	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapHome_Auth_9", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_35 = null;
@@ -179,10 +175,16 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}.banner img {
-	width: 940px;
-	margin-left: 10px;
-	margin-right: 10px;
+}/* Styles for widget codeOfConduct */
+
+.CodeOfConduct a, .CodeOfConduct a:VISITED {
+	color: black;
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -209,7 +211,6 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
-<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -1099,7 +1100,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/MISSING_LINK/skypepi-94">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class="active"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a><span></span></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
       </div>
     </div>
   </nav></td>
@@ -1380,28 +1381,152 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
-<div class='DivWidget page-content' style=""><div class="container">
-<div id="carousel-example-generic" class="carousel slide">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-  </ol>
+<div class='DivWidget page-content' style=""><div class='DivWidget standard-width' style=""><%-- Widget skypepi.pages.portal_p_btstrap_codeOfConducts@13 (type=tooltwist.skypepi.widgets.CodeOfConductWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13;
+	String snippetVar_notAccNav = "skypepi-68";
+	String snippetVar_option = "text";
+	String snippetVar_target = "coc";
+	String snippetVar_widgetName = "@13";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_codeOfConducts@13";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-          
-   
-  </div>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.CodeOfConductProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
+<%
+	// Get the production helper for this widget
+	CodeOfConductProductionHelper h = (CodeOfConductProductionHelper) helper;
+	String languageCode = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.LANGUAGE, "");
+	String errorMessage = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.LOG_IN_ERROR_MESSAGE, "");
+	AltLang lang = h.getAltLang();
+%>
+<style>
+.portal-ribbon .left-edge.fork {
+	width: 200px;
+}
+.cocAccept td {
+	padding: 10px;
+}
+
+</style>
+<div class="bc-container portal-ribbon">
+<div class="ribbon-wrap left-edge fork lblue"><span>codeOfConduct</span></div>
+<br><br><br>
+
+<form id="frm-coc">
+	
+	<input type="hidden" name="notAccNav" value="<%=snippetVar_notAccNav%>"/>
+	<a href="" target="_blank" id="forum-link" style="display: none;"></a>
+	
+	<%-- if (snippetVar_option.equals("text")) { --%>
+	<div id="oReportCell" >
+		<div style="padding: 0px;" align="center">
+		<br/><br/>
+		<img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+	</div>
+	</div>
+	
+	<script>
+	jQuery.ajax({
+        url: "",
+        data: {
+     	   op : "skypepi_widgets.codeOfConduct.processCOC",
+     	   subop: "generateReport",
+     	   format: "html",
+     	   lang: "<%=languageCode %>"
+        },
+        success: function(data) {     	   
+     	   jQuery(data).find("img").each(function(idx, obj) {
+     		   var imgSrc = "";
+     		   imgSrc = jQuery(obj).attr("src");
+     		   console.log("imgSrc", imgSrc);
+     		   data = data.replace(imgSrc, "?&op=skypepi_widgets.paymentReceipt.paymentReceipts&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc) + "\" height=\"39\" width=\"96\"");
+     		  jQuery(".cocAccept").show();
+     	   });
+     	   
+     	   jQuery("#oReportCell").html(data);
+     	   
+     	  jQuery("#oReportCell td[style^='HEIGHT:267']").css("height","0px");
+  			jQuery("#oReportCell div.a50").css("height","800px");	
+  			jQuery(".cocAccept").show();
+  		
+        },
+        error: function() {
+     	   
+        }
+    });
+	</script>
+	
+	<%-- } --%>
+	<%-- if (snippetVar_option.equals("radio")) { --%>
+	<div class="cocAccept" style="display: none;color: black;">
+	
+	<table>
+		<%--
+			if (DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(languageCode)) {
+		--%>
+			<tr>
+				<td>
+					<input type="radio" id="rdo-pdf" name="rdo-codeOfConduct" value="pdf"/>
+					<a href="?op=skypepi_widgets.codeOfConduct.processCOC&subop=generateReport&lang=<%=languageCode %>" target="_blank" id="anchor-download" style="display: none;"></a>
+				</td>
+				<td><label for="rdo-pdf">Click here to print a copy of this document for your own reference.</label></td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="rdo-yes" name="rdo-codeOfConduct" value="yes"/></td>
+				<td><label for="rdo-yes">I agree and accept the above terms and conditions of use stated above.</label></td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="rdo-no" name="rdo-codeOfConduct" value="no"/></td>
+				<td><label for="rdo-no">I do not agree or accept the above terms and conditions of use stated above.</label></td>
+			</tr>
+			
+		<%--
+			
+		
+			<tr>
+				<td>
+					<input type="radio" id="rdo-pdf" name="rdo-codeOfConduct" value="pdf"/>
+					<a href="?op=skypepi_widgets.codeOfConduct.processCOC&subop=generateReport&lang=<%=languageCode %>" target="_blank" id="anchor-download" style="display: none;"></a>
+				</td>
+				<td><label for="rdo-pdf"><%=lang.getString("Click here to print", null, "")%></label></td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="rdo-yes" name="rdo-codeOfConduct" value="yes"/></td>
+				<td><label for="rdo-yes"><%=lang.getString("I agree", null, "")%></label></td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="rdo-no" name="rdo-codeOfConduct" value="no"/></td>
+				<td><label for="rdo-no"><%=lang.getString("I do not agree", null, "")%></label></td>
+			</tr>
+		<%
+				
+		%>--%>
+	</table>
+	</div>
+	<%-- } --%>
+	
+</form>
 </div>
-</div></div>
-<div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_codeOfConducts@13 (type=tooltwist.skypepi.widgets.CodeOfConductWidget)", e);
+}
+%>
+</div>
+</div>
+<div class='DivWidget float-footer' style=""><div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
@@ -1666,6 +1791,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  </tr>
 </table>
 </div>
+</div>
 
 
 <!--
@@ -1688,6 +1814,48 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
   <script type="text/javascript">
+var CodeOfConduct = function() {
+	return {
+		myVariable: null,
+
+		init: function() {
+			
+			jQuery("input:radio[name=rdo-codeOfConduct]").click(function() {
+				var value = $(this).val();
+				var params = jQuery("#frm-coc").serialize();
+				Progress.showProgress();
+				if (value == "pdf") {
+					jQuery("#anchor-download")[0].click();
+					//window.location.href = "";
+				} else {
+					
+					jQuery.ajax({
+						url: "?op=skypepi_widgets.codeOfConduct.processCOC&" + params,
+						async: false,
+						data: {
+							value:	value
+						},
+						success: function(data) {
+							
+						}
+					});
+					
+					if (value == 'yes')
+						jQuery("#forum-link")[0].trigger("click");
+				}
+				});
+
+		},
+		
+		myMethod: function() {
+			alert("CodeOfConduct.myMethod()");
+		}
+		// no comma after last method
+	};
+}();
+
+jQuery(CodeOfConduct.init()); // Run after page loads</script>
+<script type="text/javascript">
 var Progress = function() {
 	return {
 		myVariable: null,

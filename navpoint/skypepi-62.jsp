@@ -983,7 +983,7 @@ try {
 																<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																<span class="regular-link-underline-light-blue">
 																	<a href="javascript:Progress.showProgress();window.location.href = '<%=("".equals(paymentId) ? "" : snippetVar_previewMarksGradesNavpoint + "?enrolmentID=" + enrolmentId) %>'" >
-																		<span class="body-text"><%=lang.getString("View Marks and Grades", null, "") %></span></a>
+																		<span class="body-text"><%=lang.getString("View Certificate", null, "") %></span></a>
 																</span>
 															</td>
 												

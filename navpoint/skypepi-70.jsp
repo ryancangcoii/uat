@@ -1094,7 +1094,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class="active"><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a><span></span></li><li class=""><a href="/ttsvr/MISSING_LINK/skypepi-94">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class="active"><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a><span></span></li><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
       </div>
     </div>
   </nav></td>
@@ -1485,7 +1485,7 @@ try {
 																<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																<span class="regular-link-underline-light-blue">
 																	<a href="javascript:Progress.showProgress();window.location.href = '<%=("".equals(paymentId) ? "" : snippetVar_previewMarksGradesNavpoint + "?enrolmentID=" + enrolmentId) %>'" >
-																		<span class="body-text"><%=lang.getString("View Marks and Grades", null, "") %></span></a>
+																		<span class="body-text"><%=lang.getString("View Certificate", null, "") %></span></a>
 																</span>
 															</td>
 												

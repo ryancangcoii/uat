@@ -1640,7 +1640,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.1 Build 20140317</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.1 Build 20140602</p></span></td>
  </tr>
  <tr>
   <td ></td>

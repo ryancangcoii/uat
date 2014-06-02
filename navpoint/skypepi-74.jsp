@@ -167,7 +167,7 @@ try {
 
 <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
-
+<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
 <style type='text/css'>
 /* Styles for widget simpleDiv */
 
@@ -1426,7 +1426,7 @@ try {
 
 <form id="frm-coc">
 	
-	<input type="hidden" name="notAccNav" value="<%=snippetVar_notAccNav%>"/>
+	<input type="hidden" id="notAccNav" name="notAccNav" value="<%=snippetVar_notAccNav%>"/>
 	<a href="" target="_blank" id="forum-link" style="display: none;"></a>
 	
 	<%-- if (snippetVar_option.equals("text")) { --%>
@@ -1840,8 +1840,10 @@ var CodeOfConduct = function() {
 						}
 					});
 					
-					if (value == 'yes')
-						jQuery("#forum-link")[0].trigger("click");
+					if (value == 'yes') {
+						jQuery("#forum-link").trigger("click");
+						//window.location.href= jQuery("#notAccNav").val(); 
+					}
 				}
 				});
 

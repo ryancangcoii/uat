@@ -120,7 +120,6 @@ try {
 <% } %>
 <title>SkyPortal - Student Dashboard</title>
 	<script src="/ttsvr/tooltwist/frameworks/jquery-1.4.3/jquery-1.4.3.min.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.skypepi_css.css" media="screen" />
 
@@ -959,7 +958,7 @@ try {
 	width: 130px;
 }
 </style>
-  
+
 <div class="bc-container portal-ribbon">
 	<div class="ribbon-wrap left-edge fork lblue"><span>myDetails</span></div>
 	
@@ -1130,8 +1129,9 @@ try {
 														<input  id="accountName" name="accountName" class="form-control" type="text" autocomplete="off" value="<%=accountName %>"  readonly="readonly"/>
 												</div>
 												<div class="col-md-5 magic-push">
-														<a href="javascript:MyDetails.showChangePassword();"> <img class="v-align-middle" src="/ttsvr/skypepi/images/arrow-course-details.png">
-															<span class="regular-link-underline-light-blue"><%=lang.getString("Change Password", null, "") %></span></a>
+															<a href="#" id="lnk-ChangePassword">
+																<span class="regular-link-underline-light-blue"><%=lang.getString("Change Password", null, "") %></span>
+															</a>
 												</div>
 								</div>
 								
@@ -1801,7 +1801,7 @@ try {
 <input type="hidden" id="msg-pass5"  value="<%=lang.getString("Enter your current password.", null, "") %>"/>
 <input type="hidden" id="msg-pass6"  value="<%=lang.getString("Password must have at least 1 numeric character.", null, "") %>"/>
 <input type="hidden" id="msg-pass7"  value="<%=lang.getString("Password must have at least 1 capital alpha character", null, "") %>"/>
-
+<%--
 <div id='div_confirmdelete' class="simple_dialog">
 	<div class="form-heading"><h1><span><%=lang.getString("Confirmation Message", null, "") %></span></h1></div>
 	<div class='message control-label' style="margin: 5px; padding: 7px;font-size: 14px; font-weight: bold;" align="center">
@@ -1812,52 +1812,96 @@ try {
 		<input type="button" class="buttonBlue buttonSmall simplemodal-close" id="btnConfirmCancel" value="<%=lang.getString("Cancel", null, "") %>"/>
 	</div>
 </div>
+ --%>
+<!-- Modal -->
+  <div class="modal fade" id="div_confirmdelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"><span id="msgHeader"><%=lang.getString("Confirmation Message", null, "") %></span></h4>
+        </div>
+        <div class="modal-body">
+          <div id="confirm-message">Please confirm that you want to delete the Address.</div> 	
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <input type="button" class="btn btn-primary" value="<%=lang.getString("OK", null, "") %>" id="btnConfirmDelete"/>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
+
+<!-- Modal -->
+  <div class="modal fade" id="div_changepassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"><span id="msgHeader"><%=lang.getString("Change Password", null, "") %></span></h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-info" style="text-align: left;border-radius: 0px;">
+		     <span class="glyphicon glyphicon-ok"></span>&nbsp;Password must be 8 characters or longer. <br>
+		     <span class="glyphicon glyphicon-ok"></span>&nbsp;Password must contain atleast 1 numeric character. <br>
+		     <span class="glyphicon glyphicon-ok"></span>&nbsp;Password must contain atleast 1 Capital alpha character.
+		    </div>
+		   	<form id="frmChangePassword">
+				<table width="410" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="150" class="control-label"><%=lang.getString("Current Password", null, "") %>:</td>
+						<td>
+							<div class="">
+								<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="currentPassword" />
+							</div>
+						</td>
+					</tr>
+					<tr><td height="10"></td></tr>
+					<tr>
+						<td class="control-label"><%=lang.getString("New Password", null, "") %>:</td>
+						<td>
+							<div class="">
+								<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="newPassword" />
+							</div>
+						</td>
+					</tr>
+					<tr><td height="10"></td></tr>
+					<tr>
+						<td class="control-label"><%=lang.getString("Confirm Password", null, "") %>:</td>
+						<td>
+							<div class="">
+								<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="confirmPassword" />
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <input type="button" class="btn btn-primary" value="<%=lang.getString("Save Changes", null, "") %>" id="btnPassOk"/>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+<%--
 <div id='div_changepassword' class="simple_dialog bc-form" >
-	<div class="form-heading"><h1><span><%=lang.getString("Change Password", null, "") %></span></h1></div>
+	<div class="form-heading"><h1><span></span></h1></div>
 	<div class='message' style="margin: 5px; padding: 5px;" align="center">
 	<div class="alert alert-info" style="text-align: left;border-radius: 0px;">
      <span class="glyphicon glyphicon-ok"></span>&nbsp;Password must be 8 characters or longer. <br>
      <span class="glyphicon glyphicon-ok"></span>&nbsp;Password must contain atleast 1 numeric character. <br>
      <span class="glyphicon glyphicon-ok"></span>&nbsp;Password must contain atleast 1 Capital alpha character.
     </div>
-		<form id="frmChangePassword">
-			<table width="410" cellpadding="0" cellspacing="0">
-				<tr>
-					<td width="150" class="control-label"><%=lang.getString("Current Password", null, "") %>:</td>
-					<td>
-						<div class="">
-							<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="currentPassword" />
-						</div>
-					</td>
-				</tr>
-				<tr><td height="10"></td></tr>
-				<tr>
-					<td class="control-label"><%=lang.getString("New Password", null, "") %>:</td>
-					<td>
-						<div class="">
-							<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="newPassword" />
-						</div>
-					</td>
-				</tr>
-				<tr><td height="10"></td></tr>
-				<tr>
-					<td class="control-label"><%=lang.getString("Confirm Password", null, "") %>:</td>
-					<td>
-						<div class="">
-							<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="confirmPassword" />
-						</div>
-					</td>
-				</tr>
-			</table>
-		</form>
+		
 	</div>
 	<div class='buttons' style="width: 100%; text-align: right;">
-		<input type="button" class="buttonBlue buttonSmall " value="<%=lang.getString("OK", null, "") %>" id="btnPassOk"/>
+		
 		<input type="button" class="buttonBlue buttonSmall simplemodal-close" value="<%=lang.getString("Cancel", null, "") %>" id="btnPassCancel"/>
 	</div>
 </div>
-
+ --%>
 <script type="text/javascript">
 
 var defaultLangCode = "<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED %>";
@@ -1968,6 +2012,13 @@ try {
 	AltLang lang = h.getAltLang();
 
 %>
+<style>
+	.modal-title>  #msgHeader {
+	font-size: 18px !important;
+	font-weight: 500 !important;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	}
+</style>
 <div>
 	<form id="form-cn">
 	<input type="hidden" id="cn-first" value="<%=lang.getString("First", null, "") %>">
@@ -1988,17 +2039,34 @@ try {
 	</div>
 </div>
 
-
+<%--
 <div id='div_message' class="simple_dialog">
-	<div class="form-heading"><h1><span id="msgHeader"></span></h1></div>
+	<div class="form-heading"><h1><</h1></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<br/>
-		<b id="msgMessage"></b>
+		
 	</div>
 	<div class='buttons' style="width: 100%; text-align: right;position: absolute; right: 8px; bottom: 8px;">
 		<input class='no simplemodal-close buttonBlue buttonSmall' id="msgButtonClose" value="<%=lang.getString("OK", null, "") %>" style="text-align: center;"/>
 	</div>
 </div>
+ --%>
+<div class="modal fade" id="div_message">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><span id="msgHeader"></span></h4>
+      </div>
+      <div class="modal-body">
+        <p id="msgMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
@@ -2046,19 +2114,11 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 		},
 		
 		showChangePassword: function() {
-			
-			setTimeout(function(){
-				jQuery('#div_changepassword').modal({
-					closeHTML: "",
-					minHeight: 420,
-					minWidth: 442,
-					position: ["20%",],
-					overlayId: 'process-overlay',
-					containerId: 'process-container', 
-					close: false,
-					onShow: function (dialog) {
-					}
-				});
+			setTimeout(function() {
+				jQuery("#currentPassword").val("");
+				jQuery("#newPassword").val("");
+				jQuery("#confirmPassword").val("");
+				jQuery('#div_changepassword').modal();
 			}, 100);
 		},
 		
@@ -2067,7 +2127,6 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			var containNumbers = /\d/;
 			var containCapital = /[A-Z]/;
 			
-			
 			var self = this;
 			
 			var curPass = jQuery.trim(jQuery("#currentPassword").val());
@@ -2075,23 +2134,18 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			var conPass = jQuery.trim(jQuery("#confirmPassword").val());
 			
 			if(curPass == '') {
-				jQuery.modal.close();
 				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass5").val());
 			}
 			else if(newPass != conPass) {
-				jQuery.modal.close();
 				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass4").val());
 			}
 			else if(newPass.length < 8) {
-				jQuery.modal.close();
 				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass3").val());
 			}
 			else if(!newPass.match(containNumbers)) {
-				jQuery.modal.close();
 				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass6").val());
 			}
 			else if(!newPass.match(containCapital)) {
-				jQuery.modal.close();
 				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass7").val());
 			}
 			else {
@@ -2102,7 +2156,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 					cache: false,
 					success: function(data) {
 						if(data != curPass) {
-							jQuery.modal.close();
+							
 							Progress.alertMessage(self.changePasswordTitle, $("#msg-pass2").val());
 						}
 						else {
@@ -2129,12 +2183,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 				cache: false,
 				success: function(data) {
 					
-					jQuery("#msgButtonClose").unbind("click");
-					jQuery("#msgButtonClose").click(function() {
-						jQuery.modal.close();
-					});
-					jQuery("#msgButtonClose").removeAttr("onclick");
-					jQuery.modal.close();
+					jQuery(".close").trigger("click");
 					Progress.alertMessage(self.changePasswordTitle, $("#msg-pass1").val());
 				},
 				error: function() {
@@ -2186,10 +2235,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			if(!status) {
 				jQuery("#msgButtonClose").unbind("click");
 				jQuery("#msgButtonClose").click(function() {
-					jQuery.modal.close();
+					
 				});
 				jQuery("#msgButtonClose").removeAttr("onclick");
-				jQuery.modal.close();
+				
 				Progress.alertMessage("My Details", msg);
 				return status;
 			}
@@ -2213,7 +2262,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			
 			jQuery("#msgButtonClose").unbind("click");
 			jQuery("#msgButtonClose").click(function() {
-				jQuery.modal.close();
+				
 			});
 			
 			if(add == '') {
@@ -2276,7 +2325,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			
 			jQuery("#msgButtonClose").unbind("click");
 			jQuery("#msgButtonClose").click(function() {
-				jQuery.modal.close();
+				
 			});
 			
 			if(add == '') {
@@ -2420,7 +2469,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			if(msg != '') {
 				jQuery("#msgButtonClose").unbind("click");
 				jQuery("#msgButtonClose").click(function() {
-					jQuery.modal.close();
+					
 				});
 				Progress.alertMessage("My Details - Add Phone Number", msg);
 			}
@@ -2457,7 +2506,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			if(msg != '') {
 				jQuery("#msgButtonClose").unbind("click");
 				jQuery("#msgButtonClose").click(function() {
-					jQuery.modal.close();
+					
 				});
 				Progress.alertMessage("My Details - Edit Phone Number", msg);
 			}
@@ -2573,7 +2622,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			
 			jQuery("#msgButtonClose").unbind("click");
 			jQuery("#msgButtonClose").click(function() {
-				jQuery.modal.close();
+				
 			});
 			
 			if(email == '') {	
@@ -2663,7 +2712,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			
 			jQuery("#msgButtonClose").unbind("click");
 			jQuery("#msgButtonClose").click(function() {
-				jQuery.modal.close();
+				
 			});
 			
 			if(email == '') {
@@ -2808,13 +2857,17 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 			
 			var self = this;
 			
+			jQuery("#lnk-ChangePassword").click(function() {
+				self.showChangePassword();
+			});
+			
 			//loadData(10);
 			jQuery("#btnPassOk").click(function() {
 				self.validateAccount();
 			});
 			
 			jQuery("#msgButtonClose").click(function() {
-				jQuery.modal.close();
+				
 				self.showChangePassword();
 			});
 			
@@ -2822,10 +2875,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 				.click(function() {
 					
 					jQuery("#msgButtonClose").unbind("click").click(function() {
-						jQuery.modal.close();
+						
 						
 						jQuery("#msgButtonClose").unbind("click").click(function() {
-							jQuery.modal.close();
+							
 							self.showChangePassword();
 						});
 						
@@ -3026,22 +3079,15 @@ var Progress = function() {
 		},
 		
 		alertMessage: function(title, msg) {
-			
-			jQuery("#msgMessage").html("");
-			jQuery("#msgMessage").html(msg);
-			jQuery("#msgHeader").html("");
-			jQuery("#msgHeader").html(title);
+			console.log("title", title);
+			//jQuery("#msgMessage").html("");
+			jQuery("#div_message #msgMessage").html(msg);
+			//jQuery("#msgHeader").html("");
+			jQuery("#div_message #msgHeader").html(title);
 			
 			setTimeout(function(){
 				jQuery('#div_message').modal({
-					closeHTML: "",
-					minHeight: 220,
-					position: ["20%",],
-					overlayId: 'process-overlays',
-					containerId: 'process-containers', 
-					onShow: function (dialog) {
-						
-					}
+					keyboard: false
 				});
 			}, 500);
 

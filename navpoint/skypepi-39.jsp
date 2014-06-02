@@ -131,7 +131,6 @@ try {
 	padding-left: 15px;
 }
 </style>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.skypepi_css.css" media="screen" />
 <script src="/ttsvr/skypepi/scripts/jquery-input-masked.js" type="text/javascript"></script>
@@ -1602,6 +1601,13 @@ try {
 	AltLang lang = h.getAltLang();
 
 %>
+<style>
+	.modal-title>  #msgHeader {
+	font-size: 18px !important;
+	font-weight: 500 !important;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	}
+</style>
 <div>
 	<form id="form-cn">
 	<input type="hidden" id="cn-first" value="<%=lang.getString("First", null, "") %>">
@@ -1622,17 +1628,34 @@ try {
 	</div>
 </div>
 
-
+<%--
 <div id='div_message' class="simple_dialog">
-	<div class="form-heading"><h1><span id="msgHeader"></span></h1></div>
+	<div class="form-heading"><h1><</h1></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<br/>
-		<b id="msgMessage"></b>
+		
 	</div>
 	<div class='buttons' style="width: 100%; text-align: right;position: absolute; right: 8px; bottom: 8px;">
 		<input class='no simplemodal-close buttonBlue buttonSmall' id="msgButtonClose" value="<%=lang.getString("OK", null, "") %>" style="text-align: center;"/>
 	</div>
 </div>
+ --%>
+<div class="modal fade" id="div_message">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><span id="msgHeader"></span></h4>
+      </div>
+      <div class="modal-body">
+        <p id="msgMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
@@ -1725,22 +1748,15 @@ var Progress = function() {
 		},
 		
 		alertMessage: function(title, msg) {
-			
-			jQuery("#msgMessage").html("");
-			jQuery("#msgMessage").html(msg);
-			jQuery("#msgHeader").html("");
-			jQuery("#msgHeader").html(title);
+			console.log("title", title);
+			//jQuery("#msgMessage").html("");
+			jQuery("#div_message #msgMessage").html(msg);
+			//jQuery("#msgHeader").html("");
+			jQuery("#div_message #msgHeader").html(title);
 			
 			setTimeout(function(){
 				jQuery('#div_message').modal({
-					closeHTML: "",
-					minHeight: 220,
-					position: ["20%",],
-					overlayId: 'process-overlays',
-					containerId: 'process-containers', 
-					onShow: function (dialog) {
-						
-					}
+					keyboard: false
 				});
 			}, 500);
 

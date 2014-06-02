@@ -79,8 +79,8 @@ try {
     <!-- Respond.js proxy script on local server -->
 <!--     <script src="/path/to/respond.proxy.js"></script> -->
 
-<script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
+<!-- <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
+<!-- <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
 <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
 <script src="/ttsvr/skypepi/scripts/paging.js" type="text/javascript"></script>

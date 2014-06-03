@@ -1882,10 +1882,24 @@ var CodeOfConduct = function() {
 					
 					if (value == 'yes') {
 						//jQuery("#forum-link").trigger("click");
-						window.open(jQuery("#forum-link").attr("href"));
-						setTimeout(function() {
-							window.location.href= jQuery("#notAccNav").val();
-						},1000); 
+						var myForum = window.open(jQuery("#forum-link").attr("href"));
+						if (!myForum)
+						    Progress.alertMessage("System Message", "Please allow pop-up for this site.");
+						else {
+							myForum.onload = function() {
+						        setTimeout(function() {
+						            if (myForum.screenX === 0) {
+						            	Progress.alertMessage("System Message", "Please allow pop-up for this site.");
+						            } else {
+						            	setTimeout(function() {
+											window.location.href= jQuery("#notAccNav").val();
+										},1000); 
+						            	  
+						            }
+						        }, 0);
+						    };
+						    
+						}
 					}
 				}
 				});

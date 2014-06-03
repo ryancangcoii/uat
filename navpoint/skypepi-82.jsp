@@ -1695,13 +1695,30 @@ try {
 	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED %>">
 </form>
 </div>
+
+<%--
 <div id='div_loading' class="simple_dialog bc-form">
 	<div class="form-heading"><h1><span><%=lang.getString("Processing please wait", null, "") %>...</span></h1></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<br/><br/>
-		<img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+		
 	</div>
 </div>
+ --%>
+ 
+<div class="modal fade" id="div_loading">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><span>Processing please wait...</span></h4>
+      </div>
+      <div class="modal-body">
+        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <%--
 <div id='div_message' class="simple_dialog">

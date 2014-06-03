@@ -1882,6 +1882,7 @@ var CodeOfConduct = function() {
 					
 					if (value == 'yes') {
 						//jQuery("#forum-link").trigger("click");
+						window.open(jQuery("#forum-link").attr("href"));
 						setTimeout(function() {
 							window.location.href= jQuery("#notAccNav").val();
 						},1000); 

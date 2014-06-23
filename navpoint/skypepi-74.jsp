@@ -372,8 +372,9 @@ try {
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
 										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+										<select class="hyjack" style="width: 150px;" id="logout-childId">
+										<option  value="<%=h.getFetchPerson().getID()%>">Not Selected</option>
 											<%
 												XData childData = h.getChildData();
 		
@@ -626,8 +627,9 @@ try {
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
 										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+										<select class="hyjack" style="width: 150px;" id="logout-childId">
+										<option  value="<%=h.getFetchPerson().getID()%>">Not Selected</option>
 											<%
 												XData childData = h.getChildData();
 		
@@ -897,8 +899,9 @@ try {
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
 										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+										<select class="hyjack" style="width: 150px;" id="logout-childId">
+										<option  value="<%=h.getFetchPerson().getID()%>">Not Selected</option>
 											<%
 												XData childData = h.getChildData();
 		
@@ -1196,8 +1199,9 @@ try {
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
 										<span class="magic2">If you have more than one student studying with us, please select here</span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+										<select class="hyjack" style="width: 150px;" id="logout-childId">
+										<option  value="<%=h.getFetchPerson().getID()%>">Not Selected</option>
 											<%
 												XData childData = h.getChildData();
 		
@@ -1403,6 +1407,10 @@ try {
 <%@page import="tooltwist.skypepi.util.WebUtil"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 
+<script type="text/javascript">
+	
+</script>
+
 <%
 	// Get the production helper for this widget
 	CodeOfConductProductionHelper h = (CodeOfConductProductionHelper) helper;
@@ -1430,12 +1438,9 @@ try {
 	
 	<%-- if (snippetVar_option.equals("text")) { --%>
 	<div id="oReportCell" >
-		<div style="padding: 0px;" align="center">
-		<br/><br/>
-		<img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+		<iframe src="https://reports.skysoftware.com/ReportServer_SQL2008?%2FTaiwan%2FQuick%20Link%20Reports%2FCode%20of%20Conduct%20-%20English&rc:Toolbar=false"  style="height: 1010px; width: 100%; border: none;" scrolling="no"></iframe>
 	</div>
-	</div>
-	
+	<%--
 	<script>
 	jQuery.ajax({
         url: "",
@@ -1466,10 +1471,10 @@ try {
         }
     });
 	</script>
-	
+	 --%>
 	<%-- } --%>
 	<%-- if (snippetVar_option.equals("radio")) { --%>
-	<div class="cocAccept" style="display: none;color: black;">
+	<div class="cocAccept" style="display: block;color: black;">
 	
 	<table>
 		<%--

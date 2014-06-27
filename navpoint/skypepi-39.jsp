@@ -252,12 +252,22 @@ try {
 <%
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
-		String fullName = "";
-		String childId = h.getChildId();
-		if (fetchPerson instanceof FetchPerson) {
-			fullName = fetchPerson.getFullName(lang.getCurrentLangCode());
-		}
 %>
+
+<style>
+	.dropdown-menu {
+		z-index: 1999;
+	}
+	.dropdown a.head {
+		background-color: white;
+		border: #00a3e4 1px solid;
+	}
+	
+	.nav.nav-pills {
+		float: right;
+	}
+	
+</style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
 	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
@@ -267,7 +277,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=h.getParentFullName() %></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -285,10 +295,15 @@ try {
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
-										<span class="magic2">If you have more than one student studying with us, please select here</span>
+										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+									<div style="width: 250px">
+									<ul class="nav nav-pills">
+								      <li class="dropdown">
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
 		
@@ -303,60 +318,29 @@ try {
 													String childID = child.getAttribute("ChildID");
 
 													String selected = "";
-													if (childID.equals(childId)) {
+													if (childID.equals(h.getChildId())) {
 														selected = "selected='selected'";
 													}
 													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
 												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } %>
 		
 											<%
 												}
 											%>
-									</select></td>
+									      </ul>
+									    </li>
+									  </ul> 
+									</div>
+									</td>
 									<%
 										}
 									%>
 							<% } else { %>
-								<% if (isParent) { %>
-									<td style="padding-right:6px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
-									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
-											<%
-												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
-
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
-
-													String selected = "";
-													if (childID.equals(childId)) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
-												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
-												<% } %>
-		
-											<%
-												}
-											%>
-									</select></td>
-									<%
-										}
+								<% if (isParent) {}
 									%>
 							<% } %>
 						</tr>
@@ -400,9 +384,9 @@ try {
 				formLogout.submit();
 			},
 
-			selectChild : function() {
-
-				var childId = $("#logout-childId").val();
+			selectChild : function(childId) {
+				console.log("childId", childId);
+// 				var childId = $("#logout-childId").val();
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -427,15 +411,32 @@ try {
 					extraIEStyle = "height: 30px;vertical-align: middle;";
 				}
 				
-				$('.hyjack').hyjack_select();
-				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>");
-				$(".stud-caption").click(function() {
-					//$(".hjsel_container").trigger("click");
-					//alert("click");
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").show();
-					}, 50);
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					console.log("this", this);
+					
+					var name = jQuery(this).html();
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
 				});
+				
+// 				$('.hyjack').hyjack_select();
+<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
+// 				$(".stud-caption").on("click", function() {
+// 					//$(".hjsel_container").trigger("click");
+// 					//alert("click");
+// 					console.log(".stud-caption click");
+// 					window.setTimeout(function() {
+// 						jQuery(".hjsel_options").show();
+// 					}, 50);
+// 				});
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -953,8 +954,8 @@ try {
 <style type="text/css">
 .input-cc {font-size: 16px; text-align: center;}
 .credit-card {
-	width: 100px !important;
-	margin-right: 10px;
+	width: 65px !important;
+	margin: 0px 5px;
 	text-align: center;
 	}
 	.color-red {
@@ -984,19 +985,19 @@ try {
 		<input type="hidden" value="<%=snippetVar_nextNavpoint%>" id="nextNavpoint" name="nextNavpoint" /> <%-- navpoint to re-enrolment --%>
 		<input type="hidden" value="<%=snippetVar_studentFees%>" id="selectionNavpoint" name="selectionNavpoint" /> <%-- navpoint to student fees --%>
 		<input type="hidden" value="" id="paymentDetailID" name="paymentDetailID" /> 
-		<table cellspacing="0" cellpadding="0" border="0">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%">
 			<tr>
 				<td>
 					<div class="roundconts">
 						<div class="roundtops">
 <!-- 							<img width="8" height="8" style="display: none;" class="corner" alt="" src="/ttsvr/skypepi/images/skypepi_brtl.png"> -->
 						</div>
-						<table cellspacing="0" cellpadding="0" border="0">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td>
-									<table>
+									<table width="100%">
 										<tr>
-											<td class="heading color-blue add_margin_left" align="left" width="800px" colspan="4"><%=lang.getString("Payment Information", null, "") %></td>
+											<td class="heading color-blue add_margin_left" align="left" colspan="4"><%=lang.getString("Payment Information", null, "") %></td>
 										</tr>
 										<tr>
 											<td class="line-separator"></td>
@@ -1007,6 +1008,10 @@ try {
 							<tr>
 								<td>
 									<table style="border-spacing:5px">
+										<tr>
+											<td height="10px">
+											</td>
+										</tr>
 										<tr>
 											<td><label class="control-label"><%=lang.getString("Description", null, "") %>: </label></td>
 											<td>
@@ -1030,6 +1035,10 @@ try {
 											</td>
 										</tr> --%>
 										<tr>
+											<td height="10px">
+											</td>
+										</tr>
+										<tr>
 											<td><label class="control-label"><%=lang.getString("Amount", null, "") %>: </label></td>
 											<td>
 												<input  id="transact_amount" name="transact_amount" class="form-control" type="text" autocomplete="off" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
@@ -1050,7 +1059,7 @@ try {
 													<option value="7"><%=lang.getString("Online Payment", null, "") %></option>
 												</select>
 											</td> --%>
-										</tr>
+										</tr>	
 									</table>
 								</td>
 							</tr>
@@ -1058,12 +1067,12 @@ try {
 						</div>
 						<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
 						<div class="roundcont">
-						<table cellspacing="0" cellpadding="0" border="0">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td>
-									<table>
+									<table width="100%	">
 										<tr>
-											<td class="heading color-blue add_margin_left" align="left" width="800px" colspan="4"><%=lang.getString("Credit Card Information", null, "") %></td>
+											<td class="heading color-blue add_margin_left" align="left" colspan="4"><%=lang.getString("Credit Card Information", null, "") %></td>
 										</tr>
 										<tr>
 											<td class="line-separator"></td>
@@ -1073,7 +1082,8 @@ try {
 							</tr>
 							<tr>
 								<td>
-									<table style="border-spacing:5px" border="0">
+<!--
+<table style="border-spacing:5px" border="0">
 										<tr>
 											<td><label class="control-label" for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Card Holder's Name", null, "") %>: </label></td>
 											<td>
@@ -1152,16 +1162,122 @@ try {
 										</tr>
 										
 									</table>
+-->			
+
+<!-- 
+	use the code above to return to normal
+-->						
+
+ <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Card Holder's Name", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                        <input  id="creditcard_name" name="creditcard_name" class="form-control required" type="text" autocomplete="off" style="width: 100%;" />
+                                        </div>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row spacing-top" >
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" for="transact_creditcard" id="lbl_transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-8"><input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
+                                        <table cellpadding="0" cellspacing="0">
+													<tr>
+														<td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard1" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td><td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard2" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td><td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard3" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td><td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard4" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td>
+													</tr>
+												</table>
+                                        </div>
+                                        <div class="col-md-2">
+                                        </div>
+                                    </div>
+                                    
+                                        <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" id="lbl_transact_creditcard_type" for="transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                      <select name="transact_creditcard_type" class="form-control required" style="width: 150px;">
+													<option value="Master">Master Card</option>
+													<option value="VISA">Visa</option>
+												</select>
+                                        </div>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2"><%=lang.getString("Expiry Date", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                      		<table>
+													<tr>
+														<td><label class="control-label"  id="lbl_transact_month"><%=lang.getString("Month", null, "") %>: </label></td>
+														<td width="10px"></td>
+														<td class="add_space_left">
+															<select id="transact_month" name="transact_month" class="form-control" style="width: 80px">
+															<% for(JSONObject mon : h.getMonth()) { %>
+																<option value="<%=mon.get("id")%>"><%=mon.get("desc")%></option> 
+															<% } %>
+															</select>
+														</td>
+														<td width="10px"></td>
+														<td><label class="control-label" id="lbl_transact_year"><%=lang.getString("Year", null, "") %>: </label></td>
+														<td width="10px"></td>
+														<td class="add_space_left">
+															<select id="transact_year" name="transact_year" class="form-control" style="width: 80px">
+																<% for(JSONObject year : h.getYear()) { %>
+																<option value="<%=year.get("yr")%>"><%=year.get("year")%></option> 
+															<% } %>
+															</select>
+														</td>
+													</tr>
+												</table>
+                                        </div>
+                                        <div class="col-md-2">
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                      <input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required form-control" style="width: 100px;"/>
+                                        </div>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                    
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<table>
 										<tr>
-											<td class="heading color-blue add_margin_left" align="left" width="800px" colspan="4"><%=lang.getString("", null, "") %></td>
-										</tr>
+											<td class="heading color-blue add_margin_left" align="left" width="100%" colspan="4"><%=lang.getString("", null, "") %></td>
+										</tr>				
 										<tr>
-											<td class="line-separator"></td>
+											<td class="line-separator" width="100%"></td>
 										</tr>
 									</table>
 								</td>
@@ -1169,6 +1285,9 @@ try {
 							<tr>
 								<td>
 									<table style="border-spacing:5px">
+										<tr>
+											<td height="10px"></td>
+										</tr>
 										<tr>
 												<td class="body-text color-regular add_margin_left"
 													style="padding-right: 5px"><input type="checkbox"
@@ -1201,55 +1320,44 @@ try {
 			<td class="roundcont">
 				<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
 				<div class="roundcont">
-					<table>
-						<tr>
-							<td align="center" >
-								<table>
-									<tr>
-										<td><img alt="visa"   src="/ttsvr/skypepi/images/secure-payments.png" width="400"></td><td>&nbsp;</td>
-										<!-- <td><img alt="mastercard"  src="/ttsvr/skypepi/images/mastercard.jpg"></td><td>&nbsp;</td>
-										<td><img alt="mastercard"  src="/ttsvr/skypepi/images/paydollar.jpg"></td> -->
-									</tr>
-								</table>
-							</td>
-							<td width="300px" valign="top">
-								<table align="right" style="padding-right:10px" border="0" cellspacing="0" cellpadding="0">
+					<div class="row spacing-top">
+                                    	<div class="col-md-4">
+                                        <img alt="visa"  src="/ttsvr/skypepi/images/secure-payments.png" width="100%">
+                                        </div>
+                                        
+                                        <div class="col-md-8">
+                                        	<table align="right" style="padding-right:10px" border="0" cellspacing="0" cellpadding="0">
 									<tr>
 										<td>
 											
 											<% if("".equals(feeSelections)) { %>
-											<table width="" border="0" cellspacing="0" cellpadding="0">
+											 <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td width="6px" class="button_l">&nbsp;</td>
-				                                 <td width="126px" class="button_m"><a href="#" id="transact_btn_cancel"><%=lang.getString("Cancel", null, "") %></a></td>
-				                                 <td width="17px" class="button_r">&nbsp;</td>
-				                               </tr>
-				                             </table>									
+				                               <td> <a href="#" id="transact_btn_cancel" class="buttonBlue"> <%=lang.getString("Cancel", null, "") %> </a></td>
+				                              </tr>
+				                     		  </table>								
 				                             <% } else { %>
 				                             <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td width="6px" class="button_l">&nbsp;</td>
-				                                 <td width="150px" class="button_m"><a href="#" id="transact_btn_back"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>
-				                                 <td width="17px" class="button_r">&nbsp;</td>
+				                                 <td><a href="#" id="transact_btn_back" class="buttonBlue"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>      
 				                               </tr>
 				                             </table>
 				                             
 				                             <% } %>
 										</td>
+										<td width="20px">
+										
+										</td>
 										<td>
 											<table width="149px" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td width="6px" class="button_l">&nbsp;</td>
-				                                 <td width="126px" class="button_m"><a href="#" id="transact_btn_confirm"><%=lang.getString("Confirm Payment", null, "") %></a></td>
-				                                 <td width="17px" class="button_r">&nbsp;</td>
-				                               </tr>
+				                                 <td><a href="#" id="transact_btn_confirm" class="buttonBlue"><%=lang.getString("Confirm Payment", null, "") %></a></td>
+				                                 </tr>
 				                             </table>
 										</td>
 									</tr>
 							</table>
-							</td>
-						</tr>
-					</table>
+                                        </div>
 				</div>
 			</td>
 			</tr>

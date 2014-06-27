@@ -1,4 +1,3 @@
-<!-- header for responsivePage -->
 <%@page import="tooltwist.wbd.Navpoint"%>
 <%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
@@ -53,8 +52,8 @@ try {
 
 
 %>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 
   <head>
     <title></title>
@@ -82,6 +81,7 @@ try {
 <!-- <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
 <!-- <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
 <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
+
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
 <script src="/ttsvr/skypepi/scripts/paging.js" type="text/javascript"></script>
 
@@ -93,7 +93,6 @@ try {
 
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- <div class="container">
  
  <!--  Create a fluid-->
  <!-- <div class="container-fluid" -->
@@ -206,7 +205,6 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
       </footer>
  -->
 
-    </div> <!-- /container -->
 	<!-- footer for responsivePage -->
 
 <!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->

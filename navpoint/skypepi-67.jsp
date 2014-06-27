@@ -1,4 +1,3 @@
-<!-- header for responsivePage -->
 <%@page import="tooltwist.wbd.Navpoint"%>
 <%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
@@ -44,6 +43,7 @@
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
 
 <%
@@ -151,10 +151,19 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
 }
 
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_40 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_40Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_notAuth_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_40Params);
+	productionHelper_skypepi_zones_portal_z_header_notAuth_40.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_40", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapHome_21 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapHome_21Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("snippets", "Announcements");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("snippets", "Welcome");
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21 = new tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapHome_21Params);
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21.callPreFetch(jh);
 } catch (Exception e) {
@@ -164,8 +173,8 @@ try {
 
 
 %>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 
   <head>
     <title></title>
@@ -193,6 +202,7 @@ try {
 <!-- <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
 <!-- <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
 <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
+
 <style type='text/css'>
 /* Styles for widget simpleDiv */
 
@@ -242,7 +252,6 @@ try {
 
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- <div class="container">
  
  <!--  Create a fluid-->
  <!-- <div class="container-fluid" -->
@@ -396,12 +405,22 @@ try {
 <%
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
-		String fullName = "";
-		String childId = h.getChildId();
-		if (fetchPerson instanceof FetchPerson) {
-			fullName = fetchPerson.getFullName(lang.getCurrentLangCode());
-		}
 %>
+
+<style>
+	.dropdown-menu {
+		z-index: 1999;
+	}
+	.dropdown a.head {
+		background-color: white;
+		border: #00a3e4 1px solid;
+	}
+	
+	.nav.nav-pills {
+		float: right;
+	}
+	
+</style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
 	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
@@ -411,7 +430,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=h.getParentFullName() %></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -429,10 +448,15 @@ try {
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
-										<span class="magic2">If you have more than one student studying with us, please select here</span>
+										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+									<div style="width: 250px">
+									<ul class="nav nav-pills">
+								      <li class="dropdown">
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
 		
@@ -447,60 +471,29 @@ try {
 													String childID = child.getAttribute("ChildID");
 
 													String selected = "";
-													if (childID.equals(childId)) {
+													if (childID.equals(h.getChildId())) {
 														selected = "selected='selected'";
 													}
 													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
 												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } %>
 		
 											<%
 												}
 											%>
-									</select></td>
+									      </ul>
+									    </li>
+									  </ul> 
+									</div>
+									</td>
 									<%
 										}
 									%>
 							<% } else { %>
-								<% if (isParent) { %>
-									<td style="padding-right:6px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
-									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
-											<%
-												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
-
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
-
-													String selected = "";
-													if (childID.equals(childId)) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
-												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
-												<% } %>
-		
-											<%
-												}
-											%>
-									</select></td>
-									<%
-										}
+								<% if (isParent) {}
 									%>
 							<% } %>
 						</tr>
@@ -544,9 +537,9 @@ try {
 				formLogout.submit();
 			},
 
-			selectChild : function() {
-
-				var childId = $("#logout-childId").val();
+			selectChild : function(childId) {
+				console.log("childId", childId);
+// 				var childId = $("#logout-childId").val();
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -571,15 +564,32 @@ try {
 					extraIEStyle = "height: 30px;vertical-align: middle;";
 				}
 				
-				$('.hyjack').hyjack_select();
-				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>");
-				$(".stud-caption").click(function() {
-					//$(".hjsel_container").trigger("click");
-					//alert("click");
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").show();
-					}, 50);
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					console.log("this", this);
+					
+					var name = jQuery(this).html();
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
 				});
+				
+// 				$('.hyjack').hyjack_select();
+<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
+// 				$(".stud-caption").on("click", function() {
+// 					//$(".hjsel_container").trigger("click");
+// 					//alert("click");
+// 					console.log(".stud-caption click");
+// 					window.setTimeout(function() {
+// 						jQuery(".hjsel_options").show();
+// 					}, 50);
+// 				});
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -650,12 +660,22 @@ try {
 <%
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
-		String fullName = "";
-		String childId = h.getChildId();
-		if (fetchPerson instanceof FetchPerson) {
-			fullName = fetchPerson.getFullName(lang.getCurrentLangCode());
-		}
 %>
+
+<style>
+	.dropdown-menu {
+		z-index: 1999;
+	}
+	.dropdown a.head {
+		background-color: white;
+		border: #00a3e4 1px solid;
+	}
+	
+	.nav.nav-pills {
+		float: right;
+	}
+	
+</style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
 	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
@@ -665,7 +685,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=h.getParentFullName() %></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -683,10 +703,15 @@ try {
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
-										<span class="magic2">If you have more than one student studying with us, please select here</span>
+										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+									<div style="width: 250px">
+									<ul class="nav nav-pills">
+								      <li class="dropdown">
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
 		
@@ -701,60 +726,29 @@ try {
 													String childID = child.getAttribute("ChildID");
 
 													String selected = "";
-													if (childID.equals(childId)) {
+													if (childID.equals(h.getChildId())) {
 														selected = "selected='selected'";
 													}
 													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
 												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } %>
 		
 											<%
 												}
 											%>
-									</select></td>
+									      </ul>
+									    </li>
+									  </ul> 
+									</div>
+									</td>
 									<%
 										}
 									%>
 							<% } else { %>
-								<% if (isParent) { %>
-									<td style="padding-right:6px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
-									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
-											<%
-												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
-
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
-
-													String selected = "";
-													if (childID.equals(childId)) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
-												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
-												<% } %>
-		
-											<%
-												}
-											%>
-									</select></td>
-									<%
-										}
+								<% if (isParent) {}
 									%>
 							<% } %>
 						</tr>
@@ -798,9 +792,9 @@ try {
 				formLogout.submit();
 			},
 
-			selectChild : function() {
-
-				var childId = $("#logout-childId").val();
+			selectChild : function(childId) {
+				console.log("childId", childId);
+// 				var childId = $("#logout-childId").val();
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -825,15 +819,32 @@ try {
 					extraIEStyle = "height: 30px;vertical-align: middle;";
 				}
 				
-				$('.hyjack').hyjack_select();
-				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>");
-				$(".stud-caption").click(function() {
-					//$(".hjsel_container").trigger("click");
-					//alert("click");
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").show();
-					}, 50);
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					console.log("this", this);
+					
+					var name = jQuery(this).html();
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
 				});
+				
+// 				$('.hyjack').hyjack_select();
+<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
+// 				$(".stud-caption").on("click", function() {
+// 					//$(".hjsel_container").trigger("click");
+// 					//alert("click");
+// 					console.log(".stud-caption click");
+// 					window.setTimeout(function() {
+// 						jQuery(".hjsel_options").show();
+// 					}, 50);
+// 				});
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -921,12 +932,22 @@ try {
 <%
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
-		String fullName = "";
-		String childId = h.getChildId();
-		if (fetchPerson instanceof FetchPerson) {
-			fullName = fetchPerson.getFullName(lang.getCurrentLangCode());
-		}
 %>
+
+<style>
+	.dropdown-menu {
+		z-index: 1999;
+	}
+	.dropdown a.head {
+		background-color: white;
+		border: #00a3e4 1px solid;
+	}
+	
+	.nav.nav-pills {
+		float: right;
+	}
+	
+</style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
 	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
@@ -936,7 +957,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=h.getParentFullName() %></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -954,10 +975,15 @@ try {
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
-										<span class="magic2">If you have more than one student studying with us, please select here</span>
+										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+									<div style="width: 250px">
+									<ul class="nav nav-pills">
+								      <li class="dropdown">
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
 		
@@ -972,60 +998,29 @@ try {
 													String childID = child.getAttribute("ChildID");
 
 													String selected = "";
-													if (childID.equals(childId)) {
+													if (childID.equals(h.getChildId())) {
 														selected = "selected='selected'";
 													}
 													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
 												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } %>
 		
 											<%
 												}
 											%>
-									</select></td>
+									      </ul>
+									    </li>
+									  </ul> 
+									</div>
+									</td>
 									<%
 										}
 									%>
 							<% } else { %>
-								<% if (isParent) { %>
-									<td style="padding-right:6px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
-									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
-											<%
-												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
-
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
-
-													String selected = "";
-													if (childID.equals(childId)) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
-												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
-												<% } %>
-		
-											<%
-												}
-											%>
-									</select></td>
-									<%
-										}
+								<% if (isParent) {}
 									%>
 							<% } %>
 						</tr>
@@ -1069,9 +1064,9 @@ try {
 				formLogout.submit();
 			},
 
-			selectChild : function() {
-
-				var childId = $("#logout-childId").val();
+			selectChild : function(childId) {
+				console.log("childId", childId);
+// 				var childId = $("#logout-childId").val();
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -1096,15 +1091,32 @@ try {
 					extraIEStyle = "height: 30px;vertical-align: middle;";
 				}
 				
-				$('.hyjack').hyjack_select();
-				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>");
-				$(".stud-caption").click(function() {
-					//$(".hjsel_container").trigger("click");
-					//alert("click");
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").show();
-					}, 50);
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					console.log("this", this);
+					
+					var name = jQuery(this).html();
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
 				});
+				
+// 				$('.hyjack').hyjack_select();
+<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
+// 				$(".stud-caption").on("click", function() {
+// 					//$(".hjsel_container").trigger("click");
+// 					//alert("click");
+// 					console.log(".stud-caption click");
+// 					window.setTimeout(function() {
+// 						jQuery(".hjsel_options").show();
+// 					}, 50);
+// 				});
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -1146,7 +1158,27 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu'><div class='DivWidget' style=""><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='nav-wrapper' align='left' valign='top'>  <nav class="navbar  navbar-default" role="navigation" id="">
+  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_40;
+	String snippetVar_widgetName = "@40";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@40";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
+%>
+
+  <nav class="navbar  navbar-default" role="navigation" id="">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -1158,10 +1190,32 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class="active"><a href="/ttsvr/n/home/skypepi-67">Home</a><span></span></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
+<% if (!(h.isParent()) || (true)) { %><li class="active"><a href="/ttsvr/n/home/skypepi-67">Home</a>
+<span></span>
+</li>
+ <% } %><% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Consent/skypepi-97">myConsent</a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a>
+</li>
+ <% } %>        </ul>
       </div>
     </div>
-  </nav></td>
+  </nav><%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
+}
+%>
+</td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
@@ -1221,12 +1275,22 @@ try {
 <%
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
-		String fullName = "";
-		String childId = h.getChildId();
-		if (fetchPerson instanceof FetchPerson) {
-			fullName = fetchPerson.getFullName(lang.getCurrentLangCode());
-		}
 %>
+
+<style>
+	.dropdown-menu {
+		z-index: 1999;
+	}
+	.dropdown a.head {
+		background-color: white;
+		border: #00a3e4 1px solid;
+	}
+	
+	.nav.nav-pills {
+		float: right;
+	}
+	
+</style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
 	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
@@ -1236,7 +1300,7 @@ try {
 	<%
 	if (snippetVar_viewOption.equals("Name")) {
 	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=fullName%></span>&nbsp;&nbsp;
+		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=h.getParentFullName() %></span>&nbsp;&nbsp;
 	<%
 	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
 	%>
@@ -1254,10 +1318,15 @@ try {
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
 									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
-										<span class="magic2">If you have more than one student studying with us, please select here</span>
+										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
+									<td>
+									<div style="width: 250px">
+									<ul class="nav nav-pills">
+								      <li class="dropdown">
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
 		
@@ -1272,60 +1341,29 @@ try {
 													String childID = child.getAttribute("ChildID");
 
 													String selected = "";
-													if (childID.equals(childId)) {
+													if (childID.equals(h.getChildId())) {
 														selected = "selected='selected'";
 													}
 													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
 												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
+														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } %>
 		
 											<%
 												}
 											%>
-									</select></td>
+									      </ul>
+									    </li>
+									  </ul> 
+									</div>
+									</td>
 									<%
 										}
 									%>
 							<% } else { %>
-								<% if (isParent) { %>
-									<td style="padding-right:6px;" align="right" class="color-white">
-										<%=lang.getString("If you have more than one student studying with us, please select here", null, "") %>
-									</td>	
-									<td><select class="hyjack" style="width: 150px;"
-										id="logout-childId">
-											<%
-												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
-
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
-
-													String selected = "";
-													if (childID.equals(childId)) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
-															<option <%=selected%> value="<%=childID%>"><%=(altLastName + " " + altFirstName)%></option>
-												<% } else {%>
-															<option <%=selected%> value="<%=childID%>"><%=(firstName + " " + lastName)%></option>
-												<% } %>
-		
-											<%
-												}
-											%>
-									</select></td>
-									<%
-										}
+								<% if (isParent) {}
 									%>
 							<% } %>
 						</tr>
@@ -1369,9 +1407,9 @@ try {
 				formLogout.submit();
 			},
 
-			selectChild : function() {
-
-				var childId = $("#logout-childId").val();
+			selectChild : function(childId) {
+				console.log("childId", childId);
+// 				var childId = $("#logout-childId").val();
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -1396,15 +1434,32 @@ try {
 					extraIEStyle = "height: 30px;vertical-align: middle;";
 				}
 				
-				$('.hyjack').hyjack_select();
-				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>");
-				$(".stud-caption").click(function() {
-					//$(".hjsel_container").trigger("click");
-					//alert("click");
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").show();
-					}, 50);
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					console.log("this", this);
+					
+					var name = jQuery(this).html();
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
 				});
+				
+// 				$('.hyjack').hyjack_select();
+<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
+// 				$(".stud-caption").on("click", function() {
+// 					//$(".hjsel_container").trigger("click");
+// 					//alert("click");
+// 					console.log(".stud-caption click");
+// 					window.setTimeout(function() {
+// 						jQuery(".hjsel_options").show();
+// 					}, 50);
+// 				});
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -1486,7 +1541,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapHome_21;
-	String snippetVar_snippets = "Announcements";
+	String snippetVar_snippets = "Welcome";
 	String snippetVar_widgetName = "@21";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapHome@21";
 	String snippetVar_elementId = "";
@@ -1510,8 +1565,8 @@ try {
 	StudentHomeProductionHelper h = (StudentHomeProductionHelper) helper;
 	XData data = h.getData(jh);
 	AltLang lang = h.getAltLang();
-	String parentId = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.SIGN_ON_PARENT, "0");
-	Boolean isParent = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_PARENT, false);
+	String parentId = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.SIGN_ON_ID, "0");
+	Boolean isParent = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_SELECTED_PARENT, false);
 %>
 
 <!-- ********** INSERT HTML HERE ********** -->
@@ -1643,14 +1698,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-6"><div  class="col-md-3"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
 <div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
 </div>
-<div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
+<div  class="col-md-6"><div  class="col-md-3"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/Consent/skypepi-97" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myConsent</a></div>
+<div  class="col-md-3"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
+</div>
 </div>
 </td>
  </tr>
@@ -1948,7 +2005,6 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </footer>
  -->
 
-    </div> <!-- /container -->
 	<!-- footer for responsivePage -->
 
 <!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->

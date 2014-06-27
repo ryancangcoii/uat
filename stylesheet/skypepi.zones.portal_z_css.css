@@ -1,17 +1,7 @@
 /*
  *  Stylesheet
  */
-.color-blackgrey {
-  color:#3c3c3c;
-}
 
-.divnavi {
-  margin-top:20px !important;
-}
-
-.divnavi td {
-  text-align:center;
-}
 
 body > .container {
   position: absolute;
@@ -19,54 +9,16 @@ body > .container {
   min-width: 100%;
 }
 .page-content {
-  margin: 20px 0 100px 0;
+  
+  margin: 20px 0 300px 0;
 }
 .float-footer {
-  position: relative;
+  position: absolute;
   min-width: 100%;
   bottom: 0;
-  background-color:#f3f3f3;
 }
 
-.tblnavi {
-    border:1px solid #428bca;
-}
 
-#newAddressEntry td {
-  border:0px !important;
-}
-#newAddressEntry .row {
-  margin-top:10px;
-}
-
-#newPhoneNumberEntry td {
-  border:0px !important;
-}
-#newPhoneNumberEntry .row {
-  margin-top:10px;
-}
-
-#newEmailAddressEntry td {
-  border:0px !important;
-}
-#newEmailAddressEntry .row {
-  margin-top:10px;
-}
-
-#form-bookings td {
-  border:0px !important;
-}
-.footer .row .col-md-1 {
-  text-align:center !important;
-}
-
-.footer .row .col-md-2 {
-  text-align:center !important;
-}
-
-.footer .row .col-md-3 {
-  text-align:center !important;
-}
 
 #an_element_id {
 }
@@ -148,19 +100,6 @@ margin-left: 24px;
   margin-left: -10px;
 }
 
-.navbar-nav li>span {
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #fff;
-  margin-left: -10px;
-}
-
 .nivoSlider {
   margin:0 auto !important;
 }
@@ -188,8 +127,6 @@ margin-left: 24px;
 
 .form-control {
   border-radius:0px !important;
-  font-size:16px !important;
-  height:46px !important;
 }
 
 .align-left {
@@ -200,71 +137,13 @@ margin-left: 24px;
   height:180px;
 }
 
-.download-link {
-  float: right;
-  position: relative;
-  margin-top:7px;
-}
-
-.drop-selection-color .hjsel_select {
-  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial !important;
-    font-weight:300 !important;
-}
-
-@media screen and (max-width: 992px) {
-    div.footer {
-    height:100%;
-  }
-  
-  .tblnavi {
-    margin-top:20px;
-  }
-  
-  .footer .row .col-md-10 .col-md-1 {
-    text-align:left !important;
-    padding-left:0 !important;
-  }
-
-  .footer .row .col-md-10 .col-md-2 {
-    text-align:left !important;
-    padding-left:0 !important;
-  }
-  
-   .footer .row .col-md-2 {
-    text-align:left !important;
-  }
-  
-  .footer .row .col-md-10 .col-md-3 {
-    text-align:left !important;
-    padding-left:0 !important;
-  }
-}
-
 @media screen and (max-width: 768px){
-  
-.download-link {
-  float: left;
-  position: relative;
-  margin-top:20px;
-}
-  
-.drop-selection-color {
-    background-color:#0094cf;
-    height:60px;
-}
-
-.push-content-bot {
-  margin-top:12px;
-}
-  
-.bg-magic-student {
-  background-image:url('/ttsvr/cropImage/skypepi.images.portal_i_student.png');
-  background-repeat:no-repeat;
-  background-position:20% 50%;
-}
-
   .navbar-toggle .icon-bar+.icon-bar {
     margin-top: 6px !important;
+  }
+  
+  .page-content {
+    margin:0px 0px 600px 0px;
   }
   
   .magic {
@@ -275,7 +154,7 @@ margin-left: 24px;
   .magic img {
     width:100%;
     height:auto;
-    margin-top:10px;
+    margin-top:15px;
   }
   
   .magic2 {
@@ -297,7 +176,7 @@ margin-left: 24px;
   }
   
   div.footer {
-    height:100%;
+    height:310px;
   }
   
   .magic3 {
@@ -445,6 +324,7 @@ input:focus {
   background-color:#00a3e4;
   color:#ffffff;
   font-size:16px;
+  font-weight:bold;
   border:none;
   padding:12px;
   cursor: pointer;
@@ -452,20 +332,17 @@ input:focus {
 
 .buttonGray {
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
-  background-color: #e0f4fc;
-  color:#ffffff !important;
-  font-size:14px;
+  background-color: #00a3e4;
+  color:#ffffff;
+  font-size:16px;
+  font-weight:bold;
   border:none;
-  padding:8px;
+  padding:12px;
   cursor: pointer;
 }
 
 .buttonGray.selected{
-  background-color:#428bca;
-}
-
-.buttonGray.selected a {
-  color:#ffffff;
+  background-color:#4e4e4e;
 }
 
 .buttonBlue:HOVER {
@@ -659,6 +536,7 @@ border-width:0;
 
 .bc-form input.form-control {
 	font-size:14px;
+	padding:10px;
 	border:1px solid #bebebe;
 	background-color:#ffffff;
 	width:100%;
@@ -844,6 +722,7 @@ border-width:0;
 
 .footer {
   border-top:15px solid #00a3e4;
+  background-color:#f3f3f3;
   color:#4e4e4e;
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
   font-weight: 300;

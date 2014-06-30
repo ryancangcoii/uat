@@ -504,16 +504,7 @@ try {
 					
 				});
 				
-// 				$('.hyjack').hyjack_select();
-<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
-// 				$(".stud-caption").on("click", function() {
-// 					//$(".hjsel_container").trigger("click");
-// 					//alert("click");
-// 					console.log(".stud-caption click");
-// 					window.setTimeout(function() {
-// 						jQuery(".hjsel_options").show();
-// 					}, 50);
-// 				});
+
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -759,16 +750,7 @@ try {
 					
 				});
 				
-// 				$('.hyjack').hyjack_select();
-<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
-// 				$(".stud-caption").on("click", function() {
-// 					//$(".hjsel_container").trigger("click");
-// 					//alert("click");
-// 					console.log(".stud-caption click");
-// 					window.setTimeout(function() {
-// 						jQuery(".hjsel_options").show();
-// 					}, 50);
-// 				});
+
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -1031,16 +1013,7 @@ try {
 					
 				});
 				
-// 				$('.hyjack').hyjack_select();
-<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
-// 				$(".stud-caption").on("click", function() {
-// 					//$(".hjsel_container").trigger("click");
-// 					//alert("click");
-// 					console.log(".stud-caption click");
-// 					window.setTimeout(function() {
-// 						jQuery(".hjsel_options").show();
-// 					}, 50);
-// 				});
+
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});
@@ -1373,16 +1346,7 @@ try {
 					
 				});
 				
-// 				$('.hyjack').hyjack_select();
-<%-- 				$(".hjsel_select").append("<span class=\"color-white stud-caption\" style=\"display: inline-block;text-align: center;width: 56px;"+extraIEStyle+"\"><%=lang.getString("Student", null, "") %></span>"); --%>
-// 				$(".stud-caption").on("click", function() {
-// 					//$(".hjsel_container").trigger("click");
-// 					//alert("click");
-// 					console.log(".stud-caption click");
-// 					window.setTimeout(function() {
-// 						jQuery(".hjsel_options").show();
-// 					}, 50);
-// 				});
+
 				$("#logout-childId").change(function() {
 					Logout.selectChild();
 				});

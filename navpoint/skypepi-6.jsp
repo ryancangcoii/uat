@@ -241,20 +241,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -275,21 +271,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -373,8 +369,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -400,9 +395,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -972,10 +970,10 @@ try {
 					<td height="30"></td>
 				</tr>
 				<tr>
-					<td align="left" class="control-label" colspan="2"><%=lang.getString("Name", null, "") %> (<%=lang.getString("English", null, "") %>)</td>
+					<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("English", null, "") %>)</td>
 				</tr>
 				<tr>
-					<td align="left" class="" colspan="2" style="padding-left: 20px;">
+					<td align="left" class="mobile-trace">
 						<table width="100%">
 							<tr>
 								<td>
@@ -1006,7 +1004,7 @@ try {
 											<div class="col-md-2">
 												<label class="control-label"><%=lang.getString("Preferred Name", null, "") %>: </label>
 											</div>
-											<div class="col-md-6">
+											<div class="col-md-10">
 													<input  id="middlenameEnglishField" name="middlenameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=middleName %>"  readonly="readonly"/>
 											</div>
 											<div class="col-md-2"></div>
@@ -1021,10 +1019,10 @@ try {
 					<td height="10"></td>
 				</tr>
 				<tr>
-					<td align="left" class="control-label" colspan="2"><%=lang.getString("Name", null, "") %> (<%=lang.getString("Chinese", null, "") %>):</td>
+					<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("Chinese", null, "") %>):</td>
 				</tr>
 				<tr>
-					<td align="left" class="" colspan="2" style="padding-left: 20px;">
+					<td align="left" class="mobile-trace">
 						<table width="100%">
 							<tr>
 								<td>
@@ -1060,10 +1058,10 @@ try {
 													<div class="col-md-4">
 														<label class="control-label"><%=lang.getString("Date of Birth", null, "") %>:</label>
 													</div>
-													<div class="col-md-4">
+													<div class="col-md-5">
 														<input  id="dobField" name="dobField" class="form-control" type="text" autocomplete="off" value="<%=dobDay %>-<%=dobMonth %>-<%=dobYear %>"  readonly="readonly"/>
 													</div>
-													<div class="col-md-4"></div>
+													<div class="col-md-3"></div>
 											</div>
 									</div>
 								</div>
@@ -1074,10 +1072,10 @@ try {
 													<div class="col-md-4">
 														<label class="control-label"><%=lang.getString("Gender", null, "") %>:</label>
 													</div>
-													<div class="col-md-4">
+													<div class="col-md-5">
 														<input  id="gender" name="gender" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(gender, null, "") %>"  readonly="readonly"/>
 													</div>
-													<div class="col-md-4"></div>
+													<div class="col-md-3"></div>
 											</div>
 									</div>
 								</div>
@@ -1092,7 +1090,7 @@ try {
 													<div class="col-md-5">
 														<input  id="studentId" name="studentId" class="form-control" type="text" autocomplete="off" value=""  readonly="readonly"/>
 													</div>
-													<div class="col-md-3"></div>
+													<div class="col-md-2"></div>
 											</div>
 									</div>
 								</div>
@@ -1127,19 +1125,19 @@ try {
 												</div>
 								</div>
 								
-								<div class="row"  style="margin-top:10px">
+								<div class="row"  style="margin-top:10px;">
 												<div class="col-md-2">
 														<label class="control-label"><%=lang.getString("Preferred Contact Method", null, "") %>:</label>
 												</div>
-												<div class="col-md-5">
-														<select id="contactMethod"  class="form-control" style="width: 280px">
+												<div class="col-md-5" >
+														<select id="contactMethod"  class="form-control" >
 															<option><%=lang.getString("Mailing address", null, "") %></option>
 															<option><%=lang.getString("Phone", null, "") %></option>
 															<option><%=lang.getString("Email", null, "") %></option>
 														</select>
 												</div>
-												<div class="col-md-5">
-														
+												<div class="col-md-5 magic-push">
+														 
 												</div>
 								</div>
 								
@@ -1150,11 +1148,11 @@ try {
 				</tr>
 								
 				<tr>
-					<td align="left" class="" colspan="2">
-						<table width="100%">
+					<td align="left">
+						<table>
 							<tr>&nbsp;</tr>
 							<tr>
-								<td align="left" class="" width="100%">
+								<td align="left">
 									<label class="control-label">
 									If you would like to be contacted with information about how British Council 
 									are improving our products and services and related offers, please tick the text box for the relevant channel. You may choose more than one.
@@ -1348,25 +1346,25 @@ try {
 				<tr id="newAddressEntry" style="display: none;">
 					<td colspan="4" class="">
 						<div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Address Line 1", null, "") %>: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                             <input  id="line1New" name="line1New" class="form-control" type="text" autocomplete="off"/>
                             </div>
                         </div>
                         
                         <div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Address Line 2", null, "") %>: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                             <input  id="line2New" name="line2New" class="form-control" type="text" autocomplete="off"/>
                             </div>
                         </div>
                         
                          <div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Country", null, "") %>: </label>
                             </div>
                             <div class="col-md-8">
@@ -1382,16 +1380,16 @@ try {
                         </div>
                         
                         <div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-4">
                             <input  id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off"/>
                             </div>
                         </div>
                         
                          <div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Address Type", null, "") %>: </label>
                             </div>
                             <div class="col-md-8">
@@ -1492,7 +1490,7 @@ try {
 									<td class="control-label"><%=lang.getString("Phone Type", null, "") %>:</td>
 									<td>
 										<div>
-											<select id="phoneType<%=id %>" name="phoneType<%=id %>"  class="form-control" style="width: 100px;">
+											<select id="phoneType<%=id %>" name="phoneType<%=id %>"  class="form-control" style="width:280px;">
 												<option value="Home" <%="Home".equals(phoneType) ? "selected" : "" %>>Home</option>
 												<option value="Office" <%="Office".equals(phoneType) ? "selected" : "" %>>Office</option>
 												<option value="Mobile" <%="Mobile".equals(phoneType) ? "selected" : "" %>>Mobile</option>
@@ -1683,19 +1681,19 @@ try {
 							<tr>
 								<td height="">
 								  <div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Email", null, "") %>:</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                             	<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value=""/>
                             </div>
                         </div>
                         
                         <div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Email Type", null, "") %>:</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                             <select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
 										<option>Personal</option>
 										<option>Office</option>

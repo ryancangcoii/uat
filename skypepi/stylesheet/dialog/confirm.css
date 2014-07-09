@@ -1,0 +1,44 @@
+/*
+ * SimpleModal Confirm Modal Dialog
+ * http://www.ericmmartin.com/projects/simplemodal/
+ * http://code.google.com/p/simplemodal/
+ *
+ * Copyright (c) 2010 Eric Martin - http://ericmmartin.com
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Revision: $Id: confirm.css 254 2010-07-23 05:14:44Z emartin24 $
+ */
+
+.simple_dialog {display:none;}
+
+/* Overlay */
+#confirm-overlay {background-color:#eee; cursor:wait;}
+
+/* Container */
+#confirm-container {height:140px; width:420px; font: 16px/22px 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; text-align:left; background:#fff; border:2px solid #336699;}
+#confirm-container .header {height:30px; line-height:30px; width:100%; background:url(/ttsvr/skypepi/images/dialog/header.gif) repeat-x; color:#fff; font-weight:bold;font-size: 95%}
+#confirm-container .header span {padding-left:8px;}
+#confirm-container .message {color:#333; font-size:14px; margin:0; padding:12px 4px 12px 8px;}
+#confirm-container .buttons {line-height:26px; width:160px; float:right; padding:10px 8px 0;} 
+#confirm-container .buttons div {float:right; margin-left:4px; width:70px; height:26px; color:#666; font-weight:bold; text-align:center; background:url(/ttsvr/skypepi/images/dialog/button.gif) repeat-x; border:1px solid #bbb; cursor:pointer;} 
+#confirm-container a.modal-close,
+#confirm-container a.modal-close:link,
+#confirm-container a.modal-close:active,
+#confirm-container a.modal-close:visited {text-decoration:none; font-weight:bold; position:absolute; right:10px; top:2px; color:#fff;}
+#confirm-container a.modal-close:hover {color:#ccc;}
+
+.simplemodal-overlay{background-color:#eee; cursor:wait;}
+
+.simplemodal-container {height:140px; width:420px; font: 16px/22px 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; text-align:left; background:#fff; border:1px solid #cccccc}
+.simplemodal-container .header {height:30px; line-height:30px; width:100%; background:url(/ttsvr/skypepi/images/dialog/header.gif) repeat-x; color:#fff; font-weight:bold;font-size: 95%}
+.simplemodal-container .header span {padding-left:8px;}
+.simplemodal-container .message {color:#333; font-size:14px; margin:0; padding:12px 4px 12px 8px;}
+.simplemodal-container .buttons {line-height:26px; width:160px; float:right; padding:10px 8px 0;} 
+.simplemodal-container .buttons div {float:right; margin-left:4px; width:70px; height:26px; color:#666; font-weight:bold; text-align:center; background:url(/ttsvr/skypepi/images/dialog/button.gif) repeat-x; border:1px solid #bbb; cursor:pointer;font-size: 12px;} 
+.simplemodal-container a.modal-close,
+.simplemodal-container a.modal-close:link,
+.simplemodal-container a.modal-close:active,
+.simplemodal-container a.modal-close:visited {text-decoration:none; font-weight:bold; position:absolute; right:10px; top:2px; color:#fff;}
+.simplemodal-container a.modal-close:hover {color:#ccc;}

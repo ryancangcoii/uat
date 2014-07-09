@@ -284,7 +284,7 @@ try {
 											<a href="<%=snippetVar_viewReceipts%>">
 												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 											</a>
-											<a href="http://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>&rs:Format=pdf" target="_blank">
+											<a href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>&rs:Format=pdf" target="_blank">
 												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
 											</a>
 										</td>
@@ -297,7 +297,7 @@ try {
 						</tr>
 						<tr>
 							<td>
-								<iframe src="http://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe>
+								<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe>
 							</td>
 						</tr>
 						<tr>

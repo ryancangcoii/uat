@@ -241,20 +241,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -275,21 +271,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -373,8 +369,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -400,9 +395,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -906,9 +904,7 @@ try {
 <div class="bc-container portal-ribbon">
 <div class="ribbon-wrap left-edge fork lblue"><span>concludeAndConfirm</span></div>
 <br><br><br>
-<table width="100%">
-	<tr>
-		<td>
+
 			<form id="concludeAndConfirm" name="concludeAndConfirm" method="post">
 			<input type="hidden" id="streamIds" name="streamIds" value="<%=h.getStreamsId() %>"/>
 			<input type="hidden" name="navpointId" id="navpointId" value="<%=snippetVar_navpointId%>"/>
@@ -919,8 +915,9 @@ try {
 					<tr>
 						<td  class="heading" ><span class="color-regular"><%=h.getFullName() %></span></td>
 					</tr>
-					<tr>
-						<td>
+				</table>
+				<br>
+					
 							<div class="table-responsive portalTable" style="border-bottom: none;">
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered" style="margin-bottom: 0px; ">
 								<thead>
@@ -1045,14 +1042,6 @@ try {
 								%>
 							</table>
 							</div>
-						</td>
-					</tr>
-					<tr>
-						<td height="10"></td>
-					</tr>
-					<tr><td>&nbsp;</td></tr>
-					<tr>
-					<td align="right">
 						<table width="100%">
 							<tr>
 								<td class="table-heading color-regular" valign="top">
@@ -1076,14 +1065,6 @@ try {
 								</td>
 							</tr>
 						</table>
-							
-					</td>
-				</tr>
-				</table>
-			</form>
-		</td>
-	</tr>
-</table>
 </div>
 <%
 } catch (Exception e) {

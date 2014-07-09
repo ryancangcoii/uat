@@ -38,7 +38,6 @@
 <%@page import="tooltwist.skypepi.productionHelpers.LoginProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
 
 <%
 	String jspName = "skypepi-75";
@@ -145,15 +144,6 @@ try {
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_37.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_40 = null;
-try {
-	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_40Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_notAuth_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_40Params);
-	productionHelper_skypepi_zones_portal_z_header_notAuth_40.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_40", e);
 }
 
 
@@ -394,20 +384,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -428,21 +414,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -526,8 +512,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -553,9 +538,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -640,20 +628,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -674,21 +658,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -772,8 +756,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -799,9 +782,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -903,20 +889,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -937,21 +919,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -1035,8 +1017,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -1062,9 +1043,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -1119,27 +1103,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu'><div class='DivWidget' style=""><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_40;
-	String snippetVar_widgetName = "@40";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@40";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%
-	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
-%>
-
-  <nav class="navbar  navbar-default" role="navigation" id="">
+  <td  class='nav-wrapper' align='left' valign='top'>  <nav class="navbar  navbar-default" role="navigation" id="">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -1151,38 +1115,13 @@ try {
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a>
-</li>
- <% } %><% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Consent/skypepi-97">myConsent</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a>
-</li>
- <% } %>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li><li class=""><a href="/ttsvr/n/Consent/skypepi-97">myConsent</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
       </div>
     </div>
-  </nav><%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
-}
-%>
-</td>
+  </nav></td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
-  <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/n/home/skypepi-67">
-	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
-</a>
-</td>
+  <td  class='magic' align='left' valign='top'></td>
  </tr>
 </table>
 </td>
@@ -1236,20 +1175,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -1270,21 +1205,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -1368,8 +1303,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -1395,9 +1329,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -1503,20 +1440,20 @@ try {
 		<div class="row form-group">
 			<div class="col-md-12">
 				<div class="row push-top">
-					<div class="col-md-3 align-left">
+					<div class="col-md-4 align-left">
 						<label class="control-label" id="username-login-text">Username: </label>
 					</div>
-					<div class="col-md-9">
+					<div class="col-md-8">
 						<input class="form-control" id="username-login" name="username-login" type="text" autocomplete="off"/>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="row push-top">
-					<div class="col-md-3 align-left">
+					<div class="col-md-4 align-left">
 						<label class="control-label" id="password-login-text">Password: </label>
 					</div>
-					<div class="col-md-9">
+					<div class="col-md-8">
 						<input class="form-control" type="password" id="password-login" name="password-login" autocomplete="off"/>
 					</div>
 				</div>
@@ -1538,7 +1475,7 @@ try {
 			<table width="100%" border="0" cellspacing="0" cellpadding="0"class="buttonBlue">
 				<tr>
 					<td width="90%"><span>Login</span></td>
-					<td class="arrow" width="10%"><span>></span></td>
+					<td class="arrow"><span>></span></td>
 				</tr>
 			</table>
 		</div>
@@ -1652,16 +1589,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-6"><div  class="col-md-3"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
+<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
 <div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
-<div  class="col-md-6"><div  class="col-md-3"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/Consent/skypepi-97" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myConsent</a></div>
-<div  class="col-md-3"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
-</div>
+<div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
 </div>
 </td>
  </tr>
@@ -1751,7 +1686,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  </tr>
 </table>
 </div>
-<div  class="col-md-8"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+<div  class="col-md-7"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
  </tr>

@@ -36,7 +36,6 @@
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.TransactPaymentProductionHelper"%>
 
 <%
@@ -122,15 +121,6 @@ try {
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_37.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_54 = null;
-try {
-	Properties productionHelper_skypepi_zones_portal_z_header_54Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_54Params);
-	productionHelper_skypepi_zones_portal_z_header_54.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_54", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_payment_14 = null;
@@ -350,20 +340,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -384,21 +370,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -482,8 +468,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -509,9 +494,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -596,20 +584,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -630,21 +614,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -728,8 +712,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -755,9 +738,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -859,20 +845,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -893,21 +875,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -991,8 +973,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -1018,9 +999,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -1075,27 +1059,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header@54 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_54;
-	String snippetVar_widgetName = "@54";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@54";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%
-	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
-%>
-
-  <nav class="navbar  navbar-default" role="navigation" id="">
+  <td  align='left' valign='top'>  <nav class="navbar  navbar-default" role="navigation" id="">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -1107,38 +1071,13 @@ try {
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a>
-</li>
- <% } %><% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Consent/skypepi-97">myConsent</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBookings</a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a>
-</li>
- <% } %>        </ul>
+<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li><li class=""><a href="/ttsvr/n/Consent/skypepi-97">myConsent</a></li><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li><li class=""><a href="/ttsvr/n/home/skypepi-67">myClass</a></li>        </ul>
       </div>
     </div>
-  </nav><%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@54 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
-}
-%>
-</td>
+  </nav></td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
-  <td  class='magic' align='left' valign='middle'>
-<a href="/ttsvr/n/home/skypepi-67">
-	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
-</a>
-</td>
+  <td  class='magic' align='left' valign='middle'></td>
  </tr>
 </table>
 </td>
@@ -1191,20 +1130,16 @@ try {
 	if (isLoggedIn) {
 		FetchPerson fetchPerson = h.getFetchPerson();
 %>
-
 <style>
-	.dropdown-menu {
-		z-index: 1999;
-	}
-	.dropdown a.head {
-		background-color: white;
-		border: #00a3e4 1px solid;
-	}
-	
-	.nav.nav-pills {
-		float: right;
-	}
-	
+.dropdown a.head {
+	background-color: white;
+	border: #00a3e4 1px solid;
+	z-index: 9999;
+}
+
+.open > .dropdown-menu {
+	z-index: 99999;
+}
 </style>
 
 <form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
@@ -1225,21 +1160,21 @@ try {
 			
 			<!-- Parent -->
 		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table>
+		<table width="100%">
 			<tr>
 				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot">
+					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="300px">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
-									<div style="width: 250px">
+									<div>
 									<ul class="nav nav-pills">
 								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><b class="caret"></b></a>
+								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
 								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
@@ -1323,8 +1258,7 @@ try {
 			},
 
 			selectChild : function(childId) {
-				console.log("childId", childId);
-// 				var childId = $("#logout-childId").val();
+				
 				var naviId = "<%=snippetVar_navpointId%>";
 				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
 				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
@@ -1350,9 +1284,12 @@ try {
 				}
 				
 				jQuery(".dropdown a[role='menuitem']").click(function() {
-					console.log("this", this);
 					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
 					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
 					var len = name.length;
 					var space = "&nbsp;";
 					
@@ -1470,20 +1407,31 @@ try {
 %>
 <style type="text/css">
 .input-cc {font-size: 16px; text-align: center;}
+.credit-card {
+	width: 65px !important;
+	margin: 0px 5px;
+	text-align: center;
+	}
+	.color-red {
+		color: #FF0000 !important;
+	}
 </style>
 <script src="/ttsvr/skypepi/scripts/jquery.validate.min.js"></script>
 <!-- ********** INSERT HTML HERE ********** -->
 <style>
 .portal-ribbon .left-edge.fork {
-	width: 180px;
+	width: 130px;
 }
 </style>
   
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>makePayment</span></div>
-<br><br><br>
+	<div class="ribbon-wrap left-edge fork lblue"><span>payment</span></div>
+	
+	<br />
+	<br />
+	<br />
 
-	<form method="post" action="" id="transact_form">
+	<form method="post" action="" id="transact_form" class="bc-form">
 		<input type="hidden" value="<%=h.getId()%>" id="transact_id" name="transact_id"/>
 		<input type="hidden" value="<%=h.getFeeSelection()%>" id="transact_fs" name="transact_fs"/>
 		<input type="hidden" value="<%=paymentDesc%>" name="transact_description" />
@@ -1491,21 +1439,19 @@ try {
 		<input type="hidden" value="<%=snippetVar_nextNavpoint%>" id="nextNavpoint" name="nextNavpoint" /> <%-- navpoint to re-enrolment --%>
 		<input type="hidden" value="<%=snippetVar_studentFees%>" id="selectionNavpoint" name="selectionNavpoint" /> <%-- navpoint to student fees --%>
 		<input type="hidden" value="" id="paymentDetailID" name="paymentDetailID" /> 
-		<input type="hidden" value="<%=lang.getString(paymentDesc, null, "") %>" id="paymentDescription" name="paymentDescription" />
-		<input type="hidden" value="<%=StringUtil.formatCurrency(amount) %>" name="transact_amount" id="transact_amount"/>
-		<table cellspacing="0" cellpadding="0" border="0">
+		<table cellspacing="0" cellpadding="0" border="0" width="100%">
 			<tr>
 				<td>
 					<div class="roundconts">
 						<div class="roundtops">
 <!-- 							<img width="8" height="8" style="display: none;" class="corner" alt="" src="/ttsvr/skypepi/images/skypepi_brtl.png"> -->
 						</div>
-						<table cellspacing="0" cellpadding="0" border="0">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td>
-									<table>
+									<table width="100%">
 										<tr>
-											<td class="heading color-blue add_margin_left" align="left" width="800px" colspan="4"><%=lang.getString("Payment Information", null, "") %></td>
+											<td class="heading color-blue add_margin_left" align="left" colspan="4"><%=lang.getString("Payment Information", null, "") %></td>
 										</tr>
 										<tr>
 											<td class="line-separator"></td>
@@ -1514,24 +1460,52 @@ try {
 								</td>
 							</tr>
 							<tr>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
 								<td>
 									<table style="border-spacing:5px">
 										<tr>
-											<td class="control-label" style="padding-right:5px"><%=lang.getString("Description", null, "") %>:</td>
-											<td width="400">
-												<input  class="form-control" type="text" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
+											<td height="10px">
 											</td>
 										</tr>
-										<tr><td>&nbsp;</td></tr>
 										<tr>
-											<td class="control-label" style="padding-right:5px"><%=lang.getString("Amount", null, "") %>:</td>
+											<td><label class="control-label"><%=lang.getString("Description", null, "") %>: </label></td>
 											<td>
-												<input  class="form-control" type="text" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
+												<input  id="paymentDescription" name="paymentDescription" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
 											</td>
 										</tr>
+										<%--<tr>
+											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>:</label> </td>
+											<td class="add_space_left body-text">
+												<div class="form-input-medium-container">
+													<input type="text" value="<%=lang.getString(paymentDesc, null, "") %>" autocomplete="off" class="form-input-medium required" id="paymentDescription" name="paymentDescription" readonly="readonly"/>
+												</div>
+											</td>
+										</tr>  --%>
+										<%-- <tr>
+											<td class="body-text color-regular add_margin_left"><%=lang.getString("Balance", null, "") %>:</td>
+											<td class="add_space_left">
+												<div class="form-input-medium-container">
+													<input type="text" value="<%=StringUtil.formatCurrency(grossAmount) %>" autocomplete="off" class=""  readonly="readonly"/>
+												</div>
+											</td>
+										</tr> --%>
+										<tr>
+											<td height="10px">
+											</td>
+										</tr>
+										<tr>
+											<td><label class="control-label"><%=lang.getString("Amount", null, "") %>: </label></td>
+											<td>
+												<input  id="transact_amount" name="transact_amount" class="form-control" type="text" autocomplete="off" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
+											</td>
+										</tr>
+										<%--<tr>
+											<td class="body-text color-regular add_margin_left"><%=lang.getString("Amount", null, "") %>:</td>
+											<td class="add_space_left">
+												<div class="-container">
+													<input type="text" value="<%=StringUtil.formatCurrency(amount) %>" autocomplete="off" class="" name="transact_amount" id="transact_amount" readonly="readonly"/>
+												</div>
+											</td>
+										</tr>  --%>
 										<%-- <tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Payment Method", null, "") %>:</td>
 											<td class="add_space_left">
@@ -1539,21 +1513,20 @@ try {
 													<option value="7"><%=lang.getString("Online Payment", null, "") %></option>
 												</select>
 											</td> --%>
-										</tr>
+										</tr>	
 									</table>
 								</td>
 							</tr>
 						</table>
 						</div>
 						<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
-						<%--
 						<div class="roundcont">
-						<table cellspacing="0" cellpadding="0" border="0">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td>
-									<table>
+									<table width="100%	">
 										<tr>
-											<td class="heading color-blue add_margin_left" align="left" width="800px" colspan="4"><%=lang.getString("Credit Card Information", null, "") %></td>
+											<td class="heading color-blue add_margin_left" align="left" colspan="4"><%=lang.getString("Credit Card Information", null, "") %></td>
 										</tr>
 										<tr>
 											<td class="line-separator"></td>
@@ -1563,42 +1536,35 @@ try {
 							</tr>
 							<tr>
 								<td>
-									<table style="border-spacing:5px">
+<!--
+<table style="border-spacing:5px" border="0">
 										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label id="lbl_creditcard_name" for="transact_creditcard"><%=lang.getString("Card Holder's Name", null, "") %>:</label> </td>
-											<td class="add_space_left" colspan="3">
-												<table cellpadding="0" cellspacing="0">
-													<tr>
-														<td>
-															<div class="form-input-medium-container">
-																<input type="text" name="creditcard_name" id="creditcard_name" value="" autocomplete="off" class="form-input-medium required"/>
-															</div>
-														</td>
-													</tr>
-												</table>
+											<td><label class="control-label" for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Card Holder's Name", null, "") %>: </label></td>
+											<td>
+												<input  id="creditcard_name" name="creditcard_name" class="form-control required" type="text" autocomplete="off" style="width: 429px;" />
 											</td>
 										</tr>
 										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label id="lbl_transact_creditcard" for="transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>:</label> </td>
-											<td class="add_space_left" colspan="3">
+											<td><label class="control-label" for="transact_creditcard" id="lbl_transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>: </label></td>
+											<td class="add_space_left" colspan="2">
 												<input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
 												<table cellpadding="0" cellspacing="0">
 													<tr>
 														<td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard1" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard1" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td><td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard2" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard2" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td><td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard3" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard3" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td><td>
-															<div class="form-input-small-container">
-																<input type="text" name="creditcard_number" id="transact_creditcard4" value="" autocomplete="off" class="form-input-small required input-cc credit-card"/>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard4" class="form-control required credit-card" type="text" autocomplete="off"/>
 															</div>
 														</td>
 													</tr>
@@ -1606,22 +1572,31 @@ try {
 											</td>
 										</tr>
 										<tr>
-											<td class="body-text color-regular add_margin_left"><label id="lbl_expiryDate"><%=lang.getString("Expiry Date", null, "") %>: </label> </td>
+											<td><label class="control-label" id="lbl_transact_creditcard_type" for="transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label></td>
+											<td class="add_space_left">
+												<select name="transact_creditcard_type" class="form-control required" style="width: 150px;">
+													<option value="Master">Master Card</option>
+													<option value="VISA">Visa</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td><label class="control-label"><%=lang.getString("Expiry Date", null, "") %>: </label></td>
 											<td>
 												<table>
 													<tr>
-														<td class="body-text color-regular add_space_left"><%=lang.getString("Month", null, "") %></td>
+														<td><label class="control-label"  id="lbl_transact_month"><%=lang.getString("Month", null, "") %>: </label></td>
 														<td class="add_space_left">
-															<select id="transact_month" name="transact_month">
+															<select id="transact_month" name="transact_month" class="form-control" style="width: 80px">
 															<% for(JSONObject mon : h.getMonth()) { %>
 																<option value="<%=mon.get("id")%>"><%=mon.get("desc")%></option> 
 															<% } %>
 															</select>
 														</td>
 														
-														<td class="add_space_left body-text color-regular add_space_left"><%=lang.getString("Year", null, "") %></td>
+														<td><label class="control-label" id="lbl_transact_year"><%=lang.getString("Year", null, "") %>: </label></td>
 														<td class="add_space_left">
-															<select id="transact_year" name="transact_year">
+															<select id="transact_year" name="transact_year" class="form-control" style="width: 80px">
 																<% for(JSONObject year : h.getYear()) { %>
 																<option value="<%=year.get("yr")%>"><%=year.get("year")%></option> 
 															<% } %>
@@ -1630,38 +1605,133 @@ try {
 													</tr>
 												</table>
 											</td>
-											<td class="body-text color-regular add_space_left" style="padding-right:5px"><label id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "") %>:</label> </td>
-											<td class="add_space_left">
-												<div class="form-input-small-container">
-													<input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class="form-input-small required input-cc"/>
+										</tr>
+										<tr>
+											<td><label class="control-label" id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label></td>
+												<td class="add_space_left">
+												<div class="-container">
+													<input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required form-control" style="width: 100px;"/>
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left"><%=lang.getString("Credit Card Type", null, "") %>:</td>
-											<td class="add_space_left">
-												<select name="transact_creditcard_type">
-<!-- 													<option value="Amex">Amex</option> -->
-<!-- 													<option value="BankCard">Bank Card</option> -->
-<!-- 													<option value="Diners">Diners Club</option> -->
-<!-- 													<option value="Discover">Discover</option> -->
-<!-- 													<option value="JCB">JCB</option> -->
+										
+									</table>
+-->			
+
+<!-- 
+	use the code above to return to normal
+-->						
+
+ <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Card Holder's Name", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                        <input  id="creditcard_name" name="creditcard_name" class="form-control required" type="text" autocomplete="off" style="width: 100%;" />
+                                        </div>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row spacing-top" >
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" for="transact_creditcard" id="lbl_transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-8"><input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
+                                        <table cellpadding="0" cellspacing="0">
+													<tr>
+														<td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard1" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td><td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard2" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td><td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard3" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td><td>
+															<div>
+																<input  id="creditcard_number" name="transact_creditcard4" class="form-control required credit-card" type="text" autocomplete="off"/>
+															</div>
+														</td>
+													</tr>
+												</table>
+                                        </div>
+                                        <div class="col-md-2">
+                                        </div>
+                                    </div>
+                                    
+                                        <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" id="lbl_transact_creditcard_type" for="transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                      <select name="transact_creditcard_type" class="form-control required" style="width: 150px;">
 													<option value="Master">Master Card</option>
 													<option value="VISA">Visa</option>
 												</select>
-											</td>
-										</tr>
-									</table>
+                                        </div>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2"><%=lang.getString("Expiry Date", null, "") %>: </label>
+                                        </div>
+                                        <div class="col-md-8">
+                                      		<table>
+													<tr>
+														<td><label class="control-label"  id="lbl_transact_month"><%=lang.getString("Month", null, "") %>: </label></td>
+														<td width="10px"></td>
+														<td class="add_space_left">
+															<select id="transact_month" name="transact_month" class="form-control" style="width: 80px">
+															<% for(JSONObject mon : h.getMonth()) { %>
+																<option value="<%=mon.get("id")%>"><%=mon.get("desc")%></option> 
+															<% } %>
+															</select>
+														</td>
+														<td width="10px"></td>
+														<td><label class="control-label" id="lbl_transact_year"><%=lang.getString("Year", null, "") %>: </label></td>
+														<td width="10px"></td>
+														<td class="add_space_left">
+															<select id="transact_year" name="transact_year" class="form-control" style="width: 80px">
+																<% for(JSONObject year : h.getYear()) { %>
+																<option value="<%=year.get("yr")%>"><%=year.get("year")%></option> 
+															<% } %>
+															</select>
+														</td>
+													</tr>
+												</table>
+                                        </div>
+                                        <div class="col-md-2">
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="row spacing-top">
+                                    	<div class="col-md-2">
+                                        	<label class="control-label control-label2" id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                      <input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required form-control" style="width: 100px;"/>
+                                        </div>
+                                        <div class="col-md-6">
+                                        </div>
+                                    </div>
+                                    
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<table>
 										<tr>
-											<td class="heading color-blue add_margin_left" align="left" width="800px" colspan="4"><%=lang.getString("", null, "") %></td>
-										</tr>
+											<td class="heading color-blue add_margin_left" align="left" width="100%" colspan="4"><%=lang.getString("", null, "") %></td>
+										</tr>				
 										<tr>
-											<td class="line-separator"></td>
+											<td class="line-separator" width="100%"></td>
 										</tr>
 									</table>
 								</td>
@@ -1670,8 +1740,15 @@ try {
 								<td>
 									<table style="border-spacing:5px">
 										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px"> <input type="checkbox"  id="chk-taxNumber"/> <label for="chk-taxNumber" id="lbl_chk-taxNumber"><%=lang.getString("Do you need company tax ID number on your local government tax receipt (GUI)", null, "") %>?</label> </td>
+											<td height="10px"></td>
 										</tr>
+										<tr>
+												<td class="body-text color-regular add_margin_left"
+													style="padding-right: 5px"><input type="checkbox"
+													id="chk-taxNumber" /> <label for="chk-taxNumber"
+													id="lbl_chk-taxNumber"><%=lang.getString("Do you need company tax ID number on your local government tax receipt (GUI)",null, "")%>?</label>
+												</td>
+											</tr>
 									</table>
 								</td>							
 							</tr>
@@ -1681,8 +1758,8 @@ try {
 										<tr>
 											<td style="padding-left: 25px;"  class="body-text color-regular add_margin_left" id="lbl_taxNumber"><%=lang.getString("My company tax ID number is", null, "") %>:</td>
 											<td class="add_space_left body-text" >
-												<div class="form-input-small-container">
-													<input type="text" value="" autocomplete="off" class="form-input-small" id="taxNumber" name="taxNumber"/>
+												<div class="-container">
+													<input type="text" value="" autocomplete="off" class="" id="taxNumber" name="taxNumber"/>
 												</div>
 											</td>
 										</tr>
@@ -1691,66 +1768,50 @@ try {
 							</tr>
 						</table>
 					</div>
-					--%>
 				</td>
 			</tr>
 			<tr>
 			<td class="roundcont">
 				<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
 				<div class="roundcont">
-					<table>
-						<tr>
-							<td align="center" >
-								<table>
-									<tr>
-										<td><%-- <img alt="visa"   src="/ttsvr/skypepi/images/secure-payments.png" width="400">--%></td><td>&nbsp;</td>
-										<!-- <td><img alt="mastercard"  src="/ttsvr/skypepi/images/mastercard.jpg"></td><td>&nbsp;</td>
-										<td><img alt="mastercard"  src="/ttsvr/skypepi/images/paydollar.jpg"></td> -->
-									</tr>
-								</table>
-							</td>
-							<td width="300px" valign="top">
-								<table align="right" style="padding-right:10px" border="0" cellspacing="0" cellpadding="0">
+					<div class="row spacing-top">
+                                    	<div class="col-md-4">
+                                        <img alt="visa"  src="/ttsvr/skypepi/images/secure-payments.png" width="100%">
+                                        </div>
+                                        
+                                        <div class="col-md-8">
+                                        	<table align="right" style="padding-right:10px" border="0" cellspacing="0" cellpadding="0">
 									<tr>
 										<td>
 											
 											<% if("".equals(feeSelections)) { %>
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" id="transact_btn_cancel"/>
-											<%--<table width="" border="0" cellspacing="0" cellpadding="0">
+											 <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td width="6px" class="button_l">&nbsp;</td>
-				                                 <td width="126px" class="button_m"><a href="#" id="transact_btn_cancel"><%=lang.getString("Cancel", null, "") %></a></td>
-				                                 <td width="17px" class="button_r">&nbsp;</td>
-				                               </tr>
-				                             </table>		 --%>							
+				                               <td> <a href="#" id="transact_btn_cancel" class="buttonBlue"> <%=lang.getString("Cancel", null, "") %> </a></td>
+				                              </tr>
+				                     		  </table>								
 				                             <% } else { %>
-				                             <input type="button" class="buttonBlue" value="<%=lang.getString("Back To Unpaid Fees", null, "") %>" id="transact_btn_back"/>
-				                            <%-- <table width="" border="0" cellspacing="0" cellpadding="0">
+				                             <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td width="6px" class="button_l">&nbsp;</td>
-				                                 <td width="150px" class="button_m"><a href="#" id="transact_btn_back"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>
-				                                 <td width="17px" class="button_r">&nbsp;</td>
+				                                 <td><a href="#" id="transact_btn_back" class="buttonBlue"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>      
 				                               </tr>
-				                             </table>  --%>
+				                             </table>
 				                             
 				                             <% } %>
 										</td>
-										<td>&nbsp;</td>
+										<td width="20px">
+										
+										</td>
 										<td>
-											<input type="button" class="buttonBlue" value="<%=lang.getString("Continue Payment", null, "") %>" id="transact_btn_confirm"/>
-											<%--<table width="149px" border="0" cellspacing="0" cellpadding="0">
+											<table width="149px" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td width="6px" class="button_l">&nbsp;</td>
-				                                 <td width="126px" class="button_m"><a href="#" id="transact_btn_confirm"><%=lang.getString("Confirm Payment", null, "") %></a></td>
-				                                 <td width="17px" class="button_r">&nbsp;</td>
-				                               </tr>
-				                             </table>  --%>
+				                                 <td><a href="#" id="transact_btn_confirm" class="buttonBlue"><%=lang.getString("Confirm Payment", null, "") %></a></td>
+				                                 </tr>
+				                             </table>
 										</td>
 									</tr>
 							</table>
-							</td>
-						</tr>
-					</table>
+                                        </div>
 				</div>
 			</td>
 			</tr>
@@ -1778,14 +1839,12 @@ try {
 </div>
 
 <!-- modal content -->
-<%--
 <div id='confirm' class="simple_dialog">
 	<div class='header'><span>Processing Payment...</span></div>
 	<div class='message' style="padding: 0px;">
 		<iframe id="\" style="width: 100%; height: 79%;border: 0px;"></iframe>
 	</div>
 </div>
-
 
 <div id='div_loading' class="simple_dialog">
 	<div class='header'><span>Please wait...</span></div>
@@ -1802,22 +1861,6 @@ try {
 	</div>
 </div>
 
---%>
-<div class="modal fade" id="simple_dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><span>Processing please wait...</span></h4>
-      </div>
-      <div class="modal-body">
-        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
 <script type="text/javascript">
 	
 var TransactPayment = function() {
@@ -1829,7 +1872,64 @@ var TransactPayment = function() {
 			var self = this;
 			
 			jQuery('#transact_btn_confirm').click(function() {
-				self.submitFeesToPepi();
+				
+				var isSubmitForm = true;
+				
+				jQuery(".required").each(function(index, obj) {
+					if (jQuery.trim(jQuery(obj).val()) == '') {
+						isSubmitForm = false;
+						jQuery("#lbl_" + jQuery(obj).attr("id")).addClass("body-text color-red");
+					} else {
+						jQuery("#lbl_" + jQuery(obj).attr("id")).removeClass("body-text color-red");
+					}
+				});
+				
+				jQuery("#lbl_expiryDate").removeClass("body-text color-red");
+				
+				var myDate = new Date();
+				var selectedMonth = parseInt($("#transact_month").val());
+				var selectedYear = parseInt($("#transact_year").val());
+				if (myDate.getFullYear() == selectedYear && selectedMonth <= myDate.getMonth()) {
+					isSubmitForm = false;
+					jQuery("#lbl_expiryDate").addClass("body-text color-red");
+				}
+				
+				$(".credit-card").each(function(idx, obj) {
+					
+					if ($(obj).val().length < 4) {
+						jQuery("#lbl_transact_creditcard").addClass("body-text color-red");
+						isSubmitForm = false;
+					}
+					
+				});
+				
+				if ($("#chk-taxNumber").attr("checked") && $("#taxNumber").val().length < 8) {
+					$("#lbl_taxNumber").addClass("body-text color-red");
+					isSubmitForm = false;
+				}
+				
+				if ($("#creditcard_name").val().length < 7) {
+					$("#lbl_creditcard_name").addClass("body-text color-red");
+					isSubmitForm = false;
+				}
+				
+				if (isSubmitForm) {
+					self.submitFeesToPepi();
+
+				}
+			});
+			
+			$("#transact_form").submit(function() {
+				
+				if (!$("#transact_form").validate().valid()) {
+					self.closeModal();
+					jQuery("#lbl_transact_creditcard").addClass("body-text color-red");
+					return false;
+				}
+				else {
+					return true;
+				}
+				
 			});
 			
 			jQuery('#transact_btn_back').click(function() {
@@ -1838,6 +1938,48 @@ var TransactPayment = function() {
 			
 			jQuery("#transact_btn_cancel").click(function() {
 				self.backToReEnrolment();
+			});
+			
+			$("#taxNumber").attr("maxlength", "8");
+			$("#transact_card_code").attr("maxlength", "6");
+			$(".credit-card").attr("maxlength", "4");
+			$(".credit-card").focus(function() {$(this).select();});
+			$(".credit-card, #transact_card_code, #taxNumber").keydown(function(e)
+	        {
+	            var key = e.charCode || e.keyCode || 0;
+	            // allow backspace, tab, delete, arrows, numbers and keypad numbers ONLY
+	            return (
+	                key == 8 || 
+	                key == 9 ||
+	                key == 46 ||
+	                (key >= 37 && key <= 40) ||
+	                (key >= 48 && key <= 57) ||
+	                (key >= 96 && key <= 105));
+	        });
+			$(".credit-card").each(function(idx, obj){
+				
+				$(obj).keyup(function() {
+					if ($(this).val().length == 4) {
+						$(".credit-card:eq("+(idx+1)+")").focus();
+					}
+					$("#transact_creditcard").val($(".credit-card:eq(0)").val()+$(".credit-card:eq(1)").val()+$(".credit-card:eq(2)").val()+$(".credit-card:eq(3)").val());
+				});
+				
+			});
+			
+			$(".credit-card").focus(function() {
+				this.select();
+			});
+			
+			$("#chk-taxNumber").click(function() {
+				if ($(this).attr("checked")) {
+					$("#tr-taxNumber").show();
+					$("#taxNumber").focus();
+				}
+				else {
+					$("#taxNumber").val("");
+					$("#tr-taxNumber").hide();
+				}
 			});
 			
 		},
@@ -1852,22 +1994,53 @@ var TransactPayment = function() {
 			var url = window.location.pathname;
 			url = url
 			+ "?op=skypepi_widgets.transactPayment.transactPayment&" 
-			+ params + "&subop=gopi";
-			
+			+ params;
 			
 			$.ajax({
 				url: url,
+				dataType: "text",
 				asynchronous: false,
 				cache: false,
 				type: 'post',
 				contentType: "application/x-www-form-urlencoded; charset=utf-8",
 				success: function(data) {
+					var status = '';
+					var msg = '';
+					
+					if (data.indexOf("FAILED") > -1) {
+						status = 'FAILED';
+						msg = data.split("~")[1];
+					}
+					
+					if (status == 'FAILED') {
+						
+						jQuery.modal.close();
+						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "") %><br> <%=lang.getString("Check your payment information.", null, "") %>");
+						
+						jQuery("#process-containers").css({"height":" 1065px"});
+					}
+					else {
+						
+						jQuery.modal.close();
+						
+						//window.open(data,'myreceipt','width=1000,height=800');
+						$("#paymentDetailID").val(data);
+						
+						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
+						jQuery("#msgButtonClose").click(function() {
+							Progress.showProgress();
+							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
+						});
+						
+					}
 					
 				},
 				error: function() {
 					self.closeModal(true);
 				}
 			});
+			
+			//$("#transact_form").submit();
 			
 		},
 		
@@ -1905,16 +2078,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-6"><div  class="col-md-3"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
+<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
 <div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
-<div  class="col-md-6"><div  class="col-md-3"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/Consent/skypepi-97" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myConsent</a></div>
-<div  class="col-md-3"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
-</div>
+<div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
 </div>
 </td>
  </tr>
@@ -2004,7 +2175,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  </tr>
 </table>
 </div>
-<div  class="col-md-8"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+<div  class="col-md-7"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
  </tr>

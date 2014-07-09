@@ -10,6 +10,8 @@
     String g_conf_log_level = "3";
     String g_conf_pa_port   = "8090";
     int    g_conf_tx_mode   = 0;
+    String g_conf_gw_port = "8090";
+    String g_conf_module_type = "01";
     /* ============================================================================== */
 
 
@@ -32,7 +34,7 @@
     String g_conf_site_key  = "3grptw1.zW0GSo4PQdaGvsF__";            
     String g_conf_site_name = "TEST MALL";
     
-    String g_conf_home_dir  = "/home/pepistage/server/files/skypepi_t/config/";
+    String g_conf_home_dir  = "/Users/ryandcangcoii/Development/Tooltwist-8.3.1/skyportal/config/";
     //String g_conf_home_dir  = "/tooltwist/tooltwist_osx_8.0-beta/devel/kcp_t";
     /* ============================================================================== */
 %>

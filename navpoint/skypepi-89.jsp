@@ -1923,10 +1923,14 @@ var TransactPayment = function() {
 						$("#paymentDetailID").val(data);
 						
 						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
-						jQuery("#msgButtonClose").click(function() {
-							Progress.showProgress();
+						
+						setTimeout(function() {
 							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
-						});
+						}, 3000);
+// 						jQuery("#msgButtonClose").click(function() {
+// 							Progress.showProgress();
+// 							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
+// 						});
 						
 					}
 					

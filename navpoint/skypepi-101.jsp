@@ -37,6 +37,7 @@
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
 
 <%
 	String jspName = "skypepi-101";
@@ -114,6 +115,15 @@ try {
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_37.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
+}
+
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_40 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params);
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_40.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_40", e);
 }
 
 
@@ -780,7 +790,28 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu'><div class='DivWidget' style=""><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='nav-wrapper' align='left' valign='top'>  <nav class="navbar  navbar-default" role="navigation" id="">
+  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.bootstrap.widgets.NavBarWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_40;
+	String snippetVar_widgetName = "@40";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@40";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
+	AltLang lang = h.getAltLang();
+%>
+  <nav class="navbar  navbar-default" role="navigation" id="">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -792,10 +823,28 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav ">
-<li class=""><a href="/ttsvr/n/home/skypepi-67">Home</a></li><li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li><li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li><li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a><span></span></li><li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li><li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>        </ul>
+<% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67"><%=lang.getString("Home", null, "") %></a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=lang.getString("Announcement", null, "") %></a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=lang.getString("Static Document", null, "") %></a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=lang.getString("Translation Table", null, "") %></a>
+<span></span>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=lang.getString("System Setting", null, "") %></a>
+</li>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=lang.getString("Reserved", null, "") %></a>
+</li>
+ <% } %>        </ul>
       </div>
     </div>
-  </nav></td>
+  </nav><%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.bootstrap.widgets.NavBarWidget)", e);
+}
+%>
+</td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
@@ -1114,13 +1163,16 @@ tbody.translate .icon-edit {
 
 
 <div class="row">
-	<div class="col-md-8 heading color-regular">
-    header
-    </div>
-    
-    <div class="col-md-4 search">
-    a
-    </div>
+	<table cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<td colspan="2" class="lang-select">
+	<% for (String languange: h.getLanguages()) { %>
+		<a href="#"><%=languange %></a>&nbsp;|&nbsp;
+	<% } %>
+		</td>
+	</tr>
+	</table>
+	<br>
 </div>
 <div class="portalTable">
 <table cellpadding="0" cellspacing="0" width="100%">
@@ -1132,6 +1184,7 @@ tbody.translate .icon-edit {
     	for(String string : h.getStringLabels()) {
     	
     %>
+    
     <tbody class="translate">
     <tr class="white">
     	<td width="40%" align="left" valign="top" class="text"><%=string %><input type="hidden" value="<%=string %>" class="string"/></td>
@@ -1541,6 +1594,19 @@ var LanguageTranslator = function() {
 			});
 			jQuery(".translate").mouseout(function() {
 				jQuery(this).find("td").css({"background-color": "#fff"});
+			});
+			
+			jQuery(".lang-select > a").click(function() {
+				var lang = jQuery(this).html();
+				jQuery.ajax({
+					url:"",
+					data: {op: "skypepi_widgets.languageTranslator.translate",
+					subop: "changeLang",
+					lang: lang},
+					success: function() {
+						window.location.reload(true);
+					}
+				});
 			});
 		},
 		

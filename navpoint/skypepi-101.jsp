@@ -166,33 +166,7 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}
-.search {
-  font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
-  font-weight: 300;
-  background-color:#ffffff;
-  color:#818181;
-  padding-left:10px;
-  font-size:14px;
-  background-image:url(images/search.png);
-  background-repeat:no-repeat;
-  background-position:95% 50%; 
-  border:1px solid #cccccc;
-}
-
-.search input {
-  background:transparent;
-  width:100%;
-  color:#ffffff;
-  font-size:14px;
-}
-
-input:focus { 
-    outline: none;
-    box-shadow: none;
-	font-style:normal !important;
-}
-/* Styles for widget simpleDiv */
+}/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -217,9 +191,11 @@ input:focus {
 
 .SimpleDiv .someClass {
 }</style>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/jquery.dataTables.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/ttsvr/skypepi/scripts/jquery.dataTables.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -335,7 +311,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -369,7 +344,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -381,23 +356,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -579,7 +554,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -613,7 +587,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -625,23 +599,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -908,7 +882,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -942,7 +915,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -954,23 +927,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -1135,26 +1108,8 @@ try {
 	LanguageTranslatorProductionHelper h = (LanguageTranslatorProductionHelper) helper;
 	XData data = h.getData(jh);
 %>
-
-<style>
-.portal-ribbon .left-edge.fork {
-	width: 130px;
-}
-
-
-.text-alternate {
-	width: 100%;
-	border: 1px solid #cccccc;
-	background-color: #f3f3f3;
-}
-
-tbody.translate .icon-edit {
-	cursor: pointer;
-}
-</style>
-
 <div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span>myDetails</span></div>
+	<div class="ribbon-wrap left-edge fork lblue"><span>Translation Table</span></div>
 	
 	<br />
 	<br />
@@ -1163,37 +1118,53 @@ tbody.translate .icon-edit {
 
 
 <div class="row">
+
+	<div class="col-md-8 heading color-regular">
+      
+    </div>
+	
 	<table cellpadding="0" cellspacing="0" width="100%">
 	<tr>
-		<td colspan="2" class="lang-select">
+		<td class="lang-select">
 	<% for (String languange: h.getLanguages()) { %>
-		<a href="#"><%=languange %></a>&nbsp;|&nbsp;
+		<div class="language-spacing"><a class="language-filter" href="#"><%=languange %></a></div>
 	<% } %>
 		</td>
 	</tr>
 	</table>
 	<br>
 </div>
-<div class="portalTable">
-<table cellpadding="0" cellspacing="0" width="100%">
+<div>
+<div class="table-responsive included-search">
+<table cellpadding="0" cellspacing="0" width="100%" id="lang-table" class="portalTable">
+	<thead>
 	<tr>
+		<th></th>
     	<th width="40%" align="left" valign="top">English</th>
-   		<th width="60%" colspan="2" align="left" valign="top"><%="" %></th>
+   		<th width="60%" align="left" valign="top"><%="" %></th>
+   		<th></th>
     </tr>
-    <%
-    	for(String string : h.getStringLabels()) {
-    	
-    %>
+    </thead>
     
-    <tbody class="translate">
-    <tr class="white">
-    	<td width="40%" align="left" valign="top" class="text"><%=string %><input type="hidden" value="<%=string %>" class="string"/></td>
-   		<td width="60%" align="left" valign="top" class="alternate"><%=h.getAlternate(string) %></td>
-        <td width="20px" align="center" valign="middle"><img src="/ttsvr/skypepi/images/edit.png" width="22" height="22" class="icon-edit"/></td>
+    <tbody>
+    <%
+    	int i = 0;
+    	for(String string : h.getStringLabels()) {
+    	String cls = "blue";
+    	if (i % 2 == 0) cls = "white";
+    	i++;
+    %>
+    <tr class="<%=cls%> translate">
+    	<td width="5%" class="selected"></td>
+    	<td width="30%" align="left" valign="top" class="text"><%=string %><input type="hidden" value="<%=string %>" class="string"/></td>
+   		<td width="50%" align="left" valign="top" class="alternate"><%=h.getAlternate(string) %></td>
+        <td width="15%" align="center" valign="middle"><a href="#edit"><img src="/ttsvr/skypepi/images/edit.png" width="22" height="22" class="icon-edit"/></a></td>
     </tr>
-    </tbody>
+    
     <% } %>
+    </tbody>
 </table>
+</div>
 </div>
 
 </div>
@@ -1428,7 +1399,7 @@ try {
 	<input type="hidden" id="cn-results" value="<%=lang.getString("results", null, "") %>">
 	<input type="hidden" id="cn-of" value="<%=lang.getString("of", null, "") %>">
 	<input type="hidden" id="selected-lanuage" value="<%=lang.getCurrentLangCode() %>">
-	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED %>">
+	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE%>">
 </form>
 </div>
 
@@ -1538,9 +1509,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <script type="text/javascript">
 var LanguageTranslator = function() {
 	return {
-		myVariable: null,
+		tempTable: null,
 
 		init: function() {
+			
 			jQuery(document).on("click", ".icon-edit", function() {
 				
 				var alternate = jQuery(this).parents(".translate").find(".alternate");
@@ -1549,7 +1521,11 @@ var LanguageTranslator = function() {
 				jQuery(alternate).find(".text-alternate").focus();
 				
 				//change actions
-				jQuery(this).parent().html("<a class=\"save-transalation\">s</a>&nbsp;<a class=\"cancel-translation\">x</a>");
+				jQuery(this).parents("td").html("<a class=\"save-transalation\" href=\"#save\">" +
+						"<img src=\"/ttsvr/skypepi/images/save_icon.png\"/>" +
+						"</a>&nbsp;<a class=\"cancel-translation\" href=\"#cancel\">" +
+						"<img src=\"/ttsvr/skypepi/images/cancel_icon.png\"/>" +
+						"</a>");
 			});
 			
 			jQuery(document).on("click",".cancel-translation", function() {
@@ -1558,7 +1534,7 @@ var LanguageTranslator = function() {
 				var textVal = jQuery(alternate).find("input.text-alternate").val();
 				jQuery(alternate).html(textVal);
 				
-				jQuery(this).parent().html('<img src="/ttsvr/skypepi/images/edit.png" width="22" height="22" class="icon-edit">');
+				jQuery(this).parents("td").html('<a href="#edit"><img src="/ttsvr/skypepi/images/edit.png" width="22" height="22" class="icon-edit"></a>');
 				
 			});
 			
@@ -1583,17 +1559,14 @@ var LanguageTranslator = function() {
 				
 				parents.find(".cancel-translation").trigger("click");
 				
-				
-				
 			});
-			
-			
 			
 			jQuery(".translate").mouseover(function() {
-				jQuery(this).find("td").css({"background-color": "#f3f3f3"});
+				jQuery(this).find(".selected").css({"background": "url('/ttsvr/skypepi/images/blue-arrow.png') no-repeat center"});
 			});
+			
 			jQuery(".translate").mouseout(function() {
-				jQuery(this).find("td").css({"background-color": "#fff"});
+				jQuery(this).find(".selected").css({"background": ""});
 			});
 			
 			jQuery(".lang-select > a").click(function() {
@@ -1608,10 +1581,44 @@ var LanguageTranslator = function() {
 					}
 				});
 			});
+			
+			$(document).ready(function(){
+			    $('#lang-table').dataTable();
+			});
+			
+			//Filtering
+//			jQuery(document).on("keyup",".search #filter",function() {
+//				LanguageTranslator.filter(jQuery(this).val());
+//			});
 		},
 		
-		myMethod: function() {
-			alert("LanguageTranslator.myMethod()");
+		filter: function(keyword) {
+			
+			var tbl = jQuery(".translate");
+			
+			var tmpTbl = jQuery("<tbody></tbody");
+			tmpTbl.html(tbl.html());
+			tbl.html("");
+			
+			var regex = /^[a-zA-Z]+$/;
+			tmpTbl.find('tr').each(function() {
+				var $td  = jQuery(this).find("td:first-child");
+				var str = $td.innerHTML();
+			    if (!str.match()) {
+			    	jQuery(this).hide();
+			    }
+			});
+			tbl.html(tmpTbl.html());
+		},
+		
+		//filter results based on query
+		filter: function(selector, query) {
+		  query =   $.trim(query); //trim white space
+		  query = query.replace(/ /gi, '|'); //add OR for regex query
+		 
+		  $(selector).each(function() {
+		    ($(this).text().search(new RegExp(query, "i")) < 0) ? $(this).hide().removeClass('visible') : $(this).show().addClass('visible');
+		  });
 		}
 		// no comma after last method
 	};

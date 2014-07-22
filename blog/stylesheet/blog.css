@@ -1,0 +1,45 @@
+.wbdblog_table {
+    font-size: 12px;
+    margin-top: 15px;
+    width: 100%;
+    background-color: #DFDFDF;
+    border-spacing: 1px;
+    color: #333333;
+}
+.wbdblog_table th {
+	background-color: #8EBAED;
+}
+
+.wbdblog_table th div.sortable {
+	background: url("/blog/script/jquery_tablesorter/themes/blue/bg.gif") no-repeat scroll right center #8EBAED;
+	cursor: pointer;
+	padding-right: 20px;
+    white-space: nowrap;
+}
+
+.wbdblog_table th.uparrow div.sortable {
+	background: url("/blog/script/jquery_tablesorter/themes/blue/asc.gif") no-repeat scroll right center #3399FF;
+	cursor: pointer;
+}
+
+.wbdblog_table th.downarrow div.sortable {
+	background: url("/blog/script/jquery_tablesorter/themes/blue/desc.gif") no-repeat scroll right center #3399FF;
+	cursor: pointer;
+}
+
+.wbdblog_table th.uparrow, .wbdblog_table th.downarrow {
+	background-color: #3399FF;
+}
+
+.wbdblog_table td {
+	background-color: #ffffff;
+}
+
+.wbdblog_table td, .wbdblog_table th {
+	padding: 5px;
+}
+
+.blog-search-field-table td {
+	vertical-align: middle;
+	padding-left: 10px;
+}

@@ -33,32 +33,15 @@
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@page import="com.github.mustachejava.DefaultMustacheFactory"%>
-<%@page import="com.github.mustachejava.Mustache"%>
-<%@page import="com.github.mustachejava.MustacheFactory"%>
-<%@page import="java.io.StringReader"%>
-<%@page import="java.io.StringWriter"%>
-<%@page import="tooltwist.bootstrap.viewHelpers.CarouselViewHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StaticDocumentsProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
 
 <%
 	String jspName = "skypepi-100";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9 = null;
-try {
-	Properties productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9Params.setProperty("navpointId", "skypepi-100");
-	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9Params.setProperty("pageDataSection", "carousel");
-	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9 = new tooltwist.bootstrap.viewHelpers.CarouselViewHelper(productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9Params);
-	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_9", e);
-}
-
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_52 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_52Params = new Properties();
@@ -125,6 +108,15 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
 }
 
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23 = null;
+try {
+	Properties productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23 = new tooltwist.skypepi.productionHelpers.StaticDocumentsProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23Params);
+	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_40 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params = new Properties();
@@ -132,16 +124,6 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_40.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_40", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21 = null;
-try {
-	Properties productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21Params.setProperty("snippets", "Announcements");
-	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21 = new tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21Params);
-	productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21", e);
 }
 
 
@@ -184,10 +166,6 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}.banner img {
-	width: 940px;
-	margin-left: 10px;
-	margin-right: 10px;
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -328,7 +306,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -362,7 +339,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -374,23 +351,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -572,7 +549,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -606,7 +582,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -618,23 +594,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -901,7 +877,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -935,7 +910,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -947,23 +922,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -1106,184 +1081,81 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
-<div class='DivWidget page-content' style=""><div class="container">
-<div id="carousel-example-generic" class="carousel slide">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-          
-   
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
-</div>
-</div></div>
 <table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
   <td  height='30' align='left' valign='top'></td>
  </tr>
 </table>
-<%-- Widget skypepi.pages.portal_p_bstrapStaticDocumentAdmin@21 (type=tooltwist.skypepi.widgets.StudentHomeWidget) --%>
+<div class='DivWidget page-content standard-width' style=""><%-- Widget skypepi.pages.portal_p_bstrapStaticDocumentAdmin@23 (type=tooltwist.skypepi.widgets.StaticDocumentsWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_21;
-	String snippetVar_snippets = "Announcements";
-	String snippetVar_widgetName = "@21";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapStaticDocumentAdmin@21";
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23;
+	String snippetVar_widgetName = "@23";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapStaticDocumentAdmin@23";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
-<%@page import="org.w3c.dom.Element"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StaticDocumentsProductionHelper.Document"%>
+<%@page import="tooltwist.skypepi.productionHelpers.StaticDocumentsProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
 <%@page import="tooltwist.misc.JspHelper"%>
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.wbd.WbdCache"%>
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%
 	// Get the production helper for this widget
-	StudentHomeProductionHelper h = (StudentHomeProductionHelper) helper;
+	StaticDocumentsProductionHelper h = (StaticDocumentsProductionHelper) helper;
 	XData data = h.getData(jh);
-	AltLang lang = h.getAltLang();
-	String parentId = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.SIGN_ON_ID, "0");
-	Boolean isParent = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_SELECTED_PARENT, false);
 %>
-
-<!-- ********** INSERT HTML HERE ********** -->
-<div>
+<div class="bc-container portal-ribbon">
+	<div class="ribbon-wrap left-edge fork lblue"><span>Static Documents</span></div>
 	
-	<% if("Welcome".equals(snippetVar_snippets)) { %>
+	<br />
+	<br />
+	<br />
 	
-	<table class="">
-			<tr>
-				<td width="" align="left" class="heading color-blue" colspan="2"><%=lang.getString("Welcome", null, "") %>&nbsp;</td>
-			</tr>
-			<tr>
-				<td height="30"></td>
-			</tr>
-			<tr class="body-text color-regular">
-				<td style="padding: 20px;"><img alt="British Council" src="/ttsvr/skypepi/images/brtishcouncil.png" title="British Council" width="190"/></td>
-				<td valign="top" style="padding: 20px;"><%=lang.getString("Welcome to the British Council's new online payment portal. We hope you enjoy using it!", null, "") %></td>
-			</tr>
-		</table>
-	<% }  else if ("Link".equals(snippetVar_snippets)) { %>
-	
-	<table width="730">
-			<tr>
-				<td width="" align="left" class="heading color-blue"><%=lang.getString("Re-registration details", null, "") %>&nbsp;</td>
-				<td width="" align="right"></td>
-			</tr>
-			<tr>
-				<td height="30"></td>
-			</tr>
-			<tr class="body-text color-regular">
-				<td valign="top" style="padding: 20px;" colspan="2" align="center">
-					<div style="width: 400px;"><%=lang.getString("Click on the link below for an easy step guide on how to use the re-registration tool. It's easy and it's fast... try it out!", null, "") %>
-						<br><br>
-					<% if(!isParent) { %>
-						<% 
-						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
-						{
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_tw.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						} else {			
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_en.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						}
-						%>
-					<% } else { %>
-						<% 
-						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
-						{
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_chinese_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						} else {			
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_english_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						}
-						%>
-					<% } %>
-					</div>
-				</td>
-			</tr>
-		</table>
-	
-	<% }  else {%>
+<div class="portalTable">
+<table cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+		<th width="10%"></th>
+    	<th width="20%" >Document Title</th>
+   		<th width="25%" >Document Language</th>
+   		<th width="20%" >Last Upload Date</th>
+   		<th width="15%" >Editor</th>
+   		<th width="10%"></th>
+    </tr>
+    <%
+    int cnt = 1;
+    for (Document doc: h.getDocuments()) { 
+    	String clss = "white";
+    	if (cnt % 2 == 0) clss = "blue";
+    	cnt++;
+    %>
+    <tr class="<%=clss %>">
+    	<td><a href="#view">V</a></td>
+    	<td><%=doc.getTitle() %></td>
+    	<td><%=doc.getLangunage() %></td>
+    	<td><%=doc.getUploadDate() %></td>
+    	<td><%=doc.getEditor() %></td>
+    	<td><a href="#upload">U</a></td>
+    </tr>
+    <% } %>
+</table>
+</div>
 
-		<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
-		<tbody>
-			
-			<% XData announcements = h.getAnnouncements(); 
-			   XNodes announcement = announcements.getNodes("/*/Announcement");
-			   
-			   for (announcement.first(); announcement.next();) {
-			   
-				   Element announce = (Element)announcement.getCurrentNode();
-				   String ID = announce.getAttribute("ID");
-				   String title = announce.getAttribute("Title");
-				   String note = announce.getAttribute("Note");
-				   String displayIn = announce.getAttribute("DisplayIn");
-				  if (!"Portal".equals(displayIn)) continue;
-			%>
-			
-			<tr>
-				<td align="left" valign="top">
-					<div class="bc-container portal-ribbon" style="max-width: 960px;">
-							<table width="100%">
-								<tbody>
-									<tr>
-										<td width="" align="left" class="heading color-blue"
-											colspan="2"><%=title%>&nbsp;</td>
-									</tr>
-									<tr>
-										<td height="10"></td>
-									</tr>
-									<tr class="body-text color-regular">
-										<td style="padding: 20px;"><%=note%></td>
-									</tr>
-								</tbody>
-							</table>
-
-						</div>
-		
-					</td>
-			</tr>
-			<tr>
-				<td height="10"></td>
-			</tr>
-		<%
-			}
-		%>
-			
-		</tbody>
-	</table>
-
-		<% } %>
 </div>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapStaticDocumentAdmin@21 (type=tooltwist.skypepi.widgets.StudentHomeWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapStaticDocumentAdmin@23 (type=tooltwist.skypepi.widgets.StaticDocumentsWidget)", e);
 }
 %>
+</div>
+<table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  height='30' align='left' valign='top'></td>
+ </tr>
+</table>
 <div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
@@ -1503,7 +1375,7 @@ try {
 	<input type="hidden" id="cn-results" value="<%=lang.getString("results", null, "") %>">
 	<input type="hidden" id="cn-of" value="<%=lang.getString("of", null, "") %>">
 	<input type="hidden" id="selected-lanuage" value="<%=lang.getCurrentLangCode() %>">
-	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED %>">
+	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE%>">
 </form>
 </div>
 

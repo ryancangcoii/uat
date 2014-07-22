@@ -225,7 +225,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -259,7 +258,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -271,23 +270,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -1069,7 +1068,7 @@ try {
 	<input type="hidden" id="cn-results" value="<%=lang.getString("results", null, "") %>">
 	<input type="hidden" id="cn-of" value="<%=lang.getString("of", null, "") %>">
 	<input type="hidden" id="selected-lanuage" value="<%=lang.getCurrentLangCode() %>">
-	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED %>">
+	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE%>">
 </form>
 </div>
 

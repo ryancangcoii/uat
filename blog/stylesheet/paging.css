@@ -1,0 +1,108 @@
+.pg-normal {
+	color: black;
+	font-weight: normal;
+	text-decoration: none;
+	cursor: pointer;
+}
+.pg-normal:HOVER {
+	color: orange;
+}
+.pg-selected {
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.txt_font, .tblnavi {
+	color: #5c5c5c;
+	font-family: "Arial";
+	font-size: 11px;
+}
+.navi_font{
+	border: #E3E3E3 solid 1px;
+	padding: 3px 10px 3px 10px;
+	text-align: center;
+	cursor: pointer;
+}
+td.navi_font:HOVER {
+	background: #ddd;
+	color: black;
+}
+.navi_font_selected{
+	background: #E3E3E3;
+	color: white;
+	font-family: "Arial";
+	font-size: 11px;
+	border: #E3E3E3 solid 1px;
+	padding: 3px 10px 3px 10px;
+	text-align: center;
+	font-weight: bold;
+}
+.divnavi {
+	padding-top: 5px;
+}
+
+/*****************=Pagination**************/
+div.pagination {
+    padding-top: 12px;
+    /* background: transparent url('/qv/images/pagination-bg.png') repeat-x 0 0; */
+    margin-top: 16px;
+    line-height: 16px;
+    height: 16px;
+}
+
+div.pagination-rev {
+    background: transparent url('/ttsvr/qv/images/pagination-bg-rev.png') repeat-x 0 0;
+    padding-top: 4px;
+}
+
+div.pagination a.prev {
+    padding-left: 14px;
+    background-position: 0 0;
+    margin-right: 9px;
+    background: transparent url('/ttsvr/qv/images/pagination-arrows-prev.gif') no-repeat 0 -44px;
+    float: left;
+    cursor: pointer;
+}
+
+div.pagination a.next {
+    padding-right: 14px;
+    background-position: 100% 0;
+    margin-left: 6px;
+    background: transparent url('/ttsvr/qv/images/pagination-arrows-next.gif') no-repeat 100% -44px;
+    float: left;
+    cursor: pointer;
+}
+
+div.pagination a.prev.innactive {background-position: 0 6px; color: #999;}
+
+div.pagination a.next.innactive {background-position: right 6px; color: #999;}
+
+div.pagination ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.pagination ul li {
+    float: left;
+    margin-right: 3px;
+}
+
+div.pagination ul li a {
+    background: #ffffff;
+    border: 1px solid #5cbbff;
+    border-radius: 3px;
+    display: block;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    line-height: 17px;
+    cursor: pointer;
+    }
+
+div.pagination ul li.current a,
+div.pagination ul li a:hover {
+    background-color: #6a6a6a;
+    color: #fff;
+    }

@@ -33,12 +33,7 @@
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@page import="com.github.mustachejava.DefaultMustacheFactory"%>
-<%@page import="com.github.mustachejava.Mustache"%>
-<%@page import="com.github.mustachejava.MustacheFactory"%>
-<%@page import="java.io.StringReader"%>
-<%@page import="java.io.StringWriter"%>
-<%@page import="tooltwist.bootstrap.viewHelpers.CarouselViewHelper"%>
+<%@page import="tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
@@ -48,15 +43,17 @@
 <%
 	String jspName = "skypepi-99";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9 = null;
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23 = null;
 try {
-	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9Params.setProperty("navpointId", "skypepi-99");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9Params.setProperty("pageDataSection", "carousel");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9 = new tooltwist.bootstrap.viewHelpers.CarouselViewHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9Params);
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9.callPreFetch(jh);
+	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("blogAdminBlogListDeleteNavpoint", "");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("blogAdminBlogListNavpoint", "skypepi-106");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("category", "");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("categoryCount", "10");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23 = new tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params);
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_9", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_52 = null;
@@ -184,10 +181,78 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}.banner img {
-	width: 940px;
-	margin-left: 10px;
-	margin-right: 10px;
+}/* Styles for widget blogAdminBlogList */
+
+.wbdblog_table {
+	border-collapse:collapse;
+	border:solid 1px #DFDFDF;
+	font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size:12px;
+	line-height:1.4em;
+	width:100%;
+	margin-top:15px;
+}
+
+.wbdblog_table tr th, .wbdblog_table tr td {
+	vertical-align:top;
+	padding:5px;
+	border:1px solid #E4E4E4;
+}
+
+.wbdblog_header {
+	font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	background-color:#8EBAED;
+	text-align:center;
+}
+th.header { 
+    background: url("/ttsvr/blog/script/jquery_tablesorter/themes/blue/bg.gif") no-repeat 98% center;     
+    cursor: pointer; 
+    border-right: 1px solid #dad9c7; 
+  /*   font-weight: bold; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    padding-left: 20px; 
+    border-right: 1px solid #dad9c7; 
+    margin-left: -1px;  */
+} 
+
+th.headerSortUp { 
+    background: url("/ttsvr/blog/script/jquery_tablesorter/themes/blue/asc.gif") no-repeat 98% center #3399FF;  
+}
+
+th.headerSortDown { 
+    background: url("/ttsvr/blog/script/jquery_tablesorter/themes/blue/desc.gif") no-repeat 98% center #3399FF;  
+
+}
+
+.buttonPosition{
+	padding-top:11px;
+}
+
+.archive{
+	color: #888888;
+}
+
+.blog_form_datepicker_medium {
+    
+    border: 1px solid #A2A2A2;
+    height: 19px;
+    padding: 6px 5px 0;
+    vertical-align: middle;
+    width: 23%;
+}
+
+.boxwidth{
+	  width: 207px;
+}
+
+.scroll{
+	clear: both;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* width: 760px; */
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -210,9 +275,13 @@ try {
 
 .SimpleDiv .someClass {
 }</style>
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/script/jquery_ui_1.8.22/base/jquery.ui.all.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/paging.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/ttsvr/blog/script/jquery_ui_1.8.22/jquery-ui.custom.min.js" type="text/javascript"></script>
+<script src="/ttsvr/blog/script/paging.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -328,7 +397,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -362,7 +430,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -374,23 +442,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -572,7 +640,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -606,7 +673,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -618,23 +685,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -901,7 +968,6 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	border: #00a3e4 1px solid;
 	z-index: 9999;
 }
 
@@ -935,7 +1001,7 @@ try {
 						<tr>
 							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
 							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student" width="">
+									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
 										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
 									</td>	
 									<td>
@@ -947,23 +1013,23 @@ try {
 								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
 											<%
 												XData childData = h.getChildData();
-		
-												XNodes childs = childData.getNodes("//Child");
+													
+																					XNodes childs = childData.getNodes("//Child");
 
-												for (childs.first(); childs.next();) {
-													Element child = (Element) childs.getCurrentNode();
-													String firstName = child.getAttribute("FirstName");
-													String lastName = child.getAttribute("Surname");
-													String altFirstName = child.getAttribute("AltFirstName");
-													String altLastName = child.getAttribute("AltSurname");
-													String childID = child.getAttribute("ChildID");
+																					for (childs.first(); childs.next();) {
+																						Element child = (Element) childs.getCurrentNode();
+																						String firstName = child.getAttribute("FirstName");
+																						String lastName = child.getAttribute("Surname");
+																						String altFirstName = child.getAttribute("AltFirstName");
+																						String altLastName = child.getAttribute("AltSurname");
+																						String childID = child.getAttribute("ChildID");
 
-													String selected = "";
-													if (childID.equals(h.getChildId())) {
-														selected = "selected='selected'";
-													}
-													if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode())) {
-												%>
+																						String selected = "";
+																						if (childID.equals(h.getChildId())) {
+																							selected = "selected='selected'";
+																						}
+																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
+											%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
 												<% } else {%>
 														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
@@ -1106,27 +1172,219 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
-<div class='DivWidget page-content' style=""><div class="container">
-<div id="carousel-example-generic" class="carousel slide">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-  </ol>
+<table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  height='30' align='left' valign='top'></td>
+ </tr>
+</table>
+<div class='DivWidget page-content standard-width' style=""><%-- Widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@23 (type=tooltwist.blog.widgets.BlogAdminBlogListWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23;
+	String snippetVar_blogAdminBlogListNavpoint = "skypepi-106";
+	String snippetVar_blogAdminBlogListDeleteNavpoint = "";
+	String snippetVar_category = "";
+	String snippetVar_categoryCount = "10";
+	String snippetVar_widgetName = "@23";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementAdmin@23";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-          
-   
-  </div>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%@page import="com.dinaa.data.XNodes"%>
+<%@page import="tooltwist.wbd.util.PublicUtil"%>
+<%@page import="java.util.Date"%>
+<%
+	// Get the production helper for this widget
+	BlogAdminBlogListProductionHelper h = (BlogAdminBlogListProductionHelper) helper;
+	XData data = h.getData(jh);
+%>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="icon-prev"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="icon-next"></span>
-  </a>
+<!-- ********** INSERT HTML HERE ********** -->
+<link rel="stylesheet" type="text/css" href="/ttsvr/blog/stylesheet/blog.css" />
+<style>
+.portal-ribbon .left-edge.fork {
+	width: 130px;
+}
+</style>
+
+<div class="bc-container portal-ribbon">
+	<div class="ribbon-wrap left-edge fork lblue"><span>Announcement</span></div>
+	
+	<br />
+	<br />
+	<br />
+	
+	<div>
+		<% XData column = h.getColumns(); 
+		   XNodes columnNodes = h.getColumnNodes();	
+		   int ctr = 0;
+		%>
+		<div class="buttonPosition">
+						<span style="float: right;">
+													
+								  <table>
+								  	 <tr>	
+								  	 	<td style="vertical-align:middle; padding-right: 10px;">
+								  	 		Search:
+								  	 	</td>
+										<td style="vertical-align:middle; padding-right: 10px;">
+											<select id="selectedField" name="selectedField" onchange="BlogAdminBlogList.getSelectedName(this.value);">
+											<option value="">Select</option>
+											<%for(columnNodes.first();columnNodes.next();){ %>
+												<option value="<%=columnNodes.getText("columnDB")%>"><%=columnNodes.getText("columnDisplay") %></option>
+											<%} %>
+											</select>
+										</td>
+										<td id="textbox_filter" style="vertical-align:middle;">
+											<%if(h.isHeader()) {%>
+												<input type="text" class="datepickerInput blog_form_datepicker_medium boxwidth txtField" id="txtField" name="bdPublishDate"/>
+											<%}else{ %>	
+												<input type="text" id="txtField" class="txtField boxwidth" onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;">
+											<%} %>
+										</td>	
+									  </tr>	
+									</table>
+							
+						</span>	
+						<input type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())">
+		</div>
+		
+		<div id="pageNavPosition" class="pagination"></div>
+<div id="blogAdminBlogList">			
+		<form>
+		<%
+				XData xData = h.getReply();
+				XNodes xNodes = h.getxNodes();
+		%>
+			<div id="wbdblog_blog_list_div" class="scroll">
+				<input type="hidden" id="rowCount" name="rowCount">
+				<input type="hidden" name="op" value="blog_widgets.blogAdminBlogList.blogAdminBlogList">
+				<input type="hidden" name="selected" id="selected">
+				<input type="hidden" id="categoryCount" value="<%=snippetVar_categoryCount%>" />
+				<input type="hidden" id="blogSettingDateFormat" name="blogSettingDateFormat" value="<%=h.getDateFormat()%>">
+				
+				<table id="blogSettingListTable" class="wbdblog_table tablesorter">
+					<thead>
+						<tr class="wbdblog_header">
+						<%for(columnNodes.first();columnNodes.next();){ %>
+							<th class="<%=columnNodes.getText("columnDB").equals(h.getColumnType()) ? h.getSortClass() : "" %>" style="width: <%=columnNodes.getText("columnDisplay").equals("Content") ? "2000px" : "200px" %>;">
+								<div onclick="BlogAdminBlogList.sortCategory('<%=h.getSort() %>','<%=columnNodes.getText("columnDB")%>',jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val());" class="sortable">
+									<%=columnNodes.getText("columnDisplay")%>
+								</div>
+							</th>
+						<%} %>
+							<th width="80px">&nbsp;</th>
+						</tr>
+					</thead>
+					
+					<tbody id="blogSettingListTableBody">
+						<%if(xNodes.getNumNodes() > 0){ %>
+						
+								<% for(xNodes.first(); xNodes.next();) {
+									
+								%>
+										<tr style="background-color: EAF9FF" class="<%= !xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDateTime( xNodes.getText("expirationDate")).getTime() < new Date().getTime()  ? "archive" : "" %>">
+										 	<%for(columnNodes.first();columnNodes.next();){
+										 		
+										 		%>
+										 	
+										 			<%if("Title".equals(columnNodes.getText("columnDisplay"))){ %>
+														<td>
+															<%=xNodes.getText("title") %>
+														</td>
+													<%} %>	
+													<%if("Publish Date".equals(columnNodes.getText("columnDisplay"))){ %>
+														<td>
+															<%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("publishedDate")) , h.getUI_DATEFORMAT() +" hh:mm a") %>
+														</td>
+													<%} %>	
+													<%if("Expire Date".equals(columnNodes.getText("columnDisplay"))){ %>	
+														<td>
+															<%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")) , h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")) , h.getUI_DATEFORMAT()+" hh:mm a") %>
+														</td>
+													<%} %>	
+													<%if("Featured".equals(columnNodes.getText("columnDisplay"))){ %>	
+														<td>
+															<%=xNodes.getText("featured") %>
+														</td>
+													<%} %>	
+													<%if("Allow comments".equals(columnNodes.getText("columnDisplay"))){ %>	
+														<td>
+															<%=xNodes.getText("commentsAllowed") %>
+														</td>
+													<%} %>	
+													<%if("Tags".equals(columnNodes.getText("columnDisplay"))){ %>	
+														<td>
+															<%=xNodes.getText("tags") %>
+														</td>
+													<%} %>	
+													<%if("Content".equals(columnNodes.getText("columnDisplay"))){ 
+
+													 	String contentHolder =	xNodes.getText("content");
+													 	contentHolder = PublicUtil.removeHtml(contentHolder); 
+														if(contentHolder.length() > 200){
+															 contentHolder = contentHolder.substring(0, 159) + "...";
+														}
+													%>	
+														<td>
+															<%=contentHolder%>
+														</td>
+													<%} %>	
+	
+													<%if("Author".equals(columnNodes.getText("columnDisplay"))){ %>	
+														<td>
+															<%=xNodes.getText("author") %>
+														</td>
+													<%} %>	
+													<%if("Category Name".equals(columnNodes.getText("columnDisplay"))){ %>	
+														<td>
+															<%=xNodes.getText("blogCategoryName") %>
+														</td>
+													<%} %>	
+											<%} %>	
+														<td align="center">
+															<span class="wbdblog_button">
+																<a href="<%=snippetVar_blogAdminBlogListNavpoint%>?blogId=<%=xNodes.getText("blogId") %> " >
+																	Edit
+																</a>
+																|
+																<a href="#" onclick="BlogAdminBlogList.deleteBlogList('<%=xNodes.getText("blogId") %>');return false">
+																	Delete
+																</a>
+															</span>
+														</td>
+														
+										</tr>
+								<%} ctr++; %>		
+							<%}else{%>
+							<tr style="background-color: EAF9FF">
+								<td colspan="<%=ctr %>" align="center">
+									No search found on <%=XData.htmlString(h.getColumnLabel()) %> - <%=XData.htmlString(h.getTxtvalue()) %>
+								</td>							
+							</tr>
+						<%}%>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</div>
+	<div id="pageNavPosition2" class="pagination"></div>
 </div>
-</div></div>
+
+</div>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@23 (type=tooltwist.blog.widgets.BlogAdminBlogListWidget)", e);
+}
+%>
+</div>
 <table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
   <td  height='30' align='left' valign='top'></td>
@@ -1503,7 +1761,7 @@ try {
 	<input type="hidden" id="cn-results" value="<%=lang.getString("results", null, "") %>">
 	<input type="hidden" id="cn-of" value="<%=lang.getString("of", null, "") %>">
 	<input type="hidden" id="selected-lanuage" value="<%=lang.getCurrentLangCode() %>">
-	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE_SELECTED %>">
+	<input type="hidden" id="default-language" value="<%=DataBlockUtil.DEFAULT_LANGUAGE_CODE%>">
 </form>
 </div>
 
@@ -1611,6 +1869,154 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
   <script type="text/javascript">
+var BlogAdminBlogList = function() {
+	return {
+		deleteBlogList: function(blogId) {
+			jQuery.ajax({
+				url: '?op=blogblog_widgets.blogAdminBlogList.blogAdminBlogList',
+				type: 'post',
+				data: 'subop=deleteBlogAdminBlogList&blogId='+blogId,
+				success: function(response) {
+					jQuery("#blogSettingListTable").html(jQuery(response).find("#blogSettingListTable").html());
+				}
+			});	
+		},
+
+		changeLabel: function(archiveLabel,columnName, txtvalue) {
+			
+			var tempVal = jQuery("#btnShowArchive").val();
+			var arc = "";
+			if (tempVal == "Show Archive" ){
+				jQuery("#btnShowArchive").val("Hide Archive");
+				archiveLabel = "Hide Archive";
+				arc = "yes";
+			}else{
+				jQuery("#btnShowArchive").val("Show Archive");
+				archiveLabel = "Show Archive";
+				arc = "no";
+			}
+			jQuery.ajax({
+				url: '?archive='+arc+'&archiveLabel='+archiveLabel+'&searchField='+columnName+'&txtvalue='+txtvalue,
+				type: 'post',
+				success: function(response) {
+					jQuery("#blogSettingListTable").html(jQuery(response).find("#blogSettingListTable").html());
+					initializePager(jQuery('#categoryCount').val(), 1);
+				}
+			});
+		},
+		
+		sortCategory: function(sortType,columnType,archiveLabel,columnName, txtvalue) {
+			
+			var tempVal = jQuery("#btnShowArchive").val();
+			var arc = "";
+			if (tempVal == "Show Archive" ){
+				arc = "yes";
+			}else{
+				arc = "no";
+			}
+			
+			jQuery.ajax({
+				url: '?sort='+sortType+"&columnType="+columnType+'&archiveLabel='+archiveLabel+'&archive='+arc+'&searchField='+columnName+'&txtvalue='+txtvalue,
+				success: function(response) {
+					jQuery('#blogAdminBlogList').html(jQuery(response).find('#blogAdminBlogList').html());
+					initializePager(jQuery('#categoryCount').val(), pager.currentPage);
+				}
+			});
+		},
+		
+		
+		getSelectedName: function(selectedColumn) {
+			jQuery.ajax({
+				url: '?selectedColumn='+selectedColumn,
+				success: function(response) {
+					jQuery('#textbox_filter').html(jQuery(response).find('#textbox_filter').html());
+					jQuery( ".datepickerInput" ).datepicker('destroy');
+					initializeDatePicker();
+				}
+			});
+			
+		},
+		
+		init: function() {
+			initializePager(jQuery('#categoryCount').val());
+			initializeDatePicker();
+		},
+		
+//		myMethod: function() {
+//			alert("BlogAdminBlogList.myMethod()");
+//		}
+		// no comma after last method
+	};
+}();
+
+jQuery(BlogAdminBlogList.init()); // Run after page loads
+
+var pager;
+function initializePager(numRows) {
+	pager = new Pager('blogSettingListTableBody', numRows);
+	pager.init();
+	pager.naviType = 'TYPE_QV';
+	pager.naviClass = 'navi';
+	pager.showSelection = false;
+	pager.showPageNav('pager', 'pageNavPosition,pageNavPosition2', 3);
+	pager.showPage(1);
+	
+}
+
+var prevValue = '';
+var prevColumn ='';
+function applyListSearch(columnName, txtvalue,archiveLabel) {
+	txtvalue = encodeURIComponent(txtvalue);
+	if(txtvalue != prevValue ) {
+		jQuery.ajax({
+			url: '?sort='+jQuery('#sort').val()+'&searchField='+columnName+'&txtvalue='+txtvalue+'&archiveLabel='+archiveLabel,
+			success: function(response) {
+				jQuery('#blogAdminBlogList').html(jQuery(response).find('#blogAdminBlogList').html());
+				
+				initializePager(jQuery('#categoryCount').val(), 1);
+			}
+		});
+	}else{
+		if((columnName != prevColumn)){
+			jQuery.ajax({
+				url: '?sort='+jQuery('#sort').val()+'&searchField='+columnName+'&txtvalue='+txtvalue+'&archiveLabel='+archiveLabel,
+				success: function(response) {
+					jQuery('#blogAdminBlogList').html(jQuery(response).find('#blogAdminBlogList').html());
+					
+					initializePager(jQuery('#categoryCount').val(), 1);
+				}
+			});
+		}
+	}
+	prevValue = txtvalue;
+	prevColumn = columnName;
+}
+
+function initializeDatePicker(){
+//	var dateFormat = jQuery('#blogSettingDateFormat').val().replace('yyyy','yy') ;
+	
+	var dateFormat = jQuery('#blogSettingDateFormat').val() ;
+
+	jQuery( ".datepickerInput" ).attr('readonly', 'readonly');
+	jQuery( ".datepickerInput" ).datepicker('destroy');
+	jQuery( ".datepickerInput" ).datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat:  dateFormat,
+		onSelect: function(dateValue,inst) {
+			
+			var columnName = jQuery('#selectedField').val();
+			var archiveLabel = jQuery('#btnShowArchive').val();
+			applyListSearch(columnName, dateValue,archiveLabel);
+			
+		}
+		
+	});
+}
+
+
+</script>
+<script type="text/javascript">
 var Progress = function() {
 	return {
 		myVariable: null,

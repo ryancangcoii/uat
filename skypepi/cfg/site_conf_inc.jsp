@@ -10,7 +10,6 @@
     String g_conf_log_level = "3";
     String g_conf_pa_port   = "8090";
     int    g_conf_tx_mode   = 0;
-    String g_conf_gw_port = "8090";
     String g_conf_module_type = "01";
     /* ============================================================================== */
 

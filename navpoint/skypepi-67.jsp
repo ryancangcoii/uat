@@ -173,7 +173,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
 <html>
 
   <head>
@@ -182,6 +182,7 @@ try {
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>

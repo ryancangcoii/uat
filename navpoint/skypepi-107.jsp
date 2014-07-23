@@ -52,7 +52,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -320,7 +320,12 @@ try {
 		<input type="hidden" name="subop" id="subop" value="uploadFile"/>
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
 		
-		<input type="hidden" name="selfPage" id="selfPage" value="<%=snippetVar_selfPage%>"/>
+		<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"><span id="msgHeader">Confirmation Message</span></h4>
+        </div>
+        <div class="modal-body">
+           	<input type="hidden" name="selfPage" id="selfPage" value="<%=snippetVar_selfPage%>"/>
  			<table border="0" cellpadding="0" cellspacing="0" width="100%">
 				<tr>
 					<td class="txtlabel">Choose a file</td>						
@@ -333,18 +338,25 @@ try {
 				</tr>
 				<tr><td height="15"></td></tr>
 			</table>
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tr>
-	       			<td>
-						<div>
-								<div class="">
-									<div>&nbsp;</div>
-									<span><input id="btnAttachFile" value="Attach" type="button" /></span>
-								</div>
-							</div>
-					</td>
-				</tr>
-			</table>					
+<!-- 			<table border="0" cellspacing="0" cellpadding="0"> -->
+<!-- 				<tr> -->
+<!-- 	       			<td> -->
+<!-- 						<div> -->
+<!-- 								<div class=""> -->
+<!-- 									<div>&nbsp;</div> -->
+<!-- 									<span><input  value="Attach" type="button" /></span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 					</td> -->
+<!-- 				</tr> -->
+<!-- 			</table> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <input type="button" class="btn btn-primary"  value="Attach" id="btnAttachFile"/>
+        </div>
+		
+							
 		</form>		
 </div>
 

@@ -258,7 +258,7 @@ try {
 }
 </style>
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>Payment Receipt</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Payment Receipt", null, "") %></span></div>
 <br /><br /><br />
 	
 <table>

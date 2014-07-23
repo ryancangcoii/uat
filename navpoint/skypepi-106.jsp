@@ -134,7 +134,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -172,118 +172,7 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}/* Styles for widget blogAdminBlogDetails */
-
-.div_blog_admin_setting {
-	border-left:1px solid #E3E3E3;
-	border-right:1px solid #E3E3E3;
-	border-bottom:1px solid #E3E3E3;
-	
-}
-
-.div_blog_admin_setting_type {
-	/* border-left:1px solid #E3E3E3; */
-	/* border-right:1px solid #E3E3E3; */
-	border-top:1px solid #E3E3E3;
-	padding-left:20px;
-	padding-top:10px;
-	
-}
-
-.qv_blog_admin_setting ul {
-	padding:0 20px;
-}
-
-.qv_form_setting ul {
-    list-style: none outside none;
-}
-
-
-li.qv_border_none {
-    border-bottom: medium none;
-}
-
-.blog_form_label1 {
-    float: left;
-    margin: 4px 0 0;
-    width: 20%;
-}
-
-.blog_form_input_medium {
-    
-    border: 1px solid #A2A2A2;
-    height: 19px;
-    padding: 6px 5px 0;
-    vertical-align: middle;
-    width: 76%;
-}
-
-.blog_form_datepicker_medium {
-    
-    border: 1px solid #A2A2A2;
-    height: 19px;
-    padding: 6px 5px 0;
-    vertical-align: middle;
-    width: 23%;
-}
-
-.blog_form_time_medium {
-    
-    border: 1px solid #A2A2A2;
-    height: 19px;
-    padding: 6px 5px 0;
-    vertical-align: middle;
-    width: 12%;
-}
-
-.blog_form_textarea_medium {
-    
-    border: 1px solid #A2A2A2;
-    height: 19px;
-    padding: 6px 5px 0;
-    vertical-align: middle;
-    width: 76%;
-    height: 99px;
-}
-
-div.qv_formbottom_style1 {
-    background-color: #D9F0FF;
-    border-bottom: 1px solid #FFFFFF;
-    height: 44px;
-    left: 1px;
-    padding: 12px 0 0 30px;
-}
-
-.qv_roundedbutton_big div {
-/*     background: url("/ttsvr/qv-designer/images/qv_images.qv_button_rounded.png") no-repeat scroll 0 0 transparent; */
-    float: left;
-    height: 100%;
-    padding-left: 14px;
-    width: 10px;
-}
-
-div.qv_formbottom_style2 {
-    background-color: #EAF9FF;
-    height: 36px;
-    left: 1px;
-    padding: 12px 0 0 32px;
-}
-
-.BlogAdminBlogDetails label.error, .BlogAdminBlogDetails label.contentError  {
-    clear: both;
-    color: red;
-    font-style: italic;
-    display: block;
-/*     background: url("/ttsvr/qv-designer/images/qv_images.qv_error_icon_small.png") no-repeat scroll 0 0 transparent; */
-    padding-left: 25px;
-    margin-top: 5px;
-    margin-left: 143px;
-}
-
-.BlogAdminBlogDetails hideError{
-	display:"none";
-}
-/* Styles for widget simpleDiv */
+}/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -305,17 +194,18 @@ div.qv_formbottom_style2 {
 
 .SimpleDiv .someClass {
 }</style>
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/script/jquery-ui-1.11.0/jquery-ui.min.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/blog.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/colorbox.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/tango/skin.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/ttsvr/blog/script/jquery-ui-1.11.0/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/ttsvr/blog/script/jquery-ui-1.11.0/jquery.ui.datepicker.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery.form.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery.jcarousel.min.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery.validate.js" type="text/javascript"></script>
-<script src="/ttsvr/blog/script/jquery_ui/jquery.ui.datepicker.js" type="text/javascript"></script>
-<script src="/ttsvr/blog/script/jquery_ui_1.8.22/jquery-ui.custom.min.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -378,9 +268,8 @@ boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE
 	<a href="<%=snippetVar_myNavpoint%>" class="wt"
 		style="font-size: 14px; color: rgb(60, 127, 197); font-weight: normal; text-decoration: none;"
 		onmouseover="this.style.color='#b14600';this.style.textDecoration='none';"
-		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login
-		Account</a>
-<% } %>
+		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login Account</a>
+<%}%>
 
 	<%
 } catch (Exception e) {
@@ -1309,11 +1198,11 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
 		<input type="hidden" name="ckeditorContentWithImage" id="ckeditorContentWithImage" value=""/>
 		
-		<div class="row"  style="margin-top:10px">
+		<div class="row" style="margin-top:25px">
 			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">
-								<label class="control-label">Title:</label>
+								Title:
 							</div>
 							<div class="col-md-7">
 								<input  id="bdTitle" name="bdTitle" class="form-control blog_form_input_medium required" type="text" autocomplete="off" value="<%=h.getTitle()%>"/>
@@ -1323,11 +1212,11 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 			</div>
 		</div>
 		
-		<div class="row"  style="margin-top:10px">
+		<div class="row" style="margin-top:25px">
 			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">
-								<label class="control-label">Publish Date:</label>
+								Publish Date:
 							</div>
 							<div class="col-md-3">
 								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getPublishDate()%>" onchange="validatePublishExpireDate();"/>
@@ -1337,40 +1226,40 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 			</div>
 		</div>
 		
-		<div class="row"  style="margin-top:10px">
+		<div class="row" style="margin-top:25px">
 			<input type="hidden" class="blogTimeInput blog_form_time_medium required" id="bdPublishTime" name="bdPublishTime" value="<%=h.getPublishTime()%>" />
 			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">
-								<label class="control-label">Publish Time:</label>
+								Publish Time:</label>
 							</div>
-							<div class="col-md-5">
-							<div class="col-md-3">
-								<select id="selPublishTimeHour" name ="selPublishTimeHour" class="form-control">
-						     		<%=h.getPublishHoursOption()%>		     		
-						     	</select>
-							</div>
-							<div class="col-md-3">
-								<select id="selPublishTimeMinute" name ="selPublishTimeMinute" class="form-control">
-						     		<%=h.getPublishMinutesOption()%>		     		
-						     	</select>
-							</div>
-							<div class="col-md-3">
-								<select id="selPublishTimeMeridian" name ="selPublishTimeMeridian" class="form-control">		     		
-						     		<%=h.getPublishMeridianOption()%>		     		
-						     	</select>
-							</div>
-							</div>
+								<div class="col-md-5">
+								<div class="col-md-3">
+									<select id="selPublishTimeHour" name ="selPublishTimeHour" class="form-control">
+							     		<%=h.getPublishHoursOption()%>		     		
+							     	</select>
+								</div>
+								<div class="col-md-3">
+									<select id="selPublishTimeMinute" name ="selPublishTimeMinute" class="form-control">
+							     		<%=h.getPublishMinutesOption()%>		     		
+							     	</select>
+								</div>
+								<div class="col-md-3">
+									<select id="selPublishTimeMeridian" name ="selPublishTimeMeridian" class="form-control">		     		
+							     		<%=h.getPublishMeridianOption()%>		     		
+							     	</select>
+								</div>
+								</div>
 							<div class="col-md-4"></div>
 					</div>
 			</div>
 		</div>
 		
-		<div class="row"  style="margin-top:10px">
+		<div class="row" style="margin-top:25px">
 			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">
-								<label class="control-label">Expire Date:</label>
+								Expire Date:
 							</div>
 							<div class="col-md-3">
 								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getPublishDate()%>" onchange="validatePublishExpireDate();"/>
@@ -1380,7 +1269,14 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 			</div>
 		</div>
 		
-		<ul style="margin-top: 0px">
+		<div class="row" style="margin-top:25px">
+				<div class="col-md-2">Expire Date:</div>	     	
+		     	<div class="col-md-5"><input type="text" class="form-control datepickerInput blog_form_datepicker_medium hasDatepicker" id="bdExpireDate" name="bdExpireDate" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/>
+		     	</div>
+		     	<div class="col-md-5 button-cont"><input type="button" class="buttonBlue" onclick="blogClearExpireDateTime();" value="Clear">
+		     	</div>
+		</div>
+		<ul style="margin-top: 0px;margin-left: 0px;padding-left: 0px;list-style-type: none;">
 <!-- 			<li  style="border-top: none;"> -->
 <!-- 		     	<label class="blog_form_label1" >Title:</label> -->
 <!-- 		     	<input type="text" class="" id="bdTitle" name="bdTitle" value="" /> -->
@@ -1408,31 +1304,31 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 <!-- 		     	</select> -->
 <!-- 		     	<label class="publishDateErrorHolder"></label>	 -->
 <!-- 			</li> -->
-			<li >
-		     	<label class="blog_form_label1" >Expire Date:</label>	     	
-		     	<input type="text" class="datepickerInput blog_form_datepicker_medium " id="bdExpireDate" name="bdExpireDate" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/>
-		     	<input type="button" onclick="blogClearExpireDateTime();" value="Clear">
-			</li>
-			<li style="border-top: none;">
-		     	<label class="blog_form_label1" >Expire Time:</label>	     	
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Expire Time:</div>	     	
 		     	<input type="hidden" class="blogTimeInput blog_form_time_medium " id="bdExpireTime" name="bdExpireTime" value="<%=h.getExpireTime()%>" />
-		     	<select id="selExpireTimeHour" name ="selExpireTimeHour" onchange="validateExpireDateTime();">
-		     		<option value=""></option>
-		     		<%=h.getExpireHoursOption()%>		     		
-		     	</select>
-		     	:
-		     	<select id="selExpireTimeMinute" name ="selExpireTimeMinute" onchange="validateExpireDateTime();">
-		     		<option value=""></option>
-		     		<%=h.getExpireMinutesOption()%>		     		
-		     	</select>
-		     	<select id="selExpireTimeMeridian" name ="selExpireTimeMeridian" >		     		
-		     		<%=h.getExpireMeridianOption()%>		     		
-		     	</select>
-		     	<label class="timeErrorHolder"></label>		     	
-			</li>
-			<li >
-		     	<label class="blog_form_label1" >Category:</label>	     	
-		     	<select id="bdCategory" name="bdCategory">
+		     	<div class="col-md-10" >
+		     	<div class="row">
+			     	<div class="col-md-2"><select id="selExpireTimeHour" name ="selExpireTimeHour" onchange="validateExpireDateTime();" class="form-control">
+			     		<option value=""></option>
+			     		<%=h.getExpireHoursOption()%>		     		
+			     	</select></div>
+			     	<div class="col-md-1" style="text-align:center">:</div>
+			     	<div class="col-md-2"><select id="selExpireTimeMinute" name ="selExpireTimeMinute" onchange="validateExpireDateTime();" class="form-control">
+			     		<option value=""></option>
+			     		<%=h.getExpireMinutesOption()%>		     		
+			     	</select></div>
+			     	<div class="col-md-2"><select id="selExpireTimeMeridian" name ="selExpireTimeMeridian" class="form-control">		     		
+			     		<%=h.getExpireMeridianOption()%>		     		
+			     	</select></div>
+			     	<label class="timeErrorHolder"></label>		     	
+			</div></div>
+			</div>
+			
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2">Category:</div>	     	
+		     	<div class="col-md-5">
+		     		<select id="bdCategory" name="bdCategory" class="form-control">
 		     	<option value="">-Select-</option>
 		     	<%
 		     		XData oCategory = h.getCategory();
@@ -1445,16 +1341,17 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		     			}
 		     		}
 		     	%>
-		     	</select>
-			</li>
-			<li style="display: none;">	     	
+		     	</select></div>
+			</div>
+			
+			<div style="display: none;">	     	
 		     	<table><tr><td>
 		     				<div id="divCat" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
 		     	</td></tr></table>
-			</li>
-			<li >
-		     	<label class="blog_form_label1" >Site:</label>	     	
-		     	<select id="bdSite" name="bdSite">
+			</div>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Site:</div>	     	
+		     	<div class="col-md-5" ><select id="bdSite" name="bdSite" class="form-control">
 		     	<option value="">-Select-</option>
 		     	<%
 		     		XData oSites = h.getSites();
@@ -1467,42 +1364,48 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		     			}
 		     		}
 		     	%>
-		     	</select>
-			</li>
-			<li style="display: none;">	     	
+		     	</select></div>
+			</div>
+			<div style="display: none;">	     	
 		     	<table><tr><td>
 		     				<div id="divSite" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
 		     	</td></tr></table>
-			</li>
-			<li >
-		     	<label class="blog_form_label1" >Allow Comments:</label>	     	
-		     	<input type="checkbox" <%=h.getAllowComments() %> id="bdAllowComments" name="bdAllowComments">
-			</li>
-			<li >
-		     	<label class="blog_form_label1" >Featured Blog:</label>	     	
-		     	<input type="checkbox" <%=h.getIsFeaturedBlog() %>   id="bdFeaturedBlog" name="bdFeaturedBlog">
-			</li>
-			<li >
-		     	<label class="blog_form_label1" style="float: none;" >Blog:</label>	   
-		     	<div style="width: 748px;">  	
+			</div>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Allow Comments:</div>	     	
+		     	<div class="col-md-5">
+		     	<input type="checkbox" <%=h.getAllowComments() %> id="bdAllowComments" name="bdAllowComments"></div>
+			</div>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Featured Blog:</div>	     	
+		     	<div class="col-md-5" ><input type="checkbox" <%=h.getIsFeaturedBlog() %>   id="bdFeaturedBlog" name="bdFeaturedBlog"></div>
+			</div>
+			<div class="row" style="margin-top:25px">
+				<div style="margin:0px 15px;	">
+		     	<span style="float: none;" >Blog:</span>	   
+		     	<div style="width: 100%;">  	
 			     	<textarea class="blog_form_textarea_medium required contentError " rows="" style="width: 500px; height: 100px;" id="bdContent" name="bdContent"><%=h.getBlogContent() %></textarea>
 					<label class="errorHolder"></label>
 				</div>
-			</li>
-			<li  >
-		     	<label class="blog_form_label1" >Tags:</label>
-		     	<input type="text" class="blog_form_input_medium required"  id="bdTags" name="bdTags" value="<%=h.getTags()%>" >
-			</li>
+				</div>
+			</div>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Tags:</div>
+		     	<div class="col-md-10" ><input type="text" class="blog_form_input_medium required form-control"  id="bdTags" name="bdTags" value="<%=h.getTags()%>" ></div>
+			</div>
 			
-			<li >
-		     	<label class="blog_form_label" >Add Meta description:</label>	     	
-		     	<input type="checkbox"  id="bdAddMetaDescription" name="bdAddMetaDescription" <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ?"":"checked=\"checked\""%>>
-			</li>
-			<li <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ? "style=\"display:none;\"":""%>   id="liMetaDesc">
-		     	<label class="blog_form_label" style="float: none;" >Meta Description:</label><br />
-		     	<textarea class="blog_form_textarea_medium required contentError " rows="" style="resize:none; width: 100%; height: 100px;" id="bdMetaDesc" name="bdMetaDesc"><%=h.getMetaDesc() %></textarea>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-4" >Add Meta description:</div>	     	
+		     	<div class="col-md-5" ><input type="checkbox"  id="bdAddMetaDescription" name="bdAddMetaDescription" <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ?"":"checked=\"checked\""%>></div>
+			</div>
+			
+			<div style="margin-top:25px">
+			<div <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ? "style=\"display:none;\"":""%>   id="liMetaDesc" >
+		     	<span>Meta Description:</span><br />
+		     	<textarea class="blog_form_textarea_medium required contentError form-control" rows="" style="resize:none; width: 100%; height: 100px;" id="bdMetaDesc" name="bdMetaDesc"><%=h.getMetaDesc() %></textarea>
 				<label class="errorHolder"></label>
-			</li>
+			</div>
+			</div>
 			<%if(h.getBlogId() != null && !h.getBlogId().equals("")) { %>
 			<%if(h.getAllowUploadImage().equalsIgnoreCase("true")) {%>
 				<li>
@@ -1527,7 +1430,7 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		<div class="qv_formbottom_style1">
 			<div class="qv_roundedbutton_big">
 				<div>&nbsp;</div>
-				<span><input id="btn_save" value="Save" type="submit" onclick="setValues();if(!validateBlogContent(this.form)){return false;}"/></span>
+				<span><input class="buttonBlue" id="btn_save" value="Save" type="submit" onclick="setValues();if(!validateBlogContent(this.form)){return false;}"/></span>
 			</div>
 		</div>
 		<div class="qv_formbottom_style2">
@@ -1559,10 +1462,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
 <div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
@@ -1819,7 +1722,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1828,7 +1731,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

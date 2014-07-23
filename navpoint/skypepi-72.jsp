@@ -145,7 +145,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -1425,7 +1425,7 @@ try {
 </style>
   
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>myOnlineBookings</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myOnlineBookings", null, "") %></span></div>
 <br><br><br>
 <form id="reEnrolment" name="reEnrolment" method="post">
 <table width="100%">
@@ -1461,77 +1461,76 @@ try {
 												<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table" style="margin-bottom: 0px; " id="table-reenrolment">
 																<thead>
 																	<tr>
-																		<th width="100%" align="left" colspan="7">Available Classes</th>
+																		<th width="100%" align="left" colspan="7"><%=lang.getString("Available Classes", null, "") %></th>
 																	</tr>
 																</thead>
 																<thead>
 																	<tr class="grey">
 																		<th></th>
-																		<th align="left" >Class</th>
-																		<th width="33%" align="left">Class Schedule</th>
-																		<th width="7%">Fee</th>
-																		<th width="7%">Discount</th>
-																		<th width="7%">Credit</th>
-																		<th width="7%">Total</th>
+																		<th align="left" ><%=lang.getString("Class", null, "") %></th>
+																		<th width="33%" align="left"><%=lang.getString("Class Schedule", null, "") %></th>
+																		<th width="7%"><%=lang.getString("Fee", null, "") %></th>
+																		<th width="7%"><%=lang.getString("Discount", null, "") %></th>
+																		<th width="7%"><%=lang.getString("Credit", null, "") %></th>
+																		<th width="7%"><%=lang.getString("Total", null, "") %></th>
 																	</tr>
 																</thead>
 																<%
 																	List<Element> elementStreams = h.getElementStreams();
-																	int ctr = 1;
-																	for(Element element : elementStreams) { 
-																		String credit = h.getPersonCredit();
-																		String startDate = element.getAttribute("StartDate");
-																		String endDate = element.getAttribute("EndDate");
-																		String closeDate = element.getAttribute("ApplicationEnrolmentCloseDate");
-																				startDate = startDate.split(" ")[0];
-																				endDate = endDate.split(" ")[0];
-																				closeDate = closeDate.split(" ")[0];
-																		
-																		String sessionDays = element.getAttribute("SessionDays");
-																		String sessionTimes = h.getSessionTimes(element.getAttribute("SessionTimes"), element.getAttribute("SessionDuration"));
-																		
-																		String tmpSessionDays = lang.getString(sessionDays, null, "");
-																		if(!(DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) && tmpSessionDays.equals(sessionDays)) {
-																			String arrSessionDays[] = sessionDays.split(",");
-																			tmpSessionDays = "";
-																			for(String days: arrSessionDays) {
-																				tmpSessionDays += "".equals(tmpSessionDays) ? lang.getString(days.trim(), null, "") : ", " + lang.getString(days.trim(), null, "");
-																			}
-																		}
-																		
-																		String courseName = "" ;
-																		if(!(DataBlockUtil.SESSION_VARIABLE.LANGUAGE.getName().equals(h.getLanguage()))) {
-																			courseName = element.getAttribute("AltName");
-																			if("".equals(courseName.trim())) {
-																				courseName = element.getAttribute("Name");
-																			}
-																		}
-																		else {
-																			courseName = element.getAttribute("Name");
-																			if("".equals(courseName.trim())) {
-																				courseName = element.getAttribute("AltName");
-																			}
-																		}
-																		
-																		String personCredit = StringUtil.formatCurrency(credit);
-																		
-																		String fee = element.getAttribute("FeeAmount");
-																		fee = (fee.equals("") ? "0.0" : fee);
-																		
-																		String discount = element.getAttribute("OnlineDiscount");
-																		discount = (discount.equals("") ? "0.0" : discount);
-																		
-																		//String total = (Double.valueOf(fee) + Double.valueOf(discount) + Double.valueOf(credit)) + "";
-																		String total = (Double.valueOf(fee) + Double.valueOf(discount)) + "";
-																		fee = StringUtil.formatCurrency(fee);
-																		discount = StringUtil.formatCurrency(discount);
-																		discount = discount.replace("-", "");
-																		credit = credit.replace("-", "");
-																		total = StringUtil.formatCurrency(total);
-																		
-																		String classTag = ((ctr % 2) == 0) ? "blue" : "white";
-																		String lineColor = ((ctr % 2) == 0) ? "#EAEAEA" : "#DFDFDF";
-																		
+																															int ctr = 1;
+																															for(Element element : elementStreams) { 
+																																String credit = h.getPersonCredit();
+																																String startDate = element.getAttribute("StartDate");
+																																String endDate = element.getAttribute("EndDate");
+																																String closeDate = element.getAttribute("ApplicationEnrolmentCloseDate");
+																																		startDate = startDate.split(" ")[0];
+																																		endDate = endDate.split(" ")[0];
+																																		closeDate = closeDate.split(" ")[0];
+																																
+																																String sessionDays = element.getAttribute("SessionDays");
+																																String sessionTimes = h.getSessionTimes(element.getAttribute("SessionTimes"), element.getAttribute("SessionDuration"));
+																																
+																																String tmpSessionDays = lang.getString(sessionDays, null, "");
+																																if(!(DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) && tmpSessionDays.equals(sessionDays)) {
+																																	String arrSessionDays[] = sessionDays.split(",");
+																																	tmpSessionDays = "";
+																																	for(String days: arrSessionDays) {
+																																		tmpSessionDays += "".equals(tmpSessionDays) ? lang.getString(days.trim(), null, "") : ", " + lang.getString(days.trim(), null, "");
+																																	}
+																																}
+																																
+																																String courseName = "" ;
+																																if(!(DataBlockUtil.SESSION_VARIABLE.LANGUAGE.getName().equals(h.getLanguage()))) {
+																																	courseName = element.getAttribute("AltName");
+																																	if("".equals(courseName.trim())) {
+																																		courseName = element.getAttribute("Name");
+																																	}
+																																}
+																																else {
+																																	courseName = element.getAttribute("Name");
+																																	if("".equals(courseName.trim())) {
+																																		courseName = element.getAttribute("AltName");
+																																	}
+																																}
+																																
+																																String personCredit = StringUtil.formatCurrency(credit);
+																																
+																																String fee = element.getAttribute("FeeAmount");
+																																fee = (fee.equals("") ? "0.0" : fee);
+																																
+																																String discount = element.getAttribute("OnlineDiscount");
+																																discount = (discount.equals("") ? "0.0" : discount);
+																																
+																																//String total = (Double.valueOf(fee) + Double.valueOf(discount) + Double.valueOf(credit)) + "";
+																																String total = (Double.valueOf(fee) + Double.valueOf(discount)) + "";
+																																fee = StringUtil.formatCurrency(fee);
+																																discount = StringUtil.formatCurrency(discount);
+																																discount = discount.replace("-", "");
+																																credit = credit.replace("-", "");
+																																total = StringUtil.formatCurrency(total);
+																																
+																																String classTag = ((ctr % 2) == 0) ? "blue" : "white";
+																																String lineColor = ((ctr % 2) == 0) ? "#EAEAEA" : "#DFDFDF";
 																%>
 																<!-- NEW -->
 																<tr class="<%=classTag %>">
@@ -1542,7 +1541,7 @@ try {
 																		Start - End Time: <%=sessionTimes %> <br>
 																		Session Days: <%=sessionTimes %>
 																		<br/>
-																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %>">View Timetable</a>
+																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %>"><%=lang.getString("View Timetable", null, "") %></a>
 																	</td>
 																	<td rowspan="2" class="right"><%=fee %></td>
 																	<td rowspan="2" class="right"><%=discount %></td>
@@ -1599,10 +1598,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
 <div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
@@ -1859,7 +1858,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1868,7 +1867,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

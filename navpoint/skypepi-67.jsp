@@ -38,17 +38,36 @@
 <%@page import="com.github.mustachejava.MustacheFactory"%>
 <%@page import="java.io.StringReader"%>
 <%@page import="java.io.StringWriter"%>
+<%@page import="tooltwist.blog.productionHelpers.BlogListProductionHelper"%>
 <%@page import="tooltwist.bootstrap.viewHelpers.CarouselViewHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
 
 <%
 	String jspName = "skypepi-67";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapHome_21 = null;
+try {
+	Properties productionHelper_skypepi_pages_portal_p_bstrapHome_21Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("blogType", "All");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("siteIds", "");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("category", "1");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("blogCount", "3");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("buyingAndSellingDetails", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("categoryIds", "1");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("characterCount", "500");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("viewAllNews", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("blogDetails", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("visibleBlog", "10");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21 = new tooltwist.blog.productionHelpers.BlogListProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapHome_21Params);
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapHome_21", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapHome_9 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapHome_9Params = new Properties();
@@ -160,20 +179,10 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_40", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapHome_21 = null;
-try {
-	Properties productionHelper_skypepi_pages_portal_p_bstrapHome_21Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("snippets", "Announcements");
-	productionHelper_skypepi_pages_portal_p_bstrapHome_21 = new tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapHome_21Params);
-	productionHelper_skypepi_pages_portal_p_bstrapHome_21.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapHome_21", e);
-}
-
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -211,6 +220,161 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
+}/*defaults*/
+a {
+    color: #0062A9;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000000;
+}
+
+
+
+
+.news-header-label h1 {
+	margin-right: 0px;
+}
+
+.headerWidget {
+    border-radius: 3px 3px 0 0;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 0 8px 12px;
+}
+
+.bloglistHeader {
+	margin: 0px;
+}
+
+.bloglistHeader span {
+	color: #333333;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+.BlogList .panel.news_summary ul li {
+    border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 4px;
+}
+
+.blogItems {
+	clear: both;
+	border-left: 1px solid #E5E5E5;
+	border-right: 1px solid #E5E5E5;
+	border-bottom: 1px solid #E5E5E5;
+	border-radius: 0px 0px 3px 3px;
+}
+
+.blogItems-inner {
+	border-bottom: 1px solid #E5E5E5;
+	padding: 8px 12px 14px 12px;
+	line-height: 18px;
+}
+
+.blogItems-inner .date {
+	font-size: 11px;
+	clear: both;
+	display: block;
+}
+
+.listSummary .blogItems-inner .date {
+	display: inline !important;
+}
+
+.listSummary .blogItems-inner .p {
+	display: inline !important;
+}
+
+
+.blogItems-inner .p {
+	font-size: 12px;
+	clear: both;
+	display: block;
+	padding: 2px 0px 2px 0px;
+}
+
+.blogItems-inner .readmore {
+	font-size: 11px;
+	clear: both;
+}
+
+.view-all-news {
+	padding: 7px 12px 6px 12px;
+	font-size: 11px;
+	line-height: 18px;
+}
+
+ul.news_listing {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+.news_listing h3 {
+	margin: 16px 0px 5px 0px;
+}
+
+.news_listing a.newstitle {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+ul.news_listing span.date {
+    float: right;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+ul.news_listing div.item_wrapper {
+    background: url("/ttsvr/blog/images/news-listing-bg.png") repeat-y scroll 50% 0 #FFFFFF;
+    border-bottom: 1px solid #E4E4E4;
+    border-top: 1px solid #E4E4E4;
+    margin-bottom: 18px;
+    padding: 9px 0px 9px 0px;
+	line-height: 18px;
+}
+
+.item_wrapper p {
+	margin-bottom: 12px;
+	min-height: 36px;
+}
+
+.item_wrapper span.blog-thumbnail {
+	float: right;
+	display: block;
+	height: 57px;
+	width: 85px;
+	margin: 4px 10px 0px 10px;
+	text-align: center;
+}
+
+.listSummary .item_wrapper span.blog-thumbnail {
+	float: left;
+	margin: 0px 15px 0px 0px;
+	display: inline;
+	text-align: inherit;
+	position: relative;
+	width: 58px;
+	height: 58px;
+}
+
+.listSummary .item_wrapper span.blog-thumbnail img {
+	width: 58px !important;
+	height: 58px !important;
+}
+
+.item_wrapper span.blog-thumbnail span {
+	background-color: #999;
+	height: 100%;
+	width: 100%;
+	display: block;
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
 }.banner img {
 	width: 940px;
 	margin-left: 10px;
@@ -240,9 +404,11 @@ try {
 
 .SimpleDiv .someClass {
 }</style>
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/paging.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/ttsvr/blog/script/paging.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -356,9 +522,8 @@ boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE
 	<a href="<%=snippetVar_myNavpoint%>" class="wt"
 		style="font-size: 14px; color: rgb(60, 127, 197); font-weight: normal; text-decoration: none;"
 		onmouseover="this.style.color='#b14600';this.style.textDecoration='none';"
-		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login
-		Account</a>
-<% } %>
+		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login Account</a>
+<%}%>
 
 	<%
 } catch (Exception e) {
@@ -1160,7 +1325,7 @@ try {
 </li>
  <% } %><% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=lang.getString("myDetails", null, "") %></a>
 </li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69"><%=lang.getString("myCurrentEnrollment", null, "") %></a>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69"><%=lang.getString("myCurrentEnrolment", null, "") %></a>
 </li>
  <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70"><%=lang.getString("myProgression", null, "") %></a>
 </li>
@@ -1482,158 +1647,91 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='30' align='left' valign='top'></td>
  </tr>
 </table>
-<%-- Widget skypepi.pages.portal_p_bstrapHome@21 (type=tooltwist.skypepi.widgets.StudentHomeWidget) --%>
+<div class='DivWidget page-content standard-width' style=""><%-- Widget skypepi.pages.portal_p_bstrapHome@21 (type=tooltwist.blog.widgets.BlogListWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapHome_21;
-	String snippetVar_snippets = "Announcements";
+	String snippetVar_blogCount = "3";
+	String snippetVar_category = "1";
+	String snippetVar_blogType = "All";
+	String snippetVar_characterCount = "500";
+	String snippetVar_visibleBlog = "10";
+	String snippetVar_blogDetails = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_buyingAndSellingDetails = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_viewAllNews = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_categoryIds = "1";
+	String snippetVar_siteIds = "";
 	String snippetVar_widgetName = "@21";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapHome@21";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
-<%@page import="org.w3c.dom.Element"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="java.util.Date"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
+<%@page import="tooltwist.blog.productionHelpers.BlogListProductionHelper"%>
 <%@page import="tooltwist.misc.JspHelper"%>
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.wbd.WbdCache"%>
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+<%@page import="com.dinaa.data.XNodes"%>
 <%
 	// Get the production helper for this widget
-	StudentHomeProductionHelper h = (StudentHomeProductionHelper) helper;
+	BlogListProductionHelper h = (BlogListProductionHelper) helper;
 	XData data = h.getData(jh);
-	AltLang lang = h.getAltLang();
-	String parentId = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.SIGN_ON_ID, "0");
-	Boolean isParent = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_SELECTED_PARENT, false);
+	
+	XData recentBlog = h.getRecentBlog();
 %>
 
-<!-- ********** INSERT HTML HERE ********** -->
-<div>
-	
-	<% if("Welcome".equals(snippetVar_snippets)) { %>
-	
-	<table class="">
-			<tr>
-				<td width="" align="left" class="heading color-blue" colspan="2"><%=lang.getString("Welcome", null, "") %>&nbsp;</td>
-			</tr>
-			<tr>
-				<td height="30"></td>
-			</tr>
-			<tr class="body-text color-regular">
-				<td style="padding: 20px;"><img alt="British Council" src="/ttsvr/skypepi/images/brtishcouncil.png" title="British Council" width="190"/></td>
-				<td valign="top" style="padding: 20px;"><%=lang.getString("Welcome to the British Council's new online payment portal. We hope you enjoy using it!", null, "") %></td>
-			</tr>
-		</table>
-	<% }  else if ("Link".equals(snippetVar_snippets)) { %>
-	
-	<table width="730">
-			<tr>
-				<td width="" align="left" class="heading color-blue"><%=lang.getString("Re-registration details", null, "") %>&nbsp;</td>
-				<td width="" align="right"></td>
-			</tr>
-			<tr>
-				<td height="30"></td>
-			</tr>
-			<tr class="body-text color-regular">
-				<td valign="top" style="padding: 20px;" colspan="2" align="center">
-					<div style="width: 400px;"><%=lang.getString("Click on the link below for an easy step guide on how to use the re-registration tool. It's easy and it's fast... try it out!", null, "") %>
-						<br><br>
-					<% if(!isParent) { %>
-						<% 
-						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
-						{
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_tw.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						} else {			
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_en.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						}
-						%>
-					<% } else { %>
-						<% 
-						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
-						{
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_chinese_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						} else {			
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_english_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						}
-						%>
-					<% } %>
-					</div>
-				</td>
-			</tr>
-		</table>
-	
-	<% }  else {%>
-
-		<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
-		<tbody>
-			
-			<% XData announcements = h.getAnnouncements(); 
-			   XNodes announcement = announcements.getNodes("/*/Announcement");
-			   
-			   for (announcement.first(); announcement.next();) {
-			   
-				   Element announce = (Element)announcement.getCurrentNode();
-				   String ID = announce.getAttribute("ID");
-				   String title = announce.getAttribute("Title");
-				   String note = announce.getAttribute("Note");
-				   String displayIn = announce.getAttribute("DisplayIn");
-				  if (!"Portal".equals(displayIn)) continue;
+<div class="BlogList listSummary">
+	<div class="panel news_summary">
+        <h4 class="headerWidget bloglistHeader"><span>News</span></h4>
+        <div class="blogItems">
+        	<%
+        		XNodes blogList = recentBlog.getNodes("//blog");
+        		if(blogList instanceof XNodes) {
+        			int maxNews = h.getBlogCount();
+        			for(blogList.first();blogList.next();) {
+        				String d = blogList.getText("publishedDate").split(" ")[0];
+        				String dates[] = d.split("-");
+        				Date modDate = new Date((Integer.parseInt(dates[0])-1900), (Integer.parseInt(dates[1])-1), Integer.parseInt(dates[2]));
+        				
+        				if(blogList.getPos() < maxNews) {
+        	%>
+        	<div class="blogItems-inner item_wrapper">
+        			<div style="padding-bottom: 7px;padding-top: 7px;">
+        				<span class="blog-thumbnail"></span>
+	        			<span class="date"><%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %></span>
+						<br/>
+						<span class="p"><%=blogList.getText("title") %></span>
+						
+						<% if("Buying & Selling".equals(blogList.getText("blogCategory/blogCategoryName"))) { %>
+						<a class="readmore" href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_buyingAndSellingDetails)+"?blogId="+blogList.getText("blogId") %>">Read more</a>
+						<% } else { %>
+						<a class="readmore" href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_blogDetails)+"?blogId="+blogList.getText("blogId") %>">Read more</a>
+						<% } %>
+						<span class="blogContentHidden" style="display: none;"><%=blogList.getText("content") %></span>
+        			</div>
+					<div style="clear: both"></div>
+			</div>
+			<%
+        				}
+        			}
+        		}
 			%>
-			
-			<tr>
-				<td align="left" valign="top">
-					<div class="bc-container portal-ribbon" style="max-width: 960px;">
-							<table width="100%">
-								<tbody>
-									<tr>
-										<td width="" align="left" class="heading color-blue"
-											colspan="2"><%=title%>&nbsp;</td>
-									</tr>
-									<tr>
-										<td height="10"></td>
-									</tr>
-									<tr class="body-text color-regular">
-										<td style="padding: 20px;"><%=note%></td>
-									</tr>
-								</tbody>
-							</table>
-
-						</div>
-		
-					</td>
-			</tr>
-			<tr>
-				<td height="10"></td>
-			</tr>
-		<%
-			}
-		%>
-			
-		</tbody>
-	</table>
-
-		<% } %>
+			<div class="view-all-news morelink">
+				<a href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_viewAllNews) %>" class="view_all">View all news</a>
+			</div>
+        </div>
+    </div>
 </div>
+
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapHome@21 (type=tooltwist.skypepi.widgets.StudentHomeWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapHome@21 (type=tooltwist.blog.widgets.BlogListWidget)", e);
 }
 %>
+</div>
 <div class='DivWidget float-footer footer-temp-push' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
@@ -1644,10 +1742,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
 <div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
@@ -1904,7 +2002,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1913,7 +2011,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>
@@ -1961,6 +2059,43 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
   <script type="text/javascript">
+var BlogList = function() {
+	return {
+		myVariable: null,
+
+		init: function() {
+			jQuery('.listFull .item_wrapper').each(function() {
+				var contentImg = document.createElement('div');
+				contentImg.innerHTML = jQuery(this).find('.blogContentHidden').html(); //'.blogContentHidden';
+				var imgObject = jQuery(contentImg).find('img:first').clone();
+				jQuery(this).find('.blog-thumbnail').html(imgObject);
+				jQuery(this).find('.blog-thumbnail img').removeAttr('style').removeAttr('height').removeAttr('width').css('height',57);
+				jQuery(this).find('.blogContentHidden').remove();
+				if(jQuery(this).find('.blog-thumbnail img').length == 0) {
+					jQuery(this).find('.blog-thumbnail').remove();
+				}
+			});
+			jQuery('.listSummary .item_wrapper').each(function() {
+				var contentImg = document.createElement('div');
+				contentImg.innerHTML = jQuery(this).find('.blogContentHidden').html(); //'.blogContentHidden';
+				var imgObject = jQuery(contentImg).find('img:first').clone();
+				jQuery(this).find('.blog-thumbnail').html(imgObject);
+				if(jQuery(this).find('.blog-thumbnail img').length == 0) {
+					var tmpImg = document.createElement('img');
+					jQuery(this).find('.blog-thumbnail').html(tmpImg);
+					jQuery(this).find('.blog-thumbnail img').attr("src","");
+				}
+				jQuery(this).find('.blog-thumbnail img').attr("onerror","this.src=''");
+				jQuery(this).find('.blog-thumbnail img').removeAttr('style').removeAttr('height').removeAttr('width').css('height',57);
+				jQuery(this).find('.blogContentHidden').remove();
+				
+			});
+		}
+	};
+}();
+
+jQuery(BlogList.init()); // Run after page loads</script>
+<script type="text/javascript">
 var Progress = function() {
 	return {
 		myVariable: null,

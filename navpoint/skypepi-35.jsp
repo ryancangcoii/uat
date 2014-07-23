@@ -901,7 +901,7 @@ try {
   
 <!-- ********** INSERT HTML HERE ********** -->
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>concludeAndConfirm</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("concludeAndConfirm", null, "") %></span></div>
 <br><br><br>
 
 			<form id="concludeAndConfirm" name="concludeAndConfirm" method="post">
@@ -921,17 +921,17 @@ try {
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered" style="margin-bottom: 0px; ">
 								<thead>
 									<tr>
-										<th width="100%" align="left" colspan="7">Selected Classes</th>
+										<th width="100%" align="left" colspan="7"><%=lang.getString("Selected Classes", null, "") %></th>
 									</tr>
 								</thead>
 								<thead>
 									<tr>
-										<th align="left" class="sub-header">Class</th>
-										<th align="left" class="sub-header">Class Schedule</th>
-										<th width="8%" class="column-amount sub-header">Fee</th>
-										<th width="8%" class="column-amount sub-header">Discount</th>
-										<th width="8%" class="column-amount sub-header">Credit</th>
-										<th width="8%" class="column-amount sub-header">Total</th>
+										<th align="left" class="sub-header"><%=lang.getString("Class", null, "") %></th>
+										<th align="left" class="sub-header"><%=lang.getString("Class Schedule", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Fee", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Discount", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Credit", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Total", null, "") %></th>
 									</tr>
 								</thead>
 								<%
@@ -1022,9 +1022,9 @@ try {
 										<tr class="<%=classTag %>">
 											<td class=" sub-header valign" style="background-color: #cccccc;"><%=streamName %></td>
 											<td rowspan="2" class=" valign">
-												Start - End Date: <%=startDate %> - <%=endDate %><br>
-												Start - End Time: <%=sessionTime %> <br>
-												Session Days: <%=tmpSessionDays %>
+												<%=lang.getString("Start - End Date:", null, "") %><%=startDate %> - <%=endDate %><br>
+												<%=lang.getString("Start - End Time:", null, "") %> <%=sessionTime %> <br>
+												<%=lang.getString("Session Days:", null, "") %> <%=tmpSessionDays %>
 											</td>
 											<td rowspan="2" class="column-amount valign"><%=fee %></td>
 											<td rowspan="2" class="column-amount valign"><%=discount %></td>
@@ -1232,7 +1232,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1241,7 +1241,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

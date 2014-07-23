@@ -159,7 +159,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -345,9 +345,8 @@ boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE
 	<a href="<%=snippetVar_myNavpoint%>" class="wt"
 		style="font-size: 14px; color: rgb(60, 127, 197); font-weight: normal; text-decoration: none;"
 		onmouseover="this.style.color='#b14600';this.style.textDecoration='none';"
-		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login
-		Account</a>
-<% } %>
+		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login Account</a>
+<%}%>
 
 	<%
 } catch (Exception e) {
@@ -1148,7 +1147,7 @@ try {
 </li>
  <% } %><% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=lang.getString("myDetails", null, "") %></a>
 </li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69"><%=lang.getString("myCurrentEnrollment", null, "") %></a>
+ <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69"><%=lang.getString("myCurrentEnrolment", null, "") %></a>
 </li>
  <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70"><%=lang.getString("myProgression", null, "") %></a>
 </li>
@@ -1484,13 +1483,13 @@ try {
 	</div>
 	 -->
 	<div class=" bc-form portal-form portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span>Account Login</span></div>
+	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Account Login", null,"") %></span></div>
 	<br><br><br>
 		<div class="row form-group">
 			<div class="col-md-12">
 				<div class="row push-top">
 					<div class="col-md-4 align-left">
-						<label class="control-label" id="username-login-text">Username: </label>
+						<label class="control-label" id="username-login-text"><%=lang.getString("Username:", null, "") %> </label>
 					</div>
 					<div class="col-md-8">
 						<input class="form-control" id="username-login" name="username-login" type="text" autocomplete="off"/>
@@ -1500,7 +1499,7 @@ try {
 			<div class="col-md-12">
 				<div class="row push-top">
 					<div class="col-md-4 align-left">
-						<label class="control-label" id="password-login-text">Password: </label>
+						<label class="control-label" id="password-login-text"><%=lang.getString("Password:", null, "") %> </label>
 					</div>
 					<div class="col-md-8">
 						<input class="form-control" type="password" id="password-login" name="password-login" autocomplete="off"/>
@@ -1518,12 +1517,12 @@ try {
 			}
 		%>
 		<div class="forgot-password">
-			<a href="javascript:Login.forgotPassword();">Forgot Password</a> <%-- or <a href="">Contact Us</a>--%>
+			<a href="javascript:Login.forgotPassword();"><%=lang.getString("Forgot Password", null, "") %></a> <%-- or <a href="">Contact Us</a>--%>
 		</div>
 		<div class="login-formBtn" id="btnLogin" name="btnLogin">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0"class="buttonBlue">
 				<tr>
-					<td width="90%"><span>Login</span></td>
+					<td width="90%"><span><%=lang.getString("Login", null, "") %></span></td>
 					<td class="arrow"><span>></span></td>
 				</tr>
 			</table>
@@ -1639,10 +1638,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
 <div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
@@ -1899,7 +1898,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1908,7 +1907,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

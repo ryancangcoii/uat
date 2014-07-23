@@ -145,7 +145,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -1418,7 +1418,7 @@ try {
   
 <!-- ********** INSERT HTML HERE ********** -->
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>concludeAndConfirm</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("concludeAndConfirm", null, "") %></span></div>
 <br><br><br>
 
 			<form id="concludeAndConfirm" name="concludeAndConfirm" method="post">
@@ -1438,17 +1438,17 @@ try {
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered" style="margin-bottom: 0px; ">
 								<thead>
 									<tr>
-										<th width="100%" align="left" colspan="7">Selected Classes</th>
+										<th width="100%" align="left" colspan="7"><%=lang.getString("Selected Classes", null, "") %></th>
 									</tr>
 								</thead>
 								<thead>
 									<tr>
-										<th align="left" class="sub-header">Class</th>
-										<th align="left" class="sub-header">Class Schedule</th>
-										<th width="8%" class="column-amount sub-header">Fee</th>
-										<th width="8%" class="column-amount sub-header">Discount</th>
-										<th width="8%" class="column-amount sub-header">Credit</th>
-										<th width="8%" class="column-amount sub-header">Total</th>
+										<th align="left" class="sub-header"><%=lang.getString("Class", null, "") %></th>
+										<th align="left" class="sub-header"><%=lang.getString("Class Schedule", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Fee", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Discount", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Credit", null, "") %></th>
+										<th width="8%" class="column-amount sub-header"><%=lang.getString("Total", null, "") %></th>
 									</tr>
 								</thead>
 								<%
@@ -1539,9 +1539,9 @@ try {
 										<tr class="<%=classTag %>">
 											<td class=" sub-header valign" style="background-color: #cccccc;"><%=streamName %></td>
 											<td rowspan="2" class=" valign">
-												Start - End Date: <%=startDate %> - <%=endDate %><br>
-												Start - End Time: <%=sessionTime %> <br>
-												Session Days: <%=tmpSessionDays %>
+												<%=lang.getString("Start - End Date:", null, "") %><%=startDate %> - <%=endDate %><br>
+												<%=lang.getString("Start - End Time:", null, "") %> <%=sessionTime %> <br>
+												<%=lang.getString("Session Days:", null, "") %> <%=tmpSessionDays %>
 											</td>
 											<td rowspan="2" class="column-amount valign"><%=fee %></td>
 											<td rowspan="2" class="column-amount valign"><%=discount %></td>
@@ -1598,10 +1598,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
 <div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
@@ -1858,7 +1858,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1867,7 +1867,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

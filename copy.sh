@@ -1,6 +1,6 @@
 cp -r /Users/ryandcangcoii/Development/Tooltwist-8.3.1/ttsvr/generated/navpoint .
-#cp -r /Users/ryandcangcoii/Development/Tooltwist-8.3.1/ttsvr/generated/cropImage .
-#cp -r /Users/ryandcangcoii/Development/Tooltwist-8.3.1/ttsvr/generated/stylesheet .
+cp -r /Users/ryandcangcoii/Development/Tooltwist-8.3.1/ttsvr/generated/cropImage .
+cp -r /Users/ryandcangcoii/Development/Tooltwist-8.3.1/ttsvr/generated/stylesheet .
 
 #cp -r ~/Development/Tooltwist-8.3.1/skyportal/WebContent/skypepi/* skypepi/.
 #cp -r ~/Development/Tooltwist-8.3.1/skyportal/WebContent/blog/* blog/.

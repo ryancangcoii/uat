@@ -902,7 +902,7 @@ try {
 </style>
   
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>myProgressions</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myProgressions", null, "") %></span></div>
 <br><br><br>
 		<table width="100%">
 		<tr>
@@ -943,6 +943,8 @@ try {
 															enrolledStreamUnitsCnt++;
 															System.out.println("name:" + name );
 															String classTag = ((enrolledStreamUnitsCnt % 2) == 0) ? "blue" : "white";
+															java.sql.Date dt = new java.sql.Date(System.currentTimeMillis());
+															java.sql.Date dtTo = java.sql.Date.valueOf(end);
 														%>
 														<tr class="<%=classTag %>">
 															<%-- <td class="table-data color-regular column-text"><%=code %></td> --%>
@@ -967,12 +969,14 @@ try {
 																	<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
 																		<span class="body-text"><%=lang.getString("View Receipt", null, "") %></span></a>
 																</span>
+																<%if (dt.after(dtTo)) { %>
 																<br />
 																<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																<span class="regular-link-underline-light-blue">
 																	<a href="javascript:Progress.showProgress();window.location.href = '<%=("".equals(paymentId) ? "" : snippetVar_previewMarksGradesNavpoint + "?enrolmentID=" + enrolmentId) %>'" >
 																		<span class="body-text"><%=lang.getString("View Certificate", null, "") %></span></a>
 																</span>
+																<% } %>
 															</td>
 														</tr>
 												
@@ -1167,7 +1171,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1176,7 +1180,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

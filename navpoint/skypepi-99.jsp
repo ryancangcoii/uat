@@ -49,7 +49,7 @@ try {
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("blogAdminBlogListDeleteNavpoint", "");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("blogAdminBlogListNavpoint", "skypepi-106");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("category", "");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("categoryCount", "10");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("categoryCount", "5");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23 = new tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params);
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23.callPreFetch(jh);
 } catch (Exception e) {
@@ -144,7 +144,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -345,9 +345,8 @@ boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE
 	<a href="<%=snippetVar_myNavpoint%>" class="wt"
 		style="font-size: 14px; color: rgb(60, 127, 197); font-weight: normal; text-decoration: none;"
 		onmouseover="this.style.color='#b14600';this.style.textDecoration='none';"
-		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login
-		Account</a>
-<% } %>
+		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login Account</a>
+<%}%>
 
 	<%
 } catch (Exception e) {
@@ -1185,77 +1184,43 @@ try {
 	String snippetVar_blogAdminBlogListNavpoint = "skypepi-106";
 	String snippetVar_blogAdminBlogListDeleteNavpoint = "";
 	String snippetVar_category = "";
-	String snippetVar_categoryCount = "10";
+	String snippetVar_categoryCount = "5";
 	String snippetVar_widgetName = "@23";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementAdmin@23";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper"%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="tooltwist.wbd.util.PublicUtil"%>
-<%@page import="java.util.Date"%>
-<%
-	// Get the production helper for this widget
-	BlogAdminBlogListProductionHelper h = (BlogAdminBlogListProductionHelper) helper;
-	XData data = h.getData(jh);
-%>
+	<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+	<%@page import="com.dinaa.data.XData"%>
+	<%@page
+		import="tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper"%>
+	<%@page import="tooltwist.misc.JspHelper"%>
+	<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+	<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+	<%@page import="com.dinaa.data.XNodes"%>
+	<%@page import="tooltwist.wbd.util.PublicUtil"%>
+	<%@page import="java.util.Date"%>
+	<%
+		// Get the production helper for this widget
+		BlogAdminBlogListProductionHelper h = (BlogAdminBlogListProductionHelper) helper;
+		XData data = h.getData(jh);
+	%>
 
-<!-- ********** INSERT HTML HERE ********** -->
-<link rel="stylesheet" type="text/css" href="/ttsvr/blog/stylesheet/blog.css" />
-<style>
+	<!-- ********** INSERT HTML HERE ********** -->
+	<link rel="stylesheet" type="text/css"
+		href="/ttsvr/blog/stylesheet/blog.css" />
+	<style>
 .portal-ribbon .left-edge.fork {
 	width: 130px;
 }
 </style>
 
-<div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span>Announcement</span></div>
-	
-	<br />
-	<br />
-	<br />
-	
-	<div>
-		<% XData column = h.getColumns(); 
-		   XNodes columnNodes = h.getColumnNodes();	
-		   int ctr = 0;
-		%>
-		<div class="buttonPosition">
-						<span style="float: right;">
-													
-								  <table>
-								  	 <tr>	
-								  	 	<td style="vertical-align:middle; padding-right: 10px;">
-								  	 		Search:
-								  	 	</td>
-										<td style="vertical-align:middle; padding-right: 10px;">
-											<select id="selectedField" name="selectedField" onchange="BlogAdminBlogList.getSelectedName(this.value);">
-											<option value="">Select</option>
-											<%for(columnNodes.first();columnNodes.next();){ %>
-												<option value="<%=columnNodes.getText("columnDB")%>"><%=columnNodes.getText("columnDisplay") %></option>
-											<%} %>
-											</select>
-										</td>
-										<td id="textbox_filter" style="vertical-align:middle;">
-											<%if(h.isHeader()) {%>
-												<input type="text" class="datepickerInput blog_form_datepicker_medium boxwidth txtField" id="txtField" name="bdPublishDate"/>
-											<%}else{ %>	
-												<input type="text" id="txtField" class="txtField boxwidth" onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;">
-											<%} %>
-										</td>	
-									  </tr>	
-									</table>
-							
-						</span>	
-						<input type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())">
+	<div class="bc-container portal-ribbon">
+		<div class="ribbon-wrap left-edge fork lblue">
+			<span>Announcement</span>
 		</div>
+<<<<<<< HEAD
 		
 		<div id="pageNavPosition" class="pagination"></div>
 <div id="blogAdminBlogList">			
@@ -1270,12 +1235,12 @@ try {
 				<input type="hidden" name="selected" id="selected">
 				<input type="hidden" id="categoryCount" value="<%=snippetVar_categoryCount%>" />
 				<input type="hidden" id="blogSettingDateFormat" name="blogSettingDateFormat" value="<%=h.getDateFormat()%>">
-				
-				<table id="blogSettingListTable" class="wbdblog_table tablesorter">
+				<div class="portalTable">
+				<table id="blogSettingListTable" class="">
 					<thead>
 						<tr class="wbdblog_header">
 						<%for(columnNodes.first();columnNodes.next();){ %>
-							<th class="<%=columnNodes.getText("columnDB").equals(h.getColumnType()) ? h.getSortClass() : "" %>" style="width: <%=columnNodes.getText("columnDisplay").equals("Content") ? "2000px" : "200px" %>;">
+							<th class="<%=columnNodes.getText("columnDB").equals(h.getColumnType()) ? h.getSortClass() : "" %>"> <!-- style="width: <%=columnNodes.getText("columnDisplay").equals("Content") ? "2000px" : "200px" %>;" -->
 								<div onclick="BlogAdminBlogList.sortCategory('<%=h.getSort() %>','<%=columnNodes.getText("columnDB")%>',jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val());" class="sortable">
 									<%=columnNodes.getText("columnDisplay")%>
 								</div>
@@ -1291,38 +1256,38 @@ try {
 								<% for(xNodes.first(); xNodes.next();) {
 									
 								%>
-										<tr style="background-color: EAF9FF" class="<%= !xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDateTime( xNodes.getText("expirationDate")).getTime() < new Date().getTime()  ? "archive" : "" %>">
+										<tr class="<%= !xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDateTime( xNodes.getText("expirationDate")).getTime() < new Date().getTime()  ? "archive" : "" %> white div-bottom">
 										 	<%for(columnNodes.first();columnNodes.next();){
 										 		
 										 		%>
 										 	
 										 			<%if("Title".equals(columnNodes.getText("columnDisplay"))){ %>
-														<td>
+														<td align="left" valign="top" width="15%">
 															<%=xNodes.getText("title") %>
 														</td>
 													<%} %>	
 													<%if("Publish Date".equals(columnNodes.getText("columnDisplay"))){ %>
-														<td>
+														<td align="left" valign="top" width="10%">
 															<%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("publishedDate")) , h.getUI_DATEFORMAT() +" hh:mm a") %>
 														</td>
 													<%} %>	
 													<%if("Expire Date".equals(columnNodes.getText("columnDisplay"))){ %>	
-														<td>
+														<td align="left" valign="top"  width="10%">
 															<%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")) , h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")) , h.getUI_DATEFORMAT()+" hh:mm a") %>
 														</td>
 													<%} %>	
 													<%if("Featured".equals(columnNodes.getText("columnDisplay"))){ %>	
-														<td>
+														<td align="left" valign="top" width="15%">
 															<%=xNodes.getText("featured") %>
 														</td>
 													<%} %>	
 													<%if("Allow comments".equals(columnNodes.getText("columnDisplay"))){ %>	
-														<td>
+														<td align="left" valign="top" width="10%">
 															<%=xNodes.getText("commentsAllowed") %>
 														</td>
 													<%} %>	
 													<%if("Tags".equals(columnNodes.getText("columnDisplay"))){ %>	
-														<td>
+														<td align="left" valign="top" width="10%">
 															<%=xNodes.getText("tags") %>
 														</td>
 													<%} %>	
@@ -1334,23 +1299,23 @@ try {
 															 contentHolder = contentHolder.substring(0, 159) + "...";
 														}
 													%>	
-														<td>
+														<td align="left" valign="top">
 															<%=contentHolder%>
 														</td>
 													<%} %>	
 	
 													<%if("Author".equals(columnNodes.getText("columnDisplay"))){ %>	
-														<td>
+														<td align="left" valign="top" width="10%">
 															<%=xNodes.getText("author") %>
 														</td>
 													<%} %>	
 													<%if("Category Name".equals(columnNodes.getText("columnDisplay"))){ %>	
-														<td>
+														<td align="right" valign="top">
 															<%=xNodes.getText("blogCategoryName") %>
 														</td>
 													<%} %>	
 											<%} %>	
-														<td align="center">
+														<td align="right" valign="top" width="20%">
 															<span class="wbdblog_button">
 																<a href="<%=snippetVar_blogAdminBlogListNavpoint%>?blogId=<%=xNodes.getText("blogId") %> " >
 																	Edit
@@ -1365,7 +1330,7 @@ try {
 										</tr>
 								<%} ctr++; %>		
 							<%}else{%>
-							<tr style="background-color: EAF9FF">
+							<tr class="grey">
 								<td colspan="<%=ctr %>" align="center">
 									No search found on <%=XData.htmlString(h.getColumnLabel()) %> - <%=XData.htmlString(h.getTxtvalue()) %>
 								</td>							
@@ -1373,14 +1338,256 @@ try {
 						<%}%>
 					</tbody>
 				</table>
-			</div>
-		</form>
-	</div>
-	<div id="pageNavPosition2" class="pagination"></div>
-</div>
+				</div>
+=======
 
-</div>
-<%
+		<br /> <br /> <br />
+
+		<div>
+			<%
+				XData column = h.getColumns();
+				XNodes columnNodes = h.getColumnNodes();
+				int ctr = 0;
+			%>
+			<div class="buttonPosition">
+				<span style="float: right;">
+
+					<table>
+						<tr>
+							<td style="vertical-align: middle; padding-right: 10px;">
+								Search:</td>
+							<td style="vertical-align: middle; padding-right: 10px;"><select
+								id="selectedField" name="selectedField"
+								onchange="BlogAdminBlogList.getSelectedName(this.value);">
+									<option value="">Select</option>
+									<%
+										for (columnNodes.first(); columnNodes.next();) {
+									%>
+									<option value="<%=columnNodes.getText("columnDB")%>"><%=columnNodes.getText("columnDisplay")%></option>
+									<%
+										}
+									%>
+							</select></td>
+							<td id="textbox_filter" style="vertical-align: middle;">
+								<%
+									if (h.isHeader()) {
+								%> <input type="text"
+								class="datepickerInput blog_form_datepicker_medium boxwidth txtField"
+								id="txtField" name="bdPublishDate" /> <%
+ 	} else {
+ %> <input
+								type="text" id="txtField" class="txtField boxwidth"
+								onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;">
+								<%
+									}
+								%>
+							</td>
+						</tr>
+					</table>
+
+				</span>
+				<%--
+						<input class="paginate_button" style="border:0px;" type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())">
+						 --%>
+>>>>>>> FETCH_HEAD
+			</div>
+
+			<div id="pageNavPosition" class="pagination"></div>
+			<div id="blogAdminBlogList">
+				<form>
+					<%
+						XData xData = h.getReply();
+						XNodes xNodes = h.getxNodes();
+					%>
+					<div id="wbdblog_blog_list_div" class="scroll">
+						<input type="hidden" id="rowCount" name="rowCount"> <input
+							type="hidden" name="op"
+							value="blog_widgets.blogAdminBlogList.blogAdminBlogList">
+						<input type="hidden" name="selected" id="selected"> <input
+							type="hidden" id="categoryCount" value="<%=snippetVar_categoryCount%>" /> <input
+							type="hidden" id="blogSettingDateFormat"
+							name="blogSettingDateFormat" value="<%=h.getDateFormat()%>">
+						<div class="portalTable">
+							<table id="blogSettingListTable" class="">
+								<thead>
+									<tr class="wbdblog_header">
+										<%
+											for (columnNodes.first(); columnNodes.next();) {
+										%>
+										<th
+											class="<%=columnNodes.getText("columnDB").equals(
+						h.getColumnType()) ? h.getSortClass() : ""%>"
+											style="width: <%=columnNodes.getText("columnDisplay")
+						.equals("Content") ? "2000px" : "200px"%>;">
+											<div
+												onclick="BlogAdminBlogList.sortCategory('<%=h.getSort()%>','<%=columnNodes.getText("columnDB")%>',jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val());"
+												class="sortable">
+												<%=columnNodes.getText("columnDisplay")%>
+											</div>
+										</th>
+										<%
+											}
+										%>
+										<th width="80px">&nbsp;</th>
+									</tr>
+								</thead>
+
+								<tbody id="blogSettingListTableBody">
+									<%
+										if (xNodes.getNumNodes() > 0) {
+									%>
+
+									<%
+										for (xNodes.first(); xNodes.next();) {
+									%>
+									<tr
+										class="<%=!xNodes.getText("expirationDate").equals("")
+							&& PublicUtil.convertStringFromDBToDateTime(
+									xNodes.getText("expirationDate")).getTime() < new Date()
+									.getTime() ? "archive" : ""%> white div-bottom">
+										<%
+											for (columnNodes.first(); columnNodes.next();) {
+										%>
+
+										<%
+											if ("Title"
+																.equals(columnNodes.getText("columnDisplay"))) {
+										%>
+										<td align="left" valign="top"><%=xNodes.getText("title")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											if ("Publish Date".equals(columnNodes
+																.getText("columnDisplay"))) {
+										%>
+										<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil
+									.convertStringFromDBToDateTime(xNodes
+											.getText("publishedDate")),
+									h.getUI_DATEFORMAT() + " hh:mm a")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											if ("Expire Date".equals(columnNodes
+																.getText("columnDisplay"))) {
+										%>
+										<td align="left" valign="top"><%=PublicUtil
+									.formatDate(
+											PublicUtil
+													.convertStringFromDBToDateTime(xNodes
+															.getText("expirationDate")),
+											h.getUI_DATEFORMAT()).equals("") ? ""
+									: PublicUtil.formatDate(
+											PublicUtil
+													.convertStringFromDBToDateTime(xNodes
+															.getText("expirationDate")),
+											h.getUI_DATEFORMAT() + " hh:mm a")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											if ("Featured".equals(columnNodes
+																.getText("columnDisplay"))) {
+										%>
+										<td align="left" valign="top"><%=xNodes.getText("featured")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											if ("Allow comments".equals(columnNodes
+																.getText("columnDisplay"))) {
+										%>
+										<td align="left" valign="top"><%=xNodes.getText("commentsAllowed")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											if ("Tags".equals(columnNodes.getText("columnDisplay"))) {
+										%>
+										<td align="left" valign="top"><%=xNodes.getText("tags")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											if ("Content".equals(columnNodes
+																.getText("columnDisplay"))) {
+
+															String contentHolder = xNodes.getText("content");
+															contentHolder = PublicUtil
+																	.removeHtml(contentHolder);
+															if (contentHolder.length() > 200) {
+																contentHolder = contentHolder.substring(0, 159)
+																		+ "...";
+															}
+										%>
+										<td align="left" valign="top"><%=contentHolder%></td>
+										<%
+											}
+										%>
+
+										<%
+											if ("Author".equals(columnNodes
+																.getText("columnDisplay"))) {
+										%>
+										<td align="left" valign="top"><%=xNodes.getText("author")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											if ("Category Name".equals(columnNodes
+																.getText("columnDisplay"))) {
+										%>
+										<td align="right" valign="top"><%=xNodes.getText("blogCategoryName")%>
+										</td>
+										<%
+											}
+										%>
+										<%
+											}
+										%>
+										<td align="left" valign="top"><span
+											class="wbdblog_button"> <a
+												href="<%=snippetVar_blogAdminBlogListNavpoint%>?blogId=<%=xNodes.getText("blogId")%> ">
+													Edit </a> | <a href="#"
+												onclick="BlogAdminBlogList.deleteBlogList('<%=xNodes.getText("blogId")%>');return false">
+													Delete </a>
+										</span></td>
+
+									</tr>
+									<%
+										}
+											ctr++;
+									%>
+									<%
+										} else {
+									%>
+									<tr class="grey">
+										<td colspan="<%=ctr%>" align="center">No search found on
+											<%=XData.htmlString(h.getColumnLabel())%> - <%=XData.htmlString(h.getTxtvalue())%>
+										</td>
+									</tr>
+									<%
+										}
+									%>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div id="pageNavPosition2" class="pagination"></div>
+		</div>
+
+	</div>
+	<%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@23 (type=tooltwist.blog.widgets.BlogAdminBlogListWidget)", e);
 }
@@ -1553,10 +1760,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
 <div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
@@ -1813,7 +2020,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1822,7 +2029,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

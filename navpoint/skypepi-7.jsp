@@ -972,18 +972,18 @@ try {
 							<tr>
 								<td align="left">
 									<select id="locationDropdown" name="locationDropdown" class="medium-dropdown" onchange="getCourseCategory();">
-										<option value="Taiwan">Taiwan</option>
-										<option value="Australia">Australia</option>
+										<option value="Taiwan"><%=lang.getString("Taiwan", null, "") %></option>
+										<option value="Australia"><%=lang.getString("Australia", null, "") %></option>
 									</select>
 								</td>
 								<td class="separator">&nbsp;</td>
 								<td align="left">
 									<select id="selectTimeDropdown" name="selectTimeDropdown" class="medium-dropdown">
 										<option value=""><%=lang.getString("Select time of the day", null, "") %></option>
-										<option value="Anytime">Anytime</option>
-										<option value="Morning">Morning</option>
-										<option value="Afternoon">Afternoon</option>
-										<option value="Evening">Evening</option>
+										<option value="Anytime"><%=lang.getString("Anytime", null, "") %></option>
+										<option value="Morning"><%=lang.getString("Morning", null, "") %></option>
+										<option value="Afternoon"><%=lang.getString("Afternoon", null, "") %></option>
+										<option value="Evening"><%=lang.getString("Evening", null, "") %></option>
 									</select>
 								</td>
 							</tr>
@@ -999,23 +999,23 @@ try {
 								<td align="left">
 									<table>
 										<tr>
-											<td width="60px"><input id="checkboxDay1" name="checkboxDay1" type="checkbox" class="v-align-middle" value="Monday"/>&nbsp;<span class="body-text color-regular">Mon</span></td>
+											<td width="60px"><input id="checkboxDay1" name="checkboxDay1" type="checkbox" class="v-align-middle" value="Monday"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Mon", null, "") %></span></td>
 											<td class="separator">&nbsp;</td>
-											<td width="60px"><input id="checkboxDay2" name="checkboxDay2" type="checkbox" class="v-align-middle" value="Tuesday"/>&nbsp;<span class="body-text color-regular">Tue</span></td>
+											<td width="60px"><input id="checkboxDay2" name="checkboxDay2" type="checkbox" class="v-align-middle" value="Tuesday"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Tue", null, "") %></span></td>
 											<td class="separator">&nbsp;</td>
-											<td width="60px"><input id="checkboxDay3" name="checkboxDay3" type="checkbox" class="v-align-middle" value="Wednesday"/>&nbsp;<span class="body-text color-regular">Wed</span></td>
+											<td width="60px"><input id="checkboxDay3" name="checkboxDay3" type="checkbox" class="v-align-middle" value="Wednesday"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Wed", null, "") %></span></td>
 										</tr>
 										<tr>
-											<td><input id="checkboxDay4" name="checkboxDay4" type="checkbox" class="v-align-middle" value="Thursday"/>&nbsp;<span class="body-text color-regular">Thu</span></td>
+											<td><input id="checkboxDay4" name="checkboxDay4" type="checkbox" class="v-align-middle" value="Thursday"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Thu", null, "") %></span></td>
 											<td class="separator">&nbsp;</td>
-											<td><input id="checkboxDay5" name="checkboxDay5" type="checkbox" class="v-align-middle" value="Friday"/>&nbsp;<span class="body-text color-regular">Fri</span></td>
+											<td><input id="checkboxDay5" name="checkboxDay5" type="checkbox" class="v-align-middle" value="Friday"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Fri", null, "") %></span></td>
 											<td class="separator">&nbsp;</td>
-											<td><input id="checkboxDay6" name="checkboxDay6" type="checkbox" class="v-align-middle" value="Saturday"/>&nbsp;<span class="body-text color-regular">Sat</span></td>
+											<td><input id="checkboxDay6" name="checkboxDay6" type="checkbox" class="v-align-middle" value="Saturday"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Sat", null, "") %></span></td>
 										</tr>
 										<tr>
-											<td><input id="checkboxDay7" name="checkboxDay7" type="checkbox" class="v-align-middle" value="Sunday"/>&nbsp;<span class="body-text color-regular">Sun</span></td>
+											<td><input id="checkboxDay7" name="checkboxDay7" type="checkbox" class="v-align-middle" value="Sunday"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Sun", null, "") %></span></td>
 											<td class="separator">&nbsp;</td>
-											<td colspan="3"><input id="checkboxAnyDay" name="checkboxAnyDay" type="checkbox" class="v-align-middle" value="Any Day"/>&nbsp;<span class="body-text color-regular">Any Day</span></td>
+											<td colspan="3"><input id="checkboxAnyDay" name="checkboxAnyDay" type="checkbox" class="v-align-middle" value="Any Day"/>&nbsp;<span class="body-text color-regular"><%=lang.getString("Any Day", null, "") %></span></td>
 										</tr>
 									</table>
 								</td>
@@ -1467,7 +1467,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1476,7 +1476,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

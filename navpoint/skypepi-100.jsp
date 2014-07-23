@@ -129,7 +129,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -192,6 +192,8 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/ttsvr/blog/script/jquery.blockUI.js" type="text/javascript"></script>
+<script src="/ttsvr/blog/script/jquery.form.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -254,9 +256,8 @@ boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE
 	<a href="<%=snippetVar_myNavpoint%>" class="wt"
 		style="font-size: 14px; color: rgb(60, 127, 197); font-weight: normal; text-decoration: none;"
 		onmouseover="this.style.color='#b14600';this.style.textDecoration='none';"
-		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login
-		Account</a>
-<% } %>
+		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login Account</a>
+<%}%>
 
 	<%
 } catch (Exception e) {
@@ -1097,6 +1098,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StaticDocumentsProductionHelper.Document"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StaticDocumentsProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
@@ -1108,7 +1110,20 @@ try {
 	// Get the production helper for this widget
 	StaticDocumentsProductionHelper h = (StaticDocumentsProductionHelper) helper;
 	XData data = h.getData(jh);
+	AltLang lang = h.getAltLang();
 %>
+<script type="text/javascript" src="/ttsvr/skypepi/scripts/jquery.media.js"></script>
+<!-- <script type="text/javascript" src="/ttsvr/skypepi/scripts/jquery.metadata.js"></script> -->
+<style>
+div.media, div.media > iframe, iframe {
+	width: 100% !important;
+	height: 100% !important;
+}
+div.media {
+	margin-top: 0px;
+} 
+
+</style>
 <div class="bc-container portal-ribbon">
 	<div class="ribbon-wrap left-edge fork lblue"><span>Static Documents</span></div>
 	
@@ -1119,12 +1134,12 @@ try {
 <div class="portalTable">
 <table cellpadding="0" cellspacing="0" width="100%">
 	<tr>
-		<th width="10%"></th>
-    	<th width="20%" >Document Title</th>
+		<th width="5%"></th>
+    	<th width="25%" >Document Title</th>
    		<th width="25%" >Document Language</th>
    		<th width="20%" >Last Upload Date</th>
-   		<th width="15%" >Editor</th>
-   		<th width="10%"></th>
+   		<th width="20%" >Editor</th>
+   		<th width="5%"></th>
     </tr>
     <%
     int cnt = 1;
@@ -1134,18 +1149,119 @@ try {
     	cnt++;
     %>
     <tr class="<%=clss %>">
-    	<td><a href="#view">V</a></td>
-    	<td><%=doc.getTitle() %></td>
-    	<td><%=doc.getLangunage() %></td>
+		<td><a data-toggle="modal" href="#view"
+			data-target=".modal-view" data-toggle="modal"
+			title="<%=doc.getTitle()%>"
+			lang="<%=doc.getLanguage()%>"
+			langCode="<%=doc.getLangCode() %>"
+			docType="<%=doc.getType() %>"
+			docId="<%=doc.getDocumentId() %>"
+			langKey="<%=h.getLanguage(doc.getLangCode()) %>"
+			site="<%=h.getSite() %>"
+			class="img-view"
+			>
+			<img src="/ttsvr/skypepi/images/open.png" /></a>
+			
+		</td>
+		<td><%=doc.getTitle() %></td>
+    	<td><%=doc.getLanguage() %></td>
     	<td><%=doc.getUploadDate() %></td>
     	<td><%=doc.getEditor() %></td>
-    	<td><a href="#upload">U</a></td>
+    	<td>
+    		<a data-toggle="modal" href="#upload"
+						data-target=".modal-upload" data-toggle="modal"
+						class="img-upload" 
+						title="<%=doc.getTitle()%>"
+						lang="<%=doc.getLanguage()%>"
+						langCode="<%=doc.getLangCode() %>"
+						docType="<%=doc.getType() %>"
+						docId="<%=doc.getDocumentId() %>"
+						> 
+						<img src="/ttsvr/skypepi/images/upload.png" />
+					</a>
+					</td>
+    	
     </tr>
     <% } %>
 </table>
 </div>
 
 </div>
+
+<%--MODAL for document uploading --%>
+<div class="modal fade modal-upload" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="FileUploader" >
+		<div class="ModalBoxHldr">
+			<form id="attachFileForm" action="?op=blog_widgets.fileUploader.fileUploader" method="post"  enctype="multipart/form-data">
+			<input type="hidden" id="primaryFieldValue" name="primaryFieldValue" value=""/>
+			<input type="hidden" name="subop" id="subop" value="uploadFile"/>
+			<input type="hidden" name="validFileExtension" id="validFileExtension" value="pdf"/>
+			
+			<input type="hidden" name="langCode" id="langCode" value=""/>
+			<input type="hidden" name="docType" id="docType" value=""/>
+			<input type="hidden" name="docId" id="docId" value=""/>
+			
+			
+			<div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          <h4 class="modal-title"><span id="msgHeader">Upload Static Document</span></h4>
+	        </div>
+	        <div class="modal-body">
+	           	<input type="hidden" name="selfPage" id="selfPage" value=""/>
+	 			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td class="txtlabel">
+							<img src="/ttsvr/skypepi/images/pdf-thumbnail.png" width="150"/>
+						</td>
+						<td valign="bottom" style="border-left: 1px solid #e5e5e5;padding-left: 10px;">
+							<table class="portalTable" style="border: none;">
+								<tr><td><strong id="file-title">Code of Conduct</strong></td></tr>
+								<tr><td id="file-language">Engligh</td></tr>
+								<tr><td><input type="file" id="datafile" class="datafile" name="datafile" size="40"></td></tr>
+								
+							</table>
+						</td>						
+					</tr>
+				</table>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	          <input type="button" class="btn btn-primary"  value="Attach" id="btnAttachFile"/>
+	        </div>
+			</form>		
+		</div>
+	 </div>
+    </div>
+  </div>
+</div>
+
+<%-- MODAL for document viewing --%>
+<div class="modal fade modal-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog" style="height: 100%">
+    <div class="modal-content" style="padding: 5px;height: 100%">
+     	<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Document title</h4>
+      </div>
+     	<div class="modal-body" style="padding: 0px;height: 90%">
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('a.media').media();
+    });
+</script>
+
+<%--<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2Fportalsit.skysoftware.com%2Fttsvr%2Fskypepi%2Fdocuments%2FHouse%20Rules%20for%20YL%20V1.9.pdf&embedded=true" width="600" height="780" style="border: none;"></iframe> --%>
+ 
+  
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapStaticDocumentAdmin@23 (type=tooltwist.skypepi.widgets.StaticDocumentsWidget)", e);
@@ -1167,10 +1283,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="#" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrollment</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
 <div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
@@ -1427,7 +1543,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1436,7 +1552,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>
@@ -1483,7 +1599,115 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
-  <script type="text/javascript">
+  <script type="text/javascript">var FileUploader = function() {
+	return {
+		
+		init: function() {
+			
+			var self = this;
+			
+			jQuery(document).on("click", "#btnAttachFile", function() {
+				var dataFile = jQuery('#datafile').val();
+				if (validateEmpty(dataFile)){
+					if (validateFileExtension(dataFile)){
+						jQuery.blockUI();			
+						jQuery(".blockUI").css("z-index","20000");
+						jQuery('#attachFileForm').submit();
+					}else {
+						return;
+					}
+				} else {
+					return;
+				}
+			});
+			
+			
+			jQuery('#attachFileForm').ajaxForm({
+				success: function(data) {
+					jQuery('#uploadedImages').css('display', "block");
+					jQuery.unblockUI();
+                    window.location.reload(true);
+				}
+			}); 
+			
+			jQuery(document).on("click", ".img-upload", function() {
+				jQuery(".modal-upload").find("#file-title").html(jQuery(this).attr("title"));
+				jQuery(".modal-upload").find("#file-language").html(jQuery(this).attr("lang"));
+				jQuery(".modal-upload").find("#langCode").val(jQuery(this).attr("langCode"));
+				jQuery(".modal-upload").find("#docType").val(jQuery(this).attr("docType"));
+				jQuery(".modal-upload").find("#docId").val(jQuery(this).attr("docId"));
+				
+				console.log(jQuery(this).attr("langCode") + "/" + jQuery(this).attr("docType"));
+			});
+			
+			jQuery(document).on("mousedown", ".img-view", function() {
+				
+				var title = jQuery(this).attr("title");
+				var lang = jQuery(this).attr("lang");
+				var langCode = jQuery(this).attr("langCode");
+				var docType = jQuery(this).attr("docType");
+				var docId = jQuery(this).attr("docId");
+				var langKey = jQuery(this).attr("langKey");
+				var site = jQuery(this).attr("site");
+				
+				jQuery(".modal-view .modal-title").html(title + " (" +  lang + ")");
+				
+				jQuery.ajax({
+					url:"/ttsvr/skypepi/documentViewer.jsp?document=/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf",
+					success: function(data) {
+						jQuery('.modal-view').find(".modal-body").html('<object data="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf" type="application/pdf" width="100%" height="100%">'+
+								'<p>It appears you don\'t have a PDF plugin for this browser.'+
+								'No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to'+
+								'download the PDF file.</a></p>'+
+								'</object>');
+						
+					}
+				});
+				
+//				console.log("/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf");
+//				jQuery("#temp > a").attr("href", "/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf");
+//				console.log(jQuery("#temp").html())
+				
+				
+			});
+				
+		},
+		
+		myMethod: function() {
+			alert("FileUploader.myMethod()");
+		}
+		// no comma after last method
+	};
+}();
+
+jQuery(FileUploader.init()); // Run after page loads
+
+function validateEmpty(inputValue){
+	if(jQuery.trim(inputValue).length == 0 || jQuery.trim(inputValue) == ""){
+		alert("Choose File to upload.");
+		return false;
+	} else {
+		return true;
+	}
+}
+
+
+function validateFileExtension(dataFile){
+	 var file = dataFile;
+     var exts = jQuery('#validFileExtension').val().split(",");
+     if ( file ) {
+       var get_ext = file.split('.');
+       get_ext = get_ext.reverse();
+       if ( $.inArray ( get_ext[0].toLowerCase(), exts ) > -1 ){
+    	   return true;
+       } else {
+    	   alert("File extension is not allowed.");
+   			return false;
+       }
+     }
+}
+</script>
+<script type="text/javascript">
 var Progress = function() {
 	return {
 		myVariable: null,

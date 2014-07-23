@@ -891,7 +891,7 @@ try {
 </style>
   
 <div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span>viewReceipts</span></div>
+	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("viewReceipts", null, "") %></span></div>
 	
 	<br />
 	<br />
@@ -934,18 +934,24 @@ List<StudentFinances> paymentCollection = h.getStudentPaymentDetailCollection();
 								<td class="table-data color-regular">
 									<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 									<span class="regular-link-underline-light-blue"><a href="javascript:Progress.showProgress();window.location = '<%=snippetVar_previewReceipts%>?paymentDetailID=<%=studentFinances.getPaymentId() %>'"><span class="body-text"><%=lang.getString("Preview", null, "") %></span></a></span>
-								</td>
+								</td>	
 							</tr>
 							<% } %>
 						</tbody>
 					</table>
+					
 					</div>
-	
+					<br>
+					<table align="right">
+					<tr>
+					<td>
+					<a href="javascript:window.location.href='skypepi-70'">
+					<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /></a>
+					</td>
+					</tr>	
+		</table>
 		<br/>
-		
-			
-		
-		
+
 		<div id="naviReceipts"></div>
 	</div>
 
@@ -1119,7 +1125,7 @@ try {
         <p id="msgMessage"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("OK", null, "") %></button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1128,7 +1134,7 @@ try {
 <% if(!"".equals(h.getIsFirstTimeLoggedIn())) { %>
 <input type="hidden" value="<%=h.getIsFirstTimeLoggedIn() %>" id="first-logged"/>
 <div id='div_splash' class="simple_dialog">
-	<div class='header'><span id="msgHeader">British Council</span></div>
+	<div class='header'><span id="msgHeader"><%=lang.getString("British Council", null, "") %></span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>

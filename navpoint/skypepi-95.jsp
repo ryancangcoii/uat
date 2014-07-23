@@ -52,7 +52,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN" >
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
 <html>
 
   <head>
@@ -118,6 +118,10 @@ try {
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_reportTemplate@2";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
+%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%
+	WbdProductionHelper helper = null;
 %>
 <!--Start-->
 <%@page import="java.util.Map"%>

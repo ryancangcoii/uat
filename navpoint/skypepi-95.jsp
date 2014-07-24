@@ -119,10 +119,6 @@ try {
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%
-	WbdProductionHelper helper = null;
-%>
 <!--Start-->
 <%@page import="java.util.Map"%>
 <%@page

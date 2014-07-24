@@ -320,7 +320,7 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	z-index: 9999;
+	z-index: 1030;
 }
 
 .open > .dropdown-menu {
@@ -563,7 +563,7 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	z-index: 9999;
+	z-index: 1030;
 }
 
 .open > .dropdown-menu {
@@ -890,7 +890,7 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	z-index: 9999;
+	z-index: 1030;
 }
 
 .open > .dropdown-menu {
@@ -1204,10 +1204,9 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 							<div class="col-md-2">
 								Title:
 							</div>
-							<div class="col-md-7">
+							<div class="col-md-10">
 								<input  id="bdTitle" name="bdTitle" class="form-control blog_form_input_medium required" type="text" autocomplete="off" value="<%=h.getTitle()%>"/>
 							</div>
-							<div class="col-md-3"></div>
 					</div>
 			</div>
 		</div>
@@ -1218,7 +1217,7 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 							<div class="col-md-2">
 								Publish Date:
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getPublishDate()%>" onchange="validatePublishExpireDate();"/>
 							</div>
 							<div class="col-md-3"></div>
@@ -1227,40 +1226,47 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		</div>
 		
 		<div class="row" style="margin-top:25px">
+			<div class="col-md-2">Publish Time:</div>
 			<input type="hidden" class="blogTimeInput blog_form_time_medium required" id="bdPublishTime" name="bdPublishTime" value="<%=h.getPublishTime()%>" />
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-3">
+							<select id="selPublishTimeHour" name ="selPublishTimeHour" class="form-control">
+					     		<%=h.getPublishHoursOption()%>		     		
+					     	</select>
+						</div>
+						<div class="col-md-3">
+							<select id="selPublishTimeMinute" name ="selPublishTimeMinute" class="form-control">
+					     		<%=h.getPublishMinutesOption()%>		     		
+					     	</select>
+						</div>
+						<div class="col-md-3">
+							<select id="selPublishTimeMeridian" name ="selPublishTimeMeridian" class="form-control">		     		
+					     		<%=h.getPublishMeridianOption()%>		     		
+					     	</select>
+						</div>
+						</div>
+					</div>
+		</div>
+		
+		<%--<div class="row" style="margin-top:25px">
 			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">
-								Publish Time:</label>
+								Expire Date:
 							</div>
-								<div class="col-md-5">
-								<div class="col-md-3">
-									<select id="selPublishTimeHour" name ="selPublishTimeHour" class="form-control">
-							     		<%=h.getPublishHoursOption()%>		     		
-							     	</select>
-								</div>
-								<div class="col-md-3">
-									<select id="selPublishTimeMinute" name ="selPublishTimeMinute" class="form-control">
-							     		<%=h.getPublishMinutesOption()%>		     		
-							     	</select>
-								</div>
-								<div class="col-md-3">
-									<select id="selPublishTimeMeridian" name ="selPublishTimeMeridian" class="form-control">		     		
-							     		<%=h.getPublishMeridianOption()%>		     		
-							     	</select>
-								</div>
-								</div>
-							<div class="col-md-4"></div>
+							<div class="col-md-3">
+								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getPublishDate()%>" onchange="validatePublishExpireDate();"/>
+							</div>
+							<div class="col-md-3"></div>
 					</div>
 			</div>
-		</div>
-		
-		
+		</div>  --%>
 		
 		<div class="row" style="margin-top:25px">
 				<div class="col-md-2">Expire Date:</div>	     	
-		     	<div class="col-md-5">
-		     		<input  id="bdExpireDate" name="bdExpireDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/>
+		     	<div class="col-md-4">
+		     		<input  id="bdExpireDate" name="bdExpireDate" class="form-control datepickerInput blog_form_datepicker_medium" type="text" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/>
 <%-- 		     		<input type="text" class="form-control datepickerInput blog_form_datepicker_medium hasDatepicker" id="bdExpireDate" name="bdExpireDate" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/> --%>
 		     	</div>
 		     	<div class="col-md-5 button-cont"><input type="button" class="buttonBlue" onclick="blogClearExpireDateTime();" value="Clear">
@@ -1297,36 +1303,105 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 			<div class="row" style="margin-top:25px">
 		     	<div class="col-md-2" >Expire Time:</div>	     	
 		     	<input type="hidden" class="blogTimeInput blog_form_time_medium " id="bdExpireTime" name="bdExpireTime" value="<%=h.getExpireTime()%>" />
-		     	<div class="col-md-10" >
-		     	<div class="row">
-			     	<div class="col-md-2"><select id="selExpireTimeHour" name ="selExpireTimeHour" onchange="validateExpireDateTime();" class="form-control">
-			     		<option value=""></option>
-			     		<%=h.getExpireHoursOption()%>		     		
-			     	</select></div>
-			     	<div class="col-md-1" style="text-align:center">:</div>
-			     	<div class="col-md-2"><select id="selExpireTimeMinute" name ="selExpireTimeMinute" onchange="validateExpireDateTime();" class="form-control">
-			     		<option value=""></option>
-			     		<%=h.getExpireMinutesOption()%>		     		
-			     	</select></div>
-			     	<div class="col-md-2"><select id="selExpireTimeMeridian" name ="selExpireTimeMeridian" class="form-control">		     		
-			     		<%=h.getExpireMeridianOption()%>		     		
-			     	</select></div>
-			     	<label class="timeErrorHolder"></label>		     	
-			</div></div>
+		     	<div class="col-md-5" >
+			     	<div class="row">
+				     	<div class="col-md-3"><select id="selExpireTimeHour" name ="selExpireTimeHour" onchange="validateExpireDateTime();" class="form-control">
+				     		<option value=""></option>
+				     		<%=h.getExpireHoursOption()%>		     		
+				     	</select></div>
+				     	<div class="col-md-3"><select id="selExpireTimeMinute" name ="selExpireTimeMinute" onchange="validateExpireDateTime();" class="form-control">
+				     		<option value=""></option>
+				     		<%=h.getExpireMinutesOption()%>		     		
+				     	</select></div>
+				     	<div class="col-md-3"><select id="selExpireTimeMeridian" name ="selExpireTimeMeridian" class="form-control">		     		
+				     		<%=h.getExpireMeridianOption()%>		     		
+				     	</select></div>
+				     	<label class="timeErrorHolder"></label>		     	
+					</div>
+				</div>
 			</div>
 			
+			<%--<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2">Category:</div>	     	
+		     	<div class="col-md-5">
+		     		<select id="bdCategory" name="bdCategory" class="form-control">
+		     	<option value="">-Select-</option>
+		     	<%
+		     		XData oCategory = h.getCategory();
+		     		XNodes nodes = oCategory.getNodes("//blogCategory");
+		     		if(nodes.getNumNodes() > 0){
+		     			for(nodes.first();nodes.next();){	     		
+		     	%>
+		     	<option value="<%=nodes.getText("blogCategoryId")%>"><%=nodes.getText("blogCategoryName") %></option>
+		     	<%
+		     			}
+		     		}
+		     	%>
+		     	</select></div>
+			</div>
 			
-			
+			<div style="display: none;">	     	
+		     	<table><tr><td>
+		     				<div id="divCat" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
+		     	</td></tr></table>
+			</div>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Site:</div>	     	
+		     	<div class="col-md-5" ><select id="bdSite" name="bdSite" class="form-control">
+		     	<option value="">-Select-</option>
+		     	<%
+		     		XData oSites = h.getSites();
+		     		XNodes nSites = oSites.getNodes("//site");
+		     		if(nSites.getNumNodes() > 0){
+		     			for(nSites.first();nSites.next();) {
+		     	%>
+		     	<option value="<%=nSites.getText("siteId")%>"><%=nSites.getText("siteName") %></option>
+		     	<%
+		     			}
+		     		}
+		     	%>
+		     	</select></div>
+			</div>
+			<div style="display: none;">	     	
+		     	<table><tr><td>
+		     				<div id="divSite" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
+		     	</td></tr></table>
+			</div>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Allow Comments:</div>	     	
+		     	<div class="col-md-5">
+		     	<input type="checkbox" <%=h.getAllowComments() %> id="bdAllowComments" name="bdAllowComments"></div>
+			</div>
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Featured Blog:</div>	     	
+		     	<div class="col-md-5" ><input type="checkbox" <%=h.getIsFeaturedBlog() %>   id="bdFeaturedBlog" name="bdFeaturedBlog"></div>
+			</div>--%>
 			<div class="row" style="margin-top:25px">
 				<div style="margin:0px 15px;	">
-		     	<span style="float: none;" >Announcement:</span>	   
+		     	<span style="float: none;" >Blog:</span>	   
 		     	<div style="width: 100%;">  	
 			     	<textarea class="blog_form_textarea_medium required contentError " rows="" style="width: 500px; height: 100px;" id="bdContent" name="bdContent"><%=h.getBlogContent() %></textarea>
 					<label class="errorHolder"></label>
 				</div>
 				</div>
+			</div> 
+			<%--<div class="row" style="margin-top:25px">
+		     	<div class="col-md-2" >Tags:</div>
+		     	<div class="col-md-10" ><input type="text" class="blog_form_input_medium required form-control"  id="bdTags" name="bdTags" value="<%=h.getTags()%>" ></div>
 			</div>
 			
+			<div class="row" style="margin-top:25px">
+		     	<div class="col-md-4" >Add Meta description:</div>	     	
+		     	<div class="col-md-5" ><input type="checkbox"  id="bdAddMetaDescription" name="bdAddMetaDescription" <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ?"":"checked=\"checked\""%>></div>
+			</div>
+			
+			<div style="margin-top:25px">
+			<div <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ? "style=\"display:none;\"":""%>   id="liMetaDesc" >
+		     	<span>Meta Description:</span><br />
+		     	<textarea class="blog_form_textarea_medium required contentError form-control" rows="" style="resize:none; width: 100%; height: 100px;" id="bdMetaDesc" name="bdMetaDesc"><%=h.getMetaDesc() %></textarea>
+				<label class="errorHolder"></label>
+			</div>
+			</div>
 			<%if(h.getBlogId() != null && !h.getBlogId().equals("")) { %>
 			<%if(h.getAllowUploadImage().equalsIgnoreCase("true")) {%>
 				<li>
@@ -1346,7 +1421,7 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 				</li>
 				<%}%>
 			<%}%>
-			<%}%>
+			<%}%> --%>
 		</ul>
 		<div class="qv_formbottom_style1">
 			<div class="qv_roundedbutton_big">
@@ -1384,7 +1459,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
 <div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>

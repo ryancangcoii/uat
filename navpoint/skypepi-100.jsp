@@ -308,7 +308,7 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	z-index: 9999;
+	z-index: 1030;
 }
 
 .open > .dropdown-menu {
@@ -551,7 +551,7 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	z-index: 9999;
+	z-index: 1030;
 }
 
 .open > .dropdown-menu {
@@ -879,7 +879,7 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	z-index: 9999;
+	z-index: 1030;
 }
 
 .open > .dropdown-menu {
@@ -1284,7 +1284,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
 <div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
@@ -1652,10 +1652,10 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 				
 				jQuery(".modal-view .modal-title").html(title + " (" +  lang + ")");
 				
-				jQuery('.modal-view').find(".modal-body").html('<object data="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf" type="application/pdf" width="100%" height="100%">'+
+				jQuery('.modal-view').find(".modal-body").html('<object data="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf#view=FitH" type="application/pdf" width="100%" height="100%">'+
 						'<p>It appears you don\'t have a PDF plugin for this browser.'+
 						'No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to'+
-						'download the PDF file.</a></p>'+
+						'download the PDF file.</a>'+
 						'</object>');
 				
 //				jQuery.ajax({
@@ -1703,7 +1703,7 @@ function validateFileExtension(dataFile){
        if ( $.inArray ( get_ext[0].toLowerCase(), exts ) > -1 ){
     	   return true;
        } else {
-    	   alert("File extension is not allowed.");
+    	   alert("Invalid file. Only PDF file is allowed.");
    			return false;
        }
      }

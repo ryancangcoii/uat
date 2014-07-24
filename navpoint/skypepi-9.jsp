@@ -239,7 +239,7 @@ try {
 <style>
 .dropdown a.head {
 	background-color: white;
-	z-index: 9999;
+	z-index: 1030;
 }
 
 .open > .dropdown-menu {

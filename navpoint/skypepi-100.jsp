@@ -1652,17 +1652,19 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 				
 				jQuery(".modal-view .modal-title").html(title + " (" +  lang + ")");
 				
-				jQuery.ajax({
-					url:"/ttsvr/skypepi/documentViewer.jsp?document=/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf",
-					success: function(data) {
-						jQuery('.modal-view').find(".modal-body").html('<object data="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf" type="application/pdf" width="100%" height="100%">'+
-								'<p>It appears you don\'t have a PDF plugin for this browser.'+
-								'No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to'+
-								'download the PDF file.</a></p>'+
-								'</object>');
-						
-					}
-				});
+				jQuery('.modal-view').find(".modal-body").html('<object data="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf" type="application/pdf" width="100%" height="100%">'+
+						'<p>It appears you don\'t have a PDF plugin for this browser.'+
+						'No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to'+
+						'download the PDF file.</a></p>'+
+						'</object>');
+				
+//				jQuery.ajax({
+//					url:"/ttsvr/skypepi/documentViewer.jsp?document=/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf",
+//					success: function(data) {
+//						
+//						
+//					}
+//				});
 				
 //				console.log("/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf");
 //				jQuery("#temp > a").attr("href", "/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf");

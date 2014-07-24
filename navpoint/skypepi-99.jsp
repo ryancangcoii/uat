@@ -1222,7 +1222,7 @@ try {
 		</div>
 
 		<br /> <br /> <br />
-
+		<input type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())">
 		<div>
 			<%
 				XData column = h.getColumns();
@@ -1307,7 +1307,7 @@ try {
 										<%
 											}
 										%>
-										<th width="80px">&nbsp;</th>
+										<th width="120px">Action</th>
 									</tr>
 								</thead>
 
@@ -1329,8 +1329,7 @@ try {
 										%>
 
 										<%
-											if ("Title"
-																.equals(columnNodes.getText("columnDisplay"))) {
+											if ("Title".equals(columnNodes.getText("columnDisplay"))) {
 										%>
 										<td align="left" valign="top"><%=xNodes.getText("title")%>
 										</td>

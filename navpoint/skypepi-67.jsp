@@ -1685,20 +1685,33 @@ try {
 
 <div class="BlogList listSummary">
 	<div class="panel news_summary">
-        <h4 class="headerWidget bloglistHeader"><span>News</span></h4>
+<!--         <h4 class="headerWidget bloglistHeader"><span>News</span></h4> -->
         <div class="blogItems">
+        <div class="portalTable">
+			
+			
+			<table cellpadding="0" cellspacing="0" width="100%">
+	<tr>
+    	<th width="20%" align="left" valign="top">Valid until</th>
+   		<th width="25%" align="left" valign="top">Title</th>
+        <th width="55%" align="left" valign="top">Announcement</th>
+    </tr>
+        
         	<%
         		XNodes blogList = recentBlog.getNodes("//blog");
         		if(blogList instanceof XNodes) {
         			int maxNews = h.getBlogCount();
+        			int cnt = 1;
         			for(blogList.first();blogList.next();) {
         				String d = blogList.getText("publishedDate").split(" ")[0];
         				String dates[] = d.split("-");
         				Date modDate = new Date((Integer.parseInt(dates[0])-1900), (Integer.parseInt(dates[1])-1), Integer.parseInt(dates[2]));
-        				
-        				if(blogList.getPos() < maxNews) {
+        				String cls = "white";
+        				if (cnt % 2 == 0) cls = "blue";
+        				cnt++;
+//         				if(blogList.getPos() < maxNews) {
         	%>
-        	<div class="blogItems-inner item_wrapper">
+        	<%-- <div class="blogItems-inner item_wrapper">
         			<div style="padding-bottom: 7px;padding-top: 7px;">
         				<span class="blog-thumbnail"></span>
 	        			<span class="date"><%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %></span>
@@ -1713,15 +1726,30 @@ try {
 						<span class="blogContentHidden" style="display: none;"><%=blogList.getText("content") %></span>
         			</div>
 					<div style="clear: both"></div>
-			</div>
+			</div>--%>
+			
+			 <tr class="<%=cls %>">
+		    	<td align="left" valign="top"><%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %></td>
+		   		<td align="left" valign="top"><a href="#"><%=blogList.getText("title") %></a></td>
+		        <td align="left" valign="middle"><%=blogList.getText("content") %></td>
+		    </tr>
+    
 			<%
-        				}
+//         				}
         			}
         		}
 			%>
+			
+			</table>
+		</div>
+
 			<div class="view-all-news morelink">
 				<a href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_viewAllNews) %>" class="view_all">View all news</a>
 			</div>
+			
+			
+<!-- 			<div class="bc-container"> -->
+			
         </div>
     </div>
 </div>

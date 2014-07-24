@@ -1255,23 +1255,13 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 			</div>
 		</div>
 		
-		<div class="row" style="margin-top:25px">
-			<div class="col-md-12">
-					<div class="row">
-							<div class="col-md-2">
-								Expire Date:
-							</div>
-							<div class="col-md-3">
-								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getPublishDate()%>" onchange="validatePublishExpireDate();"/>
-							</div>
-							<div class="col-md-3"></div>
-					</div>
-			</div>
-		</div>
+		
 		
 		<div class="row" style="margin-top:25px">
 				<div class="col-md-2">Expire Date:</div>	     	
-		     	<div class="col-md-5"><input type="text" class="form-control datepickerInput blog_form_datepicker_medium hasDatepicker" id="bdExpireDate" name="bdExpireDate" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/>
+		     	<div class="col-md-5">
+		     		<input  id="bdExpireDate" name="bdExpireDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/>
+<%-- 		     		<input type="text" class="form-control datepickerInput blog_form_datepicker_medium hasDatepicker" id="bdExpireDate" name="bdExpireDate" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/> --%>
 		     	</div>
 		     	<div class="col-md-5 button-cont"><input type="button" class="buttonBlue" onclick="blogClearExpireDateTime();" value="Clear">
 		     	</div>

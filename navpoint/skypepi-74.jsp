@@ -1450,7 +1450,7 @@ div.media {
 	<a href="" target="_blank" id="forum-link" style="display: none;"></a>
 	
 	<%-- if (snippetVar_option.equals("text")) { --%>
-	<a class="media" href="/ttsvr/skypepi/documents/Code of Conduct - English.pdf"></a>
+	<a class="media" href="<%=h.getDocumentUrl() %>"></a>
 	
 	<script type="text/javascript">
     $(function() {

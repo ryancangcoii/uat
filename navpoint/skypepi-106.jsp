@@ -1325,87 +1325,18 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 			</div></div>
 			</div>
 			
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2">Category:</div>	     	
-		     	<div class="col-md-5">
-		     		<select id="bdCategory" name="bdCategory" class="form-control">
-		     	<option value="">-Select-</option>
-		     	<%
-		     		XData oCategory = h.getCategory();
-		     		XNodes nodes = oCategory.getNodes("//blogCategory");
-		     		if(nodes.getNumNodes() > 0){
-		     			for(nodes.first();nodes.next();){	     		
-		     	%>
-		     	<option value="<%=nodes.getText("blogCategoryId")%>"><%=nodes.getText("blogCategoryName") %></option>
-		     	<%
-		     			}
-		     		}
-		     	%>
-		     	</select></div>
-			</div>
 			
-			<div style="display: none;">	     	
-		     	<table><tr><td>
-		     				<div id="divCat" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
-		     	</td></tr></table>
-			</div>
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Site:</div>	     	
-		     	<div class="col-md-5" ><select id="bdSite" name="bdSite" class="form-control">
-		     	<option value="">-Select-</option>
-		     	<%
-		     		XData oSites = h.getSites();
-		     		XNodes nSites = oSites.getNodes("//site");
-		     		if(nSites.getNumNodes() > 0){
-		     			for(nSites.first();nSites.next();) {
-		     	%>
-		     	<option value="<%=nSites.getText("siteId")%>"><%=nSites.getText("siteName") %></option>
-		     	<%
-		     			}
-		     		}
-		     	%>
-		     	</select></div>
-			</div>
-			<div style="display: none;">	     	
-		     	<table><tr><td>
-		     				<div id="divSite" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
-		     	</td></tr></table>
-			</div>
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Allow Comments:</div>	     	
-		     	<div class="col-md-5">
-		     	<input type="checkbox" <%=h.getAllowComments() %> id="bdAllowComments" name="bdAllowComments"></div>
-			</div>
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Featured Blog:</div>	     	
-		     	<div class="col-md-5" ><input type="checkbox" <%=h.getIsFeaturedBlog() %>   id="bdFeaturedBlog" name="bdFeaturedBlog"></div>
-			</div>
+			
 			<div class="row" style="margin-top:25px">
 				<div style="margin:0px 15px;	">
-		     	<span style="float: none;" >Blog:</span>	   
+		     	<span style="float: none;" >Announcement:</span>	   
 		     	<div style="width: 100%;">  	
 			     	<textarea class="blog_form_textarea_medium required contentError " rows="" style="width: 500px; height: 100px;" id="bdContent" name="bdContent"><%=h.getBlogContent() %></textarea>
 					<label class="errorHolder"></label>
 				</div>
 				</div>
 			</div>
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Tags:</div>
-		     	<div class="col-md-10" ><input type="text" class="blog_form_input_medium required form-control"  id="bdTags" name="bdTags" value="<%=h.getTags()%>" ></div>
-			</div>
 			
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-4" >Add Meta description:</div>	     	
-		     	<div class="col-md-5" ><input type="checkbox"  id="bdAddMetaDescription" name="bdAddMetaDescription" <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ?"":"checked=\"checked\""%>></div>
-			</div>
-			
-			<div style="margin-top:25px">
-			<div <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ? "style=\"display:none;\"":""%>   id="liMetaDesc" >
-		     	<span>Meta Description:</span><br />
-		     	<textarea class="blog_form_textarea_medium required contentError form-control" rows="" style="resize:none; width: 100%; height: 100px;" id="bdMetaDesc" name="bdMetaDesc"><%=h.getMetaDesc() %></textarea>
-				<label class="errorHolder"></label>
-			</div>
-			</div>
 			<%if(h.getBlogId() != null && !h.getBlogId().equals("")) { %>
 			<%if(h.getAllowUploadImage().equalsIgnoreCase("true")) {%>
 				<li>
@@ -2038,7 +1969,6 @@ function initializeDatePicker(){
 	var dateFormat = jQuery('#blogSettingDateFormat').val() ;
 
 	jQuery( ".datepickerInput" ).attr('readonly', 'readonly');
-	jQuery( ".datepickerInput" ).datepicker('destroy');
 	jQuery( ".datepickerInput" ).datepicker({
 		changeMonth: true,
 		changeYear: true,

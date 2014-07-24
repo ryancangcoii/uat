@@ -1382,6 +1382,41 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="com.tooltwist.filemap.FileMap"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+
+<%
+AltLang altLang = WebUtil.getAltLang(jh);
+String site = BcCache.getProperty("currentSite");
+String lang = altLang.getCurrentLangCode();
+
+String fileGroup = BcCache.getProperty("staticDocumentFilemapGroup");
+String filemapPath = BcCache.getProperty("fileMapPath");
+String docType = "";
+String defaultDoc = "";
+if (snippetVar_title.equals("myConsent")) {
+	docType = "ParentalConsent";
+	defaultDoc = "/ttsvr/skypepi/documents/Parent Consent V1.0.pdf";;
+} else {
+	docType = "HouseRules";
+	defaultDoc = "/ttsvr/skypepi/documents/House Rules for YL V1.9.pdf";;
+}
+
+String documentUrl = "/ttsvr/skypepi/documents/"+docType+"-"+site+"-"+lang+".pdf";
+
+FileMap fileMap = new FileMap(filemapPath);
+
+if (!fileMap.isFile(fileGroup, docType+"-"+site+"-"+lang+".pdf")) {
+	documentUrl = defaultDoc;
+}
+
+System.out.println("documentUrl:" + documentUrl);
+
+%>
+
 <style>
 div.media, div.media > iframe {
 	width: 100% !important;
@@ -1415,7 +1450,7 @@ div.media {
   	<% } %>
 </ul>
 
-<a class="media" href="<%=snippetVar_pdfUrl%>"></a>
+<a class="media" href="<%=documentUrl %>"></a>
 
 
 <div class="cocAccept" style="display: block;color: black;">

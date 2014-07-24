@@ -3,12 +3,8 @@
  */
 
 
+
 /*translation table recolor */
-
-
-
-
-
 
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
@@ -114,11 +110,25 @@ body > .container {
   cursor: pointer !important;
 }
 
+.language-selector{
+   color: white !important;
+}
+
+.language-selector.selected {
+  font-weight:bold  !important;
+  color: #bbd432 !important;
+  text-decoration: underline;
+}
+
 .language-spacing {
   width:65px;
   float:left;
   border-right:1px solid #555555;
   text-align:center;
+}
+
+.language-spacing:last-child {
+  border:none;
 }
 
 .language-filter {

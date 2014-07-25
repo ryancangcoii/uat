@@ -192,14 +192,14 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+<%--	
 <!--[if lte IE 9]>
     <script src="/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
 <![endif]-->
 <!--[if gt IE 9]><!-->
     <script src="/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
 <!--<![endif]-->
-
+--%>
 <!-- Respond.js proxy on external server -->
 <!--     <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" /> -->
 
@@ -211,7 +211,7 @@ try {
 
 <!-- <script src="/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
 <!-- <link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
-<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
+<%--<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>--%>
 
 <style type='text/css'>
 /* Styles for widget simpleDiv */
@@ -381,34 +381,11 @@ ul.news_listing div.item_wrapper {
 	margin-right: 10px;
 }/* Styles for widget simpleDiv */
 
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
 
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}</style>
-<link type="text/css" rel="stylesheet" href="/blog/stylesheet/paging.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/skypepi-style.css" media="screen" />
+</style>
+<%--<link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/skypepi-style.css" media="screen" />--%>
 <link type="text/css" rel="stylesheet" href="/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
-<script src="/blog/script/paging.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -2077,6 +2054,18 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/bootstrap/js/less-1.5.0.min.js"></script>
     <script src="/cloudmall/js/frontend.config.js"></script>
     -->
+
+<!--[if lte IE 9]>
+    <script src="/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
+<![endif]-->
+<!--[if gt IE 9]><!-->
+    <script src="/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
+<!--<![endif]-->
+
+<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
+
+
+
   <script type="text/javascript">
 var BlogList = function() {
 	return {

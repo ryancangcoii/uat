@@ -192,14 +192,14 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<%--	
+	
 <!--[if lte IE 9]>
     <script src="/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
 <![endif]-->
 <!--[if gt IE 9]><!-->
     <script src="/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
 <!--<![endif]-->
---%>
+
 <!-- Respond.js proxy on external server -->
 <!--     <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" /> -->
 
@@ -211,7 +211,7 @@ try {
 
 <!-- <script src="/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
 <!-- <link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
-<%--<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>--%>
+<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
 
 <style type='text/css'>
 /* Styles for widget simpleDiv */
@@ -381,11 +381,34 @@ ul.news_listing div.item_wrapper {
 	margin-right: 10px;
 }/* Styles for widget simpleDiv */
 
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
 
-</style>
-<%--<link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/skypepi-style.css" media="screen" />--%>
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}</style>
+<link type="text/css" rel="stylesheet" href="/blog/stylesheet/paging.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/blog/script/paging.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -657,7 +680,93 @@ try {
  	}
  %>
  
+ <script src="/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@38 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -814,6 +923,93 @@ try {
  	}
  %>
  
+ <script src="/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/skypepi/scripts/dropdown/hyjack.css" media="screen" />
+
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@37 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -987,8 +1183,93 @@ try {
  	}
  %>
  
- 
+ <script src="/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@53 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -1230,8 +1511,93 @@ try {
  	}
  %>
  
- 
+ <script src="/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@54 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -1720,18 +2086,6 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/bootstrap/js/less-1.5.0.min.js"></script>
     <script src="/cloudmall/js/frontend.config.js"></script>
     -->
-
-<!--[if lte IE 9]>
-    <script src="/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
-<![endif]-->
-<!--[if gt IE 9]><!-->
-    <script src="/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
-<!--<![endif]-->
-
-<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
-
-
-
   <script type="text/javascript">
 var BlogList = function() {
 	return {
@@ -1853,92 +2207,5 @@ jQuery(Progress.init());
 jQuery.fn.reset = function () {
   $(this).each (function() { this.reset(); });
 };</script>
-
- 
-<script type="text/javascript">
-	var Logout = function() {
-		return {
-			userLogout : function() {
-				$("#form-logout").submit();
-			},
-
-			studentDashboard : function() {
-				var formLogout = $("#form-logout");
-				formLogout.attr('action', '/n/myDetails/skypepi-68'
-						+ '?action=studentDashBoard');
-				formLogout.submit();
-			},
-
-			selectChild : function(childId) {
-				
-				var naviId = "/n/home/skypepi-67";
-				var receiptNavi = "skypepi-38";
-				var gradesNavi = "skypepi-64";
-				
-				var url = "";
-				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
-					url = "/n/skypepi-62";
-				}
-				
-				var formLogout = $("#form-logout");
-				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
-				formLogout.submit();
-
-			},
-
-			init : function() {
-				
-				var browserName=navigator.appName; 
-				var extraIEStyle = "";
-				
-				if (browserName=="Microsoft Internet Explorer") {
-					extraIEStyle = "height: 30px;vertical-align: middle;";
-				}
-				
-				jQuery(".dropdown a[role='menuitem']").click(function() {
-					
-					var selectedName = jQuery(".dropdown a.head").attr("sname");
-					var name = jQuery(this).html();
-					
-					if (selectedName == name) return ;
-					
-					var len = name.length;
-					var space = "&nbsp;";
-					
-					for (var i = 0; i < 40-len; i++) {
-						space += "&nbsp";
-					}
-					
-					jQuery(".dropdown a.head > label").html(name + space);
-					Logout.selectChild(jQuery(this).attr("personId"));
-					
-				});
-				
-
-				$("#logout-childId").change(function() {
-					Logout.selectChild();
-				});
-				
-				var hasLogged = "";
-				var isParent = false;
-				
-				if(hasLogged != '' && isParent) {
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideDown();
-					}, 2000);
-					
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideUp();
-						jQuery("#arrow").hide();
-					}, 5000);	
-				}
-				
-			}
-		};
-	}();
-
-	jQuery(Logout.init());
-</script>
-
 </body>
 </html>

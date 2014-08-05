@@ -1,4 +1,3 @@
-
 timestamp=$(date +%T)
 #cp -r ~/server/tomcat/webapps/ttsvr/navpoint/ ~/backups/navpoint$timestamp
 #cp -r ~/server/tomcat/webapps/ttsvr/skypepi/ ~/backups/skypepi$timestamp

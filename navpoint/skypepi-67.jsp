@@ -240,28 +240,25 @@ try {
 .SimpleDiv .someClass {
 }/*defaults*/
 a {
-    color: #0062A9;
-    cursor: pointer;
-    text-decoration: none;
+	color: #0062A9;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 a:hover {
-    color: #000000;
+	color: #000000;
 }
-
-
-
 
 .news-header-label h1 {
 	margin-right: 0px;
 }
 
 .headerWidget {
-    border-radius: 3px 3px 0 0;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px 0 8px 12px;
+	border-radius: 3px 3px 0 0;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 8px 0 8px 12px;
 }
 
 .bloglistHeader {
@@ -275,17 +272,17 @@ a:hover {
 }
 
 .BlogList .panel.news_summary ul li {
-    border-bottom: 1px solid #E5E5E5;
-    margin-bottom: 4px;
+	border-bottom: 1px solid #E5E5E5;
+	margin-bottom: 4px;
 }
 
-.blogItems {
+/* .blogItems {
 	clear: both;
 	border-left: 1px solid #E5E5E5;
 	border-right: 1px solid #E5E5E5;
 	border-bottom: 1px solid #E5E5E5;
 	border-radius: 0px 0px 3px 3px;
-}
+} */
 
 .blogItems-inner {
 	border-bottom: 1px solid #E5E5E5;
@@ -307,7 +304,6 @@ a:hover {
 	display: inline !important;
 }
 
-
 .blogItems-inner .p {
 	font-size: 12px;
 	clear: both;
@@ -327,9 +323,9 @@ a:hover {
 }
 
 ul.news_listing {
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
 }
 
 .news_listing h3 {
@@ -342,17 +338,18 @@ ul.news_listing {
 }
 
 ul.news_listing span.date {
-    float: right;
-    font-size: 12px;
-    font-weight: 400;
+	float: right;
+	font-size: 12px;
+	font-weight: 400;
 }
 
 ul.news_listing div.item_wrapper {
-    background: url("/ttsvr/blog/images/news-listing-bg.png") repeat-y scroll 50% 0 #FFFFFF;
-    border-bottom: 1px solid #E4E4E4;
-    border-top: 1px solid #E4E4E4;
-    margin-bottom: 18px;
-    padding: 9px 0px 9px 0px;
+	background: url("/ttsvr/blog/images/news-listing-bg.png") repeat-y
+		scroll 50% 0 #FFFFFF;
+	border-bottom: 1px solid #E4E4E4;
+	border-top: 1px solid #E4E4E4;
+	margin-bottom: 18px;
+	padding: 9px 0px 9px 0px;
 	line-height: 18px;
 }
 
@@ -390,6 +387,108 @@ ul.news_listing div.item_wrapper {
 	height: 100%;
 	width: 100%;
 	display: block;
+}
+
+.contentEllipsis {
+	height: 40px;
+}
+
+.contentFull {
+	overflow-y: scroll;
+	max-height: 300px;
+}
+
+.readMoreButton {
+	height: 20px;
+	float: right;
+}
+
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, .5);
+	-webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+/* .portalTable thead, .portalTable tbody {
+	display: block;
+} */
+
+.portalTable thead td {
+	font-size: 34px;
+	font-weight: lighter;
+	position: relative;
+	font-family: helvetica;
+	color: #00a2e7;
+	padding: 20px;
+	border-style: solid;
+	border-bottom-color: #a1a1a1;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-width: 1px;
+	left: -19px;
+}
+
+.portalTable {
+	font-family: helvetica !important;
+	font-weight: lighter !important;
+	border: none !important;
+}
+
+.portalTable .title {
+	font-size: 16px;
+	font-weight: lighter;
+}
+
+.portalTable .showMore {
+	font-size: 14px;
+	font-weight: lighter;
+}
+
+.portalTable tbody td {
+	padding-top: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 30px;
+	border-style: solid;
+	border-bottom-color: #f4f4f4;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-width: 1px;
+}
+
+.portalTable .number {
+	font-size:22px !important;
+}
+
+.portalTable .month {
+	font-size:12px;
+}
+
+.portalTable .box {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-style: solid;
+	border-color: #dbd8d8;
+	background: #e3e3e3;
+	border-width: thin;
+	text-align: center;
+	float: left;
+	margin-top: 5px;
+	color: #428bca;
+}
+
+.portalTable .white td {
+	padding-top: 20px !important;
+	padding-bottom: 25px !important;
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -1776,6 +1875,8 @@ try {
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
 <%@page import="com.dinaa.data.XNodes"%>
 <%@page import="tooltwist.skypepi.util.StringUtil"%>
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+<%@page import="tooltwist.wbd.util.PublicUtil"%>
 <%
 	// Get the production helper for this widget
 	BlogListProductionHelper h = (BlogListProductionHelper) helper;
@@ -1789,58 +1890,75 @@ try {
 <!--         <h4 class="headerWidget bloglistHeader"><span>News</span></h4> -->
         <div class="blogItems">
         <div class="portalTable">
-			
-			
 			<table cellpadding="0" cellspacing="0" width="100%">
-	<tr>
-    	<th width="20%" align="left" valign="top">Valid until</th>
-   		<th width="25%" align="left" valign="top">Title</th>
-        <th width="55%" align="left" valign="top">Announcement</th>
-    </tr>
-        
-        	<%
-        		XNodes blogList = recentBlog.getNodes("//blog");
-        		if(blogList instanceof XNodes) {
-        			int maxNews = h.getBlogCount();
-        			int cnt = 1;
-        			for(blogList.first();blogList.next();) {
-        				String d = blogList.getText("publishedDate").split(" ")[0];
-        				String dates[] = d.split("-");
-        				Date modDate = new Date((Integer.parseInt(dates[0])-1900), (Integer.parseInt(dates[1])-1), Integer.parseInt(dates[2]));
-        				String cls = "white";
-        				if (cnt % 2 == 0) cls = "blue";
-        				cnt++;
-//         				if(blogList.getPos() < maxNews) {
-        	%>
-        	<%-- <div class="blogItems-inner item_wrapper">
-        			<div style="padding-bottom: 7px;padding-top: 7px;">
-        				<span class="blog-thumbnail"></span>
-	        			<span class="date"><%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %></span>
-						<br/>
-						<span class="p"><%=blogList.getText("title") %></span>
-						
-						<% if("Buying & Selling".equals(blogList.getText("blogCategory/blogCategoryName"))) { %>
-						<a class="readmore" href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_buyingAndSellingDetails)+"?blogId="+blogList.getText("blogId") %>">Read more</a>
-						<% } else { %>
-						<a class="readmore" href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_blogDetails)+"?blogId="+blogList.getText("blogId") %>">Read more</a>
-						<% } %>
-						<span class="blogContentHidden" style="display: none;"><%=blogList.getText("content") %></span>
-        			</div>
-					<div style="clear: both"></div>
-			</div>--%>
-			
-			 <tr class="<%=cls %>">
-		    	<td align="left" valign="top"><%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %></td>
-		   		<td align="left" valign="top"><a href="#"><%=StringUtil.asciiToString(blogList.getText("title"))%></a></td>
-		        <td align="left" valign="middle"><%=StringUtil.asciiToString(blogList.getText("content"))%></td>
-		    </tr>
-    
-			<%
-//         				}
-        			}
-        		}
-			%>
-			
+				<thead>
+					<tr>
+						<td colspan="2">
+							Announcements
+						</td>
+				    </tr>
+			    </thead>
+	        	<tbody>
+		        	<%
+		        		XNodes blogList = recentBlog.getNodes("//blog");
+		        		if(blogList instanceof XNodes) {
+		        			int maxNews = h.getBlogCount();
+		        			int cnt = 1;
+		        			for(blogList.first();blogList.next();) {
+		        				String d = blogList.getText("publishedDate").split(" ")[0];
+		        				String dates[] = d.split("-");
+		        				Date modDate = new Date((Integer.parseInt(dates[0])-1900), (Integer.parseInt(dates[1])-1), Integer.parseInt(dates[2]));
+		        				String cls = "white";
+		        				/* if (cnt % 2 == 0) cls = "blue"; */
+		        				cnt++;
+		//         				if(blogList.getPos() < maxNews) {
+					        	%>
+					        	<%-- <div class="blogItems-inner item_wrapper">
+					        			<div style="padding-bottom: 7px;padding-top: 7px;">
+					        				<span class="blog-thumbnail"></span>
+						        			<span class="date"><%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %></span>
+											<br/>
+											<span class="p"><%=blogList.getText("title") %></span>
+											
+											<% if("Buying & Selling".equals(blogList.getText("blogCategory/blogCategoryName"))) { %>
+											<a class="readmore" href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_buyingAndSellingDetails)+"?blogId="+blogList.getText("blogId") %>">Read more</a>
+											<% } else { %>
+											<a class="readmore" href="<%=tooltwist.wbd.util.UrlConvertUtil.cleanUrl(snippetVar_blogDetails)+"?blogId="+blogList.getText("blogId") %>">Read more</a>
+											<% } %>
+											<span class="blogContentHidden" style="display: none;"><%=blogList.getText("content") %></span>
+					        			</div>
+										<div style="clear: both"></div>
+								</div>--%>
+								 <tr class="<%=cls %>">
+							    	<td align="left" valign="top">
+								    	<div class="box">
+											<span class="number"><%=PublicUtil.formatDate(modDate, "dd")%></span>
+											<br />
+											<span class="month"><%=PublicUtil.formatDate(modDate, "MMM")%></span>
+										</div>
+							    		<%-- <%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %> --%>
+							    	</td>
+							        <td align="left" valign="middle">
+							        	<div style="padding-bottom:10px;"><a href="#" class="title"><%=StringUtil.asciiToString(blogList.getText("title"))%></a></div>
+							        	<div id="contentEllipsis-<%=blogList.getText("blogId")%>" class="contentEllipsis">
+							        		<%=StringUtil.asciiToStringEllipsis(blogList.getText("content"))%>
+							        	</div>
+							        	<div id="contentFull-<%=blogList.getText("blogId")%>" style="display:none;" class="contentFull">
+							        		<%=StringUtil.asciiToString(blogList.getText("content"))%>
+							        	</div>
+							        	<div class="readMoreButton">
+								        	<% if (StringUtil.isMoreThanMax(blogList.getText("content"), DataBlockUtil.BLOG_CONTENT_MAX_DISPLAY_COUNT)) { %>
+								        		<a class="showMore" href="javascript:void(0);" onclick="BlogList.showHideFullContent('<%=blogList.getText("blogId")%>', this);">Show more</a>
+								        	<% } %>
+							        	</div>
+						        	</td>
+							    </tr>
+								<%
+	//         					}
+	        				}
+	        			}
+					%>
+				</tbody>
 			</table>
 		</div>
 
@@ -2288,6 +2406,18 @@ var BlogList = function() {
 				jQuery(this).find('.blogContentHidden').remove();
 				
 			});
+		},
+		
+		showHideFullContent : function(blogId, selector) {
+			if ($("#contentEllipsis-" + blogId).is(":hidden")) {
+				$("#contentEllipsis-" + blogId).slideDown();
+				$("#contentFull-" + blogId).slideUp();
+				$(selector).html("Show more");
+			} else {
+				$("#contentEllipsis-" + blogId).slideUp();
+				$("#contentFull-" + blogId).slideDown();
+				$(selector).html("Show less");
+			}
 		}
 	};
 }();

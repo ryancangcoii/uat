@@ -446,7 +446,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_57;
 	String snippetVar_navpointId = "skypepi-4";
-	String snippetVar_currentNavpointId = "skypepi-ajaxZones-skypepi_zones.test";
+	String snippetVar_currentNavpointId = "skypepi-20";
 	String snippetVar_widgetName = "@57";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header@57";
 	String snippetVar_elementId = "";
@@ -480,7 +480,7 @@ try {
 <a href='/ttsvr/n/English-Courses/skypepi-44'><span>English Courses</span></a>
 </li><li class="">
 <a href='/ttsvr/n/Exams/skypepi-45'><span>Exams</span></a>
-</li><li class="">
+</li><li class="active">
 <a href='/ttsvr/n/About-Us/skypepi-20'><span>About Us</span></a>
 </li><li class="">
 <a href='/ttsvr/n/Contact-Us/skypepi-21'><span>Contact Us</span></a>

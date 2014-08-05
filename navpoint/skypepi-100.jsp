@@ -1421,7 +1421,13 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %> <% } 
+ %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class="active"><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+ <% } 
  %>			</ul>
 <%
 } catch (Exception e) {
@@ -1457,7 +1463,6 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	String snippetVar_dotSize = "5";
-	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
 	String snippetVar_widgetName = "@35";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@35";
 	String snippetVar_elementId = "";
@@ -1472,32 +1477,13 @@ try {
 </td>
 
 <%
-	// This first call to the error handler is for the error while generating the page
-	String snippetVar_divName = "wbdErrorDiv1";
-	String snippetVar_errorHeading = "Errors while <i><u>Generating</u></i> this production page";
-	String snippetVar_dotColor = "blue";
-%>
-<td valign="bottom">
-<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
-onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
-</td>
-<td>
-<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
-<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
-<code>
-<%=snippetVar_errorMsg%>
-</code>
-</div>
-</td>
-
-<%
-	// Now check for an error that has occurred since the JSP started.
+	// Check for an error that has occurred since the JSP started.
 	if (WbdSession.numErrors(jh.getCredentials()) > 0)
 	{
-		snippetVar_divName = "wbdErrorDiv2";
-		snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		snippetVar_dotColor = "green";
+		String snippetVar_divName = "wbdErrorDiv";
+		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		String snippetVar_dotColor = "green";
 %>
 <td width="2" nowrap></td>
 <td valign="bottom">
@@ -1560,7 +1546,6 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	String snippetVar_dotSize = "5";
-	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
 	String snippetVar_widgetName = "@29";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@29";
 	String snippetVar_elementId = "";
@@ -1575,32 +1560,13 @@ try {
 </td>
 
 <%
-	// This first call to the error handler is for the error while generating the page
-	String snippetVar_divName = "wbdErrorDiv1";
-	String snippetVar_errorHeading = "Errors while <i><u>Generating</u></i> this production page";
-	String snippetVar_dotColor = "blue";
-%>
-<td valign="bottom">
-<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
-onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
-</td>
-<td>
-<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
-<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
-<code>
-<%=snippetVar_errorMsg%>
-</code>
-</div>
-</td>
-
-<%
-	// Now check for an error that has occurred since the JSP started.
+	// Check for an error that has occurred since the JSP started.
 	if (WbdSession.numErrors(jh.getCredentials()) > 0)
 	{
-		snippetVar_divName = "wbdErrorDiv2";
-		snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		snippetVar_dotColor = "green";
+		String snippetVar_divName = "wbdErrorDiv";
+		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		String snippetVar_dotColor = "green";
 %>
 <td width="2" nowrap></td>
 <td valign="bottom">

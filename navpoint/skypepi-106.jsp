@@ -220,6 +220,7 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 #patientLastName {width: 233px;-moz-border-radius: 0px;}
 span.spanBtnApprove{margin-top: -46px;}
 span.spanBtnSave,span.spanBtnCancel,span.spanBtnApprove{float: right;margin-left: 6px;}
+.errorContainer.contentError {margin-left: 0;color: red;font-weight: normal !important;} 
 
 /* Styles for widget simpleDiv */
 
@@ -1232,7 +1233,7 @@ try {
 		<input type="hidden" id="categoryId" name="categoryId" value="<%=DataBlockUtil.BLOG_CATEGORY_ANNOUNCEMENT%>">
 		<input type="hidden" id="siteId" name="siteId" value="<%--=h.getBlogSites() --%>1">	
 		<input type="hidden" name="navpointSuccess" value="<%=snippetVar_navpointSuccess%>">
-		<input type="hidden" id="blogSettingDateFormat" name="blogSettingDateFormat" value="<%=h.getDateFormat()%>">
+		<input type="hidden" id="blogSettingDateFormat" name="blogSettingDateFormat" value="yy-mm-dd">
 		<input type="hidden" id="requiredFieldsMsg" name="requiredFieldsMsg" value="<%=h.getRequiredFieldsMsg()%>" >
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
 		
@@ -1240,17 +1241,17 @@ try {
 			<input type="hidden" name="ckeditorContentWithImage_<%=language.getLangCode()%>" id="ckeditorContentWithImage_<%=language.getLangCode()%>" value=""/>
 			<% 
 			String title = "";
-			boolean hidden = false;
+			boolean hiddenRequired = false;
 			if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ENGLISH.getLangCode())) {
 				title = h.getTitle_eng();
-				hidden = true;
+				hiddenRequired = true;
 			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.LOCAL.getLangCode())) {
 				title = h.getTitle_loc();
 			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ALTERNATE.getLangCode())) {
 				title = h.getTitle_alt();
 			}
 			%>
-			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hidden) { %>
+			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) { %>
 				<div class="row" style="margin-top:25px">
 					<div class="col-md-12">
 							<div class="row">
@@ -1258,7 +1259,7 @@ try {
 										Title in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangCode())%>:
 									</div>
 									<div class="col-md-10">
-										<input  id="bdTitle_<%=language.getLangCode()%>" name="bdTitle_<%=language.getLangCode()%>" class="form-control blog_form_input_medium required" type="text" autocomplete="off" value="<%=StringUtil.asciiToString(title)%>"/>
+										<input maxlength="150" id="bdTitle_<%=language.getLangCode()%>" name="bdTitle_<%=language.getLangCode()%>" class="form-control blog_form_input_medium <% if (hiddenRequired) { %>required <% } %>" type="text" autocomplete="off" value="<%=StringUtil.asciiToString(title)%>"/>
 									</div>
 							</div>
 					</div>
@@ -1295,7 +1296,7 @@ try {
 					<div class="col-md-3"></div>
 				</div>
 				<% if (h.isApprovable() && !h.getBlogId().equals("")) { %>
-					<span class="spanBtnApprove"><input class="buttonBlue" id="btn_approve" value="Approve" type="submit" onclick="BlogAdminBlogDetails.approve('<%=h.getBlogId()%>');"/></span>
+					<span class="spanBtnApprove"><input class="buttonBlue" id="btn_approve" value="Approve" type="button" onclick="BlogAdminBlogDetails.approve('<%=h.getBlogId()%>');return false;"/></span>
 				<% } %>
 			</div>
 		</div>
@@ -1403,23 +1404,23 @@ try {
 		<% for (DataBlockUtil.LANGUAGE_CODE language : DataBlockUtil.LANGUAGE_CODE.values()) { %>
 			<% 
 			String content = "";
-			boolean hidden = false;
+			boolean hiddenRequired = false;
 			if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ENGLISH.getLangCode())) {
 				content = h.getBlogContent_eng();
-				hidden = true;
+				hiddenRequired = true;
 			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.LOCAL.getLangCode())) {
 				content = h.getBlogContent_loc();
 			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ALTERNATE.getLangCode())) {
 				content = h.getBlogContent_alt();
 			}
 			%>
-			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hidden) { %>
+			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) { %>
 				<div class="row" style="margin-top:25px">
 					<div style="margin:0px 15px;	">
-			     	<span style="float: none;" >Announcement for <%=h.getLanguageMasterUtil().getLanguageName(language.getLangCode())%>:</span>	   
+			     	<span style="float: none;" >Announcement in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangCode())%>:</span>	   
 			     	<div style="width: 100%;">  	
-				     	<textarea class="blog_form_textarea_medium required contentError " rows="" style="width: 500px; height: 100px;" id="bdContent_<%=language.getLangCode()%>" name="bdContent_<%=language.getLangCode()%>"><%=StringUtil.asciiToString(content)%></textarea>
-						<label class="errorHolder"></label>
+				     	<textarea class="blog_form_textarea_medium contentError" rows="" style="width: 500px; height: 100px;" id="bdContent_<%=language.getLangCode()%>" name="bdContent_<%=language.getLangCode()%>"><%=StringUtil.asciiToString(content)%></textarea>
+						<label class="errorHolder <% if (hiddenRequired) { %>required <% } %>"></label>
 					</div>
 					</div>
 				</div>
@@ -1958,8 +1959,6 @@ var BlogAdminBlogDetails = function() {
 			jQuery('#frmBlogAdminDetails').validate({
 				rules:{
 					bdTitle_EN:{required:'#bdTitle_EN'},
-					bdTitle_LOC:{required:'#bdTitle_LOC'},
-					bdTitle_ALT:{required:'#bdTitle_ALT'},
 					bdPublishDate:{required:'#bdPublishDate'},
 					bdContent_EN:{required:'#bdContent_EN'},
 					bdTags:{required:'#bdTags'},
@@ -1967,8 +1966,6 @@ var BlogAdminBlogDetails = function() {
 				},
 				messages:{
 					bdTitle_EN:{required:getRequiredFieldsMsg()},
-					bdTitle_LOC:{required:getRequiredFieldsMsg()},
-					bdTitle_ALT:{required:getRequiredFieldsMsg()},
 					bdPublishDate:{required:getRequiredFieldsMsg()},
 					bdCategory:{required:getRequiredFieldsMsg()},
 					bdContent_EN:{required:getRequiredFieldsMsg()},
@@ -2028,7 +2025,7 @@ var BlogAdminBlogDetails = function() {
 			var valid = true;
 			var content =  CKEDITOR.instances.bdContent_EN.getData();
 			if (content.val()=="" || content.val().length == 0){
-				jQuery('.errorHolder').append('<label class="errorContainer contentError " style="margin-left: 0;">'+getRequiredFieldsMsg()+'</label>');
+				jQuery('.errorHolder').append('<label class="errorContainer contentError" style="margin-left: 0;color: red;font-weight: normal !important;">'+getRequiredFieldsMsg()+'</label>');
 				valid = false;
 			}
 			return valid;
@@ -2118,17 +2115,14 @@ function validateBlogContent(form){
 //		jQuery("#bdSite").after('<label class="errorContainer contentError">'+getRequiredFieldsMsg()+'</label>');
 //	}
 	
+	if (CKEDITOR.instances.bdContent_EN.getData() =="") {
+		jQuery('.errorHolder.required').append('<label class="errorContainer contentError " style="margin-left: 0;color: red;font-weight: normal !important">'+getRequiredFieldsMsg()+'</label>');
+	}
 	
 	//jquery form validation
 	if (jQuery(form).valid() && hasSelection) {
-		
-		jQuery(form).find('.errorContainer').remove();
 			
-		if (CKEDITOR.instances.bdContent_EN.getData() =="") {
-			jQuery('.errorHolder').append('<label class="errorContainer contentError " style="margin-left: 0;">'+getRequiredFieldsMsg()+'</label>');
-			return false;
-		}else{
-			
+		if (CKEDITOR.instances.bdContent_EN.getData() !="") {
 			//language English
 			jQuery('#ckeditorContentWithImage_EN').val(CKEDITOR.instances.bdContent_EN.getData());
 			var tmpData =jQuery('#ckeditorContentWithImage_EN').val().replace(/src=/g,"s_r_c=");
@@ -2154,7 +2148,9 @@ function validateBlogContent(form){
 				}
 				
 			}
-		}		
+		} else {
+			return false;
+		}	
 	}
 }
 

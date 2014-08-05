@@ -817,7 +817,7 @@ try {
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -826,7 +826,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -835,7 +835,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -844,7 +844,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -853,7 +853,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+ %>				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -898,7 +898,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Receipt/skypepi-61";
+	String snippetVar_navpointId = "/ttsvr/n/Admin-Home/skypepi-105";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@54";
@@ -1208,7 +1208,7 @@ try {
 
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -1217,7 +1217,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -1226,7 +1226,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -1235,7 +1235,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -1244,7 +1244,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+ %>				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>

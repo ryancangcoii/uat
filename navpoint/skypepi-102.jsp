@@ -274,7 +274,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Course-Enquiry/skypepi-50";
+	String snippetVar_navpointId = "/ttsvr/n/System-Setting/skypepi-102";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@38";
@@ -517,7 +517,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "No";
-	String snippetVar_navpointId = "/ttsvr/n/Course-Enquiry/skypepi-50";
+	String snippetVar_navpointId = "/ttsvr/n/System-Setting/skypepi-102";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@37";
@@ -800,7 +800,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -809,7 +809,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -818,7 +818,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -827,7 +827,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -836,7 +836,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
  <% } 
  %>			</ul>
@@ -877,7 +877,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Course-Enquiry/skypepi-50";
+	String snippetVar_navpointId = "/ttsvr/n/System-Setting/skypepi-102";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@54";
@@ -1198,7 +1198,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1207,7 +1207,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1216,7 +1216,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1225,7 +1225,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1234,7 +1234,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class="active"><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
  <% } 
  %>			</ul>

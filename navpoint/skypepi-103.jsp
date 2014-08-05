@@ -1199,7 +1199,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
 				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
@@ -1208,7 +1208,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
 				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
@@ -1217,7 +1217,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
 				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
@@ -1226,7 +1226,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
 				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
@@ -1235,7 +1235,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
 				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
  <% } 
  %>			</ul>
 <%

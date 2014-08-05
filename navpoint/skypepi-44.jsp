@@ -476,7 +476,7 @@ try {
 <a href='/ttsvr/n/Placement-Test/skypepi-59'><span>Placement Test</span></a>
 <ul><li class="">
 <a href='/ttsvr/n/Placement-Test-Registration/skypepi-60'><span>Placement Test Registration</span></a>
-</li></ul></li></ul></li><li class="">
+</li></ul></li></ul></li><li class="active">
 <a href='/ttsvr/n/English-Courses/skypepi-44'><span>English Courses</span></a>
 </li><li class="">
 <a href='/ttsvr/n/Exams/skypepi-45'><span>Exams</span></a>

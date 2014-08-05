@@ -1225,7 +1225,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Announcement/skypepi-99";
+	String snippetVar_navpointId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@55";
 	String snippetVar_elementId = "";
@@ -1294,7 +1294,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Announcement/skypepi-99";
+	String snippetVar_navpointId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@54";
@@ -1543,7 +1543,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btsrpLoginpage_9;
 	String snippetVar_loginOp = "skypepi.widgets.login.login";
-	String snippetVar_navpointId = "/ttsvr/n/Announcement/skypepi-99";
+	String snippetVar_navpointId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_forgotPasswordNavPointLink = "/ttsvr/n/Forgot-Password/skypepi-22";
 	String snippetVar_successLoginNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@9";

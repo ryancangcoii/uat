@@ -191,7 +191,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_homeNavPointId = "skypepi-4";
 	String snippetVar_authenticatePage = "No";
-	String snippetVar_navpointId = "/ttsvr/n/Forgot-Password/skypepi-48";
+	String snippetVar_navpointId = "/ttsvr/n/Course-Details/skypepi-18";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@59";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header@59";
@@ -456,7 +456,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_57;
 	String snippetVar_navpointId = "skypepi-4";
-	String snippetVar_currentNavpointId = "skypepi-48";
+	String snippetVar_currentNavpointId = "skypepi-18";
 	String snippetVar_widgetName = "@57";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header@57";
 	String snippetVar_elementId = "";
@@ -478,7 +478,7 @@ try {
 <ul>
 <li class=" has-sub">
 <a href='/ttsvr/n/Course-Navigator/skypepi-7'><span>Course Navigator</span></a>
-<ul><li class="">
+<ul><li class="active">
 <a href='/ttsvr/n/Course-Details/skypepi-18'><span>Course Details</span></a>
 </li><li class="">
 <a href='/ttsvr/n/Course-Enquiry/skypepi-19'><span>Course Enquiry</span></a>
@@ -538,7 +538,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_skypepi_courseDetails_58;
-	String snippetVar_navpointId = "/ttsvr/n/Forgot-Password/skypepi-48";
+	String snippetVar_navpointId = "/ttsvr/n/Course-Details/skypepi-18";
 	String snippetVar_enquireNavpoint = "/ttsvr/n/Course-Enquiry/skypepi-19";
 	String snippetVar_bookingNavpoint = "/ttsvr/n/Placement-Test/skypepi-59";
 	String snippetVar_widgetName = "@58";

@@ -180,7 +180,28 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
 
 <style type='text/css'>
-/* Styles for widget simpleDiv */
+/* Styles for widget footerMenu */
+
+.wt-widget {
+	width:80px;
+	color:#00a3e4;
+	font-weight:normal;
+    text-decoration:none;
+}
+
+/* a.wt-widget:onmouseover { */
+/* 	this.style.color=#00a3e4; */
+/* 	this.style.textDecoration=none; */
+/* } */
+
+/* a.wt-widget:onmouseout { */
+/* 	color=#00a3e4; */
+/* 	this.style.textDecoration=none; */
+/* } */
+a:hover {
+	color=#00a3e4;
+	this.style.textDecoration=none;
+}/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -1100,35 +1121,35 @@ try {
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/home">home</a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108">myStudents</a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/home">home</a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97">myConsent</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/home">home</a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/home">Home</a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 <% if (h.isCocAccepted()) { %>
 				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
  <% } %> 
@@ -1138,12 +1159,12 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/home">Home</a></li>
+ %>				<li class=""><a href="/ttsvr/home">home</a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
  <% } 
  %>			</ul>
@@ -1712,24 +1733,15 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  height='20' align='left' valign='top'></td>
  </tr>
  <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='right' valign='top'>
- <tr>
-  <td  align='left' valign='middle'><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></td>
-  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></td>
-  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></td>
-  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgressions</a></td>
-  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
-  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBookings</a></td>
-  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></td>
-  <td  width='300' align='right'></td>
- </tr>
-</table>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget) --%>
+<%
+try {
+	String snippetVar_widgetName = "@27";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_footer@27";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+<div class='DivWidget row' style=''>
 </td>
  </tr>
  <tr>
@@ -1775,6 +1787,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	String snippetVar_dotSize = "5";
+	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
 	String snippetVar_widgetName = "@6";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_footer@6";
 	String snippetVar_elementId = "";
@@ -1789,13 +1802,32 @@ try {
 </td>
 
 <%
-	// Check for an error that has occurred since the JSP started.
+	// This first call to the error handler is for the error while generating the page
+	String snippetVar_divName = "wbdErrorDiv1";
+	String snippetVar_errorHeading = "Errors while <i><u>Generating</u></i> this production page";
+	String snippetVar_dotColor = "blue";
+%>
+<td valign="bottom">
+<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
+onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
+</td>
+<td>
+<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
+<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
+<code>
+<%=snippetVar_errorMsg%>
+</code>
+</div>
+</td>
+
+<%
+	// Now check for an error that has occurred since the JSP started.
 	if (WbdSession.numErrors(jh.getCredentials()) > 0)
 	{
-		String snippetVar_divName = "wbdErrorDiv";
-		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		String snippetVar_dotColor = "green";
+		snippetVar_divName = "wbdErrorDiv2";
+		snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		snippetVar_dotColor = "green";
 %>
 <td width="2" nowrap></td>
 <td valign="bottom">
@@ -2042,6 +2074,31 @@ jQuery(Progress.init());
 jQuery.fn.reset = function () {
   $(this).each (function() { this.reset(); });
 };</script>
+<script type="text/javascript">
+var FooterMenu = function() {
+	return {
+		myVariable: null,
+
+		init: function() {
+			alert("FooterMenu.init()");
+
+//			// attach an event to an HTML element
+//			var self = this;
+//			jQuery(".FooterMenu .myElementClass").click(function() {
+//				self.myMethod();
+//				// do something
+//				...
+//			});
+		},
+		
+		myMethod: function() {
+			alert("FooterMenu.myMethod()");
+		}
+		// no comma after last method
+	};
+}();
+
+//jQuery(FooterMenu.init()); // Run after page loads</script>
 
 </body>
 </html>

@@ -1733,6 +1733,16 @@ transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     background-color: #ffffff !important;
   }
 }
+
+.footer-menu {
+	padding-left: 35px;
+	text-align: center;
+}
+
+.footer-menu .nav > li > a {
+	padding-left: 15px !important;
+	padding-right: 15px  !important;
+}
 /*-------------------*/
 
 .error {

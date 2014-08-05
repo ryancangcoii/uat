@@ -1147,6 +1147,7 @@ try {
 <%@page import="tooltwist.misc.JspHelper"%>
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%@page import="tooltwist.skypepi.util.BcCache" %>
 <%
 	// Get the production helper for this widget
 	StaticDocumentsProductionHelper h = (StaticDocumentsProductionHelper) helper;
@@ -1209,6 +1210,8 @@ div.media {
 			docId="<%=doc.getDocumentId() %>"
 			langKey="<%=h.getLanguage(doc.getLangCode()) %>"
 			site="<%=h.getSite() %>"
+			googleViewStart="<%=BcCache.getProperty("googleDocViewStart") %>"
+			googleViewEnd="<%=BcCache.getProperty("googleDocViewEnd") %>"
 			class="img-view"
 			>
 			<img src="/ttsvr/skypepi/images/open.png" /></a>
@@ -1396,7 +1399,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
 <% isPublic = false; %>
@@ -1407,7 +1410,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 <% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
  <% } %> 
 <% if (h.isCocAccepted()) { %>
 				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
@@ -1419,7 +1422,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
  <% } 
@@ -1787,16 +1790,27 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 				var langCode = jQuery(this).attr("langCode");
 				var docType = jQuery(this).attr("docType");
 				var docId = jQuery(this).attr("docId");
-				var langKey = jQuery(this).attr("langKey");
+				var langKey = jQuery(this).attr("langKey");				
 				var site = jQuery(this).attr("site");
+				var googleViewStart = jQuery(this).attr("googleViewStart");
+				var googleViewEnd = jQuery(this).attr("googleViewEnd");
 				
 				jQuery(".modal-view .modal-title").html(title + " (" +  lang + ")");
 				
-				jQuery('.modal-view').find(".modal-body").html('<object data="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf#view=FitH" type="application/pdf" width="100%" height="100%">'+
+//				jQuery('.modal-view').find(".modal-body").html('<object data="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf#view=FitH" type="application/pdf" width="100%" height="100%">'+
+//						'<p>It appears you don\'t have a PDF plugin for this browser.'+
+//						'No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to'+
+//						'download the PDF file.</a>'+
+//						'</object>');
+				//alert('<iframe src="' + googleViewStart + docType+'-'+site+'-'+langKey+'.pdf%23view%3DFitH&embedded=true" width="600" height="780" style="border: none;"></iframe>');
+				jQuery('.modal-view').find(".modal-body").html('<iframe src="' + googleViewStart + docType+'-'+site+'-'+langKey+'.pdf' + googleViewEnd + '" width="600" height="780" style="border: none;"></iframe>'+
 						'<p>It appears you don\'t have a PDF plugin for this browser.'+
 						'No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to'+
 						'download the PDF file.</a>'+
 						'</object>');
+				
+				
+				//<iframe src="http://docs.google.com/viewer?url=https%3A%2F%2Fportaluat.skysoftware.com%2Fskypepi%2Fdocuments%2FCodeOfConduct-portaluat-euc_KR.pdf%23view%3DFitH&embedded=true" width="600" height="780" style="border: none;"></iframe>
 				
 //				jQuery.ajax({
 //					url:"/ttsvr/skypepi/documentViewer.jsp?document=/ttsvr/skypepi/documents/"+site+"-"+docType + "_" + langKey + ".pdf",

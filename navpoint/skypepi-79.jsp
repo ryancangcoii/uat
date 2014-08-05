@@ -1129,7 +1129,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
 <% isPublic = false; %>
@@ -1140,7 +1140,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 <% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
  <% } %> 
 <% if (h.isCocAccepted()) { %>
 				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
@@ -1152,7 +1152,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
  <% } 
@@ -1741,7 +1741,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
 <% isPublic = false; %>
@@ -1752,7 +1752,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 <% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
  <% } %> 
 <% if (h.isCocAccepted()) { %>
 				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
@@ -1764,7 +1764,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">Code of Conduct</a></li>
+				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
  <% } 

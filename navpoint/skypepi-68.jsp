@@ -2559,13 +2559,13 @@ try {
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
 				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108">myStudents</a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
 				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97">myConsent</a></li>
@@ -2574,7 +2574,7 @@ try {
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
@@ -2584,7 +2584,7 @@ try {
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/home">Home</a></li>
-				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 <% if (h.isCocAccepted()) { %>
@@ -2597,7 +2597,7 @@ try {
  <% } %> 
  <% if (isPublic) { 
  %>				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>

@@ -99,13 +99,13 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_54", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_37 = null;
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37 = null;
 try {
-	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_37 = new tooltwist.skypepi.productionHelpers.ProgressProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_37Params);
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_37.callPreFetch(jh);
+	Properties productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37 = new tooltwist.skypepi.productionHelpers.ProgressProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37Params);
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapStaticDocumentAdmin_23 = null;
@@ -126,13 +126,13 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_40", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = null;
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = null;
 try {
-	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params);
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
+	Properties productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params);
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_54", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40", e);
 }
 
 
@@ -1347,6 +1347,11 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 }
 %>
 </div>
+<table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  height='30' align='left' valign='top'></td>
+ </tr>
+</table>
 <div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
@@ -1356,12 +1361,12 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="footer-menu"><%-- Widget skypepi.zones.portal_z_responsiveFooter@54 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="footer-menu"><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
-	String snippetVar_widgetName = "@54";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@54";
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40;
+	String snippetVar_widgetName = "@40";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@40";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1380,56 +1385,47 @@ try {
 
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108">myStudents</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class="active"><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97">myConsent</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class="active"><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
-				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class="active"><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home">Home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-<% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
- <% } %> 
-<% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
- <% } %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class="active"><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
-				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
- <% } 
+ %> <% } 
  %>			</ul>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@54 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
 }
 %>
 </div>
@@ -1457,12 +1453,13 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_positiveLogo.png" border="0">
 </td>
   <td  class='magic'></td>
-  <td  class='magic'><%-- Widget skypepi.zones.portal_z_responsiveFooter@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
+  <td  class='magic'><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
 <%
 try {
 	String snippetVar_dotSize = "5";
+	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
 	String snippetVar_widgetName = "@35";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@35";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@35";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1475,13 +1472,32 @@ try {
 </td>
 
 <%
-	// Check for an error that has occurred since the JSP started.
+	// This first call to the error handler is for the error while generating the page
+	String snippetVar_divName = "wbdErrorDiv1";
+	String snippetVar_errorHeading = "Errors while <i><u>Generating</u></i> this production page";
+	String snippetVar_dotColor = "blue";
+%>
+<td valign="bottom">
+<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
+onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
+</td>
+<td>
+<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
+<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
+<code>
+<%=snippetVar_errorMsg%>
+</code>
+</div>
+</td>
+
+<%
+	// Now check for an error that has occurred since the JSP started.
 	if (WbdSession.numErrors(jh.getCredentials()) > 0)
 	{
-		String snippetVar_divName = "wbdErrorDiv";
-		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		String snippetVar_dotColor = "green";
+		snippetVar_divName = "wbdErrorDiv2";
+		snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		snippetVar_dotColor = "green";
 %>
 <td width="2" nowrap></td>
 <td valign="bottom">
@@ -1504,7 +1520,7 @@ onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inlin
 </table>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
 }
 %>
 </td>
@@ -1540,12 +1556,13 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <div  class="col-md-1 magic2">
 <img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
 </div>
-<div  class="col-md-1 magic2"><%-- Widget skypepi.zones.portal_z_responsiveFooter@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
+<div  class="col-md-1 magic2"><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
 <%
 try {
 	String snippetVar_dotSize = "5";
+	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
 	String snippetVar_widgetName = "@29";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@29";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@29";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1558,13 +1575,32 @@ try {
 </td>
 
 <%
-	// Check for an error that has occurred since the JSP started.
+	// This first call to the error handler is for the error while generating the page
+	String snippetVar_divName = "wbdErrorDiv1";
+	String snippetVar_errorHeading = "Errors while <i><u>Generating</u></i> this production page";
+	String snippetVar_dotColor = "blue";
+%>
+<td valign="bottom">
+<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
+onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
+</td>
+<td>
+<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
+<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
+<code>
+<%=snippetVar_errorMsg%>
+</code>
+</div>
+</td>
+
+<%
+	// Now check for an error that has occurred since the JSP started.
 	if (WbdSession.numErrors(jh.getCredentials()) > 0)
 	{
-		String snippetVar_divName = "wbdErrorDiv";
-		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		String snippetVar_dotColor = "green";
+		snippetVar_divName = "wbdErrorDiv2";
+		snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		snippetVar_dotColor = "green";
 %>
 <td width="2" nowrap></td>
 <td valign="bottom">
@@ -1587,7 +1623,7 @@ onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inlin
 </table>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
 }
 %>
 </div>
@@ -1595,12 +1631,12 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
  <tr>
-  <td ><%-- Widget skypepi.zones.portal_z_responsiveFooter@37 (type=tooltwist.skypepi.widgets.ProgressWidget) --%>
+  <td ><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@37 (type=tooltwist.skypepi.widgets.ProgressWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_37;
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37;
 	String snippetVar_widgetName = "@37";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@37";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@37";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1710,7 +1746,7 @@ try {
 
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@37 (type=tooltwist.skypepi.widgets.ProgressWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@37 (type=tooltwist.skypepi.widgets.ProgressWidget)", e);
 }
 %>
 </td>
@@ -1804,9 +1840,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 //						'</object>');
 				//alert('<iframe src="' + googleViewStart + docType+'-'+site+'-'+langKey+'.pdf%23view%3DFitH&embedded=true" width="600" height="780" style="border: none;"></iframe>');
 				jQuery('.modal-view').find(".modal-body").html('<iframe src="' + googleViewStart + docType+'-'+site+'-'+langKey+'.pdf' + googleViewEnd + '" width="600" height="780" style="border: none;"></iframe>'+
-						'<p>It appears you don\'t have a PDF plugin for this browser.'+
-						'No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to'+
-						'download the PDF file.</a>'+
+						''+
 						'</object>');
 				
 				

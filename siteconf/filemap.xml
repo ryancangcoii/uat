@@ -1,0 +1,17 @@
+   <filemap>
+        <group>
+            <name>com.tooltwist.home</name>
+            <plugin>com.tooltwist.filemap.FileSystemAdaptor</plugin>
+            <directory>/Users/ryandcangcoii/Development/Tooltwist-8.3.1/site-conf</directory>
+        </group>
+        <group>
+            <name>com.skyportal.language</name>
+            <plugin>com.tooltwist.filemap.FileSystemAdaptor</plugin>
+            <directory>/Users/ryandcangcoii/Development/Tooltwist-8.3.1/skyportal/config/strings</directory>
+        </group>
+        <group>
+            <name>com.skyportal.static.documents</name>
+            <plugin>com.tooltwist.filemap.FileSystemAdaptor</plugin>
+            <directory>/Users/ryandcangcoii/Development/Tooltwist-8.3.1/skyportal/WebContent/skypepi/documents</directory>
+        </group>
+    </filemap>

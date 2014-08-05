@@ -1,0 +1,10 @@
+<site>
+    <servername>localhost</servername>
+    <webdesignProject>ttdemo</webdesignProject>
+    <navpoint>ttdemo-1</navpoint>
+    <properties>
+        <theme>blue chicken</theme>
+        <paymentGateway>paypal</paymentGateway>
+        <paypalClientId>171262535141</paypalClientId>
+    </properties>
+</site>

@@ -153,8 +153,6 @@
 	    res_cd  = c_PayPlus.m_res_cd;  // 결과 코드
 		res_msg = c_PayPlus.m_res_msg; // 결과 메시지
 		
-		if (res_cd.equals(""))
-			res_cd = "0000";
 	}
     else
     {

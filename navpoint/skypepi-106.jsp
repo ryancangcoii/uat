@@ -134,7 +134,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
   <head>
@@ -143,7 +143,6 @@ try {
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -172,7 +171,47 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
+}
+/* autcompleter.advancedlocal css */
+.tokenizer{min-height:5px;padding:0px 0px 3px 3px;width:100%;background:#fff;}
+.tokenizer_locked{background:#f4f4f4;}
+.tokenizer,
+.tokenizer *{cursor:pointer;background: transparent;}
+.tokenizer .token{float:left;margin-right:3px;margin-top:3px;}
+
+/*IE6-/Win only*/
+div.tokenizer .token{background-image:url('/ttsvr/blog/images/token.gif');background-repeat:no-repeat;color:black;white-space:nowrap;text-decoration: none;}
+div.tokenizer .token span{background-image:url('/ttsvr/blog/images/token.gif');background-position:top right;background-repeat:no-repeat;display:block;}
+div.tokenizer .token span span{background-position:bottom right;}
+div.tokenizer .token span span span{background-position:bottom left;}
+div.tokenizer .token span span span span{background-image:none;padding:2px 3px 2px 5px;}
+div.tokenizer.tokenizer_locked .token span span span span{padding-right:5px;}
+html div.tokenizer_locked .token:hover,
+html div.tokenizer_locked .token:hover span{background-image:url('/ttsvr/blog/images/token.gif');}
+div.tokenizer .token:hover,
+div.tokenizer .token:hover span{background-image:url('/ttsvr/blog/images/token_hover.gif');text-decoration:none;}
+
+div.tokenizer .token_selected span,
+div.tokenizer .token_selected:hover,
+div.tokenizer .token_selected:hover span{background-image:url('/ttsvr/blog/images/token_selected.gif');color:white;text-decoration:none;}
+div.tokenizer .token span.x,
+div.tokenizer .token span.x_hover,
+div.tokenizer .token:hover span.x,
+div.tokenizer .token:hover span.x_hover{background-image:url('/ttsvr/blog/images/token_x.gif');background-position:4px 2px;cursor:pointer;display:inline;padding:0px 6px 0px 5px;}
+div.tokenizer.tokenizer_locked .token span.x,
+div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
+/* end of autcompleter.advancedlocal css */
+	
+#drugs{width: 502px;-moz-border-radius: 0px;}
+#otherDrugs{width: 502px;-moz-border-radius: 0px;}
+#pharma{width: 472px;-moz-border-radius: 0px;}
+#patient{width: 502px;-moz-border-radius: 0px;}
+#patientFirstName {width: 233px;-moz-border-radius: 0px;}
+#patientLastName {width: 233px;-moz-border-radius: 0px;}
+span.spanBtnApprove{margin-top: -46px;}
+span.spanBtnSave,span.spanBtnCancel,span.spanBtnApprove{float: right;margin-left: 6px;}
+
+/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -261,7 +300,7 @@ try {
 <%@page import="tooltwist.skypepi.util.*"%>
 
 <%
-boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, false);
+boolean isLogged = Boolean.valueOf(WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, "false"));
 %>
 
 <% if (!isLogged)  { %>
@@ -773,7 +812,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu'><div class='DivWidget' style=""><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.bootstrap.widgets.NavBarWidget) --%>
+  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_40;
@@ -794,43 +833,76 @@ try {
 	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
 	AltLang lang = h.getAltLang();
 %>
-  <nav class="navbar  navbar-default" role="navigation" id="">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/ttsvr/MISSING_LINK/skypepi-94"></a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav ">
-<% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67"><%=lang.getString("Home", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=lang.getString("Announcement", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=lang.getString("Static Document", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=lang.getString("Translation Table", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=lang.getString("System Setting", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=lang.getString("Reserved", null, "") %></a>
-</li>
- <% } %>        </ul>
-      </div>
-    </div>
-  </nav><%
+
+<nav class="navbar  navbar-default" role="navigation" id="">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/ttsvr/n/skypepi-68"></a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav ">
+<% boolean isPublic = true;%><% if (h.isParent()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isParentStudent()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && !h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+ <% if (isPublic) { 
+ %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+ <% } 
+ %>			</ul>
+		</div>
+	</div>
+</nav><%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.bootstrap.widgets.NavBarWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
 }
 %>
 </td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/n/home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1115,47 +1187,7 @@ try {
 %>
 
 
-<style>
-
-/* autcompleter.advancedlocal css */
-.tokenizer{min-height:5px;padding:0px 0px 3px 3px;width:100%;background:#fff;}
-.tokenizer_locked{background:#f4f4f4;}
-.tokenizer,
-.tokenizer *{cursor:pointer;background: transparent;}
-.tokenizer .token{float:left;margin-right:3px;margin-top:3px;}
-
-/*IE6-/Win only*/
-div.tokenizer .token{background-image:url('/ttsvr/blog/images/token.gif');background-repeat:no-repeat;color:black;white-space:nowrap;text-decoration: none;}
-div.tokenizer .token span{background-image:url('/ttsvr/blog/images/token.gif');background-position:top right;background-repeat:no-repeat;display:block;}
-div.tokenizer .token span span{background-position:bottom right;}
-div.tokenizer .token span span span{background-position:bottom left;}
-div.tokenizer .token span span span span{background-image:none;padding:2px 3px 2px 5px;}
-div.tokenizer.tokenizer_locked .token span span span span{padding-right:5px;}
-html div.tokenizer_locked .token:hover,
-html div.tokenizer_locked .token:hover span{background-image:url('/ttsvr/blog/images/token.gif');}
-div.tokenizer .token:hover,
-div.tokenizer .token:hover span{background-image:url('/ttsvr/blog/images/token_hover.gif');text-decoration:none;}
-
-div.tokenizer .token_selected span,
-div.tokenizer .token_selected:hover,
-div.tokenizer .token_selected:hover span{background-image:url('/ttsvr/blog/images/token_selected.gif');color:white;text-decoration:none;}
-div.tokenizer .token span.x,
-div.tokenizer .token span.x_hover,
-div.tokenizer .token:hover span.x,
-div.tokenizer .token:hover span.x_hover{background-image:url('/ttsvr/blog/images/token_x.gif');background-position:4px 2px;cursor:pointer;display:inline;padding:0px 6px 0px 5px;}
-div.tokenizer.tokenizer_locked .token span.x,
-div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
-/* end of autcompleter.advancedlocal css */
-	
-	#drugs{width: 502px;-moz-border-radius: 0px;}
-	#otherDrugs{width: 502px;-moz-border-radius: 0px;}
-	#pharma{width: 472px;-moz-border-radius: 0px;}
-	#patient{width: 502px;-moz-border-radius: 0px;}
-	#patientFirstName {width: 233px;-moz-border-radius: 0px;}
-	#patientLastName {width: 233px;-moz-border-radius: 0px;}
-
-</style>
-
+<%@page import="tooltwist.skypepi.util.StringUtil"%>
 <%@page import="tooltwist.wbd.util.PublicUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
@@ -1164,18 +1196,15 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 <%@page import="tooltwist.misc.JspHelper"%>
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%@page import="tooltwist.skypepi.bean.Language"%>
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+<%@page import="tooltwist.skypepi.util.LanguageMasterUtil"%>
 <%
 	// Get the production helper for this widget
 	BlogAdminBlogDetailsProductionHelper h = (BlogAdminBlogDetailsProductionHelper) helper;
 	XData data = h.getData(jh);
 %>
 <script src="<%=PublicUtil.webappDir %>/blog/script/ckeditor/ckeditor.js"></script>
-
-<style>
-.portal-ribbon .left-edge.fork {
-	width: 130px;
-}
-</style>
 
 <div class="bc-container portal-ribbon">
 	<div class="ribbon-wrap left-edge fork lblue"><span>Announcement</span></div>
@@ -1190,22 +1219,55 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		<input type="hidden" name="op" value="blog_widgets.blogAdminBlogDetails.blogAdminBlogDetails">
 		<input type="hidden" name="subop" value="<%=h.getBlogId()==null || h.getBlogId().equals("") || h.getBlogId().equals("null") ? "addBlogDetail" : "updateBlogDetail"%>">
 		<input type="hidden" name="blogId"  id="blogId" value="<%=h.getBlogId()%>">	
-		<input type="hidden" id="categoryId" name="categoryId" value="<%=h.getBlogCategory() %>">
-		<input type="hidden" id="siteId" name="siteId" value="<%=h.getBlogSites() %>">	
+		<input type="hidden" id="categoryId" name="categoryId" value="<%=DataBlockUtil.BLOG_CATEGORY_ANNOUNCEMENT%>">
+		<input type="hidden" id="siteId" name="siteId" value="<%--=h.getBlogSites() --%>1">	
 		<input type="hidden" name="navpointSuccess" value="<%=snippetVar_navpointSuccess%>">
 		<input type="hidden" id="blogSettingDateFormat" name="blogSettingDateFormat" value="<%=h.getDateFormat()%>">
 		<input type="hidden" id="requiredFieldsMsg" name="requiredFieldsMsg" value="<%=h.getRequiredFieldsMsg()%>" >
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
-		<input type="hidden" name="ckeditorContentWithImage" id="ckeditorContentWithImage" value=""/>
 		
+		<% for (DataBlockUtil.LANGUAGE_CODE language : DataBlockUtil.LANGUAGE_CODE.values()) { %>
+			<input type="hidden" name="ckeditorContentWithImage_<%=language.getLangCode()%>" id="ckeditorContentWithImage_<%=language.getLangCode()%>" value=""/>
+			<% 
+			String title = "";
+			boolean hidden = false;
+			if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ENGLISH.getLangCode())) {
+				title = h.getTitle_eng();
+				hidden = true;
+			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.LOCAL.getLangCode())) {
+				title = h.getTitle_loc();
+			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ALTERNATE.getLangCode())) {
+				title = h.getTitle_alt();
+			}
+			%>
+			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hidden) { %>
+				<div class="row" style="margin-top:25px">
+					<div class="col-md-12">
+							<div class="row">
+									<div class="col-md-2">
+										Title in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangCode())%>:
+									</div>
+									<div class="col-md-10">
+										<input  id="bdTitle_<%=language.getLangCode()%>" name="bdTitle_<%=language.getLangCode()%>" class="form-control blog_form_input_medium required" type="text" autocomplete="off" value="<%=StringUtil.asciiToString(title)%>"/>
+									</div>
+							</div>
+					</div>
+				</div>
+			<% } %>
+		<% } %>
+
 		<div class="row" style="margin-top:25px">
 			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">
-								Title:
+								Language:
 							</div>
-							<div class="col-md-10">
-								<input  id="bdTitle" name="bdTitle" class="form-control blog_form_input_medium required" type="text" autocomplete="off" value="<%=h.getTitle()%>"/>
+							<div class="col-md-4">
+								<select id="bdLanguage" name="bdLanguage" class="form-control">
+									<% for (Language language : h.getLanguageMasterUtil().getLanguages()) { %>
+										<option value="<%=language.getLanguageCode()%>" <%if(h.getLanguage().equals(language.getLanguageCode())){%>selected="selected"<%}%>><%=language.getLanguageName()%></option>
+									<% } %>
+								</select>
 							</div>
 					</div>
 			</div>
@@ -1213,12 +1275,59 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		
 		<div class="row" style="margin-top:25px">
 			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-2">
+						Editor:
+					</div>
+					<div class="col-md-4">
+						<input id="bdAuthor" name="bdAuthor" class="form-control blog_form_datepicker_medium" type="text" value="<%=h.getAuthor()%>" readonly="readonly" />
+					</div>
+					<div class="col-md-3"></div>
+				</div>
+				<% if (h.isApprovable() && !h.getBlogId().equals("")) { %>
+					<span class="spanBtnApprove"><input class="buttonBlue" id="btn_approve" value="Approve" type="submit" onclick="BlogAdminBlogDetails.approve('<%=h.getBlogId()%>');"/></span>
+				<% } %>
+			</div>
+		</div>
+		
+		<% if (!h.getBlogId().equals("")) { %>
+			<div class="row" style="margin-top:25px">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-2">
+							Approver:
+						</div>
+						<div class="col-md-4">
+							<input  id="bdApprover" name="bdApprover" class="form-control blog_form_datepicker_medium" type="text" value="<%=h.getApprover()%>" readonly="readonly" />
+						</div>
+						<div class="col-md-3"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" style="margin-top:25px">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-2">
+							Approval Date:
+						</div>
+						<div class="col-md-4">
+							<input  id="bdApprovedDate" name="bdApprovedDate" class="form-control blog_form_datepicker_medium" type="text" value="<%=h.getApproveDate()%>" readonly="readonly" />
+						</div>
+						<div class="col-md-3"></div>
+					</div>
+				</div>
+			</div>
+		<% } %>
+		
+		<div class="row" style="margin-top:25px">
+			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">
-								Publish Date:
+								Valid From (Date):
 							</div>
 							<div class="col-md-4">
-								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getPublishDate()%>" onchange="validatePublishExpireDate();"/>
+								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium" type="text" value="<%=h.getPublishDate()%>" readonly="readonly" />
 							</div>
 							<div class="col-md-3"></div>
 					</div>
@@ -1226,7 +1335,7 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		</div>
 		
 		<div class="row" style="margin-top:25px">
-			<div class="col-md-2">Publish Time:</div>
+			<div class="col-md-2">Valid From (Time):</div>
 			<input type="hidden" class="blogTimeInput blog_form_time_medium required" id="bdPublishTime" name="bdPublishTime" value="<%=h.getPublishTime()%>" />
 				<div class="col-md-5">
 					<div class="row">
@@ -1249,22 +1358,8 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 					</div>
 		</div>
 		
-		<%--<div class="row" style="margin-top:25px">
-			<div class="col-md-12">
-					<div class="row">
-							<div class="col-md-2">
-								Expire Date:
-							</div>
-							<div class="col-md-3">
-								<input  id="bdPublishDate" name="bdPublishDate" class="form-control datepickerInput blog_form_datepicker_medium required" type="text" value="<%=h.getPublishDate()%>" onchange="validatePublishExpireDate();"/>
-							</div>
-							<div class="col-md-3"></div>
-					</div>
-			</div>
-		</div>  --%>
-		
 		<div class="row" style="margin-top:25px">
-				<div class="col-md-2">Expire Date:</div>	     	
+				<div class="col-md-2">Valid To:</div>	     	
 		     	<div class="col-md-4">
 		     		<input  id="bdExpireDate" name="bdExpireDate" class="form-control datepickerInput blog_form_datepicker_medium" type="text" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/>
 <%-- 		     		<input type="text" class="form-control datepickerInput blog_form_datepicker_medium hasDatepicker" id="bdExpireDate" name="bdExpireDate" value="<%=h.getExpireDate()%>" onchange="validateExpireDateTime();validatePublishExpireDate();"/> --%>
@@ -1272,168 +1367,66 @@ div.tokenizer.tokenizer_locked .token span.x_hover{display:none;}
 		     	<div class="col-md-5 button-cont"><input type="button" class="buttonBlue" onclick="blogClearExpireDateTime();" value="Clear">
 		     	</div>
 		</div>
-		<ul style="margin-top: 0px;margin-left: 0px;padding-left: 0px;list-style-type: none;">
-<!-- 			<li  style="border-top: none;"> -->
-<!-- 		     	<label class="blog_form_label1" >Title:</label> -->
-<!-- 		     	<input type="text" class="" id="bdTitle" name="bdTitle" value="" /> -->
-<!-- 			</li> -->
-			
-			
-			
-<!-- 			<li > -->
-<!-- 		     	<label class="blog_form_label1" >Publish Date:</label>		     	 -->
-<!-- 		     	<input type="text" class="datepickerInput blog_form_datepicker_medium required" id="bdPublishDate" name="bdPublishDate" value="" onchange="validatePublishExpireDate();" />		     	 -->
-				
-<!-- 			</li> -->
-<!-- 			<li style="border-top: none;">		     	 -->
-<!-- 		     	<label class="blog_form_label1" >Publish Time:</label>	 -->
-<%-- 		     	<input type="hidden" class="blogTimeInput blog_form_time_medium required" id="bdPublishTime" name="bdPublishTime" value="<%=h.getPublishTime()%>" /> --%>
-<!-- 		     	<select id="selPublishTimeHour" name ="selPublishTimeHour"> -->
-<%-- 		     		<%=h.getPublishHoursOption()%>		     		 --%>
-<!-- 		     	</select> -->
-<!-- 		     	: -->
-<!-- 		     	<select id="selPublishTimeMinute" name ="selPublishTimeMinute"> -->
-<%-- 		     		<%=h.getPublishMinutesOption()%>		     		 --%>
-<!-- 		     	</select> -->
-<!-- 		     	<select id="selPublishTimeMeridian" name ="selPublishTimeMeridian" >		     		 -->
-<%-- 		     		<%=h.getPublishMeridianOption()%>		     		 --%>
-<!-- 		     	</select> -->
-<!-- 		     	<label class="publishDateErrorHolder"></label>	 -->
-<!-- 			</li> -->
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Expire Time:</div>	     	
-		     	<input type="hidden" class="blogTimeInput blog_form_time_medium " id="bdExpireTime" name="bdExpireTime" value="<%=h.getExpireTime()%>" />
-		     	<div class="col-md-5" >
-			     	<div class="row">
-				     	<div class="col-md-3"><select id="selExpireTimeHour" name ="selExpireTimeHour" onchange="validateExpireDateTime();" class="form-control">
-				     		<option value=""></option>
-				     		<%=h.getExpireHoursOption()%>		     		
-				     	</select></div>
-				     	<div class="col-md-3"><select id="selExpireTimeMinute" name ="selExpireTimeMinute" onchange="validateExpireDateTime();" class="form-control">
-				     		<option value=""></option>
-				     		<%=h.getExpireMinutesOption()%>		     		
-				     	</select></div>
-				     	<div class="col-md-3"><select id="selExpireTimeMeridian" name ="selExpireTimeMeridian" class="form-control">		     		
-				     		<%=h.getExpireMeridianOption()%>		     		
-				     	</select></div>
-				     	<label class="timeErrorHolder"></label>		     	
+		
+		<div class="row" style="margin-top:25px">
+	     	<div class="col-md-2" >Valid To (Time):</div>	     	
+	     	<input type="hidden" class="blogTimeInput blog_form_time_medium " id="bdExpireTime" name="bdExpireTime" value="<%=h.getExpireTime()%>" />
+	     	<div class="col-md-5" >
+		     	<div class="row">
+			     	<div class="col-md-3"><select id="selExpireTimeHour" name ="selExpireTimeHour" onchange="validateExpireDateTime();" class="form-control">
+			     		<option value=""></option>
+			     		<%=h.getExpireHoursOption()%>		     		
+			     	</select></div>
+			     	<div class="col-md-3"><select id="selExpireTimeMinute" name ="selExpireTimeMinute" onchange="validateExpireDateTime();" class="form-control">
+			     		<option value=""></option>
+			     		<%=h.getExpireMinutesOption()%>		     		
+			     	</select></div>
+			     	<div class="col-md-3"><select id="selExpireTimeMeridian" name ="selExpireTimeMeridian" class="form-control">		     		
+			     		<%=h.getExpireMeridianOption()%>		     		
+			     	</select></div>
+			     	<label class="timeErrorHolder"></label>		     	
+				</div>
+			</div>
+		</div>
+		
+		
+		<% for (DataBlockUtil.LANGUAGE_CODE language : DataBlockUtil.LANGUAGE_CODE.values()) { %>
+			<% 
+			String content = "";
+			boolean hidden = false;
+			if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ENGLISH.getLangCode())) {
+				content = h.getBlogContent_eng();
+				hidden = true;
+			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.LOCAL.getLangCode())) {
+				content = h.getBlogContent_loc();
+			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ALTERNATE.getLangCode())) {
+				content = h.getBlogContent_alt();
+			}
+			%>
+			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hidden) { %>
+				<div class="row" style="margin-top:25px">
+					<div style="margin:0px 15px;	">
+			     	<span style="float: none;" >Announcement for <%=h.getLanguageMasterUtil().getLanguageName(language.getLangCode())%>:</span>	   
+			     	<div style="width: 100%;">  	
+				     	<textarea class="blog_form_textarea_medium required contentError " rows="" style="width: 500px; height: 100px;" id="bdContent_<%=language.getLangCode()%>" name="bdContent_<%=language.getLangCode()%>"><%=StringUtil.asciiToString(content)%></textarea>
+						<label class="errorHolder"></label>
+					</div>
 					</div>
 				</div>
-			</div>
+			<% } %> 
+		<% } %>
 			
-			<%--<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2">Category:</div>	     	
-		     	<div class="col-md-5">
-		     		<select id="bdCategory" name="bdCategory" class="form-control">
-		     	<option value="">-Select-</option>
-		     	<%
-		     		XData oCategory = h.getCategory();
-		     		XNodes nodes = oCategory.getNodes("//blogCategory");
-		     		if(nodes.getNumNodes() > 0){
-		     			for(nodes.first();nodes.next();){	     		
-		     	%>
-		     	<option value="<%=nodes.getText("blogCategoryId")%>"><%=nodes.getText("blogCategoryName") %></option>
-		     	<%
-		     			}
-		     		}
-		     	%>
-		     	</select></div>
-			</div>
-			
-			<div style="display: none;">	     	
-		     	<table><tr><td>
-		     				<div id="divCat" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
-		     	</td></tr></table>
-			</div>
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Site:</div>	     	
-		     	<div class="col-md-5" ><select id="bdSite" name="bdSite" class="form-control">
-		     	<option value="">-Select-</option>
-		     	<%
-		     		XData oSites = h.getSites();
-		     		XNodes nSites = oSites.getNodes("//site");
-		     		if(nSites.getNumNodes() > 0){
-		     			for(nSites.first();nSites.next();) {
-		     	%>
-		     	<option value="<%=nSites.getText("siteId")%>"><%=nSites.getText("siteName") %></option>
-		     	<%
-		     			}
-		     		}
-		     	%>
-		     	</select></div>
-			</div>
-			<div style="display: none;">	     	
-		     	<table><tr><td>
-		     				<div id="divSite" class="tokenizer" style="height: 20px;width: 572px;margin-left: 147px;">&nbsp;</div>
-		     	</td></tr></table>
-			</div>
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Allow Comments:</div>	     	
-		     	<div class="col-md-5">
-		     	<input type="checkbox" <%=h.getAllowComments() %> id="bdAllowComments" name="bdAllowComments"></div>
-			</div>
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Featured Blog:</div>	     	
-		     	<div class="col-md-5" ><input type="checkbox" <%=h.getIsFeaturedBlog() %>   id="bdFeaturedBlog" name="bdFeaturedBlog"></div>
-			</div>--%>
-			<div class="row" style="margin-top:25px">
-				<div style="margin:0px 15px;	">
-		     	<span style="float: none;" >Blog:</span>	   
-		     	<div style="width: 100%;">  	
-			     	<textarea class="blog_form_textarea_medium required contentError " rows="" style="width: 500px; height: 100px;" id="bdContent" name="bdContent"><%=h.getBlogContent() %></textarea>
-					<label class="errorHolder"></label>
-				</div>
-				</div>
-			</div> 
-			<%--<div class="row" style="margin-top:25px">
-		     	<div class="col-md-2" >Tags:</div>
-		     	<div class="col-md-10" ><input type="text" class="blog_form_input_medium required form-control"  id="bdTags" name="bdTags" value="<%=h.getTags()%>" ></div>
-			</div>
-			
-			<div class="row" style="margin-top:25px">
-		     	<div class="col-md-4" >Add Meta description:</div>	     	
-		     	<div class="col-md-5" ><input type="checkbox"  id="bdAddMetaDescription" name="bdAddMetaDescription" <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ?"":"checked=\"checked\""%>></div>
-			</div>
-			
-			<div style="margin-top:25px">
-			<div <%= h.getMetaDesc()==null || h.getMetaDesc().isEmpty() ? "style=\"display:none;\"":""%>   id="liMetaDesc" >
-		     	<span>Meta Description:</span><br />
-		     	<textarea class="blog_form_textarea_medium required contentError form-control" rows="" style="resize:none; width: 100%; height: 100px;" id="bdMetaDesc" name="bdMetaDesc"><%=h.getMetaDesc() %></textarea>
-				<label class="errorHolder"></label>
-			</div>
-			</div>
-			<%if(h.getBlogId() != null && !h.getBlogId().equals("")) { %>
-			<%if(h.getAllowUploadImage().equalsIgnoreCase("true")) {%>
-				<li>
-		     	<label class="blog_form_label" >Attach File:</label>	     	
-		     	<input type="button" id="attachFile" name="attachFile" value="Attach file">
-		     	<input type=hidden  id="modalAttachFile" name="modalAttachFile" value="<%=snippetVar_fileUploaderPage%>">
-				</li>
-				<%if(h.getBlogImages()!=null && !h.getBlogImages().isEmpty()) {
-				%>
-					<li id="uploadedImages" >
-					<div id='preview'><%=h.getBlogImages() %></div>
-				</li>
-				
-				<%}else{%>
-				<li id="uploadedImages" style="display:none;" >
-					<div id='preview'></div>
-				</li>
-				<%}%>
-			<%}%>
-			<%}%> --%>
-		</ul>
 		<div class="qv_formbottom_style1">
 			<div class="qv_roundedbutton_big">
 				<div>&nbsp;</div>
-				<span><input class="buttonBlue" id="btn_save" value="Save" type="submit" onclick="setValues();if(!validateBlogContent(this.form)){return false;}"/></span>
+				<span class="spanBtnSave"><input class="buttonBlue" id="btn_save" value="Save" type="submit" onclick="setValues();if(!validateBlogContent(this.form)){return false;}"/></span>
+				<span class="spanBtnCancel"><input class="buttonBlue" id="btn_cancel" value="Cancel" type="button" onclick="redirectBackTo('<%=snippetVar_navpointSuccess%>');"/></span>
 			</div>
 		</div>
 		<div class="qv_formbottom_style2">
 			<a class="qv_cancelbutton" href="#" onclick="window.location.reload(true);"></a> 
 		</div>
 	</form>
-	
 </div>
 
 </div>
@@ -1457,14 +1450,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
 <div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
-<div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
+<div  class="col-md-2"><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
 </div>
 </td>
  </tr>
@@ -1803,51 +1796,80 @@ var BlogAdminBlogDetails = function() {
 		                    success: function(data) {
 		                        window.location.href = data;
 		                    }
-		                    
-		                  });
-	            	 }
-	            else {
-	            	jQuery( this ).dialog("close"); 
-	            	}
-	            
-	          });
+            	 	});
+        	 	} else {
+	            	jQuery(this).dialog("close"); 
+            	}
+            });
 
 			
 			setCategoryValue();		
-						
-			if (CKEDITOR.instances.bdContent) {
+			if (CKEDITOR.instances.bdContent_EN) {
 				try {
-					
-
-					CKEDITOR.instances.bdContent.destroy(true);
-					
+					CKEDITOR.instances.bdContent_EN.destroy(true);
 				} catch (e) {
-
+					console.log("err", e);
+				}
+			}
+			if (CKEDITOR.instances.bdContent_LOC) {
+				try {
+					CKEDITOR.instances.bdContent_LOC.destroy(true);
+				} catch (e) {
+					console.log("err", e);
+				}
+			}
+			if (CKEDITOR.instances.bdContent_ALT) {
+				try {
+					CKEDITOR.instances.bdContent_ALT.destroy(true);
+				} catch (e) {
 					console.log("err", e);
 				}
 			}
 						
 //			console.log("CKEDITOR.instances.myInstanceName", CKEDITOR.instances);
 				try {
-
-
-					
-						CKEDITOR.replace( 'bdContent', {
-							customConfig : '/ttsvr/blog/script/ckeditor/custom/ckeditor_config.js',
-							on : {
-								instanceReady : function(ev) {
-									this.dataProcessor.writer.setRules('p', {
-										indent : false,
-										breakBeforeOpen : false,
-										breakAfterOpen : false,
-										breakBeforeClose : false,
-										breakAfterClose : false
-									});
-								}
+					CKEDITOR.replace( 'bdContent_EN', {
+						customConfig : '/ttsvr/blog/script/ckeditor/custom/ckeditor_config.js',
+						on : {
+							instanceReady : function(ev) {
+								this.dataProcessor.writer.setRules('p', {
+									indent : false,
+									breakBeforeOpen : false,
+									breakAfterOpen : false,
+									breakBeforeClose : false,
+									breakAfterClose : false
+								});
 							}
-						});
-				
-					
+						}
+					});
+					CKEDITOR.replace( 'bdContent_LOC', {
+						customConfig : '/ttsvr/blog/script/ckeditor/custom/ckeditor_config.js',
+						on : {
+							instanceReady : function(ev) {
+								this.dataProcessor.writer.setRules('p', {
+									indent : false,
+									breakBeforeOpen : false,
+									breakAfterOpen : false,
+									breakBeforeClose : false,
+									breakAfterClose : false
+								});
+							}
+						}
+					});
+					CKEDITOR.replace( 'bdContent_ALT', {
+						customConfig : '/ttsvr/blog/script/ckeditor/custom/ckeditor_config.js',
+						on : {
+							instanceReady : function(ev) {
+								this.dataProcessor.writer.setRules('p', {
+									indent : false,
+									breakBeforeOpen : false,
+									breakAfterOpen : false,
+									breakBeforeClose : false,
+									breakAfterClose : false
+								});
+							}
+						}
+					});
 
 				} catch (e) {
 					// TODO: handle exception
@@ -1856,17 +1878,21 @@ var BlogAdminBlogDetails = function() {
 			/*Validate the Form*/
 			jQuery('#frmBlogAdminDetails').validate({
 				rules:{
-					bdTitle:{required:'#bdTitle'},
+					bdTitle_EN:{required:'#bdTitle_EN'},
+					bdTitle_LOC:{required:'#bdTitle_LOC'},
+					bdTitle_ALT:{required:'#bdTitle_ALT'},
 					bdPublishDate:{required:'#bdPublishDate'},
-					bdContent:{required:'#bdContent'},
+					bdContent_EN:{required:'#bdContent_EN'},
 					bdTags:{required:'#bdTags'},
 					
 				},
 				messages:{
-					bdTitle:{required:getRequiredFieldsMsg()},
+					bdTitle_EN:{required:getRequiredFieldsMsg()},
+					bdTitle_LOC:{required:getRequiredFieldsMsg()},
+					bdTitle_ALT:{required:getRequiredFieldsMsg()},
 					bdPublishDate:{required:getRequiredFieldsMsg()},
 					bdCategory:{required:getRequiredFieldsMsg()},
-					bdContent:{required:getRequiredFieldsMsg()},
+					bdContent_EN:{required:getRequiredFieldsMsg()},
 					bdTags:{required:getRequiredFieldsMsg()},
 				}
 			});	
@@ -1921,14 +1947,28 @@ var BlogAdminBlogDetails = function() {
 		
 		checkBlogContentLength: function(){
 			var valid = true;
-			var content =  CKEDITOR.instances.bdContent.getData();
+			var content =  CKEDITOR.instances.bdContent_EN.getData();
 			if (content.val()=="" || content.val().length == 0){
 				jQuery('.errorHolder').append('<label class="errorContainer contentError " style="margin-left: 0;">'+getRequiredFieldsMsg()+'</label>');
 				valid = false;
 			}
 			return valid;
-		}
+		},
 		
+		approve : function(blogId) {
+			
+			jQuery.ajax({
+	            url: "",
+	            data: {
+	              op:"blog_widgets.blogAdminBlogDetails.blogAdminBlogDetails",
+	              subop: "approveBlog",
+	              blogId: blogId
+	            },
+	            success: function() {
+	                location.reload();
+	            }
+			});
+		}
 	};
 }();
 
@@ -1989,15 +2029,15 @@ function validateBlogContent(form){
 	jQuery("#categoryId").val(catIds);
 	jQuery("#siteId").val(siteIds);
 	
-	if (jQuery.trim(catIds) == '') {
-		hasSelection = false;
-		jQuery("#bdCategory").after('<label class="errorContainer contentError" >'+getRequiredFieldsMsg()+'</label>');
-	}
-	if (jQuery.trim(siteIds) == '') {
-		console.log("test");
-		hasSelection = false;
-		jQuery("#bdSite").after('<label class="errorContainer contentError">'+getRequiredFieldsMsg()+'</label>');
-	}
+//	if (jQuery.trim(catIds) == '') {
+//		hasSelection = false;
+//		jQuery("#bdCategory").after('<label class="errorContainer contentError" >'+getRequiredFieldsMsg()+'</label>');
+//	}
+//	if (jQuery.trim(siteIds) == '') {
+//		console.log("test");
+//		hasSelection = false;
+//		jQuery("#bdSite").after('<label class="errorContainer contentError">'+getRequiredFieldsMsg()+'</label>');
+//	}
 	
 	
 	//jquery form validation
@@ -2005,14 +2045,25 @@ function validateBlogContent(form){
 		
 		jQuery(form).find('.errorContainer').remove();
 			
-		if (CKEDITOR.instances.bdContent.getData() =="") {
+		if (CKEDITOR.instances.bdContent_EN.getData() =="") {
 			jQuery('.errorHolder').append('<label class="errorContainer contentError " style="margin-left: 0;">'+getRequiredFieldsMsg()+'</label>');
 			return false;
 		}else{
 			
-			jQuery('#ckeditorContentWithImage').val(CKEDITOR.instances.bdContent.getData());
-			var tmpData =jQuery('#ckeditorContentWithImage').val().replace(/src=/g,"s_r_c=");
-			jQuery('#ckeditorContentWithImage').val(tmpData);
+			//language English
+			jQuery('#ckeditorContentWithImage_EN').val(CKEDITOR.instances.bdContent_EN.getData());
+			var tmpData =jQuery('#ckeditorContentWithImage_EN').val().replace(/src=/g,"s_r_c=");
+			jQuery('#ckeditorContentWithImage_EN').val(tmpData);
+
+			//language local
+			jQuery('#ckeditorContentWithImage_LOC').val(CKEDITOR.instances.bdContent_LOC.getData());
+			tmpData =jQuery('#ckeditorContentWithImage_LOC').val().replace(/src=/g,"s_r_c=");
+			jQuery('#ckeditorContentWithImage_LOC').val(tmpData);
+
+			//language alternate
+			jQuery('#ckeditorContentWithImage_ALT').val(CKEDITOR.instances.bdContent_ALT.getData());
+			tmpData =jQuery('#ckeditorContentWithImage_ALT').val().replace(/src=/g,"s_r_c=");
+			jQuery('#ckeditorContentWithImage_ALT').val(tmpData);
 			
 			if (!validateExpireDateTime()){			
 				return false;
@@ -2264,6 +2315,11 @@ function MultiDropDownValue() {
 		}
 	};
 	
+}
+
+function redirectBackTo(redirectLink) {
+	$(".required").removeClass("required");
+	location.href = redirectLink;
 }</script>
 <script type="text/javascript">
 var Progress = function() {

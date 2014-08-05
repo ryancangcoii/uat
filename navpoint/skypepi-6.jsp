@@ -942,11 +942,6 @@ try {
 %>
 <script src="/ttsvr/skypepi/scripts/paging.js"></script>
 <script src="/ttsvr/skypepi/scripts/jquery.validate.min.js"></script>
-<style>
-.portal-ribbon .left-edge.fork {
-	width: 130px;
-}
-</style>
 
 <div class="bc-container portal-ribbon">
 	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myDetails", null, "") %></span></div>

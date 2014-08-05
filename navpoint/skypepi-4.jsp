@@ -484,12 +484,6 @@ try {
 	
 	WebUtil.setAttribute(request, DataBlockUtil.SESSION_VARIABLE.LOG_IN_ERROR_MESSAGE, null);
 %>
-<style>
-.portal-ribbon .left-edge.fork {
-	width: 200px;
-	font-size: 20px;
-}
-</style>
 <form id="form-login" method="post" action="<%=snippetVar_navpointId%>">
 <input type="hidden" name="op" value="<%=snippetVar_loginOp%>"/>
 					<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>

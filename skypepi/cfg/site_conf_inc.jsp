@@ -22,18 +22,18 @@
     /* =   test js : https://pay.kcp.co.kr/plugin/payplus_test.js
     /* =   real js : https://pay.kcp.co.kr/plugin/payplus.js
     /* ============================================================================== */
-    String g_conf_pa_url    = "testpaygw.kcp.co.kr";
-    String g_conf_js_url    = "https://pay.kcp.co.kr/plugin/payplus_test.js";
+   	String g_conf_pa_url    = "paygw.kcp.co.kr";
+    String g_conf_js_url    = "https://pay.kcp.co.kr/plugin/payplus.js";
 
     
     /* ============================================================================== */
     /* =   Do change
     /* ============================================================================== */
-    String g_conf_site_cd   = "T0000";                                
-    String g_conf_site_key  = "3grptw1.zW0GSo4PQdaGvsF__";            
-    String g_conf_site_name = "TEST MALL";
+    String g_conf_site_cd   = "N7555";                                
+    String g_conf_site_key  = "2x8Sq.AT9JQmmlynohBqKVf__";            
+    String g_conf_site_name = "British Council";
     
-    String g_conf_home_dir  = "/Users/ryandcangcoii/Development/Tooltwist-8.3.1/skyportal/config/";
+    String g_conf_home_dir  = "/home/studentportal/server/extension-projects/skyportal_t/config/";
     //String g_conf_home_dir  = "/tooltwist/tooltwist_osx_8.0-beta/devel/kcp_t";
     /* ============================================================================== */
 %>

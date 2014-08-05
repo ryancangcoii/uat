@@ -1,12 +1,5 @@
-<%@page import="tooltwist.wbd.Navpoint"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="tooltwist.wbd.WbdSession"%>
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<%@page contentType="text/html; charset=UTF-8"%>
 <%@page errorPage="../tooltwist/basic/error.jsp"%>
 <%@page import="java.text.DateFormat"%>
 <%@page import="tooltwist.misc.DateUtils"%>
@@ -32,7 +25,6 @@
 <%@page import="tooltwist.wbd.WbdSession"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
-<%@page contentType="text/html; charset=UTF-8" %>
 <%@page import="tooltwist.skypepi.productionHelpers.ForgotPasswordProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
@@ -41,18 +33,18 @@
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
 
 <%
-	String jspName = "skypepi-22";
+	String jspName = "searchPage";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14 = null;
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_forgotPassword_18 = null;
 try {
-	Properties productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14Params.setProperty("navpointId", "/ttsvr/n/Forgot-Password/skypepi-22");
-	productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14Params.setProperty("cancelNavpoint", "/ttsvr/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14Params.setProperty("forgotPasswordOp", "skypepi.widgets.forgotPassword.forgotPassword");
-	productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14 = new tooltwist.skypepi.productionHelpers.ForgotPasswordProductionHelper(productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14Params);
-	productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14.callPreFetch(jh);
+	Properties productionHelper_skypepi_pages_portal_p_forgotPassword_18Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_forgotPassword_18Params.setProperty("navpointId", "/ttsvr/n/Forgot-Password/skypepi-22");
+	productionHelper_skypepi_pages_portal_p_forgotPassword_18Params.setProperty("cancelNavpoint", "/ttsvr/n/Login/skypepi-75");
+	productionHelper_skypepi_pages_portal_p_forgotPassword_18Params.setProperty("forgotPasswordOp", "skypepi.widgets.forgotPassword.forgotPassword");
+	productionHelper_skypepi_pages_portal_p_forgotPassword_18 = new tooltwist.skypepi.productionHelpers.ForgotPasswordProductionHelper(productionHelper_skypepi_pages_portal_p_forgotPassword_18Params);
+	productionHelper_skypepi_pages_portal_p_forgotPassword_18.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_forgotPassword_18", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_35 = null;
@@ -62,6 +54,15 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_notAuth_35.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_35", e);
+}
+
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_55 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_55Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_notAuth_55 = new tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_55Params);
+	productionHelper_skypepi_zones_portal_z_header_notAuth_55.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_55", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_52 = null;
@@ -137,13 +138,13 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_54", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_37 = null;
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_footer_23 = null;
 try {
-	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_37 = new tooltwist.skypepi.productionHelpers.ProgressProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_37Params);
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_37.callPreFetch(jh);
+	Properties productionHelper_skypepi_zones_portal_z_footer_23Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_footer_23 = new tooltwist.skypepi.productionHelpers.ProgressProductionHelper(productionHelper_skypepi_zones_portal_z_footer_23Params);
+	productionHelper_skypepi_zones_portal_z_footer_23.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_37", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_footer_23", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_40 = null;
@@ -156,19 +157,18 @@ try {
 }
 
 
-
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
-<html>
+<html> 
+	<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="generator" content="ToolTwist" />
+<% if ( !"".equals("")) { %> 
+<link rel="canonical" href="">
+<% } %>
+<title></title>
 
-  <head>
-    <title></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
-	<meta name="generator" content="ToolTwist" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
 <![endif]-->
@@ -176,48 +176,11 @@ try {
     <script src="/ttsvr/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
 <!--<![endif]-->
 
-<!-- Respond.js proxy on external server -->
-<!--     <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" /> -->
-
-    <!-- Respond.js redirect location on local server -->
-<!--     <link href="/path/to/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" /> -->
-
-    <!-- Respond.js proxy script on local server -->
-<!--     <script src="/path/to/respond.proxy.js"></script> -->
-
-<!-- <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
-<!-- <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
-<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
+<script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" />
 
 <style type='text/css'>
 /* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -234,19 +197,12 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
-  </head>
-  <body>
+</head> 
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="wbd body-production"> 
 
-
-<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- 
- <!--  Create a fluid-->
- <!-- <div class="container-fluid" -->
- 
-<div class='DivWidget' style=" width:100%;"><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
@@ -260,7 +216,7 @@ try {
  <tr>
   <td  align='left' valign='middle'><table border='0' cellpadding='0' cellspacing='0'  align='left' valign='middle'>
  <tr>
-  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
+  <td  class='magic2' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_35;
@@ -337,7 +293,7 @@ try {
 <%@page import="tooltwist.skypepi.util.*"%>
 
 <%
-boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, false);
+boolean isLogged = Boolean.valueOf(WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, "false"));
 %>
 
 <% if (!isLogged)  { %>
@@ -852,7 +808,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'>
-<a href="/ttsvr/n/home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
 </a>
 </td>
@@ -1109,7 +1065,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu'><div class='DivWidget' style=""><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.bootstrap.widgets.NavBarWidget) --%>
+  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_40;
@@ -1130,46 +1086,129 @@ try {
 	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
 	AltLang lang = h.getAltLang();
 %>
-  <nav class="navbar  navbar-default" role="navigation" id="">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/ttsvr/MISSING_LINK/skypepi-94"></a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav ">
-<% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67"><%=lang.getString("Home", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=lang.getString("myDetails", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=lang.getString("myCurrentEnrolment", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myProgressions/skypepi-70"><%=lang.getString("myProgression", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74"><%=lang.getString("myForum", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Consent/skypepi-97"><%=lang.getString("myConsent", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72"><%=lang.getString("myOnlineBooking", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67"><%=lang.getString("myClass", null, "") %></a>
-</li>
- <% } %>        </ul>
-      </div>
-    </div>
-  </nav><%
+
+<nav class="navbar  navbar-default" role="navigation" id="">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/ttsvr/n/skypepi-68"></a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav ">
+<% boolean isPublic = true;%><% if (h.isParent()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108">myStudents</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isParentStudent()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97">myConsent</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && !h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+<% if (h.isCocAccepted()) { %>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+ <% } %> 
+<% if (h.isCocAccepted()) { %>
+				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
+ <% } %> 
+<% isPublic = false; %>
+ <% } %> 
+ <% if (isPublic) { 
+ %>				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+ <% } 
+ %>			</ul>
+		</div>
+	</div>
+</nav><%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.bootstrap.widgets.NavBarWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
 }
 %>
 </td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
-  <td  class='magic' align='left' valign='top'></td>
+  <td  class='magic text-push' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@55 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_55;
+	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
+	String snippetVar_navpointId = "/ttsvr/n/Forgot-Password/skypepi-22";
+	String snippetVar_widgetName = "@55";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@55";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
+<%
+	LanguageSelectorProductionHelper h = (LanguageSelectorProductionHelper) helper;
+	String languageSelectorGUI = h.getLanguageSelectorGUI();
+	
+// 	String params = "";
+// 	for (String param: request.getParameterMap().keySet()) {
+// 		params += (params.length() == 0) ? "" : "&";
+// 		params += param + "=" + request.getParameter(param);
+// 	}
+	
+%>
+<form id="form-languageSelector" method="post" action="<%=snippetVar_navpointId%>" style="height: 24px;margin: 0px; padding: 0px;">
+	<input type="hidden" name="op" value="<%=snippetVar_languageSelectorOp%>"/>
+	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
+	<%=languageSelectorGUI %>
+</form>
+<script>
+
+var LanguageSelector = function() {
+	return {
+		changeLanguage: function(languageCode) {
+			var formLanguageSelector = $("#form-languageSelector");
+			formLanguageSelector.attr('action','<%=snippetVar_navpointId%>'+'?languageCode='+languageCode+'&enrolmentID=<%=request.getParameter("enrolmentID") %>');
+			formLanguageSelector.submit();
+		},
+
+		init: function() {
+		}
+	};
+}();
+
+</script>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@55 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget)", e);
+}
+%>
+</td>
  </tr>
 </table>
 </td>
@@ -1427,24 +1466,26 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
-</div>
-<div class='DivWidget' style=""><table border='0' cellpadding='0' cellspacing='0'  height='60' align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'></td>
+</td>
  </tr>
-</table>
-</div>
-<div class='DivWidget page-content' style=""><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
-  <td  align='center' valign='top'><div class='DivWidget bc-form' style=" width:320;"><%-- Widget skypepi.pages.portal_p_btsrpForgotPasswordpage@14 (type=tooltwist.skypepi.widgets.ForgotPasswordWidget) --%>
+  <td  height='60'></td>
+ </tr>
+ <tr>
+  <td ><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  class='bc-form' align='center' valign='top'></td>
+ </tr>
+ <tr>
+  <td  height='20'><%-- Widget skypepi.pages.portal_p_forgotPassword@18 (type=tooltwist.skypepi.widgets.ForgotPasswordWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btsrpForgotPasswordpage_14;
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_forgotPassword_18;
 	String snippetVar_forgotPasswordOp = "skypepi.widgets.forgotPassword.forgotPassword";
 	String snippetVar_navpointId = "/ttsvr/n/Forgot-Password/skypepi-22";
-	String snippetVar_cancelNavpoint = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_widgetName = "@14";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_btsrpForgotPasswordpage@14";
+	String snippetVar_cancelNavpoint = "/ttsvr/n/Login/skypepi-75";
+	String snippetVar_widgetName = "@18";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_forgotPassword@18";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1623,154 +1664,119 @@ var ForgotPassword = function() {
 
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btsrpForgotPasswordpage@14 (type=tooltwist.skypepi.widgets.ForgotPasswordWidget)", e);
-}
-%>
-</div>
-</td>
- </tr>
-</table>
-</div>
-<table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  height='60' align='left' valign='top'></td>
- </tr>
-</table>
-</td>
- </tr>
-</table>
-<div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  height='20' align='left' valign='top'></td>
- </tr>
- <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
-<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
-</div>
-<div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
-</div>
-</td>
- </tr>
-</table>
-</td>
- </tr>
- <tr>
-  <td  height='20'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'></td>
-  <td ></td>
-  <td ></td>
-  <td ></td>
- </tr>
-</table>
-</td>
- </tr>
- <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-2"><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_positiveLogo.png" border="0">
-</td>
-  <td  class='magic'></td>
-  <td  class='magic'><%-- Widget skypepi.zones.portal_z_responsiveFooter@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
-<%
-try {
-	String snippetVar_dotSize = "5";
-	String snippetVar_widgetName = "@35";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@35";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-<table cellpadding="0" cellspacing="0">
-<tr>
-<td>
-<a href="http://www.tooltwist.com" target="_blank">
-<image src="/ttsvr/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
-</a>
-</td>
-
-<%
-	// Check for an error that has occurred since the JSP started.
-	if (WbdSession.numErrors(jh.getCredentials()) > 0)
-	{
-		String snippetVar_divName = "wbdErrorDiv";
-		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		String snippetVar_dotColor = "green";
-%>
-<td width="2" nowrap></td>
-<td valign="bottom">
-<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
-onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
-</td>
-<td>
-<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
-<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
-<code>
-<%=snippetVar_errorMsg%>
-</code>
-</div>
-</td>
-
-<%
-	}
-%>
-</tr>
-</table>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_forgotPassword@18 (type=tooltwist.skypepi.widgets.ForgotPasswordWidget)", e);
 }
 %>
 </td>
-  <td  class='magic'></td>
-  <td  class='magic'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
-</td>
  </tr>
  <tr>
-  <td  height='30'></td>
-  <td ></td>
-  <td ></td>
-  <td ></td>
-  <td ></td>
- </tr>
-</table>
-</div>
-<div  class="col-md-7"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
+  <td  align='center'></td>
  </tr>
  <tr>
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.1 Build 20140602</p></span></td>
+  <td  align='center'></td>
+ </tr>
+</table>
+</td>
  </tr>
  <tr>
   <td ></td>
  </tr>
+ <tr>
+  <td ></td>
+ </tr>
+ <tr>
+  <td ></td>
+ </tr>
+ <tr>
+  <td ></td>
+ </tr>
+ <tr>
+  <td ></td>
+ </tr>
+ <tr>
+  <td ></td>
+ </tr>
+ <tr>
+  <td  height='30'></td>
+ </tr>
+ <tr>
+  <td ><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+ <tr>
+  <td  class='footer' height='200' align='center' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='980' align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+ <tr>
+  <td  height='20' align='left' valign='top'></td>
+ </tr>
+ <tr>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='right' valign='top'>
+ <tr>
+  <td  align='left' valign='middle'><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></td>
+  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></td>
+  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></td>
+  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgressions</a></td>
+  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
+  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBookings</a></td>
+  <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></td>
+  <td  width='300' align='right'></td>
+ </tr>
 </table>
-</div>
-<div  class="col-md-1 magic2">
+</td>
+ </tr>
+ <tr>
+  <td  height='50'></td>
+ </tr>
+ <tr>
+  <td ><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'>
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_positiveLogo.png" border="0">
+</td>
+  <td  width='20'></td>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
+ </tr>
+ <tr>
+  <td  height='8'></td>
+ </tr>
+ <tr>
+  <td ><span class="wbdRichText"><table border="0" cellspacing="0" cellpadding="0" align="left">
+<tbody>
+<tr>
+<td align="right" valign="top">
+<p>v 2.1</p>
+</td>
+<td width="4">&nbsp;</td>
+<td align="left" valign="top">
+<p>v 2.1 Build 20140317</p>
+</td>
+</tr>
+</tbody>
+</table></span></td>
+ </tr>
+</table>
+</td>
+  <td  width='40'></td>
+  <td  valign='top'>
 <img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
-</div>
-<div  class="col-md-1 magic2"><%-- Widget skypepi.zones.portal_z_responsiveFooter@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
+</td>
+  <td  width='10'></td>
+  <td  valign='top'><%-- Widget skypepi.zones.portal_z_footer@6 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
 <%
 try {
 	String snippetVar_dotSize = "5";
-	String snippetVar_widgetName = "@29";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@29";
+	String snippetVar_widgetName = "@6";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_footer@6";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1812,20 +1818,27 @@ onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inlin
 </table>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_footer@6 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
 }
 %>
-</div>
-</div>
+</td>
+ </tr>
+</table>
+</td>
+ </tr>
+</table>
+</td>
+ </tr>
+</table>
 </td>
  </tr>
  <tr>
-  <td ><%-- Widget skypepi.zones.portal_z_responsiveFooter@37 (type=tooltwist.skypepi.widgets.ProgressWidget) --%>
+  <td ><%-- Widget skypepi.zones.portal_z_footer@23 (type=tooltwist.skypepi.widgets.ProgressWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_37;
-	String snippetVar_widgetName = "@37";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@37";
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_footer_23;
+	String snippetVar_widgetName = "@23";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_footer@23";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1935,39 +1948,17 @@ try {
 
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@37 (type=tooltwist.skypepi.widgets.ProgressWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_footer@23 (type=tooltwist.skypepi.widgets.ProgressWidget)", e);
 }
 %>
 </td>
  </tr>
 </table>
-</div>
-</div>
 </td>
  </tr>
 </table>
-</div>
 
-
-<!--
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
- -->
-
-	<!-- footer for responsivePage -->
-
-<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
-<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
-    <!--
-    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
-    <script src="/ttsvr/bootstrap/js/respond.js"></script>
-    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
-    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
-    -->
-  <script type="text/javascript">
+<script type="text/javascript">
 var Progress = function() {
 	return {
 		myVariable: null,
@@ -2051,5 +2042,6 @@ jQuery(Progress.init());
 jQuery.fn.reset = function () {
   $(this).each (function() { this.reset(); });
 };</script>
+
 </body>
 </html>

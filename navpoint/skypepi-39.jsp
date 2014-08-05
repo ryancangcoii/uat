@@ -1802,6 +1802,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
  </tr>
 </table>
 
+<script type="text/javascript"></script>
 <script type="text/javascript">
 var Progress = function() {
 	return {

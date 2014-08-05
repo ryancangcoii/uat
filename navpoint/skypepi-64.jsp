@@ -549,11 +549,25 @@ try {
 	AltLang lang = h.getAltLang();
 %>
 <style>
+
+div.media, div.media > iframe {
+	width: 100% !important;
+}
+div.media {
+	margin-top: 0px;
+} 
+.cocAccept td {
+	padding: 10px;
+}
+.nav-tabs > li > a {
+	border-radius: 0px;
+}
+
 .portal-ribbon .left-edge.fork {
 	width: 150px;
 }
 </style>
-  
+
 <div class="bc-container portal-ribbon">
 <div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("certificate", null, "") %></span></div>
 <br><br><br>
@@ -575,7 +589,7 @@ try {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="Back" />
 									</a>
-									<a  href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
+									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=request.getParameter("enrolmentID") %>">
 										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
 									</a>
 									
@@ -586,8 +600,12 @@ try {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
-							
+						<object data="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=request.getParameter("enrolmentID") %>" type="application/pdf" width="100%" height="100%">
+						<p>It appears you don\'t have a PDF plugin for this browser.
+						No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to
+						download the PDF file.</a>
+						</object>
+						
 						</td>
 					</tr>
 				</table>

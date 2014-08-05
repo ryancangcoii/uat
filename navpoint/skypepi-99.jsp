@@ -38,22 +38,21 @@
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
 
 <%
 	String jspName = "skypepi-99";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23 = null;
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24 = null;
 try {
-	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("blogAdminBlogListDeleteNavpoint", "");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("blogAdminBlogListNavpoint", "skypepi-106");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("category", "");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params.setProperty("categoryCount", "5");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23 = new tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23Params);
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23.callPreFetch(jh);
+	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24Params.setProperty("blogAdminBlogListDeleteNavpoint", "");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24Params.setProperty("blogAdminBlogListNavpoint", "skypepi-106");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24Params.setProperty("category", "1");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24Params.setProperty("categoryCount", "20");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24 = new tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24Params);
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_52 = null;
@@ -131,20 +130,10 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_40", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21 = null;
-try {
-	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21Params.setProperty("snippets", "Announcements");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21 = new tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21Params);
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21", e);
-}
-
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
   <head>
@@ -153,7 +142,6 @@ try {
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -177,6 +165,9 @@ try {
 
 <style type='text/css'>
 /* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -220,11 +211,11 @@ th.header {
 } 
 
 th.headerSortUp { 
-    background: url("/ttsvr/blog/script/jquery_tablesorter/themes/blue/asc.gif") no-repeat 98% center #3399FF;  
+    background: url("/ttsvr/blog/script/jquery_tablesorter/themes/blue/asc.gif") no-repeat 98% center #3399FF;
 }
 
 th.headerSortDown { 
-    background: url("/ttsvr/blog/script/jquery_tablesorter/themes/blue/desc.gif") no-repeat 98% center #3399FF;  
+    background: url("/ttsvr/blog/script/jquery_tablesorter/themes/blue/desc.gif") no-repeat 98% center #3399FF;
 
 }
 
@@ -254,6 +245,20 @@ th.headerSortDown {
     overflow-x: auto;
     overflow-y: hidden;
     /* width: 760px; */
+}
+
+.buttonAdd {
+	height: 45px;
+	background-color: #00a3e4;
+	font-weight: bold;
+	font-size: 18px;
+	color: #ffffff;
+	text-align:center;
+	display: inline-block;
+}
+
+.buttonAdd:hover {
+	text-decoration:none;
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -338,7 +343,7 @@ try {
 <%@page import="tooltwist.skypepi.util.*"%>
 
 <%
-boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, false);
+boolean isLogged = Boolean.valueOf(WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, "false"));
 %>
 
 <% if (!isLogged)  { %>
@@ -850,7 +855,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu'><div class='DivWidget' style=""><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.bootstrap.widgets.NavBarWidget) --%>
+  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_40;
@@ -871,44 +876,76 @@ try {
 	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
 	AltLang lang = h.getAltLang();
 %>
-  <nav class="navbar  navbar-default" role="navigation" id="">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/ttsvr/MISSING_LINK/skypepi-94"></a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav ">
-<% if (!(h.isParent()) || (true)) { %><li class=""><a href="/ttsvr/n/home/skypepi-67"><%=lang.getString("Home", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=lang.getString("Announcement", null, "") %></a>
-<span></span>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=lang.getString("Static Document", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=lang.getString("Translation Table", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=lang.getString("System Setting", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=lang.getString("Reserved", null, "") %></a>
-</li>
- <% } %>        </ul>
-      </div>
-    </div>
-  </nav><%
+
+<nav class="navbar  navbar-default" role="navigation" id="">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/ttsvr/n/skypepi-68"></a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav ">
+<% boolean isPublic = true;%><% if (h.isParent()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isParentStudent()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && !h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+<% isPublic = false; %>
+ <% } %> 
+ <% if (isPublic) { 
+ %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+ <% } 
+ %>			</ul>
+		</div>
+	</div>
+</nav><%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.bootstrap.widgets.NavBarWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
 }
 %>
 </td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/n/home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1172,29 +1209,30 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
+<div class='DivWidget page-content' style=""></div>
 <table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
   <td  height='30' align='left' valign='top'></td>
  </tr>
 </table>
-<div class='DivWidget page-content standard-width' style=""><%-- Widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@23 (type=tooltwist.blog.widgets.BlogAdminBlogListWidget) --%>
+<div class='DivWidget page-content standard-width' style=""><%-- Widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@24 (type=tooltwist.blog.widgets.BlogAdminBlogListWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_23;
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_24;
 	String snippetVar_blogAdminBlogListNavpoint = "skypepi-106";
 	String snippetVar_blogAdminBlogListDeleteNavpoint = "";
-	String snippetVar_category = "";
-	String snippetVar_categoryCount = "5";
-	String snippetVar_widgetName = "@23";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementAdmin@23";
+	String snippetVar_category = "1";
+	String snippetVar_categoryCount = "20";
+	String snippetVar_widgetName = "@24";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementAdmin@24";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
+	<%@page import="tooltwist.skypepi.util.StringUtil"%>
 	<%@page import="tooltwist.wbd.WbdProductionHelper"%>
 	<%@page import="com.dinaa.data.XData"%>
-	<%@page
-		import="tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper"%>
+	<%@page import="tooltwist.blog.productionHelpers.BlogAdminBlogListProductionHelper"%>
 	<%@page import="tooltwist.misc.JspHelper"%>
 	<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 	<%@page import="tooltwist.ecommerce.RoutingUIM"%>
@@ -1206,23 +1244,13 @@ try {
 		BlogAdminBlogListProductionHelper h = (BlogAdminBlogListProductionHelper) helper;
 		XData data = h.getData(jh);
 	%>
-
 	<!-- ********** INSERT HTML HERE ********** -->
-	<link rel="stylesheet" type="text/css"
-		href="/ttsvr/blog/stylesheet/blog.css" />
-	<style>
-.portal-ribbon .left-edge.fork {
-	width: 130px;
-}
-</style>
-
+	<link rel="stylesheet" type="text/css" href="/ttsvr/blog/stylesheet/blog.css" />
 	<div class="bc-container portal-ribbon">
 		<div class="ribbon-wrap left-edge fork lblue">
 			<span>Announcement</span>
 		</div>
-
 		<br /> <br /> <br />
-		<input type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())">
 		<div>
 			<%
 				XData column = h.getColumns();
@@ -1230,48 +1258,47 @@ try {
 				int ctr = 0;
 			%>
 			<div class="buttonPosition">
-				<span style="float: right;">
-					
+				<div style="display: inline-block;">
 					<table>
 						<tr>
+							<td style="vertical-align: middle; padding-right: 10px;">Search:</td>
 							<td style="vertical-align: middle; padding-right: 10px;">
-								<a href="<%=snippetVar_blogAdminBlogListNavpoint%>">Add</a> | Search:</td>
-							<td style="vertical-align: middle; padding-right: 10px;"><select
-								id="selectedField" name="selectedField"
-								onchange="BlogAdminBlogList.getSelectedName(this.value);">
+								<select id="selectedField" name="selectedField" class="form-control" style="width: 200px" onchange="BlogAdminBlogList.getSelectedName(this.value);">
 									<option value="">Select</option>
-									<%
-										for (columnNodes.first(); columnNodes.next();) {
-									%>
-									<option value="<%=columnNodes.getText("columnDB")%>"><%=columnNodes.getText("columnDisplay")%></option>
-									<%
-										}
-									%>
-							</select></td>
+									<% for (columnNodes.first(); columnNodes.next();) { %>
+										<option value="<%=columnNodes.getText("columnDB")%>"><%=columnNodes.getText("columnDisplay")%></option>
+									<% } %>
+								</select>
+							</td>
 							<td id="textbox_filter" style="vertical-align: middle;">
-								<%
-									if (h.isHeader()) {
-								%> <input type="text"
-								class="datepickerInput blog_form_datepicker_medium boxwidth txtField"
-								id="txtField" name="bdPublishDate" /> <%
- 	} else {
- %> <input
-								type="text" id="txtField" class="txtField boxwidth"
-								onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;">
-								<%
-									}
-								%>
+								<% if (h.isHeader()) { %> 
+									<input type="text" class="datepickerInput blog_form_datepicker_medium boxwidth txtField" id="txtField" name="bdPublishDate" /> 
+								<% } else { %> 
+									<input type="text" id="txtField" class="txtField boxwidth" onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;"> 
+								<% } %>
 							</td>
 						</tr>
 					</table>
-
-				</span>
+				</div>
+				<div style="display: inline-block; float: right;">
+					<table width="100%">
+						<tr>
+							<td><input class="buttonBlue" type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())" /></td>
+							<td align="right">
+								<a href="<%=snippetVar_blogAdminBlogListNavpoint%>" style="margin-left: 1px;"> 
+									<input class="buttonBlue" type="button" value="Add New +" name="btnAdd" id="btnAdd" />
+								</a>
+							</td>
+						</tr>
+					</table>
+				</div>
 				<%--
-						<input class="paginate_button" style="border:0px;" type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())">
-						 --%>
+					<input class="paginate_button" style="border:0px;" type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())">
+					 --%>
 			</div>
-
-			<div id="pageNavPosition" class="pagination"></div>
+			<% if (h.getxNodes().getNumNodes() > Integer.parseInt(snippetVar_categoryCount)) { %>
+				<div id="pageNavPosition" class="pagination"></div>
+			<% } %>
 			<div id="blogAdminBlogList">
 				<form>
 					<%
@@ -1279,355 +1306,104 @@ try {
 						XNodes xNodes = h.getxNodes();
 					%>
 					<div id="wbdblog_blog_list_div" class="scroll">
-						<input type="hidden" id="rowCount" name="rowCount"> <input
-							type="hidden" name="op"
-							value="blog_widgets.blogAdminBlogList.blogAdminBlogList">
-						<input type="hidden" name="selected" id="selected"> <input
-							type="hidden" id="categoryCount" value="<%=snippetVar_categoryCount%>" /> <input
-							type="hidden" id="blogSettingDateFormat"
-							name="blogSettingDateFormat" value="<%=h.getDateFormat()%>">
+						<input type="hidden" id="rowCount" name="rowCount"> <input type="hidden" name="op" value="blog_widgets.blogAdminBlogList.blogAdminBlogList"> <input type="hidden" name="selected" id="selected"> <input type="hidden" id="categoryCount" value="<%=snippetVar_categoryCount%>" /> <input type="hidden" id="blogSettingDateFormat" name="blogSettingDateFormat" value="<%=h.getDateFormat()%>">
 						<div class="portalTable">
 							<table id="blogSettingListTable" class="">
 								<thead>
 									<tr class="wbdblog_header">
-										<%
-											for (columnNodes.first(); columnNodes.next();) {
-										%>
-										<th
-											class="<%=columnNodes.getText("columnDB").equals(
-						h.getColumnType()) ? h.getSortClass() : ""%>"
-											style="width: <%=columnNodes.getText("columnDisplay")
-						.equals("Content") ? "2000px" : "200px"%>;">
-											<div
-												onclick="BlogAdminBlogList.sortCategory('<%=h.getSort()%>','<%=columnNodes.getText("columnDB")%>',jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val());"
-												class="sortable">
-												<%=columnNodes.getText("columnDisplay")%>
-											</div>
-										</th>
-										<%
-											}
-										%>
+										<% for (columnNodes.first(); columnNodes.next();) { %>
+											<th class="<%=columnNodes.getText("columnDB").equals(h.getColumnType()) ? h.getSortClass() : ""%>" style="width: <%=columnNodes.getText("columnDisplay").equals("Content") ? "2000px" : "200px"%>;">
+												<div onclick="BlogAdminBlogList.sortCategory('<%=h.getSort()%>','<%=columnNodes.getText("columnDB")%>',jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val());" class="sortable">
+													<%=columnNodes.getText("columnDisplay")%>
+												</div>
+											</th>
+										<% } %>
 										<th width="120px">Action</th>
 									</tr>
 								</thead>
-
 								<tbody id="blogSettingListTableBody">
-									<%
-										if (xNodes.getNumNodes() > 0) {
-									%>
-
-									<%
-										for (xNodes.first(); xNodes.next();) {
-									%>
-									<tr
-										class="<%=!xNodes.getText("expirationDate").equals("")
-							&& PublicUtil.convertStringFromDBToDateTime(
-									xNodes.getText("expirationDate")).getTime() < new Date()
-									.getTime() ? "archive" : ""%> white div-bottom">
-										<%
-											for (columnNodes.first(); columnNodes.next();) {
-										%>
-
-										<%
-											if ("Title".equals(columnNodes.getText("columnDisplay"))) {
-										%>
-										<td align="left" valign="top"><%=xNodes.getText("title")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											if ("Publish Date".equals(columnNodes
-																.getText("columnDisplay"))) {
-										%>
-										<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil
-									.convertStringFromDBToDateTime(xNodes
-											.getText("publishedDate")),
-									h.getUI_DATEFORMAT() + " hh:mm a")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											if ("Expire Date".equals(columnNodes
-																.getText("columnDisplay"))) {
-										%>
-										<td align="left" valign="top"><%=PublicUtil
-									.formatDate(
-											PublicUtil
-													.convertStringFromDBToDateTime(xNodes
-															.getText("expirationDate")),
-											h.getUI_DATEFORMAT()).equals("") ? ""
-									: PublicUtil.formatDate(
-											PublicUtil
-													.convertStringFromDBToDateTime(xNodes
-															.getText("expirationDate")),
-											h.getUI_DATEFORMAT() + " hh:mm a")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											if ("Featured".equals(columnNodes
-																.getText("columnDisplay"))) {
-										%>
-										<td align="left" valign="top"><%=xNodes.getText("featured")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											if ("Allow comments".equals(columnNodes
-																.getText("columnDisplay"))) {
-										%>
-										<td align="left" valign="top"><%=xNodes.getText("commentsAllowed")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											if ("Tags".equals(columnNodes.getText("columnDisplay"))) {
-										%>
-										<td align="left" valign="top"><%=xNodes.getText("tags")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											if ("Content".equals(columnNodes
-																.getText("columnDisplay"))) {
-
-															String contentHolder = xNodes.getText("content");
-															contentHolder = PublicUtil
-																	.removeHtml(contentHolder);
-															if (contentHolder.length() > 200) {
-																contentHolder = contentHolder.substring(0, 159)
-																		+ "...";
-															}
-										%>
-										<td align="left" valign="top"><%=contentHolder%></td>
-										<%
-											}
-										%>
-
-										<%
-											if ("Author".equals(columnNodes
-																.getText("columnDisplay"))) {
-										%>
-										<td align="left" valign="top"><%=xNodes.getText("author")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											if ("Category Name".equals(columnNodes
-																.getText("columnDisplay"))) {
-										%>
-										<td align="right" valign="top"><%=xNodes.getText("blogCategoryName")%>
-										</td>
-										<%
-											}
-										%>
-										<%
-											}
-										%>
-										<td align="left" valign="top"><span
-											class="wbdblog_button"> <a
-												href="<%=snippetVar_blogAdminBlogListNavpoint%>?blogId=<%=xNodes.getText("blogId")%> ">
-													Edit </a> | <a href="#"
-												onclick="BlogAdminBlogList.deleteBlogList('<%=xNodes.getText("blogId")%>');return false">
-													Delete </a>
-										</span></td>
-
-									</tr>
-									<%
-										}
-											ctr++;
-									%>
-									<%
-										} else {
-									%>
-									<tr class="grey">
-										<td colspan="<%=ctr%>" align="center">No search found on
-											<%=XData.htmlString(h.getColumnLabel())%> - <%=XData.htmlString(h.getTxtvalue())%>
-										</td>
-									</tr>
-									<%
-										}
-									%>
+									<% if (xNodes.getNumNodes() > 0) { %>
+										<% for (xNodes.first(); xNodes.next();) { %>
+											<tr class="<%=!xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")).getTime() < new Date().getTime() ? "archive" : ""%> white div-bottom">
+												<% for (columnNodes.first(); columnNodes.next();) { %>
+													<% if ("Title".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=StringUtil.asciiToString(xNodes.getText("title"))%></td>
+													<% } %>
+													<% if ("Language".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=xNodes.getText("languageCode")%></td>
+													<% } %>
+													<% if ("Valid From".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("publishedDate")), h.getUI_DATEFORMAT())%></td>
+													<% } %>
+													<% if ("Valid To".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")), h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")), h.getUI_DATEFORMAT())%></td>
+													<% } %>
+													<% if ("Approval Date".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("approveDate")), h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("approveDate")), h.getUI_DATEFORMAT())%></td>
+													<% } %>
+													<% if ("Featured".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=xNodes.getText("featured")%></td>
+													<% } %>
+													<% if ("Allow comments".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=xNodes.getText("commentsAllowed")%></td>
+													<% } %>
+													<% if ("Tags".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=xNodes.getText("tags")%></td>
+													<% } %>
+													<% if ("Content".equals(columnNodes.getText("columnDisplay"))) {
+														String contentHolder = StringUtil.asciiToString(xNodes.getText("content"));
+														contentHolder = PublicUtil.removeHtml(contentHolder);
+														if (contentHolder.length() > 200) {
+															contentHolder = contentHolder.substring(0, 159) + "...";
+														}
+														%>
+															<td align="left" valign="top"><%=contentHolder%></td>
+													<% } %>
+													<% if ("Editor".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=xNodes.getText("author")%></td>
+													<% } %>
+													<% if ("Approver".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="left" valign="top"><%=xNodes.getText("approver")%></td>
+													<% } %>
+													<% if ("Category Name".equals(columnNodes.getText("columnDisplay"))) { %>
+														<td align="right" valign="top"><%=xNodes.getText("blogCategoryName")%></td>
+													<% } %>
+												<% } %>
+												<td align="left" valign="top" nowrap>
+													<span class="wbdblog_button"> 
+														<a href="<%=snippetVar_blogAdminBlogListNavpoint%>?blogId=<%=xNodes.getText("blogId")%> "> 
+															<img src="/ttsvr/skypepi/images/edit.png" width="22" height="22" class="icon-edit" />
+														</a>
+														<a href="#" onclick="BlogAdminBlogList.deleteBlogList('<%=xNodes.getText("blogId")%>');return false"> 
+															<img src="/ttsvr/skypepi/images/bin.png" width="22" height="22" class="icon-bin" />
+														</a>
+													</span>
+												</td>
+											</tr>
+										<% } ctr++; %>
+									<% } else { %>
+										<tr class="grey">
+											<td colspan="<%=ctr%>" align="center">No search found on <%=XData.htmlString(h.getColumnLabel())%> - <%=XData.htmlString(h.getTxtvalue())%>
+											</td>
+										</tr>
+									<% } %>
 								</tbody>
 							</table>
 						</div>
 					</div>
 				</form>
 			</div>
-			<div id="pageNavPosition2" class="pagination"></div>
+			<% if (h.getxNodes().getNumNodes() > Integer.parseInt(snippetVar_categoryCount)) { %>
+				<div id="pageNavPosition2" class="pagination"></div>
+			<% } %>
 		</div>
-
 	</div>
 	<%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@23 (type=tooltwist.blog.widgets.BlogAdminBlogListWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@24 (type=tooltwist.blog.widgets.BlogAdminBlogListWidget)", e);
 }
 %>
 </div>
-<table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  height='30' align='left' valign='top'></td>
- </tr>
-</table>
-<%-- Widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@21 (type=tooltwist.skypepi.widgets.StudentHomeWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAnnouncementAdmin_21;
-	String snippetVar_snippets = "Announcements";
-	String snippetVar_widgetName = "@21";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementAdmin@21";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="org.w3c.dom.Element"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.StudentHomeProductionHelper"%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.wbd.WbdCache"%>
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
-<%
-	// Get the production helper for this widget
-	StudentHomeProductionHelper h = (StudentHomeProductionHelper) helper;
-	XData data = h.getData(jh);
-	AltLang lang = h.getAltLang();
-	String parentId = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.SIGN_ON_ID, "0");
-	Boolean isParent = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_SELECTED_PARENT, false);
-%>
-
-<!-- ********** INSERT HTML HERE ********** -->
-<div>
-	
-	<% if("Welcome".equals(snippetVar_snippets)) { %>
-	
-	<table class="">
-			<tr>
-				<td width="" align="left" class="heading color-blue" colspan="2"><%=lang.getString("Welcome", null, "") %>&nbsp;</td>
-			</tr>
-			<tr>
-				<td height="30"></td>
-			</tr>
-			<tr class="body-text color-regular">
-				<td style="padding: 20px;"><img alt="British Council" src="/ttsvr/skypepi/images/brtishcouncil.png" title="British Council" width="190"/></td>
-				<td valign="top" style="padding: 20px;"><%=lang.getString("Welcome to the British Council's new online payment portal. We hope you enjoy using it!", null, "") %></td>
-			</tr>
-		</table>
-	<% }  else if ("Link".equals(snippetVar_snippets)) { %>
-	
-	<table width="730">
-			<tr>
-				<td width="" align="left" class="heading color-blue"><%=lang.getString("Re-registration details", null, "") %>&nbsp;</td>
-				<td width="" align="right"></td>
-			</tr>
-			<tr>
-				<td height="30"></td>
-			</tr>
-			<tr class="body-text color-regular">
-				<td valign="top" style="padding: 20px;" colspan="2" align="center">
-					<div style="width: 400px;"><%=lang.getString("Click on the link below for an easy step guide on how to use the re-registration tool. It's easy and it's fast... try it out!", null, "") %>
-						<br><br>
-					<% if(!isParent) { %>
-						<% 
-						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
-						{
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_tw.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						} else {			
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/online_re-registration_easy_step_guide_en.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						}
-						%>
-					<% } else { %>
-						<% 
-						if (lang != null && lang.getCurrentLangCode().equals("zh_TW"))
-						{
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_chinese_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						} else {			
-						%>
-							<a href="<%=WbdCache.getWebappPrefix() %>/skypepi/documents/easy_step_guide_english_version.pdf" target="_blank"><%=lang.getString("Download the easy step guide", null, "") %></a>
-						<%
-						}
-						%>
-					<% } %>
-					</div>
-				</td>
-			</tr>
-		</table>
-	
-	<% }  else {%>
-
-		<table border="0" cellpadding="0" cellspacing="0" align="center" valign="top">
-		<tbody>
-			
-			<% XData announcements = h.getAnnouncements(); 
-			   XNodes announcement = announcements.getNodes("/*/Announcement");
-			   
-			   for (announcement.first(); announcement.next();) {
-			   
-				   Element announce = (Element)announcement.getCurrentNode();
-				   String ID = announce.getAttribute("ID");
-				   String title = announce.getAttribute("Title");
-				   String note = announce.getAttribute("Note");
-				   String displayIn = announce.getAttribute("DisplayIn");
-				  if (!"Portal".equals(displayIn)) continue;
-			%>
-			
-			<tr>
-				<td align="left" valign="top">
-					<div class="bc-container portal-ribbon" style="max-width: 960px;">
-							<table width="100%">
-								<tbody>
-									<tr>
-										<td width="" align="left" class="heading color-blue"
-											colspan="2"><%=title%>&nbsp;</td>
-									</tr>
-									<tr>
-										<td height="10"></td>
-									</tr>
-									<tr class="body-text color-regular">
-										<td style="padding: 20px;"><%=note%></td>
-									</tr>
-								</tbody>
-							</table>
-
-						</div>
-		
-					</td>
-			</tr>
-			<tr>
-				<td height="10"></td>
-			</tr>
-		<%
-			}
-		%>
-			
-		</tbody>
-	</table>
-
-		<% } %>
-</div>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapAnnouncementAdmin@21 (type=tooltwist.skypepi.widgets.StudentHomeWidget)", e);
-}
-%>
 <div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
@@ -1637,14 +1413,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
 <div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
 <div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
-<div  class="col-md-2"><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
+<div  class="col-md-2"><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
 </div>
 </td>
  </tr>

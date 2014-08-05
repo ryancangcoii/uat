@@ -56,11 +56,11 @@ try {
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("siteIds", "");
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("category", "1");
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("blogCount", "3");
-	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("buyingAndSellingDetails", "/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("buyingAndSellingDetails", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("categoryIds", "1");
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("characterCount", "500");
-	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("viewAllNews", "/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("blogDetails", "/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("viewAllNews", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("blogDetails", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21Params.setProperty("visibleBlog", "10");
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21 = new tooltwist.blog.productionHelpers.BlogListProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapHome_21Params);
 	productionHelper_skypepi_pages_portal_p_bstrapHome_21.callPreFetch(jh);
@@ -88,6 +88,15 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_35", e);
 }
 
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_55 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_55Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_notAuth_55 = new tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_55Params);
+	productionHelper_skypepi_zones_portal_z_header_notAuth_55.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_notAuth_55", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_52 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_52Params = new Properties();
@@ -100,13 +109,13 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("navpointId", "/n/home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("navpointId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("authenticatePage", "No");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("viewOption", "Student Selection");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("studentDashBoardNavId", "/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("homeNavId", "/n/Login/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_37Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_37 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_37Params);
 	productionHelper_skypepi_zones_portal_z_header_notAuth_37.callPreFetch(jh);
 } catch (Exception e) {
@@ -116,13 +125,13 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_38 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_38Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("navpointId", "/n/home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("navpointId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("viewOption", "Name");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("studentDashBoardNavId", "/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("homeNavId", "/n/Login/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_38Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_38Params);
 	productionHelper_skypepi_zones_portal_z_header_notAuth_38.callPreFetch(jh);
 } catch (Exception e) {
@@ -132,13 +141,13 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_53 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_53Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("navpointId", "/n/home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("navpointId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("studentDashBoardNavId", "/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("homeNavId", "/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_53Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_53Params);
 	productionHelper_skypepi_zones_portal_z_header_notAuth_53.callPreFetch(jh);
 } catch (Exception e) {
@@ -148,13 +157,13 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_54 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_54Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("navpointId", "/n/home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("navpointId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("studentDashBoardNavId", "/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("homeNavId", "/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_54 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_54Params);
 	productionHelper_skypepi_zones_portal_z_header_notAuth_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -182,7 +191,7 @@ try {
 
 
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.06 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
   <head>
@@ -191,15 +200,14 @@ try {
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<%--	
+	
 <!--[if lte IE 9]>
-    <script src="/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
+    <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
 <![endif]-->
 <!--[if gt IE 9]><!-->
-    <script src="/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
+    <script src="/ttsvr/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
 <!--<![endif]-->
---%>
+
 <!-- Respond.js proxy on external server -->
 <!--     <link href="http://externalcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" /> -->
 
@@ -209,9 +217,9 @@ try {
     <!-- Respond.js proxy script on local server -->
 <!--     <script src="/path/to/respond.proxy.js"></script> -->
 
-<!-- <script src="/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
-<!-- <link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
-<%--<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>--%>
+<!-- <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
+<!-- <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
+<script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
 
 <style type='text/css'>
 /* Styles for widget simpleDiv */
@@ -330,7 +338,7 @@ ul.news_listing span.date {
 }
 
 ul.news_listing div.item_wrapper {
-    background: url("/blog/images/news-listing-bg.png") repeat-y scroll 50% 0 #FFFFFF;
+    background: url("/ttsvr/blog/images/news-listing-bg.png") repeat-y scroll 50% 0 #FFFFFF;
     border-bottom: 1px solid #E4E4E4;
     border-top: 1px solid #E4E4E4;
     margin-bottom: 18px;
@@ -381,15 +389,38 @@ ul.news_listing div.item_wrapper {
 	margin-right: 10px;
 }/* Styles for widget simpleDiv */
 
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
 
-</style>
-<%--<link type="text/css" rel="stylesheet" href="/skypepi/stylesheet/skypepi-style.css" media="screen" />--%>
-<link type="text/css" rel="stylesheet" href="/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}</style>
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/paging.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<script src="/ttsvr/blog/script/paging.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
+    <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
 
@@ -415,12 +446,12 @@ ul.news_listing div.item_wrapper {
  <tr>
   <td  align='left' valign='middle'><table border='0' cellpadding='0' cellspacing='0'  align='left' valign='middle'>
  <tr>
-  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
+  <td  class='magic2' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_35;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/n/home/skypepi-67";
+	String snippetVar_navpointId = "/ttsvr/home";
 	String snippetVar_widgetName = "@35";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@35";
 	String snippetVar_elementId = "";
@@ -477,7 +508,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_52;
-	String snippetVar_myNavpoint = "/n/Login/skypepi-75";
+	String snippetVar_myNavpoint = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_widgetName = "@52";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@52";
 	String snippetVar_elementId = "";
@@ -492,7 +523,7 @@ try {
 <%@page import="tooltwist.skypepi.util.*"%>
 
 <%
-boolean isLogged = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, false);
+boolean isLogged = Boolean.valueOf(WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.IS_LOGGED, "false"));
 %>
 
 <% if (!isLogged)  { %>
@@ -513,11 +544,11 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_38;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/n/Login/skypepi-75";
-	String snippetVar_studentDashBoardNavId = "/n/myDetails/skypepi-68";
+	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/n/home/skypepi-67";
+	String snippetVar_navpointId = "/ttsvr/home";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@38";
@@ -638,7 +669,7 @@ try {
 			</tr>
 		</table>
 <% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
-<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/skypepi/images/animated_arrow.gif" width="30" /> </div>
+<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
 <% } %>
 </div>
 		<!-- Parent -->
@@ -648,7 +679,7 @@ try {
 	<%
 	} else {
 	%>
-		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
+		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
 	<%
 		}
 	%> 
@@ -657,7 +688,93 @@ try {
  	}
  %>
  
+ <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/ttsvr/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@38 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -670,11 +787,11 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_37;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/n/Login/skypepi-75";
-	String snippetVar_studentDashBoardNavId = "/n/myDetails/skypepi-68";
+	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "No";
-	String snippetVar_navpointId = "/n/home/skypepi-67";
+	String snippetVar_navpointId = "/ttsvr/home";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@37";
@@ -795,7 +912,7 @@ try {
 			</tr>
 		</table>
 <% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
-<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/skypepi/images/animated_arrow.gif" width="30" /> </div>
+<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
 <% } %>
 </div>
 		<!-- Parent -->
@@ -805,7 +922,7 @@ try {
 	<%
 	} else {
 	%>
-		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
+		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
 	<%
 		}
 	%> 
@@ -814,6 +931,93 @@ try {
  	}
  %>
  
+ <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
+
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/ttsvr/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@37 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -834,8 +1038,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'>
-<a href="/n/home/skypepi-67">
-	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/cropImage/skypepi.images.portal_i_logo.png" border="0">
+<a href="/ttsvr/home">
+	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
 </a>
 </td>
   <td  class='magic2' align='right'><%-- Widget skypepi.zones.portal_z_header_notAuth@53 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
@@ -843,11 +1047,11 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_53;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/n/home/skypepi-67";
+	String snippetVar_navpointId = "/ttsvr/home";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@53";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@53";
@@ -968,7 +1172,7 @@ try {
 			</tr>
 		</table>
 <% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
-<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/skypepi/images/animated_arrow.gif" width="30" /> </div>
+<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
 <% } %>
 </div>
 		<!-- Parent -->
@@ -978,7 +1182,7 @@ try {
 	<%
 	} else {
 	%>
-		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
+		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
 	<%
 		}
 	%> 
@@ -987,8 +1191,93 @@ try {
  	}
  %>
  
- 
+ <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/ttsvr/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@53 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -1006,7 +1295,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userMenu'><div class='DivWidget' style=""><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.bootstrap.widgets.NavBarWidget) --%>
+  <td  class='nav-wrapper' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_40;
@@ -1027,47 +1316,129 @@ try {
 	StudentFunctionsMenuProductionHelper h = (StudentFunctionsMenuProductionHelper) helper;
 	AltLang lang = h.getAltLang();
 %>
-  <nav class="navbar  navbar-default" role="navigation" id="">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/MISSING_LINK/skypepi-94"></a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav ">
-<% if (!(h.isParent()) || (true)) { %><li class="active"><a href="/n/home/skypepi-67"><%=lang.getString("Home", null, "") %></a>
-<span></span>
-</li>
- <% } %><% if (!(h.isParent()) || (true)) { %><li class=""><a href="/n/myDetails/skypepi-68"><%=lang.getString("myDetails", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/n/myCurrentEnrolment/skypepi-69"><%=lang.getString("myCurrentEnrolment", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/n/myProgressions/skypepi-70"><%=lang.getString("myProgression", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/n/Code-of-Conduct/skypepi-74"><%=lang.getString("myForum", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/n/Consent/skypepi-97"><%=lang.getString("myConsent", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/n/myOnlineBookings/skypepi-72"><%=lang.getString("myOnlineBooking", null, "") %></a>
-</li>
- <% } %><% if (!(h.isParent()) || (false)) { %><li class=""><a href="/n/home/skypepi-67"><%=lang.getString("myClass", null, "") %></a>
-</li>
- <% } %>        </ul>
-      </div>
-    </div>
-  </nav><%
+
+<nav class="navbar  navbar-default" role="navigation" id="">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/ttsvr/n/skypepi-68"></a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav ">
+<% boolean isPublic = true;%><% if (h.isParent()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108">myStudents</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isParentStudent()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97">myConsent</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isStudent() && !h.isLegalAge()) { %> 
+				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+<% if (h.isCocAccepted()) { %>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+ <% } %> 
+<% if (h.isCocAccepted()) { %>
+				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
+ <% } %> 
+<% isPublic = false; %>
+ <% } %> 
+ <% if (isPublic) { 
+ %>				<li class=""><a href="/ttsvr/home">Home</a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myProgressions/skypepi-70">myProgression</a></li>
+				<li class=""><a href="/ttsvr/n/Code-of-Conduct/skypepi-74">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBookings/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+ <% } 
+ %>			</ul>
+		</div>
+	</div>
+</nav><%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.bootstrap.widgets.NavBarWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
 }
 %>
 </td>
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
-  <td  class='magic' align='left' valign='top'></td>
+  <td  class='magic text-push' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_notAuth@55 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_55;
+	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
+	String snippetVar_navpointId = "/ttsvr/home";
+	String snippetVar_widgetName = "@55";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@55";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
+<%
+	LanguageSelectorProductionHelper h = (LanguageSelectorProductionHelper) helper;
+	String languageSelectorGUI = h.getLanguageSelectorGUI();
+	
+// 	String params = "";
+// 	for (String param: request.getParameterMap().keySet()) {
+// 		params += (params.length() == 0) ? "" : "&";
+// 		params += param + "=" + request.getParameter(param);
+// 	}
+	
+%>
+<form id="form-languageSelector" method="post" action="<%=snippetVar_navpointId%>" style="height: 24px;margin: 0px; padding: 0px;">
+	<input type="hidden" name="op" value="<%=snippetVar_languageSelectorOp%>"/>
+	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
+	<%=languageSelectorGUI %>
+</form>
+<script>
+
+var LanguageSelector = function() {
+	return {
+		changeLanguage: function(languageCode) {
+			var formLanguageSelector = $("#form-languageSelector");
+			formLanguageSelector.attr('action','<%=snippetVar_navpointId%>'+'?languageCode='+languageCode+'&enrolmentID=<%=request.getParameter("enrolmentID") %>');
+			formLanguageSelector.submit();
+		},
+
+		init: function() {
+		}
+	};
+}();
+
+</script>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@55 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget)", e);
+}
+%>
+</td>
  </tr>
 </table>
 </td>
@@ -1086,11 +1457,11 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_54;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/n/home/skypepi-67";
+	String snippetVar_navpointId = "/ttsvr/home";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@54";
@@ -1211,7 +1582,7 @@ try {
 			</tr>
 		</table>
 <% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
-<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/skypepi/images/animated_arrow.gif" width="30" /> </div>
+<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
 <% } %>
 </div>
 		<!-- Parent -->
@@ -1221,7 +1592,7 @@ try {
 	<%
 	} else {
 	%>
-		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
+		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
 	<%
 		}
 	%> 
@@ -1230,8 +1601,93 @@ try {
  	}
  %>
  
- 
+ <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
+<script type="text/javascript">
+	var Logout = function() {
+		return {
+			userLogout : function() {
+				$("#form-logout").submit();
+			},
+
+			studentDashboard : function() {
+				var formLogout = $("#form-logout");
+				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
+						+ '?action=studentDashBoard');
+				formLogout.submit();
+			},
+
+			selectChild : function(childId) {
+				
+				var naviId = "<%=snippetVar_navpointId%>";
+				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
+				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
+				
+				var url = "";
+				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
+					url = "/ttsvr/n/skypepi-62";
+				}
+				
+				var formLogout = $("#form-logout");
+				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
+				formLogout.submit();
+
+			},
+
+			init : function() {
+				
+				var browserName=navigator.appName; 
+				var extraIEStyle = "";
+				
+				if (browserName=="Microsoft Internet Explorer") {
+					extraIEStyle = "height: 30px;vertical-align: middle;";
+				}
+				
+				jQuery(".dropdown a[role='menuitem']").click(function() {
+					
+					var selectedName = jQuery(".dropdown a.head").attr("sname");
+					var name = jQuery(this).html();
+					
+					if (selectedName == name) return ;
+					
+					var len = name.length;
+					var space = "&nbsp;";
+					
+					for (var i = 0; i < 40-len; i++) {
+						space += "&nbsp";
+					}
+					
+					jQuery(".dropdown a.head > label").html(name + space);
+					Logout.selectChild(jQuery(this).attr("personId"));
+					
+				});
+				
+
+				$("#logout-childId").change(function() {
+					Logout.selectChild();
+				});
+				
+				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
+				var isParent = <%=isParent %>;
+				
+				if(hasLogged != '' && isParent) {
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideDown();
+					}, 2000);
+					
+					window.setTimeout(function() {
+						jQuery(".hjsel_options").slideUp();
+						jQuery("#arrow").hide();
+					}, 5000);	
+				}
+				
+			}
+		};
+	}();
+
+	jQuery(Logout.init());
+</script>
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_notAuth@54 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
@@ -1256,13 +1712,13 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <div class="carousel-inner">
           
 			<div class="item active">
-				<a href="#"><img src="/cropImage/skypepi.images.portal_i_banner1.png" alt="Banner"></a>
+				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner1.png" alt="Banner"></a>
 			</div>
 			<div class="item ">
-				<a href="#"><img src="/cropImage/skypepi.images.portal_i_banner2.png" alt="Banner"></a>
+				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner2.png" alt="Banner"></a>
 			</div>
 			<div class="item ">
-				<a href="#"><img src="/cropImage/skypepi.images.portal_i_banner3.png" alt="Banner"></a>
+				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner3.png" alt="Banner"></a>
 			</div>
    
   </div>
@@ -1290,9 +1746,9 @@ try {
 	String snippetVar_blogType = "All";
 	String snippetVar_characterCount = "500";
 	String snippetVar_visibleBlog = "10";
-	String snippetVar_blogDetails = "/MISSING_LINK/skypepi-94";
-	String snippetVar_buyingAndSellingDetails = "/MISSING_LINK/skypepi-94";
-	String snippetVar_viewAllNews = "/MISSING_LINK/skypepi-94";
+	String snippetVar_blogDetails = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_buyingAndSellingDetails = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_viewAllNews = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_categoryIds = "1";
 	String snippetVar_siteIds = "";
 	String snippetVar_widgetName = "@21";
@@ -1309,6 +1765,7 @@ try {
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
 <%@page import="com.dinaa.data.XNodes"%>
+<%@page import="tooltwist.skypepi.util.StringUtil"%>
 <%
 	// Get the production helper for this widget
 	BlogListProductionHelper h = (BlogListProductionHelper) helper;
@@ -1364,8 +1821,8 @@ try {
 			
 			 <tr class="<%=cls %>">
 		    	<td align="left" valign="top"><%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %></td>
-		   		<td align="left" valign="top"><a href="#"><%=blogList.getText("title") %></a></td>
-		        <td align="left" valign="middle"><%=blogList.getText("content") %></td>
+		   		<td align="left" valign="top"><a href="#"><%=StringUtil.asciiToString(blogList.getText("title"))%></a></td>
+		        <td align="left" valign="middle"><%=StringUtil.asciiToString(blogList.getText("content"))%></td>
 		    </tr>
     
 			<%
@@ -1403,14 +1860,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
-<div  class="col-md-2"><a href="/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
-<div  class="col-md-2"><a href="/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
-<div  class="col-md-3"><a href="/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
-<div  class="col-md-2"><a href="/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
-<div  class="col-md-2"><a href="/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-10"><div  class="col-md-1"><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></div>
+<div  class="col-md-3"><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgression</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/Code-of-Conduct/skypepi-74" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></div>
+<div  class="col-md-2"><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBooking</a></div>
 </div>
-<div  class="col-md-2"><a href="/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
+<div  class="col-md-2"><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></div>
 </div>
 </td>
  </tr>
@@ -1432,7 +1889,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
   <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="col-md-2"><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/cropImage/skypepi.images.portal_i_positiveLogo.png" border="0">
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_positiveLogo.png" border="0">
 </td>
   <td  class='magic'></td>
   <td  class='magic'><%-- Widget skypepi.zones.portal_z_responsiveFooter@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
@@ -1448,7 +1905,7 @@ try {
 <tr>
 <td>
 <a href="http://www.tooltwist.com" target="_blank">
-<image src="/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
+<image src="/ttsvr/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
 </a>
 </td>
 
@@ -1488,7 +1945,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
   <td  class='magic'></td>
   <td  class='magic'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
 </td>
  </tr>
  <tr>
@@ -1516,7 +1973,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </table>
 </div>
 <div  class="col-md-1 magic2">
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
 </div>
 <div  class="col-md-1 magic2"><%-- Widget skypepi.zones.portal_z_responsiveFooter@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
 <%
@@ -1531,7 +1988,7 @@ try {
 <tr>
 <td>
 <a href="http://www.tooltwist.com" target="_blank">
-<image src="/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
+<image src="/ttsvr/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
 </a>
 </td>
 
@@ -1635,7 +2092,7 @@ try {
         <h4 class="modal-title"><span>Processing please wait...</span></h4>
       </div>
       <div class="modal-body">
-        <img alt="" src="/skypepi/images/dialog/loadingAnimation.gif">
+        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1677,7 +2134,7 @@ try {
 	<div class='message' style="padding: 0px;" align="center">
 		<table>
 			<tr>
-				<td style="padding: 20px;"><img alt="British Council" src="/skypepi/images/brtishcouncil.png" title="British Council" width="190"/></td>
+				<td style="padding: 20px;"><img alt="British Council" src="/ttsvr/skypepi/images/brtishcouncil.png" title="British Council" width="190"/></td>
 				<td valign="top" style="padding: 20px;font-size: 20px;"><%=lang.getString("Welcome to the British Council's new online payment portal. We hope you enjoy using it!", null, "") %></td>
 			</tr>
 		</table>
@@ -1710,28 +2167,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 
 	<!-- footer for responsivePage -->
 
-<!--     <script src="/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
-<!--     <script src="/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
-<!--     <script src="/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
-<!--     <script src="/cloudmall/js/frontend.config.js"></script> -->
+<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
+<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
     <!--
-    <script src="/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
-    <script src="/bootstrap/js/respond.js"></script>
-    <script src="/bootstrap/js/less-1.5.0.min.js"></script>
-    <script src="/cloudmall/js/frontend.config.js"></script>
+    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
+    <script src="/ttsvr/bootstrap/js/respond.js"></script>
+    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
+    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
-
-<!--[if lte IE 9]>
-    <script src="/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
-<![endif]-->
-<!--[if gt IE 9]><!-->
-    <script src="/skypepi/scripts/jquery/2.1.0/jquery-2.1.0.min.js"></script>
-<!--<![endif]-->
-
-<script src="/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
-
-
-
   <script type="text/javascript">
 var BlogList = function() {
 	return {
@@ -1769,6 +2214,7 @@ var BlogList = function() {
 }();
 
 jQuery(BlogList.init()); // Run after page loads</script>
+<script type="text/javascript"></script>
 <script type="text/javascript">
 var Progress = function() {
 	return {
@@ -1817,7 +2263,7 @@ var Progress = function() {
 //					close: false,
 //					onShow: function (dialog) {
 //						jQuery(".header").css({
-//							"background": "url(/skypepi/images/dialog/header.gif)"
+//							"background": "url(/ttsvr/skypepi/images/dialog/header.gif)"
 //						});
 //					}
 //				});
@@ -1853,92 +2299,5 @@ jQuery(Progress.init());
 jQuery.fn.reset = function () {
   $(this).each (function() { this.reset(); });
 };</script>
-
- 
-<script type="text/javascript">
-	var Logout = function() {
-		return {
-			userLogout : function() {
-				$("#form-logout").submit();
-			},
-
-			studentDashboard : function() {
-				var formLogout = $("#form-logout");
-				formLogout.attr('action', '/n/myDetails/skypepi-68'
-						+ '?action=studentDashBoard');
-				formLogout.submit();
-			},
-
-			selectChild : function(childId) {
-				
-				var naviId = "/n/home/skypepi-67";
-				var receiptNavi = "skypepi-38";
-				var gradesNavi = "skypepi-64";
-				
-				var url = "";
-				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
-					url = "/n/skypepi-62";
-				}
-				
-				var formLogout = $("#form-logout");
-				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
-				formLogout.submit();
-
-			},
-
-			init : function() {
-				
-				var browserName=navigator.appName; 
-				var extraIEStyle = "";
-				
-				if (browserName=="Microsoft Internet Explorer") {
-					extraIEStyle = "height: 30px;vertical-align: middle;";
-				}
-				
-				jQuery(".dropdown a[role='menuitem']").click(function() {
-					
-					var selectedName = jQuery(".dropdown a.head").attr("sname");
-					var name = jQuery(this).html();
-					
-					if (selectedName == name) return ;
-					
-					var len = name.length;
-					var space = "&nbsp;";
-					
-					for (var i = 0; i < 40-len; i++) {
-						space += "&nbsp";
-					}
-					
-					jQuery(".dropdown a.head > label").html(name + space);
-					Logout.selectChild(jQuery(this).attr("personId"));
-					
-				});
-				
-
-				$("#logout-childId").change(function() {
-					Logout.selectChild();
-				});
-				
-				var hasLogged = "";
-				var isParent = false;
-				
-				if(hasLogged != '' && isParent) {
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideDown();
-					}, 2000);
-					
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideUp();
-						jQuery("#arrow").hide();
-					}, 5000);	
-				}
-				
-			}
-		};
-	}();
-
-	jQuery(Logout.init());
-</script>
-
 </body>
 </html>

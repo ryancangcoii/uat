@@ -16,9 +16,6 @@ CKEDITOR.editorConfig = function( config )
 		{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
 		                           	'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },		
 		{ name: 'styles', items : [ 'Font','FontSize' ] },
-		{ name: 'colors', items : [ 'TextColor','BGColor' ] },
-		{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
-		{ name: 'document', items : [ 'Source', '-', 'Link', 'Unlink', '-','DocProps','Preview','Print','-','Templates' ] }
 	];
 	
 	config.removePlugins = 'elementspath'; 

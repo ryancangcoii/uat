@@ -1020,11 +1020,13 @@ try {
 <div id='cssmenu'>
 <ul>
 <li class="">
-<a href='/ttsvr/n/home/skypepi-67'><span>home</span></a>
+<a href='/ttsvr/home'><span>home</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myDetails/skypepi-68'><span>myDetails</span></a>
+</li><li class="">
+<a href='/ttsvr/n/myStudents/skypepi-108'><span>myStudents</span></a>
 </li><li class=" has-sub">
-<a href='/ttsvr/n/myCurrentEnrolment/skypepi-69'><span>myCurrentEnrolment</span></a>
+<a href='/ttsvr/n/myCurrentEnrollment/skypepi-69'><span>myCurrentEnrollment</span></a>
 <ul><li class=" has-sub">
 <a href='/ttsvr/n/Views/skypepi-77'><span>Views</span></a>
 <ul><li class=" has-sub">
@@ -1048,14 +1050,18 @@ try {
 <% } %>
 <% } %><ul><li class="">
 <a href='/ttsvr/n/Code-of-Conduct/skypepi-74'><span>Code of Conduct</span></a>
-</li><li class="">
-<a href='/ttsvr/n/Consent/skypepi-97'><span>Consent</span></a>
-</li><li class="">
+</li></ul></li><li class=" has-sub">
+<a href='/ttsvr/n/myConsent/skypepi-97'><span>myConsent</span></a>
+<ul><li class="">
 <a href='/ttsvr/n/House-Rules/skypepi-98'><span>House Rules</span></a>
 </li></ul></li><li class="">
+<a href='/ttsvr/n/myHouseRules/skypepi-109'><span>myHouseRules</span></a>
+</li><li class="">
 <a href='/ttsvr/n/myOnlineBookings/skypepi-72'><span>myOnlineBookings</span></a>
 </li><li class="">
-<a href='/ttsvr/n/home/skypepi-67'><span>myClass</span></a>
+<a href='/ttsvr/home'><span>myClass</span></a>
+</li><li class="">
+<a href='/ttsvr/n/myCodeOfConduct/skypepi-110'><span>myCodeOfConduct</span></a>
 </li></ul>
 </div><%
 } catch (Exception e) {
@@ -1106,11 +1112,25 @@ try {
 	AltLang lang = h.getAltLang();
 %>
 <style>
+
+div.media, div.media > iframe {
+	width: 100% !important;
+}
+div.media {
+	margin-top: 0px;
+} 
+.cocAccept td {
+	padding: 10px;
+}
+.nav-tabs > li > a {
+	border-radius: 0px;
+}
+
 .portal-ribbon .left-edge.fork {
 	width: 150px;
 }
 </style>
-  
+
 <div class="bc-container portal-ribbon">
 <div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("certificate", null, "") %></span></div>
 <br><br><br>
@@ -1132,7 +1152,7 @@ try {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="Back" />
 									</a>
-									<a  href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
+									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=request.getParameter("enrolmentID") %>">
 										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
 									</a>
 									
@@ -1143,8 +1163,12 @@ try {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
-							
+						<object data="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=request.getParameter("enrolmentID") %>" type="application/pdf" width="100%" height="100%">
+						<p>It appears you don\'t have a PDF plugin for this browser.
+						No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to
+						download the PDF file.</a>
+						</object>
+						
 						</td>
 					</tr>
 				</table>
@@ -1178,19 +1202,19 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='right' valign='top'>
  <tr>
-  <td  align='left' valign='middle'><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></td>
+  <td  align='left' valign='middle'><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">Home</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
   <td  align='center' valign='middle'><a href="/ttsvr/n/myDetails/skypepi-68" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myDetails</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myCurrentEnrolment</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
   <td  align='center' valign='middle'><a href="/ttsvr/n/myProgressions/skypepi-70" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myProgressions</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/n/myCurrentEnrollment/skypepi-69" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myForum</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
   <td  align='center' valign='middle'><a href="/ttsvr/n/myOnlineBookings/skypepi-72" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myOnlineBookings</a></td>
   <td ><span class="wbdRichText"><p style="color: #00a3e4; padding: 0px 10px 0px 10px;">|</p></span></td>
-  <td  align='center' valign='middle'><a href="/ttsvr/n/home/skypepi-67" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></td>
+  <td  align='center' valign='middle'><a href="/ttsvr/home" class="wt" style=" font-size:12px; color:#00a3e4; font-weight:normal; text-decoration:none;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='none';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='none';">myClass</a></td>
   <td  width='300' align='right'></td>
  </tr>
 </table>

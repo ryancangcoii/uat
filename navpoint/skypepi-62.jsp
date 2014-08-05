@@ -895,12 +895,6 @@ try {
 	
 %>
 
-<style>
-.portal-ribbon .left-edge.fork {
-	width: 150px;
-}
-</style>
-  
 <div class="bc-container portal-ribbon">
 <div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myProgressions", null, "") %></span></div>
 <br><br><br>

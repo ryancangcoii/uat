@@ -1805,7 +1805,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 //						'download the PDF file.</a>'+
 //						'</object>');
 				//alert('<iframe src="' + googleViewStart + docType+'-'+site+'-'+langKey+'.pdf%23view%3DFitH&embedded=true" width="600" height="780" style="border: none;"></iframe>');
-				jQuery('.modal-view').find(".modal-body").html('<iframe src="' + googleViewStart + docType+'-'+site+'-'+langKey+'.pdf' + googleViewEnd + '" width="600" height="780" style="border: none;"></iframe>'+
+				jQuery('.modal-view').find(".modal-body").html('<iframe src="' + googleViewStart + docType+'-'+site+'-'+langCode+'.pdf' + googleViewEnd + '" width="600" height="780" style="border: none;"></iframe>'+
 						''+
 						'</object>');
 				

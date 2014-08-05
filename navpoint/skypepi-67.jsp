@@ -1843,7 +1843,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div></div>
 <table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
-  <td  height='30' align='left' valign='top'></td>
+  <td  height='0' align='left' valign='top'></td>
  </tr>
 </table>
 <div class='DivWidget page-content standard-width' style=""><%-- Widget skypepi.pages.portal_p_bstrapHome@21 (type=tooltwist.blog.widgets.BlogListWidget) --%>

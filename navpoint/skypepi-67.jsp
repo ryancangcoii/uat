@@ -1439,37 +1439,50 @@ try {
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108">myStudents</a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97">myConsent</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsor()) { %> 
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsorStudent()) { %> 
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
-				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/home">Home</a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 <% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
  <% } %> 
 <% if (h.isCocAccepted()) { %>
 				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
@@ -1477,13 +1490,13 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
-				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+ %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 		</div>
@@ -1909,7 +1922,35 @@ try {
 		        				String dates[] = d.split("-");
 		        				Date modDate = new Date((Integer.parseInt(dates[0])-1900), (Integer.parseInt(dates[1])-1), Integer.parseInt(dates[2]));
 		        				String cls = "white";
-		        				/* if (cnt % 2 == 0) cls = "blue"; */
+		        				if (cnt % 2 == 0) cls = "blue";
+		        				
+		        				String title = "";
+		        				String titleEN = StringUtil.asciiToString(blogList.getText("title"));
+		        				String titleLoc = StringUtil.asciiToString(blogList.getText("titleLocal"));
+		        				String titleAlt = StringUtil.asciiToString(blogList.getText("titleAlternate"));
+		        				
+		        				String content = "";
+		        				String contentEN = StringUtil.asciiToString(blogList.getText("content"));
+		        				String contentLoc = StringUtil.asciiToString(blogList.getText("contentLocal"));
+		        				String contentAlt = StringUtil.asciiToString(blogList.getText("contentAlternate"));
+		        				
+		        				LanguageMasterUtil languageMasterUtil = new LanguageMasterUtil();
+		        				String langType = languageMasterUtil.getLanguangeType(h.getLanguageCodeSelected());
+		        				if (langType.equals(DataBlockUtil.LANGUAGE_CODE.ENGLISH.getLangCode())) {
+		        					title = titleEN;
+		        					content = contentEN;
+		        				}
+		        				else if (langType.equals(DataBlockUtil.LANGUAGE_CODE.LOCAL.getLangCode())) {
+		        					title = titleLoc.equals("") ? titleEN : titleLoc;
+		        					content = contentLoc.equals("") ? contentEN : contentLoc;
+		        				}
+		        				else if (langType.equals(DataBlockUtil.LANGUAGE_CODE.ALTERNATE.getLangCode())) {
+		        					title = titleAlt.equals("") ? titleEN : titleAlt;	
+		        					content = contentAlt.equals("") ? contentEN : contentAlt;
+		        				}
+		        				
+		        				
+		        				
 		        				cnt++;
 		//         				if(blogList.getPos() < maxNews) {
 					        	%>
@@ -1930,7 +1971,7 @@ try {
 										<div style="clear: both"></div>
 								</div>--%>
 								 <tr class="<%=cls %>">
-							    	<td align="left" valign="top">
+							    	<td align="left" valign="top" width="100">
 								    	<div class="box">
 											<span class="number"><%=PublicUtil.formatDate(modDate, "dd")%></span>
 											<br />
@@ -1939,15 +1980,15 @@ try {
 							    		<%-- <%=tooltwist.wbd.util.PublicUtil.formatDate(modDate, "EEEE, d MMMM yyyy") %> --%>
 							    	</td>
 							        <td align="left" valign="middle">
-							        	<div style="padding-bottom:10px;"><a href="#" class="title"><%=StringUtil.asciiToString(blogList.getText("title"))%></a></div>
+							        	<div style="padding-bottom:10px;"><a href="#" class="title"><%=title %></a></div>
 							        	<div id="contentEllipsis-<%=blogList.getText("blogId")%>" class="contentEllipsis">
-							        		<%=StringUtil.asciiToStringEllipsis(blogList.getText("content"))%>
+							        		<%=StringUtil.asciiToStringEllipsis(content)%>
 							        	</div>
 							        	<div id="contentFull-<%=blogList.getText("blogId")%>" style="display:none;" class="contentFull">
-							        		<%=StringUtil.asciiToString(blogList.getText("content"))%>
+							        		<%=StringUtil.asciiToString(content)%>
 							        	</div>
 							        	<div class="readMoreButton">
-								        	<% if (StringUtil.isMoreThanMax(blogList.getText("content"), DataBlockUtil.BLOG_CONTENT_MAX_DISPLAY_COUNT)) { %>
+								        	<% if (StringUtil.isMoreThanMax(content, DataBlockUtil.BLOG_CONTENT_MAX_DISPLAY_COUNT)) { %>
 								        		<a class="showMore" href="javascript:void(0);" onclick="BlogList.showHideFullContent('<%=blogList.getText("blogId")%>', this);">Show more</a>
 								        	<% } %>
 							        	</div>
@@ -2012,37 +2053,50 @@ try {
 
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108">myStudents</a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97">myConsent</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsor()) { %> 
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsorStudent()) { %> 
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
-				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/home">Home</a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrollment</a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
 <% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
  <% } %> 
 <% if (h.isCocAccepted()) { %>
 				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
@@ -2050,13 +2104,13 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/home">home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-				<li class=""><a href="/ttsvr/n/myForum/skypepi-71">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72">myOnlineBooking</a></li>
-				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110">myCodeOfConduct</a></li>
+ %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 <%

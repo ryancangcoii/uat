@@ -1041,7 +1041,7 @@ try {
 <div id='cssmenu'>
 <ul>
 <li class="">
-<a href='/ttsvr/home'><span>home</span></a>
+<a href='/ttsvr/home'><span>Home</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myDetails/skypepi-68'><span>myDetails</span></a>
 </li><li class="">

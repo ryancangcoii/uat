@@ -796,34 +796,52 @@ try {
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsor()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsorStudent()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -832,12 +850,12 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+ %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
  <% } 
  %>			</ul>
 		</div>
@@ -1194,34 +1212,52 @@ try {
 
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsor()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
+<% isPublic = false; %>
+ <% } %> 
+<% if (h.isSponsorStudent()) { %> 
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Home</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
@@ -1230,12 +1266,12 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a><span></span></li>
+ %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a><span></span></li>
  <% } 
  %>			</ul>
 <%

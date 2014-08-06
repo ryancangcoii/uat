@@ -1285,7 +1285,7 @@ try {
 			<% } %>
 		<% } %>
 
-		<div class="row" style="margin-top:25px">
+		<div class="row" style="margin-top:25px;display:none;">
 			<div class="col-md-12">
 					<div class="row">
 							<div class="col-md-2">

@@ -1339,20 +1339,22 @@ try {
 							<table id="blogSettingListTable" class="">
 								<thead>
 									<tr class="wbdblog_header">
-										<% for (columnNodes.first(); columnNodes.next();) { %>
+										<%  int columnCtr = 1;
+											for (columnNodes.first(); columnNodes.next();) { %>
 											<th class="<%=columnNodes.getText("columnDB").equals(h.getColumnType()) ? h.getSortClass() : ""%>" style="width: <%=columnNodes.getText("columnDisplay").equals("Content") ? "2000px" : "200px"%>;">
 												<div onclick="BlogAdminBlogList.sortCategory('<%=h.getSort()%>','<%=columnNodes.getText("columnDB")%>',jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val());" class="sortable">
 													<%=columnNodes.getText("columnDisplay")%>
 												</div>
 											</th>
-										<% } %>
+										<% columnCtr++;
+										} %>
 										<th width="120px">Action</th>
 									</tr>
 								</thead>
 								<tbody id="blogSettingListTableBody">
 									<% if (xNodes.getNumNodes() > 0) { %>
 										<% for (xNodes.first(); xNodes.next();) { %>
-											<tr class="<%=!xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")).getTime() < new Date().getTime() ? "archive" : ""%> white div-bottom">
+											<tr class="<%=!xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDate(xNodes.getText("expirationDate")).getTime() < new Date().getTime() ? "archive" : ""%> white div-bottom">
 												<% for (columnNodes.first(); columnNodes.next();) { %>
 													<% if ("Title".equals(columnNodes.getText("columnDisplay"))) { %>
 														<td align="left" valign="top"><%=StringUtil.asciiToString(xNodes.getText("title"))%></td>
@@ -1361,13 +1363,13 @@ try {
 														<td align="left" valign="top"><%=xNodes.getText("languageCode")%></td>
 													<% } %>
 													<% if ("Valid From".equals(columnNodes.getText("columnDisplay"))) { %>
-														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("publishedDate")), h.getUI_DATEFORMAT())%></td>
+														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDate(xNodes.getText("publishedDate")), h.getUI_DATEFORMAT())%></td>
 													<% } %>
 													<% if ("Valid To".equals(columnNodes.getText("columnDisplay"))) { %>
-														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")), h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("expirationDate")), h.getUI_DATEFORMAT())%></td>
+														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDate(xNodes.getText("expirationDate")), h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDate(xNodes.getText("expirationDate")), h.getUI_DATEFORMAT())%></td>
 													<% } %>
 													<% if ("Approval Date".equals(columnNodes.getText("columnDisplay"))) { %>
-														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("approveDate")), h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDateTime(xNodes.getText("approveDate")), h.getUI_DATEFORMAT())%></td>
+														<td align="left" valign="top"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDate(xNodes.getText("approveDate")), h.getUI_DATEFORMAT()).equals("") ? "" : PublicUtil.formatDate(PublicUtil.convertStringFromDBToDate(xNodes.getText("approveDate")), h.getUI_DATEFORMAT())%></td>
 													<% } %>
 													<% if ("Featured".equals(columnNodes.getText("columnDisplay"))) { %>
 														<td align="left" valign="top"><%=xNodes.getText("featured")%></td>
@@ -1402,7 +1404,7 @@ try {
 														<a href="<%=snippetVar_blogAdminBlogListNavpoint%>?blogId=<%=xNodes.getText("blogId")%> "> 
 															<img src="/ttsvr/skypepi/images/edit.png" width="22" height="22" class="icon-edit" />
 														</a>
-														<a href="#" onclick="BlogAdminBlogList.deleteBlogList('<%=xNodes.getText("blogId")%>');return false"> 
+														<a href="javascript:void(0);" onclick="BlogAdminBlogList.deleteBlogList('<%=xNodes.getText("blogId")%>');return false;"> 
 															<img src="/ttsvr/skypepi/images/bin.png" width="22" height="22" class="icon-bin" />
 														</a>
 													</span>
@@ -1411,7 +1413,8 @@ try {
 										<% } ctr++; %>
 									<% } else { %>
 										<tr class="grey">
-											<td colspan="<%=ctr%>" align="center">No search found on <%=XData.htmlString(h.getColumnLabel())%> - <%=XData.htmlString(h.getTxtvalue())%>
+											<td colspan="<%=columnCtr%>" align="center">
+												No search found on <%=XData.htmlString(h.getColumnLabel())%> - <%=XData.htmlString(StringUtil.asciiToString(h.getTxtvalue()))%>
 											</td>
 										</tr>
 									<% } %>
@@ -1852,9 +1855,13 @@ var BlogAdminBlogList = function() {
 	return {
 		deleteBlogList: function(blogId) {
 			jQuery.ajax({
-				url: '?op=blogblog_widgets.blogAdminBlogList.blogAdminBlogList',
+				url: location.href,
 				type: 'post',
-				data: 'subop=deleteBlogAdminBlogList&blogId='+blogId,
+				data: {
+					op : "blog_widgets.blogAdminBlogList.blogAdminBlogList",
+					subop : "deleteBlogAdminBlogList",
+					blogId : blogId
+				},
 				success: function(response) {
 					jQuery("#blogSettingListTable").html(jQuery(response).find("#blogSettingListTable").html());
 				}
@@ -1945,10 +1952,15 @@ function initializePager(numRows) {
 var prevValue = '';
 var prevColumn ='';
 function applyListSearch(columnName, txtvalue,archiveLabel) {
-	txtvalue = encodeURIComponent(txtvalue);
-	if(txtvalue != prevValue ) {
+	if(txtvalue != prevValue) {
 		jQuery.ajax({
-			url: '?sort='+jQuery('#sort').val()+'&searchField='+columnName+'&txtvalue='+txtvalue+'&archiveLabel='+archiveLabel,
+			url: location.href,
+			data : {
+				sort : jQuery('#sort').val(),
+				searchField : columnName,
+				txtvalue : encodeURI(txtvalue),
+				archiveLabel : archiveLabel
+			},
 			success: function(response) {
 				jQuery('#blogAdminBlogList').html(jQuery(response).find('#blogAdminBlogList').html());
 				
@@ -1974,9 +1986,9 @@ function applyListSearch(columnName, txtvalue,archiveLabel) {
 function initializeDatePicker(){
 //	var dateFormat = jQuery('#blogSettingDateFormat').val().replace('yyyy','yy') ;
 	
-	var dateFormat = jQuery('#blogSettingDateFormat').val() ;
+	var dateFormat = "yy-mm-dd"; //jQuery('#blogSettingDateFormat').val() ;
 
-	jQuery( ".datepickerInput" ).attr('readonly', 'readonly');
+	jQuery( ".datepickerInput" ).attr('readonly', 'readonly').removeClass("hasDatepicker");
 	jQuery( ".datepickerInput" ).datepicker('destroy');
 	jQuery( ".datepickerInput" ).datepicker({
 		changeMonth: true,

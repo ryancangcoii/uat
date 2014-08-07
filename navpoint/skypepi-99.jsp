@@ -974,7 +974,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/home">
+<a href="/ttsvr/n/Home/skypepi-67">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1267,6 +1267,7 @@ try {
 	<%@page import="com.dinaa.data.XNodes"%>
 	<%@page import="tooltwist.wbd.util.PublicUtil"%>
 	<%@page import="java.util.Date"%>
+	<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 	<%
 		// Get the production helper for this widget
 		BlogAdminBlogListProductionHelper h = (BlogAdminBlogListProductionHelper) helper;
@@ -1274,6 +1275,7 @@ try {
 	%>
 	<!-- ********** INSERT HTML HERE ********** -->
 	<link rel="stylesheet" type="text/css" href="/ttsvr/blog/stylesheet/blog.css" />
+	<input type="hidden" value="<%=DataBlockUtil.DATEPICKER_FORMAT%>" id="datepickerFormat" />
 	<div class="bc-container portal-ribbon">
 		<div class="ribbon-wrap left-edge fork lblue">
 			<span>Announcement</span>
@@ -1986,7 +1988,7 @@ function applyListSearch(columnName, txtvalue,archiveLabel) {
 function initializeDatePicker(){
 //	var dateFormat = jQuery('#blogSettingDateFormat').val().replace('yyyy','yy') ;
 	
-	var dateFormat = "yy-mm-dd"; //jQuery('#blogSettingDateFormat').val() ;
+	var dateFormat = $("#datepickerFormat").val();
 
 	jQuery( ".datepickerInput" ).attr('readonly', 'readonly').removeClass("hasDatepicker");
 	jQuery( ".datepickerInput" ).datepicker('destroy');

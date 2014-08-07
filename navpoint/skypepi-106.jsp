@@ -931,7 +931,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/home">
+<a href="/ttsvr/n/Home/skypepi-67">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1254,6 +1254,7 @@ try {
 		<input type="hidden" id="blogSettingDateFormat" name="blogSettingDateFormat" value="yy-mm-dd">
 		<input type="hidden" id="requiredFieldsMsg" name="requiredFieldsMsg" value="<%=h.getRequiredFieldsMsg()%>" >
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
+		<input type="hidden" value="<%=DataBlockUtil.DATEPICKER_FORMAT%>" id="datepickerFormat" />
 		
 		<% for (DataBlockUtil.LANGUAGE_CODE language : DataBlockUtil.LANGUAGE_CODE.values()) { %>
 			<input type="hidden" name="ckeditorContentWithImage_<%=language.getLangCode()%>" id="ckeditorContentWithImage_<%=language.getLangCode()%>" value=""/>
@@ -2190,7 +2191,7 @@ function validateBlogContent(form){
 function initializeDatePicker(){
 //	var dateFormat = jQuery('#blogSettingDateFormat').val().replace('yyyy','yy') ;
 	
-	var dateFormat = jQuery('#blogSettingDateFormat').val() ;
+	var dateFormat = jQuery('#datepickerFormat').val() ;
 
 	jQuery( ".datepickerInput" ).attr('readonly', 'readonly');
 	jQuery( ".datepickerInput" ).datepicker({

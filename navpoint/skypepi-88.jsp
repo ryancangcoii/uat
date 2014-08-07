@@ -1041,7 +1041,7 @@ try {
 <div id='cssmenu'>
 <ul>
 <li class="">
-<a href='/ttsvr/home'><span>Home</span></a>
+<a href='/ttsvr/n/Home/skypepi-67'><span>Home</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myDetails/skypepi-68'><span>myDetails</span></a>
 </li><li class="">
@@ -1080,7 +1080,7 @@ try {
 </li><li class="">
 <a href='/ttsvr/n/myOnlineBooking/skypepi-72'><span>myOnlineBooking</span></a>
 </li><li class="">
-<a href='/ttsvr/home'><span>myClass</span></a>
+<a href='/ttsvr/n/Home/skypepi-67'><span>myClass</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myCodeOfConduct/skypepi-110'><span>myCodeOfConduct</span></a>
 </li></ul>

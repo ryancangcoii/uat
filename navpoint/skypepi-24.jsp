@@ -3056,8 +3056,10 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			var self = this;
-			
+			console.log("showProgress");
+			jQuery('#div_loading').modal({
+				keyboard: false
+			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",
@@ -3075,7 +3077,8 @@ var Progress = function() {
 		},
 		
 		hideProgress: function() {
-			jQuery.modal.close();
+			//jQuery.modal.close();
+			jQuery(".close").trigger("click");
 		},
 		
 		alertMessage: function(title, msg) {

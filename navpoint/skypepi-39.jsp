@@ -1735,7 +1735,7 @@ try {
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title"><span>Processing please wait...</span></h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" align="center"> 
         <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
       </div>
     </div><!-- /.modal-content -->
@@ -1841,9 +1841,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-			jQuery('#div_loading').modal({
-				keyboard: false
-			});
+//			jQuery('#div_loading').modal({
+//				keyboard: false
+//			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

@@ -66,7 +66,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("viewOption", "Student Selection");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_37 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_37Params);
 	productionHelper_skypepi_zones_portal_z_header_37.callPreFetch(jh);
 } catch (Exception e) {
@@ -82,7 +82,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("viewOption", "Name");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_38 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_38Params);
 	productionHelper_skypepi_zones_portal_z_header_38.callPreFetch(jh);
 } catch (Exception e) {
@@ -420,7 +420,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_38;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
+	String snippetVar_homeNavId = "/ttsvr/home";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
@@ -663,7 +663,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_37;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
+	String snippetVar_homeNavId = "/ttsvr/home";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
@@ -1677,7 +1677,7 @@ try {
 <%
 try {
 	String snippetVar_dotSize = "5";
-	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:315)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
+	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
 	String snippetVar_widgetName = "@6";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_footer@6";
 	String snippetVar_elementId = "";
@@ -1816,7 +1816,7 @@ try {
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title"><span>Processing please wait...</span></h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" align="center"> 
         <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
       </div>
     </div><!-- /.modal-content -->
@@ -1918,9 +1918,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-			jQuery('#div_loading').modal({
-				keyboard: false
-			});
+//			jQuery('#div_loading').modal({
+//				keyboard: false
+//			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

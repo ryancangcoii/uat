@@ -78,7 +78,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("viewOption", "Student Selection");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_37 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_37Params);
 	productionHelper_skypepi_zones_portal_z_header_37.callPreFetch(jh);
 } catch (Exception e) {
@@ -94,7 +94,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("viewOption", "Name");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavId", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_38 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_38Params);
 	productionHelper_skypepi_zones_portal_z_header_38.callPreFetch(jh);
 } catch (Exception e) {
@@ -324,7 +324,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_38;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
+	String snippetVar_homeNavId = "/ttsvr/home";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
@@ -567,7 +567,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_37;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
+	String snippetVar_homeNavId = "/ttsvr/home";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
@@ -2024,7 +2024,7 @@ try {
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title"><span>Processing please wait...</span></h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" align="center"> 
         <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
       </div>
     </div><!-- /.modal-content -->
@@ -2244,9 +2244,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-			jQuery('#div_loading').modal({
-				keyboard: false
-			});
+//			jQuery('#div_loading').modal({
+//				keyboard: false
+//			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

@@ -120,12 +120,13 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 <!--Start-->
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="java.util.Map"%>
-<%@page
-	import="tooltwist.skypepi.productionHelpers.TimetableProductionhelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.TimetableProductionhelper"%>
 
 <%
 	TimetableProductionhelper h = (TimetableProductionhelper) helper;
+	AltLang lang = h.getAltLang();
 %>
 
 <style>
@@ -133,17 +134,17 @@ try {
 	width: 150px;
 }
 </style>
-  
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span>Timetable</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Timetable", null, "") %></span></div>
 <br><br><br>
 <div style="text-align: right;">
 	<a href="<%=snippetVar_backPage%>">
-		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" />
+		<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
+<!-- 		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
 	</a>
 	&nbsp;
 	<a href="<%=h.getReportUrl()%>" target="_blank">
-		<input type="button" class="buttonBlue" value="Download And Print Timetable"/>
+		<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Timetable", null, "") %>"/>
 	</a>
 	</div>
 <br>
@@ -152,15 +153,15 @@ try {
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered">
 		<thead>
 			<tr>
-				<th colspan="6" class="left">Class Timetable<%=h.getClassName() %></th>
+				<th colspan="6" class="left"><%=lang.getString("Class Timetable", null, "")%><%=h.getClassName() %></th>
 			</tr>			
 			<tr class="grey">
-				<th width="10%">Date</th>
-				<th width="10%">Day</th>
-				<th width="10%" >Starting</th>
-				<th width="10%">Ending</th>
-				<th width="35%">Room</th>
-				<th width="25%">Teacher</th>
+				<th width="10%"><%=lang.getString("Date", null, "") %></th>
+				<th width="10%"><%=lang.getString("Day", null, "") %></th>
+				<th width="10%" ><%=lang.getString("Starting", null, "") %></th>
+				<th width="10%"><%=lang.getString("Ending", null, "") %></th>
+				<th width="35%"><%=lang.getString("Room", null, "") %></th>
+				<th width="25%"><%=lang.getString("Teacher", null, "") %></th>
 			</tr>
 		</thead>
 		<tbody id="timetable">

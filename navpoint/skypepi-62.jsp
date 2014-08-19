@@ -97,7 +97,7 @@ try {
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("timetagbleSessionNavPointLink", "/ttsvr/n/Student-Enrolments/skypepi-57");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("alertNavPointLink", "/ttsvr/n/Alerts/skypepi-54");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("bookingsNavPointLink", "/ttsvr/n/skyportal--my-course-history/skypepi-62");
-	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-63");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("reEnrolmentNavPointLink", "/ttsvr/n/Re-enrolment/skypepi-33");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("assessmentAttendanceNavPointLink", "/ttsvr/n/Assessment-and-Attendance/skypepi-55");
@@ -165,12 +165,12 @@ try {
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
 	<table>
 	<tbody><tr>
-	<%--FOR LOCAL LANGUAGE --%>
+	<%--FOR ALTERNATE LANGUAGE --%>
 		<%
 		String selected = "";
 		boolean isSelected = false;
 		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
-		   if (alternateLanguage != null ) {
+		   if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
 			   String languageCode = alternateLanguage.getLanguageCode();
 			   String languageType = alternateLanguage.getLanguageType();
 			   String languageName = alternateLanguage.getLanguageName();
@@ -192,11 +192,11 @@ try {
 		<td width="5px"></td>
 		<% } %>
 		
-		<%--FOR ALTERNATE LANGUAGE --%>
+		<%--FOR LOCAL LANGUAGE --%>
 		<% 
 		selected = "";
 		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
-		   if (localLanguage != null ) {
+		   if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
 			   String languageCode = localLanguage.getLanguageCode();
 			   String languageType = localLanguage.getLanguageType();
 			   String languageName = localLanguage.getLanguageName();
@@ -611,7 +611,7 @@ try {
 	String snippetVar_myDetailsNavPointLink = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_reEnrolmentNavPointLink = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_feesNavPointLink = "/ttsvr/n/Fees/skypepi-34";
-	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_alertNavPointLink = "/ttsvr/n/Alerts/skypepi-54";
 	String snippetVar_assessmentAttendanceNavPointLink = "/ttsvr/n/Assessment-and-Attendance/skypepi-55";
 	String snippetVar_timetagbleSessionNavPointLink = "/ttsvr/n/Student-Enrolments/skypepi-57";
@@ -936,6 +936,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.wbd.util.PublicUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
 <%@page import="tooltwist.skypepi.productionHelpers.BookingsWidgetProductionHelper"%>
@@ -958,105 +959,106 @@ try {
 	
 %>
 
+<input type="hidden" id="hdnViewReceipt" value="<%=lang.getString("View Receipt", null, "")%>"/>
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myProgressions", null, "") %></span></div>
-<br><br><br>
-		<table width="100%">
+	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myProgressions", null, "") %></span></div>
+	<br><br><br>
+	<table width="100%">
 		<tr>
 			<td>
-					<form id="form-bookings" name="form-bookings" method="post">
-						<table width="100%" class="table">
-							<tr>
-								<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=h.getFullName() %></span></td>
-							</tr>
-						</table>
-					</form>
+				<form id="form-bookings" name="form-bookings" method="post">
+					<table width="100%" class="table">
+						<tr>
+							<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=h.getFullName() %></span></td>
+						</tr>
+					</table>
+				</form>
 			</td>
 		</tr>
 	</table>
 	<div class="table-responsive portalTable">
-											    <table class="table" cellpadding="0" cellspacing="0" id="table-bookings">
-													<tr class="list-header">
-														<%-- <th width="370px" class="table-header color-regular column-text"><%=lang.getString("Stream Name", null, "") %></th> --%>
-														<th width="" class="table-header color-regular column-text"><%=lang.getString("Class", null, "") %></th>
-														<th width="120px"><%=lang.getString("Start Date", null, "") %></th>
-														<th width="120px"><%=lang.getString("End Date", null, "") %></th>
-														<th width="180px"><%=lang.getString("Action", null, "") %></th>
-													</tr>
-													<%
-													if (enrolledStreamUnits.size() > 0) {
-													%>
-														<%
-														int enrolledStreamUnitsCnt = 0;
-														for(int i = 0; i < enrolledStreamUnits.size(); i++) {
-															EnrolledStreamUnits enrolledStreamUnit = enrolledStreamUnits.get(i);
-															/* String code = enrolledStreamUnit.getCourseName(); */
-															String name = enrolledStreamUnit.getCourseName();
-															String status = enrolledStreamUnit.getStatus();
-															String start = enrolledStreamUnit.getStartDate();
-															String end = enrolledStreamUnit.getEndDate();
-															String paymentId = enrolledStreamUnit.getPaymentID();
-															String enrolmentId = enrolledStreamUnit.getEnrolmentID();
-															enrolledStreamUnitsCnt++;
-															System.out.println("name:" + name );
-															String classTag = ((enrolledStreamUnitsCnt % 2) == 0) ? "blue" : "white";
-															java.sql.Date dt = new java.sql.Date(System.currentTimeMillis());
-															java.sql.Date dtTo = java.sql.Date.valueOf(end);
-														%>
-														<tr class="<%=classTag %>">
-															<%-- <td class="table-data color-regular column-text"><%=code %></td> --%>
-															<td class="table-data color-regular column-text"><%=name %></td>
-															<td class="table-data color-regular column-date"><%=start %></td>
-															<td class="table-data color-regular column-date"><%=end %></td>
-															<td class="table-data color-regular">
-																<%--<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
-																<span class="regular-link-underline-light-blue">
-																	<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
-																		<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
-																</span>
-																<br />
-																<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
-																<span class="regular-link-underline-light-blue">
-																	<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
-																		<span class="body-text"><%=lang.getString("View Attendance Record", null, "") %></span></a>
-																</span>
-																<br /> --%>
-																<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
-																<span class="regular-link-underline-light-blue">
-																	<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
-																		<span class="body-text"><%=lang.getString("View Receipt", null, "") %></span></a>
-																</span>
-																<%if (dt.after(dtTo)) { %>
-																<br />
-																<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
-																<span class="regular-link-underline-light-blue">
-																	<a href="javascript:Progress.showProgress();window.location.href = '<%=("".equals(paymentId) ? "" : snippetVar_previewMarksGradesNavpoint + "?enrolmentID=" + enrolmentId) %>'" >
-																		<span class="body-text"><%=lang.getString("View Certificate", null, "") %></span></a>
-																</span>
-																<% } %>
-															</td>
-														</tr>
-												
-														<%
-														}
-														%>
-													<%
-													} else {
-													%>
-														<tr class="list-odd-item">
-															<td colspan="5" class="table-header color-regular column-text"><%=lang.getString("No Data to display", null, "") %></td>
-														</tr>
-														<tr class="list-even-item">
-															<td colspan="5" class="table-header color-regular column-text"></td>
-														</tr>
-													<%
-													}
-													%>
-													</table>
-												</div>
-													<div id="bookings-navi"></div>
-													
-												<div class="line-separator" style="margin-top:30px"></div>
+	    <table class="table" cellpadding="0" cellspacing="0" id="table-bookings">
+			<tr class="list-header">
+				<%-- <th width="370px" class="table-header color-regular column-text"><%=lang.getString("Stream Name", null, "") %></th> --%>
+				<th width="" class="table-header color-regular column-text"><%=lang.getString("Class", null, "") %></th>
+				<th width="120px"><%=lang.getString("Start Date", null, "") %></th>
+				<th width="120px"><%=lang.getString("End Date", null, "") %></th>
+				<th width="180px"><%=lang.getString("Action", null, "") %></th>
+			</tr>
+			<%
+			if (enrolledStreamUnits.size() > 0) {
+			%>
+				<%
+				int enrolledStreamUnitsCnt = 0;
+				for(int i = 0; i < enrolledStreamUnits.size(); i++) {
+					EnrolledStreamUnits enrolledStreamUnit = enrolledStreamUnits.get(i);
+					/* String code = enrolledStreamUnit.getCourseName(); */
+					String name = enrolledStreamUnit.getCourseName();
+					String status = enrolledStreamUnit.getStatus();
+					String start = enrolledStreamUnit.getStartDate();
+					String end = enrolledStreamUnit.getEndDate();
+					String paymentId = enrolledStreamUnit.getPaymentID();
+					String enrolmentId = enrolledStreamUnit.getEnrolmentID();
+					enrolledStreamUnitsCnt++;
+					System.out.println("name:" + name );
+					String classTag = ((enrolledStreamUnitsCnt % 2) == 0) ? "blue" : "white";
+					java.sql.Date dt = new java.sql.Date(System.currentTimeMillis());
+					java.sql.Date dtTo = java.sql.Date.valueOf(end);
+				%>
+				<tr class="<%=classTag %>">
+					<%-- <td class="table-data color-regular column-text"><%=code %></td> --%>
+					<td class="table-data color-regular column-text"><%=name %></td>
+					<td class="table-data color-regular column-date"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDate(start), h.getDateFormat()) %></td>
+					<td class="table-data color-regular column-date"><%=PublicUtil.formatDate(PublicUtil.convertStringFromDBToDate(end), h.getDateFormat()) %></td>
+					<td class="table-data color-regular">
+						<%--<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
+						<span class="regular-link-underline-light-blue">
+							<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
+								<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
+						</span>
+						<br />
+						<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
+						<span class="regular-link-underline-light-blue">
+							<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
+								<span class="body-text"><%=lang.getString("View Attendance Record", null, "") %></span></a>
+						</span>
+						<br /> --%>
+						<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
+						<span class="regular-link-underline-light-blue">
+							<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
+								<span class="body-text"><%=lang.getString("View Receipt", null, "") %></span></a>
+						</span>
+						<%if (dt.after(dtTo)) { %>
+						<br />
+						<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
+						<span class="regular-link-underline-light-blue">
+							<a href="javascript:Progress.showProgress();window.location.href = '<%=("".equals(paymentId) ? "" : snippetVar_previewMarksGradesNavpoint + "?enrolmentID=" + enrolmentId) %>'" >
+								<span class="body-text"><%=lang.getString("View Certificate", null, "") %></span></a>
+						</span>
+						<% } %>
+					</td>
+				</tr>
+		
+				<%
+				}
+				%>
+			<%
+			} else {
+			%>
+				<tr class="list-odd-item">
+					<td colspan="5" class="table-header color-regular column-text"><%=lang.getString("No Data to display", null, "") %></td>
+				</tr>
+				<tr class="list-even-item">
+					<td colspan="5" class="table-header color-regular column-text"></td>
+				</tr>
+			<%
+			}
+			%>
+			</table>
+		</div>
+		<div id="bookings-navi"></div>
+		
+		<div class="line-separator" style="margin-top:30px"></div>
 												
 </div>
 
@@ -1281,7 +1283,8 @@ var BookingsWidget = function() {
 					window.location.href = ref + "?paymentDetailID=" +id;
 				}
 				else {
-					Progress.alertMessage("View Receipt", "The receipt you are seeking is currently not available.<br>Please contact customer services should you require further details.");
+					//Progress.alertMessage("View Receipt", "The receipt you are seeking is currently not available.<br>Please contact customer services should you require further details.");
+					Progress.alertMessage($("#hdnViewReceipt").val(), "The receipt you are seeking is currently not available.<br>Please contact customer services should you require further details.");
 					setTimeout(function() {jQuery("#process-containers").css({"width": "485px"});}, 550);
 				}
 					
@@ -1351,25 +1354,10 @@ var Progress = function() {
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
-//			setTimeout(function(){
-//				jQuery('#div_loading').modal({
-//					closeHTML: "",
-//					position: ["20%",],
-//					overlayId: 'process-overlay',
-//					containerId: 'process-container', 
-//					close: false,
-//					onShow: function (dialog) {
-//						jQuery(".header").css({
-//							"background": "url(/ttsvr/skypepi/images/dialog/header.gif)"
-//						});
-//					}
-//				});
-//			}, 100);
 		},
 		
 		hideProgress: function() {
-			//jQuery.modal.close();
-			jQuery(".close").trigger("click");
+			$("#div_loading").modal("hide");
 		},
 		
 		alertMessage: function(title, msg) {

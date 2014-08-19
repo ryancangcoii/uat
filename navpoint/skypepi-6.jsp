@@ -97,7 +97,7 @@ try {
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("timetagbleSessionNavPointLink", "/ttsvr/n/Student-Enrolments/skypepi-57");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("alertNavPointLink", "/ttsvr/n/Alerts/skypepi-54");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("bookingsNavPointLink", "/ttsvr/n/skyportal--my-course-history/skypepi-62");
-	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-63");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("reEnrolmentNavPointLink", "/ttsvr/n/Re-enrolment/skypepi-33");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("assessmentAttendanceNavPointLink", "/ttsvr/n/Assessment-and-Attendance/skypepi-55");
@@ -164,12 +164,12 @@ try {
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
 	<table>
 	<tbody><tr>
-	<%--FOR LOCAL LANGUAGE --%>
+	<%--FOR ALTERNATE LANGUAGE --%>
 		<%
 		String selected = "";
 		boolean isSelected = false;
 		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
-		   if (alternateLanguage != null ) {
+		   if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
 			   String languageCode = alternateLanguage.getLanguageCode();
 			   String languageType = alternateLanguage.getLanguageType();
 			   String languageName = alternateLanguage.getLanguageName();
@@ -191,11 +191,11 @@ try {
 		<td width="5px"></td>
 		<% } %>
 		
-		<%--FOR ALTERNATE LANGUAGE --%>
+		<%--FOR LOCAL LANGUAGE --%>
 		<% 
 		selected = "";
 		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
-		   if (localLanguage != null ) {
+		   if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
 			   String languageCode = localLanguage.getLanguageCode();
 			   String languageType = localLanguage.getLanguageType();
 			   String languageName = localLanguage.getLanguageName();
@@ -610,7 +610,7 @@ try {
 	String snippetVar_myDetailsNavPointLink = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_reEnrolmentNavPointLink = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_feesNavPointLink = "/ttsvr/n/Fees/skypepi-34";
-	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_alertNavPointLink = "/ttsvr/n/Alerts/skypepi-54";
 	String snippetVar_assessmentAttendanceNavPointLink = "/ttsvr/n/Assessment-and-Attendance/skypepi-55";
 	String snippetVar_timetagbleSessionNavPointLink = "/ttsvr/n/Student-Enrolments/skypepi-57";
@@ -937,28 +937,26 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
-<%@ page pageEncoding="UTF-8" %>
-
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.MyDetailsProductionHelper"%>
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="java.util.Calendar"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="tooltwist.skypepi.bean.FetchPerson"%>
-<%@page import="tooltwist.skypepi.bean.Address"%>
-<%@page import="java.util.Vector"%>
-<%@page import="tooltwist.skypepi.util.GenderEnum"%>
-<%@page import="tooltwist.skypepi.bean.PhoneNumber"%>
-<%@page import="tooltwist.skypepi.bean.EmailAddress"%>
-<%@page import="tooltwist.skypepi.bean.Enquiry"%>
-<%@page import="tooltwist.skypepi.bean.ProcessEnrolledStreamUnits"%>
-<%@page import="tooltwist.skypepi.bean.EnrolledStreamUnits"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="com.dinaa.data.XNodes"%>
-
-<%	
+	<%@ page pageEncoding="UTF-8"%>
+	<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+	<%@page import="tooltwist.skypepi.productionHelpers.MyDetailsProductionHelper"%>
+	<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+	<%@page import="tooltwist.skypepi.util.WebUtil"%>
+	<%@page import="com.dinaa.data.XData"%>
+	<%@page import="java.util.Calendar"%>
+	<%@page import="com.dinaa.data.XNodes"%>
+	<%@page import="tooltwist.skypepi.bean.FetchPerson"%>
+	<%@page import="tooltwist.skypepi.bean.Address"%>
+	<%@page import="java.util.Vector"%>
+	<%@page import="tooltwist.skypepi.util.GenderEnum"%>
+	<%@page import="tooltwist.skypepi.bean.PhoneNumber"%>
+	<%@page import="tooltwist.skypepi.bean.EmailAddress"%>
+	<%@page import="tooltwist.skypepi.bean.Enquiry"%>
+	<%@page import="tooltwist.skypepi.bean.ProcessEnrolledStreamUnits"%>
+	<%@page import="tooltwist.skypepi.bean.EnrolledStreamUnits"%>
+	<%@page import="com.dinaa.misc.AltLang"%>
+	<%@page import="com.dinaa.data.XNodes"%>
+	<%	
 
 	MyDetailsProductionHelper h = (MyDetailsProductionHelper) helper;
 	AltLang lang = h.getAltLang();
@@ -1003,259 +1001,241 @@ try {
 	Vector<Enquiry> enquiries = fetchPerson.getEnquiries();
 
 %>
-<script src="/ttsvr/skypepi/scripts/paging.js"></script>
-<script src="/ttsvr/skypepi/scripts/jquery.validate.min.js"></script>
-
-<div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myDetails", null, "") %></span></div>
-	
-	<br />
-	<br />
-	<br />
-	
-	<form id="form-myDetails" name="form-myDetails" method="post" class="bc-form">
-		<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
-		
-		<div>
-			<!--  --><table width="100%">
-				<tr>
-					<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %></span></td>
-					<td width="" align="right">
-					</td>
-				</tr>
-				<tr>
-					<td height="30"></td>
-				</tr>
-				<tr>
-					<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("English", null, "") %>)</td>
-				</tr>
-				<tr>
-					<td align="left" class="mobile-trace">
-						<table width="100%">
-							<tr>
-								<td>
-									<div class="row">
-										<div class="col-md-6">
-											<div class="row">
-												<div class="col-md-4">
-												<label class="control-label"><%=lang.getString("Last Name", null, "") %>: </label>
+	<script src="/ttsvr/skypepi/scripts/paging.js"></script>
+	<script src="/ttsvr/skypepi/scripts/jquery.validate.min.js"></script>
+	<div class="bc-container portal-ribbon">
+		<div class="ribbon-wrap left-edge fork lblue">
+			<span><%=lang.getString("myDetails", null, "") %></span>
+		</div>
+		<br /> <br /> <br />
+		<form id="form-myDetails" name="form-myDetails" method="post" class="bc-form">
+			<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>" />
+			<div>
+				<!--  -->
+				<table width="100%">
+					<tr>
+						<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %></span></td>
+						<td width="" align="right"></td>
+					</tr>
+					<tr>
+						<td height="30"></td>
+					</tr>
+					<tr>
+						<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("English", null, "") %>)</td>
+					</tr>
+					<tr>
+						<td align="left" class="mobile-trace">
+							<table width="100%">
+								<tr>
+									<td>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-4">
+														<label class="control-label"><%=lang.getString("Last Name", null, "") %>: </label>
+													</div>
+													<div class="col-md-8">
+														<input id="surnameEnglishField" name="surnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=surname %>" readonly="readonly" />
+													</div>
 												</div>
-												<div class="col-md-8">
-													<input  id="surnameEnglishField" name="surnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=surname %>" readonly="readonly"/>
+											</div>
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-4">
+														<label class="control-label"><%=lang.getString("First Name", null, "") %>: </label>
+													</div>
+													<div class="col-md-8">
+														<input id="firstnameEnglishField" name="firstnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=firstName %>" readonly="readonly" />
+													</div>
 												</div>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="row">
-												<div class="col-md-4">
-												<label class="control-label"><%=lang.getString("First Name", null, "") %>: </label>
-												</div>
-											<div class="col-md-8">
-												<input  id="firstnameEnglishField" name="firstnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=firstName %>"  readonly="readonly"/>
-											</div>
-										</div>
-										</div>
-									</div>
-									
-									<div class="row" style="margin-top:10px;">
+										<div class="row" style="margin-top: 10px;">
 											<div class="col-md-2">
 												<label class="control-label"><%=lang.getString("Preferred Name", null, "") %>: </label>
 											</div>
 											<div class="col-md-10">
-													<input  id="middlenameEnglishField" name="middlenameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=middleName %>"  readonly="readonly"/>
+												<input id="middlenameEnglishField" name="middlenameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=middleName %>" readonly="readonly" />
 											</div>
 											<div class="col-md-2"></div>
-									</div>
-									
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td height="10"></td>
-				</tr>
-				<tr>
-					<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("Chinese", null, "") %>):</td>
-				</tr>
-				<tr>
-					<td align="left" class="mobile-trace">
-						<table width="100%">
-							<tr>
-								<td>
-								<!-- NEW FORM 2 -->
-								
-								<div class="row">
-										<div class="col-md-6">
-											<div class="row">
-												<div class="col-md-4">
-												<label class="control-label"><%=lang.getString("Last Name", null, "") %>: </label>
-												</div>
-												<div class="col-md-8">
-													<input  id="middlenameChineseField" name="middlenameChineseField" class="form-control" type="text" autocomplete="off" value="<%=surNameCn %>"  readonly="readonly"/>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="10"></td>
+					</tr>
+					<tr>
+						<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("Chinese", null, "") %>):</td>
+					</tr>
+					<tr>
+						<td align="left" class="mobile-trace">
+							<table width="100%">
+								<tr>
+									<td>
+										<!-- NEW FORM 2 -->
+										<div class="row">
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-4">
+														<label class="control-label"><%=lang.getString("Last Name", null, "") %>: </label>
+													</div>
+													<div class="col-md-8">
+														<input id="middlenameChineseField" name="middlenameChineseField" class="form-control" type="text" autocomplete="off" value="<%=surNameCn %>" readonly="readonly" />
+													</div>
 												</div>
 											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="row">
-												<div class="col-md-4">
-												<label class="control-label"><%=lang.getString("First Name", null, "") %>: </label>
+											<div class="col-md-6">
+												<div class="row">
+													<div class="col-md-4">
+														<label class="control-label"><%=lang.getString("First Name", null, "") %>: </label>
+													</div>
+													<div class="col-md-8">
+														<input id="firstnameChineseField" name="firstnameChineseField" class="form-control" type="text" autocomplete="off" value="<%=firstNameCn %>" readonly="readonly" />
+													</div>
 												</div>
-											<div class="col-md-8">
-												<input  id="firstnameChineseField" name="firstnameChineseField" class="form-control" type="text" autocomplete="off" value="<%=firstNameCn %>"  readonly="readonly"/>
 											</div>
-										</div>
-										</div>
-									</div>
-									
-									<!-- FORM 3 -->
-								<div class="row"  style="margin-top:25px">
-									<div class="col-md-6">
-											<div class="row">
+										</div> <!-- FORM 3 -->
+										<div class="row" style="margin-top: 25px">
+											<div class="col-md-6">
+												<div class="row">
 													<div class="col-md-4">
 														<label class="control-label"><%=lang.getString("Date of Birth", null, "") %>:</label>
 													</div>
 													<div class="col-md-5">
-														<input  id="dobField" name="dobField" class="form-control" type="text" autocomplete="off" value="<%=dobDay %>-<%=dobMonth %>-<%=dobYear %>"  readonly="readonly"/>
+														<input id="dobField" name="dobField" class="form-control" type="text" autocomplete="off" value="<%=dobMonth%>/<%=dobDay%>/<%=dobYear%>" readonly="readonly" />
 													</div>
 													<div class="col-md-3"></div>
+												</div>
 											</div>
-									</div>
-								</div>
-								
-								<div class="row"  style="margin-top:10px">
-									<div class="col-md-6">
-											<div class="row">
+										</div>
+										<div class="row" style="margin-top: 10px">
+											<div class="col-md-6">
+												<div class="row">
 													<div class="col-md-4">
 														<label class="control-label"><%=lang.getString("Gender", null, "") %>:</label>
 													</div>
 													<div class="col-md-5">
-														<input  id="gender" name="gender" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(gender, null, "") %>"  readonly="readonly"/>
+														<input id="gender" name="gender" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(gender, null, "") %>" readonly="readonly" />
 													</div>
 													<div class="col-md-3"></div>
+												</div>
 											</div>
-									</div>
-								</div>
-								
-								
-								<div class="row"  style="margin-top:10px">
-									<div class="col-md-6">
-											<div class="row">
+										</div>
+										<div class="row" style="margin-top: 10px">
+											<div class="col-md-6">
+												<div class="row">
 													<div class="col-md-4">
 														<label class="control-label"><%=lang.getString("Student ID", null, "") %>:</label>
 													</div>
 													<div class="col-md-5">
-														<input  id="studentId" name="studentId" class="form-control" type="text" autocomplete="off" value=""  readonly="readonly"/>
+														<input id="studentId" name="studentId" class="form-control" type="text" autocomplete="off" value="" readonly="readonly" />
 													</div>
 													<div class="col-md-2"></div>
+												</div>
 											</div>
-									</div>
-								</div>
-							<% if (nationalId != null && !(nationalId.equals(""))) { %>	
-								<div class="row"  style="margin-top:10px">
-									<div class="col-md-6">
-											<div class="row">
+										</div> <% if (nationalId != null && !(nationalId.equals(""))) { %>
+										<div class="row" style="margin-top: 10px">
+											<div class="col-md-6">
+												<div class="row">
 													<div class="col-md-4">
 														<label class="control-label"><%=lang.getString("National ID", null, "") %>:</label>
 													</div>
 													<div class="col-md-5">
-														<input  id="nationalId" name="nationalId" class="form-control" type="text" autocomplete="off" value="<%=nationalId %>"  readonly="readonly"/>
+														<input id="nationalId" name="nationalId" class="form-control" type="text" autocomplete="off" value="<%=nationalId %>" readonly="readonly" />
 													</div>
 													<div class="col-md-3"></div>
+												</div>
 											</div>
-									</div>
-								</div>
-								
-							<% } %>	
-								
-								<div class="row"  style="margin-top:10px">
-												<div class="col-md-2">
-														<label class="control-label"><%=lang.getString("Account Name", null, "") %>:</label>
-												</div>
-												<div class="col-md-5">
-														<input  id="accountName" name="accountName" class="form-control" type="text" autocomplete="off" value="<%=accountName %>"  readonly="readonly"/>
-												</div>
-												<div class="col-md-5 magic-push">
-															<a href="#" id="lnk-ChangePassword">
-																<span class="regular-link-underline-light-blue"><%=lang.getString("Change Password", null, "") %></span>
-															</a>
-												</div>
-								</div>
-								
-								<div class="row"  style="margin-top:10px;">
-												<div class="col-md-2">
-														<label class="control-label"><%=lang.getString("Preferred Contact Method", null, "") %>:</label>
-												</div>
-												<div class="col-md-5" >
-														<select id="contactMethod"  class="form-control" >
-															<option><%=lang.getString("Mailing address", null, "") %></option>
-															<option><%=lang.getString("Phone", null, "") %></option>
-															<option><%=lang.getString("Email", null, "") %></option>
-														</select>
-												</div>
-												<div class="col-md-5 magic-push">
-														 
-												</div>
-								</div>
-								
-								</td>	
-							</tr>
-						</table>
-					</td>
-				</tr>
+										</div> <% } %>
+										<div class="row" style="margin-top: 10px">
+											<div class="col-md-2">
+												<label class="control-label"><%=lang.getString("Account Name", null, "") %>:</label>
+											</div>
+											<div class="col-md-5">
+												<input id="accountName" name="accountName" class="form-control" type="text" autocomplete="off" value="<%=accountName %>" readonly="readonly" />
+											</div>
+											<div class="col-md-5 magic-push">
+												<a href="#" id="lnk-ChangePassword"> <span class="regular-link-underline-light-blue"><%=lang.getString("Change Password", null, "") %></span>
+												</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
 					<tr>
-					<td height="20px"> </td>
-					</tr>			
-				<tr>
-					<td align="left"  class="border-style">
-						<table>
-							<tr>&nbsp;</tr>
-							<tr>
-								<td align="left">
-									<label class="control-label">
-									<%=lang.getString("If you would like to be contacted with information about how British Council are improving our products and services and related offers, please tick the text box for the relevant channel. You may choose more than one.", null, "") %>
-									</label>
-								</td>
-							</tr>
-							<tr>
-								<td>&nbsp;</td>
-							</tr>
-							<tr>
-								<td align="left" class="" >
-									<table width="100%">
-										<tr>
-											<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" /></td>
-											<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" /></td>
-											<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" /></td>
-											<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" id="chk-email" /></td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-					</td>		
-				</tr>
-						
-				<tr>
-					<td height="30"></td>
-				</tr>
-			</table>
-		</div>
-		
-		<br>
-		
-		<div id="addressContainer" class="table-responsive portalTable">
-			<table class="table" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:0px">
-				<%--<tr class="list-header" style="display: none;">
+						<td height="20px"></td>
+					</tr>
+					<tr>
+						<td align="left" class="border-style">
+							<table>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td><label class="control-label"><%=lang.getString("Preferred Contact Method", null, "") %>:</label></td>
+								</tr>
+								<tr>
+									<td><select id="contactMethod" class="form-control">
+											<option><%=lang.getString("Mailing address", null, "") %></option>
+											<option><%=lang.getString("Phone", null, "") %></option>
+											<option><%=lang.getString("Email", null, "") %></option>
+									</select></td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td align="left"><label class="control-label"> <%=lang.getString("If you would like to be contacted with information about how British Council are improving our products and services and related offers, please tick the text box for the relevant channel. You may choose more than one.", null, "") %>
+									</label></td>
+								</tr>
+								<tr>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td align="left" class="">
+										<table width="100%">
+											<tr>
+												<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" name="chkPreferredContact" /></td>
+												<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" name="chkPreferredContact" /></td>
+												<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" name="chkPreferredContact" /></td>
+												<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" id="chk-email" name="chkPreferredContact" /></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div align="right" style="margin-top: 20px">
+											<input type="button" class="buttonBlue buttonSmall" value="Cancel" onclick="javascript:MyDetails.cancelPreferredContact();"> <input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.savePreferredContact();">
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td height="30"></td>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<div id="addressContainer" class="table-responsive portalTable">
+				<table class="table" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 0px">
+					<%--<tr class="list-header" style="display: none;">
 					<th width="10%" class=""><%=lang.getString("Type", null, "") %></th>
 					<th width="65%"><%=lang.getString("Address", null, "") %></th>
 					<th width="10%" class=""><%=lang.getString("Primary", null, "") %></th>
 					<th width="15%" class="" align="center"><%=lang.getString("Action", null, "") %></th>
 				</tr> --%>
-				<tr>
-					<th colspan="4"><%=lang.getString("Address", null, "") %></th>
-				</tr>
-				<%
+					<tr>
+						<th colspan="4"><%=lang.getString("Address", null, "") %></th>
+					</tr>
+					<%
 				String country = "";
 				String cid = "";
 				String option = "";
@@ -1292,32 +1272,22 @@ try {
 						String classTag = ((addressesCnt % 2) == 0) ? "blue" : "white";
 					%>
 					<tr class="<%=classTag %>">
-						<td width="10%"><%=addressType %></td>
+						<td width="10%"><%=lang.getString(addressType, null, "")%></td>
 						<td width="50%"><%=completeAddress %></td>
 						<td width="20%" class="right">
-							<% if (!isPrimaryChecked.equals("")) { %>
-							<span class="indicator">(Primary)</span>
-							<% } %>
-							<input id="isPrimaryRadioButtonAddress<%=id %>" name="isPrimaryRadioButtonAddress" value="<%=id %>" type="radio" class="v-align-middle" <%=isPrimaryChecked %> onclick="MyDetails.setAddressAsPrimary();"/>
+							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(Primary)</span> <% } %> <input id="isPrimaryRadioButtonAddress<%=id %>" name="isPrimaryRadioButtonAddress" value="<%=id %>" type="radio" class="v-align-middle" <%=isPrimaryChecked %> onclick="MyDetails.setAddressAsPrimary();" />
 						</td>
-						<td width="15%" align="left">
-							<span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editAddress('<%=addressesCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span>
-							<% if(addresses.size() > 1 && isPrimaryChecked.equals("")) { %>
-							 &nbsp;&nbsp;
-							<span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('address','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
-							
-							<% } %>
-						</td>
-						
+						<td width="15%" align="left"><span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editAddress('<%=addressesCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span> <% if(addresses.size() > 1 && isPrimaryChecked.equals("")) { %> &nbsp;&nbsp; <span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('address','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
+							<% } %></td>
 					</tr>
 					<tr class="<%=classTag %>" id="addressEditContainer<%=addressesCnt %>" style="display: none;">
-						<td colspan="4"  class="">
+						<td colspan="4" class="">
 							<table width="100%" class="">
 								<tr>
 									<td class="" width="150"><label class="control-label"><%=lang.getString("Address Line 1", null, "") %>:</label></td>
 									<td>
 										<div class="">
-											<input id="line1<%=id %>" name="line1<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line1 %>"/>
+											<input id="line1<%=id %>" name="line1<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line1 %>" />
 										</div>
 									</td>
 								</tr>
@@ -1325,7 +1295,7 @@ try {
 									<td class=""><label class="control-label"><%=lang.getString("Address Line 2", null, "") %>:</label></td>
 									<td>
 										<div class="">
-											<input id="line2<%=id %>" name="line2<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line2 %>"/>
+											<input id="line2<%=id %>" name="line2<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line2 %>" />
 										</div>
 									</td>
 								</tr>
@@ -1337,9 +1307,9 @@ try {
 													cid = "value=\""+countryID+"\"";
 													option = country.replace(cid, cid + " selected=\"selected\"");
 												%>
-											<select id="country<%=id %>"  class="form-control" style="width: 280px">
-													<%=option %>
-										</select>
+											<select id="country<%=id %>" class="form-control" style="width: 280px">
+												<%=option %>
+											</select>
 										</div>
 									</td>
 								</tr>
@@ -1347,27 +1317,23 @@ try {
 									<td class="table-data column-text"><label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>:</label></td>
 									<td>
 										<div class="">
-											<input id="postCode<%=id %>" name="postCode<%=id %>" class="form-control postCode" type="text" autocomplete="off" value="<%=postCode %>"/>
+											<input id="postCode<%=id %>" name="postCode<%=id %>" class="form-control postCode" type="text" autocomplete="off" value="<%=postCode %>" />
 										</div>
 									</td>
 								</tr>
-								
 								<tr>
 									<td class="table-data column-text"><label class="control-label"><%=lang.getString("Address Type", null, "") %>:</label></td>
-									<td colspan="1">
-										<select id="addressType<%=id %>" name="addressType<%=id %>" style="width: 280px;" class="form-control">
+									<td colspan="1"><select id="addressType<%=id %>" name="addressType<%=id %>" style="width: 280px;" class="form-control">
 											<option <%=addressType.equals("Home") ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
 											<option <%=addressType.equals("Office") ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 											<option <%=addressType.equals("Postal") ? "selected" : "" %>><%=lang.getString("Postal", null, "") %></option>
 											<option <%=addressType.equals("Others") ? "selected" : "" %>><%=lang.getString("Others", null, "") %></option>
-									</select>
-									</td>
+									</select></td>
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
 										<div align="right">
-										<input name="" onclick="javascript:MyDetails.editAddress('0');" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue  buttonSmall"/>
-										<input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
+											<input name="" onclick="javascript:MyDetails.editAddress('0');" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue  buttonSmall" /> <input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall" />
 										</div>
 									</td>
 								</tr>
@@ -1378,7 +1344,7 @@ try {
 					}
 					%>
 					<input id="totalAddressesCnt" name="totalAddressesCnt" type="hidden" value="<%=addressesCnt %>" />
-				<%
+					<%
 				} else {
 				%>
 					<tr class="list-odd-item">
@@ -1387,112 +1353,92 @@ try {
 					<tr class="list-even-item">
 						<td colspan="5" class="table-header column-text"></td>
 					</tr>
-				<%
+					<%
 				}
 				%>
-				
-				<tr>
-					<td width="100%" colspan="4" align="right"
-						class="btnContainer"><table border="0" cellspacing="0"
-							cellpadding="0">
-							<tr>
-								<td align="center" valign="middle" class="btnLabel"><%=lang.getString("Add New Address", null, "") %></td>
-								<td align="center" valign="middle" class="plus buttonBlue" onclick="javascript:MyDetails.addNewAddress();">+</td>
-							</tr>
-						</table></td>
-				</tr>
-				<tr id="newAddressEntry" style="display: none;">
-					<td colspan="4" class="">
-						<div class="row">
-                        	<div class="col-md-2">
-                            <label class="control-label"><%=lang.getString("Address Line 1", null, "") %>: </label>
-                            </div>
-                            <div class="col-md-10">
-                            <input  id="line1New" name="line1New" class="form-control" type="text" autocomplete="off"/>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                        	<div class="col-md-2">
-                            <label class="control-label"><%=lang.getString("Address Line 2", null, "") %>: </label>
-                            </div>
-                            <div class="col-md-10">
-                            <input  id="line2New" name="line2New" class="form-control" type="text" autocomplete="off"/>
-                            </div>
-                        </div>
-                        
-                         <div class="row">
-                        	<div class="col-md-2">
-                            <label class="control-label"><%=lang.getString("Country", null, "") %>: </label>
-                            </div>
-                            <div class="col-md-5">
-                            
-												<%  country = h.getCountryOptions(); 
+					<tr>
+						<td width="100%" colspan="4" align="right" class="btnContainer"><table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td align="center" valign="middle" class="btnLabel" style="vertical-align: middle;"><%=lang.getString("Add New Address", null, "") %></td>
+									<td align="center" valign="middle" class="plus buttonBlue" onclick="javascript:MyDetails.addNewAddress();">+</td>
+								</tr>
+							</table></td>
+					</tr>
+					<tr id="newAddressEntry" style="display: none;">
+						<td colspan="4" class="">
+							<div class="row">
+								<div class="col-md-2">
+									<label class="control-label"><%=lang.getString("Address Line 1", null, "") %>: </label>
+								</div>
+								<div class="col-md-10">
+									<input id="line1New" name="line1New" class="form-control" type="text" autocomplete="off" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2">
+									<label class="control-label"><%=lang.getString("Address Line 2", null, "") %>: </label>
+								</div>
+								<div class="col-md-10">
+									<input id="line2New" name="line2New" class="form-control" type="text" autocomplete="off" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2">
+									<label class="control-label"><%=lang.getString("Country", null, "") %>: </label>
+								</div>
+								<div class="col-md-5">
+									<%  country = h.getCountryOptions(); 
 													cid = "value=\"202\"";
 													option = country.replace(cid, cid + " selected=\"selected\"");
 												%>
-										<select id="countryNew"  class="form-control" style="width: 280px">
-											<%=option %>														
-										</select>
-                            </div>
-                            <div class="col-md-2">
-                            <label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label>
-                            </div>
-                            <div class="col-md-3">
-                            <input  id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off"/>
-                            </div>
-                        </div>
-                        
-                         <div class="row">
-                        	<div class="col-md-2">
-                            <label class="control-label"><%=lang.getString("Address Type", null, "") %>: </label>
-                            </div>
-                            <div class="col-md-8">
-							<select id="addressTypeNew" style="width: 280px;" class="form-control">
-										<option>Home</option>
-										<option>Office</option>
-										<option>Postal</option>
-										<option>Others</option>
-									</select>                            
-                            </div>
-                        </div>
-                        
-                        <div style="margin-top:10px">
-                        <input type="hidden" id="hd-address" value="<%=lang.getString("Address", null, "") %>"/>
-									<input type="hidden" id="hd-primary" value="<%=lang.getString("Primary", null, "") %>"/>
-									<input type="hidden" id="hd-action" value="<%=lang.getString("Action", null, "") %>"/>
-									<input type="hidden" id="hd-country" value="<%=lang.getString("Country", null, "") %>"/>
-									 <input type="hidden" id="hd-postal" value="<%=lang.getString("Zip/Postal Code", null, "") %>"/>
-									 <input type="hidden" id="hd-edit" value="<%=lang.getString("Edit", null, "") %>"/>
-									 <input type="hidden" id="hd-delete" value="<%=lang.getString("Delete", null, "") %>"/>
-									 <input type="hidden" id="hd-save" value="<%=lang.getString("Save", null, "") %>"/>
-									 <input type="hidden" id="hd-Cancel" value="<%=lang.getString("Cancel", null, "") %>"/>
-									 <div align="right">
-									 <input onclick="javascript:MyDetails.addNewAddress();" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue buttonSmall"/>
-                        			 <input onclick="javascript:MyDetails.saveNewAddress();" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
-						</div>
-
-					</td>
-				</tr>
-				
-			</table>
-			
-		</div>
-		
-		<br>
-		
-		<div id="phoneNumbersContainer" class="table-responsive">
-			<table class="table portalTable" cellpadding="0" cellspacing="0" width="100%">
-				<tr style="display: none;">
-					<th width="10%" class=""><%=lang.getString("Type", null, "") %></th>
-					<th width="65%" class=""><%=lang.getString("Number", null, "") %></th>
-					<th width="10%" class=""><%=lang.getString("Primary", null, "") %></th>
-					<th width="15%" class="" align="center"><%=lang.getString("Action", null, "") %></th>
-				</tr>
-				<tr>
-					<th colspan="4"><%=lang.getString("Phone Numbers", null, "") %></th>
-				</tr>
-				<%
+									<select id="countryNew" class="form-control" style="width: 280px">
+										<%=option %>
+									</select>
+								</div>
+								<div class="col-md-2">
+									<label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label>
+								</div>
+								<div class="col-md-3">
+									<input id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-2">
+									<label class="control-label"><%=lang.getString("Address Type", null, "") %>: </label>
+								</div>
+								<div class="col-md-8">
+									<select id="addressTypeNew" style="width: 280px;" class="form-control">
+										<option><%=lang.getString("Home", null, "") %></option>
+										<option><%=lang.getString("Office", null, "") %></option>
+										<option><%=lang.getString("Postal", null, "") %></option>
+										<option><%=lang.getString("Others", null, "") %></option>
+									</select>
+								</div>
+							</div>
+							<div style="margin-top: 10px">
+								<input type="hidden" id="hd-address" value="<%=lang.getString("Address", null, "") %>" /> <input type="hidden" id="hd-primary" value="<%=lang.getString("Primary", null, "") %>" /> <input type="hidden" id="hd-action" value="<%=lang.getString("Action", null, "") %>" /> <input type="hidden" id="hd-country" value="<%=lang.getString("Country", null, "") %>" /> <input type="hidden" id="hd-postal" value="<%=lang.getString("Zip/Postal Code", null, "") %>" /> <input type="hidden" id="hd-edit"
+									value="<%=lang.getString("Edit", null, "") %>" /> <input type="hidden" id="hd-delete" value="<%=lang.getString("Delete", null, "") %>" /> <input type="hidden" id="hd-save" value="<%=lang.getString("Save", null, "") %>" /> <input type="hidden" id="hd-Cancel" value="<%=lang.getString("Cancel", null, "") %>" />
+								<div align="right">
+									<input onclick="javascript:MyDetails.addNewAddress();" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue buttonSmall" /> <input onclick="javascript:MyDetails.saveNewAddress();" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall" />
+								</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br />
+			<br />
+			<div id="phoneNumbersContainer" class="table-responsive">
+				<table class="table portalTable" cellpadding="0" cellspacing="0" width="100%">
+					<tr style="display: none;">
+						<th width="10%" class=""><%=lang.getString("Type", null, "") %></th>
+						<th width="65%" class=""><%=lang.getString("Number", null, "") %></th>
+						<th width="10%" class=""><%=lang.getString("Primary", null, "") %></th>
+						<th width="15%" class="" align="center"><%=lang.getString("Action", null, "") %></th>
+					</tr>
+					<tr>
+						<th colspan="4"><%=lang.getString("Phone Numbers", null, "") %></th>
+					</tr>
+					<%
 				if(phoneNumbers.size() > 0) {
 				%>
 					<%
@@ -1516,19 +1462,10 @@ try {
 						<td width="10%"><%=lang.getString(phoneType, null, "") %></td>
 						<td width="60%"><%=number %></td>
 						<td width="15%" align="right">
-							<% if (!isPrimaryChecked.equals("")) { %>
-								<span class="indicator">(Primary)</span>
-							<% } %>
-							<input id="isPrimaryRadioButtonPhoneNumbers<%=id %>" name="isPrimaryRadioButtonPhoneNumbers" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setPhoneNumberAsPrimary();"/>
+							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(Primary)</span> <% } %> <input id="isPrimaryRadioButtonPhoneNumbers<%=id %>" name="isPrimaryRadioButtonPhoneNumbers" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setPhoneNumberAsPrimary();" />
 						</td>
-						<td width="15%">
-							<span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editPhoneNumber('<%=phoneNumbersCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span>
-							<% if(phoneNumbers.size() > 1 && isPrimaryChecked.equals("")) { %>
-							&nbsp;&nbsp;
-							<span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('phone','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
-							
-							<% } %>
-						</td>
+						<td width="15%"><span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editPhoneNumber('<%=phoneNumbersCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span> <% if(phoneNumbers.size() > 1 && isPrimaryChecked.equals("")) { %> &nbsp;&nbsp; <span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('phone','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
+							<% } %></td>
 					</tr>
 					<tr class="<%=classTag %>" id="phoneNumberEditContainer<%=phoneNumbersCnt %>" style="display: none;">
 						<td colspan="4">
@@ -1537,7 +1474,7 @@ try {
 									<td class="control-label" width="150"><%=lang.getString("Number", null, "") %>:</td>
 									<td>
 										<div class="">
-											<input id="number<%=id %>" name="number<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=number %>"/>
+											<input id="number<%=id %>" name="number<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=number %>" />
 										</div>
 									</td>
 								</tr>
@@ -1545,7 +1482,7 @@ try {
 									<td class="control-label"><%=lang.getString("Phone Type", null, "") %>:</td>
 									<td>
 										<div>
-											<select id="phoneType<%=id %>" name="phoneType<%=id %>"  class="form-control" style="width:280px;">
+											<select id="phoneType<%=id %>" name="phoneType<%=id %>" class="form-control" style="width: 280px;">
 												<option value="Home" <%="Home".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
 												<option value="Office" <%="Office".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 												<option value="Mobile" <%="Mobile".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Mobile", null, "") %></option>
@@ -1556,8 +1493,7 @@ try {
 								<tr>
 									<td colspan="2">
 										<div align="right">
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editPhoneNumber('0');"/>	
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditPhoneNumber('<%=id %>');"/>
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editPhoneNumber('0');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditPhoneNumber('<%=id %>');" />
 										</div>
 									</td>
 								</tr>
@@ -1568,7 +1504,7 @@ try {
 					}
 					%>
 					<input id="totalPhoneNumbersCnt" name="totalPhoneNumbersCnt" type="hidden" value="<%=phoneNumbersCnt %>" />
-				<%
+					<%
 				} else {
 				%>
 					<tr class="list-odd-item">
@@ -1577,63 +1513,57 @@ try {
 					<tr class="list-even-item">
 						<td colspan="5" class="table-header column-text"></td>
 					</tr>
-				<%
+					<%
 				}
 				%>
-				<tr>
-					<td width="100%" colspan="4" align="right"
-						class="btnContainer"><table border="0" cellspacing="0"
-							cellpadding="0">
-							<tr>
-								<td align="center" valign="middle" class="btnLabel"><%=lang.getString("Add New Phone Numbers", null, "") %></td>
-								<td align="center" valign="middle" class="plus buttonBlue" onclick="javascript:MyDetails.addNewPhoneNumber();">+</td>
-							</tr>
-						</table></td>
-				</tr>
-				<tr id="newPhoneNumberEntry" style="display: none;">
-					<td colspan="4" class="btnContainer" style="padding:0 2%"> 
-						<div class="row">
-                        	<div class="col-md-1">
-                            <label class="control-label"><%=lang.getString("Number", null, "") %>:</label>
-                            </div>
-                            <div class="col-md-7">
-                            	<input  id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
-                            </div>
-                            <div class="col-md-2">
-                            <label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label>
-                            </div>
-                            <div class="col-md-4">
-                            <select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
-											<option value="Home"><%=lang.getString("Home", null, "") %></option>
-											<option value="Office"><%=lang.getString("Office", null, "") %></option>
-											<option value="Mobile"><%=lang.getString("Mobile", null, "") %></option>
-										</select>
-                            </div>
-                        </div>
-                        
-                         <div align="right" style="margin:10px 0px">
-                         				<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewPhoneNumber();"/>
-										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewPhoneNumber();"/>
-									</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-		
-		<br>
-		
-		<div id="emailAddressesContainer" class="table-responsive">
-			<table class="table portalTable" cellpadding="0" cellspacing="0" width="100%">
-				<tr class="list-header" style="display: none;">
-					<th width="10%" class="table-header column-text"><%=lang.getString("Type", null, "") %></th>
-					<th width="65%" class="table-header column-text"><%=lang.getString("Email", null, "") %></th>
-					<th width="10%" class="table-header column-date"><%=lang.getString("Primary", null, "") %></th>
-					<th width="15%" class="table-header column-text" align="center"><%=lang.getString("Action", null, "") %></th>
-				</tr>
-				<tr class="list-header">
-					<th colspan="4"><%=lang.getString("Email", null, "") %></th>
-				</tr> 
-				<%
+					<tr>
+						<td width="100%" colspan="4" align="right" class="btnContainer"><table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td align="center" valign="middle" class="btnLabel" style="vertical-align: middle;"><%=lang.getString("Add New Phone Numbers", null, "") %></td>
+									<td align="center" valign="middle" class="plus buttonBlue" onclick="javascript:MyDetails.addNewPhoneNumber();">+</td>
+								</tr>
+							</table></td>
+					</tr>
+					<tr id="newPhoneNumberEntry" style="display: none;">
+						<td colspan="4" class="btnContainer" style="padding: 0 2%">
+							<div class="row">
+								<div class="col-md-1">
+									<label class="control-label"><%=lang.getString("Number", null, "") %>:</label>
+								</div>
+								<div class="col-md-7">
+									<input id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
+								</div>
+								<div class="col-md-2">
+									<label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label>
+								</div>
+								<div class="col-md-4">
+									<select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
+										<option value="Home"><%=lang.getString("Home", null, "") %></option>
+										<option value="Office"><%=lang.getString("Office", null, "") %></option>
+										<option value="Mobile"><%=lang.getString("Mobile", null, "") %></option>
+									</select>
+								</div>
+							</div>
+							<div align="right" style="margin: 10px 0px">
+								<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewPhoneNumber();" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewPhoneNumber();" />
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<div id="emailAddressesContainer" class="table-responsive">
+				<table class="table portalTable" cellpadding="0" cellspacing="0" width="100%">
+					<tr class="list-header" style="display: none;">
+						<th width="10%" class="table-header column-text"><%=lang.getString("Type", null, "") %></th>
+						<th width="65%" class="table-header column-text"><%=lang.getString("Email", null, "") %></th>
+						<th width="10%" class="table-header column-date"><%=lang.getString("Primary", null, "") %></th>
+						<th width="15%" class="table-header column-text" align="center"><%=lang.getString("Action", null, "") %></th>
+					</tr>
+					<tr class="list-header">
+						<th colspan="4"><%=lang.getString("Email", null, "") %></th>
+					</tr>
+					<%
 				if(emailAddresses.size() > 0) {
 				%>
 					<%
@@ -1653,48 +1583,34 @@ try {
 						String classTag = ((emailAddressesCnt % 2) == 0) ? "white" : "blue";
 					%>
 					<tr class="<%=classTag %>">
-						<td width="10%"><%=emailType %></td>
+						<td width="10%"><%=lang.getString(emailType, null, "") %></td>
 						<td width="60%"><%=emailAdd %></td>
 						<td width="15%" align="right">
-							<% if (!isPrimaryChecked.equals("")) { %>
-								<span class="indicator">(Primary)</span>
-							<% } %>
-							<input id="isPrimaryRadioButtonEmailAddresses<%=id %>" name="isPrimaryRadioButtonEmailAddresses" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setEmailAddressAsPrimary();"/>
+							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(Primary)</span> <% } %> <input id="isPrimaryRadioButtonEmailAddresses<%=id %>" name="isPrimaryRadioButtonEmailAddresses" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setEmailAddressAsPrimary();" />
 						</td>
-						<td width="15%">
-							<span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editEmailAddress('<%=emailAddressesCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span>
-							<% if(emailAddresses.size() > 1 && (isPrimaryChecked.trim().equals(""))) { %>
-							&nbsp;&nbsp;
-							<span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('email','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
-							
-							<% } %>
-						</td>
+						<td width="15%"><span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editEmailAddress('<%=emailAddressesCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span> <% if(emailAddresses.size() > 1 && (isPrimaryChecked.trim().equals(""))) { %> &nbsp;&nbsp; <span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('email','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
+							<% } %></td>
 					</tr>
 					<tr class="<%=classTag %>" id="emailAddressEditContainer<%=emailAddressesCnt %>" style="display: none;">
 						<td colspan="4" valign="top">
 							<table width="60%">
 								<tr>
 									<td class="control-label" valign="top" width="150"><%=lang.getString("Email", null, "") %>:</td>
-									<td valign="top">
-										<input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>"/>
-									</td>
+									<td valign="top"><input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>" /></td>
 								</tr>
 								<tr>
 									<td class="control-label"><%=lang.getString("Email Type", null, "") %>:</td>
-									<td>
-										<select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
+									<td><select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
 											<option <%=emailType.equals("Personal") ? "selected" : "" %>><%=lang.getString("Personal", null, "") %></option>
 											<option <%=emailType.equals("Office") ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 											<option <%=emailType.equals("Temporary") ? "selected" : "" %>><%=lang.getString("Temporary", null, "") %></option>
 											<option <%=emailType.equals("Other") ? "selected" : "" %>><%=lang.getString("Other", null, "") %></option>
-									</select>
-									</td>
+									</select></td>
 								</tr>
 								<tr>
 									<td colspan="2">
 										<div align="right">
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('1');"/>
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');"/>
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('1');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');" />
 										</div>
 									</td>
 								</tr>
@@ -1705,7 +1621,7 @@ try {
 					}
 					%>
 					<input id="totalEmailAddressesCnt" name="totalEmailAddressesCnt" type="hidden" value="<%=emailAddressesCnt %>" />
-				<%
+					<%
 				} else {
 				%>
 					<tr class="list-odd-item">
@@ -1714,60 +1630,54 @@ try {
 					<tr class="list-even-item">
 						<td colspan="5" class="table-header column-text"></td>
 					</tr>
-				<%
+					<%
 				}
 				%>
-				<tr>
-					<td width="100%" colspan="4" align="right"
-						class="btnContainer"><table border="0" cellspacing="0"
-							cellpadding="0">
-							<tr>
-								<td align="center" valign="middle" class="btnLabel"><%=lang.getString("Add New Email Address", null, "") %></td>
-								<td align="center" valign="middle" class="plus buttonBlue" onclick="javascript:MyDetails.addNewEmailAddress();">+</td>
-							</tr>
-						</table></td>
-				</tr>
-				<tr id="newEmailAddressEntry" style="display: none;">
-					<td colspan="4" class="btnContainer">
-						<table width="100%">
-							<tr>
-								<td height="">
-								  <div class="row">
-                        	<div class="col-md-1">
-                            <label class="control-label"><%=lang.getString("Email", null, "") %>:</label>
-                            </div>
-                            <div class="col-md-4">
-                            	<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value=""/>
-                            </div>
-                            <div class="col-md-2">
-                            <label class="control-label"><%=lang.getString("Email Type", null, "") %>:</label>
-                            </div>
-                            <div class="col-md-5">
-                            <select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
-										<option>Personal</option>
-										<option>Office</option>
-										<option>Temporary</option>
-										<option>Other</option>
-									</select>
-                            </div>
-                        </div>
-               
-                         <div align="right" style="margin:10px 15px">
-										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewEmailAddress();"/>
-										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewEmailAddress();"/>
-						</div>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
-		</div>
-		
-		<br>
-		
-		<table width="100%">
-			<% if(DataBlockUtil.PEPI_STAGE_TWO.equals(h.getPepiStage())) { %>
+					<tr>
+						<td width="100%" colspan="4" align="right" class="btnContainer"><table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td align="center" valign="middle" class="btnLabel" style="vertical-align: middle;"><%=lang.getString("Add New Email Address", null, "") %></td>
+									<td align="center" valign="middle" class="plus buttonBlue" onclick="javascript:MyDetails.addNewEmailAddress();">+</td>
+								</tr>
+							</table></td>
+					</tr>
+					<tr id="newEmailAddressEntry" style="display: none;">
+						<td colspan="4" class="btnContainer">
+							<table width="100%">
+								<tr>
+									<td height="">
+										<div class="row">
+											<div class="col-md-1">
+												<label class="control-label"><%=lang.getString("Email", null, "") %>:</label>
+											</div>
+											<div class="col-md-4">
+												<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value="" />
+											</div>
+											<div class="col-md-2">
+												<label class="control-label"><%=lang.getString("Email Type", null, "") %>:</label>
+											</div>
+											<div class="col-md-5">
+												<select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
+													<option>Personal</option>
+													<option>Office</option>
+													<option>Temporary</option>
+													<option>Other</option>
+												</select>
+											</div>
+										</div>
+										<div align="right" style="margin: 10px 15px">
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewEmailAddress();" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewEmailAddress();" />
+										</div>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<table width="100%">
+				<% if(DataBlockUtil.PEPI_STAGE_TWO.equals(h.getPepiStage())) { %>
 				<!-- OPEN ENQUIRIES SECTION -->
 				<tr>
 					<td height="20"></td>
@@ -1788,7 +1698,7 @@ try {
 								<%
 								if(enquiries.size() > 0) {
 								%>
-									<%
+								<%
 									int enquiriesCnt = 0;
 									for(int i = 0; i < enquiries.size(); i++) {
 										Enquiry enquiry = enquiries.get(i);
@@ -1800,23 +1710,24 @@ try {
 										enquiriesCnt++;
 										String classTag = ((enquiriesCnt % 2) == 0) ? "list-even-item" : "list-odd-item";
 									%>
-									<tr class="<%=classTag %>">
-										<td class="table-data column-date"><%=submissionDate %></td>
-										<td class="table-data column-text"><%=dateProcessed %></td>
-										<td class="table-data column-text"><%=enquiryStatus %></td>
-										<td class="table-data column-text"><%=note %></td>
+								<tr class="<%=classTag %>">
+									<td class="table-data column-date"><%=submissionDate %></td>
+									<td class="table-data column-text"><%=dateProcessed %></td>
+									<td class="table-data column-text"><%=enquiryStatus %></td>
+									<td class="table-data column-text"><%=note %></td>
 									<%
 									}
 									%>
-								<%
+									<%
 								} else {	
 								%>
-									<tr class="list-odd-item">
-										<td colspan="5" class="table-header column-text"><%=lang.getString("No Data to display", null, "") %></td>
-									</tr>
-									<tr class="list-even-item">
-										<td colspan="5" class="table-header column-text"></td>
-									</tr>
+								
+								<tr class="list-odd-item">
+									<td colspan="5" class="table-header column-text"><%=lang.getString("No Data to display", null, "") %></td>
+								</tr>
+								<tr class="list-even-item">
+									<td colspan="5" class="table-header column-text"></td>
+								</tr>
 								<%
 								}
 								%>
@@ -1825,22 +1736,19 @@ try {
 						</div>
 					</td>
 				</tr>
-			<% } %>
-		</table>
-		
-	</form>
-
-</div>
-
-<input type="hidden" id="title-change-pass"  value="<%=lang.getString("Change Password", null, "") %>"/>
-<input type="hidden" id="msg-pass1"  value="<%=lang.getString("Password successfully updated!", null, "") %>"/>
-<input type="hidden" id="msg-pass2"  value="<%=lang.getString("Invalid current password!", null, "") %>"/>
-<input type="hidden" id="msg-pass3"  value="<%=lang.getString("Password must be at least 8 characters in length.", null, "") %>"/>
-<input type="hidden" id="msg-pass4"  value="<%=lang.getString("Password Mismatched.", null, "") %>"/>
-<input type="hidden" id="msg-pass5"  value="<%=lang.getString("Enter your current password.", null, "") %>"/>
-<input type="hidden" id="msg-pass6"  value="<%=lang.getString("Password must have at least 1 numeric character.", null, "") %>"/>
-<input type="hidden" id="msg-pass7"  value="<%=lang.getString("Password must have at least 1 capital alpha character", null, "") %>"/>
-<%--
+				<% } %>
+			</table>
+		</form>
+	</div>
+	<input type="hidden" id="title-change-pass" value="<%=lang.getString("Change Password", null, "") %>" />
+	<input type="hidden" id="msg-pass1" value="<%=lang.getString("Password successfully updated!", null, "") %>" />
+	<input type="hidden" id="msg-pass2" value="<%=lang.getString("Invalid current password!", null, "") %>" />
+	<input type="hidden" id="msg-pass3" value="<%=lang.getString("Password must be at least 8 characters in length.", null, "") %>" />
+	<input type="hidden" id="msg-pass4" value="<%=lang.getString("Password Mismatched.", null, "") %>" />
+	<input type="hidden" id="msg-pass5" value="<%=lang.getString("Enter your current password.", null, "") %>" />
+	<input type="hidden" id="msg-pass6" value="<%=lang.getString("Password must have at least 1 numeric character.", null, "") %>" />
+	<input type="hidden" id="msg-pass7" value="<%=lang.getString("Password must have at least 1 capital alpha character", null, "") %>" />
+	<%--
 <div id='div_confirmdelete' class="simple_dialog">
 	<div class="form-heading"><h1><span><%=lang.getString("Confirmation Message", null, "") %></span></h1></div>
 	<div class='message control-label' style="margin: 5px; padding: 7px;font-size: 14px; font-weight: bold;" align="center">
@@ -1852,79 +1760,91 @@ try {
 	</div>
 </div>
  --%>
-<!-- Modal -->
-  <div class="modal fade" id="div_confirmdelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title"><span id="msgHeader"><%=lang.getString("Confirmation Message", null, "") %></span></h4>
-        </div>
-        <div class="modal-body">
-          <div id="confirm-message"><%=lang.getString("Please confirm that you want to delete the Address.", null, "") %></div> 	
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><%=lang.getString("Cancel", null, "") %></button>
-          <input type="button" class="btn btn-primary" value="<%=lang.getString("OK", null, "") %>" id="btnConfirmDelete"/>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-
-
-<!-- Modal -->
-  <div class="modal fade" id="div_changepassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title"><span id="msgHeader"><%=lang.getString("Change Password", null, "") %></span></h4>
-        </div>
-        <div class="modal-body">
-          <div class="alert alert-info" style="text-align: left;border-radius: 0px;">
-		     <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must be 8 characters or longer.", null, "") %> <br>
-		     <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 numeric character.", null, "") %> <br>
-		     <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 Capital alpha character.", null, "") %>
-		    </div>
-		   	<form id="frmChangePassword">
-				<table width="410" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="150" class="control-label"><%=lang.getString("Current Password", null, "") %>:</td>
-						<td>
-							<div class="">
-								<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="currentPassword" />
-							</div>
-						</td>
-					</tr>
-					<tr><td height="10"></td></tr>
-					<tr>
-						<td class="control-label"><%=lang.getString("New Password", null, "") %>:</td>
-						<td>
-							<div class="">
-								<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="newPassword" />
-							</div>
-						</td>
-					</tr>
-					<tr><td height="10"></td></tr>
-					<tr>
-						<td class="control-label"><%=lang.getString("Confirm Password", null, "") %>:</td>
-						<td>
-							<div class="">
-								<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="confirmPassword" />
-							</div>
-						</td>
-					</tr>
-				</table>
-			</form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal"><%=lang.getString("Cancel", null, "") %></button>
-          <input type="button" class="btn btn-primary" value="<%=lang.getString("Save Changes", null, "") %>" id="btnPassOk"/>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-<%--
+	<!-- Modal -->
+	<div class="modal fade" id="div_confirmdelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">
+						<span id="msgHeader"><%=lang.getString("Confirmation Message", null, "") %></span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div id="confirm-message"><%=lang.getString("Please confirm that you want to delete the Address.", null, "") %></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"><%=lang.getString("Cancel", null, "") %></button>
+					<input type="button" class="btn btn-primary" value="<%=lang.getString("OK", null, "") %>" id="btnConfirmDelete" />
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- Modal -->
+	<div class="modal fade" id="div_changepassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">
+						<span id="msgHeader"><%=lang.getString("Change Password", null, "") %></span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="alert alert-info" style="text-align: left; border-radius: 0px;">
+						<span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must be 8 characters or longer.", null, "") %>
+						<br> <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 numeric character.", null, "") %>
+						<br> <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 Capital alpha character.", null, "") %>
+					</div>
+					<form id="frmChangePassword">
+						<table width="410" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="150" class="control-label"><%=lang.getString("Current Password", null, "") %>:</td>
+								<td>
+									<div class="">
+										<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="currentPassword" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td height="10"></td>
+							</tr>
+							<tr>
+								<td class="control-label"><%=lang.getString("New Password", null, "") %>:</td>
+								<td>
+									<div class="">
+										<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="newPassword" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td height="10"></td>
+							</tr>
+							<tr>
+								<td class="control-label"><%=lang.getString("Confirm Password", null, "") %>:</td>
+								<td>
+									<div class="">
+										<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="confirmPassword" />
+									</div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"><%=lang.getString("Cancel", null, "") %></button>
+					<input type="button" class="btn btn-primary" value="<%=lang.getString("Save Changes", null, "") %>" id="btnPassOk" />
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<%--
 <div id='div_changepassword' class="simple_dialog bc-form" >
 	<div class="form-heading"><h1><span></span></h1></div>
 	<div class='message' style="margin: 5px; padding: 5px;" align="center">
@@ -1941,13 +1861,13 @@ try {
 	</div>
 </div>
  --%>
-<script type="text/javascript">
+	<script type="text/javascript">
 
 var defaultLangCode = "";
 var currentLangCode = "<%=lang.getCurrentLangCode() %>";
 	
 </script>
-<%
+	<%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.skypepi_myDetails@66 (type=tooltwist.skypepi.widgets.MyDetailsWidget)", e);
 }
@@ -2310,6 +2230,9 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 		},
 
 		addNewAddress: function() {
+			$("#line1New, #line2New, #line3New, #localityNew, #postCodeNew, #addressTypeNew").val("");
+			$("#stateProvinceRegionNew").val($("#stateProvinceRegionNew option:first").val());
+			$("#countryNew").val($("#countryNew option:first").val());
 			$("#newAddressEntry").toggle();
 		},
 
@@ -2481,6 +2404,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 		},
 
 		addNewPhoneNumber: function() {
+			$("#numberNew").val("");
+			$("#phoneTypeNew").val($("#phoneTypeNew option:first").val());
 			$("#newPhoneNumberEntry").toggle();
 		},
 		
@@ -2669,6 +2594,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 		},
 		
 		addNewEmailAddress: function() {
+			$("#emailAddNew").val("")
+			$("#emailTypeNew").val($("#emailTypeNew option:first").val());
 			$("#newEmailAddressEntry").toggle();
 		},
 
@@ -3117,25 +3044,10 @@ var Progress = function() {
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
-//			setTimeout(function(){
-//				jQuery('#div_loading').modal({
-//					closeHTML: "",
-//					position: ["20%",],
-//					overlayId: 'process-overlay',
-//					containerId: 'process-container', 
-//					close: false,
-//					onShow: function (dialog) {
-//						jQuery(".header").css({
-//							"background": "url(/ttsvr/skypepi/images/dialog/header.gif)"
-//						});
-//					}
-//				});
-//			}, 100);
 		},
 		
 		hideProgress: function() {
-			//jQuery.modal.close();
-			jQuery(".close").trigger("click");
+			$("#div_loading").modal("hide");
 		},
 		
 		alertMessage: function(title, msg) {

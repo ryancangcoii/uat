@@ -145,12 +145,12 @@ try {
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
 	<table>
 	<tbody><tr>
-	<%--FOR LOCAL LANGUAGE --%>
+	<%--FOR ALTERNATE LANGUAGE --%>
 		<%
 		String selected = "";
 		boolean isSelected = false;
 		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
-		   if (alternateLanguage != null ) {
+		   if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
 			   String languageCode = alternateLanguage.getLanguageCode();
 			   String languageType = alternateLanguage.getLanguageType();
 			   String languageName = alternateLanguage.getLanguageName();
@@ -172,11 +172,11 @@ try {
 		<td width="5px"></td>
 		<% } %>
 		
-		<%--FOR ALTERNATE LANGUAGE --%>
+		<%--FOR LOCAL LANGUAGE --%>
 		<% 
 		selected = "";
 		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
-		   if (localLanguage != null ) {
+		   if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
 			   String languageCode = localLanguage.getLanguageCode();
 			   String languageType = localLanguage.getLanguageType();
 			   String languageName = localLanguage.getLanguageName();
@@ -650,7 +650,7 @@ div.media {
 								<tr>
 									<td align="right" width="100%">
 									<a href="<%=snippetVar_targetPage%>">
-										<input type="button" class="buttonBlue buttonSmall" value="Back" />
+										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 									</a>
 									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=request.getParameter("enrolmentID") %>">
 										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
@@ -960,25 +960,10 @@ var Progress = function() {
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
-//			setTimeout(function(){
-//				jQuery('#div_loading').modal({
-//					closeHTML: "",
-//					position: ["20%",],
-//					overlayId: 'process-overlay',
-//					containerId: 'process-container', 
-//					close: false,
-//					onShow: function (dialog) {
-//						jQuery(".header").css({
-//							"background": "url(/ttsvr/skypepi/images/dialog/header.gif)"
-//						});
-//					}
-//				});
-//			}, 100);
 		},
 		
 		hideProgress: function() {
-			//jQuery.modal.close();
-			jQuery(".close").trigger("click");
+			$("#div_loading").modal("hide");
 		},
 		
 		alertMessage: function(title, msg) {

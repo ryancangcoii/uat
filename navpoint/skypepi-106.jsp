@@ -48,9 +48,9 @@ try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params = new Properties();
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("navpointSuccess", "skypepi-99");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("validFileExtension", "jpg,jpeg,gif,png");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("hasUploadImage", "false");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("fileUploaderPage", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("fileUploaderPage", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25 = new tooltwist.blog.productionHelpers.BlogAdminBlogDetailsProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params);
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25.callPreFetch(jh);
 } catch (Exception e) {
@@ -84,7 +84,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_37Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_37Params.setProperty("viewOption", "Student Selection");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_37Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_37Params.setProperty("homeNavId", "/ttsvr/home");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_37Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_37 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_37Params);
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_37.callPreFetch(jh);
 } catch (Exception e) {
@@ -100,7 +100,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_38Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_38Params.setProperty("viewOption", "Name");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_38Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_38Params.setProperty("homeNavId", "/ttsvr/home");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_38Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_38 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_38Params);
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_38.callPreFetch(jh);
 } catch (Exception e) {
@@ -115,8 +115,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-75");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params);
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -306,7 +306,7 @@ span.spanBtnSave,span.spanBtnCancel,span.spanBtnApprove{float: right;margin-left
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_52;
-	String snippetVar_myNavpoint = "/ttsvr/home";
+	String snippetVar_myNavpoint = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_widgetName = "@52";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@52";
 	String snippetVar_elementId = "";
@@ -339,7 +339,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_38;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/home";
+	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
@@ -629,7 +629,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_37;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/home";
+	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "No";
@@ -985,7 +985,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/n/Home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1007,8 +1007,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_54;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-75";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/Maintain-Announcement/skypepi-106";
@@ -1261,8 +1261,8 @@ try {
 	String snippetVar_navpointSuccess = "skypepi-99";
 	String snippetVar_hasUploadImage = "false";
 	String snippetVar_validFileExtension = "jpg,jpeg,gif,png";
-	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-75";
-	String snippetVar_fileUploaderPage = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_fileUploaderPage = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_widgetName = "@25";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementMaintain@25";
 	String snippetVar_elementId = "";
@@ -1270,6 +1270,8 @@ try {
 %>
 
 
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.skypepi.util.StringUtil"%>
 <%@page import="tooltwist.wbd.util.PublicUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
@@ -1282,10 +1284,12 @@ try {
 <%@page import="tooltwist.skypepi.bean.Language"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%@page import="tooltwist.skypepi.util.LanguageMasterUtil"%>
+<%@page import="tooltwist.skypepi.util.ProjectUtil"%>
 <%
 	// Get the production helper for this widget
 	BlogAdminBlogDetailsProductionHelper h = (BlogAdminBlogDetailsProductionHelper) helper;
 	XData data = h.getData(jh);
+	AltLang altLang = WebUtil.getAltLang(jh);
 %>
 
 <style>
@@ -1327,36 +1331,48 @@ try {
 			<%
 				String title = "";
 				boolean hiddenRequired = false;
+				String label = "";
 				if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ENGLISH.getLangType())) {
+					label = "English";
 					title = h.getTitle_eng();
 					hiddenRequired = true;
 				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.LOCAL.getLangType())) {
-					title = h.getTitle_loc();
+					Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh);
+				    if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
+						label = localLanguage.getLanguageTranslation();
+					    String languageName = localLanguage.getLanguageName();
+					    if (label == null || label.equals("")) {
+					    	label = languageName;
+					    }
+						title = h.getTitle_loc();
+				    }
 				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ALTERNATE.getLangType())) {
-					title = h.getTitle_alt();
+					Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh);
+				    if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
+					    label = alternateLanguage.getLanguageTranslation();
+					    String languageName = alternateLanguage.getLanguageName();
+					    if (label == null || label.equals("")) {
+					    	label = languageName;
+					    }
+						title = h.getTitle_alt();
+				    }
 				}
 			%>
-			<%
-				if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) {
-			%>
-				<div class="row" style="margin-top:25px">
-					<div class="col-md-12">
-							<div class="row">
-									<div class="col-md-2">
-										Title in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangType())%>:
-									</div>
-									<div class="col-md-10">
-										<input maxlength="150" id="bdTitle_<%=language.getLangType()%>" name="bdTitle_<%=language.getLangType()%>" class="form-control blog_form_input_medium <%if (hiddenRequired) {%>required <%}%>" type="text" autocomplete="off" value="<%=StringUtil.asciiToString(title)%>"/>
-									</div>
-							</div>
+				<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) { %>
+					<div class="row" style="margin-top:25px;<%=!label.equals("")?"":"display:none;"%>">
+						<div class="col-md-12">
+								<div class="row">
+										<div class="col-md-2">
+											Title in <%=label%>:
+										</div>
+										<div class="col-md-10">
+											<input maxlength="150" id="bdTitle_<%=language.getLangType()%>" name="bdTitle_<%=language.getLangType()%>" class="form-control blog_form_input_medium <%if (hiddenRequired) {%>required <%}%>" type="text" autocomplete="off" value="<%=StringUtil.asciiToString(title)%>"/>
+										</div>
+								</div>
+						</div>
 					</div>
-				</div>
-			<%
-				}
-			%>
-		<%
-			}
-		%>
+				<% } %>
+		<% } %>
 
 		<div class="row" style="margin-top:25px;display:none;">
 			<div class="col-md-12">
@@ -1391,9 +1407,9 @@ try {
 					<div class="col-md-3"></div>
 				</div>
 				<%
-					if (h.isApprovable() && !h.getBlogId().equals("")) {
+					if (h.isApprovable() && !h.getBlogId().equals("") && !h.isSameUser()) {
 				%>
-					<span class="spanBtnApprove"><input class="buttonBlue" id="btn_approve" value="Approve" type="button" onclick="BlogAdminBlogDetails.approve('<%=h.getBlogId()%>');return false;"/></span>
+					<span class="spanBtnApprove"><input class="buttonBlue" id="btn_approve" value="Approve" type="button" onclick="BlogAdminBlogDetails.confirmApprove('<%=h.getBlogId()%>');return false;"/></span>
 				<%
 					}
 				%>
@@ -1504,27 +1520,41 @@ try {
 		</div>
 		
 		
-		<%
-							for (DataBlockUtil.LANGUAGE_TYPE language : DataBlockUtil.LANGUAGE_TYPE.values()) {
-						%>
+		<% for (DataBlockUtil.LANGUAGE_TYPE language : DataBlockUtil.LANGUAGE_TYPE.values()) { %>
 			<%
 				String content = "";
 				boolean hiddenRequired = false;
+				String label = "";
 				if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ENGLISH.getLangType())) {
+					label = "English";
 					content = h.getBlogContent_eng();
 					hiddenRequired = true;
 				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.LOCAL.getLangType())) {
+					Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh);
+				    if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
+						label = localLanguage.getLanguageTranslation();
+					    String languageName = localLanguage.getLanguageName();
+					    if (label == null || label.equals("")) {
+					    	label = languageName;
+					    }
+				    }
 					content = h.getBlogContent_loc();
 				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ALTERNATE.getLangType())) {
+					Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh);
+				    if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
+						label = alternateLanguage.getLanguageTranslation();
+					    String languageName = alternateLanguage.getLanguageName();
+					    if (label == null || label.equals("")) {
+					    	label = languageName;
+					    }
+				    }
 					content = h.getBlogContent_alt();
 				}
 			%>
-			<%
-				if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) {
-			%>
+			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) { %>
 				<div class="row" style="margin-top:25px">
 					<div style="margin:0px 15px;	">
-			     	<span style="float: none;" >Announcement in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangType())%>:</span>	   
+			     	<span style="float: none;" >Announcement in <%=label%>:</span>	   
 			     	<div style="width: 100%;">  	
 				     	<textarea class="blog_form_textarea_medium contentError" rows="" style="width: 500px; height: 100px;" id="bdContent_<%=language.getLangType()%>" name="bdContent_<%=language.getLangType()%>"><%=StringUtil.asciiToString(content)%></textarea>
 						<label class="errorHolder <% if (hiddenRequired) { %>required <% } %>"></label>
@@ -1561,7 +1591,7 @@ try {
 	          <h4 class="modal-title"><span id="msgHeader">Message</span></h4>
 	        </div>
 	        <div class="modal-body" id="divMessage">
-	           <p id="pId"></p>
+	           <p id="pId">You have unsaved data. Please confirm your action.</p>
 	        </div>
 	        <div class="modal-footer">
 	          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="BlogAdminBlogDetails.continueCancel('<%=snippetVar_navpointSuccess%>');">Continue</button>
@@ -1569,6 +1599,30 @@ try {
 	          <div style="display:none; visibility:hidden">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
 	          </div>
+	        </div>
+			</form>		
+		</div>
+	 </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" id="modal-alert-approve">
+  <div class="modal-dialogAlert">
+    <div class="modal-content">
+     <div class="FileUploader" >
+		<div class="ModalBoxHldr">
+			<form id="attachFileForm" action="?op=blog_widgets.fileUploader.fileUploader" method="post"  enctype="multipart/form-data">		
+			<div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          <h4 class="modal-title"><span id="msgHeader">Message</span></h4>
+	        </div>
+	        <div class="modal-body" id="divMessage">
+	           <p id="pId">Are you sure you want to approve this blog?</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	          <button type="button" class="btn btn-default modalApproveBtn" data-dismiss="modal" onclick="BlogAdminBlogDetails.approve('<%=h.getBlogId()%>')">Continue</button>
 	        </div>
 			</form>		
 		</div>
@@ -2117,8 +2171,8 @@ var BlogAdminBlogDetails = function() {
 					
 				},
 				messages:{
-					bdTitle_EN:{required:getRequiredFieldsMsg()},
-					bdPublishDate:{required:getRequiredFieldsMsg()},
+					bdTitle_EN:{required:"Title field is required."},
+					bdPublishDate:{required:"\"Valid From\" date is required."},
 					bdCategory:{required:getRequiredFieldsMsg()},
 					bdContent_EN:{required:getRequiredFieldsMsg()},
 					bdTags:{required:getRequiredFieldsMsg()},
@@ -2177,13 +2231,19 @@ var BlogAdminBlogDetails = function() {
 			var valid = true;
 			var content =  CKEDITOR.instances.bdContent_EN.getData();
 			if (content.val()=="" || content.val().length == 0){
-				jQuery('.errorHolder').append('<label class="errorContainer contentError" style="margin-left: 0;color: red;font-weight: normal !important;">'+getRequiredFieldsMsg()+'</label>');
+				jQuery('.errorHolder').append('<label class="errorContainer contentError" style="margin-left: 0;color: red;font-weight: normal !important;">Body Text is required.</label>');
 				valid = false;
 			}
 			return valid;
 		},
 		
-		approve : function(blogId) {
+		confirmApprove : function() {
+			$("#pId").text("You have unsaved data. Please confirm your action.");
+			$('#modal-alert-approve').modal();
+		}, 
+		
+		approve : function (blogId) {
+			Progress.showProgress();
 			
 			jQuery.ajax({
 	            url: "",
@@ -2196,7 +2256,7 @@ var BlogAdminBlogDetails = function() {
 	                location.reload();
 	            }
 			});
-		}, 
+		},
 		
 		continueCancel : function(redirectLink){
 			$("#btnOk").click();
@@ -2278,7 +2338,7 @@ function validateBlogContent(form){
 //	}
 	
 	if (CKEDITOR.instances.bdContent_EN.getData() =="") {
-		jQuery('.errorHolder.required').append('<label class="errorContainer contentError " style="margin-left: 0;color: red;font-weight: normal !important">'+getRequiredFieldsMsg()+'</label>');
+		jQuery('.errorHolder.required').append('<label class="errorContainer contentError " style="margin-left: 0;color: red;font-weight: normal !important">Body Text is required.</label>');
 	}
 	
 	//jquery form validation
@@ -2299,20 +2359,19 @@ function validateBlogContent(form){
 			jQuery('#ckeditorContentWithImage_ALT').val(CKEDITOR.instances.bdContent_ALT.getData());
 			tmpData =jQuery('#ckeditorContentWithImage_ALT').val().replace(/src=/g,"s_r_c=");
 			jQuery('#ckeditorContentWithImage_ALT').val(tmpData);
-			
-			if (!validateExpireDateTime()){			
-				return false;
-			}else{
-				if (!validatePublishExpireDate()){
-					return false;
-				}else{
-					return true;
-				}
-				
-			}
 		} else {
 			return false;
 		}	
+		
+		if (!validateExpireDateTime()){			
+			return false;
+		}else{
+			if (!validatePublishExpireDate()){
+				return false;
+			}else{
+				return true;
+			}
+		}
 	}
 }
 
@@ -2356,7 +2415,7 @@ function validateExpireDateTime(){
 		
 		if (jQuery('#selExpireTimeHour').val()!="" || jQuery('#selExpireTimeMinute').val()!=""){
 			//validate
-			jQuery('.timeErrorHolder').append('<label class="timeErrorContainer contentError " style="margin-left: 0;">You have entered an invalid expiration date and time.</label>');
+			jQuery('.timeErrorHolder').append('<label class="timeErrorContainer contentError error" style="margin-left: 15px;">The "Valid To" date must be the same or later than the "Valid From" date field.</label>');
 			return false;
 		}else{
 			return true;
@@ -2366,7 +2425,7 @@ function validateExpireDateTime(){
 			return true;
 		}else{
 			//validate selExpireTimeMinute
-			jQuery('.timeErrorHolder').append('<label class="timeErrorContainer contentError " style="margin-left: 0;">You have entered an invalid expiration date and time.</label>');
+			jQuery('.timeErrorHolder').append('<label class="timeErrorContainer contentError error" style="margin-left: 15px;">The "Valid To" date must be the same or later than the "Valid From" date field.</label>');
 			return false;
 		}
 	}
@@ -2555,7 +2614,6 @@ function MultiDropDownValue() {
 }
 
 function redirectBackTo(redirectLink) {
-	$("#pId").text("You have unsaved data. Please confirm your action.");
 	$('#modal-alert').modal();
 	
 //	$(".required").removeClass("required");
@@ -2602,25 +2660,10 @@ var Progress = function() {
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
-//			setTimeout(function(){
-//				jQuery('#div_loading').modal({
-//					closeHTML: "",
-//					position: ["20%",],
-//					overlayId: 'process-overlay',
-//					containerId: 'process-container', 
-//					close: false,
-//					onShow: function (dialog) {
-//						jQuery(".header").css({
-//							"background": "url(/ttsvr/skypepi/images/dialog/header.gif)"
-//						});
-//					}
-//				});
-//			}, 100);
 		},
 		
 		hideProgress: function() {
-			//jQuery.modal.close();
-			jQuery(".close").trigger("click");
+			$("#div_loading").modal("hide");
 		},
 		
 		alertMessage: function(title, msg) {

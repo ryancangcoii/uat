@@ -74,13 +74,13 @@ try {
 	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("myDetailsNavPointLink", "/ttsvr/n/Student-Dashboard/skypepi-6");
 	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("feesNavPointLink", "/ttsvr/n/Fees/skypepi-34");
 	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("navpointId", "/ttsvr/n/View-Receipts/skypepi-37");
-	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("timetagbleSessionNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
-	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("alertNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
-	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("bookingsNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
-	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("timetagbleSessionNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("alertNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("bookingsNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("homeNavPointLink", "");
 	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("reEnrolmentNavPointLink", "/ttsvr/n/Re-enrolment/skypepi-33");
-	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("assessmentAttendanceNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_pages_skypepi_viewReceipt_60Params.setProperty("assessmentAttendanceNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_pages_skypepi_viewReceipt_60 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_pages_skypepi_viewReceipt_60Params);
 	productionHelper_skypepi_pages_skypepi_viewReceipt_60.callPreFetch(jh);
 } catch (Exception e) {
@@ -164,12 +164,12 @@ try {
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
 	<table>
 	<tbody><tr>
-	<%--FOR LOCAL LANGUAGE --%>
+	<%--FOR ALTERNATE LANGUAGE --%>
 		<%
 		String selected = "";
 		boolean isSelected = false;
 		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
-		   if (alternateLanguage != null ) {
+		   if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
 			   String languageCode = alternateLanguage.getLanguageCode();
 			   String languageType = alternateLanguage.getLanguageType();
 			   String languageName = alternateLanguage.getLanguageName();
@@ -191,11 +191,11 @@ try {
 		<td width="5px"></td>
 		<% } %>
 		
-		<%--FOR ALTERNATE LANGUAGE --%>
+		<%--FOR LOCAL LANGUAGE --%>
 		<% 
 		selected = "";
 		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
-		   if (localLanguage != null ) {
+		   if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
 			   String languageCode = localLanguage.getLanguageCode();
 			   String languageType = localLanguage.getLanguageType();
 			   String languageName = localLanguage.getLanguageName();
@@ -608,11 +608,11 @@ try {
 	String snippetVar_myDetailsNavPointLink = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_reEnrolmentNavPointLink = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_feesNavPointLink = "/ttsvr/n/Fees/skypepi-34";
-	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
-	String snippetVar_alertNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
-	String snippetVar_assessmentAttendanceNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
-	String snippetVar_timetagbleSessionNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
-	String snippetVar_bookingsNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_alertNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_assessmentAttendanceNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_timetagbleSessionNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_bookingsNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointLink = "";
 	String snippetVar_widgetName = "@60";
 	String snippetVar_widgetPath = "skypepi.pages.skypepi_viewReceipt@60";
@@ -1292,25 +1292,10 @@ var Progress = function() {
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
-//			setTimeout(function(){
-//				jQuery('#div_loading').modal({
-//					closeHTML: "",
-//					position: ["20%",],
-//					overlayId: 'process-overlay',
-//					containerId: 'process-container', 
-//					close: false,
-//					onShow: function (dialog) {
-//						jQuery(".header").css({
-//							"background": "url(/ttsvr/skypepi/images/dialog/header.gif)"
-//						});
-//					}
-//				});
-//			}, 100);
 		},
 		
 		hideProgress: function() {
-			//jQuery.modal.close();
-			jQuery(".close").trigger("click");
+			$("#div_loading").modal("hide");
 		},
 		
 		alertMessage: function(title, msg) {

@@ -39,7 +39,7 @@ document.write('<div id="loadMsg" style="font: 16px arial"><br>&nbsp;&nbsp;&nbsp
 	WbdProductionHelper productionHelper_skypepi_pages_skypepi_receipts_2 = null;
 try {
 	Properties productionHelper_skypepi_pages_skypepi_receipts_2Params = new Properties();
-	productionHelper_skypepi_pages_skypepi_receipts_2Params.setProperty("viewReceipts", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_pages_skypepi_receipts_2Params.setProperty("viewReceipts", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_pages_skypepi_receipts_2 = new tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper(productionHelper_skypepi_pages_skypepi_receipts_2Params);
 	productionHelper_skypepi_pages_skypepi_receipts_2.callPreFetch(jh);
 } catch (Exception e) {
@@ -227,7 +227,7 @@ function jmpSrch(qry) {
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_skypepi_receipts_2;
-	String snippetVar_viewReceipts = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_viewReceipts = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_widgetName = "@2";
 	String snippetVar_widgetPath = "skypepi.pages.skypepi_receipts@2";
 	String snippetVar_elementId = "";

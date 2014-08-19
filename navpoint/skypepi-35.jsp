@@ -97,7 +97,7 @@ try {
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("timetagbleSessionNavPointLink", "/ttsvr/n/Student-Enrolments/skypepi-57");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("alertNavPointLink", "/ttsvr/n/Alerts/skypepi-54");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("bookingsNavPointLink", "/ttsvr/n/skyportal--my-course-history/skypepi-62");
-	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-63");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("reEnrolmentNavPointLink", "/ttsvr/n/Re-enrolment/skypepi-33");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("assessmentAttendanceNavPointLink", "/ttsvr/n/Assessment-and-Attendance/skypepi-55");
@@ -164,12 +164,12 @@ try {
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
 	<table>
 	<tbody><tr>
-	<%--FOR LOCAL LANGUAGE --%>
+	<%--FOR ALTERNATE LANGUAGE --%>
 		<%
 		String selected = "";
 		boolean isSelected = false;
 		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
-		   if (alternateLanguage != null ) {
+		   if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
 			   String languageCode = alternateLanguage.getLanguageCode();
 			   String languageType = alternateLanguage.getLanguageType();
 			   String languageName = alternateLanguage.getLanguageName();
@@ -191,11 +191,11 @@ try {
 		<td width="5px"></td>
 		<% } %>
 		
-		<%--FOR ALTERNATE LANGUAGE --%>
+		<%--FOR LOCAL LANGUAGE --%>
 		<% 
 		selected = "";
 		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
-		   if (localLanguage != null ) {
+		   if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
 			   String languageCode = localLanguage.getLanguageCode();
 			   String languageType = localLanguage.getLanguageType();
 			   String languageName = localLanguage.getLanguageName();
@@ -610,7 +610,7 @@ try {
 	String snippetVar_myDetailsNavPointLink = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_reEnrolmentNavPointLink = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_feesNavPointLink = "/ttsvr/n/Fees/skypepi-34";
-	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_alertNavPointLink = "/ttsvr/n/Alerts/skypepi-54";
 	String snippetVar_assessmentAttendanceNavPointLink = "/ttsvr/n/Assessment-and-Attendance/skypepi-55";
 	String snippetVar_timetagbleSessionNavPointLink = "/ttsvr/n/Student-Enrolments/skypepi-57";
@@ -930,6 +930,7 @@ try {
 	String snippetVar_concludeAndConfirmOp = "skypepi.widgets.concludeAndConfirm.concludeAndConfirm";
 	String snippetVar_navpointId = "skypepi-39";
 	String snippetVar_cancelNavpointId = "skypepi-33";
+	String snippetVar_viewTimetableNavpoint = "/ttsvr/n/View-Timetable/skypepi-90";
 	String snippetVar_widgetName = "@64";
 	String snippetVar_widgetPath = "skypepi.pages.skypepi_concludeAndConfirm@64";
 	String snippetVar_elementId = "";
@@ -964,168 +965,167 @@ try {
   
 <!-- ********** INSERT HTML HERE ********** -->
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("concludeAndConfirm", null, "") %></span></div>
-<br><br><br>
+	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("concludeAndConfirm", null, "") %></span></div>
+	<br><br><br>
 
-			<form id="concludeAndConfirm" name="concludeAndConfirm" method="post">
-			<input type="hidden" id="streamIds" name="streamIds" value="<%=h.getStreamsId() %>"/>
-			<input type="hidden" name="navpointId" id="navpointId" value="<%=snippetVar_navpointId%>"/>
-			<input type="hidden" name="cancelNavpointId" id ="cancelNavpointId" value="<%=snippetVar_cancelNavpointId%>"/>
-			<input type="hidden" name="op" id="op" value="<%=snippetVar_concludeAndConfirmOp%>"/>
-			
-				<table width="100%">
-					<tr>
-						<td  class="heading" ><span class="color-regular"><%=h.getFullName() %></span></td>
-					</tr>
-				</table>
-				<br>
+	<form id="concludeAndConfirm" name="concludeAndConfirm" method="post">
+		<input type="hidden" id="streamIds" name="streamIds" value="<%=h.getStreamsId() %>"/>
+		<input type="hidden" name="navpointId" id="navpointId" value="<%=snippetVar_navpointId%>"/>
+		<input type="hidden" name="cancelNavpointId" id ="cancelNavpointId" value="<%=snippetVar_cancelNavpointId%>"/>
+		<input type="hidden" name="op" id="op" value="<%=snippetVar_concludeAndConfirmOp%>"/>
+		
+		<table width="100%">
+			<tr>
+				<td  class="heading" ><span class="color-regular"><%=h.getFullName() %></span></td>
+			</tr>
+		</table>
+		<br>
 					
-							<div class="table-responsive portalTable" style="border-bottom: none;">
-							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered" style="margin-bottom: 0px; ">
-								<thead>
-									<tr>
-										<th width="100%" align="left" colspan="7"><%=lang.getString("Selected Classes", null, "") %></th>
-									</tr>
-								</thead>
-								<thead>
-									<tr>
-										<th align="left" class="sub-header"><%=lang.getString("Class", null, "") %></th>
-										<th align="left" class="sub-header"><%=lang.getString("Class Schedule", null, "") %></th>
-										<th width="8%" class="column-amount sub-header"><%=lang.getString("Fee", null, "") %></th>
-										<th width="8%" class="column-amount sub-header"><%=lang.getString("Discount", null, "") %></th>
-										<th width="8%" class="column-amount sub-header"><%=lang.getString("Credit", null, "") %></th>
-										<th width="8%" class="column-amount sub-header"><%=lang.getString("Total", null, "") %></th>
-									</tr>
-								</thead>
-								<%
-									int scheduleCnt = 1;
-														String streamIds = h.getStreamsId();
-														
-														List<Element> elementStreams = h.getElementStreams();
-														
-														for(Element stream : elementStreams) {
-															
-															String streamId = stream.getAttribute("ID");
-														
-															if(streamIds.indexOf(streamId) <= -1) 
-																continue;
-															
-															String streamName = stream.getAttribute("Name");
-															
-															if(!(DataBlockUtil.SESSION_VARIABLE.LANGUAGE.getName().equals(h.getAltLang().getCurrentLangCode()))) {
-																streamName = stream.getAttribute("AltName");	
-															}
-															else {
-																streamName = stream.getAttribute("Name");
-															}
-															System.out.println("Streams:" + streamName);
-															String startDate = stream.getAttribute("StartDate");
-															String endDate = stream.getAttribute("EndDate");
-															String closeDate = stream.getAttribute("ApplicationEnrolmentCloseDate");
-															startDate = startDate.split(" ")[0];
-															endDate = endDate.split(" ")[0];
-															closeDate = closeDate.split(" ")[0];
-															
-															String location = stream.getAttribute("Location");
-															String sessionDays = stream.getAttribute("SessionDays");
-															
-															String tmpSessionDays = lang.getString(sessionDays, null, "");
-															if(!(DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) && tmpSessionDays.equals(sessionDays)) {
-																String arrSessionDays[] = sessionDays.split(",");
-																tmpSessionDays = "";
-																for(String days: arrSessionDays) {
-																	tmpSessionDays += "".equals(tmpSessionDays) ? lang.getString(days.trim(), null, "") : ", " + lang.getString(days.trim(), null, "");
-																}
-															}
-															
-															String credit = h.getPersonCredit();
-															String feeDescription = stream.getAttribute("FeeDescription");
-															String feeAmount = stream.getAttribute("FeeAmount");
-															String enrolmentId = stream.getAttribute("ExistingEnrolmentID");
-															String sessionTime = h.getSessionTimes(stream.getAttribute("SessionTimes"), stream.getAttribute("SessionDuration"));
-															
-															String personCredit = StringUtil.formatCurrency(credit);
-															String fee = stream.getAttribute("FeeAmount");
-															fee = (fee.equals("") ? "0.0" : fee);
-															
-															String discount = stream.getAttribute("OnlineDiscount");
-															discount = (discount.equals("") ? "0.0" : discount);
-															
-															String total = (Double.valueOf(fee) + Double.valueOf(discount)) + ""; // + Double.valueOf(credit)) + "";
-															
-															fee = StringUtil.formatCurrency(fee);
-															discount = StringUtil.formatCurrency(discount);
-															total = StringUtil.formatCurrency(total);
-															discount = discount.replace("-", "");
-															credit = credit.replace("-", "");
-															
-															String classTag = ((scheduleCnt % 2) == 0) ? "blue" : "white";
-															
-															String lineColor = ((scheduleCnt % 2) == 0) ? "#EAEAEA" : "#DFDFDF";
-								%>
-										<!-- NEW -->
-										<tr>
-											<td style="display: none;">
-												<input type="hidden" name="applicationId<%=streamId %>" id="applicationId<%=streamId %>" value="1"/>
-												<input type="hidden" name="status<%=streamId %>" id="status<%=streamId %>" value=""/>
-												<input type="hidden" name="feeId<%=streamId %>" id="feeId<%=streamId %>" value=""/>
-												<input type="hidden" name="courseId<%=streamId %>" id="courseId<%=streamId %>" value=""/>
-												<input type="hidden" name="paymentId<%=streamId %>" id="paymentId<%=streamId %>" value=""/>
-												<input type="hidden" name="paymentReference<%=streamId %>" id="paymentReference<%=streamId %>" value=""/>
-												<input type="hidden" name="courseFee<%=streamId %>" id="courseFee<%=streamId %>" value=""/>
-												<input type="hidden" name="paymentAmount<%=streamId %>" id="paymentAmount<%=streamId %>" value="<%=feeAmount %>"/>
-												<input type="hidden" name="tandC<%=streamId %>" id="tandC<%=streamId %>" value=""/>
-												<input type="hidden" name="enrolmentId<%=streamId %>" id="enrolmentId<%=streamId %>" value="<%=enrolmentId %>"/>
-												<input type="hidden" name="discount<%=streamId %>" id="discount<%=streamId %>" value="<%=discount %>"/>
-												<input type="hidden" name="totalAmount<%=streamId %>" id="totalAmount<%=streamId %>" value="<%=total %>"/>
-												<input type="hidden" name="streamName<%=streamId %>" id="streamName<%=streamId %>" value="<%=streamName %>"/>
-												
-											</td>
-										</tr>
-										<tr class="<%=classTag %>">
-											<td class=" sub-header valign" style="background-color: #cccccc;"><%=streamName %></td>
-											<td rowspan="2" class=" valign">
-												<%=lang.getString("Start - End Date:", null, "") %><%=startDate %> - <%=endDate %><br>
-												<%=lang.getString("Start - End Time:", null, "") %> <%=sessionTime %> <br>
-												<%=lang.getString("Session Days:", null, "") %> <%=tmpSessionDays %>
-											</td>
-											<td rowspan="2" class="column-amount valign"><%=fee %></td>
-											<td rowspan="2" class="column-amount valign"><%=discount %></td>
-											<td rowspan="2" class="column-amount valign"><%=personCredit %></td>
-											<td rowspan="2" class="column-amount valign"><%=total %></td>
-										</tr>
-										<tr class="<%=classTag %>">
-											<td class=" valign">-</td>
-										</tr>
-									<%
-									scheduleCnt++;
-								}
-								%>
-							</table>
-							</div>
-						<table width="100%">
-							<tr>
-								<td class="table-heading color-regular" valign="top">
-								<%--
-									<input type="checkbox" id="check-termsconditions"/><label id="lbl_check-termsconditions" for="check-termsconditions">
-									<% String contents = lang.getString("I have read and understood the", null, "");
-									   String termCon = lang.getString("terms and conditions", null, "");
-									   contents = contents + " " + "<a style=\"color: rgb(4, 61, 138); text-decoration: underline;\" target=\"_blank\" href=\"/ttsvr/skypepi/documents/British Council_English Courses Transfer and Refund Policy.pdf\">"+termCon+"</a>";
-									%>
-									<%=contents %> 
-									</label>
-									<br>
-									<div style="display: none;padding-bottom: 5px;padding-top: 5px;padding-left:20px;" id="divErrorMessage"><img src="/ttsvr/skypepi/images/icon_error.png" title="error" /> <span class="body-text color-red" style="line-height: 20px;vertical-align: top;"><%=lang.getString("Please accept the terms and conditions", null, "") %>.</span></div>
-								 --%>
-								</td>
-								<td align="right" valign="top">
-									<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" id="btnCancel" name="btnCancel"/>
-									<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Next", null, "") %>" id="btnNext" name="btnNext"/>
-									<br><br><br>
+		<div class="table-responsive portalTable" style="border-bottom: none;">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table bordered" style="margin-bottom: 0px; ">
+			<thead>
+				<tr>
+					<th width="100%" align="left" colspan="7"><%=lang.getString("Selected Classes", null, "") %></th>
+				</tr>
+			</thead>
+			<thead>
+				<tr>
+					<th align="left" class="sub-header"><%=lang.getString("Class", null, "") %></th>
+					<th align="left" class="sub-header"><%=lang.getString("Class Schedule", null, "") %></th>
+					<th width="8%" class="column-amount sub-header"><%=lang.getString("Fee", null, "") %></th>
+					<th width="8%" class="column-amount sub-header"><%=lang.getString("Discount", null, "") %></th>
+					<th width="8%" class="column-amount sub-header"><%=lang.getString("Credit", null, "") %></th>
+					<th width="8%" class="column-amount sub-header"><%=lang.getString("Total", null, "") %></th>
+				</tr>
+			</thead>
+			<%
+				int scheduleCnt = 1;
+									String streamIds = h.getStreamsId();
 									
-								</td>
-							</tr>
-						</table>
+									List<Element> elementStreams = h.getElementStreams();
+									
+									for(Element stream : elementStreams) {
+										
+										String streamId = stream.getAttribute("ID");
+									
+										if(streamIds.indexOf(streamId) <= -1) 
+											continue;
+										
+										String streamName = stream.getAttribute("Name");
+										
+										if(!(DataBlockUtil.SESSION_VARIABLE.LANGUAGE.getName().equals(h.getAltLang().getCurrentLangCode()))) {
+											streamName = stream.getAttribute("AltName");	
+										}
+										else {
+											streamName = stream.getAttribute("Name");
+										}
+										System.out.println("Streams:" + streamName);
+										String startDate = stream.getAttribute("StartDate");
+										String endDate = stream.getAttribute("EndDate");
+										String closeDate = stream.getAttribute("ApplicationEnrolmentCloseDate");
+										startDate = startDate.split(" ")[0];
+										endDate = endDate.split(" ")[0];
+										closeDate = closeDate.split(" ")[0];
+										
+										String location = stream.getAttribute("Location");
+										String sessionDays = stream.getAttribute("SessionDays");
+										
+										String tmpSessionDays = lang.getString(sessionDays, null, "");
+										if(!(DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) && tmpSessionDays.equals(sessionDays)) {
+											String arrSessionDays[] = sessionDays.split(",");
+											tmpSessionDays = "";
+											for(String days: arrSessionDays) {
+												tmpSessionDays += "".equals(tmpSessionDays) ? lang.getString(days.trim(), null, "") : ", " + lang.getString(days.trim(), null, "");
+											}
+										}
+										
+										String credit = h.getPersonCredit();
+										String feeDescription = stream.getAttribute("FeeDescription");
+										String feeAmount = stream.getAttribute("FeeAmount");
+										String enrolmentId = stream.getAttribute("ExistingEnrolmentID");
+										String sessionTime = h.getSessionTimes(stream.getAttribute("SessionTimes"), stream.getAttribute("SessionDuration"));
+										
+										String personCredit = StringUtil.formatCurrency(credit);
+										String fee = stream.getAttribute("FeeAmount");
+										fee = (fee.equals("") ? "0.0" : fee);
+										
+										String discount = stream.getAttribute("OnlineDiscount");
+										discount = (discount.equals("") ? "0.0" : discount);
+										
+										String total = (Double.valueOf(fee) + Double.valueOf(discount)) + ""; // + Double.valueOf(credit)) + "";
+										
+										fee = StringUtil.formatCurrency(fee);
+										discount = StringUtil.formatCurrency(discount);
+										total = StringUtil.formatCurrency(total);
+										discount = discount.replace("-", "");
+										credit = credit.replace("-", "");
+										
+										String classTag = ((scheduleCnt % 2) == 0) ? "blue" : "white";
+										
+										String lineColor = ((scheduleCnt % 2) == 0) ? "#EAEAEA" : "#DFDFDF";
+			%>
+					<!-- NEW -->
+					<tr>
+						<td style="display: none;">
+							<input type="hidden" name="applicationId<%=streamId %>" id="applicationId<%=streamId %>" value="1"/>
+							<input type="hidden" name="status<%=streamId %>" id="status<%=streamId %>" value=""/>
+							<input type="hidden" name="feeId<%=streamId %>" id="feeId<%=streamId %>" value=""/>
+							<input type="hidden" name="courseId<%=streamId %>" id="courseId<%=streamId %>" value=""/>
+							<input type="hidden" name="paymentId<%=streamId %>" id="paymentId<%=streamId %>" value=""/>
+							<input type="hidden" name="paymentReference<%=streamId %>" id="paymentReference<%=streamId %>" value=""/>
+							<input type="hidden" name="courseFee<%=streamId %>" id="courseFee<%=streamId %>" value=""/>
+							<input type="hidden" name="paymentAmount<%=streamId %>" id="paymentAmount<%=streamId %>" value="<%=feeAmount %>"/>
+							<input type="hidden" name="tandC<%=streamId %>" id="tandC<%=streamId %>" value=""/>
+							<input type="hidden" name="enrolmentId<%=streamId %>" id="enrolmentId<%=streamId %>" value="<%=enrolmentId %>"/>
+							<input type="hidden" name="discount<%=streamId %>" id="discount<%=streamId %>" value="<%=discount %>"/>
+							<input type="hidden" name="totalAmount<%=streamId %>" id="totalAmount<%=streamId %>" value="<%=total %>"/>
+							<input type="hidden" name="streamName<%=streamId %>" id="streamName<%=streamId %>" value="<%=streamName %>"/>
+							
+						</td>
+					</tr>
+					<tr class="<%=classTag %>">
+						<td class=" sub-header valign" style="background-color: #cccccc;"><%=streamName %></td>
+						<td rowspan="2" class=" valign">
+							<%=lang.getString("Start - End Date:", null, "") %><%=startDate %> - <%=endDate %><br>
+							<a href="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamId%>">View Timetable</a>
+						</td>
+						<td rowspan="2" class="column-amount valign"><%=fee %></td>
+						<td rowspan="2" class="column-amount valign"><%=discount %></td>
+						<td rowspan="2" class="column-amount valign"><%=personCredit %></td>
+						<td rowspan="2" class="column-amount valign"><%=total %></td>
+					</tr>
+					<tr class="<%=classTag %>">
+						<td class=" valign">-</td>
+					</tr>
+				<%
+				scheduleCnt++;
+			}
+			%>
+		</table>
+	</div>
+	<table width="100%">
+		<tr>
+			<td class="table-heading color-regular" valign="top">
+			<%--
+				<input type="checkbox" id="check-termsconditions"/><label id="lbl_check-termsconditions" for="check-termsconditions">
+				<% String contents = lang.getString("I have read and understood the", null, "");
+				   String termCon = lang.getString("terms and conditions", null, "");
+				   contents = contents + " " + "<a style=\"color: rgb(4, 61, 138); text-decoration: underline;\" target=\"_blank\" href=\"/ttsvr/skypepi/documents/British Council_English Courses Transfer and Refund Policy.pdf\">"+termCon+"</a>";
+				%>
+				<%=contents %> 
+				</label>
+				<br>
+				<div style="display: none;padding-bottom: 5px;padding-top: 5px;padding-left:20px;" id="divErrorMessage"><img src="/ttsvr/skypepi/images/icon_error.png" title="error" /> <span class="body-text color-red" style="line-height: 20px;vertical-align: top;"><%=lang.getString("Please accept the terms and conditions", null, "") %>.</span></div>
+			 --%>
+			</td>
+			<td align="right" valign="top">
+				<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" id="btnCancel" name="btnCancel"/>
+				<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Next", null, "") %>" id="btnNext" name="btnNext"/>
+				<br><br><br>
+				
+			</td>
+		</tr>
+	</table>
 </div>
 <%
 } catch (Exception e) {
@@ -1469,25 +1469,10 @@ var Progress = function() {
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
-//			setTimeout(function(){
-//				jQuery('#div_loading').modal({
-//					closeHTML: "",
-//					position: ["20%",],
-//					overlayId: 'process-overlay',
-//					containerId: 'process-container', 
-//					close: false,
-//					onShow: function (dialog) {
-//						jQuery(".header").css({
-//							"background": "url(/ttsvr/skypepi/images/dialog/header.gif)"
-//						});
-//					}
-//				});
-//			}, 100);
 		},
 		
 		hideProgress: function() {
-			//jQuery.modal.close();
-			jQuery(".close").trigger("click");
+			$("#div_loading").modal("hide");
 		},
 		
 		alertMessage: function(title, msg) {

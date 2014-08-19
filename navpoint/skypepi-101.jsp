@@ -33,6 +33,7 @@
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageTranslatorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
@@ -42,6 +43,15 @@
 <%
 	String jspName = "skypepi-101";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_57 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_57Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_57 = new tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_57Params);
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_57.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_57", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapTranslationTableAdmin_24 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapTranslationTableAdmin_24Params = new Properties();
@@ -100,8 +110,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params);
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -262,10 +272,7 @@ boolean isLogged = Boolean.valueOf(WebUtil.getAttributes(request, DataBlockUtil.
 %>
 
 <% if (!isLogged)  { %>
-	<a href="<%=snippetVar_myNavpoint%>" class="wt"
-		style="font-size: 14px; color: rgb(60, 127, 197); font-weight: normal; text-decoration: none;"
-		onmouseover="this.style.color='#b14600';this.style.textDecoration='none';"
-		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login Account</a>
+	<a href="<%=snippetVar_myNavpoint%>" class="wt"><img src="/ttsvr/cropImage/skypepi.images.portal_i_login.png" /></a>
 <%}%>
 
 	<%
@@ -513,6 +520,53 @@ try {
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@38 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
+}
+%>
+</td>
+  <td ><%-- Widget skypepi.zones.portal_z_header_adminHeader@57 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_57;
+	String snippetVar_widgetName = "@57";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@57";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	// Get the production helper for this widget
+	HomeButtonHeaderProductionHelper h = (HomeButtonHeaderProductionHelper) helper;
+	XData data = h.getData(jh);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%> class="HomeButtonHeader" style="margin-left: 10px;">
+	<% if (h.isUserLogged()) { %>
+		<form id="form-redirectoBackToParent" action="" method="post">
+		<a href="javascript:void(0);" onclick="redirectBackToParent('<%=h.getSignOnId()%>');">
+			<img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logoHome.png" border="0" />
+		</a>
+		</form>
+	<% } %>
+	</div>
+
+<script>
+	function redirectBackToParent(parentId) {
+		var formLogout = $("#form-redirectoBackToParent");
+		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.submit();
+	}
+</script>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@57 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget)", e);
 }
 %>
 </td>
@@ -809,7 +863,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -818,7 +872,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -827,7 +881,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -836,7 +890,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -845,17 +899,17 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
@@ -863,7 +917,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
  <% } 
  %>			</ul>
@@ -900,8 +954,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_54;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-75";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/Translation-Table/skypepi-101";
@@ -1157,6 +1211,12 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
+<%@page import="tooltwist.skypepi.util.ProjectUtil"%>
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%@page import="tooltwist.skypepi.bean.Language"%>
 <%@page import="tooltwist.repository.DDString"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
@@ -1170,6 +1230,11 @@ try {
 	LanguageTranslatorProductionHelper h = (LanguageTranslatorProductionHelper) helper;
 	XData data = h.getData(jh);
 %>
+<style>
+#lang-table tr:nth-child(even) {
+	background-color: #e0f4fc;
+}
+</style>
 <div class="bc-container portal-ribbon">
 	<div class="ribbon-wrap left-edge fork lblue"><span>Translation Table</span></div>
 	
@@ -1190,21 +1255,32 @@ try {
 		<td class="lang-select">
 	<% 
 		String langTitle = "";
-		for (Language language : h.getLanguageMasterUtil().getLanguages()) {
+	List<Language> languages = WebUtil.getCredentialValue(jh, SESSION_VARIABLE.SITE_LANGUAGES, new ArrayList<Language>());
+		for (Language language : languages) {
 			String langSelected = "";
+			String langStringFileName = ProjectUtil.getLanguageStringFileName(request, language.getLanguageCode(), language.getLanguageType());
 			if (language.getLanguageCode().equals(DataBlockUtil.DEFAULT_LANGUAGE_CODE)) { 
 				continue;
 			}
-			if (h.getLanguage().equals(language.getLanguageCode())) {
+			String languageName = language.getLanguageTranslation();
+			if (languageName.equals("")) {
+				languageName = language.getLanguageName();
+			}
+			
+			
+			if (h.getLanguage().equals(langStringFileName)) {
 				langSelected = "language-selector selected";
-				langTitle = language.getLanguageName();
+				langTitle = language.getLanguageTranslation();
+				if (langTitle.equals("")) {
+					langTitle = language.getLanguageName();
+				}
 			}
 	%>
-		<div class="language-spacing"><a class="language-filter <%=langSelected %>" href="#" value="<%=language.getLanguageCode() %>"><%=language.getLanguageName() %></a></div>
+		<div class="language-spacing"><a class="language-filter <%=langSelected %>" href="#switchLanguage" value="<%=ProjectUtil.getLanguageStringFileName(request, language.getLanguageCode(), language.getLanguageType())  %>"><%=languageName %></a></div>
 	<% } %>
 		</td>
 	</tr>
-	</table>
+	</table> 
 	<br>
 </div>
 <div>
@@ -1223,7 +1299,7 @@ try {
     <%
     	int i = 0;
     	for(String string : h.getStringLabels()) {
-    	String cls = "blue";
+    	String cls = "white";
     	if (i % 2 == 0) cls = "white";
     	i++;
     %>
@@ -1289,7 +1365,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1298,7 +1374,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1307,7 +1383,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1316,7 +1392,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1325,17 +1401,17 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
@@ -1343,7 +1419,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a><span></span></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
  <% } 
  %>			</ul>
@@ -1570,14 +1646,15 @@ try {
  --%>
  
 <div class="modal fade" id="div_loading">
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="width: 200px;">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><span>Processing please wait...</span></h4>
-      </div>
+<!--       <div class="modal-header"> -->
+<!--         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+ <!--         <h4 class="modal-title"><span>Processing please wait...</span></h4> -->
+<!--       </div> -->
       <div class="modal-body" align="center"> 
-        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+<!--         <img alt="" src="/ttsvr/skypepi/images/bc-load.gif" width="50"> -->
+        <img alt="" src="/ttsvr/skypepi/images/loading-blue.gif">
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1745,6 +1822,7 @@ var LanguageTranslator = function() {
 //			jQuery(document).on("keyup",".search #filter",function() {
 //				LanguageTranslator.filter(jQuery(this).val());
 //			});
+			setTimeout(function() {jQuery(".sorting:first").trigger("click");},100);
 		},
 		
 		filter: function(keyword) {
@@ -1818,9 +1896,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-//			jQuery('#div_loading').modal({
-//				keyboard: false
-//			});
+			jQuery('#div_loading').modal({
+				keyboard: false
+			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

@@ -42,7 +42,7 @@
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params = new Properties();
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params.setProperty("validFileExtension", "pdf");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25 = new tooltwist.blog.productionHelpers.FileUploaderProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params);
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25.callPreFetch(jh);
 } catch (Exception e) {
@@ -291,7 +291,7 @@ div.blog_formbottom_style1 {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25;
 	String snippetVar_validFileExtension = "pdf";
-	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-75";
 	String snippetVar_widgetName = "@25";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementUpload@25";
 	String snippetVar_elementId = "";

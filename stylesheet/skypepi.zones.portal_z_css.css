@@ -2,6 +2,10 @@
  *  Stylesheet
  */
 
+.border-style {
+  border: 1px solid #cccccc;
+  padding: 5px 20px 20px 20px;
+}
 
 
 /** ribbon css **/

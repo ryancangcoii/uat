@@ -137,7 +137,12 @@ function Pager(tableName, itemsPerPage) {
 			
 			for ( var i = 0; i < this.element.length; i++) {
 				var elem = this.element[i];
-				elem.innerHTML = pagerHtml;
+				
+				//TT-388 Sprint 10 bug fixing  
+				//Added validation to avoid error Uncaught TypeError: Cannot set property 'innerHTML' of null 
+				if(elem != null){
+					elem.innerHTML = pagerHtml;
+				}
 			}
 			
 			try {

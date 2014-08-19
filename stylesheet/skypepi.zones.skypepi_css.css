@@ -1,3 +1,10 @@
+.border-style {
+  border: 1px solid #cccccc;
+  padding: 5px 20px 20px 20px;
+  margin-top:10px;
+}
+
+
 /*Header*/
 
 form {margin-bottom: 0px;}

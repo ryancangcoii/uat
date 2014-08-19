@@ -34,6 +34,7 @@
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@page import="tooltwist.blog.productionHelpers.BlogAdminBlogDetailsProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
@@ -47,13 +48,22 @@ try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params = new Properties();
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("navpointSuccess", "skypepi-99");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("validFileExtension", "jpg,jpeg,gif,png");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("hasUploadImage", "false");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("fileUploaderPage", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params.setProperty("fileUploaderPage", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25 = new tooltwist.blog.productionHelpers.BlogAdminBlogDetailsProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25Params);
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapAnnouncementMaintain_25", e);
+}
+
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_57 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_57Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_57 = new tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_57Params);
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_57.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_57", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_52 = null;
@@ -105,8 +115,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params);
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -315,10 +325,7 @@ boolean isLogged = Boolean.valueOf(WebUtil.getAttributes(request, DataBlockUtil.
 %>
 
 <% if (!isLogged)  { %>
-	<a href="<%=snippetVar_myNavpoint%>" class="wt"
-		style="font-size: 14px; color: rgb(60, 127, 197); font-weight: normal; text-decoration: none;"
-		onmouseover="this.style.color='#b14600';this.style.textDecoration='none';"
-		onmouseout="this.style.color='#3c7fc5';this.style.textDecoration='none';">Login Account</a>
+	<a href="<%=snippetVar_myNavpoint%>" class="wt"><img src="/ttsvr/cropImage/skypepi.images.portal_i_login.png" /></a>
 <%}%>
 
 	<%
@@ -566,6 +573,53 @@ try {
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@38 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
+}
+%>
+</td>
+  <td ><%-- Widget skypepi.zones.portal_z_header_adminHeader@57 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_57;
+	String snippetVar_widgetName = "@57";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@57";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	// Get the production helper for this widget
+	HomeButtonHeaderProductionHelper h = (HomeButtonHeaderProductionHelper) helper;
+	XData data = h.getData(jh);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%> class="HomeButtonHeader" style="margin-left: 10px;">
+	<% if (h.isUserLogged()) { %>
+		<form id="form-redirectoBackToParent" action="" method="post">
+		<a href="javascript:void(0);" onclick="redirectBackToParent('<%=h.getSignOnId()%>');">
+			<img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logoHome.png" border="0" />
+		</a>
+		</form>
+	<% } %>
+	</div>
+
+<script>
+	function redirectBackToParent(parentId) {
+		var formLogout = $("#form-redirectoBackToParent");
+		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.submit();
+	}
+</script>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@57 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget)", e);
 }
 %>
 </td>
@@ -859,64 +913,64 @@ try {
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsorStudent()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
  %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
  <% } 
  %>			</ul>
@@ -953,8 +1007,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_54;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-75";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/Maintain-Announcement/skypepi-106";
@@ -1207,8 +1261,8 @@ try {
 	String snippetVar_navpointSuccess = "skypepi-99";
 	String snippetVar_hasUploadImage = "false";
 	String snippetVar_validFileExtension = "jpg,jpeg,gif,png";
-	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_fileUploaderPage = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_fileUploaderPage = "/ttsvr/MISSING_LINK/skypepi-75";
 	String snippetVar_widgetName = "@25";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementMaintain@25";
 	String snippetVar_elementId = "";
@@ -1233,6 +1287,18 @@ try {
 	BlogAdminBlogDetailsProductionHelper h = (BlogAdminBlogDetailsProductionHelper) helper;
 	XData data = h.getData(jh);
 %>
+
+<style>
+.modal-dialogAlert {
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+	padding: 10px;
+	padding-top: 90px;
+	z-index: 1050;
+}
+</style>
+
 <script src="<%=PublicUtil.webappDir %>/blog/script/ckeditor/ckeditor.js"></script>
 
 <div class="bc-container portal-ribbon">
@@ -1256,35 +1322,41 @@ try {
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
 		<input type="hidden" value="<%=DataBlockUtil.DATEPICKER_FORMAT%>" id="datepickerFormat" />
 		
-		<% for (DataBlockUtil.LANGUAGE_CODE language : DataBlockUtil.LANGUAGE_CODE.values()) { %>
-			<input type="hidden" name="ckeditorContentWithImage_<%=language.getLangCode()%>" id="ckeditorContentWithImage_<%=language.getLangCode()%>" value=""/>
-			<% 
-			String title = "";
-			boolean hiddenRequired = false;
-			if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ENGLISH.getLangCode())) {
-				title = h.getTitle_eng();
-				hiddenRequired = true;
-			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.LOCAL.getLangCode())) {
-				title = h.getTitle_loc();
-			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ALTERNATE.getLangCode())) {
-				title = h.getTitle_alt();
-			}
+		<% for (DataBlockUtil.LANGUAGE_TYPE language : DataBlockUtil.LANGUAGE_TYPE.values()) { %>
+			<input type="hidden" name="ckeditorContentWithImage_<%=language.getLangType()%>" id="ckeditorContentWithImage_<%=language.getLangType()%>" value=""/>
+			<%
+				String title = "";
+				boolean hiddenRequired = false;
+				if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ENGLISH.getLangType())) {
+					title = h.getTitle_eng();
+					hiddenRequired = true;
+				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.LOCAL.getLangType())) {
+					title = h.getTitle_loc();
+				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ALTERNATE.getLangType())) {
+					title = h.getTitle_alt();
+				}
 			%>
-			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) { %>
+			<%
+				if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) {
+			%>
 				<div class="row" style="margin-top:25px">
 					<div class="col-md-12">
 							<div class="row">
 									<div class="col-md-2">
-										Title in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangCode())%>:
+										Title in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangType())%>:
 									</div>
 									<div class="col-md-10">
-										<input maxlength="150" id="bdTitle_<%=language.getLangCode()%>" name="bdTitle_<%=language.getLangCode()%>" class="form-control blog_form_input_medium <% if (hiddenRequired) { %>required <% } %>" type="text" autocomplete="off" value="<%=StringUtil.asciiToString(title)%>"/>
+										<input maxlength="150" id="bdTitle_<%=language.getLangType()%>" name="bdTitle_<%=language.getLangType()%>" class="form-control blog_form_input_medium <%if (hiddenRequired) {%>required <%}%>" type="text" autocomplete="off" value="<%=StringUtil.asciiToString(title)%>"/>
 									</div>
 							</div>
 					</div>
 				</div>
-			<% } %>
-		<% } %>
+			<%
+				}
+			%>
+		<%
+			}
+		%>
 
 		<div class="row" style="margin-top:25px;display:none;">
 			<div class="col-md-12">
@@ -1294,9 +1366,13 @@ try {
 							</div>
 							<div class="col-md-4">
 								<select id="bdLanguage" name="bdLanguage" class="form-control">
-									<% for (Language language : h.getLanguageMasterUtil().getLanguages()) { %>
+									<%
+										for (Language language : h.getLanguageMasterUtil().getLanguages()) {
+									%>
 										<option value="<%=language.getLanguageCode()%>" <%if(h.getLanguage().equals(language.getLanguageCode())){%>selected="selected"<%}%>><%=language.getLanguageName()%></option>
-									<% } %>
+									<%
+										}
+									%>
 								</select>
 							</div>
 					</div>
@@ -1314,13 +1390,19 @@ try {
 					</div>
 					<div class="col-md-3"></div>
 				</div>
-				<% if (h.isApprovable() && !h.getBlogId().equals("")) { %>
+				<%
+					if (h.isApprovable() && !h.getBlogId().equals("")) {
+				%>
 					<span class="spanBtnApprove"><input class="buttonBlue" id="btn_approve" value="Approve" type="button" onclick="BlogAdminBlogDetails.approve('<%=h.getBlogId()%>');return false;"/></span>
-				<% } %>
+				<%
+					}
+				%>
 			</div>
 		</div>
 		
-		<% if (!h.getBlogId().equals("")) { %>
+		<%
+					if (!h.getBlogId().equals("")) {
+				%>
 			<div class="row" style="margin-top:25px">
 				<div class="col-md-12">
 					<div class="row">
@@ -1348,7 +1430,9 @@ try {
 					</div>
 				</div>
 			</div>
-		<% } %>
+		<%
+			}
+		%>
 		
 		<div class="row" style="margin-top:25px">
 			<div class="col-md-12">
@@ -1420,25 +1504,29 @@ try {
 		</div>
 		
 		
-		<% for (DataBlockUtil.LANGUAGE_CODE language : DataBlockUtil.LANGUAGE_CODE.values()) { %>
-			<% 
-			String content = "";
-			boolean hiddenRequired = false;
-			if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ENGLISH.getLangCode())) {
-				content = h.getBlogContent_eng();
-				hiddenRequired = true;
-			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.LOCAL.getLangCode())) {
-				content = h.getBlogContent_loc();
-			} else if (language.getLangCode().equals(DataBlockUtil.LANGUAGE_CODE.ALTERNATE.getLangCode())) {
-				content = h.getBlogContent_alt();
-			}
+		<%
+							for (DataBlockUtil.LANGUAGE_TYPE language : DataBlockUtil.LANGUAGE_TYPE.values()) {
+						%>
+			<%
+				String content = "";
+				boolean hiddenRequired = false;
+				if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ENGLISH.getLangType())) {
+					content = h.getBlogContent_eng();
+					hiddenRequired = true;
+				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.LOCAL.getLangType())) {
+					content = h.getBlogContent_loc();
+				} else if (language.getLangType().equals(DataBlockUtil.LANGUAGE_TYPE.ALTERNATE.getLangType())) {
+					content = h.getBlogContent_alt();
+				}
 			%>
-			<% if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) { %>
+			<%
+				if ((!h.isApprovable() && !h.getBlogId().equals("")) || hiddenRequired) {
+			%>
 				<div class="row" style="margin-top:25px">
 					<div style="margin:0px 15px;	">
-			     	<span style="float: none;" >Announcement in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangCode())%>:</span>	   
+			     	<span style="float: none;" >Announcement in <%=h.getLanguageMasterUtil().getLanguageName(language.getLangType())%>:</span>	   
 			     	<div style="width: 100%;">  	
-				     	<textarea class="blog_form_textarea_medium contentError" rows="" style="width: 500px; height: 100px;" id="bdContent_<%=language.getLangCode()%>" name="bdContent_<%=language.getLangCode()%>"><%=StringUtil.asciiToString(content)%></textarea>
+				     	<textarea class="blog_form_textarea_medium contentError" rows="" style="width: 500px; height: 100px;" id="bdContent_<%=language.getLangType()%>" name="bdContent_<%=language.getLangType()%>"><%=StringUtil.asciiToString(content)%></textarea>
 						<label class="errorHolder <% if (hiddenRequired) { %>required <% } %>"></label>
 					</div>
 					</div>
@@ -1460,6 +1548,35 @@ try {
 </div>
 
 </div>
+
+<%-- MODAL ALERT --%>
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false" id="modal-alert">
+  <div class="modal-dialogAlert">
+    <div class="modal-content">
+     <div class="FileUploader" >
+		<div class="ModalBoxHldr">
+			<form id="attachFileForm" action="?op=blog_widgets.fileUploader.fileUploader" method="post"  enctype="multipart/form-data">		
+			<div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	          <h4 class="modal-title"><span id="msgHeader">Message</span></h4>
+	        </div>
+	        <div class="modal-body" id="divMessage">
+	           <p id="pId"></p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="BlogAdminBlogDetails.continueCancel('<%=snippetVar_navpointSuccess%>');">Continue</button>
+	          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="BlogAdminBlogDetails.continueSave()">Save</button>
+	          <div style="display:none; visibility:hidden">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+	          </div>
+	        </div>
+			</form>		
+		</div>
+	 </div>
+    </div>
+  </div>
+</div>
+
 <%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapAnnouncementMaintain@25 (type=tooltwist.blog.widgets.BlogAdminBlogDetailsWidget)", e);
@@ -1505,64 +1622,64 @@ try {
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsorStudent()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105">Admin Home</a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99">Announcement</a></li>
-				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100">Static Document</a></li>
-				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101">Translation Table</a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102">System Setting</a></li>
-				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103">Reserved</a></li>
+				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
  <% if (isPublic) { 
  %>				<li class=""><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Translation-Table/skypepi-101"><%=h.getAltLang().getString("Translation Table",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/System-Setting/skypepi-102"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Language-Setting/skypepi-111"><%=h.getAltLang().getString("System Setting",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Reserved/skypepi-103"><%=h.getAltLang().getString("Reserved",null,"") %></a></li>
  <% } 
  %>			</ul>
@@ -1789,14 +1906,15 @@ try {
  --%>
  
 <div class="modal fade" id="div_loading">
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="width: 200px;">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><span>Processing please wait...</span></h4>
-      </div>
+<!--       <div class="modal-header"> -->
+<!--         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+ <!--         <h4 class="modal-title"><span>Processing please wait...</span></h4> -->
+<!--       </div> -->
       <div class="modal-body" align="center"> 
-        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+<!--         <img alt="" src="/ttsvr/skypepi/images/bc-load.gif" width="50"> -->
+        <img alt="" src="/ttsvr/skypepi/images/loading-blue.gif">
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -2078,6 +2196,16 @@ var BlogAdminBlogDetails = function() {
 	                location.reload();
 	            }
 			});
+		}, 
+		
+		continueCancel : function(redirectLink){
+			$("#btnOk").click();
+			$(".required").removeClass("required");
+			location.href = redirectLink;
+		}, 
+		
+		continueSave : function(){
+			$("#btn_save").click();
 		}
 	};
 }();
@@ -2427,8 +2555,11 @@ function MultiDropDownValue() {
 }
 
 function redirectBackTo(redirectLink) {
-	$(".required").removeClass("required");
-	location.href = redirectLink;
+	$("#pId").text("You have unsaved data. Please confirm your action.");
+	$('#modal-alert').modal();
+	
+//	$(".required").removeClass("required");
+//	location.href = redirectLink;
 }</script>
 <script type="text/javascript">
 var Progress = function() {
@@ -2468,9 +2599,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-//			jQuery('#div_loading').modal({
-//				keyboard: false
-//			});
+			jQuery('#div_loading').modal({
+				keyboard: false
+			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

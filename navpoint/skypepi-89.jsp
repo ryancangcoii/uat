@@ -69,7 +69,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("viewOption", "Student Selection");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavId", "/ttsvr/home");
+	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_37 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_37Params);
 	productionHelper_skypepi_zones_portal_z_header_37.callPreFetch(jh);
 } catch (Exception e) {
@@ -85,7 +85,7 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("viewOption", "Name");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavId", "/ttsvr/home");
+	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_38 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_38Params);
 	productionHelper_skypepi_zones_portal_z_header_38.callPreFetch(jh);
 } catch (Exception e) {
@@ -100,8 +100,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/aftrs-home");
+	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/aftrs-home");
 	productionHelper_skypepi_zones_portal_z_header_50 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_50Params);
 	productionHelper_skypepi_zones_portal_z_header_50.callPreFetch(jh);
 } catch (Exception e) {
@@ -116,8 +116,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/aftrs-home");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/aftrs-home");
 	productionHelper_skypepi_zones_portal_z_header_51 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_51Params);
 	productionHelper_skypepi_zones_portal_z_header_51.callPreFetch(jh);
 } catch (Exception e) {
@@ -334,7 +334,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_38;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/home";
+	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
@@ -577,7 +577,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_37;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/home";
+	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
@@ -837,8 +837,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_50;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/aftrs-home";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/aftrs-home";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-89";
@@ -1131,7 +1131,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
@@ -1153,7 +1153,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1176,7 +1176,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
@@ -1259,8 +1259,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_51;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/aftrs-home";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/aftrs-home";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-89";
@@ -1645,20 +1645,12 @@ try {
 										<tr>
 											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>:</label> </td>
 											<td class="add_space_left body-text">
-												<%--<div class="form-input-medium-container">
-													<input type="text" value="<%=lang.getString(paymentDesc, null, "") %>" autocomplete="off" class="form-input-medium required" id="paymentDescription" name="good_name" readonly="readonly"/>
-												</div>  --%>
 												<input id="paymentDescription" name="good_name" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
 											</td>
 										</tr>
 										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Amount", null, "") %></td>
 											<td class="add_space_left">
-												<%--<div class="form-input-small-container">
-												
-													<input type="text" value="&#8361;<%=StringUtil.formatCurrency(amount) %>" autocomplete="off" class="form-input-small" name="transact_amount" id="transact_amount" readonly="readonly"/>
-													
-												</div>  --%>
 												<input name="transact_amount" id="transact_amount" class="form-control" type="text" autocomplete="off" value="&#8361;<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
 												<% int pos = amount.indexOf("."); amount += (pos == -1) ? ".00": ""; %>
 												<input  type="hidden" value="<%=StringUtil.cleanCurrency(amount) %>" name="good_mny"/>
@@ -1667,36 +1659,24 @@ try {
 										<tr>
 											<td class="body-text color-regular add_margin_left"><label for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Customer Name", null, "") %>:</label></td>
 											<td class="add_space_left">
-												<%--<div class="form-input-medium-container">
-													<input type="text" name="buyr_name" id="creditcard_name" value="" autocomplete="off" class="form-input-medium required"/>
-												</div>  --%>
 												<input name="buyr_name" id="creditcard_name" class="form-control" type="text" autocomplete="off" value=""/>
 											</td>
 										</tr>
 										<tr>
 											<td class="body-text color-regular add_margin_left"><label id="lbl_buyr_mail" for="buyr_mail"><%=lang.getString("Email", null, "") %>:</label></td>
 											<td class="add_space_left">
-												<%--<div class="form-input-medium-container">
-													<input type="text" name="buyr_mail" id="buyr_mail" value="" autocomplete="off" class="form-input-medium required"/>
-												</div>  --%>
 												<input name="buyr_mail" id="buyr_mail" class="form-control" type="text" autocomplete="off" value=""/>
 											</td>
 										</tr>
 										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Phone Number", null, "") %>:</td>
 											<td class="add_space_left">
-												<%--<div class="form-input-medium-container">
-													<input type="text" name="buyr_tel1" id="buyr_tel1" value="" autocomplete="off" class="form-input-medium"/>
-												</div>  --%>
 												<input name="buyr_tel1" id="buyr_tel1" class="form-control" type="text" autocomplete="off" value=""/>
 											</td>
 										</tr>
 										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Mobile", null, "") %>:</td>
 											<td class="add_space_left">
-												<%--<div class="form-input-medium-container">
-													<input type="text" name="buyr_tel2" id="buyr_tel2" value="" autocomplete="off" class="form-input-medium"/>
-												</div>  --%>
 												<input name="buyr_tel2" id="buyr_tel2" class="form-control" type="text" autocomplete="off" value=""/>
 											</td>
 										</tr>
@@ -1851,28 +1831,6 @@ try {
 	</form>
 </div>
 
-<!-- modal content -->
-<%--<div id='confirm' class="simple_dialog">
-	<div class='header'><span>Processing Payment...</span></div>
-	<div class='message' style="padding: 0px;">
-		<iframe id="\" style="width: 100%; height: 79%;border: 0px;"></iframe>
-	</div>
-</div>
-
-<div id='div_loading' class="simple_dialog">
-	<div class='header'><span>Please wait...</span></div>
-	<div class='message' style="padding: 0px;" align="center">
-		<br/>
-		<img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
-	</div>
-</div>
-
-<div id='receipt_preview' class="simple_dialog">
-	<div class='header'><span>Please wait...</span></div>
-	<div class='message' style="padding: 0px;" align="center">
-		<iframe id="fraPreviewReceipt" style="width: 100%; height: 79%;border: 0px;"></iframe>
-	</div>
-</div> --%>
 
 <div class="modal fade" id="simple_dialog">
   <div class="modal-dialog">
@@ -2143,6 +2101,7 @@ function  jsf__pay( form )
     	var params = jQuery("#order_info").serialize();
     	jQuery.ajax({
     		url: "/ttsvr/skypepi/cfg/pp_ax_hub.jsp?" + params,
+    		type: 'post',
     		success: function(data) {
     			
     			var resp = jQuery(data);
@@ -2240,7 +2199,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
@@ -2262,7 +2221,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -2285,7 +2244,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
@@ -2512,14 +2471,15 @@ try {
  --%>
  
 <div class="modal fade" id="div_loading">
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="width: 200px;">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><span>Processing please wait...</span></h4>
-      </div>
+<!--       <div class="modal-header"> -->
+<!--         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+ <!--         <h4 class="modal-title"><span>Processing please wait...</span></h4> -->
+<!--       </div> -->
       <div class="modal-body" align="center"> 
-        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+<!--         <img alt="" src="/ttsvr/skypepi/images/bc-load.gif" width="50"> -->
+        <img alt="" src="/ttsvr/skypepi/images/loading-blue.gif">
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -2644,9 +2604,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-//			jQuery('#div_loading').modal({
-//				keyboard: false
-//			});
+			jQuery('#div_loading').modal({
+				keyboard: false
+			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

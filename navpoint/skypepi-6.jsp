@@ -97,7 +97,7 @@ try {
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("timetagbleSessionNavPointLink", "/ttsvr/n/Student-Enrolments/skypepi-57");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("alertNavPointLink", "/ttsvr/n/Alerts/skypepi-54");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("bookingsNavPointLink", "/ttsvr/n/skyportal--my-course-history/skypepi-62");
-	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("forumCocNavPointLink", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-63");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("reEnrolmentNavPointLink", "/ttsvr/n/Re-enrolment/skypepi-33");
 	productionHelper_skypepi_zones_z_studentFunctionsMenu_61Params.setProperty("assessmentAttendanceNavPointLink", "/ttsvr/n/Assessment-and-Attendance/skypepi-55");
@@ -147,23 +147,86 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.skypepi.util.ProjectUtil"%>
+<%@page import="tooltwist.skypepi.bean.Language"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%
 	LanguageSelectorProductionHelper h = (LanguageSelectorProductionHelper) helper;
 	String languageSelectorGUI = h.getLanguageSelectorGUI();
-	
-// 	String params = "";
-// 	for (String param: request.getParameterMap().keySet()) {
-// 		params += (params.length() == 0) ? "" : "&";
-// 		params += param + "=" + request.getParameter(param);
-// 	}
+	AltLang altLang = WebUtil.getAltLang(jh);
 	
 %>
 <form id="form-languageSelector" method="post" action="<%=snippetVar_navpointId%>" style="height: 24px;margin: 0px; padding: 0px;">
 	<input type="hidden" name="op" value="<%=snippetVar_languageSelectorOp%>"/>
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
-	<%=languageSelectorGUI %>
+	<table>
+	<tbody><tr>
+	<%--FOR LOCAL LANGUAGE --%>
+		<%
+		String selected = "";
+		boolean isSelected = false;
+		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
+		   if (alternateLanguage != null ) {
+			   String languageCode = alternateLanguage.getLanguageCode();
+			   String languageType = alternateLanguage.getLanguageType();
+			   String languageName = alternateLanguage.getLanguageName();
+			   String translation = alternateLanguage.getLanguageTranslation();
+			   String locStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
+			   
+			   if (translation == null || translation.equals("")) {
+				   translation = languageName;
+			   }
+			   
+			   if (altLang.getCurrentLangCode().equals(locStringLangCode)) {
+				   selected = "selected";
+				   isSelected = true;
+			   }
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=locStringLangCode %>');"><%=translation %></a>
+		</td>
+		<td width="5px"></td>
+		<% } %>
+		
+		<%--FOR ALTERNATE LANGUAGE --%>
+		<% 
+		selected = "";
+		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
+		   if (localLanguage != null ) {
+			   String languageCode = localLanguage.getLanguageCode();
+			   String languageType = localLanguage.getLanguageType();
+			   String languageName = localLanguage.getLanguageName();
+			   String translation = localLanguage.getLanguageTranslation();
+			   String altStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
+			   
+			   if (translation == null || translation.equals("")) {
+				   translation = languageName;
+			   }
+			   if (altLang.getCurrentLangCode().equals(altStringLangCode)) {
+				   selected = "selected";
+				   isSelected = true;
+			   }
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=altStringLangCode %>');"><%=translation %></a>
+		</td>
+		<td width="5px"></td>
+		<% } %>
+		
+		<%--FOR ENGLISH LANGUAGE --%>
+		<% selected = "";
+			if (!isSelected)
+				selected = "selected";
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('en_EN');">English</a>
+		</td>
+		<td width="5px"></td>
+	</tr>
+</tbody></table>
 </form>
 <script>
 
@@ -547,7 +610,7 @@ try {
 	String snippetVar_myDetailsNavPointLink = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_reEnrolmentNavPointLink = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_feesNavPointLink = "/ttsvr/n/Fees/skypepi-34";
-	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_forumCocNavPointLink = "/ttsvr/MISSING_LINK/skypepi-75";
 	String snippetVar_alertNavPointLink = "/ttsvr/n/Alerts/skypepi-54";
 	String snippetVar_assessmentAttendanceNavPointLink = "/ttsvr/n/Assessment-and-Attendance/skypepi-55";
 	String snippetVar_timetagbleSessionNavPointLink = "/ttsvr/n/Student-Enrolments/skypepi-57";
@@ -1140,9 +1203,11 @@ try {
 						</table>
 					</td>
 				</tr>
-								
+					<tr>
+					<td height="20px"> </td>
+					</tr>			
 				<tr>
-					<td align="left">
+					<td align="left"  class="border-style">
 						<table>
 							<tr>&nbsp;</tr>
 							<tr>
@@ -1213,9 +1278,9 @@ try {
 						String countryID = address.getCountryID();
 						String postCode = address.getPostCode();
 						String completeAddress = line1 + " " + line2 +" " + postCode;
-						if(!(DataBlockUtil.LANGUAGE_CODE_SELECTED.equals(lang.getCurrentLangCode()))) {
+// 						if(!(DataBlockUtil.LANGUAGE_TYPE_SELECTED.equals(lang.getCurrentLangCode()))) {
 							completeAddress = postCode + " " + line1 + " " + line2;
-						}
+// 						}
 						
 						
 						
@@ -1301,8 +1366,8 @@ try {
 								<tr>
 									<td colspan="2" align="right">
 										<div align="right">
-										<input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
 										<input name="" onclick="javascript:MyDetails.editAddress('0');" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue  buttonSmall"/>
+										<input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
 										</div>
 									</td>
 								</tr>
@@ -1360,7 +1425,7 @@ try {
                         	<div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Country", null, "") %>: </label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-5">
                             
 												<%  country = h.getCountryOptions(); 
 													cid = "value=\"202\"";
@@ -1370,13 +1435,10 @@ try {
 											<%=option %>														
 										</select>
                             </div>
-                        </div>
-                        
-                        <div class="row">
-                        	<div class="col-md-2">
+                            <div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>: </label>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                             <input  id="postCodeNew" name="postCodeNew" class="form-control postCode" type="text" autocomplete="off"/>
                             </div>
                         </div>
@@ -1406,9 +1468,9 @@ try {
 									 <input type="hidden" id="hd-save" value="<%=lang.getString("Save", null, "") %>"/>
 									 <input type="hidden" id="hd-Cancel" value="<%=lang.getString("Cancel", null, "") %>"/>
 									 <div align="right">
-									 	<input onclick="javascript:MyDetails.saveNewAddress();" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
-									 	<input onclick="javascript:MyDetails.addNewAddress();" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue buttonSmall"/>
-                        </div>
+									 <input onclick="javascript:MyDetails.addNewAddress();" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue buttonSmall"/>
+                        			 <input onclick="javascript:MyDetails.saveNewAddress();" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall"/>
+						</div>
 
 					</td>
 				</tr>
@@ -1494,8 +1556,8 @@ try {
 								<tr>
 									<td colspan="2">
 										<div align="right">
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editPhoneNumber('0');"/>	
 											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditPhoneNumber('<%=id %>');"/>
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editPhoneNumber('0');"/>
 										</div>
 									</td>
 								</tr>
@@ -1531,19 +1593,16 @@ try {
 				<tr id="newPhoneNumberEntry" style="display: none;">
 					<td colspan="4" class="btnContainer" style="padding:0 2%"> 
 						<div class="row">
-                        	<div class="col-md-4">
+                        	<div class="col-md-1">
                             <label class="control-label"><%=lang.getString("Number", null, "") %>:</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                             	<input  id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
                             </div>
-                        </div>
-                        
-                        <div class="row">
-                        	<div class="col-md-4">
+                            <div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-4">
                             <select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
 											<option value="Home"><%=lang.getString("Home", null, "") %></option>
 											<option value="Office"><%=lang.getString("Office", null, "") %></option>
@@ -1553,8 +1612,8 @@ try {
                         </div>
                         
                          <div align="right" style="margin:10px 0px">
+                         				<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewPhoneNumber();"/>
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewPhoneNumber();"/>
-										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewPhoneNumber();"/>
 									</div>
 					</td>
 				</tr>
@@ -1634,8 +1693,8 @@ try {
 								<tr>
 									<td colspan="2">
 										<div align="right">
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');"/>
 											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('1');"/>
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');"/>
 										</div>
 									</td>
 								</tr>
@@ -1674,19 +1733,16 @@ try {
 							<tr>
 								<td height="">
 								  <div class="row">
-                        	<div class="col-md-2">
+                        	<div class="col-md-1">
                             <label class="control-label"><%=lang.getString("Email", null, "") %>:</label>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-4">
                             	<input id="emailAddNew" name="emailAddNew" class="form-control" type="text" autocomplete="off" value=""/>
                             </div>
-                        </div>
-                        
-                        <div class="row">
-                        	<div class="col-md-2">
+                            <div class="col-md-2">
                             <label class="control-label"><%=lang.getString("Email Type", null, "") %>:</label>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-5">
                             <select id="emailTypeNew" name="emailTypeNew" style="width: 280px;" class="form-control">
 										<option>Personal</option>
 										<option>Office</option>
@@ -1695,10 +1751,10 @@ try {
 									</select>
                             </div>
                         </div>
-                        
-                         <div align="right" style="margin-top:10px;">
-										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewEmailAddress();"/>
+               
+                         <div align="right" style="margin:10px 15px">
 										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewEmailAddress();"/>
+										<input type="button" class="buttonBlue buttonSmall"  value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewEmailAddress();"/>
 						</div>
 								</td>
 							</tr>
@@ -1887,7 +1943,7 @@ try {
  --%>
 <script type="text/javascript">
 
-var defaultLangCode = "<%=DataBlockUtil.LANGUAGE_CODE_SELECTED %>";
+var defaultLangCode = "";
 var currentLangCode = "<%=lang.getCurrentLangCode() %>";
 	
 </script>
@@ -2026,14 +2082,15 @@ try {
  --%>
  
 <div class="modal fade" id="div_loading">
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="width: 200px;">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><span>Processing please wait...</span></h4>
-      </div>
+<!--       <div class="modal-header"> -->
+<!--         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+ <!--         <h4 class="modal-title"><span>Processing please wait...</span></h4> -->
+<!--       </div> -->
       <div class="modal-body" align="center"> 
-        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+<!--         <img alt="" src="/ttsvr/skypepi/images/bc-load.gif" width="50"> -->
+        <img alt="" src="/ttsvr/skypepi/images/loading-blue.gif">
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -3057,9 +3114,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-//			jQuery('#div_loading').modal({
-//				keyboard: false
-//			});
+			jQuery('#div_loading').modal({
+				keyboard: false
+			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

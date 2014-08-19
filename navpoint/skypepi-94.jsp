@@ -25,6 +25,7 @@
 <%@page import="tooltwist.wbd.WbdSession"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
@@ -39,6 +40,15 @@ document.write('<div id="loadMsg" style="font: 16px arial"><br>&nbsp;&nbsp;&nbsp
 <%
 	String jspName = "searchPage";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_56 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_56Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_56 = new tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper(productionHelper_skypepi_zones_portal_z_header_56Params);
+	productionHelper_skypepi_zones_portal_z_header_56.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_56", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_35 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_35Params = new Properties();
@@ -97,8 +107,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_50 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_50Params);
 	productionHelper_skypepi_zones_portal_z_header_50.callPreFetch(jh);
 } catch (Exception e) {
@@ -113,8 +123,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-75");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_51 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_51Params);
 	productionHelper_skypepi_zones_portal_z_header_51.callPreFetch(jh);
 } catch (Exception e) {
@@ -369,23 +379,86 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.skypepi.util.ProjectUtil"%>
+<%@page import="tooltwist.skypepi.bean.Language"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%
 	LanguageSelectorProductionHelper h = (LanguageSelectorProductionHelper) helper;
 	String languageSelectorGUI = h.getLanguageSelectorGUI();
-	
-// 	String params = "";
-// 	for (String param: request.getParameterMap().keySet()) {
-// 		params += (params.length() == 0) ? "" : "&";
-// 		params += param + "=" + request.getParameter(param);
-// 	}
+	AltLang altLang = WebUtil.getAltLang(jh);
 	
 %>
 <form id="form-languageSelector" method="post" action="<%=snippetVar_navpointId%>" style="height: 24px;margin: 0px; padding: 0px;">
 	<input type="hidden" name="op" value="<%=snippetVar_languageSelectorOp%>"/>
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
-	<%=languageSelectorGUI %>
+	<table>
+	<tbody><tr>
+	<%--FOR LOCAL LANGUAGE --%>
+		<%
+		String selected = "";
+		boolean isSelected = false;
+		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
+		   if (alternateLanguage != null ) {
+			   String languageCode = alternateLanguage.getLanguageCode();
+			   String languageType = alternateLanguage.getLanguageType();
+			   String languageName = alternateLanguage.getLanguageName();
+			   String translation = alternateLanguage.getLanguageTranslation();
+			   String locStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
+			   
+			   if (translation == null || translation.equals("")) {
+				   translation = languageName;
+			   }
+			   
+			   if (altLang.getCurrentLangCode().equals(locStringLangCode)) {
+				   selected = "selected";
+				   isSelected = true;
+			   }
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=locStringLangCode %>');"><%=translation %></a>
+		</td>
+		<td width="5px"></td>
+		<% } %>
+		
+		<%--FOR ALTERNATE LANGUAGE --%>
+		<% 
+		selected = "";
+		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
+		   if (localLanguage != null ) {
+			   String languageCode = localLanguage.getLanguageCode();
+			   String languageType = localLanguage.getLanguageType();
+			   String languageName = localLanguage.getLanguageName();
+			   String translation = localLanguage.getLanguageTranslation();
+			   String altStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
+			   
+			   if (translation == null || translation.equals("")) {
+				   translation = languageName;
+			   }
+			   if (altLang.getCurrentLangCode().equals(altStringLangCode)) {
+				   selected = "selected";
+				   isSelected = true;
+			   }
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=altStringLangCode %>');"><%=translation %></a>
+		</td>
+		<td width="5px"></td>
+		<% } %>
+		
+		<%--FOR ENGLISH LANGUAGE --%>
+		<% selected = "";
+			if (!isSelected)
+				selected = "selected";
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('en_EN');">English</a>
+		</td>
+		<td width="5px"></td>
+	</tr>
+</tbody></table>
 </form>
 <script>
 
@@ -657,6 +730,53 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 }
 %>
 </td>
+  <td ><%-- Widget skypepi.zones.portal_z_header@56 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_56;
+	String snippetVar_widgetName = "@56";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@56";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	// Get the production helper for this widget
+	HomeButtonHeaderProductionHelper h = (HomeButtonHeaderProductionHelper) helper;
+	XData data = h.getData(jh);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%> class="HomeButtonHeader" style="margin-left: 10px;">
+	<% if (h.isUserLogged()) { %>
+		<form id="form-redirectoBackToParent" action="" method="post">
+		<a href="javascript:void(0);" onclick="redirectBackToParent('<%=h.getSignOnId()%>');">
+			<img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logoHome.png" border="0" />
+		</a>
+		</form>
+	<% } %>
+	</div>
+
+<script>
+	function redirectBackToParent(parentId) {
+		var formLogout = $("#form-redirectoBackToParent");
+		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.submit();
+	}
+</script>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@56 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget)", e);
+}
+%>
+</td>
   <td  width='10' align='center' valign='middle'></td>
   <td  align='center' valign='middle'><%-- Widget skypepi.zones.portal_z_header@37 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
 <%
@@ -923,8 +1043,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_50;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-75";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/404-Page/skypepi-94";
@@ -1238,21 +1358,21 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
-				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67">Home</a></li>
-				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68">myDetails</a></li>
-				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69">myCurrentEnrolment</a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70">myProgression</a></li>
-<% if (h.isCocAccepted()) { %>
-				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+<% if (h.isCocAccepted() && h.isHasForum()) { %>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
  <% } %> 
-<% if (h.isCocAccepted()) { %>
-				<li class=""><a href="/ttsvr/n/myHouseRules/skypepi-109">myHouseRules</a></li>
+<% if (h.isCocAccepted() && h.isHasForum()) { %>
+				<li class=""><a href="/ttsvr/n/myHouseRules-/skypepi-109"><%=h.getAltLang().getString("myHouseRules ",null,"") %></a></li>
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
@@ -1261,7 +1381,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
-				<li class=""><a href="<%=h.getForumLink() %>" target="_blank">myForum</a></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
@@ -1288,23 +1408,86 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="com.dinaa.misc.AltLang"%>
+<%@page import="tooltwist.skypepi.util.ProjectUtil"%>
+<%@page import="tooltwist.skypepi.bean.Language"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%
 	LanguageSelectorProductionHelper h = (LanguageSelectorProductionHelper) helper;
 	String languageSelectorGUI = h.getLanguageSelectorGUI();
-	
-// 	String params = "";
-// 	for (String param: request.getParameterMap().keySet()) {
-// 		params += (params.length() == 0) ? "" : "&";
-// 		params += param + "=" + request.getParameter(param);
-// 	}
+	AltLang altLang = WebUtil.getAltLang(jh);
 	
 %>
 <form id="form-languageSelector" method="post" action="<%=snippetVar_navpointId%>" style="height: 24px;margin: 0px; padding: 0px;">
 	<input type="hidden" name="op" value="<%=snippetVar_languageSelectorOp%>"/>
 	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
-	<%=languageSelectorGUI %>
+	<table>
+	<tbody><tr>
+	<%--FOR LOCAL LANGUAGE --%>
+		<%
+		String selected = "";
+		boolean isSelected = false;
+		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
+		   if (alternateLanguage != null ) {
+			   String languageCode = alternateLanguage.getLanguageCode();
+			   String languageType = alternateLanguage.getLanguageType();
+			   String languageName = alternateLanguage.getLanguageName();
+			   String translation = alternateLanguage.getLanguageTranslation();
+			   String locStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
+			   
+			   if (translation == null || translation.equals("")) {
+				   translation = languageName;
+			   }
+			   
+			   if (altLang.getCurrentLangCode().equals(locStringLangCode)) {
+				   selected = "selected";
+				   isSelected = true;
+			   }
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=locStringLangCode %>');"><%=translation %></a>
+		</td>
+		<td width="5px"></td>
+		<% } %>
+		
+		<%--FOR ALTERNATE LANGUAGE --%>
+		<% 
+		selected = "";
+		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
+		   if (localLanguage != null ) {
+			   String languageCode = localLanguage.getLanguageCode();
+			   String languageType = localLanguage.getLanguageType();
+			   String languageName = localLanguage.getLanguageName();
+			   String translation = localLanguage.getLanguageTranslation();
+			   String altStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
+			   
+			   if (translation == null || translation.equals("")) {
+				   translation = languageName;
+			   }
+			   if (altLang.getCurrentLangCode().equals(altStringLangCode)) {
+				   selected = "selected";
+				   isSelected = true;
+			   }
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=altStringLangCode %>');"><%=translation %></a>
+		</td>
+		<td width="5px"></td>
+		<% } %>
+		
+		<%--FOR ENGLISH LANGUAGE --%>
+		<% selected = "";
+			if (!isSelected)
+				selected = "selected";
+		%>
+		<td>
+			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('en_EN');">English</a>
+		</td>
+		<td width="5px"></td>
+	</tr>
+</tbody></table>
 </form>
 <script>
 
@@ -1345,8 +1528,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_51;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-75";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-75";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/404-Page/skypepi-94";
@@ -1632,6 +1815,12 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 <div class='DivWidget row' style=''>
+</div>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)", e);
+}
+%>
 </td>
  </tr>
  <tr>
@@ -1677,7 +1866,6 @@ try {
 <%
 try {
 	String snippetVar_dotSize = "5";
-	String snippetVar_errorMsg = "(1 errors)<br><br>\n\n<b>Error #1:</b><br>\nDescription: <br><br>\nLocation: Exception generating page: skypepi.zones.portal_z_footer@27 (type=tooltwist.skypepi.widgets.FooterMenuWidget)<br><br>\n<code>\njava.lang.NullPointerException<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.constructChildNavpoint(FooterMenuWidget.java:153)<br>\tat tooltwist.skypepi.widgets.FooterMenuWidget.renderForJSP(FooterMenuWidget.java:143)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.ZoneWidget.renderForJSP(ZoneWidget.java:115)<br>\tat tooltwist.wbd.ReferenceWidget.renderForJSP(ReferenceWidget.java:75)<br>\tat tooltwist.wbd.WbdWidget.renderForJSPWithWrapper(WbdWidget.java:2673)<br>\tat tooltwist.wbd.GridWidget.render(GridWidget.java:635)<br>\tat tooltwist.wbd.GridWidget.renderForJSP(GridWidget.java:1586)<br>\tat tooltwist.wbd.PageWidget.renderForJSP(PageWidget.java:459)<br>\tat tooltwist.wbd.Navpoint.generateProductionPage(Navpoint.java:1102)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1081)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.generateNavpointAndItsChildren(DesignerUIM.java:1101)<br>\tat tooltwist.wbd.DesignerUIM.op_generateChildren(DesignerUIM.java:1060)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br>\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)<br>\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br>\tat java.lang.reflect.Method.invoke(Method.java:601)<br>\tat tooltwist.wbd.DesignerUIM.handler(DesignerUIM.java:237)<br>\tat tooltwist.misc.AjaxUIM.appServletCode(AjaxUIM.java:373)<br>\tat tooltwist.misc.ServletUiModule.doPost_menuOption(ServletUiModule.java:3253)<br>\tat tooltwist.misc.ServletUiModule.doPost(ServletUiModule.java:2995)<br>\tat tooltwist.misc.ServletUiModule.doGet(ServletUiModule.java:2955)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:621)<br>\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:728)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:391)<br>\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)<br>\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)<br>\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)<br>\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)<br>\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)<br>\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)<br>\tat org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:953)<br>\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)<br>\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:409)<br>\tat org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1044)<br>\tat org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)<br>\tat org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:313)<br>\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)<br>\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)<br>\tat java.lang.Thread.run(Thread.java:722)<br></code>\n<br><br>\n\n";
 	String snippetVar_widgetName = "@6";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_footer@6";
 	String snippetVar_elementId = "";
@@ -1692,32 +1880,13 @@ try {
 </td>
 
 <%
-	// This first call to the error handler is for the error while generating the page
-	String snippetVar_divName = "wbdErrorDiv1";
-	String snippetVar_errorHeading = "Errors while <i><u>Generating</u></i> this production page";
-	String snippetVar_dotColor = "blue";
-%>
-<td valign="bottom">
-<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
-onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
-</td>
-<td>
-<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
-<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
-<code>
-<%=snippetVar_errorMsg%>
-</code>
-</div>
-</td>
-
-<%
-	// Now check for an error that has occurred since the JSP started.
+	// Check for an error that has occurred since the JSP started.
 	if (WbdSession.numErrors(jh.getCredentials()) > 0)
 	{
-		snippetVar_divName = "wbdErrorDiv2";
-		snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		snippetVar_dotColor = "green";
+		String snippetVar_divName = "wbdErrorDiv";
+		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		String snippetVar_dotColor = "green";
 %>
 <td width="2" nowrap></td>
 <td valign="bottom">
@@ -1810,14 +1979,15 @@ try {
  --%>
  
 <div class="modal fade" id="div_loading">
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="width: 200px;">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><span>Processing please wait...</span></h4>
-      </div>
+<!--       <div class="modal-header"> -->
+<!--         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+ <!--         <h4 class="modal-title"><span>Processing please wait...</span></h4> -->
+<!--       </div> -->
       <div class="modal-body" align="center"> 
-        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
+<!--         <img alt="" src="/ttsvr/skypepi/images/bc-load.gif" width="50"> -->
+        <img alt="" src="/ttsvr/skypepi/images/loading-blue.gif">
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -1918,9 +2088,9 @@ var Progress = function() {
 		
 		showProgress: function() {
 			console.log("showProgress");
-//			jQuery('#div_loading').modal({
-//				keyboard: false
-//			});
+			jQuery('#div_loading').modal({
+				keyboard: false
+			});
 //			setTimeout(function(){
 //				jQuery('#div_loading').modal({
 //					closeHTML: "",

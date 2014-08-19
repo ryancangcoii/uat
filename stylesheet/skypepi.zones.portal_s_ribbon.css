@@ -1,5 +1,3 @@
-/***** Ribbons *******/
-
 .portal-ribbon {
 	position: relative;
 	/*margin-bottom: 3px;
@@ -436,6 +434,7 @@
 
 .portal-ribbon .lblue.left-edge.fork > span {
 	background-color: #00a3e4;
+	font-weight:normal !important;
 }
 
 .portal-ribbon.ie8 .lblue.left-edge.fork > span {
@@ -971,10 +970,6 @@
 	box-shadows:0 19px 0 #00a3e4;
 }
 
-
-
-
-
 .tsc_ribbon_banner .lred, .tsc_ribbon_banner.ie8 .lred > span {
 	background-color:#f80000;
 }
@@ -1050,5 +1045,4 @@
 .tsc_ribbon_banner .lyellow.curve.fold-up > span:after {
 	box-shadows:0 19px 0 #ffc037;
 }
-
 

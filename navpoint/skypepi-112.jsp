@@ -112,6 +112,8 @@ try {
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params.setProperty("displayPaymentDetails", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params.setProperty("settingType", "PG");
 	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26 = new tooltwist.skypepi.productionHelpers.PaymentSettingsProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params);
 	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26.callPreFetch(jh);
 } catch (Exception e) {
@@ -1206,6 +1208,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26;
+	String snippetVar_settingType = "PG";
 	String snippetVar_displayPaymentDetails = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_widgetName = "@26";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAdminPaymentSetting@26";

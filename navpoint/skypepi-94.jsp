@@ -1773,7 +1773,41 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='120'></td>
  </tr>
  <tr>
-  <td ></td>
+  <td ><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  align='center' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  align='center' valign='middle'>
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_errorIcon.png" border="0">
+</td>
+  <td  width='10'></td>
+  <td  align='center' valign='middle'><span class="wbdRichText"><p style="color: #00a3e4; font-size: 70px;">ERROR 404</p></span></td>
+ </tr>
+</table>
+</td>
+ </tr>
+ <tr>
+  <td  height='20'></td>
+ </tr>
+ <tr>
+  <td  align='center'><span class="wbdRichText"><p style="color: #66666f;">Sorry but the page you are trying to visit is unavailable.</p></span></td>
+ </tr>
+ <tr>
+  <td  height='20'></td>
+ </tr>
+ <tr>
+  <td  align='center'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'><span class="wbdRichText"><p style="color: #66666f;">Would you like to go back to the</p></span></td>
+  <td  width='5'></td>
+  <td ><a href="#" class="wt" style=" font-size:14px; color:#00a3e4; font-weight:normal; text-decoration:underline;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='underline';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='underline';">home page</a></td>
+  <td ><span class="wbdRichText"><p style="color: #66666f;">?</p></span></td>
+ </tr>
+</table>
+</td>
+ </tr>
+</table>
+</td>
  </tr>
  <tr>
   <td  height='200'></td>

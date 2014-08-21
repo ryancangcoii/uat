@@ -1679,7 +1679,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myMyOnlineBooking_13;
 	String snippetVar_myDetailsOp = "skypepi.widgets.reEnrolment.reEnrolment";
-	String snippetVar_navpointId = "/ttsvr/n/myOnlineBooking/skypepi-72";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-GOPI/skypepi-115";
 	String snippetVar_concludeAndConfirm = "skypepi-79";
 	String snippetVar_viewTimetable = "skypepi-90";
 	String snippetVar_widgetName = "@13";

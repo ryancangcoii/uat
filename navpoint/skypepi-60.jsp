@@ -121,7 +121,7 @@ try {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_64;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Placement-Test-Registration/skypepi-60";
+	String snippetVar_navpointId = "/ttsvr/n/English-Courses/skypepi-44";
 	String snippetVar_widgetName = "@64";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header@64";
 	String snippetVar_elementId = "";
@@ -254,7 +254,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_homeNavPointId = "skypepi-4";
 	String snippetVar_authenticatePage = "No";
-	String snippetVar_navpointId = "/ttsvr/n/Placement-Test-Registration/skypepi-60";
+	String snippetVar_navpointId = "/ttsvr/n/English-Courses/skypepi-44";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@59";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header@59";
@@ -519,7 +519,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_57;
 	String snippetVar_navpointId = "skypepi-4";
-	String snippetVar_currentNavpointId = "skypepi-60";
+	String snippetVar_currentNavpointId = "skypepi-44";
 	String snippetVar_widgetName = "@57";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header@57";
 	String snippetVar_elementId = "";
@@ -547,9 +547,9 @@ try {
 <a href='/ttsvr/n/Course-Enquiry/skypepi-19'><span>Course Enquiry</span></a>
 </li><li class=" has-sub">
 <a href='/ttsvr/n/Placement-Test/skypepi-59'><span>Placement Test</span></a>
-<ul><li class="active">
+<ul><li class="">
 <a href='/ttsvr/n/Placement-Test-Registration/skypepi-60'><span>Placement Test Registration</span></a>
-</li></ul></li></ul></li><li class="">
+</li></ul></li></ul></li><li class="active">
 <a href='/ttsvr/n/English-Courses/skypepi-44'><span>English Courses</span></a>
 </li><li class="">
 <a href='/ttsvr/n/Exams/skypepi-45'><span>Exams</span></a>

@@ -1767,7 +1767,7 @@ try {
 </style>
   
 <div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span>payment</span></div>
+	<div class="ribbon-wrap left-edge fork lblue"><span>Payment</span></div>
 	
 	<br />
 	<br />
@@ -2063,7 +2063,7 @@ var TransactPayment = function() {
 				}
 				
 				if (isSubmitForm) {
-					TransactPayment.submitFeesToPepi();	
+// 					TransactPayment.submitFeesToPepi();	
 					jsf__pay(document.getElementById("order_info"));
 
 				}
@@ -2175,7 +2175,7 @@ var TransactPayment = function() {
 						//window.open(data,'myreceipt','width=1000,height=800');
 						$("#paymentDetailID").val(data);
 						
-						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
+						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful. You will be redirected to your receipt.", null, "") %>");
 						
 						setTimeout(function() {
 							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();

@@ -341,7 +341,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_homeNavPointId = "skypepi-4";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Fees/skypepi-26";
+	String snippetVar_navpointId = "/ttsvr/n/skypepi-zones.test/skypepi-ajaxZones-skypepi_zones.test";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@59";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header_auth@59";
@@ -598,7 +598,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_auth_57;
 	String snippetVar_navpointId = "skypepi-4";
-	String snippetVar_currentNavpointId = "skypepi-26";
+	String snippetVar_currentNavpointId = "skypepi-ajaxZones-skypepi_zones.test";
 	String snippetVar_widgetName = "@57";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header_auth@57";
 	String snippetVar_elementId = "";
@@ -674,7 +674,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_z_studentFunctionsMenu_61;
-	String snippetVar_navpointId = "/ttsvr/n/Fees/skypepi-26";
+	String snippetVar_navpointId = "/ttsvr/n/skypepi-zones.test/skypepi-ajaxZones-skypepi_zones.test";
 	String snippetVar_myDetailsNavPointLink = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_reEnrolmentNavPointLink = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_feesNavPointLink = "/ttsvr/n/Fees/skypepi-34";
@@ -997,7 +997,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.z_stude
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_skypepi_studentFees_67;
-	String snippetVar_navpointId = "/ttsvr/n/Fees/skypepi-26";
+	String snippetVar_navpointId = "/ttsvr/n/skypepi-zones.test/skypepi-ajaxZones-skypepi_zones.test";
 	String snippetVar_payFeesOnlineLink = "/ttsvr/n/Online-Payment/skypepi-36";
 	String snippetVar_viewReceiptsLink = "/ttsvr/n/View-Receipts/skypepi-37";
 	String snippetVar_recordsNoTransactions = "20";

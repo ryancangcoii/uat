@@ -1712,7 +1712,7 @@ try {
 
 <input type="hidden" id="hdnViewReceipt" value="<%=lang.getString("View Receipt", null, "")%>"/>
 <div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myProgressions", null, "") %></span></div>
+	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myProgression", null, "") %></span></div>
 	<br><br><br>
 	<table width="100%">
 		<tr>

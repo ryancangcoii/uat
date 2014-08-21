@@ -1716,7 +1716,7 @@ try {
   
 <!-- ********** INSERT HTML HERE ********** -->
 <div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("concludeAndConfirm", null, "") %></span></div>
+	<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Conclude and Confirm", null, "") %></span></div>
 	<br><br><br>
 
 	<form id="concludeAndConfirm" name="concludeAndConfirm" method="post">

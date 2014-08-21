@@ -36,12 +36,12 @@
 <%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.TransactPaymentProductionHelper"%>
 
 <%
-	String jspName = "skypepi-114";
+	String jspName = "skypepi-117";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_56 = null;
 try {
@@ -73,7 +73,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/Payment-KCP/skypepi-114");
+	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/Payment-Receipt-Preview/skypepi-117");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
@@ -89,7 +89,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_38 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_38Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/Payment-KCP/skypepi-114");
+	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/Payment-Receipt-Preview/skypepi-117");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
@@ -105,7 +105,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_50 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_50Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("navpointId", "/ttsvr/n/Payment-KCP/skypepi-114");
+	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("navpointId", "/ttsvr/n/Payment-Receipt-Preview/skypepi-117");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavPointId", "");
@@ -121,7 +121,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_51Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/Payment-KCP/skypepi-114");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/Payment-Receipt-Preview/skypepi-117");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
@@ -132,6 +132,16 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_51.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_51", e);
+}
+
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13 = null;
+try {
+	Properties productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13Params.setProperty("viewReceipts", "/ttsvr/n/myOnlineBooking/skypepi-72");
+	productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13 = new tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13Params);
+	productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_37 = null;
@@ -159,15 +169,6 @@ try {
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_54", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_payment1_14 = null;
-try {
-	Properties productionHelper_skypepi_pages_portal_p_btstrap_payment1_14Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_btstrap_payment1_14 = new tooltwist.skypepi.productionHelpers.TransactPaymentProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_payment1_14Params);
-	productionHelper_skypepi_pages_portal_p_btstrap_payment1_14.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btstrap_payment1_14", e);
 }
 
 
@@ -211,16 +212,10 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}/* Styles for widget transactPayment */
+}/* Styles for widget paymentReceipt */
 
-.TransactPayment .add_space_left {
-	padding-left: 5px;
-}
-
-.TransactPayment .add_margin_left {
-	padding-left: 15px;
-}
-/* Styles for widget simpleDiv */
+.PaymentReceipt .someClass {
+}/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
 }/* Styles for widget simpleDiv */
@@ -251,7 +246,6 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
-<script src="/ttsvr/skypepi/scripts/jquery-input-masked.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -286,7 +280,7 @@ try {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_35;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Payment-KCP/skypepi-114";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_widgetName = "@35";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@35";
 	String snippetVar_elementId = "";
@@ -411,7 +405,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment-KCP/skypepi-114";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@38";
@@ -701,7 +695,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment-KCP/skypepi-114";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@37";
@@ -961,7 +955,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment-KCP/skypepi-114";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@50";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@50";
@@ -1315,7 +1309,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Payment-KCP/skypepi-114";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@55";
 	String snippetVar_elementId = "";
@@ -1446,7 +1440,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment-KCP/skypepi-114";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -1684,657 +1678,102 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
-<div class='DivWidget page-content' style=""><div class='DivWidget standard-width' style=""><%-- Widget skypepi.pages.portal_p_btstrap_payment1@14 (type=tooltwist.skypepi.widgets.TransactPaymentWidget) --%>
+<div class='DivWidget page-content' style=""><div class='DivWidget standard-width' style=""><%-- Widget skypepi.pages.portal_p_btstrap_paymentReceiptPreview@13 (type=tooltwist.skypepi.widgets.PaymentReceiptWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_payment1_14;
-	String snippetVar_backNavpoint = "/ttsvr/n/myOnlineBooking/skypepi-72";
-	String snippetVar_nextNavpoint = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
-	String snippetVar_studentFees = "";
-	String snippetVar_widgetName = "@14";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_payment1@14";
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13;
+	String snippetVar_viewReceipts = "/ttsvr/n/myOnlineBooking/skypepi-72";
+	String snippetVar_widgetName = "@13";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_paymentReceiptPreview@13";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
-<script language="javascript" src="https://pay.kcp.co.kr/plugin/payplus_un.js"></script>
-
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.TransactPaymentProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper"%>
 <%@page import="tooltwist.misc.JspHelper"%>
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="tooltwist.skypepi.bean.TransactionDetailForPayment"%>
-<%@page import="tooltwist.skypepi.data.TransactionCollection" %>
-<%@page import="org.json.JSONObject" %>
-<%@page import="com.dinaa.misc.AltLang" %>
-<%@page import="tooltwist.skypepi.bean.Enrolment"%>
-<%@page import="java.util.List"%>
-<%@page import="tooltwist.skypepi.data.TransactionCollection"%>
+<%@page import="com.dinaa.data.XNodes"%>
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.skypepi.util.StringUtil"%>
-<%@page import="tooltwist.skypepi.requestHandlers.TransactPaymentRequestHandler"%>
+<%@page import="com.dinaa.data.XNodes"%>
 
-<%@ include file="../skypepi/cfg/site_conf_inc.jsp" %>
 <%
 	// Get the production helper for this widget
-	TransactPaymentProductionHelper h = (TransactPaymentProductionHelper) helper;
-	TransactionCollection transactCollection = new TransactionCollection();
-	int id = h.getId();
-	String feeSelections = h.getFeeSelection(); 
-	List<Enrolment> enrolments = h.getEnrolments();
-	
-	if("".equals(feeSelections) && enrolments.size() <= 0) {
-	%>
-	
-	<script type="text/javascript">
-		window.location.href = "<%=snippetVar_backNavpoint%>";
-	</script>
-	
-	
-	<%
-	}
-	
-	TransactionDetailForPayment transactionDetailPayments = null;
-	String paymentDesc = "";
-	String grossAmount = "";
-	String amount = "";
-	
-	AltLang lang = h.getAltLang();	
-			
-	if("".equals(feeSelections)) { 
-		amount = h.getTotalAmount() + "";
-		grossAmount = h.getTotalAmount() + "";
-	}
-	else if(enrolments.size() <= 0) {
-		transactionDetailPayments = transactCollection.getTransactionDetailsPayment(id, feeSelections, "");
-		grossAmount = transactionDetailPayments.getGrossAmount();
-		amount = transactionDetailPayments.getAmount();
-	}
-	paymentDesc = TransactPaymentRequestHandler.PAYMENT_DESCRIPTION;
-	
+	PaymentReceiptProductionHelper h = (PaymentReceiptProductionHelper) helper;
+	XData data = h.getData(jh);
+	AltLang lang = h.getAltLang();
 %>
-<style type="text/css">
-.input-cc {font-size: 16px; text-align: center;}
-</style>
-<script src="/ttsvr/skypepi/scripts/jquery.validate.min.js"></script>
-<!-- ********** INSERT HTML HERE ********** -->
 
 <style>
 .portal-ribbon .left-edge.fork {
-	width: 130px;
+	width: 230px;
 }
 </style>
-  
 <div class="bc-container portal-ribbon">
-	<div class="ribbon-wrap left-edge fork lblue"><span>payment</span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Payment Receipt", null, "") %></span></div>
+<br /><br /><br />
 	
-	<br />
-	<br />
-	<br />
-	
-	<form method="post" action="" id="order_info" name="order_info">
-		<input type="hidden" value="<%=h.getId()%>" id="transact_id" name="transact_id"/>
-		<input type="hidden" value="<%=h.getFeeSelection()%>" id="transact_fs" name="transact_fs"/>
-		<input type="hidden" value="<%=paymentDesc%>" name="transact_description" />
-		<input type="hidden" value="<%=snippetVar_backNavpoint%>" id="backNavpoint" name="backNavpoint" /> <%-- navpoint to unpaid fees selection --%>
-		<input type="hidden" value="<%=snippetVar_nextNavpoint%>" id="nextNavpoint" name="nextNavpoint" /> <%-- navpoint to re-enrolment --%>
-		<input type="hidden" value="<%=snippetVar_studentFees%>" id="selectionNavpoint" name="selectionNavpoint" /> <%-- navpoint to student fees --%>
-		<input type="hidden" value="" id="paymentDetailID" name="paymentDetailID" />
-		<input type="hidden" value="<%=h.getId()%>" id="ordr_idxx" name="ordr_idxx" /> 
-		<input type="hidden" value="<%=request.getParameter("fee") %>" id="transact_fee" name="transact_fee" /> 
-		<input type="hidden" value="<%=request.getParameter("discount") %>" id="transact_discount" name="transact_discount" />
-		
-		<table cellspacing="0" cellpadding="0" border="0">
-			<tr>
-				<td>
-					<div class="roundconts">
-						<div class="roundtops">
-<!-- 							<img width="8" height="8" style="display: none;" class="corner" alt="" src="/ttsvr/skypepi/images/skypepi_brtl.png"> -->
-						</div>
-						<table cellspacing="0" cellpadding="0" border="0">
-							<tr>
-								<td>
-									<table>
-										<tr>
-											<td class="heading color-blue add_margin_left" align="left" width="800px" colspan="4"><%=lang.getString("Payment Information", null, "") %></td>
-										</tr>
-										<tr>
-											<td class="line-separator"></td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<table style="border-spacing:5px">
-										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px" valign="top">
-												<label for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Payment Method", null, "") %>:</label> 
-											</td>
-											<td class="add_space_left body-text" style="padding-bottom: 10px;">
-												<select name="pay_method" class="frmselect form-control" style="width: 280px;">
-					                                <option value="100000000000"><%=lang.getString("Credit Card", null, "") %></option>
-					                                <option value="010000000000"><%=lang.getString("By bank transfer", null, "") %></option>
-					                                <option value="001000000000"><%=lang.getString("Virtual account", null, "") %></option>
-					                                <option value="000100000000"><%=lang.getString("Point", null, "") %></option>
-					                                <option value="000010000000"><%=lang.getString("Cellular phone", null, "") %></option>
-					                                <option value="000000001000"><%=lang.getString("Gift Certificates", null, "") %></option>
-					                                <option value="000000000010"><%=lang.getString("ARS", null, "") %></option>
-					                                <option value="111000000000"><%=lang.getString("Credit card / bank account transfer / virtual account", null, "") %></option>
-					                            </select>
-											</td>
-										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>:</label> </td>
-											<td class="add_space_left body-text">
-												<input id="paymentDescription" name="good_name" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
-											</td>
-										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left"><%=lang.getString("Amount", null, "") %></td>
-											<td class="add_space_left">
-												<input name="transact_amount" id="transact_amount" class="form-control" type="text" autocomplete="off" value="&#8361;<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
-												<% int pos = amount.indexOf("."); amount += (pos == -1) ? ".00": ""; %>
-												<input  type="hidden" value="<%=StringUtil.cleanCurrency(amount) %>" name="good_mny"/>
-											</td>
-										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left"><label for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Customer Name", null, "") %>:</label></td>
-											<td class="add_space_left">
-												<input name="buyr_name" id="creditcard_name" class="form-control" type="text" autocomplete="off" value=""/>
-											</td>
-										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left"><label id="lbl_buyr_mail" for="buyr_mail"><%=lang.getString("Email", null, "") %>:</label></td>
-											<td class="add_space_left">
-												<input name="buyr_mail" id="buyr_mail" class="form-control" type="text" autocomplete="off" value=""/>
-											</td>
-										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left"><%=lang.getString("Phone Number", null, "") %>:</td>
-											<td class="add_space_left">
-												<input name="buyr_tel1" id="buyr_tel1" class="form-control" type="text" autocomplete="off" value=""/>
-											</td>
-										</tr>
-										<tr>
-											<td class="body-text color-regular add_margin_left"><%=lang.getString("Mobile", null, "") %>:</td>
-											<td class="add_space_left">
-												<input name="buyr_tel2" id="buyr_tel2" class="form-control" type="text" autocomplete="off" value=""/>
-											</td>
-										</tr>
-									</table>
-								</td>
-							</tr>
-						</table>
-						</div>
-						<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
-				</td>
-			</tr>
-			<tr>
-			<td class="roundcont">
-				<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
-				<div class="roundcont">
-					<table>
+<table>
+	<tr>
+		<td width="960px">
+			<div class="">
+				<div class="">
+					<!-- <img src="" alt="" width="8" height="8" class="corner" style="display: none" />  -->
+				</div>
+
+				<div class="">
+				<form id="form-courseDetails" name="form-courseDetails" method="post" action="">
+					<table width="100%">
 						<tr>
-							<td align="center" >
-								<table>
+							<td height="10"></td>
+						</tr>
+						<tr>
+							<td align="left" colspan="3">
+								<table width="100%">
 									<tr>
-										<td width="400">&nbsp;</td><td>&nbsp;</td>
+										<td width="30%"><span class="sub-heading color-blue"><b><%=h.getPaymentReceipt() == null ? "" : h.getPaymentReceipt().getCompanyAbn() %></b></span></td>
+										<td align="right">
+											<a href="<%=snippetVar_viewReceipts%>">
+												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
+											</a>
+											<a href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>&rs:Format=pdf" target="_blank">
+												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
+											</a>
+										</td>
 									</tr>
 								</table>
 							</td>
-							<td width="300px" valign="top">
-								<table align="right" style="padding-right:10px" border="0" cellspacing="0" cellpadding="0">
-									<tr>
-										<td>
-											
-											<% if("".equals(feeSelections)) { %>
-											<table width="" border="0" cellspacing="0" cellpadding="0">
-				                               <tr>
-				                               <td><a href="#" id="transact_btn_cancel" class="buttonBlue"><%=lang.getString("Cancel", null, "") %></a></td>
-				                               </tr>
-				                             </table>									
-				                             <% } else { %>
-				                             <table width="" border="0" cellspacing="0" cellpadding="0">
-				                               <tr>
-				                                 <td width="6px" class="button_l">&nbsp;</td>
-				                                 <td width="150px" class="button_m"><a href="#" id="transact_btn_back"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>
-				                                 <td width="17px" class="button_r">&nbsp;</td>
-				                               </tr>
-				                             </table>
-				                             
-				                             <% } %>
-										</td>
-										<td>&nbsp;</td>
-										<td>
-											<table width="149px" border="0" cellspacing="0" cellpadding="0">
-				                               <tr>
-				                               	<td><a href="#" id="transact_btn_confirm" class="buttonBlue"><%=lang.getString("Confirm Payment", null, "") %></a></td>
-				                               </tr>
-				                             </table>
-										</td>
-									</tr>
-							</table>
+						</tr>
+						<tr>
+							<td height="30"></td>
+						</tr>
+						<tr>
+							<td>
+								<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe>
 							</td>
 						</tr>
+						<tr>
+							<td height="20"></td>
+						</tr>
+						<tr>
+							<td height="30"></td>
+						</tr>
 					</table>
+				</form>
 				</div>
-			</td>
-			</tr>
-			<tr><td height="50"></td></tr>
-			<tr>
-				<td align="center">
-				</td>
-			</tr>
-			<tr>
-				<td class="roundcontw">
-					<div class="roundbottomw">
-					</div>
-				</td>
-			</tr>
-		</table>
-		
-		<%
-    /* ============================================================================== */
-    /* =   2. Merchants essential information set                                   = */
-    /* = -------------------------------------------------------------------------- = */
-    /* =   essential - Essential information for billing.                        = */
-    /* =   Please modify by consulting the 'site_conf_inc.asp' file                 = */
-    /* = -------------------------------------------------------------------------- = */
+			</div>
+		</td>
+	</tr>
+</table>
 
-%>
-    <input type="hidden" name="req_tx"          value="pay" />
-    <input type="hidden" name="site_cd"         value="<%= g_conf_site_cd   %>" />
-    <input type="hidden" name="site_key"        value="<%= g_conf_site_key  %>" />
-    <input type="hidden" name="site_name"       value="<%= g_conf_site_name %>" />
-<!--     <input type="hidden" name="site_logo"       value="http://skyportal.skysoftware.com:9080/ttsvr/cropImage/skypepi_images.skypepi_BC_logo.png" /> -->
-
-<%
-    //   Installment Option : Setting the number of installment months when you take the card payment at the Payplus Plug-in.
-%>
-    <input type="hidden" name="quotaopt"        value="12"/>
-    <!-- Essential Item : Payment Amount / currency unit -->
-    <input type="hidden" name="currency"        value="WON"/>
-    <!-- English use -->	
-	<input type='hidden' name='eng_flag'      value='Y' />
-
-
-<%
-    /* = -------------------------------------------------------------------------- = */
-    /* =     2. Merchants essential information set END                             = */
-    /* ============================================================================== */
-%>
-
-<%
-    /* ============================================================================== */
-    /* =    3. Payplus Plugin essential information (Don't change)                  = */
-    /* = -------------------------------------------------------------------------- = */
-    /* =   Enter and set the order information for billing.                         = */
-    /* = -------------------------------------------------------------------------- = */
-%>
-    <!-- PLUGIN set information(Don't change)-->
-    <input type="hidden" name="module_type"     value="01"/>
-
-			
-
-<!--
-      Essential
-          Essential item : It must be included, because this is the part of setting the values in Payplus_Plug-in. 
-          Don't set values.
--->
-    <input type="hidden" name="res_cd"          value=""/>
-    <input type="hidden" name="res_msg"         value=""/>
-    <input type="hidden" name="tno"             value=""/>
-    <input type="hidden" name="trace_no"        value=""/>
-    <input type="hidden" name="enc_info"        value=""/>
-    <input type="hidden" name="enc_data"        value=""/>
-    <input type="hidden" name="ret_pay_method"  value=""/>
-    <input type="hidden" name="tran_cd"         value=""/>
-    <input type="hidden" name="bank_name"       value=""/>
-    <input type="hidden" name="bank_issu"       value=""/>
-    <input type="hidden" name="use_pay_method"  value=""/>
-
-    <!--  Cash receipts Related Information : set in the Payplus Plug-in. -->
-    <input type="hidden" name="cash_tsdtime"    value=""/>
-    <input type="hidden" name="cash_yn"         value=""/>
-    <input type="hidden" name="cash_authno"     value=""/>
-    <input type="hidden" name="cash_tr_code"    value=""/>
-    <input type="hidden" name="cash_id_info"    value=""/>
-
-	<input type="hidden" name="good_expr" value="0" />
-
-
-<%
-     /* = -------------------------------------------------------------------------- = */
-     /* =   3. Payplus Plugin essential information END                              = */
-     /* ============================================================================== */
-%>
-
-	</form>
 </div>
-
-
-<div class="modal fade" id="simple_dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title"><span>Processing please wait...</span></h4>
-      </div>
-      <div class="modal-body">
-        <img alt="" src="/ttsvr/skypepi/images/dialog/loadingAnimation.gif">
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<script type="text/javascript" language="javascript">
-
-
-
-var TransactPayment = function() {
-	return {
-		isFormValidated: false,
-		tno: '',
-
-		init: function() {
-			
-			var self = this;
-			
-			self.initKCP();
-			
-			jQuery('#transact_btn_confirm').click(function() {
-				
-				var isSubmitForm = true;
-				
-				jQuery(".required").each(function(index, obj) {
-					if (jQuery.trim(jQuery(obj).val()) == '') {
-						isSubmitForm = false;
-						jQuery("#lbl_" + jQuery(obj).attr("id")).addClass("body-text color-red");
-					} else {
-						jQuery("#lbl_" + jQuery(obj).attr("id")).removeClass("body-text color-red");
-					}
-				});
-				
-				if (!self.isEmailValid(jQuery("#buyr_mail").val())) {
-					jQuery("#lbl_buyr_mail").addClass("body-text color-red");
-					isSubmitForm = false;
-				}
-				
-				if (isSubmitForm) {
-					TransactPayment.submitFeesToPepi();	
-					jsf__pay(document.getElementById("order_info"));
-
-				}
-			});
-			
-			$("#order_info").submit(function() {
-				
-				if (!$("#order_info").validate().valid()) {
-					self.closeModal();
-					jQuery("#lbl_transact_creditcard").addClass("body-text color-red");
-					return false;
-				}
-				else {
-					return true;
-				}
-				
-			});
-			
-			jQuery('#transact_btn_back').click(function() {
-				self.backToFees();
-			});
-			
-			jQuery("#transact_btn_cancel").click(function() {
-				self.backToReEnrolment();
-			});
-			
-			$("#taxNumber").attr("maxlength", "8");
-			$("#transact_card_code").attr("maxlength", "6");
-			$(".credit-card").attr("maxlength", "4");
-			$(".credit-card").focus(function() {$(this).select();});
-			$(".credit-card, #transact_card_code, #taxNumber").keydown(function(e)
-	        {
-	            var key = e.charCode || e.keyCode || 0;
-	            // allow backspace, tab, delete, arrows, numbers and keypad numbers ONLY
-	            return (
-	                key == 8 || 
-	                key == 9 ||
-	                key == 46 ||
-	                (key >= 37 && key <= 40) ||
-	                (key >= 48 && key <= 57) ||
-	                (key >= 96 && key <= 105));
-	        });
-			$(".credit-card").each(function(idx, obj){
-				
-				$(obj).keyup(function() {
-					if ($(this).val().length == 4) {
-						$(".credit-card:eq("+(idx+1)+")").focus();
-					}
-					$("#transact_creditcard").val($(".credit-card:eq(0)").val()+$(".credit-card:eq(1)").val()+$(".credit-card:eq(2)").val()+$(".credit-card:eq(3)").val());
-				});
-				
-			});
-			
-			$(".credit-card").focus(function() {
-				this.select();
-			});
-			
-			$("#chk-taxNumber").click(function() {
-				if ($(this).attr("checked")) {
-					$("#tr-taxNumber").show();
-					$("#taxNumber").focus();
-				}
-				else {
-					$("#taxNumber").val("");
-					$("#tr-taxNumber").hide();
-				}
-			});
-			
-		},
-		
-		submitFeesToPepi: function() {
-			
-			Progress.showProgress();
-			
-			var self = this;
-			var params = $("#order_info").serialize();
-			
-			var url = window.location.pathname;
-			url = url
-			+ "?op=skypepi_widgets.transactPayment.transactPayment&" 
-			+ params + "&tno=" + TransactPayment.tno;
-			
-			$.ajax({
-				url: url,
-				dataType: "text",
-				asynchronous: false,
-				cache: false,
-				type: 'post',
-				contentType: "application/x-www-form-urlencoded; charset=utf-8",
-				success: function(data) {
-					var status = '';
-					var msg = '';
-					
-					if (data.indexOf("FAILED") > -1) {
-						status = 'FAILED';
-						msg = data.split("~")[1];
-					}
-					
-					if (status == 'FAILED') {
-						
-						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "") %><br> <%=lang.getString("Check your payment information.", null, "") %>");
-						
-						jQuery("#process-containers").css({"height":" 1065px"});
-					}
-					else {
-						
-						console.log("data", data);
-						
-						//window.open(data,'myreceipt','width=1000,height=800');
-						$("#paymentDetailID").val(data);
-						
-						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
-						
-						setTimeout(function() {
-							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
-						}, 3000);
-// 						jQuery("#msgButtonClose").click(function() {
-// 							Progress.showProgress();
-// 							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
-// 						});
-						
-					}
-					
-				},
-				error: function() {
-					self.closeModal(true);
-				}
-			});
-			
-			//$("#order_info").submit();
-			
-		},
-		
-		backToFees: function() {
-			jQuery("#order_info").attr("action", jQuery('#backNavpoint').val());
-			jQuery("#order_info").submit();
-		},
-		
-		backToReEnrolment: function() {
-			jQuery("#order_info").attr("action", jQuery('#nextNavpoint').val());
-			jQuery("#order_info").submit();
-
-		},
-		
-		initKCP: function() {
-			
-			/* plugin check  */
-			StartSmartUpdate();
-		},
-		
-		isEmailValid: function(str) {
-
-			var at="@";
-			var dot=".";
-			var lat=str.indexOf(at);
-			var lstr=str.length;
-			var ldot=str.indexOf(dot);
-			if (str.indexOf(at)==-1){
-			   
-			   return false;
-			}
-
-			if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
-			   return false;
-			}
-
-			if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
-			    return false;
-			}
-
-			 if (str.indexOf(at,(lat+1))!=-1){
-			    return false;
-			 }
-
-			 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
-			    return false;
-			 }
-
-			 if (str.indexOf(dot,(lat+2))==-1){
-			    return false;
-			 }
-			
-			 if (str.indexOf(" ")!=-1){
-			    return false;
-			 }
-
-	 		 return true;					
-		}
-		
-	};
-}();
-
-jQuery(TransactPayment.init()); // Run after page loads
-
-/* Payplus Plug-in */
-function  jsf__pay( form )
-{
-    var RetVal = false;
-
-    /* Payplus Plugin */
-    if ( MakePayMessage( form ) == true )
-    {
-    	Progress.showProgress();
-        RetVal = true ;
-    }
-    
-    else
-    {
-        /*  The error code and error message will be set at  'res_cd' and 'res_msg'.
-            ex) if Customer click the 'cancel button' at the Payplus Plugin, 
-              'res_cd=3001, res_msg=user canceled' will be set.
-        */
-        res_cd  = document.order_info.res_cd.value ;
-        res_msg = document.order_info.res_msg.value ;
-
-    }
-	console.log("RetVal");
-    if (RetVal) {
-    	var params = jQuery("#order_info").serialize();
-    	jQuery.ajax({
-    		url: "/ttsvr/skypepi/cfg/pp_ax_hub.jsp?" + params,
-    		type: 'post',
-    		success: function(data) {
-    			
-    			var resp = jQuery(data);
-    			var res_cd = resp.find("input[name='res_cd']").val();
-    			var res_msg = resp.find("input[name='res_msg']").val();
-    			var res_cd = resp.find("input[name='res_cd']").val();
-    				tno = resp.find("input[name='tno']").val();
-    			
-    			if (res_cd == "0000") {
-    				TransactPayment.submitFeesToPepi();	
-    			}
-    			else {
-    				//jQuery.modal.close();
-    				var msg =  "<%=lang.getString("Payment Failed.", null, "") %> <%=lang.getString("Check your payment information.", null, "") %>";
-    				msg += "<br />Error Message ["+res_cd+"]: " + res_msg;
-    				jQuery("#process-containers").css({"height":" 210px", "width": "550px;"});
-    				Progress.alertMessage("<%=lang.getString("Make Payment", null, "") %>", msg);
-					
-    			}
-    		}
-    	});
-    }
-    	
-    
-}
-
-// Payplus Plug-in Installation guide 
-function init_pay_button()
-{
-	/*
-    if( document.Payplus.object == null )
-        document.getElementById("display_setup_message").style.display = "block" ;
-    else
-        document.getElementById("display_pay_button").style.display = "block" ;
-	*/
-
-	if( GetPluginObject() == null ){
-		document.getElementById("display_setup_message").style.display = "block" ;
-	}
-	else{
-		document.getElementById("display_pay_button").style.display = "block" ;
-	}
-}
-
-</script>
 
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_payment1@14 (type=tooltwist.skypepi.widgets.TransactPaymentWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_paymentReceiptPreview@13 (type=tooltwist.skypepi.widgets.PaymentReceiptWidget)", e);
 }
 %>
 </div>
@@ -2749,7 +2188,63 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
-  <script type="text/javascript"></script>
+  <script type="text/javascript">
+var PaymentReceipt = function() {
+	return {
+		myVariable: null,
+
+		init: function() {
+			
+//			$("#receipts-link").click(function() {
+//				jQuery("#fraPreviewReceipt").attr("src", $("receiptUrl").val());
+//				setTimeout(function(){
+//					$('#receipt_preview').modal({
+//						closeHTML: "",
+//						position: ["20%",],
+//						overlayId: 'confirm-overlay',
+//						containerId: 'confirm-container', 
+//						close: true,
+//						onShow: function (dialog) {
+//							jQuery("#fraPreviewReceipt").attr("src", $("receiptUrl").val());
+//							jQuery("#fraPreviewReceipt").src = $("receiptUrl").val();
+//						}
+//						});
+//				}, 100); 
+//			});
+			
+
+			
+//			jQuery.ajax({
+//	               url: "",
+//	               data: {
+//	            	   op : "skypepi_widgets.paymentReceipt.paymentReceipts",
+//	            	   paymentId: <%=request.getParameter("paymentDetailID") %>,
+//	            	   format: "html"
+//	               },
+//	               success: function(data) {
+//	                   console.log("data", data);
+//	            	   var tmp = data;
+//	            	   
+//	            	   jQuery(data).find("img").each(function(idx, obj) {
+//	            		   //var imgSrc = "";
+//	            		   //imgSrc = jQuery(obj).attr("src");
+//	            		   //console.log("imgSrc", imgSrc);
+//	            		   //data = data.replace(imgSrc, "?paymentId=<%=request.getParameter("paymentDetailID") %>&op=skypepi_widgets.paymentReceipt.paymentReceipts&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc) + "\" height=\"89\"");
+//	            	   });
+//	            	   
+//	            	   jQuery("#oReportCell").html(data);
+//	               },
+//	               error: function() {
+//	            	   
+//	               }
+//	           });			
+		
+			
+		}
+	};
+}();
+
+jQuery(PaymentReceipt.init()); // Run after page loads</script>
 <script type="text/javascript">
 var Progress = function() {
 	return {

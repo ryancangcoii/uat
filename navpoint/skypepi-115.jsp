@@ -73,7 +73,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/Payment/skypepi-115");
+	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/Payment-GOPI/skypepi-115");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
@@ -89,7 +89,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_38 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_38Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/Payment/skypepi-115");
+	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/Payment-GOPI/skypepi-115");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
@@ -105,7 +105,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_50 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_50Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("navpointId", "/ttsvr/n/Payment/skypepi-115");
+	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("navpointId", "/ttsvr/n/Payment-GOPI/skypepi-115");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_50Params.setProperty("homeNavPointId", "");
@@ -121,7 +121,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_51Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/Payment/skypepi-115");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/Payment-GOPI/skypepi-115");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
@@ -286,7 +286,7 @@ try {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_35;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-115";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-GOPI/skypepi-115";
 	String snippetVar_widgetName = "@35";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@35";
 	String snippetVar_elementId = "";
@@ -411,7 +411,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-115";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-GOPI/skypepi-115";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@38";
@@ -701,7 +701,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-115";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-GOPI/skypepi-115";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@37";
@@ -961,7 +961,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-115";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-GOPI/skypepi-115";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@50";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@50";
@@ -1315,7 +1315,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-115";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-GOPI/skypepi-115";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@55";
 	String snippetVar_elementId = "";
@@ -1446,7 +1446,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Payment/skypepi-115";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-GOPI/skypepi-115";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -1689,7 +1689,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_payment2_14;
 	String snippetVar_backNavpoint = "/ttsvr/n/myOnlineBooking/skypepi-72";
-	String snippetVar_nextNavpoint = "";
+	String snippetVar_nextNavpoint = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_studentFees = "";
 	String snippetVar_widgetName = "@14";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_payment2@14";

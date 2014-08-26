@@ -119,7 +119,9 @@ try {
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
+<% WbdProductionHelper helper = null; %>
 <!--Start-->
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="java.util.Map"%>
 <%@page import="tooltwist.skypepi.productionHelpers.TimetableProductionhelper"%>

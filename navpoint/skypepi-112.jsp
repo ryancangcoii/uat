@@ -434,9 +434,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -724,9 +721,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1102,9 +1096,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1239,7 +1230,7 @@ try {
 <!-- ********** INSERT HTML HERE ********** -->
 <div class="bc-container portal-ribbon">
 	<div class="ribbon-wrap left-edge fork lblue">
-		<span>System Settings</span>
+		<span>System Setting</span>
 	</div>
 	
 	<br /> <br /> <br />
@@ -1279,7 +1270,7 @@ try {
 									<td>
 										<select id="paymentGatewaySelect-<%=ctr%>" name="paymentGatewaySelect-<%=ctr%>" class="paymentGatewaySelect form-control required">
 											<% XNodes paymentGateways = h.getPaymentGateways(); %>
-												<option value="">Please select payment gateway</option>
+												<option value="">Please select</option>
 											<% for (paymentGateways.first(); paymentGateways.next();) { %>
 													<% selected = ""; %>
 													<%

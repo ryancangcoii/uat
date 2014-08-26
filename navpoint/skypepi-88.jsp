@@ -476,9 +476,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -766,9 +763,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1025,9 +1019,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {

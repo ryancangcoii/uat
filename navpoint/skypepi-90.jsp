@@ -527,9 +527,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -817,9 +814,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1321,9 +1315,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1431,7 +1422,9 @@ try {
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
+<% WbdProductionHelper helper = null; %>
 <!--Start-->
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="java.util.Map"%>
 <%@page import="tooltwist.skypepi.productionHelpers.TimetableProductionhelper"%>

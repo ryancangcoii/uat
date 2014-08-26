@@ -482,9 +482,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -772,9 +769,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1150,9 +1144,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1325,6 +1316,7 @@ try {
 		<input type="hidden" id="requiredFieldsMsg" name="requiredFieldsMsg" value="<%=h.getRequiredFieldsMsg()%>" >
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
 		<input type="hidden" value="<%=DataBlockUtil.DATEPICKER_FORMAT%>" id="datepickerFormat" />
+		<input type="hidden" value="<%=h.getAnnouncementMode() %>" id="announcementMode"/>
 		
 		<% for (DataBlockUtil.LANGUAGE_TYPE language : DataBlockUtil.LANGUAGE_TYPE.values()) { %>
 			<input type="hidden" name="ckeditorContentWithImage_<%=language.getLangType()%>" id="ckeditorContentWithImage_<%=language.getLangType()%>" value=""/>
@@ -2058,6 +2050,18 @@ var ckTextArea;
 var cboCat;
 var cboSite;
 
+var initBdTitle = $("#bdTitle_EN").val();
+var initBdPublishDate = $("#bdPublishDate").val();
+var initSelPublishTimeHour = $("#selPublishTimeHour").val();
+var initSelPublishTimeMinute = $("#selPublishTimeMinute").val();
+var initSelPublishTimeMeridian = $("#selPublishTimeMeridian").val();
+var initBdExpireDate = $("#bdExpireDate").val();
+var initSelExpireTimeHour = $("#selExpireTimeHour").val();
+var initSelExpireTimeMinute = $("#selExpireTimeMinute").val();
+var initSelExpireTimeMeridian = $("#selExpireTimeMeridian").val();
+var initBdContent_EN = $("#bdContent_EN").val();
+
+
 var BlogAdminBlogDetails = function() {
 	return {
 		myVariable: null,
@@ -2614,7 +2618,28 @@ function MultiDropDownValue() {
 }
 
 function redirectBackTo(redirectLink) {
-	$('#modal-alert').modal();
+	var announcementMode = $("#announcementMode").val();
+	var bdTitle = $("#bdTitle_EN").val();
+	var bdPublishDate = $("#bdPublishDate").val();
+	var selPublishTimeHour = $("#selPublishTimeHour").val();
+	var selPublishTimeMinute = $("#selPublishTimeMinute").val();
+	var selPublishTimeMeridian = $("#selPublishTimeMeridian").val();
+	var bdExpireDate = $("#bdExpireDate").val();
+	var selExpireTimeHour = $("#selExpireTimeHour").val();
+	var selExpireTimeMinute = $("#selExpireTimeMinute").val();
+	var selExpireTimeMeridian = $("#selExpireTimeMeridian").val();
+	var bdContentEN = CKEDITOR.instances.bdContent_EN.getData();
+	if(announcementMode == "add") {
+		if(bdTitle != initBdTitle || bdPublishDate != initBdPublishDate 
+				|| selPublishTimeHour != initSelPublishTimeHour || selPublishTimeMinute != initSelPublishTimeMinute || selPublishTimeMeridian != initSelPublishTimeMeridian
+				|| bdExpireDate != initBdExpireDate || selExpireTimeHour != initSelExpireTimeHour || selExpireTimeMinute != initSelExpireTimeMinute || selExpireTimeMeridian != initSelExpireTimeMeridian 
+				|| bdContentEN != initBdContent_EN){
+			$('#modal-alert').modal();
+		}else
+			location.href = redirectLink;
+	}else{
+		$('#modal-alert').modal();
+	}
 	
 //	$(".required").removeClass("required");
 //	location.href = redirectLink;

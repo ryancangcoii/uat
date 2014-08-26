@@ -534,9 +534,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -824,9 +821,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1328,9 +1322,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1490,7 +1481,7 @@ try {
 		grossAmount = h.getTotalAmount() + "";
 	}
 	else if(enrolments.size() <= 0) {
-		transactionDetailPayments = transactCollection.getTransactionDetailsPayment(id, feeSelections, "");
+		transactionDetailPayments = transactCollection.getTransactionDetailsPayment(id, feeSelections, "", request);
 		grossAmount = transactionDetailPayments.getGrossAmount();
 		amount = transactionDetailPayments.getAmount();
 	}

@@ -525,9 +525,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -815,9 +812,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1193,9 +1187,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1387,7 +1378,7 @@ try {
 						<tr>
 							<td><input class="buttonBlue" type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())" /></td>
 							<td align="right">
-								<a href="<%=snippetVar_blogAdminBlogListNavpoint%>" style="margin-left: 1px;"> 
+								<a href="<%=snippetVar_blogAdminBlogListNavpoint%>?mode=add" style="margin-left: 1px;"> 
 									<input class="buttonBlue" type="button" value="Add New +" name="btnAdd" id="btnAdd" />
 								</a>
 							</td>

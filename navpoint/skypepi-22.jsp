@@ -589,9 +589,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -879,9 +876,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1139,9 +1133,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1625,9 +1616,6 @@ try {
 <%
  	}
  %>
- 
- <script src="/ttsvr/skypepi/scripts/dropdown/jquery.hyjack.select.js"></script>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/scripts/dropdown/hyjack.css" media="screen" />
 
 <script type="text/javascript">
 	var Logout = function() {
@@ -1888,6 +1876,7 @@ var ForgotPassword = function() {
 						//$("#error-message").html(msg);
 						Progress.alertMessage("Password Assistance", msg);
 						jQuery(".close").trigger("click");
+						Progress.hideProgress();
 					}
 					else {
 						 $("#td-container").attr("width", "700");
@@ -1896,6 +1885,7 @@ var ForgotPassword = function() {
 // 						$("#success-msg").html(msg);
 						Progress.alertMessage("Password Assistance", msg);
 						setTimeout(function(){window.location.href = "<%=snippetVar_cancelNavpoint%>";}, 5000);
+						Progress.hideProgress();
 					}
 					
 				},

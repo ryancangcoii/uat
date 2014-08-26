@@ -1011,14 +1011,18 @@ try {
 										if(streamIds.indexOf(streamId) <= -1) 
 											continue;
 										
-										String streamName = stream.getAttribute("Name");
+										String streamName = ""; //stream.getAttribute("Name");
 										
 										if(!(DataBlockUtil.SESSION_VARIABLE.LANGUAGE.getName().equals(h.getAltLang().getCurrentLangCode()))) {
 											streamName = stream.getAttribute("AltName");	
+											if(streamName.trim().equals("")) {
+												streamName = stream.getAttribute("Name");
+											}
 										}
 										else {
 											streamName = stream.getAttribute("Name");
 										}
+										
 										System.out.println("Streams:" + streamName);
 										String startDate = stream.getAttribute("StartDate");
 										String endDate = stream.getAttribute("EndDate");

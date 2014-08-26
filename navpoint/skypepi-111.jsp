@@ -1297,7 +1297,7 @@ try {
 			</tr>
 			<tr class="white">
 				<td valign='top' style="width:180px;">
-					<label class="control-label">Local Translation: </label>
+					<label class="control-label">Alternate Translation: </label>
 				</td>
 				<td>
 					<input type="text" id="locTransAlternateLanguage" class="form-control" />			

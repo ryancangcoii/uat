@@ -51,7 +51,7 @@ try {
 	productionHelper_skypepi_zones_skypepi_header_59Params.setProperty("homeNavPointId", "skypepi-4");
 	productionHelper_skypepi_zones_skypepi_header_59Params.setProperty("viewOption", "Student Dashboard Link");
 	productionHelper_skypepi_zones_skypepi_header_59Params.setProperty("studentDashBoardNavId", "/ttsvr/n/Student-Dashboard/skypepi-6");
-	productionHelper_skypepi_zones_skypepi_header_59Params.setProperty("homeNavId", "/ttsvr/n/Main-Menu-Old/skypepi-4");
+	productionHelper_skypepi_zones_skypepi_header_59Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_zones_skypepi_header_59 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_skypepi_header_59Params);
 	productionHelper_skypepi_zones_skypepi_header_59.callPreFetch(jh);
 } catch (Exception e) {
@@ -259,7 +259,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_59;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/n/Main-Menu-Old/skypepi-4";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_homeNavPointId = "skypepi-4";
 	String snippetVar_authenticatePage = "No";
@@ -548,30 +548,6 @@ try {
 
 <div id='cssmenu'>
 <ul>
-<li class=" has-sub">
-<a href='/ttsvr/n/Course-Navigator/skypepi-7'><span>Course Navigator</span></a>
-<ul><li class="">
-<a href='/ttsvr/n/Course-Details/skypepi-18'><span>Course Details</span></a>
-</li><li class="">
-<a href='/ttsvr/n/Course-Enquiry/skypepi-19'><span>Course Enquiry</span></a>
-</li><li class=" has-sub">
-<a href='/ttsvr/n/Placement-Test/skypepi-59'><span>Placement Test</span></a>
-<ul><li class="">
-<a href='/ttsvr/n/Placement-Test-Registration/skypepi-60'><span>Placement Test Registration</span></a>
-</li></ul></li></ul></li><li class="">
-<a href='/ttsvr/n/English-Courses/skypepi-44'><span>English Courses</span></a>
-</li><li class="">
-<a href='/ttsvr/n/Exams/skypepi-45'><span>Exams</span></a>
-</li><li class="">
-<a href='/ttsvr/n/About-Us/skypepi-20'><span>About Us</span></a>
-</li><li class="">
-<a href='/ttsvr/n/Contact-Us/skypepi-21'><span>Contact Us</span></a>
-</li></ul>
-</div><%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi_header@57 (type=tooltwist.skypepi.widgets.MainMenuWidget)", e);
-}
-%>
 </td>
  </tr>
 </table>

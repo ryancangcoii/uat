@@ -2076,6 +2076,7 @@ try {
 	XData data = h.getData(jh);
 	
 	XData recentBlog = h.getRecentBlog();
+	XNodes blogList = recentBlog.getNodes("//blog");
 %>
 
 <div class="BlogList listSummary">
@@ -2087,13 +2088,18 @@ try {
 				<thead>
 					<tr>
 						<td colspan="2">
-							<%=h.getAltLang().getString("Announcements", null, "") %>
+							<%if(blogList.getNumNodes() == 0){%>
+								<%=h.getAltLang().getString("There are no current announcements", null, "") %>
+							<%}else{%>
+								<%=h.getAltLang().getString("Announcements", null, "") %>
+							<%}%>
+<%-- 							<%=h.getAltLang().getString("Announcements", null, "") %> --%>
 						</td>
 				    </tr>
 			    </thead>
 	        	<tbody>
 		        	<%
-		        		XNodes blogList = recentBlog.getNodes("//blog");
+		        		
 		        			        		if(blogList instanceof XNodes) {
 		        			        			int maxNews = h.getBlogCount();
 		        			        			int cnt = 1;

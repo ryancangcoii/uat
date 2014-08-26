@@ -1426,9 +1426,14 @@ try {
 									</tr>
 								</thead>
 								<tbody id="blogSettingListTableBody">
-									<% if (xNodes.getNumNodes() > 0) { %>
-										<% for (xNodes.first(); xNodes.next();) { %>
-											<tr class="<%=!xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDate(xNodes.getText("expirationDate")).getTime() < new Date().getTime() ? "archive" : ""%> white div-bottom">
+									<% if (xNodes.getNumNodes() > 0) {
+										int blogCnt = 0;
+									%>
+										<% for (xNodes.first(); xNodes.next();) {
+											blogCnt++;
+											String classTag = ((blogCnt % 2)==0)?"blue":"white";
+										%>
+											<tr class="<%=!xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDate(xNodes.getText("expirationDate")).getTime() < new Date().getTime() ? "archive" : ""%> <%=classTag%>">
 												<% for (columnNodes.first(); columnNodes.next();) { %>
 													<% if ("Title".equals(columnNodes.getText("columnDisplay"))) { %>
 														<td align="left" valign="top"><%=StringUtil.asciiToString(xNodes.getText("title"))%></td>
@@ -1985,7 +1990,7 @@ var BlogAdminBlogList = function() {
 		},
 
 		changeLabel: function(archiveLabel,columnName, txtvalue) {
-			
+			Progress.showProgress();
 			var tempVal = jQuery("#btnShowArchive").val();
 			var arc = "";
 			if (tempVal == "Show Archive" ){
@@ -2003,8 +2008,10 @@ var BlogAdminBlogList = function() {
 				success: function(response) {
 					jQuery("#blogSettingListTable").html(jQuery(response).find("#blogSettingListTable").html());
 					initializePager(jQuery('#categoryCount').val(), 1);
+					Progress.hideProgress();
 				}
 			});
+			
 		},
 		
 		sortCategory: function(sortType,columnType,archiveLabel,columnName, txtvalue) {

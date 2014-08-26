@@ -36,6 +36,7 @@
 <%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.PaymentSettingsProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
 
@@ -108,6 +109,19 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_54", e);
 }
 
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26 = null;
+try {
+	Properties productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26Params.setProperty("activeTab", "0");
+	productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26Params.setProperty("displayPaymentDetails", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26Params.setProperty("tabs", "WebService Setting,skypepi-103");
+	productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26Params.setProperty("settingType", "ES");
+	productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26 = new tooltwist.skypepi.productionHelpers.PaymentSettingsProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26Params);
+	productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_37Params = new Properties();
@@ -176,9 +190,9 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
+}/* Styles for widget paymentSettings */
 
-.SimpleDiv .someClass {
+.PaymentSettings .someClass {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -1192,47 +1206,148 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='30' align='left' valign='top'></td>
  </tr>
 </table>
-<div class='DivWidget page-content' style=""><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  align='center' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  align='center' valign='middle'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_errorIcon.png" border="0">
-</td>
-  <td  width='10'></td>
-  <td  align='center' valign='middle'><span class="wbdRichText"><h2 style="color: #00a3e4; font-size: 70px;"><span style="font-size: 24pt;">PAGE UNDER CONSTRUCTION</span></h2></span></td>
- </tr>
-</table>
-</td>
- </tr>
- <tr>
-  <td  height='20'></td>
- </tr>
- <tr>
-  <td  align='center'><span class="wbdRichText"><p style="color: #66666f;">Sorry but the page you are trying to visit is unavailable.</p></span></td>
- </tr>
- <tr>
-  <td  height='20'></td>
- </tr>
- <tr>
-  <td  align='center'><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'><span class="wbdRichText"><p style="color: #66666f;">Would you like to go back to the</p></span></td>
-  <td  width='5'></td>
-  <td ><a href="#" class="wt" style=" font-size:14px; color:#00a3e4; font-weight:normal; text-decoration:underline;"  onmouseover="this.style.color='#00a3e4';this.style.textDecoration='underline';"  onmouseout="this.style.color='#00a3e4';this.style.textDecoration='underline';">home page</a></td>
-  <td ><span class="wbdRichText"><p style="color: #66666f;">?</p></span></td>
- </tr>
-</table>
-</td>
- </tr>
-</table>
+<div class='DivWidget page-content standard-width' style=""><%-- Widget skypepi.pages.portal_p_bstrapAdminEnvironmentSetting@26 (type=tooltwist.skypepi.widgets.PaymentSettingsWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAdminEnvironmentSetting_26;
+	String snippetVar_settingType = "ES";
+	String snippetVar_displayPaymentDetails = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_tabs = "WebService Setting,skypepi-103";
+	String snippetVar_activeTab = "0";
+	String snippetVar_widgetName = "@26";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAdminEnvironmentSetting@26";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.PaymentSettingsProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%@page import="com.dinaa.data.XNodes"%>
+<%
+	// Get the production helper for this widget
+	PaymentSettingsProductionHelper h = (PaymentSettingsProductionHelper) helper;
+	XData data = h.getData(jh);
+	XNodes sitePaymentGateways = h.getSitePaymentGateways();
+	String portalSitePaymentGetwayIds = "";
+	String selected = "";
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div class="bc-container portal-ribbon">
+	<div class="ribbon-wrap left-edge fork lblue">
+		<span>System Settings</span>
+	</div>
+	
+	<br /> <br /> <br />
+	<ul class="nav nav-tabs">
+	<% String[] tabs = h.getTabs().split("[|]");
+	   String settingLabel = "";
+		int idx = 0;
+		for (String tab : tabs) {
+			String cls = "";
+			String[] tmp = tab.split(",");
+			String link = tmp[1];
+			String label = tmp[0];
+			
+			if (idx == Integer.valueOf(snippetVar_activeTab)) {
+				cls = "active";
+				settingLabel = label;
+			}
+			
+	%>
+		<li class="<%=cls %>"><a href="<%=link %>"><%=label %></a></li>
+	<% idx++;} %>
+  		
+  		<%--<li class="active"><a href="javascript:void(0);">Payment Settings</a></li> --%>
+	</ul>
+	<div class="PaymentSettings" style="">
+		<form id="paymentGatewayForm">
+			<input type="hidden" id="op" name="op" value="skypepi_widgets.paymentSettings.paymentSettings" />
+			<input type="hidden" id="subop" name="subop" value="savePortalSitePaymentGateway" />
+			<div id="paymentGatewayInner">
+				<% int ctr = 1; %>
+				<% if (sitePaymentGateways.getNumNodes() > 0) { %>
+					<% for (sitePaymentGateways.first();sitePaymentGateways.next();) { %>
+						<div id="paymentGatewayContainer-<%=ctr%>" class="paymentGatewayContainer portalTable">
+							<table width="100%" >
+								<tr class="white">
+									<td valign='top' style='min-width:160px;'><strong>Payment Gateway</strong> : </td>
+									<td>
+										<select id="paymentGatewaySelect-<%=ctr%>" name="paymentGatewaySelect-<%=ctr%>" class="paymentGatewaySelect form-control required">
+											<% XNodes paymentGateways = h.getPaymentGateways(); %>
+												<option value="">Please select payment gateway</option>
+											<% for (paymentGateways.first(); paymentGateways.next();) { %>
+													<% selected = ""; %>
+													<%
+													if (sitePaymentGateways.getText("paymentGatewayId").equals(paymentGateways.getText("paymentGatewayId"))) {
+														portalSitePaymentGetwayIds += portalSitePaymentGetwayIds.equals("") ? sitePaymentGateways.getText("paymentGatewayId") : "," + sitePaymentGateways.getText("paymentGatewayId");
+														selected=" selected='selected'";
+													}
+													%>
+													<option value="<%=paymentGateways.getText("paymentGatewayId")%>" <%=selected%>><%=paymentGateways.getText("name")%></option>
+											<% } %>
+										</select>
+									</td>
+								</tr>
+								<% 
+								XNodes sitePaymentGatewayDetails = sitePaymentGateways.getNodes("portalSitePaymentGatewayDetails");
+								%>
+								<% for (sitePaymentGatewayDetails.first();sitePaymentGatewayDetails.next();) { %>
+								<tr class="white removable">
+									<td valign="top"><strong><%=sitePaymentGatewayDetails.getText("label")%></strong> : </td>
+									<td>
+										<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
+										id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
+										value="<%=sitePaymentGatewayDetails.getText("value")%>" />
+									</td>
+								</tr>
+								<% } %>
+							</table>
+						</div>
+						<br /><br />
+						<% ctr++; %>
+					<% } %>
+				<% } else { %>
+					<div id="paymentGatewayContainer-1" class="paymentGatewayContainer portalTable">
+						<table width="100%" >
+							<tr class="white">
+								<td valign='top' style='min-width:160px;'><%=settingLabel %> : </td>
+								<td>
+									<select id="paymentGatewaySelect-1" name="paymentGatewaySelect-1" class="paymentGatewaySelect form-control required">
+										<% XNodes nodes = h.getPaymentGateways(); %>
+											<option value="">Select here...</option>
+										<% for (nodes.first(); nodes.next();) { %>
+											<option value="<%=nodes.getText("paymentGatewayId")%>"><%=nodes.getText("name")%></option>
+										<% } %>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<br /><br />
+				<% } %>
+			</div>
+			<input type="hidden" class="paymentGatewayCount" id="paymentGatewayCount" value="<%=ctr%>" />
+			<!-- <input type="button" value="Add New Payment Gateway" id="addNewPaymentGateway" class="buttonBlue" style="" /> -->
+			<input type="submit" value="Save" class="buttonBlue" id="savePaymentGatewayDetails" style="float:right;" />&nbsp;&nbsp;
+			<input type="hidden" id="portalSitePaymentGetwayIds" name="portalSitePaymentGetwayIds" value="<%=portalSitePaymentGetwayIds%>" />
+		</form>
+	</div>
 </div>
-<table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
- <tr>
-  <td  height='30' align='left' valign='top'></td>
- </tr>
-</table>
-<div class='DivWidget page-content standard-width' style=""></div>
+<br /> <br /> <br />
+<script>
+	var paymentGateways = '<%=h.getJson()%>';
+</script>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_bstrapAdminEnvironmentSetting@26 (type=tooltwist.skypepi.widgets.PaymentSettingsWidget)", e);
+}
+%>
+</div>
 <div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
@@ -1645,6 +1760,150 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
   <script type="text/javascript">
+var PaymentSettings = function() {
+	return {
+		myVariable: null,
+
+		init: function() {
+			
+			$("#addNewPaymentGateway").click(function() {
+				PaymentSettings.addNewPaymentGateway();
+			});
+			
+			$("#paymentGatewayForm").submit(function() {
+				event.preventDefault();
+				var valid = true;
+				
+				if (valid) {
+					$.ajax({
+						url : location.href,
+						data : $(this).serialize(),
+						success : function() {
+							location.reload();
+							return false;
+						},
+						error : function() {
+							location.reload();
+							return false;
+						}
+						
+					});
+				} else {
+					return false;
+				}
+				
+			});
+			
+			
+			$(document).on("change", ".paymentGatewaySelect", function() {
+				
+				var paymentGatewayIds = "";
+				$(".paymentGatewaySelect").each(function() {
+					var value = $(this).val();
+					paymentGatewayIds += (paymentGatewayIds == "") ? value : "," + value;
+				});
+				
+				$("#portalSitePaymentGetwayIds").val(paymentGatewayIds);
+				
+				var selector = $(this);
+
+				var paymentGatewayId = $(this).val();
+				$.ajax({
+					url : location.href,
+					data : {
+						op : "skypepi_widgets.paymentSettings.paymentSettings",
+						subop : "getPaymentDetails",
+						paymentGatewayId : paymentGatewayId
+					},
+					success : function(json) {
+						var html = "";
+						$.each(json, function(key, value) {
+							html += "	<tr class='white removable'>";
+							html += "		<td valign='top' style='min-width:160px;'>"+value+" : </td>";
+							html += "		<td><input type='text' name='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' id='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' class='form-control required' /></td>";
+							html += "	</tr>";
+						});
+						var parent = $(selector).parents(".paymentGatewayContainer").find("table");
+						$(parent).find(".removable").remove();
+						$(parent).append(html);
+						PaymentSettings.removePaymentGatewayValueFromOtherDropdown();
+					},
+					error : function() {
+						Progress.hideProgress();
+					}
+				});
+				
+			});
+			
+			PaymentSettings.removePaymentGatewayValueFromOtherDropdown();
+		},
+		
+		addNewPaymentGateway : function() {
+			
+			var paymentGatewayCount = $("#paymentGatewayCount").val();
+			var html = "";
+			
+			html += "<div id='paymentGatewayContainer-" + paymentGatewayCount + "' class='paymentGatewayContainer portalTable'>";
+			html += "	<table width='100%' >";
+			html += "		<tr class='white'>";
+			html += "			<td valign='top' style='min-width:160px;'>Payment Gateway : </td>";
+			html += "			<td>";
+			html += "				<select id='paymentGatewaySelect-" + paymentGatewayCount + "' name='paymentGatewaySelect-" + paymentGatewayCount + "' class='paymentGatewaySelect form-control required'>";
+			html += "				</select>";
+			html += "			</td>";
+			html += "		</tr>";
+			html += "	</table>";
+			html += "</div>";
+			html += "<br /><br />";
+			
+			$("#paymentGatewayInner").append(html);
+			PaymentSettings.removePaymentGatewayValueFromOtherDropdown();
+			
+		},
+		
+		removePaymentGatewayValueFromOtherDropdown : function() {
+			
+			var html = "";
+			var dropdownValue = "";
+			var selector;
+			var selected = "";
+			var selectedIds = [];
+			
+			$(".paymentGatewaySelect").each(function() {
+				selectedIds.push($(this).val());
+			});
+			
+			$(".paymentGatewaySelect").each(function() {
+				html = "";
+				selector = $(this);
+				dropdownValue = $(selector).val() == null ? "" : $(selector).val();
+				
+				$(selector).find("option").remove();
+				
+				html += "<option value=''>Please select payment gateway</option>";
+				$.each(JSON.parse(paymentGateways), function(key, value) {
+					selected = "";
+					if (!($.inArray(key, selectedIds) > -1) || key == dropdownValue) {
+						if (key == dropdownValue) {
+							selected = " selected='selected'";
+						}
+						html += "<option value='" + key + "' " + selected + ">" + value + "</option>";
+					}
+				});
+				
+				$(selector).html(html);
+//				$(selector).find("option").each(function() {
+//					if ($.inArray($(this).val(), selectedIds) > -1 && !$(this).is(":selected")) {
+//						$(this).remove();
+//					}
+//				});
+			});
+		}
+	};
+}();
+
+jQuery(PaymentSettings.init()); // Run after page loads</script>
+<script type="text/javascript">
 var Progress = function() {
 	return {
 		myVariable: null,

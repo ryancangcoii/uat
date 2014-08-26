@@ -970,7 +970,7 @@ try {
 </style>
   
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myOnlineBookings", null, "") %></span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("myOnlineBooking", null, "") %></span></div>
 <br><br><br>
 <form id="reEnrolment" name="reEnrolment" method="post">
 <table width="100%">
@@ -1083,8 +1083,8 @@ try {
 																	<td style="background-color: #dbdbdb;" ><%=courseName %></td>
 																	<td rowspan="2" class=" valign">
 																		Start - End Date: <%=startDate %> - <%=endDate %> <br>
-																		Start - End Time: <%=sessionTimes %> <br>
-																		Session Days: <%=sessionTimes %>
+<%-- 																		Start - End Time: <%=sessionTimes %> <br> --%>
+<%-- 																		Session Days: <%=sessionTimes %> --%>
 																		<br/>
 																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %>"><%=lang.getString("View Timetable", null, "") %></a>
 																	</td>

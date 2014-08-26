@@ -112,7 +112,9 @@ try {
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params.setProperty("activeTab", "1");
 	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params.setProperty("displayPaymentDetails", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params.setProperty("tabs", "Language Setting,skypepi-111|Payment Gateway,skypepi-103");
 	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params.setProperty("settingType", "PG");
 	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26 = new tooltwist.skypepi.productionHelpers.PaymentSettingsProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26Params);
 	productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26.callPreFetch(jh);
@@ -1210,6 +1212,8 @@ try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAdminPaymentSetting_26;
 	String snippetVar_settingType = "PG";
 	String snippetVar_displayPaymentDetails = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_tabs = "Language Setting,skypepi-111|Payment Gateway,skypepi-103";
+	String snippetVar_activeTab = "1";
 	String snippetVar_widgetName = "@26";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAdminPaymentSetting@26";
 	String snippetVar_elementId = "";
@@ -1240,8 +1244,25 @@ try {
 	
 	<br /> <br /> <br />
 	<ul class="nav nav-tabs">
-  		<li><a href="skypepi-111">Language Settings</a></li>
-  		<li class="active"><a href="javascript:void(0);">Payment Settings</a></li>
+	<% String[] tabs = h.getTabs().split("[|]");
+	   String settingLabel = "";
+		int idx = 0;
+		for (String tab : tabs) {
+			String cls = "";
+			String[] tmp = tab.split(",");
+			String link = tmp[1];
+			String label = tmp[0];
+			
+			if (idx == Integer.valueOf(snippetVar_activeTab)) {
+				cls = "active";
+				settingLabel = label;
+			}
+			
+	%>
+		<li class="<%=cls %>"><a href="<%=link %>"><%=label %></a></li>
+	<% idx++;} %>
+  		
+  		<%--<li class="active"><a href="javascript:void(0);">Payment Settings</a></li> --%>
 	</ul>
 	<div class="PaymentSettings" style="">
 		<form id="paymentGatewayForm">
@@ -1294,11 +1315,11 @@ try {
 					<div id="paymentGatewayContainer-1" class="paymentGatewayContainer portalTable">
 						<table width="100%" >
 							<tr class="white">
-								<td valign='top' style='min-width:160px;'>Payment Gateway : </td>
+								<td valign='top' style='min-width:160px;'><%=settingLabel %> : </td>
 								<td>
 									<select id="paymentGatewaySelect-1" name="paymentGatewaySelect-1" class="paymentGatewaySelect form-control required">
 										<% XNodes nodes = h.getPaymentGateways(); %>
-											<option value="">Please select payment gateway</option>
+											<option value="">Select here...</option>
 										<% for (nodes.first(); nodes.next();) { %>
 											<option value="<%=nodes.getText("paymentGatewayId")%>"><%=nodes.getText("name")%></option>
 										<% } %>

@@ -46,7 +46,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_skypepi_header_auth_59 = null;
 try {
 	Properties productionHelper_skypepi_zones_skypepi_header_auth_59Params = new Properties();
-	productionHelper_skypepi_zones_skypepi_header_auth_59Params.setProperty("navpointId", "/ttsvr/n/Alerts/skypepi-54");
+	productionHelper_skypepi_zones_skypepi_header_auth_59Params.setProperty("navpointId", "/ttsvr/n/Preview-Receipt/skypepi-38");
 	productionHelper_skypepi_zones_skypepi_header_auth_59Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_skypepi_header_auth_59Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_skypepi_header_auth_59Params.setProperty("homeNavPointId", "skypepi-4");
@@ -82,7 +82,7 @@ try {
 try {
 	Properties productionHelper_skypepi_zones_skypepi_header_auth_57Params = new Properties();
 	productionHelper_skypepi_zones_skypepi_header_auth_57Params.setProperty("navpointId", "skypepi-4");
-	productionHelper_skypepi_zones_skypepi_header_auth_57Params.setProperty("currentNavpointId", "skypepi-54");
+	productionHelper_skypepi_zones_skypepi_header_auth_57Params.setProperty("currentNavpointId", "skypepi-38");
 	productionHelper_skypepi_zones_skypepi_header_auth_57 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_skypepi_header_auth_57Params);
 	productionHelper_skypepi_zones_skypepi_header_auth_57.callPreFetch(jh);
 } catch (Exception e) {
@@ -127,7 +127,7 @@ try {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_auth_63;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Alerts/skypepi-54";
+	String snippetVar_navpointId = "/ttsvr/n/Preview-Receipt/skypepi-38";
 	String snippetVar_widgetName = "@63";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header_auth@63";
 	String snippetVar_elementId = "";
@@ -260,7 +260,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_homeNavPointId = "skypepi-4";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Alerts/skypepi-54";
+	String snippetVar_navpointId = "/ttsvr/n/Preview-Receipt/skypepi-38";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@59";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header_auth@59";
@@ -517,7 +517,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_skypepi_header_auth_57;
 	String snippetVar_navpointId = "skypepi-4";
-	String snippetVar_currentNavpointId = "skypepi-54";
+	String snippetVar_currentNavpointId = "skypepi-38";
 	String snippetVar_widgetName = "@57";
 	String snippetVar_widgetPath = "skypepi.zones.skypepi_header_auth@57";
 	String snippetVar_elementId = "";

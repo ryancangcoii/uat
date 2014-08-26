@@ -676,7 +676,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "No";
-	String snippetVar_navpointId = "/ttsvr/n/Maintain-Announcement/skypepi-106";
+	String snippetVar_navpointId = "/ttsvr/n/Announcement/skypepi-99";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@37";
@@ -1054,7 +1054,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Maintain-Announcement/skypepi-106";
+	String snippetVar_navpointId = "/ttsvr/n/Announcement/skypepi-99";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@54";

@@ -2178,7 +2178,7 @@ var TransactPayment = function() {
 						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful. You will be redirected to your receipt.", null, "") %>");
 						
 						setTimeout(function() {
-							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
+							window.location.href = "/ttsvr/n/skypepi-117?paymentDetailID=" + $("#paymentDetailID").val();
 						}, 3000);
 // 						jQuery("#msgButtonClose").click(function() {
 // 							Progress.showProgress();

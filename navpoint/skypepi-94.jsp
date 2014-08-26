@@ -234,7 +234,7 @@ if (q == null || q.equals(""))
 	q = "";
 String n = WbdSession.getNavpointId(jh.getCredentials());
 if (n == null || n.equals(""))
-	n = "skypepi-86";
+	n = "skypepi-94";
 String cc = WbdSession.getCategoryFilter(jh.getCredentials());
 if (cc == null || cc.equals(""))
 	cc = "";

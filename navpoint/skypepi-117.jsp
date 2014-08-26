@@ -955,7 +955,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/myCodeOfConduct/skypepi-110";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@50";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@50";
@@ -1245,7 +1245,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
@@ -1267,8 +1267,8 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
-				<li class="active"><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a><span></span></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
@@ -1290,8 +1290,8 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
-				<li class="active"><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a><span></span></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 		</div>
@@ -1309,7 +1309,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/myCodeOfConduct/skypepi-110";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@55";
 	String snippetVar_elementId = "";
@@ -1440,7 +1440,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/myCodeOfConduct/skypepi-110";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -1822,7 +1822,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
@@ -1844,8 +1844,8 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
-				<li class="active"><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a><span></span></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
@@ -1867,8 +1867,8 @@ try {
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
-				<li class="active"><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a><span></span></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 <%

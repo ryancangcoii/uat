@@ -606,7 +606,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.skypepi
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_z_studentFunctionsMenu_61;
-	String snippetVar_navpointId = "/ttsvr/n/Select-Course-And-Confirm/skypepi-27";
+	String snippetVar_navpointId = "/ttsvr/n/Re-enrolment/skypepi-25";
 	String snippetVar_myDetailsNavPointLink = "/ttsvr/n/Student-Dashboard/skypepi-6";
 	String snippetVar_reEnrolmentNavPointLink = "/ttsvr/n/Re-enrolment/skypepi-33";
 	String snippetVar_feesNavPointLink = "/ttsvr/n/Fees/skypepi-34";
@@ -928,7 +928,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.z_stude
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_skypepi_reenrolment_70;
 	String snippetVar_myDetailsOp = "skypepi.widgets.reEnrolment.reEnrolment";
-	String snippetVar_navpointId = "/ttsvr/n/Select-Course-And-Confirm/skypepi-27";
+	String snippetVar_navpointId = "/ttsvr/n/Re-enrolment/skypepi-25";
 	String snippetVar_concludeAndConfirm = "skypepi-35";
 	String snippetVar_viewTimetable = "";
 	String snippetVar_widgetName = "@70";

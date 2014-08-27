@@ -1202,6 +1202,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.DataBlockUtil.CONTEXT_VARIABLE"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
@@ -1246,7 +1247,7 @@ try {
 		<td class="lang-select">
 	<% 
 		String langTitle = "";
-	List<Language> languages = WebUtil.getCredentialValue(jh, SESSION_VARIABLE.SITE_LANGUAGES, new ArrayList<Language>());
+	List<Language> languages = WebUtil.getContextValue(request, CONTEXT_VARIABLE.SITE_LANGUAGES, new ArrayList<Language>());
 		for (Language language : languages) {
 			String langSelected = "";
 			String langStringFileName = ProjectUtil.getLanguageStringFileName(request, language.getLanguageCode(), language.getLanguageType());

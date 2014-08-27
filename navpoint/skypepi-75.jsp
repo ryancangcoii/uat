@@ -169,6 +169,8 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_notAuth_40 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_notAuth_40Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_notAuth_40Params.setProperty("menuType", "Header");
+	productionHelper_skypepi_zones_portal_z_header_notAuth_40Params.setProperty("currentNavpoint", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_header_notAuth_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_notAuth_40Params);
 	productionHelper_skypepi_zones_portal_z_header_notAuth_40.callPreFetch(jh);
 } catch (Exception e) {
@@ -178,6 +180,8 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("menuType", "Footer");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-75");
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params);
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -1240,6 +1244,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_notAuth_40;
+	String snippetVar_currentNavpoint = "skypepi-75";
+	String snippetVar_menuType = "Header";
 	String snippetVar_widgetName = "@40";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_notAuth@40";
 	String snippetVar_elementId = "";
@@ -1919,6 +1925,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
+	String snippetVar_currentNavpoint = "skypepi-75";
+	String snippetVar_menuType = "Footer";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@54";
 	String snippetVar_elementId = "";

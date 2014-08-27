@@ -139,6 +139,8 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_54 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_54Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("menuType", "Header");
+	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-68");
 	productionHelper_skypepi_zones_portal_z_header_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_54Params);
 	productionHelper_skypepi_zones_portal_z_header_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -148,6 +150,8 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("menuType", "Footer");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-68");
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params);
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -939,6 +943,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_54;
+	String snippetVar_currentNavpoint = "skypepi-68";
+	String snippetVar_menuType = "Header";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@54";
 	String snippetVar_elementId = "";
@@ -2302,6 +2308,7 @@ try {
 								<td>
 									<div class="">
 										<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="currentPassword" />
+										<p id="pCurrPass"></p>
 									</div>
 								</td>
 							</tr>
@@ -2313,6 +2320,7 @@ try {
 								<td>
 									<div class="">
 										<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="newPassword" />
+										<p id="pNewPassword"></p>
 									</div>
 								</td>
 							</tr>
@@ -2324,6 +2332,7 @@ try {
 								<td>
 									<div class="">
 										<input type="password" value="" autocomplete="off" class="form-control" name="currentPassword" id="confirmPassword" />
+										<p id="pNewConfPassword"></p>
 									</div>
 								</td>
 							</tr>
@@ -2383,6 +2392,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
+	String snippetVar_currentNavpoint = "skypepi-68";
+	String snippetVar_menuType = "Footer";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@54";
 	String snippetVar_elementId = "";
@@ -2816,22 +2827,33 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 			var newPass = jQuery.trim(jQuery("#newPassword").val());
 			var conPass = jQuery.trim(jQuery("#confirmPassword").val());
 			
-			if(curPass == '') {
-				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass5").val());
-			}
-			else if(newPass != conPass) {
-				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass4").val());
-			}
-			else if(newPass.length < 8) {
-				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass3").val());
-			}
-			else if(!newPass.match(containNumbers)) {
-				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass6").val());
-			}
-			else if(!newPass.match(containCapital)) {
-				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass7").val());
-			}
-			else {
+			$("#currentPassword").css("border-color","1px solid #cccccc");
+			$("#pCurrPass").text("");
+			$("#newPassword").css("border-color","1px solid #cccccc");
+			$("#confirmPassword").css("border-color","1px solid #cccccc");
+			$("#pNewConfPassword").text("");
+			$("#newPassword").css("border-color","1px solid #cccccc");
+			$("#pNewPassword").text("");
+			
+			if(curPass == ''){
+				$("#currentPassword").css("border-color","red");
+				$("#pCurrPass").text($("#msg-pass5").val()).css("color","red");
+			} else if(newPass != conPass) {
+				$("#newPassword").css("border-color","red");
+				$("#confirmPassword").css("border-color","red");
+				$("#pNewConfPassword").text($("#msg-pass4").val()).css("color","red");
+			} else if(newPass.length < 8){
+				$("#newPassword").css("border-color","red");
+				$("#pNewPassword").text($("#msg-pass3").val()).css("color","red");
+			}else if(!newPass.match(containNumbers)) {
+				$("#newPassword").css("border-color","red");
+				$("#confirmPassword").css("border-color","red");
+				$("#pNewConfPassword").text($("#msg-pass6").val()).css("color","red");
+			}else if(!newPass.match(containCapital)) {
+				$("#newPassword").css("border-color","red");
+				$("#confirmPassword").css("border-color","red");
+				$("#pNewConfPassword").text($("#msg-pass7").val()).css("color","red");
+			}else{
 				var url = "?op=skypepi_widgets.myDetails.myDetails&subop=retrieveCurrentPassword";
 				$.ajax({
 					url: url,
@@ -2840,7 +2862,9 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 					success: function(data) {
 						if(data != curPass) {
 							
-							Progress.alertMessage(self.changePasswordTitle, $("#msg-pass2").val());
+							//Progress.alertMessage(self.changePasswordTitle, $("#msg-pass2").val());
+							$("#currentPassword").css("border-color","red");
+							$("#pCurrPass").text($("#msg-pass2").val()).css("color","red");
 						}
 						else {
 							self.updateAccount(newPass);
@@ -2852,6 +2876,44 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 					}
 				});	
 			}
+			
+			
+//			if(curPass == '') {
+//				//Progress.alertMessage(self.changePasswordTitle, $("#msg-pass5").val());
+//			}
+//			else if(newPass != conPass) {
+//				//Progress.alertMessage(self.changePasswordTitle, $("#msg-pass4").val());
+//			}
+//			else if(newPass.length < 8) {
+//				//Progress.alertMessage(self.changePasswordTitle, $("#msg-pass3").val());
+//			}
+//			else if(!newPass.match(containNumbers)) {
+//				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass6").val());
+//			}
+//			else if(!newPass.match(containCapital)) {
+//				Progress.alertMessage(self.changePasswordTitle, $("#msg-pass7").val());
+//			}
+//			else {
+//				var url = "?op=skypepi_widgets.myDetails.myDetails&subop=retrieveCurrentPassword";
+//				$.ajax({
+//					url: url,
+//					dataType: "html",
+//					cache: false,
+//					success: function(data) {
+//						if(data != curPass) {
+//							
+//							Progress.alertMessage(self.changePasswordTitle, $("#msg-pass2").val());
+//						}
+//						else {
+//							self.updateAccount(newPass);
+//						}
+//						
+//					},
+//					error: function() {
+//						
+//					}
+//				});	
+//			}
 			
 		},
 		

@@ -56,7 +56,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_headerNonRespo_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_headerNonRespo_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_37Params.setProperty("navpointId", "/ttsvr/n/New-Navpoint/skypepi-95");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_37Params.setProperty("navpointId", "/ttsvr/n/View-Marks-and-Grades/skypepi-88");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_37Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_37Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_37Params.setProperty("homeNavPointId", "skypepi-75");
@@ -72,7 +72,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_headerNonRespo_38 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_headerNonRespo_38Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_38Params.setProperty("navpointId", "/ttsvr/n/New-Navpoint/skypepi-95");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_38Params.setProperty("navpointId", "/ttsvr/n/View-Marks-and-Grades/skypepi-88");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_38Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_38Params.setProperty("homeNavPointId", "skypepi-75");
@@ -88,7 +88,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_headerNonRespo_48 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("navpointId", "/ttsvr/n/New-Navpoint/skypepi-95");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("navpointId", "/ttsvr/n/View-Marks-and-Grades/skypepi-88");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavPointId", "");
@@ -114,7 +114,7 @@ try {
 try {
 	Properties productionHelper_skypepi_zones_portal_z_headerNonRespo_44Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_44Params.setProperty("navpointId", "skypepi-66");
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_44Params.setProperty("currentNavpointId", "skypepi-95");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_44Params.setProperty("currentNavpointId", "skypepi-88");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_44 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_headerNonRespo_44Params);
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_44.callPreFetch(jh);
 } catch (Exception e) {
@@ -213,7 +213,7 @@ a:hover {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_headerNonRespo_35;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/New-Navpoint/skypepi-95";
+	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
 	String snippetVar_widgetName = "@35";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_headerNonRespo@35";
 	String snippetVar_elementId = "";
@@ -337,7 +337,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/New-Navpoint/skypepi-95";
+	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_headerNonRespo@38";
@@ -624,7 +624,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/New-Navpoint/skypepi-95";
+	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_headerNonRespo@37";
@@ -880,7 +880,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/New-Navpoint/skypepi-95";
+	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@48";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_headerNonRespo@48";
@@ -1131,7 +1131,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_headerNonRespo_44;
 	String snippetVar_navpointId = "skypepi-66";
-	String snippetVar_currentNavpointId = "skypepi-95";
+	String snippetVar_currentNavpointId = "skypepi-88";
 	String snippetVar_widgetName = "@44";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_headerNonRespo@44";
 	String snippetVar_elementId = "";
@@ -1284,7 +1284,7 @@ div.media {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 									</a>
-									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=request.getParameter("enrolmentID") %>">
+									<a  href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
 										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
 									</a>
 									
@@ -1295,12 +1295,8 @@ div.media {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<object data="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=request.getParameter("enrolmentID") %>" type="application/pdf" width="100%" height="100%">
-						<p>It appears you don\'t have a PDF plugin for this browser.
-						No biggie... you can <a href="/ttsvr/skypepi/documents/'+docType+'-'+site+'-'+langKey+'.pdf">click here to
-						download the PDF file.</a>
-						</object>
-						
+						<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
+							
 						</td>
 					</tr>
 				</table>

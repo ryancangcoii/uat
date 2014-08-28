@@ -1027,9 +1027,15 @@ try {
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
- <% if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
  %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+<% if (h.isLogged()){ %>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 		</div>
@@ -2022,24 +2028,46 @@ try {
 					</tr>
 					<tr id="newPhoneNumberEntry" style="display: none;">
 						<td colspan="4" class="btnContainer" style="padding: 0 2%">
-							<div class="row">
-								<div class="col-md-1">
-									<label class="control-label"><%=lang.getString("Number", null, "") %>:</label>
-								</div>
-								<div class="col-md-7">
-									<input id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
-								</div>
-								<div class="col-md-2">
-									<label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label>
-								</div>
-								<div class="col-md-4">
-									<select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;">
-										<option value="Home"><%=lang.getString("Home", null, "") %></option>
-										<option value="Office"><%=lang.getString("Office", null, "") %></option>
-										<option value="Mobile"><%=lang.getString("Mobile", null, "") %></option>
-									</select>
-								</div>
-							</div>
+							<table width="60%">
+								<tr>
+									<td class="control-label" width="150"><%=lang.getString("Number", null, "") %>:</td>
+									<td>
+										<div class="">
+											<input id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" />
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="control-label"><%=lang.getString("Phone Type", null, "") %>:</td>
+									<td>
+										<div>
+											<select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 280px;"> 
+		 										<option value="Home"><%=lang.getString("Home", null, "") %></option> 
+		 										<option value="Office"><%=lang.getString("Office", null, "") %></option> 
+		 										<option value="Mobile"><%=lang.getString("Mobile", null, "") %></option> 
+		 									</select> 
+										</div>
+									</td>
+								</tr>
+							</table>
+<!-- 							<div class="row"> -->
+<!-- 								<div class="col-md-1"> -->
+<%-- 									<label class="control-label"><%=lang.getString("Number", null, "") %>:</label> --%>
+<!-- 								</div> -->
+<!-- 								<div class="col-md-7"> -->
+<!-- 									<input id="numberNew" name="numberNew" class="form-control" type="text" autocomplete="off" value="" /> -->
+<!-- 								</div> -->
+<!-- 								<div class="col-md-2"> -->
+<%-- 									<label class="control-label"><%=lang.getString("Phone Type", null, "") %>:</label> --%>
+<!-- 								</div> -->
+<!-- 								<div class="col-md-4"> -->
+<!-- 									<select id="phoneTypeNew" name="phoneTypeNew" class="form-control" style="width: 100px;"> -->
+<%-- 										<option value="Home"><%=lang.getString("Home", null, "") %></option> --%>
+<%-- 										<option value="Office"><%=lang.getString("Office", null, "") %></option> --%>
+<%-- 										<option value="Mobile"><%=lang.getString("Mobile", null, "") %></option> --%>
+<!-- 									</select> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
 							<div align="right" style="margin: 10px 0px">
 								<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.addNewPhoneNumber();" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveNewPhoneNumber();" />
 							</div>
@@ -2459,9 +2487,15 @@ try {
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
- <% if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
  %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+<% if (h.isLogged()){ %>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 <%
@@ -2567,7 +2601,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.1 Build 20140602</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
  </tr>
  <tr>
   <td ></td>

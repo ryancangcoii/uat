@@ -924,7 +924,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Server-Setting/skypepi-103"><%=h.getAltLang().getString("Server Setting",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
- <% if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
  %>				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
@@ -1332,7 +1332,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Server-Setting/skypepi-103"><%=h.getAltLang().getString("Server Setting",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
- <% if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
  %>				<li class="active"><a href="/ttsvr/n/Admin-Home/skypepi-105"><%=h.getAltLang().getString("Admin Home",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/Announcement/skypepi-99"><%=h.getAltLang().getString("Announcement",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/Static-Document/skypepi-100"><%=h.getAltLang().getString("Static Document",null,"") %></a></li>
@@ -1444,7 +1444,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.1 Build 20140602</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
  </tr>
  <tr>
   <td ></td>

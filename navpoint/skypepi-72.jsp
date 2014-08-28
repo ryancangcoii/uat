@@ -1024,9 +1024,15 @@ try {
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
- <% if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
  %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+<% if (h.isLogged()){ %>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 		</div>
@@ -1509,85 +1515,98 @@ try {
 																</thead>
 																<%
 																	List<Element> elementStreams = h.getElementStreams();
-																															int ctr = 1;
-																															for(Element element : elementStreams) { 
-																																String credit = h.getPersonCredit();
-																																String startDate = element.getAttribute("StartDate");
-																																String endDate = element.getAttribute("EndDate");
-																																String closeDate = element.getAttribute("ApplicationEnrolmentCloseDate");
-																																		startDate = startDate.split(" ")[0];
-																																		endDate = endDate.split(" ")[0];
-																																		closeDate = closeDate.split(" ")[0];
-																																
-																																String sessionDays = element.getAttribute("SessionDays");
-																																String sessionTimes = h.getSessionTimes(element.getAttribute("SessionTimes"), element.getAttribute("SessionDuration"));
-																																
-																																String tmpSessionDays = lang.getString(sessionDays, null, "");
-																																if(!(DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) && tmpSessionDays.equals(sessionDays)) {
-																																	String arrSessionDays[] = sessionDays.split(",");
-																																	tmpSessionDays = "";
-																																	for(String days: arrSessionDays) {
-																																		tmpSessionDays += "".equals(tmpSessionDays) ? lang.getString(days.trim(), null, "") : ", " + lang.getString(days.trim(), null, "");
-																																	}
-																																}
-																																
-																																String courseName = "" ;
-																																if(!(DataBlockUtil.SESSION_VARIABLE.LANGUAGE.getName().equals(h.getLanguage()))) {
-																																	courseName = element.getAttribute("AltName");
-																																	if("".equals(courseName.trim())) {
-																																		courseName = element.getAttribute("Name");
-																																	}
-																																}
-																																else {
-																																	courseName = element.getAttribute("Name");
-																																	if("".equals(courseName.trim())) {
-																																		courseName = element.getAttribute("AltName");
-																																	}
-																																}
-																																
-																																String personCredit = StringUtil.formatCurrency(credit);
-																																
-																																String fee = element.getAttribute("FeeAmount");
-																																fee = (fee.equals("") ? "0.0" : fee);
-																																
-																																String discount = element.getAttribute("DiscountAmount");
-																																discount = (discount.equals("") ? "0.0" : discount);
-																																
-																																//String total = (Double.valueOf(fee) + Double.valueOf(discount) + Double.valueOf(credit)) + "";
-																																String total = (Double.valueOf(fee) + Double.valueOf(discount)) + "";
-																																fee = StringUtil.formatCurrency(fee);
-																																discount = StringUtil.formatCurrency(discount);
-																																discount = discount.replace("-", "");
-																																credit = credit.replace("-", "");
-																																total = StringUtil.formatCurrency(total);
-																																
-																																String classTag = ((ctr % 2) == 0) ? "blue" : "white";
-																																String lineColor = ((ctr % 2) == 0) ? "#EAEAEA" : "#DFDFDF";
-																%>
-																<!-- NEW -->
-																<tr class="<%=classTag %>">
-																	<td rowspan="2" class=" valign"><input type="radio" name="chkStreams" value="<%=element.getAttribute("ID") %>"> </td>
-																	<td style="background-color: #dbdbdb;" ><%=courseName %></td>
-																	<td rowspan="2" class=" valign">
-																		Start - End Date: <%=startDate %> - <%=endDate %> <br>
-<%-- 																		Start - End Time: <%=sessionTimes %> <br> --%>
-<%-- 																		Session Days: <%=sessionTimes %> --%>
-																		<br/>
-																		<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %>"><%=lang.getString("View Timetable", null, "") %></a>
-																	</td>
-																	<td rowspan="2" class="right"><%=fee %></td>
-																	<td rowspan="2" class="right"><%=discount %></td>
-																	<td rowspan="2" class="right"><%=personCredit %></td>
-																	<td rowspan="2" class="right"><%=total %></td>
-																</tr>
-																<tr class="<%=classTag %>" >
-																	<td style="border-left: solid 1px #cccccc;">&nbsp;</td>
-																</tr>
+																	if(elementStreams.size() > 0 ){
+																			int ctr = 1;
+																			for(Element element : elementStreams) { 
+																				String credit = h.getPersonCredit();
+																				String startDate = element.getAttribute("StartDate");
+																				String endDate = element.getAttribute("EndDate");
+																				String closeDate = element.getAttribute("ApplicationEnrolmentCloseDate");
+																						startDate = startDate.split(" ")[0];
+																						endDate = endDate.split(" ")[0];
+																						closeDate = closeDate.split(" ")[0];
+																				
+																				String sessionDays = element.getAttribute("SessionDays");
+																				String sessionTimes = h.getSessionTimes(element.getAttribute("SessionTimes"), element.getAttribute("SessionDuration"));
+																				
+																				String tmpSessionDays = lang.getString(sessionDays, null, "");
+																				if(!(DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) && tmpSessionDays.equals(sessionDays)) {
+																					String arrSessionDays[] = sessionDays.split(",");
+																					tmpSessionDays = "";
+																					for(String days: arrSessionDays) {
+																						tmpSessionDays += "".equals(tmpSessionDays) ? lang.getString(days.trim(), null, "") : ", " + lang.getString(days.trim(), null, "");
+																					}
+																				}
+																				
+																				String courseName = "" ;
+																				if(!(DataBlockUtil.SESSION_VARIABLE.LANGUAGE.getName().equals(h.getLanguage()))) {
+																					courseName = element.getAttribute("AltName");
+																					if("".equals(courseName.trim())) {
+																						courseName = element.getAttribute("Name");
+																					}
+																				}
+																				else {
+																					courseName = element.getAttribute("Name");
+																					if("".equals(courseName.trim())) {
+																						courseName = element.getAttribute("AltName");
+																					}
+																				}
+																				
+																				String personCredit = StringUtil.formatCurrency(credit);
+																				
+																				String fee = element.getAttribute("FeeAmount");
+																				fee = (fee.equals("") ? "0.0" : fee);
+																				
+																				String discount = element.getAttribute("DiscountAmount");
+																				discount = (discount.equals("") ? "0.0" : discount);
+																				
+																				//String total = (Double.valueOf(fee) + Double.valueOf(discount) + Double.valueOf(credit)) + "";
+																				String total = (Double.valueOf(fee) + Double.valueOf(discount)) + "";
+																				fee = StringUtil.formatCurrency(fee);
+																				discount = StringUtil.formatCurrency(discount);
+																				discount = discount.replace("-", "");
+																				credit = credit.replace("-", "");
+																				total = StringUtil.formatCurrency(total);
+																				
+																				String classTag = ((ctr % 2) == 0) ? "blue" : "white";
+																				String lineColor = ((ctr % 2) == 0) ? "#EAEAEA" : "#DFDFDF";
+																		%>
+																		<!-- NEW -->
+																		<tr class="<%=classTag %>">
+																			<td rowspan="2" class=" valign"><input type="radio" name="chkStreams" value="<%=element.getAttribute("ID") %>"> </td>
+																			<td style="background-color: #dbdbdb;" ><%=courseName %></td>
+																			<td rowspan="2" class=" valign">
+																				Start - End Date: <%=startDate %> - <%=endDate %> <br>
+		<%-- 																		Start - End Time: <%=sessionTimes %> <br> --%>
+		<%-- 																		Session Days: <%=sessionTimes %> --%>
+																				<br/>
+																				<a href="<%=snippetVar_viewTimetable%>?streamId=<%=element.getAttribute("ID") %>"><%=lang.getString("View Timetable", null, "") %></a>
+																			</td>
+																			<td rowspan="2" class="right"><%=fee %></td>
+																			<td rowspan="2" class="right"><%=discount %></td>
+																			<td rowspan="2" class="right"><%=personCredit %></td>
+																			<td rowspan="2" class="right"><%=total %></td>
+																		</tr>
+																		<tr class="<%=classTag %>" >
+																			<td style="border-left: solid 1px #cccccc;">&nbsp;</td>
+																		</tr>
+																		<%
+																		ctr++;
+																			}
+																		%>
 																<%
-																ctr++;
-																	}
+																	} else {
 																%>
+																<tr class="list-odd-item">
+																	<td colspan="7" class="table-header color-regular column-text"><%=lang.getString("No Data to display", null, "") %></td>
+																</tr>
+																<tr class="list-even-item">
+																	<td colspan="7" class="table-header color-regular column-text"></td>
+																</tr>
 															</table>
+														<%
+															}
+																%>
 											</div>
 									    	 <%--Table End --%>
 									 
@@ -1602,8 +1621,10 @@ try {
 											
 										</td>
 										<td valign="top" align="right" width="320">
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Next", null, "") %>" id="btnNext" name="btnNext" style="float:right"/>
-											<br><br><br>
+											<div style="<%=elementStreams.size() > 0?"":"display:none;"%>">
+												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Next", null, "") %>" id="btnNext" name="btnNext" style="float:right"/>
+												<br><br><br>
+											</div>
 										</td>
 									</tr>
 								</table>
@@ -1706,9 +1727,15 @@ try {
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
- <% if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
  %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+<% if (h.isLogged()){ %>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
+				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
 <%
@@ -1814,7 +1841,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.1 Build 20140602</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
  </tr>
  <tr>
   <td ></td>

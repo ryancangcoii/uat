@@ -655,7 +655,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1516,7 +1516,6 @@ try {
 											streamName = stream.getAttribute("Name");
 										}
 										
-										System.out.println("Streams:" + streamName);
 										String startDate = stream.getAttribute("StartDate");
 										String endDate = stream.getAttribute("EndDate");
 										String closeDate = stream.getAttribute("ApplicationEnrolmentCloseDate");

@@ -656,7 +656,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1421,7 +1421,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myProgression_13;
-	String snippetVar_previewReceiptNavpoint = "/ttsvr/n/View-Receipt/skypepi-76";
+	String snippetVar_previewReceiptNavpoint = "/ttsvr/n/View-Receipt/skypepi-118";
 	String snippetVar_previewMarksGradesNavpoint = "/ttsvr/n/View-Certificate/skypepi-80";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_myProgression@13";
@@ -1479,10 +1479,12 @@ try {
 				<th width="180px"><%=lang.getString("Action", null, "") %></th>
 			</tr>
 			<%
+			boolean hasData = false;
 			if (enrolledStreamUnits.size() > 0) {
 			%>
 				<%
 				int enrolledStreamUnitsCnt = 0;
+				
 				for(int i = 0; i < enrolledStreamUnits.size(); i++) {
 					EnrolledStreamUnits enrolledStreamUnit = enrolledStreamUnits.get(i);
 					/* String code = enrolledStreamUnit.getCourseName(); */
@@ -1498,9 +1500,10 @@ try {
 					java.sql.Date dt = new java.sql.Date(System.currentTimeMillis());
 					java.sql.Date dtTo = java.sql.Date.valueOf(end);
 					java.sql.Date dtFr = java.sql.Date.valueOf(start);
-					if ((dt.after(dtFr) &&  dt.before(dtTo))) {
+					if ((dt.before(dtTo))) {
 						continue;
 					}
+					hasData = true;
 				%>
 				<tr class="<%=classTag %>">
 					<%-- <td class="table-data color-regular column-text"><%=code %></td> --%>
@@ -1540,7 +1543,7 @@ try {
 				}
 				%>
 			<%
-			} else {
+			} if (!hasData) {
 			%>
 				<tr class="list-odd-item">
 					<td colspan="5" class="table-header color-regular column-text"><%=lang.getString("No Data to display", null, "") %></td>

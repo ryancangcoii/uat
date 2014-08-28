@@ -613,7 +613,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1322,7 +1322,6 @@ try {
 		<input type="hidden" id="requiredFieldsMsg" name="requiredFieldsMsg" value="<%=h.getRequiredFieldsMsg()%>" >
 		<input type="hidden" name="validFileExtension" id="validFileExtension" value="<%=snippetVar_validFileExtension%>"/>
 		<input type="hidden" value="<%=DataBlockUtil.DATEPICKER_FORMAT%>" id="datepickerFormat" />
-		<input type="hidden" value="<%=h.getAnnouncementMode() %>" id="announcementMode"/>
 		
 		<% for (DataBlockUtil.LANGUAGE_TYPE language : DataBlockUtil.LANGUAGE_TYPE.values()) { %>
 			<input type="hidden" name="ckeditorContentWithImage_<%=language.getLangType()%>" id="ckeditorContentWithImage_<%=language.getLangType()%>" value=""/>
@@ -2359,14 +2358,18 @@ function validateBlogContent(form){
 			jQuery('#ckeditorContentWithImage_EN').val(tmpData);
 
 			//language local
-			jQuery('#ckeditorContentWithImage_LOC').val(CKEDITOR.instances.bdContent_LOC.getData());
-			tmpData =jQuery('#ckeditorContentWithImage_LOC').val().replace(/src=/g,"s_r_c=");
-			jQuery('#ckeditorContentWithImage_LOC').val(tmpData);
+			try {
+				jQuery('#ckeditorContentWithImage_LOC').val(CKEDITOR.instances.bdContent_LOC.getData());
+				tmpData =jQuery('#ckeditorContentWithImage_LOC').val().replace(/src=/g,"s_r_c=");
+				jQuery('#ckeditorContentWithImage_LOC').val(tmpData);
+			} catch(error) {}
 
 			//language alternate
-			jQuery('#ckeditorContentWithImage_ALT').val(CKEDITOR.instances.bdContent_ALT.getData());
-			tmpData =jQuery('#ckeditorContentWithImage_ALT').val().replace(/src=/g,"s_r_c=");
-			jQuery('#ckeditorContentWithImage_ALT').val(tmpData);
+			try {
+				jQuery('#ckeditorContentWithImage_ALT').val(CKEDITOR.instances.bdContent_ALT.getData());
+				tmpData =jQuery('#ckeditorContentWithImage_ALT').val().replace(/src=/g,"s_r_c=");
+				jQuery('#ckeditorContentWithImage_ALT').val(tmpData);
+			} catch(error) {}
 		} else {
 			return false;
 		}	
@@ -2426,10 +2429,12 @@ function validateExpireDateTime(){
 			jQuery('.timeErrorHolder').append('<label class="timeErrorContainer contentError error" style="margin-left: 15px;">The "Valid To" date must be the same or later than the "Valid From" date field.</label>');
 			return false;
 		}else{
+			validatePublishExpireDate();
 			return true;
 		}	
 	}else{
 		if (jQuery('#selExpireTimeHour').val()!="" && jQuery('#selExpireTimeMinute').val()!=""){
+			validatePublishExpireDate();
 			return true;
 		}else{
 			//validate selExpireTimeMinute
@@ -2438,22 +2443,27 @@ function validateExpireDateTime(){
 		}
 	}
 	
+	validatePublishExpireDate();
+	
+	return true;
+	
 }
 
 function validatePublishExpireDate(){
 	
-	jQuery('.publishDateErrorContainer').remove();
+	jQuery('.timeErrorContainer').remove();
 	
 	if (jQuery('#bdExpireDate').val()!=""){
-		var pdate = jQuery('#bdPublishDate').val() + " " + jQuery('#selPublishTimeHour').val() +":" +jQuery('#selPublishTimeMinute').val() +" "+ jQuery('#selPublishTimeMeridian').val();
+		var publishDate = jQuery('#bdPublishDate').val().split("/");
+		var pdate = publishDate[1]+"/"+publishDate[0]+"/"+publishDate[2] + " " + jQuery('#selPublishTimeHour').val() +":" +jQuery('#selPublishTimeMinute').val() +" "+ jQuery('#selPublishTimeMeridian').val();
 		oPDate = new Date(pdate);
 		
-		
-		var edate = jQuery('#bdExpireDate').val() + " " + jQuery('#selExpireTimeHour').val() +":" +jQuery('#selExpireTimeMinute').val() + " " +jQuery('#selExpireTimeMeridian').val();
+		var expireDate = jQuery('#bdExpireDate').val().split("/");
+		var edate = expireDate[1]+"/"+expireDate[0]+"/"+expireDate[2] + " " + jQuery('#selExpireTimeHour').val() +":" +jQuery('#selExpireTimeMinute').val() + " " +jQuery('#selExpireTimeMeridian').val();
 		oEDate = new Date(edate);
 		
-		if ( oPDate > oEDate){
-			jQuery('.publishDateErrorHolder').append('<label class="publishDateErrorContainer contentError " style="margin-left: 0;">Publish date must be before the expiration date.</label>');
+		if (oPDate > oEDate) {
+			jQuery('.timeErrorHolder').append('<label class="timeErrorContainer contentError error" style="margin-left: 15px;">The "Valid To" date must be the same or later than the "Valid From" date field.</label>');
 			return false;
 		}
 			
@@ -2622,7 +2632,7 @@ function MultiDropDownValue() {
 }
 
 function redirectBackTo(redirectLink) {
-	var announcementMode = $("#announcementMode").val();
+	var announcementMode = $("input[name=subop]").val();
 	var bdTitle = $("#bdTitle_EN").val();
 	var bdPublishDate = $("#bdPublishDate").val();
 	var selPublishTimeHour = $("#selPublishTimeHour").val();
@@ -2633,7 +2643,7 @@ function redirectBackTo(redirectLink) {
 	var selExpireTimeMinute = $("#selExpireTimeMinute").val();
 	var selExpireTimeMeridian = $("#selExpireTimeMeridian").val();
 	var bdContentEN = CKEDITOR.instances.bdContent_EN.getData();
-	if(announcementMode == "add") {
+	if(announcementMode == "addBlogDetail") {
 		if(bdTitle != initBdTitle || bdPublishDate != initBdPublishDate 
 				|| selPublishTimeHour != initSelPublishTimeHour || selPublishTimeMinute != initSelPublishTimeMinute || selPublishTimeMeridian != initSelPublishTimeMeridian
 				|| bdExpireDate != initBdExpireDate || selExpireTimeHour != initSelExpireTimeHour || selExpireTimeMinute != initSelExpireTimeMinute || selExpireTimeMeridian != initSelExpireTimeMeridian 

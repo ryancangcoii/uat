@@ -655,7 +655,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1421,6 +1421,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myReceipt_13;
 	String snippetVar_previewReceipts = "/ttsvr/n/Receipt-Preview/skypepi-92";
+	String snippetVar_backNavpoint = "/ttsvr/n/myCurrentEnrolment/skypepi-69";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_myReceipt@13";
 	String snippetVar_elementId = "";
@@ -1506,7 +1507,7 @@ List<StudentFinances> paymentCollection = h.getStudentPaymentDetailCollection();
 					<table align="right">
 					<tr>
 					<td>
-					<a href="javascript:window.location.href='skypepi-70'">
+					<a href="javascript:window.location.href='<%=snippetVar_backNavpoint%>'">
 					<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /></a>
 					</td>
 					</tr>	

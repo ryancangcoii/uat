@@ -121,7 +121,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13Params.setProperty("viewReceipts", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13Params.setProperty("viewReceipts", "/ttsvr/n/View-Receipt/skypepi-76");
 	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13 = new tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13Params);
 	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13.callPreFetch(jh);
 } catch (Exception e) {
@@ -659,7 +659,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1424,7 +1424,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_receiptPreview_13;
-	String snippetVar_viewReceipts = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_viewReceipts = "/ttsvr/n/View-Receipt/skypepi-76";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_receiptPreview@13";
 	String snippetVar_elementId = "";

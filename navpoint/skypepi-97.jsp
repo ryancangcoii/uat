@@ -645,7 +645,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1420,6 +1420,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
 <%@page import="com.tooltwist.filemap.FileMap"%>
 <%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.misc.JspHelper"%>
@@ -1428,8 +1429,9 @@ try {
 
 <%
 AltLang altLang = WebUtil.getAltLang(jh);
-String site = BcCache.getProperty("currentSite");
-String lang = altLang.getCurrentLangCode();
+String site = WebUtil.getAttributes(request, SESSION_VARIABLE.SITE_SERVERNAME, "");
+String langStringName = WebUtil.getAttributes(request, SESSION_VARIABLE.LANGUAGE, "local_FIL_EN");
+String lang = langStringName.split("_")[1];
 
 String fileGroup = BcCache.getProperty("staticDocumentFilemapGroup");
 String filemapPath = BcCache.getProperty("fileMapPath");
@@ -1457,7 +1459,6 @@ if (!fileMap.isFile(fileGroup, docType+"-"+site+"-"+lang+".pdf")) {
 	documentUrl = defaultDoc;
 }
 
-System.out.println("documentUrl:" + documentUrl);
 
 %>
 

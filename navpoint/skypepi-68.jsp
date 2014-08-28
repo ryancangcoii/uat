@@ -658,7 +658,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -2135,7 +2135,7 @@ try {
 								<tr>
 									<td colspan="2">
 										<div align="right">
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('1');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');" />
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editEmailAddress('0');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');" />
 										</div>
 									</td>
 								</tr>
@@ -3050,7 +3050,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 		},
 
 		addNewAddress: function() {
-			$("#line1New, #line2New, #line3New, #localityNew, #postCodeNew, #addressTypeNew").val("");
+			$("#line1New, #line2New, #line3New, #localityNew, #postCodeNew").val("");
 			$("#stateProvinceRegionNew").val($("#stateProvinceRegionNew option:first").val());
 			$("#countryNew").val($("#countryNew option:first").val());
 			$("#newAddressEntry").toggle();

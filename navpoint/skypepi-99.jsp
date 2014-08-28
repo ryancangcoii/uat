@@ -656,7 +656,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', location.href + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1371,9 +1371,9 @@ try {
 							</td>
 							<td id="textbox_filter" style="vertical-align: middle;">
 								<% if (h.isHeader()) { %> 
-									<input type="text" class="datepickerInput blog_form_datepicker_medium boxwidth txtField" id="txtField" name="bdPublishDate"  onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;"/> 
+									<input type="text" autocomplete="off" class="datepickerInput blog_form_datepicker_medium boxwidth txtField" id="txtFieldSearch" name="bdPublishDate"  <%-- onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;" --%> /> 
 								<% } else { %> 
-									<input type="text" id="txtField" class="txtField boxwidth" onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;"> 
+									<input type="text" autocomplete="off" id="txtFieldSearch" class="txtField boxwidth" <%-- onkeyup="applyListSearch(jQuery('#selectedField').val(), this.value,jQuery('#btnShowArchive').val());return false;" --%> /> 
 								<% } %>
 							</td>
 						</tr>
@@ -1384,7 +1384,7 @@ try {
 						<tr>
 							<td><input class="buttonBlue" type="button" value="Show Archive" name="btnShowArchive" id="btnShowArchive" onclick="BlogAdminBlogList.changeLabel(jQuery('#btnShowArchive').val(),jQuery('#selectedField').val(), jQuery('#txtField').val())" /></td>
 							<td align="right">
-								<a href="<%=snippetVar_blogAdminBlogListNavpoint%>?mode=add" style="margin-left: 1px;"> 
+								<a href="<%=snippetVar_blogAdminBlogListNavpoint%>" style="margin-left: 1px;"> 
 									<input class="buttonBlue" type="button" value="Add New +" name="btnAdd" id="btnAdd" />
 								</a>
 							</td>
@@ -1428,7 +1428,7 @@ try {
 									%>
 										<% for (xNodes.first(); xNodes.next();) {
 											blogCnt++;
-											String classTag = ((blogCnt % 2)==0)?"blue":"white";
+											String classTag = ((blogCnt % 2)==0)?"  blue":"  white";
 										%>
 											<tr class="<%=!xNodes.getText("expirationDate").equals("") && PublicUtil.convertStringFromDBToDate(xNodes.getText("expirationDate")).getTime() < new Date().getTime() ? "archive" : ""%> <%=classTag%>">
 												<% for (columnNodes.first(); columnNodes.next();) { %>
@@ -2038,13 +2038,19 @@ var BlogAdminBlogList = function() {
 					Progress.hideProgress();
 				}
 			});
-			
 		},
 		
 		init: function() {
 			initializePager(jQuery('#categoryCount').val());
 			initializeDatePicker();
-		},
+			
+			jQuery("#txtFieldSearch").keyup(function(e) {
+				var code = e.which;
+				if (code == "13") {
+					applyListSearch(jQuery('#selectedField').val(), jQuery(this).val(),jQuery('#btnShowArchive').val());
+				}
+			});
+		}
 		
 //		myMethod: function() {
 //			alert("BlogAdminBlogList.myMethod()");
@@ -2108,7 +2114,7 @@ function initializeDatePicker(){
 	
 	var dateFormat = $("#datepickerFormat").val();
 
-	jQuery( ".datepickerInput" ).attr('readonly', 'readonly').removeClass("hasDatepicker");
+	jQuery( ".datepickerInput" ).removeClass("hasDatepicker");
 	jQuery( ".datepickerInput" ).datepicker('destroy');
 	jQuery( ".datepickerInput" ).datepicker({
 		changeMonth: true,

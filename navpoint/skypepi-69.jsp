@@ -1496,10 +1496,11 @@ try {
 													<%
 													
 													
-													
+													boolean hasData = false;
 													if (enrolledStreamUnits.size() > 0) {
 													%>
 														<%
+														
 														int enrolledStreamUnitsCnt = 0;
 														for(EnrolledStreamUnits enrolledStreamUnit: enrolledStreamUnits) {
 															String code = enrolledStreamUnit.getStreamName();
@@ -1520,6 +1521,7 @@ try {
 															if (!(dt.after(dtFr) &&  dt.before(dtTo))) {
 																continue;
 															}
+															hasData = true;
 															String[] streamData = h.getStreamData(streamID, request);
 															String teacher = streamData[0];
 															String venue = streamData[1];
@@ -1579,7 +1581,7 @@ try {
 														}
 														%>
 													<%
-													} else {
+													} if (!hasData) {
 													%>
 														<tr class="list-odd-item">
 															<td colspan="6" class="table-header color-regular column-text"><%=lang.getString("No Data to display", null, "") %></td>

@@ -1891,8 +1891,8 @@ try {
 								</div>
 								<div class="col-md-5">
 									<%  country = h.getCountryOptions(); 
-													cid = "value=\"202\"";
-													option = country.replace(cid, cid + " selected=\"selected\"");
+													cid = "value=\"111\"";
+													option = country.replace(cid, cid + " selected=\"true\"");
 												%>
 									<select id="countryNew" class="form-control" style="width: 280px">
 										<%=option %>
@@ -3052,7 +3052,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 		addNewAddress: function() {
 			$("#line1New, #line2New, #line3New, #localityNew, #postCodeNew").val("");
 			$("#stateProvinceRegionNew").val($("#stateProvinceRegionNew option:first").val());
-			$("#countryNew").val($("#countryNew option:first").val());
+			//$("#countryNew").val($("#countryNew option:first").val());
 			$("#newAddressEntry").toggle();
 		},
 

@@ -119,8 +119,7 @@ try {
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
-<% WbdProductionHelper helper = null; %>
-<!--Start-->
+
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="java.util.Map"%>
@@ -190,7 +189,7 @@ try {
 <br>
 <div id="timetable-navi"></div>
 </div>
-	<!--End--><%
+<%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_reportTemplate@2 (type=tooltwist.skypepi.widgets.TimetableWidget)", e);
 }

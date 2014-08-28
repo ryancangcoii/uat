@@ -1604,7 +1604,7 @@ try {
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
- <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106,skypepi-111,skypepi-112"); if (isPublic) { 
  %>				<li class="active"><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
@@ -2084,7 +2084,7 @@ try {
 			<table cellpadding="0" cellspacing="0" width="100%">
 				<thead>
 					<tr>
-						<td colspan="2">
+						<td colspan="2" style="position:inherit !important">
 							<%=h.getAltLang().getString("Announcements", null, "") %>
 						</td>
 				    </tr>
@@ -2178,7 +2178,7 @@ try {
 	        			}
 					%>
 						    <%if(blogList.getNumNodes() == 0){%>
-							    <tr><td style="border-style:inherit !important; padding-top:30px !important;">
+							    <tr><td style="position:inherit !important; border-style:inherit !important; padding:20px !important;">
 		        					<%=h.getAltLang().getString("There are no current announcements", null, "") %>
 		        				</td></tr>      
 	        				<%}%>
@@ -2289,7 +2289,7 @@ try {
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
- <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106"); if (isPublic) { 
+ <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106,skypepi-111,skypepi-112"); if (isPublic) { 
  %>				<li class="active"><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
@@ -2598,24 +2598,18 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div>
 
 
-<!--
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
- -->
 
-	<!-- footer for responsivePage -->
-
-<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
-<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
-    <!--
-    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
-    <script src="/ttsvr/bootstrap/js/respond.js"></script>
-    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
-    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
-    -->
+    
+    <script>
+	jQuery(window).on("load resize", function() {
+			var windowHeight = jQuery(window.top).height();
+			var lessHeight = ( jQuery(".navbar").height() + parseInt(jQuery(".navbar").css("margin-bottom")) ) + ( jQuery(".footer").height() + parseInt(jQuery(".footer").css("margin-top")) );
+			
+			console.log(windowHeight+" - "+lessHeight);
+			jQuery("#mainArea").css("min-height", windowHeight-lessHeight);
+		});
+	</script>
+	
   <script type="text/javascript">
 var BlogList = function() {
 	return {

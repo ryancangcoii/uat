@@ -1545,10 +1545,10 @@ try {
 										String fee = stream.getAttribute("FeeAmount");
 										fee = (fee.equals("") ? "0.0" : fee);
 										
-										String discount = stream.getAttribute("OnlineDiscount");
+										String discount = stream.getAttribute("DiscountAmount");
 										discount = (discount.equals("") ? "0.0" : discount);
 										
-										String total = (Double.valueOf(fee) + Double.valueOf(discount)) + ""; // + Double.valueOf(credit)) + "";
+										String total =  (Double.valueOf(fee) - Double.valueOf(discount) - Double.valueOf(credit)) + ""; // + Double.valueOf(credit)) + "";
 										
 										fee = StringUtil.formatCurrency(fee);
 										discount = StringUtil.formatCurrency(discount);

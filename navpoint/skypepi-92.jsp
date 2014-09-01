@@ -1432,6 +1432,9 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="java.net.URLEncoder"%>
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
 <%@page import="tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper"%>
@@ -1495,7 +1498,16 @@ try {
 						</tr>
 						<tr>
 							<td>
-								<iframe src="//docs.google.com/viewer?url=//<%=h.getServerName()%>?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe>
+								<%
+									String requestURL = request.getRequestURL().toString();
+									String requestURI = request.getRequestURI();
+									int end = requestURL.indexOf(requestURI);
+									requestURL = requestURL.substring(0, end);
+									String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
+									String encodedURL = "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=";
+									encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8");
+								%>
+								<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>" style="height: 860px; width: 100%; border: none;"></iframe>
 								<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 							</td>
 						</tr>

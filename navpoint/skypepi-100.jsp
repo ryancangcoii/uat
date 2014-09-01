@@ -101,8 +101,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-67");
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_54Params);
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -560,7 +560,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -932,7 +932,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/home">
+<a href="/ttsvr/n/Home/skypepi-67">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -954,8 +954,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_54;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-67";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/Static-Document/skypepi-100";
@@ -1848,18 +1848,24 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div>
 
 
+<!--
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+ -->
 
-    
-    <script>
-	jQuery(window).on("load resize", function() {
-			var windowHeight = jQuery(window.top).height();
-			var lessHeight = ( jQuery(".navbar").height() + parseInt(jQuery(".navbar").css("margin-bottom")) ) + ( jQuery(".footer").height() + parseInt(jQuery(".footer").css("margin-top")) );
-			
-			console.log(windowHeight+" - "+lessHeight);
-			jQuery("#mainArea").css("min-height", windowHeight-lessHeight);
-		});
-	</script>
-	
+	<!-- footer for responsivePage -->
+
+<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
+<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
+    <!--
+    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
+    <script src="/ttsvr/bootstrap/js/respond.js"></script>
+    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
+    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
+    -->
   <script type="text/javascript">var FileUploader = function() {
 	return {
 		

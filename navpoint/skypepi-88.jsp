@@ -93,8 +93,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-67");
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params);
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48.callPreFetch(jh);
 } catch (Exception e) {
@@ -603,7 +603,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -876,8 +876,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_headerNonRespo_48;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-67";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
@@ -1152,7 +1152,7 @@ try {
 <div id='cssmenu'>
 <ul>
 <li class="">
-<a href='/ttsvr/home'><span>Home</span></a>
+<a href='/ttsvr/n/Home/skypepi-67'><span>Home</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myDetails/skypepi-68'><span>myDetails</span></a>
 </li><li class="">
@@ -1171,17 +1171,9 @@ try {
 <a href='/ttsvr/n/View-TimeTable/skypepi-81'><span>View TimeTable</span></a>
 </li><li class="">
 <a href='/ttsvr/n/View-Attendance-Record/skypepi-82'><span>View Attendance Record</span></a>
-</li></ul></li></ul></li><li class=" has-sub">
+</li></ul></li></ul></li><li class="">
 <a href='/ttsvr/n/myProgression/skypepi-70'><span>myProgression</span></a>
-<ul><li class=" has-sub">
-<a href='/ttsvr/n/Views/skypepi-87'><span>Views</span></a>
-<ul><li class="active">
-<a href='/ttsvr/n/View-Marks-and-Grades/skypepi-88'><span>View Marks and Grades</span></a>
 </li><li class=" has-sub">
-<a href='/ttsvr/n/View-Receipt/skypepi-118'><span>View Receipt</span></a>
-<ul><li class="">
-<a href='/ttsvr/n/Receipt-Preview/skypepi-119'><span>Receipt Preview</span></a>
-</li></ul></li></ul></li></ul></li><li class=" has-sub">
 <% if (h.isHasForum()) { %>
 <% if (h.getCocAccepted().equals("true")) { %>
 <a href='<%=h.getForumLink() %>' id="forum-link" target="_blank"><span>myForum</span></a>
@@ -1196,28 +1188,10 @@ try {
 <a href='/ttsvr/n/House-Rules/skypepi-98'><span>House Rules</span></a>
 </li></ul></li><li class="">
 <a href='/ttsvr/n/myHouseRules-/skypepi-109'><span>myHouseRules </span></a>
-</li><li class=" has-sub">
+</li><li class="">
 <a href='/ttsvr/n/myOnlineBooking/skypepi-72'><span>myOnlineBooking</span></a>
-<ul><li class=" has-sub">
-<a href='/ttsvr/n/Inner-Page/skypepi-78'><span>Inner Page</span></a>
-<ul><li class="">
-<a href='/ttsvr/n/Conclude-and-Confirms/skypepi-79'><span>Conclude and Confirms</span></a>
-</li><li class=" has-sub">
-<a href='/ttsvr/n/Payment-Group/skypepi-89'><span>Payment Group</span></a>
-<ul><li class="">
-<a href='/ttsvr/n/Payment-KCP/skypepi-114'><span>Payment KCP</span></a>
 </li><li class="">
-<a href='/ttsvr/n/Payment-GOPI/skypepi-115'><span>Payment GOPI</span></a>
-</li><li class="">
-<a href='/ttsvr/n/Payment-AsiaPay/skypepi-116'><span>Payment AsiaPay</span></a>
-</li><li class="">
-<a href='/ttsvr/n/Payment-Receipt-Preview/skypepi-117'><span>Payment Receipt Preview</span></a>
-</li></ul></li><li class="">
-<a href='/ttsvr/n/View-Timetable/skypepi-90'><span>View Timetable</span></a>
-</li><li class="">
-<a href='/ttsvr/n/Transaction-Failed/skypepi-96'><span>Transaction Failed</span></a>
-</li></ul></li></ul></li><li class="">
-<a href='/ttsvr/home'><span>myClass</span></a>
+<a href='/ttsvr/n/Home/skypepi-67'><span>myClass</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myCodeOfConduct/skypepi-110'><span>myCodeOfConduct</span></a>
 </li></ul>
@@ -1321,8 +1295,7 @@ div.media {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
-							
+							<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
 						</td>
 					</tr>
 				</table>

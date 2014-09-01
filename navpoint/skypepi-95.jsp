@@ -202,18 +202,24 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 </table>
 
 
+<!--
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+ -->
 
-    
-    <script>
-	jQuery(window).on("load resize", function() {
-			var windowHeight = jQuery(window.top).height();
-			var lessHeight = ( jQuery(".navbar").height() + parseInt(jQuery(".navbar").css("margin-bottom")) ) + ( jQuery(".footer").height() + parseInt(jQuery(".footer").css("margin-top")) );
-			
-			console.log(windowHeight+" - "+lessHeight);
-			jQuery("#mainArea").css("min-height", windowHeight-lessHeight);
-		});
-	</script>
-	
+	<!-- footer for responsivePage -->
+
+<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
+<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
+    <!--
+    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
+    <script src="/ttsvr/bootstrap/js/respond.js"></script>
+    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
+    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
+    -->
   <script type="text/javascript">var pager;
 function loadData(val) {
 	pager = null;

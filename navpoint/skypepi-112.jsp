@@ -565,7 +565,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1217,6 +1217,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
 <%@page import="tooltwist.skypepi.productionHelpers.PaymentSettingsProductionHelper"%>
@@ -1236,7 +1237,7 @@ try {
 <!-- ********** INSERT HTML HERE ********** -->
 <div class="bc-container portal-ribbon">
 	<div class="ribbon-wrap left-edge fork lblue">
-		<span>System Setting</span>
+		<span><%=snippetVar_settingType.equals(DataBlockUtil.SETTING_TYPE_PAYMENT_GATEWAY)?"System":"Server"%> Setting</span>
 	</div>
 	
 	<br /> <br /> <br />
@@ -1263,6 +1264,7 @@ try {
 	</ul>
 	<div class="PaymentSettings" style="">
 		<form id="paymentGatewayForm">
+			<input type="hidden" id="defaultOption" value="<%=snippetVar_settingType.equals(DataBlockUtil.SETTING_TYPE_PAYMENT_GATEWAY)?"Please select payment gateway":"Please select environment setting"%>" />
 			<input type="hidden" id="op" name="op" value="skypepi_widgets.paymentSettings.paymentSettings" />
 			<input type="hidden" id="subop" name="subop" value="savePortalSitePaymentGateway" />
 			<div id="paymentGatewayInner">
@@ -1272,7 +1274,7 @@ try {
 						<div id="paymentGatewayContainer-<%=ctr%>" class="paymentGatewayContainer portalTable">
 							<table width="100%" >
 								<tr class="white">
-									<td valign='top' style='min-width:160px;'><strong>Payment Gateway</strong> : </td>
+									<td valign='top' style='min-width:160px;'><strong><%=snippetVar_settingType.equals(DataBlockUtil.SETTING_TYPE_PAYMENT_GATEWAY)?"Payment Gateway":"Environment Setting"%></strong> : </td>
 									<td>
 										<select id="paymentGatewaySelect-<%=ctr%>" name="paymentGatewaySelect-<%=ctr%>" class="paymentGatewaySelect form-control required">
 											<% XNodes paymentGateways = h.getPaymentGateways(); %>
@@ -1872,8 +1874,9 @@ var PaymentSettings = function() {
 				dropdownValue = $(selector).val() == null ? "" : $(selector).val();
 				
 				$(selector).find("option").remove();
+				var defaultOption = $("#defaultOption").val();
 				
-				html += "<option value=''>Please select payment gateway</option>";
+				html += "<option value=''>" + defaultOption + "</option>";
 				$.each(JSON.parse(paymentGateways), function(key, value) {
 					selected = "";
 					if (!($.inArray(key, selectedIds) > -1) || key == dropdownValue) {

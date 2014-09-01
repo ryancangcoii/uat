@@ -658,7 +658,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1503,8 +1503,19 @@ try {
 	Vector<Enquiry> enquiries = fetchPerson.getEnquiries();
 
 %>
+	<style>
+	.modal-dialogAlert {
+		margin-left: auto;
+		margin-right: auto;
+		width: 300px;
+		padding: 10px;
+		padding-top: 90px;
+		z-index: 1050;
+	}
+	</style>
 	<script src="/ttsvr/skypepi/scripts/paging.js"></script>
 	<script src="/ttsvr/skypepi/scripts/jquery.validate.min.js"></script>
+	
 	<div class="bc-container portal-ribbon">
 		<div class="ribbon-wrap left-edge fork lblue">
 			<span><%=lang.getString("myDetails", null, "") %></span>
@@ -1714,7 +1725,9 @@ try {
 								<tr>
 									<td>
 										<div align="right" class="button-align" style="margin-top: 20px">
-											<input type="button" class="buttonBlue buttonSmall" value="Cancel" onclick="javascript:MyDetails.cancelPreferredContact();"> <input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.savePreferredContact();">
+											<input type="button" style="display:none;" class="buttonBlue buttonSmall" value="Cancel" onclick="javascript:MyDetails.cancelPreferredContact();">
+											<input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.saveConfirmation();"> 
+<!-- 											<input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.savePreferredContact();"> -->
 										</div>
 									</td>
 								</tr>
@@ -2395,6 +2408,52 @@ var defaultLangCode = "";
 var currentLangCode = "<%=lang.getCurrentLangCode() %>";
 	
 </script>
+
+
+
+<div class="modal fade" id="div_confirmSave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">
+						<span id="msgHeader"><%=lang.getString("Confirmation Message", null, "") %></span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div id="confirm-message"><%=lang.getString("Are you sure that you want to save this record.", null, "") %></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" id="btnCancelSave"><%=lang.getString("Cancel", null, "") %></button>
+					<input type="button" class="btn btn-primary" value="<%=lang.getString("OK", null, "") %>" id="btnConfirmSave" onclick="MyDetails.savePreferredContact();return false;"/>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	
+	
+	<div class="modal fade" id="modal-alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">
+						<span id="msgHeader"><%=lang.getString("Update Message", null, "") %></span>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div id="confirm-message"><p id="pId"></p></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal"><%=lang.getString("Ok", null, "") %></button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
 	<%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_myDetails@10 (type=tooltwist.skypepi.widgets.MyDetailsWidget)", e);
@@ -2835,6 +2894,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 		
 		savePreferredContact: function() {
 			console.log("savePreferredContact");
+			Progress.showProgress();
 			var contactMethod = jQuery("#contactMethod").val();
 			var marketingPref = "";
 			
@@ -2861,11 +2921,22 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 					contactMethod:contactMethod,
 					marketingPref: marketingPref
 				},
-				success: function() {
-					
+				success: function(data) {
+				  $("#pId").text(data);
+				  $('#modal-alert').modal();
+				  Progress.hideProgress();
 				}
 			});
-			
+			$("#btnCancelSave").click();
+		},
+		
+		saveConfirmation: function(){
+			$("#pIdConfirm").text("Are you sure that you want to save this record.");
+			$('#div_confirmSave').modal();
+		},
+		
+		cancelSavePreferredContact: function(){
+			$("#btnOk").click();
 		},
 		
 		validateAccount: function() {

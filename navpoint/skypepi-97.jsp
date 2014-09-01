@@ -645,7 +645,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1451,7 +1451,8 @@ if (snippetVar_title.equals("myConsent")) {
 	defaultDoc = googleViewStart + "/House Rules for YL V1.9.pdf" + googleViewEnd;	
 }
 
-String documentUrl = "/ttsvr/skypepi/documents/"+docType+"-"+site+"-"+lang+".pdf";
+//String documentUrl = "/ttsvr/skypepi/documents/"+docType+"-"+site+"-"+lang+".pdf";
+String documentUrl = googleViewStart + docType+"-"+site+"-"+lang+".pdf" + googleViewEnd;
 
 FileMap fileMap = new FileMap(filemapPath);
 

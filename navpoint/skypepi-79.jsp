@@ -655,7 +655,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1540,6 +1540,10 @@ try {
 										String feeAmount = stream.getAttribute("FeeAmount");
 										String enrolmentId = stream.getAttribute("ExistingEnrolmentID");
 										String sessionTime = h.getSessionTimes(stream.getAttribute("SessionTimes"), stream.getAttribute("SessionDuration"));
+										
+										if (Double.valueOf(credit) < 0)  {
+											credit = "0";
+										}
 										
 										String personCredit = StringUtil.formatCurrency(credit);
 										String fee = stream.getAttribute("FeeAmount");

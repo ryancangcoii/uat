@@ -603,7 +603,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1171,9 +1171,17 @@ try {
 <a href='/ttsvr/n/View-TimeTable/skypepi-81'><span>View TimeTable</span></a>
 </li><li class="">
 <a href='/ttsvr/n/View-Attendance-Record/skypepi-82'><span>View Attendance Record</span></a>
-</li></ul></li></ul></li><li class="">
+</li></ul></li></ul></li><li class=" has-sub">
 <a href='/ttsvr/n/myProgression/skypepi-70'><span>myProgression</span></a>
+<ul><li class=" has-sub">
+<a href='/ttsvr/n/Views/skypepi-87'><span>Views</span></a>
+<ul><li class="active">
+<a href='/ttsvr/n/View-Marks-and-Grades/skypepi-88'><span>View Marks and Grades</span></a>
 </li><li class=" has-sub">
+<a href='/ttsvr/n/View-Receipt/skypepi-118'><span>View Receipt</span></a>
+<ul><li class="">
+<a href='/ttsvr/n/Receipt-Preview/skypepi-119'><span>Receipt Preview</span></a>
+</li></ul></li></ul></li></ul></li><li class=" has-sub">
 <% if (h.isHasForum()) { %>
 <% if (h.getCocAccepted().equals("true")) { %>
 <a href='<%=h.getForumLink() %>' id="forum-link" target="_blank"><span>myForum</span></a>
@@ -1188,9 +1196,27 @@ try {
 <a href='/ttsvr/n/House-Rules/skypepi-98'><span>House Rules</span></a>
 </li></ul></li><li class="">
 <a href='/ttsvr/n/myHouseRules-/skypepi-109'><span>myHouseRules </span></a>
-</li><li class="">
+</li><li class=" has-sub">
 <a href='/ttsvr/n/myOnlineBooking/skypepi-72'><span>myOnlineBooking</span></a>
+<ul><li class=" has-sub">
+<a href='/ttsvr/n/Inner-Page/skypepi-78'><span>Inner Page</span></a>
+<ul><li class="">
+<a href='/ttsvr/n/Conclude-and-Confirms/skypepi-79'><span>Conclude and Confirms</span></a>
+</li><li class=" has-sub">
+<a href='/ttsvr/n/Payment-Group/skypepi-89'><span>Payment Group</span></a>
+<ul><li class="">
+<a href='/ttsvr/n/Payment-KCP/skypepi-114'><span>Payment KCP</span></a>
 </li><li class="">
+<a href='/ttsvr/n/Payment-GOPI/skypepi-115'><span>Payment GOPI</span></a>
+</li><li class="">
+<a href='/ttsvr/n/Payment-AsiaPay/skypepi-116'><span>Payment AsiaPay</span></a>
+</li><li class="">
+<a href='/ttsvr/n/Payment-Receipt-Preview/skypepi-117'><span>Payment Receipt Preview</span></a>
+</li></ul></li><li class="">
+<a href='/ttsvr/n/View-Timetable/skypepi-90'><span>View Timetable</span></a>
+</li><li class="">
+<a href='/ttsvr/n/Transaction-Failed/skypepi-96'><span>Transaction Failed</span></a>
+</li></ul></li></ul></li><li class="">
 <a href='/ttsvr/home'><span>myClass</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myCodeOfConduct/skypepi-110'><span>myCodeOfConduct</span></a>

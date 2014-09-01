@@ -655,7 +655,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1550,6 +1550,10 @@ try {
 																					if("".equals(courseName.trim())) {
 																						courseName = element.getAttribute("AltName");
 																					}
+																				}
+																				
+																				if (Double.valueOf(credit) < 0)  {
+																					credit = "0";
 																				}
 																				
 																				String personCredit = StringUtil.formatCurrency(credit);

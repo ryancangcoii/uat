@@ -560,7 +560,7 @@ try {
 <script>
 	function redirectBackToParent(parentId) {
 		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
+		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
 		formLogout.submit();
 	}
 </script>
@@ -1303,7 +1303,7 @@ try {
     %>
     <tr class="<%=cls%> translate">
     	<td width="5%" class="selected"></td>
-    	<td width="30%" align="left" valign="top" class="text"><%=string %><input type="hidden" value="<%=string %>" class="string"/></td>
+    	<td width="30%" align="left" valign="top" class="text string"><%=string %></td>
    		<td width="50%" align="left" valign="top" class="alternate"><%=h.getAlternate(string) %></td>
         <td width="15%" align="center" valign="middle"><a href="#edit"><img src="/ttsvr/skypepi/images/edit.png" width="22" height="22" class="icon-edit"/></a></td>
     </tr>
@@ -1769,7 +1769,7 @@ var LanguageTranslator = function() {
 				var parents = jQuery(this).parents(".translate");
 				var alternate = parents.find(".alternate");
 				var translateVal = jQuery(alternate).find("input.text-alternate").val();
-				var stringVal = parents.find(".text").find("input.string").val();
+				var stringVal = parents.find(".text.string").html();
 				
 				jQuery.ajax({
 					url: "",

@@ -1321,8 +1321,8 @@ div.media {
 					</tr>
 					<tr>
 						<td width="960px" >
-						<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
-							
+							<iframe src="http://docs.google.com/viewer?url=http://<%=h.getServerName()%>?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))  %>" style="height: 975; width: 100%; border: none;"></iframe>
+							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 						</td>
 					</tr>
 				</table>
@@ -1605,29 +1605,29 @@ var ViewMarksAndGrades = function() {
 
 		init: function() {
 			
-			jQuery.ajax({
-	               url: "",
-	               data: {
-	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
-	            	   enrolmentID: jQuery("#enrolmentID").val(),
-	            	   format: "html"
-	               },
-	               success: function(data) {
-	                   
-	            	   var tmp = data;
-	            	   
-	            	   jQuery(data).find("img").each(function(idx, obj) {
-	            		   var imgSrc = "";
-	            		   imgSrc = jQuery(obj).attr("src");
-	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
-	            	   });
-	            	   
-	            	   jQuery("#oReportCell").html(data);
-	               },
-	               error: function() {
-	            	   
-	               }
-	           });			
+//			jQuery.ajax({
+//	               url: "",
+//	               data: {
+//	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
+//	            	   enrolmentID: jQuery("#enrolmentID").val(),
+//	            	   format: "html"
+//	               },
+//	               success: function(data) {
+//	                   
+//	            	   var tmp = data;
+//	            	   
+//	            	   jQuery(data).find("img").each(function(idx, obj) {
+//	            		   var imgSrc = "";
+//	            		   imgSrc = jQuery(obj).attr("src");
+//	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
+//	            	   });
+//	            	   
+//	            	   jQuery("#oReportCell").html(data);
+//	               },
+//	               error: function() {
+//	            	   
+//	               }
+//	           });			
 		}
 	};
 }();

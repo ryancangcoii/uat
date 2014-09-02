@@ -1483,7 +1483,7 @@ div.media {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 									</a>
-									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
 										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
 									</a>
 									
@@ -1720,7 +1720,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.11 Build 20140901</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.12 Build 20140902</p></span></td>
  </tr>
  <tr>
   <td ></td>

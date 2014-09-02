@@ -1313,7 +1313,7 @@ div.media {
 									<a href="<%=snippetVar_targetPage%>">
 										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 									</a>
-									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
 										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
 									</a>
 									

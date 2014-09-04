@@ -33,28 +33,16 @@
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@page import="tooltwist.skypepi.productionHelpers.CodeOfConductProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper"%>
 
 <%
-	String jspName = "skypepi-71";
+	String jspName = "skypepi-121";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13 = null;
-try {
-	Properties productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params.setProperty("option", "text");
-	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params.setProperty("target", "coc");
-	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params.setProperty("notAccNav", "skypepi-68");
-	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13 = new tooltwist.skypepi.productionHelpers.CodeOfConductProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13Params);
-	productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13", e);
-}
-
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_56 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_56Params = new Properties();
@@ -85,7 +73,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/myForum/skypepi-71");
+	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/View-Certificate/skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
@@ -101,7 +89,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_38 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_38Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/myForum/skypepi-71");
+	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/View-Certificate/skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
@@ -117,7 +105,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_51Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/myForum/skypepi-71");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/View-Certificate/skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
@@ -143,7 +131,7 @@ try {
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_54Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("menuType", "Header");
-	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-71");
+	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_54Params);
 	productionHelper_skypepi_zones_portal_z_header_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -154,11 +142,20 @@ try {
 try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("menuType", "Footer");
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-71");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-121");
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params);
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_54", e);
+}
+
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13 = null;
+try {
+	Properties productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13 = new tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13Params);
+	productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13", e);
 }
 
 
@@ -202,10 +199,6 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}/* Styles for widget codeOfConduct */
-
-.CodeOfConduct a, .CodeOfConduct a:VISITED {
-	color: black;
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -271,7 +264,7 @@ try {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_35;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/myForum/skypepi-71";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_widgetName = "@35";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@35";
 	String snippetVar_elementId = "";
@@ -396,7 +389,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/myForum/skypepi-71";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@38";
@@ -683,7 +676,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/myForum/skypepi-71";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@37";
@@ -947,7 +940,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_54;
-	String snippetVar_currentNavpoint = "skypepi-71";
+	String snippetVar_currentNavpoint = "skypepi-121";
 	String snippetVar_menuType = "Header";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@54";
@@ -989,7 +982,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 <% isPublic = false; %>
@@ -1004,16 +997,16 @@ try {
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% if (h.isLogged()){ %>
-				<li class="active"><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %><span></span></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
@@ -1022,9 +1015,9 @@ try {
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% if (h.isCocAccepted() && h.isHasForum()) { %>
-				<li class="active"><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><span></span></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
  <% } %> 
 <% if (h.isCocAccepted() && h.isHasForum()) { %>
 				<li class=""><a href="/ttsvr/n/myHouseRules-/skypepi-109"><%=h.getAltLang().getString("myHouseRules ",null,"") %></a></li>
@@ -1035,9 +1028,9 @@ try {
  %>				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% if (h.isLogged()){ %>
-				<li class="active"><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %><span></span></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
@@ -1057,7 +1050,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/myForum/skypepi-71";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@55";
 	String snippetVar_elementId = "";
@@ -1188,7 +1181,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/myForum/skypepi-71";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -1423,50 +1416,35 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
-<div class='DivWidget page-content' style=""><div class='DivWidget standard-width' style=""><%-- Widget skypepi.pages.portal_p_btstrap_codeOfConducts@13 (type=tooltwist.skypepi.widgets.CodeOfConductWidget) --%>
+<div class='DivWidget page-content' style=""><div class='DivWidget standard-width' style=""><%-- Widget skypepi.pages.portal_p_btstrap_myMarksAndGrades@13 (type=tooltwist.skypepi.widgets.ViewMarksAndGradesWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_codeOfConducts_13;
-	String snippetVar_notAccNav = "skypepi-68";
-	String snippetVar_option = "text";
-	String snippetVar_target = "coc";
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13;
+	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
 	String snippetVar_widgetName = "@13";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_codeOfConducts@13";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_myMarksAndGrades@13";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="java.net.URLEncoder"%>
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.CodeOfConductProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper"%>
 <%@page import="tooltwist.misc.JspHelper"%>
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
-
 <%
 	// Get the production helper for this widget
-	CodeOfConductProductionHelper h = (CodeOfConductProductionHelper) helper;
-	String languageCode = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.LANGUAGE, "");
-	String errorMessage = WebUtil.getAttributes(request, DataBlockUtil.SESSION_VARIABLE.LOG_IN_ERROR_MESSAGE, "");
+	ViewMarksAndGradesProductionHelper h = (ViewMarksAndGradesProductionHelper) helper;
 	AltLang lang = h.getAltLang();
 %>
-<script type="text/javascript" src="/ttsvr/skypepi/scripts/jquery.media.js"></script>
-<script type="text/javascript" src="/ttsvr/skypepi/scripts/jquery.metadata.js"></script>
 <style>
-.portal-ribbon .left-edge.fork {
-	width: 200px;
-}
-.cocAccept td {
-	padding: 10px;
-}
 
 div.media, div.media > iframe {
 	width: 100% !important;
-	overflow: hidden;
-	height:100%;
 }
 div.media {
 	margin-top: 0px;
@@ -1477,80 +1455,70 @@ div.media {
 .nav-tabs > li > a {
 	border-radius: 0px;
 }
+
+.portal-ribbon .left-edge.fork {
+	width: 150px;
+}
 </style>
 
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("codeOfConduct", null, "") %></span></div>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("certificate", null, "") %></span></div>
 <br><br><br>
 
-<form id="frm-coc">
-	
-	<input type="hidden" id="notAccNav" name="notAccNav" value="<%=snippetVar_notAccNav%>"/>
-	<a href="" target="_blank" id="forum-link" style="display: none;"></a>
-	
-	<%-- if (snippetVar_option.equals("text")) { --%>
-	<a class="media" href="<%=h.getDocumentUrl() %>"></a>
-	
-	<script type="text/javascript">
-    $(function() {
-        $('a.media').media({width:500, height:1135});
-    });
-</script>
-	
-	<%-- } --%>
-	<%-- if (snippetVar_option.equals("radio")) { --%>
-	<div class="cocAccept" style="display: block;color: black;">
-	
+	<input type="hidden" value="<%=request.getParameter("enrolmentID") %>" id="enrolmentID"/>
 	<table>
-		<%--
-			if (DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(languageCode)) {
-		--%>
-			<tr>
-				<td>
-					<input type="radio" id="rdo-pdf" name="rdo-codeOfConduct" value="pdf"/>
-					<a href="?op=skypepi_widgets.codeOfConduct.processCOC&subop=generateReport&lang=<%=languageCode %>" target="_blank" id="anchor-download" style="display: none;"></a>
-				</td>
-				<td><label for="rdo-pdf"><%=lang.getString("Click here to print a copy of this document for your own reference.", null, "") %></label></td>
-			</tr>
-			<tr>
-				<td><input type="radio" id="rdo-yes" name="rdo-codeOfConduct" value="yes"/></td>
-				<td><label for="rdo-yes"><%=lang.getString("I agree and accept the above terms and conditions of use stated above.", null, "") %></label></td>
-			</tr>
-			<tr>
-				<td><input type="radio" id="rdo-no" name="rdo-codeOfConduct" value="no"/></td>
-				<td><label for="rdo-no"><%=lang.getString("I do not agree or accept the above terms and conditions of use stated above.", null, "") %></label></td>
-			</tr>
-			
-		<%--
-			
-		
-			<tr>
-				<td>
-					<input type="radio" id="rdo-pdf" name="rdo-codeOfConduct" value="pdf"/>
-					<a href="?op=skypepi_widgets.codeOfConduct.processCOC&subop=generateReport&lang=<%=languageCode %>" target="_blank" id="anchor-download" style="display: none;"></a>
-				</td>
-				<td><label for="rdo-pdf"><%=lang.getString("Click here to print", null, "")%></label></td>
-			</tr>
-			<tr>
-				<td><input type="radio" id="rdo-yes" name="rdo-codeOfConduct" value="yes"/></td>
-				<td><label for="rdo-yes"><%=lang.getString("I agree", null, "")%></label></td>
-			</tr>
-			<tr>
-				<td><input type="radio" id="rdo-no" name="rdo-codeOfConduct" value="no"/></td>
-				<td><label for="rdo-no"><%=lang.getString("I do not agree", null, "")%></label></td>
-			</tr>
-		<%
-				
-		%>--%>
-	</table>
-	</div>
-	<%-- } --%>
-	
-</form>
+	<tr>
+		<td width="960px">
+			<form id="form-courseDetails" name="form-courseDetails" method="post" action="">
+				<table >
+					<tr>
+						<td height="10"></td>
+					</tr>
+					<tr>
+						<td align="left">
+							<table width="100%">
+								<tr>
+									<td align="right" width="100%">
+									<a class="buttonBlue buttonSmall" href="<%=snippetVar_targetPage%>">
+									Back
+										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
+									</a>
+									&nbsp;
+									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									Download and Print Certificate
+									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
+									</a>
+									<br>
+									<br>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td width="960px" >
+							<%
+							String requestURL = request.getRequestURL().toString();
+							String requestURI = request.getRequestURI();
+							int end = requestURL.indexOf(requestURI);
+							requestURL = requestURL.substring(0, end);
+							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
+							String encodedURL = "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
+							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
+							%>
+							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>
+							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+</table>
 </div>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_codeOfConducts@13 (type=tooltwist.skypepi.widgets.CodeOfConductWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_myMarksAndGrades@13 (type=tooltwist.skypepi.widgets.ViewMarksAndGradesWidget)", e);
 }
 %>
 </div>
@@ -1568,7 +1536,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
-	String snippetVar_currentNavpoint = "skypepi-71";
+	String snippetVar_currentNavpoint = "skypepi-121";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@54";
@@ -1599,7 +1567,7 @@ try {
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 <% isPublic = false; %>
@@ -1614,16 +1582,16 @@ try {
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% if (h.isLogged()){ %>
-				<li class="active"><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %><span></span></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
@@ -1632,9 +1600,9 @@ try {
 				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% if (h.isCocAccepted() && h.isHasForum()) { %>
-				<li class="active"><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><span></span></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
  <% } %> 
 <% if (h.isCocAccepted() && h.isHasForum()) { %>
 				<li class=""><a href="/ttsvr/n/myHouseRules-/skypepi-109"><%=h.getAltLang().getString("myHouseRules ",null,"") %></a></li>
@@ -1645,9 +1613,9 @@ try {
  %>				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
-				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a><span></span></li>
 <% if (h.isLogged()){ %>
-				<li class="active"><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %><span></span></li>
+				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
@@ -1970,74 +1938,41 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
   <script type="text/javascript">
-var CodeOfConduct = function() {
+var ViewMarksAndGrades = function() {
 	return {
 		myVariable: null,
 
 		init: function() {
 			
-			jQuery("input:radio[name=rdo-codeOfConduct]").click(function() {
-				var value = $(this).val();
-				var params = jQuery("#frm-coc").serialize();
-				Progress.showProgress();
-				if (value == "pdf") {
-					jQuery("#anchor-download")[0].click();
-					//window.location.href = "";
-					setTimeout(function() {
-						Progress.hideProgress();
-					},1000); 
-				} else {
-					
-					jQuery.ajax({
-						url: "?op=skypepi_widgets.codeOfConduct.processCOC&" + params,
-						async: true,
-						data: {
-							value:	value
-						},
-						success: function(data) {
-							setTimeout(function() {
-								Progress.hideProgress();
-								if (value == 'yes') {
-									Progress.alertMessage("myCodeOfConduct", "You have been successfully accepted code of conduct for forum. Please click OK to access forums.");
-									$(".btn-primary").click(function() {
-										CodeOfConduct.accessForums();
-									});
-								}
-							}, 1000);
-						}
-					});
-				}
-			});
-		},
-		
-		myMethod: function() {
-			alert("CodeOfConduct.myMethod()");
-		},
-		
-		accessForums : function() {
-			//jQuery("#forum-link").trigger("click");
-			var myForum = window.open(jQuery("#forum-link").attr("href"), "_blank");
-			if (!myForum)
-			    Progress.alertMessage("System Message", "Please allow pop-up for this site.");
-			else {
-				myForum.onload = function() {
-			        setTimeout(function() {
-			            if (myForum.screenX === 0) {
-			            	Progress.alertMessage("System Message", "Please allow pop-up for this site.");
-			            } else {
-			            	setTimeout(function() {
-								window.location.href= jQuery("#notAccNav").val();
-							},1000); 
-			            }
-			        }, 0);
-			    };
-			}
+//			jQuery.ajax({
+//	               url: "",
+//	               data: {
+//	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
+//	            	   enrolmentID: jQuery("#enrolmentID").val(),
+//	            	   format: "html"
+//	               },
+//	               success: function(data) {
+//	                   
+//	            	   var tmp = data;
+//	            	   
+//	            	   jQuery(data).find("img").each(function(idx, obj) {
+//	            		   var imgSrc = "";
+//	            		   imgSrc = jQuery(obj).attr("src");
+//	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
+//	            	   });
+//	            	   
+//	            	   jQuery("#oReportCell").html(data);
+//	               },
+//	               error: function() {
+//	            	   
+//	               }
+//	           });			
 		}
-		// no comma after last method
 	};
 }();
 
-jQuery(CodeOfConduct.init()); // Run after page loads</script>
+jQuery(ViewMarksAndGrades.init()); // Run after page loads
+</script>
 <script type="text/javascript">
 var Progress = function() {
 	return {

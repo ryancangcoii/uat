@@ -1431,6 +1431,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="java.net.URLEncoder"%>
 <%@page import="tooltwist.skypepi.util.BcCache"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
@@ -1449,7 +1450,6 @@ try {
 	PaymentReceiptProductionHelper h = (PaymentReceiptProductionHelper) helper;
 	XData data = h.getData(jh);
 	AltLang lang = h.getAltLang();
-	String googleViewEnd = BcCache.getProperty("googleDocViewEnd");
 %>
 
 <style>
@@ -1484,7 +1484,7 @@ try {
 											<a href="<%=snippetVar_viewReceipts%>">
 												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 											</a>
-											<a href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>&rs:Format=pdf" target="_blank">
+											<a href="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))%>" target="_blank">
 												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
 											</a>
 										</td>
@@ -1496,8 +1496,18 @@ try {
 							<td height="30"></td>
 						</tr>
 						<tr>
-							<td id="oReportCell">
-								<iframe src="http://docs.google.com/viewer?url=http://<%=h.getServerName()%>?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe>
+							<td>
+								<%
+									String requestURL = request.getRequestURL().toString();
+									String requestURI = request.getRequestURI();
+									int end = requestURL.indexOf(requestURI);
+									requestURL = requestURL.substring(0, end);
+									String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
+									String encodedURL = "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=";
+									encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8");
+								%>
+								<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 860px; width: 100%; border: none;"></iframe>
+								<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 							</td>
 						</tr>
 						<tr>
@@ -1723,7 +1733,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.12 Build 20140902</p></span></td>
  </tr>
  <tr>
   <td ></td>
@@ -2031,14 +2041,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -2053,8 +2065,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

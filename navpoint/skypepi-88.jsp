@@ -1171,9 +1171,19 @@ try {
 <a href='/ttsvr/n/View-TimeTable/skypepi-81'><span>View TimeTable</span></a>
 </li><li class="">
 <a href='/ttsvr/n/View-Attendance-Record/skypepi-82'><span>View Attendance Record</span></a>
-</li></ul></li></ul></li><li class="">
+</li></ul></li></ul></li><li class=" has-sub">
 <a href='/ttsvr/n/myProgression/skypepi-70'><span>myProgression</span></a>
+<ul><li class=" has-sub">
+<a href='/ttsvr/n/Views/skypepi-87'><span>Views</span></a>
+<ul><li class="active">
+<a href='/ttsvr/n/View-Marks-and-Grades/skypepi-88'><span>View Marks and Grades</span></a>
 </li><li class=" has-sub">
+<a href='/ttsvr/n/View-Receipt/skypepi-118'><span>View Receipt</span></a>
+<ul><li class="">
+<a href='/ttsvr/n/Receipt-Preview/skypepi-119'><span>Receipt Preview</span></a>
+</li></ul></li><li class="">
+<a href='/ttsvr/n/View-Certificate/skypepi-121'><span>View Certificate</span></a>
+</li></ul></li></ul></li><li class=" has-sub">
 <% if (h.isHasForum()) { %>
 <% if (h.getCocAccepted().equals("true")) { %>
 <a href='<%=h.getForumLink() %>' id="forum-link" target="_blank"><span>myForum</span></a>
@@ -1188,9 +1198,27 @@ try {
 <a href='/ttsvr/n/House-Rules/skypepi-98'><span>House Rules</span></a>
 </li></ul></li><li class="">
 <a href='/ttsvr/n/myHouseRules-/skypepi-109'><span>myHouseRules </span></a>
-</li><li class="">
+</li><li class=" has-sub">
 <a href='/ttsvr/n/myOnlineBooking/skypepi-72'><span>myOnlineBooking</span></a>
+<ul><li class=" has-sub">
+<a href='/ttsvr/n/Inner-Page/skypepi-78'><span>Inner Page</span></a>
+<ul><li class="">
+<a href='/ttsvr/n/Conclude-and-Confirms/skypepi-79'><span>Conclude and Confirms</span></a>
+</li><li class=" has-sub">
+<a href='/ttsvr/n/Payment-Group/skypepi-89'><span>Payment Group</span></a>
+<ul><li class="">
+<a href='/ttsvr/n/Payment-KCP/skypepi-114'><span>Payment KCP</span></a>
 </li><li class="">
+<a href='/ttsvr/n/Payment-GOPI/skypepi-115'><span>Payment GOPI</span></a>
+</li><li class="">
+<a href='/ttsvr/n/Payment-AsiaPay/skypepi-116'><span>Payment AsiaPay</span></a>
+</li><li class="">
+<a href='/ttsvr/n/Payment-Receipt-Preview/skypepi-117'><span>Payment Receipt Preview</span></a>
+</li></ul></li><li class="">
+<a href='/ttsvr/n/View-Timetable/skypepi-90'><span>View Timetable</span></a>
+</li><li class="">
+<a href='/ttsvr/n/Transaction-Failed/skypepi-96'><span>Transaction Failed</span></a>
+</li></ul></li></ul></li><li class="">
 <a href='/ttsvr/n/Home/skypepi-67'><span>myClass</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myCodeOfConduct/skypepi-110'><span>myCodeOfConduct</span></a>
@@ -1232,6 +1260,9 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="java.net.URLEncoder"%>
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper"%>
@@ -1281,13 +1312,17 @@ div.media {
 							<table width="100%">
 								<tr>
 									<td align="right" width="100%">
-									<a href="<%=snippetVar_targetPage%>">
-										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
+									<a class="buttonBlue buttonSmall" href="<%=snippetVar_targetPage%>">
+									Back
+										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
 									</a>
-									<a  href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
-										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
+									&nbsp;
+									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									Download and Print Certificate
+									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
 									</a>
-									
+									<br>
+									<br>
 									</td>
 								</tr>
 							</table>
@@ -1295,7 +1330,17 @@ div.media {
 					</tr>
 					<tr>
 						<td width="960px" >
-							<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
+							<%
+							String requestURL = request.getRequestURL().toString();
+							String requestURI = request.getRequestURI();
+							int end = requestURL.indexOf(requestURI);
+							requestURL = requestURL.substring(0, end);
+							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
+							String encodedURL = "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
+							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
+							%>
+							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>
+							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 						</td>
 					</tr>
 				</table>
@@ -1578,29 +1623,29 @@ var ViewMarksAndGrades = function() {
 
 		init: function() {
 			
-			jQuery.ajax({
-	               url: "",
-	               data: {
-	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
-	            	   enrolmentID: jQuery("#enrolmentID").val(),
-	            	   format: "html"
-	               },
-	               success: function(data) {
-	                   
-	            	   var tmp = data;
-	            	   
-	            	   jQuery(data).find("img").each(function(idx, obj) {
-	            		   var imgSrc = "";
-	            		   imgSrc = jQuery(obj).attr("src");
-	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
-	            	   });
-	            	   
-	            	   jQuery("#oReportCell").html(data);
-	               },
-	               error: function() {
-	            	   
-	               }
-	           });			
+//			jQuery.ajax({
+//	               url: "",
+//	               data: {
+//	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
+//	            	   enrolmentID: jQuery("#enrolmentID").val(),
+//	            	   format: "html"
+//	               },
+//	               success: function(data) {
+//	                   
+//	            	   var tmp = data;
+//	            	   
+//	            	   jQuery(data).find("img").each(function(idx, obj) {
+//	            		   var imgSrc = "";
+//	            		   imgSrc = jQuery(obj).attr("src");
+//	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
+//	            	   });
+//	            	   
+//	            	   jQuery("#oReportCell").html(data);
+//	               },
+//	               error: function() {
+//	            	   
+//	               }
+//	           });			
 		}
 	};
 }();
@@ -1644,14 +1689,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -1666,8 +1713,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

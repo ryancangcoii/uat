@@ -1450,13 +1450,15 @@ try {
 <div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Timetable", null, "") %></span></div>
 <br><br><br>
 <div style="text-align: right;">
-	<a href="<%=snippetVar_backPage%>">
-		<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
-<!-- 		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
+	<a class="buttonBlue buttonSmall" href="<%=snippetVar_backPage%>">
+		Back
+		<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
+		<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
 	</a>
 	&nbsp;
-	<a href="<%=h.getReportUrl()%>" target="_blank">
-		<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Timetable", null, "") %>"/>
+	<a class="buttonBlue buttonSmall" href="<%=h.getReportUrl()%>" target="_blank">
+		Download And Print Timetable
+		<!-- <input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Timetable", null, "") %>"/> -->
 	</a>
 	</div>
 <br>
@@ -1707,7 +1709,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.12 Build 20140902</p></span></td>
  </tr>
  <tr>
   <td ></td>
@@ -1970,14 +1972,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -1992,8 +1996,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

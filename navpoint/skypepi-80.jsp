@@ -1420,13 +1420,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13;
-	String snippetVar_targetPage = "/ttsvr/n/myCurrentEnrolment/skypepi-69";
+	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_myMarksAndGrades@13";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="java.net.URLEncoder"%>
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper"%>
@@ -1476,13 +1479,17 @@ div.media {
 							<table width="100%">
 								<tr>
 									<td align="right" width="100%">
-									<a href="<%=snippetVar_targetPage%>">
-										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
+									<a class="buttonBlue buttonSmall" href="<%=snippetVar_targetPage%>">
+									Back
+										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
 									</a>
-									<a  href="https://reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>&rs:Format=pdf">
-										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
+									&nbsp;
+									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									Download and Print Certificate
+									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
 									</a>
-									
+									<br>
+									<br>
 									</td>
 								</tr>
 							</table>
@@ -1490,7 +1497,17 @@ div.media {
 					</tr>
 					<tr>
 						<td width="960px" >
-							<iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe>
+							<%
+							String requestURL = request.getRequestURL().toString();
+							String requestURI = request.getRequestURI();
+							int end = requestURL.indexOf(requestURI);
+							requestURL = requestURL.substring(0, end);
+							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
+							String encodedURL = "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
+							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
+							%>
+							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>
+							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 						</td>
 					</tr>
 				</table>
@@ -1706,7 +1723,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.12 Build 20140902</p></span></td>
  </tr>
  <tr>
   <td ></td>
@@ -1927,29 +1944,29 @@ var ViewMarksAndGrades = function() {
 
 		init: function() {
 			
-			jQuery.ajax({
-	               url: "",
-	               data: {
-	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
-	            	   enrolmentID: jQuery("#enrolmentID").val(),
-	            	   format: "html"
-	               },
-	               success: function(data) {
-	                   
-	            	   var tmp = data;
-	            	   
-	            	   jQuery(data).find("img").each(function(idx, obj) {
-	            		   var imgSrc = "";
-	            		   imgSrc = jQuery(obj).attr("src");
-	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
-	            	   });
-	            	   
-	            	   jQuery("#oReportCell").html(data);
-	               },
-	               error: function() {
-	            	   
-	               }
-	           });			
+//			jQuery.ajax({
+//	               url: "",
+//	               data: {
+//	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
+//	            	   enrolmentID: jQuery("#enrolmentID").val(),
+//	            	   format: "html"
+//	               },
+//	               success: function(data) {
+//	                   
+//	            	   var tmp = data;
+//	            	   
+//	            	   jQuery(data).find("img").each(function(idx, obj) {
+//	            		   var imgSrc = "";
+//	            		   imgSrc = jQuery(obj).attr("src");
+//	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
+//	            	   });
+//	            	   
+//	            	   jQuery("#oReportCell").html(data);
+//	               },
+//	               error: function() {
+//	            	   
+//	               }
+//	           });			
 		}
 	};
 }();
@@ -1993,14 +2010,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -2015,8 +2034,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

@@ -1694,10 +1694,10 @@ try {
 								</tr>
 								<tr>
 									<td><select id="contactMethod" class="form-control">
-											<option value="Post"><%=lang.getString("Mailing address", null, "") %></option>
-											<option><%=lang.getString("Phone", null, "") %></option>
-											<option><%=lang.getString("Email", null, "") %></option>
-											<option><%=lang.getString("SMS", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("Address")) { %> selected="selected" <% } %> value="Post"><%=lang.getString("Mailing address", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("Phone")) { %> selected="selected" <% } %>><%=lang.getString("Phone", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("Email")) { %> selected="selected" <% } %>><%=lang.getString("Email", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("SMS")) { %> selected="selected" <% } %>><%=lang.getString("SMS", null, "") %></option>
 									</select></td>
 								</tr>
 								<tr>
@@ -1714,10 +1714,10 @@ try {
 									<td align="left" class="">
 										<table width="100%">
 											<tr>
-												<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" value="Phone" name="chkPreferredContact" /></td>
-												<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" value="Post" name="chkPreferredContact" /></td>
-												<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" value="SMS" name="chkPreferredContact" /></td>
-												<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" value="Email" id="chk-email" name="chkPreferredContact" /></td>
+												<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" value="Phone" name="chkPreferredContact" <% if (h.isPhoneChecked()) { %> checked="checked" <% } %> /></td>
+												<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" value="Post" name="chkPreferredContact" <% if (h.isMailChecked()) { %> checked="checked" <% } %> /></td>
+												<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" value="SMS" name="chkPreferredContact" <% if (h.isSmsChecked()) { %> checked="checked" <% } %> /></td>
+												<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" value="Email" id="chk-email" name="chkPreferredContact" <% if (h.isEmailChecked()) { %> checked="checked" <% } %> /></td>
 											</tr>
 										</table>
 									</td>
@@ -1798,8 +1798,60 @@ try {
 					</tr>
 					<tr class="<%=classTag %>" id="addressEditContainer<%=addressesCnt %>" style="display: none;">
 						<td colspan="4" class="">
-							<table width="100%" class="">
-								<tr>
+							<div class="row">
+									<div class="col-md-2"><label class="control-label"><%=lang.getString("Address Line 1", null, "") %>:</label>
+									</div>
+									<div class="col-md-10">
+											<input id="line1<%=id %>" name="line1<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line1 %>" />
+									</div>
+							</div>
+							<div class="row">
+									<div class="col-md-2"><label class="control-label"><%=lang.getString("Address Line 2", null, "") %>:</label>
+									</div>
+									<div class="col-md-10">
+											<input id="line2<%=id %>" name="line2<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line2 %>" />
+									</div>
+							</div>
+<div class="row">
+<div class="col-md-2">
+<label class="control-label"><%=lang.getString("Country", null, "") %>:</label>
+	</div>
+    <div class="col-md-5">
+ <% country = h.getCountryOptions(); 
+													cid = "value=\""+countryID+"\"";
+													option = country.replace(cid, cid + " selected=\"selected\"");
+												%>
+											<select id="country<%=id %>" class="form-control" style="width: 280px">
+												<%=option %>
+											</select>
+	</div>
+	<div class="col-md-2">
+<label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>:</label>
+	</div>
+    <div class="col-md-3">
+  <input id="postCode<%=id %>" name="postCode<%=id %>" class="form-control postCode" type="text" autocomplete="off" value="<%=postCode %>" />
+	</div>
+</div>
+<div class="row">
+<div class="col-md-2">
+                                <label class="control-label"><%=lang.getString("Address Type", null, "") %>:</label>
+</div>
+<div class="col-md-6">
+                                <select id="addressType<%=id %>" name="addressType<%=id %>" style="width: 280px;" class="form-control">
+											<option <%=addressType.equals("Home") ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
+											<option <%=addressType.equals("Office") ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
+											<option <%=addressType.equals("Postal") ? "selected" : "" %>><%=lang.getString("Postal", null, "") %></option>
+											<option <%=addressType.equals("Others") ? "selected" : "" %>><%=lang.getString("Others", null, "") %></option>
+									</select>
+</div>
+<table width="100%">
+									<td colspan="2" align="right" class="button-align">
+										<div align="right">
+											<input name="" onclick="javascript:MyDetails.editAddress('0');" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue  buttonSmall" /> <input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall" />
+										</div>
+									</td>
+								</tr>
+								<!--  <tr>
 									<td class="" width="150"><label class="control-label"><%=lang.getString("Address Line 1", null, "") %>:</label></td>
 									<td>
 										<div class="">
@@ -1852,7 +1904,7 @@ try {
 											<input name="" onclick="javascript:MyDetails.editAddress('0');" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue  buttonSmall" /> <input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall" />
 										</div>
 									</td>
-								</tr>
+								</tr> -->
 							</table>
 						</td>
 					</tr>
@@ -1985,35 +2037,32 @@ try {
 					</tr>
 					<tr class="<%=classTag %>" id="phoneNumberEditContainer<%=phoneNumbersCnt %>" style="display: none;">
 						<td colspan="4">
-							<table width="100%">
-								<tr>
-									<td class="control-label" width="150"><%=lang.getString("Number", null, "") %>:</td>
-									<td>
-										<div class="">
+							<div class="row">
+									<div class="control-label col-md-2"><%=lang.getString("Number", null, "") %>:</div>
+										<div class="col-md-10">
 											<input id="number<%=id %>" name="number<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=number %>" />
 										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="control-label"><%=lang.getString("Phone Type", null, "") %>:</td>
-									<td>
-										<div>
+										</div>
+                                        <div class="row">
+								<div class="control-label col-md-2"><%=lang.getString("Phone Type", null, "") %>:</div>
+										<div class="col-md-10">
 											<select id="phoneType<%=id %>" name="phoneType<%=id %>" class="form-control" style="width: 280px;">
 												<option value="Home" <%="Home".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
 												<option value="Office" <%="Office".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 												<option value="Mobile" <%="Mobile".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Mobile", null, "") %></option>
 											</select>
 										</div>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<div align="right">
+										</div>
+								<table width="100%">
+									<tr>
+										<td align="right">
+										<div>
 											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editPhoneNumber('0');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditPhoneNumber('<%=id %>');" />
 										</div>
-									</td>
-								</tr>
-							</table>
+										</td>
+										</td>
+								</table>
+										
 						</td>
 					</tr>
 					<%
@@ -2131,28 +2180,29 @@ try {
 					</tr>
 					<tr class="<%=classTag %>" id="emailAddressEditContainer<%=emailAddressesCnt %>" style="display: none;">
 						<td colspan="4" valign="top">
-							<table width="100%">
-								<tr>
-									<td class="control-label" valign="top" width="150"><%=lang.getString("Email", null, "") %>:</td>
-									<td valign="top"><input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>" /></td>
-								</tr>
-								<tr>
-									<td class="control-label"><%=lang.getString("Email Type", null, "") %>:</td>
-									<td><select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
+							<div class="row">
+									<div class="control-label col-md-2"><%=lang.getString("Email", null, "") %>:</div>
+									<div class="col-md-10"><input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>" /></div>
+</div>
+<div class="row">
+									<div class="control-label col-md-2"><%=lang.getString("Email Type", null, "") %>:</div>
+									<div class="col-md-10"><select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
 											<option <%=emailType.equals("Personal") ? "selected" : "" %>><%=lang.getString("Personal", null, "") %></option>
 											<option <%=emailType.equals("Office") ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 											<option <%=emailType.equals("Temporary") ? "selected" : "" %>><%=lang.getString("Temporary", null, "") %></option>
 											<option <%=emailType.equals("Other") ? "selected" : "" %>><%=lang.getString("Other", null, "") %></option>
-									</select></td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<div align="right">
+									</select></div>
+                    </div>
+                    <table width="100%">
+                 		<tr>
+									<td colspan="2" align="right">
+										<div>
 											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editEmailAddress('0');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');" />
 										</div>
 									</td>
 								</tr>
 							</table>
+
 						</td>
 					</tr>
 					<%
@@ -2661,7 +2711,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.12 Build 20140902</p></span></td>
  </tr>
  <tr>
   <td ></td>
@@ -2899,10 +2949,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 		},
 		
 		savePreferredContact: function() {
-			console.log("savePreferredContact");
 			Progress.showProgress();
 			var contactMethod = jQuery("#contactMethod").val();
 			var marketingPref = "";
+			
+			var primaryName = "isPrimaryRadioButtonEmailAddresses";
+//			if (contactMethod == "Post") { primaryName = "isPrimaryRadioButtonAddress"; }
+//			else if (contactMethod == "Phone") { primaryName = "isPrimaryRadioButtonPhoneNumbers"; }
+//			else if (contactMethod == "Email") { primaryName = "isPrimaryRadioButtonEmailAddresses"; }
+			
+			var primaryValue = $('input[name="' + primaryName + '"]:checked').val();
 			
 			if (jQuery("#chk-sms").is(":checked")) {
 				marketingPref = "SMS";
@@ -2925,7 +2981,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 				data: {
 					operation:"updateMarketingPreferences",
 					contactMethod:contactMethod,
-					marketingPref: marketingPref
+					marketingPref: marketingPref,
+					primaryValue : primaryValue
 				},
 				success: function(data) {
 				  $("#pId").text(data);
@@ -3941,14 +3998,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -3963,8 +4022,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

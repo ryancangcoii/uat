@@ -1510,7 +1510,7 @@ div.media {
 					<input type="radio" id="rdo-pdf" name="rdo-codeOfConduct" value="pdf"/>
 					<a href="?op=skypepi_widgets.codeOfConduct.processCOC&subop=generateReport&lang=<%=languageCode %>" target="_blank" id="anchor-download" style="display: none;"></a>
 				</td>
-				<td><label for="rdo-pdf"><%=lang.getString("Click here to print a copy of this document for your own reference.", null, "") %>></label></td>
+				<td><label for="rdo-pdf"><%=lang.getString("Click here to print a copy of this document for your own reference.", null, "") %></label></td>
 			</tr>
 			<tr>
 				<td><input type="radio" id="rdo-yes" name="rdo-codeOfConduct" value="yes"/></td>
@@ -1755,7 +1755,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.10 Build 20140828</p></span></td>
+  <td ><span class="wbdRichText"><p>v 2.12 Build 20140902</p></span></td>
  </tr>
  <tr>
   <td ></td>
@@ -1983,47 +1983,55 @@ var CodeOfConduct = function() {
 				if (value == "pdf") {
 					jQuery("#anchor-download")[0].click();
 					//window.location.href = "";
+					setTimeout(function() {
+						Progress.hideProgress();
+					},1000); 
 				} else {
 					
 					jQuery.ajax({
 						url: "?op=skypepi_widgets.codeOfConduct.processCOC&" + params,
-						async: false,
+						async: true,
 						data: {
 							value:	value
 						},
 						success: function(data) {
-							
+							setTimeout(function() {
+								Progress.hideProgress();
+								if (value == 'yes') {
+									Progress.alertMessage("myCodeOfConduct", "You have been successfully accepted code of conduct for forum. Please click OK to access forums.");
+									$(".btn-primary").click(function() {
+										CodeOfConduct.accessForums();
+									});
+								}
+							}, 1000);
 						}
 					});
-					
-					if (value == 'yes') {
-						//jQuery("#forum-link").trigger("click");
-						var myForum = window.open(jQuery("#forum-link").attr("href"));
-						if (!myForum)
-						    Progress.alertMessage("System Message", "Please allow pop-up for this site.");
-						else {
-							myForum.onload = function() {
-						        setTimeout(function() {
-						            if (myForum.screenX === 0) {
-						            	Progress.alertMessage("System Message", "Please allow pop-up for this site.");
-						            } else {
-						            	setTimeout(function() {
-											window.location.href= jQuery("#notAccNav").val();
-										},1000); 
-						            	  
-						            }
-						        }, 0);
-						    };
-						    
-						}
-					}
 				}
-				});
-
+			});
 		},
 		
 		myMethod: function() {
 			alert("CodeOfConduct.myMethod()");
+		},
+		
+		accessForums : function() {
+			//jQuery("#forum-link").trigger("click");
+			var myForum = window.open(jQuery("#forum-link").attr("href"), "_blank");
+			if (!myForum)
+			    Progress.alertMessage("System Message", "Please allow pop-up for this site.");
+			else {
+				myForum.onload = function() {
+			        setTimeout(function() {
+			            if (myForum.screenX === 0) {
+			            	Progress.alertMessage("System Message", "Please allow pop-up for this site.");
+			            } else {
+			            	setTimeout(function() {
+								window.location.href= jQuery("#notAccNav").val();
+							},1000); 
+			            }
+			        }, 0);
+			    };
+			}
 		}
 		// no comma after last method
 	};
@@ -2067,14 +2075,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -2089,8 +2099,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

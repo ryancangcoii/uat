@@ -139,13 +139,15 @@ try {
 <div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Timetable", null, "") %></span></div>
 <br><br><br>
 <div style="text-align: right;">
-	<a href="<%=snippetVar_backPage%>">
-		<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
-<!-- 		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
+	<a class="buttonBlue buttonSmall" href="<%=snippetVar_backPage%>">
+		Back
+		<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
+		<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
 	</a>
 	&nbsp;
-	<a href="<%=h.getReportUrl()%>" target="_blank">
-		<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Timetable", null, "") %>"/>
+	<a class="buttonBlue buttonSmall" href="<%=h.getReportUrl()%>" target="_blank">
+		Download And Print Timetable
+		<!-- <input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Timetable", null, "") %>"/> -->
 	</a>
 	</div>
 <br>

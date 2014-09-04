@@ -94,8 +94,6 @@
     /* =   03. processing                                                           = */
     /* = -------------------------------------------------------------------------- = */
     C_PP_CLI c_PayPlus = new C_PP_CLI();
-	String g_conf_gw_url = "";
-	String g_conf_gw_port = "";
     c_PayPlus.mf_init( g_conf_home_dir, g_conf_gw_url, g_conf_gw_port, g_conf_tx_mode );
     c_PayPlus.mf_init_set();
 

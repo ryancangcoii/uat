@@ -571,9 +571,7 @@ try {
 
 <script>
 	function redirectBackToParent(parentId) {
-		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', document.domain + '?action=redirectBackToParent&parentId='+ parentId);
-		formLogout.submit();
+		Logout.selectChild(parentId);
 	}
 </script>
 

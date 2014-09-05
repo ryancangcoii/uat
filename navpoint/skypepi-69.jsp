@@ -1555,15 +1555,15 @@ try {
 															<td class="table-data color-regular column-date"  rowspan="3"><%=venue %></td>
 															<td class="table-data color-regular column-date"  rowspan="3"><%=teacher %></td>
 															<td class="table-data color-regular" rowspan="3">
-																<% if (!teacher.equals("") && !venue.equals("") && !classTime.equals("") && !classDay.equals("")) { %>
+																<%-- <% if (!teacher.equals("") && !venue.equals("") && !classTime.equals("") && !classDay.equals("")) { %> --%>
+																	<% isDisplayed = true; %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																	<span class="regular-link-underline-light-blue">
 																		<a href="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>">
 																			<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
 																	</span>
-																	<% isDisplayed = true; %>
-																<% } %>
-																<% if (attendance.size() > 0) { %>
+																<%-- <% } %> --%>
+																<%-- <% if (attendance.size() > 0) { %> --%>
 																	<% if (isDisplayed) {  %><br /><% } %>
 																	<% isDisplayed = true; %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
@@ -1571,7 +1571,7 @@ try {
 																		<a class="" href="<%=snippetVar_viewAttendanceNavpoint%>?enrolmentId=<%=enrolmentId %>">
 																			<span class="body-text"><%=lang.getString("View Attendance Records", null, "") %></span></a>
 																	</span>
-																<% } %>
+																<%-- <% } %> --%>
 																<% if (receipts.size() > 0) { %>
 																	<% if (isDisplayed) {  %><br /><% } %>
 																	<% isDisplayed = true; %>

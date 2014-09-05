@@ -1572,7 +1572,7 @@ try {
 																			<span class="body-text"><%=lang.getString("View Attendance Records", null, "") %></span></a>
 																	</span>
 																<%-- <% } %> --%>
-																<% if (receipts.size() > 0) { %>
+																<%-- <% if (receipts.size() > 0) { %> --%>
 																	<% if (isDisplayed) {  %><br /><% } %>
 																	<% isDisplayed = true; %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
@@ -1580,7 +1580,7 @@ try {
 																		<a class="" href="<%=snippetVar_viewReceiptNavpoint%>">
 																			<span class="body-text"><%=lang.getString("View Receipt", null, "") %></span></a>
 																	</span>
-																<% } %>
+																<%-- <% } %> --%>
 																<%if (dt.after(dtTo)) { %>
 																	<% if (isDisplayed) {  %><br /><% } %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">

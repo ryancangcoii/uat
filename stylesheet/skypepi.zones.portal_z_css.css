@@ -1,6 +1,18 @@
 /*
  *  Stylesheet
  */
+.change-password {
+  max-width:450px;
+}
+
+.change-password .changePassButton {
+  max-width:320px;
+  padding:10px;
+}
+
+.button-align {
+  margin: 0px 15px 15px 0px;
+}
 
 .border-style {
   border: 1px solid #cccccc;
@@ -1223,10 +1235,6 @@ body > .container {
   border-left:1px solid #cccccc !important;
 }
 
-.footer-temp-push {
-  margin-top:162px;
-}
-
 .color-blue {
   padding-bottom:10px;
 }
@@ -1268,11 +1276,6 @@ body > .container {
 
 #newAddressEntry td {
   border:0px !important;
-}
-#newAddressEntry .row {
-  margin-top:10px;
-  margin-left: 0px !important;
-  margin-right: 0px;
 }
 
 #newPhoneNumberEntry td {
@@ -1562,9 +1565,6 @@ transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
 @media screen and (max-width: 768px){
-.footer-temp-push {
-    margin-top:300px;
-}
   
 .text-push {
   margin-top: 18px;
@@ -1820,11 +1820,12 @@ input:focus {
 .buttonBlue {
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
   background-color:#00a3e4;
-  color:#ffffff;
+  color:#ffffff !important;
   font-size:16px;
   border:none;
   padding:12px;
   cursor: pointer;
+  text-decoration:none !important;
 }
 
 .buttonGray {
@@ -2423,6 +2424,12 @@ font-size:12px;
   font-size:14px !important;
   font-weight:300;
   color:#5c5c5c;
+}
+
+.portalTable .row{
+ margin-top:10px;
+  margin-left: 0px !important;
+  margin-right: 0px;
 }
 
 /* CSS button fixes */

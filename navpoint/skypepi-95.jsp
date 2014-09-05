@@ -62,7 +62,6 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" href="/ttsvr/favicon.ico" type="image/x-icon">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -140,13 +139,15 @@ try {
 <div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Timetable", null, "") %></span></div>
 <br><br><br>
 <div style="text-align: right;">
-	<a href="<%=snippetVar_backPage%>">
-		<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
-<!-- 		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
+	<a class="buttonBlue buttonSmall" href="<%=snippetVar_backPage%>">
+		Back
+		<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
+		<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
 	</a>
 	&nbsp;
-	<a href="<%=h.getReportUrl()%>" target="_blank">
-		<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Timetable", null, "") %>"/>
+	<a class="buttonBlue buttonSmall" href="<%=h.getReportUrl()%>" target="_blank">
+		Download And Print Timetable
+		<!-- <input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Timetable", null, "") %>"/> -->
 	</a>
 	</div>
 <br>
@@ -203,18 +204,24 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 </table>
 
 
+<!--
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+ -->
 
-    
-    <script>
-	jQuery(window).on("load resize", function() {
-			var windowHeight = jQuery(window.top).height();
-			var lessHeight = ( jQuery(".navbar").height() + parseInt(jQuery(".navbar").css("margin-bottom")) ) + ( jQuery(".footer").height() + parseInt(jQuery(".footer").css("margin-top")) );
-			
-			console.log(windowHeight+" - "+lessHeight);
-			jQuery("#mainArea").css("min-height", windowHeight-lessHeight);
-		});
-	</script>
-	
+	<!-- footer for responsivePage -->
+
+<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
+<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
+    <!--
+    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
+    <script src="/ttsvr/bootstrap/js/respond.js"></script>
+    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
+    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
+    -->
   <script type="text/javascript">var pager;
 function loadData(val) {
 	pager = null;

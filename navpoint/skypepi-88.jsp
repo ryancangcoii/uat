@@ -93,8 +93,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-67");
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params);
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48.callPreFetch(jh);
 } catch (Exception e) {
@@ -602,9 +602,7 @@ try {
 
 <script>
 	function redirectBackToParent(parentId) {
-		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
-		formLogout.submit();
+		Logout.selectChild(parentId);
 	}
 </script>
 
@@ -876,8 +874,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_headerNonRespo_48;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-67";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
@@ -1152,7 +1150,7 @@ try {
 <div id='cssmenu'>
 <ul>
 <li class="">
-<a href='/ttsvr/home'><span>Home</span></a>
+<a href='/ttsvr/n/Home/skypepi-67'><span>Home</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myDetails/skypepi-68'><span>myDetails</span></a>
 </li><li class="">
@@ -1181,7 +1179,9 @@ try {
 <a href='/ttsvr/n/View-Receipt/skypepi-118'><span>View Receipt</span></a>
 <ul><li class="">
 <a href='/ttsvr/n/Receipt-Preview/skypepi-119'><span>Receipt Preview</span></a>
-</li></ul></li></ul></li></ul></li><li class=" has-sub">
+</li></ul></li><li class="">
+<a href='/ttsvr/n/View-Certificate/skypepi-121'><span>View Certificate</span></a>
+</li></ul></li></ul></li><li class=" has-sub">
 <% if (h.isHasForum()) { %>
 <% if (h.getCocAccepted().equals("true")) { %>
 <a href='<%=h.getForumLink() %>' id="forum-link" target="_blank"><span>myForum</span></a>
@@ -1217,7 +1217,7 @@ try {
 </li><li class="">
 <a href='/ttsvr/n/Transaction-Failed/skypepi-96'><span>Transaction Failed</span></a>
 </li></ul></li></ul></li><li class="">
-<a href='/ttsvr/home'><span>myClass</span></a>
+<a href='/ttsvr/n/Home/skypepi-67'><span>myClass</span></a>
 </li><li class="">
 <a href='/ttsvr/n/myCodeOfConduct/skypepi-110'><span>myCodeOfConduct</span></a>
 </li></ul>
@@ -1310,13 +1310,17 @@ div.media {
 							<table width="100%">
 								<tr>
 									<td align="right" width="100%">
-									<a href="<%=snippetVar_targetPage%>">
-										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
+									<a class="buttonBlue buttonSmall" href="<%=snippetVar_targetPage%>">
+									Back
+										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
 									</a>
-									<a  href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
-										<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" />
+									&nbsp;
+									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									Download and Print Certificate
+									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
 									</a>
-									
+									<br>
+									<br>
 									</td>
 								</tr>
 							</table>
@@ -1683,14 +1687,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -1705,8 +1711,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

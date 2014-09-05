@@ -36,12 +36,12 @@
 <%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.ProgressProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper"%>
 
 <%
-	String jspName = "skypepi-119";
+	String jspName = "skypepi-121";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_56 = null;
 try {
@@ -73,7 +73,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_37 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/Receipt-Preview/skypepi-119");
+	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/View-Certificate/skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
@@ -89,7 +89,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_38 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_38Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/Receipt-Preview/skypepi-119");
+	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/View-Certificate/skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
@@ -105,7 +105,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_51Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/Receipt-Preview/skypepi-119");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/View-Certificate/skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
@@ -116,16 +116,6 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_51.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_51", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13 = null;
-try {
-	Properties productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params.setProperty("viewReceipts", "/ttsvr/n/View-Receipt/skypepi-118");
-	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13 = new tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params);
-	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_37 = null;
@@ -141,7 +131,7 @@ try {
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_54Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("menuType", "Header");
-	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-119");
+	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-121");
 	productionHelper_skypepi_zones_portal_z_header_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_54Params);
 	productionHelper_skypepi_zones_portal_z_header_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -152,11 +142,20 @@ try {
 try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("menuType", "Footer");
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-119");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-121");
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params);
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_54", e);
+}
+
+	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13 = null;
+try {
+	Properties productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13 = new tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13Params);
+	productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13", e);
 }
 
 
@@ -200,9 +199,6 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}/* Styles for widget paymentReceipt */
-
-.PaymentReceipt .someClass {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
@@ -268,7 +264,7 @@ try {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_35;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Receipt-Preview/skypepi-119";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_widgetName = "@35";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@35";
 	String snippetVar_elementId = "";
@@ -393,7 +389,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Receipt-Preview/skypepi-119";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_viewOption = "Name";
 	String snippetVar_widgetName = "@38";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@38";
@@ -678,7 +674,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
 	String snippetVar_homeNavPointId = "skypepi-75";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Receipt-Preview/skypepi-119";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_viewOption = "Student Selection";
 	String snippetVar_widgetName = "@37";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@37";
@@ -942,7 +938,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_54;
-	String snippetVar_currentNavpoint = "skypepi-119";
+	String snippetVar_currentNavpoint = "skypepi-121";
 	String snippetVar_menuType = "Header";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@54";
@@ -1052,7 +1048,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/Receipt-Preview/skypepi-119";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@55";
 	String snippetVar_elementId = "";
@@ -1183,7 +1179,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/Receipt-Preview/skypepi-119";
+	String snippetVar_navpointId = "/ttsvr/n/View-Certificate/skypepi-121";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -1418,115 +1414,109 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
 </table>
-<div class='DivWidget page-content' style=""><div class='DivWidget standard-width' style=""><%-- Widget skypepi.pages.portal_p_btstrap_receiptPreviewProgression@13 (type=tooltwist.skypepi.widgets.PaymentReceiptWidget) --%>
+<div class='DivWidget page-content' style=""><div class='DivWidget standard-width' style=""><%-- Widget skypepi.pages.portal_p_btstrap_myMarksAndGrades@13 (type=tooltwist.skypepi.widgets.ViewMarksAndGradesWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13;
-	String snippetVar_viewReceipts = "/ttsvr/n/View-Receipt/skypepi-118";
+	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13;
+	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
 	String snippetVar_widgetName = "@13";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_receiptPreviewProgression@13";
+	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_myMarksAndGrades@13";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
 <%@page import="java.net.URLEncoder"%>
 <%@page import="tooltwist.skypepi.util.BcCache"%>
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
+<%@page import="com.dinaa.misc.AltLang"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper"%>
+<%@page import="tooltwist.skypepi.productionHelpers.ViewMarksAndGradesProductionHelper"%>
 <%@page import="tooltwist.misc.JspHelper"%>
 <%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
 <%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.skypepi.util.StringUtil"%>
-<%@page import="com.dinaa.data.XNodes"%>
-
 <%
 	// Get the production helper for this widget
-	PaymentReceiptProductionHelper h = (PaymentReceiptProductionHelper) helper;
-	XData data = h.getData(jh);
+	ViewMarksAndGradesProductionHelper h = (ViewMarksAndGradesProductionHelper) helper;
 	AltLang lang = h.getAltLang();
 %>
-
 <style>
+
+div.media, div.media > iframe {
+	width: 100% !important;
+}
+div.media {
+	margin-top: 0px;
+} 
+.cocAccept td {
+	padding: 10px;
+}
+.nav-tabs > li > a {
+	border-radius: 0px;
+}
+
 .portal-ribbon .left-edge.fork {
-	width: 230px;
+	width: 150px;
 }
 </style>
+
 <div class="bc-container portal-ribbon">
-<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("Payment Receipt", null, "") %></span></div>
-<br /><br /><br />
-	
-<table>
+<div class="ribbon-wrap left-edge fork lblue"><span><%=lang.getString("certificate", null, "") %></span></div>
+<br><br><br>
+
+	<input type="hidden" value="<%=request.getParameter("enrolmentID") %>" id="enrolmentID"/>
+	<table>
 	<tr>
 		<td width="960px">
-			<div class="">
-				<div class="">
-					<!-- <img src="" alt="" width="8" height="8" class="corner" style="display: none" />  -->
-				</div>
-
-				<div class="">
-				<form id="form-courseDetails" name="form-courseDetails" method="post" action="">
-					<table width="100%">
-						<tr>
-							<td height="10"></td>
-						</tr>
-						<tr>
-							<td align="left" colspan="3">
-								<table width="100%">
-									<tr>
-										<td width="30%"><span class="sub-heading color-blue"><b><%=h.getPaymentReceipt() == null ? "" : h.getPaymentReceipt().getCompanyAbn() %></b></span></td>
-										<td align="right">
-											<a href="<%=snippetVar_viewReceipts%>">
-												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
-											</a>
-											<a href="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))%>" target="_blank">
-												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
-											</a>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td height="30"></td>
-						</tr>
-						<tr>
-							<td>
-								<%
-									String requestURL = request.getRequestURL().toString();
-									String requestURI = request.getRequestURI();
-									int end = requestURL.indexOf(requestURI);
-									requestURL = requestURL.substring(0, end);
-									String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
-									String encodedURL = "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=";
-									encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8");
-								%>
-								<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 860px; width: 100%; border: none;"></iframe>
-								<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe> --%>
-							</td>
-						</tr>
-						<tr>
-							<td height="20"></td>
-						</tr>
-						<tr>
-							<td height="30"></td>
-						</tr>
-					</table>
-				</form>
-				</div>
-			</div>
+			<form id="form-courseDetails" name="form-courseDetails" method="post" action="">
+				<table >
+					<tr>
+						<td height="10"></td>
+					</tr>
+					<tr>
+						<td align="left">
+							<table width="100%">
+								<tr>
+									<td align="right" width="100%">
+									<a class="buttonBlue buttonSmall" href="<%=snippetVar_targetPage%>">
+									Back
+										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
+									</a>
+									&nbsp;
+									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									Download and Print Certificate
+									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
+									</a>
+									<br>
+									<br>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td width="960px" >
+							<%
+							String requestURL = request.getRequestURL().toString();
+							String requestURI = request.getRequestURI();
+							int end = requestURL.indexOf(requestURI);
+							requestURL = requestURL.substring(0, end);
+							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
+							String encodedURL = "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
+							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
+							%>
+							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>
+							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
+						</td>
+					</tr>
+				</table>
+			</form>
 		</td>
 	</tr>
 </table>
-
 </div>
-
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_receiptPreviewProgression@13 (type=tooltwist.skypepi.widgets.PaymentReceiptWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_btstrap_myMarksAndGrades@13 (type=tooltwist.skypepi.widgets.ViewMarksAndGradesWidget)", e);
 }
 %>
 </div>
@@ -1544,7 +1534,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
-	String snippetVar_currentNavpoint = "skypepi-119";
+	String snippetVar_currentNavpoint = "skypepi-121";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@54";
@@ -1946,47 +1936,27 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
   <script type="text/javascript">
-var PaymentReceipt = function() {
+var ViewMarksAndGrades = function() {
 	return {
 		myVariable: null,
 
 		init: function() {
 			
-//			$("#receipts-link").click(function() {
-//				jQuery("#fraPreviewReceipt").attr("src", $("receiptUrl").val());
-//				setTimeout(function(){
-//					$('#receipt_preview').modal({
-//						closeHTML: "",
-//						position: ["20%",],
-//						overlayId: 'confirm-overlay',
-//						containerId: 'confirm-container', 
-//						close: true,
-//						onShow: function (dialog) {
-//							jQuery("#fraPreviewReceipt").attr("src", $("receiptUrl").val());
-//							jQuery("#fraPreviewReceipt").src = $("receiptUrl").val();
-//						}
-//						});
-//				}, 100); 
-//			});
-			
-
-			
 //			jQuery.ajax({
 //	               url: "",
 //	               data: {
-//	            	   op : "skypepi_widgets.paymentReceipt.paymentReceipts",
-//	            	   paymentId: <%=request.getParameter("paymentDetailID") %>,
+//	            	   op : "skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades",
+//	            	   enrolmentID: jQuery("#enrolmentID").val(),
 //	            	   format: "html"
 //	               },
 //	               success: function(data) {
-//	                   console.log("data", data);
+//	                   
 //	            	   var tmp = data;
 //	            	   
 //	            	   jQuery(data).find("img").each(function(idx, obj) {
-//	            		   //var imgSrc = "";
-//	            		   //imgSrc = jQuery(obj).attr("src");
-//	            		   //console.log("imgSrc", imgSrc);
-//	            		   //data = data.replace(imgSrc, "?paymentId=<%=request.getParameter("paymentDetailID") %>&op=skypepi_widgets.paymentReceipt.paymentReceipts&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc) + "\" height=\"89\"");
+//	            		   var imgSrc = "";
+//	            		   imgSrc = jQuery(obj).attr("src");
+//	            		   data = data.replace(imgSrc, "?enrolmentID=<%=request.getParameter("enrolmentID") %>&op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&subop=renderImage&imageUrl=" + encodeURIComponent(imgSrc));
 //	            	   });
 //	            	   
 //	            	   jQuery("#oReportCell").html(data);
@@ -1995,13 +1965,12 @@ var PaymentReceipt = function() {
 //	            	   
 //	               }
 //	           });			
-		
-			
 		}
 	};
 }();
 
-jQuery(PaymentReceipt.init()); // Run after page loads</script>
+jQuery(ViewMarksAndGrades.init()); // Run after page loads
+</script>
 <script type="text/javascript">
 var Progress = function() {
 	return {

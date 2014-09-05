@@ -110,8 +110,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-67");
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_zones_portal_z_header_51 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_51Params);
 	productionHelper_skypepi_zones_portal_z_header_51.callPreFetch(jh);
 } catch (Exception e) {
@@ -171,7 +171,6 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" href="/ttsvr/favicon.ico" type="image/x-icon">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -658,9 +657,7 @@ try {
 
 <script>
 	function redirectBackToParent(parentId) {
-		var formLogout = $("#form-redirectoBackToParent");
-		formLogout.attr('action', '?action=redirectBackToParent&parentId='+ parentId);
-		formLogout.submit();
+		Logout.selectChild(parentId);
 	}
 </script>
 
@@ -924,7 +921,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'>
-<a href="/ttsvr/home">
+<a href="/ttsvr/n/Home/skypepi-67">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
 </a>
 </td>
@@ -977,13 +974,13 @@ try {
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -992,20 +989,20 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsorStudent()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1016,7 +1013,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1029,7 +1026,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106,skypepi-111,skypepi-112"); if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+ %>				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1181,8 +1178,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_51;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-67";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/myDetails/skypepi-68";
@@ -1695,10 +1692,10 @@ try {
 								</tr>
 								<tr>
 									<td><select id="contactMethod" class="form-control">
-											<option value="Post"><%=lang.getString("Mailing address", null, "") %></option>
-											<option><%=lang.getString("Phone", null, "") %></option>
-											<option><%=lang.getString("Email", null, "") %></option>
-											<option><%=lang.getString("SMS", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("Address")) { %> selected="selected" <% } %> value="Post"><%=lang.getString("Mailing address", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("Phone")) { %> selected="selected" <% } %>><%=lang.getString("Phone", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("Email")) { %> selected="selected" <% } %>><%=lang.getString("Email", null, "") %></option>
+											<option <% if (h.getPreferredContact().equals("SMS")) { %> selected="selected" <% } %>><%=lang.getString("SMS", null, "") %></option>
 									</select></td>
 								</tr>
 								<tr>
@@ -1715,10 +1712,10 @@ try {
 									<td align="left" class="">
 										<table width="100%">
 											<tr>
-												<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" value="Phone" name="chkPreferredContact" /></td>
-												<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" value="Post" name="chkPreferredContact" /></td>
-												<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" value="SMS" name="chkPreferredContact" /></td>
-												<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" value="Email" id="chk-email" name="chkPreferredContact" /></td>
+												<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" value="Phone" name="chkPreferredContact" <% if (h.isPhoneChecked()) { %> checked="checked" <% } %> /></td>
+												<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" value="Post" name="chkPreferredContact" <% if (h.isMailChecked()) { %> checked="checked" <% } %> /></td>
+												<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" value="SMS" name="chkPreferredContact" <% if (h.isSmsChecked()) { %> checked="checked" <% } %> /></td>
+												<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" value="Email" id="chk-email" name="chkPreferredContact" <% if (h.isEmailChecked()) { %> checked="checked" <% } %> /></td>
 											</tr>
 										</table>
 									</td>
@@ -1799,8 +1796,60 @@ try {
 					</tr>
 					<tr class="<%=classTag %>" id="addressEditContainer<%=addressesCnt %>" style="display: none;">
 						<td colspan="4" class="">
-							<table width="100%" class="">
-								<tr>
+							<div class="row">
+									<div class="col-md-2"><label class="control-label"><%=lang.getString("Address Line 1", null, "") %>:</label>
+									</div>
+									<div class="col-md-10">
+											<input id="line1<%=id %>" name="line1<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line1 %>" />
+									</div>
+							</div>
+							<div class="row">
+									<div class="col-md-2"><label class="control-label"><%=lang.getString("Address Line 2", null, "") %>:</label>
+									</div>
+									<div class="col-md-10">
+											<input id="line2<%=id %>" name="line2<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=line2 %>" />
+									</div>
+							</div>
+<div class="row">
+<div class="col-md-2">
+<label class="control-label"><%=lang.getString("Country", null, "") %>:</label>
+	</div>
+    <div class="col-md-5">
+ <% country = h.getCountryOptions(); 
+													cid = "value=\""+countryID+"\"";
+													option = country.replace(cid, cid + " selected=\"selected\"");
+												%>
+											<select id="country<%=id %>" class="form-control" style="width: 280px">
+												<%=option %>
+											</select>
+	</div>
+	<div class="col-md-2">
+<label class="control-label"><%=lang.getString("Zip/Postal Code", null, "") %>:</label>
+	</div>
+    <div class="col-md-3">
+  <input id="postCode<%=id %>" name="postCode<%=id %>" class="form-control postCode" type="text" autocomplete="off" value="<%=postCode %>" />
+	</div>
+</div>
+<div class="row">
+<div class="col-md-2">
+                                <label class="control-label"><%=lang.getString("Address Type", null, "") %>:</label>
+</div>
+<div class="col-md-6">
+                                <select id="addressType<%=id %>" name="addressType<%=id %>" style="width: 280px;" class="form-control">
+											<option <%=addressType.equals("Home") ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
+											<option <%=addressType.equals("Office") ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
+											<option <%=addressType.equals("Postal") ? "selected" : "" %>><%=lang.getString("Postal", null, "") %></option>
+											<option <%=addressType.equals("Others") ? "selected" : "" %>><%=lang.getString("Others", null, "") %></option>
+									</select>
+</div>
+<table width="100%">
+									<td colspan="2" align="right" class="button-align">
+										<div align="right">
+											<input name="" onclick="javascript:MyDetails.editAddress('0');" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue  buttonSmall" /> <input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall" />
+										</div>
+									</td>
+								</tr>
+								<!--  <tr>
 									<td class="" width="150"><label class="control-label"><%=lang.getString("Address Line 1", null, "") %>:</label></td>
 									<td>
 										<div class="">
@@ -1853,7 +1902,7 @@ try {
 											<input name="" onclick="javascript:MyDetails.editAddress('0');" type="button" value="<%=lang.getString("Cancel", null, "") %>" class="buttonBlue  buttonSmall" /> <input name="" onclick="javascript:MyDetails.saveEditAddress('<%=id %>');" type="button" value="<%=lang.getString("Save", null, "") %>" class="buttonBlue buttonSmall" />
 										</div>
 									</td>
-								</tr>
+								</tr> -->
 							</table>
 						</td>
 					</tr>
@@ -1986,35 +2035,32 @@ try {
 					</tr>
 					<tr class="<%=classTag %>" id="phoneNumberEditContainer<%=phoneNumbersCnt %>" style="display: none;">
 						<td colspan="4">
-							<table width="100%">
-								<tr>
-									<td class="control-label" width="150"><%=lang.getString("Number", null, "") %>:</td>
-									<td>
-										<div class="">
+							<div class="row">
+									<div class="control-label col-md-2"><%=lang.getString("Number", null, "") %>:</div>
+										<div class="col-md-10">
 											<input id="number<%=id %>" name="number<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=number %>" />
 										</div>
-									</td>
-								</tr>
-								<tr>
-									<td class="control-label"><%=lang.getString("Phone Type", null, "") %>:</td>
-									<td>
-										<div>
+										</div>
+                                        <div class="row">
+								<div class="control-label col-md-2"><%=lang.getString("Phone Type", null, "") %>:</div>
+										<div class="col-md-10">
 											<select id="phoneType<%=id %>" name="phoneType<%=id %>" class="form-control" style="width: 280px;">
 												<option value="Home" <%="Home".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
 												<option value="Office" <%="Office".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 												<option value="Mobile" <%="Mobile".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Mobile", null, "") %></option>
 											</select>
 										</div>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<div align="right">
+										</div>
+								<table width="100%">
+									<tr>
+										<td align="right">
+										<div>
 											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editPhoneNumber('0');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditPhoneNumber('<%=id %>');" />
 										</div>
-									</td>
-								</tr>
-							</table>
+										</td>
+										</td>
+								</table>
+										
 						</td>
 					</tr>
 					<%
@@ -2132,28 +2178,29 @@ try {
 					</tr>
 					<tr class="<%=classTag %>" id="emailAddressEditContainer<%=emailAddressesCnt %>" style="display: none;">
 						<td colspan="4" valign="top">
-							<table width="100%">
-								<tr>
-									<td class="control-label" valign="top" width="150"><%=lang.getString("Email", null, "") %>:</td>
-									<td valign="top"><input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>" /></td>
-								</tr>
-								<tr>
-									<td class="control-label"><%=lang.getString("Email Type", null, "") %>:</td>
-									<td><select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
+							<div class="row">
+									<div class="control-label col-md-2"><%=lang.getString("Email", null, "") %>:</div>
+									<div class="col-md-10"><input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>" /></div>
+</div>
+<div class="row">
+									<div class="control-label col-md-2"><%=lang.getString("Email Type", null, "") %>:</div>
+									<div class="col-md-10"><select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
 											<option <%=emailType.equals("Personal") ? "selected" : "" %>><%=lang.getString("Personal", null, "") %></option>
 											<option <%=emailType.equals("Office") ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 											<option <%=emailType.equals("Temporary") ? "selected" : "" %>><%=lang.getString("Temporary", null, "") %></option>
 											<option <%=emailType.equals("Other") ? "selected" : "" %>><%=lang.getString("Other", null, "") %></option>
-									</select></td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<div align="right">
+									</select></div>
+                    </div>
+                    <table width="100%">
+                 		<tr>
+									<td colspan="2" align="right">
+										<div>
 											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.editEmailAddress('0');" /> <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveEditEmailAddress('<%=id %>');" />
 										</div>
 									</td>
 								</tr>
 							</table>
+
 						</td>
 					</tr>
 					<%
@@ -2497,13 +2544,13 @@ try {
 
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -2512,20 +2559,20 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsorStudent()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -2536,7 +2583,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -2549,7 +2596,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106,skypepi-111,skypepi-112"); if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+ %>				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -2858,18 +2905,24 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div>
 
 
+<!--
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+ -->
 
-    
-    <script>
-	jQuery(window).on("load resize", function() {
-			var windowHeight = jQuery(window.top).height();
-			var lessHeight = ( jQuery(".navbar").height() + parseInt(jQuery(".navbar").css("margin-bottom")) ) + ( jQuery(".footer").height() + parseInt(jQuery(".footer").css("margin-top")) );
-			
-			console.log(windowHeight+" - "+lessHeight);
-			jQuery("#mainArea").css("min-height", windowHeight-lessHeight);
-		});
-	</script>
-	
+	<!-- footer for responsivePage -->
+
+<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
+<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
+<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
+    <!--
+    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
+    <script src="/ttsvr/bootstrap/js/respond.js"></script>
+    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
+    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
+    -->
   <script type="text/javascript">var MyDetails = function() {
 	var host = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port;
 	var servletURL = host + "/ttsvr/servlet/tooltwist.skypepi.servlet.MyDetailsServlet";
@@ -2894,10 +2947,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 		},
 		
 		savePreferredContact: function() {
-			console.log("savePreferredContact");
 			Progress.showProgress();
 			var contactMethod = jQuery("#contactMethod").val();
 			var marketingPref = "";
+			
+			var primaryName = "isPrimaryRadioButtonEmailAddresses";
+//			if (contactMethod == "Post") { primaryName = "isPrimaryRadioButtonAddress"; }
+//			else if (contactMethod == "Phone") { primaryName = "isPrimaryRadioButtonPhoneNumbers"; }
+//			else if (contactMethod == "Email") { primaryName = "isPrimaryRadioButtonEmailAddresses"; }
+			
+			var primaryValue = $('input[name="' + primaryName + '"]:checked').val();
 			
 			if (jQuery("#chk-sms").is(":checked")) {
 				marketingPref = "SMS";
@@ -2920,7 +2979,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 				data: {
 					operation:"updateMarketingPreferences",
 					contactMethod:contactMethod,
-					marketingPref: marketingPref
+					marketingPref: marketingPref,
+					primaryValue : primaryValue
 				},
 				success: function(data) {
 				  $("#pId").text(data);
@@ -3936,14 +3996,16 @@ var Progress = function() {
 		},
 		
 		showProgress: function() {
-			console.log("showProgress");
 			jQuery('#div_loading').modal({
 				keyboard: false
 			});
+			console.log("showProgress");
 		},
 		
 		hideProgress: function() {
-			$("#div_loading").modal("hide");
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {
@@ -3958,8 +4020,6 @@ var Progress = function() {
 					keyboard: false
 				});
 			}, 500);
-
-			
 			
 		}
 	};

@@ -930,7 +930,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/home">
+<a href="/ttsvr/n/Home/skypepi-67">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>

@@ -967,7 +967,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'>
-<a href="/ttsvr/n/Home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
 </a>
 </td>
@@ -1020,13 +1020,13 @@ try {
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1035,20 +1035,20 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsorStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1059,7 +1059,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1072,7 +1072,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106,skypepi-111,skypepi-112"); if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+ %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1508,6 +1508,7 @@ try {
 </style>
 
 
+
 <table>
 	<tr>
 	<% if("".equals(forgotPasswordSuccessMessage)) { %>
@@ -1548,12 +1549,27 @@ try {
 					
 					<table>
 						<tr>
-							<td align="left"><span class="control-label"><%=lang.getString("Please enter the email address you used to create your account, and we will send your login details.", null, "") %></span></td>
+							<td align="left">
+								<span class="control-label" id="label-user"><%=lang.getString("Please enter the username you used to create your account, and we will send your login details.", null, "") %></span>
+								<span class="control-label" id="label-email" style="display: none;"><%=lang.getString("Please enter the email address you used to create your account, and we will send your login details.", null, "") %></span>
+							</td>
 						</tr>
 						<tr>
 							<td height="20"></td>
 						</tr>
-						
+						<tr>
+							<td align="left"><span class="control-label">
+								<table width="100%">
+									<tr>
+										<td><input type="radio" name="change-option" id="option1" value="username" class="options" checked="checked" /> <label for="option1">Username</label></td>
+										<td><input type="radio" name="change-option" id="option2" value="email" class="options"  /> <label for="option2">Email</label></td>
+									</tr>
+								</table>
+							</span></td>
+						</tr>
+						<tr>
+							<td height="20"></td>
+						</tr>
 						<tr>
 							<td colspan="2" align="left">
 								<table width="100%">
@@ -1607,55 +1623,9 @@ try {
 	</tr>
 </table>
 <script type="text/javascript">
+var cancelLink = "<%=snippetVar_cancelNavpoint%>";
 
-var ForgotPassword = function() {
-	return {
-		sendMessage: function() {
-// 			var formForgotPassword = $("#form-forgotPassword");
-// 			formForgotPassword.submit();
-			Progress.showProgress();
-			$.ajax({
-				url: "?op=<%=snippetVar_forgotPasswordOp%>&emailAddress-forgotPassword=" + $("#emailAddress-forgotPassword").val(),
-				dataType: "html",
-				cache: false,
-				success: function(data) {
-					var dt = data.split("~");
-					var status = dt[0];
-					var msg = dt[1];
-					
-					if(status == "failed") {
-						//$("#tbody-message").show();
-						//$("#error-message").html(msg);
-						Progress.alertMessage("Password Assistance", msg);
-						jQuery(".close").trigger("click");
-						Progress.hideProgress();
-					}
-					else {
-						 $("#td-container").attr("width", "700");
-						$("#div-main").hide();
-// 						$("#div-success").show();
-// 						$("#success-msg").html(msg);
-						Progress.alertMessage("Password Assistance", msg);
-						setTimeout(function(){window.location.href = "<%=snippetVar_cancelNavpoint%>";}, 5000);
-						Progress.hideProgress();
-					}
-					
-				},
-				error: function() {
-					
-				}
-			});	
-			
-		},
-		cancel: function() {
-			$("#form-forgotPassword").attr("action", "<%=snippetVar_cancelNavpoint%>");
-			$("#form-forgotPassword #op").val("");
-			$("#form-forgotPassword").submit();
-		},
-		init: function() {
-		}
-	};
-}();
+
 
 </script>
 
@@ -1714,13 +1684,13 @@ try {
 
 			<ul class="nav navbar-nav ">
 <% boolean isPublic = true;%><% if (h.isParent()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isParentStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1729,20 +1699,20 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsor()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myStudents/skypepi-108"><%=h.getAltLang().getString("myStudents",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isSponsorStudent()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1753,7 +1723,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
 <% if (h.isStudent() && !h.isLegalAge()) { %> 
-				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1766,7 +1736,7 @@ try {
 <% isPublic = false; %>
  <% } %> 
  <% System.out.println("isPublic:skypepi-91,skypepi-67,skypepi-68,skypepi-69,skypepi-70,skypepi-71,skypepi-72,skypepi-110skypepi-105,skypepi-99,skypepi-100,skypepi-101,skypepi-102,skypepi-103,skypepi-106,skypepi-111,skypepi-112"); if (isPublic) { 
- %>				<li class=""><a href="/ttsvr/n/Home/skypepi-67"><%=h.getAltLang().getString("Home",null,"") %></a></li>
+ %>				<li class=""><a href="/ttsvr/home"><%=h.getAltLang().getString("Home",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
@@ -1879,7 +1849,44 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.13 Build 20140905</p></span></td>
+  <td ><%-- Widget skypepi.zones.portal_z_responsiveFooter@64 (type=tooltwist.skypepi.widgets.BuildVersionWidget) --%>
+<%
+try {
+	String snippetVar_widgetName = "@64";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@64";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.BuildVersionProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	// Get the production helper for this widget
+//	BuildVersionProductionHelper h = (BuildVersionProductionHelper) helper;
+//	XData data = h.getData(jh);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%>>
+	<span class="wbdRichText">
+		<p>v <%=BcCache.getProperty("version") %> Build <%=BcCache.getProperty("build") %></p>
+	</span>
+	
+</div>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@64 (type=tooltwist.skypepi.widgets.BuildVersionWidget)", e);
+}
+%>
+</td>
  </tr>
  <tr>
   <td ></td>
@@ -2092,7 +2099,75 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
     <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
     -->
-  <script type="text/javascript">
+  <script type="text/javascript">var ForgotPassword = function() {
+	return {
+		optionSelected: "user",
+		sendMessage: function() {
+// 			var formForgotPassword = $("#form-forgotPassword");
+// 			formForgotPassword.submit();
+			Progress.showProgress();
+			$.ajax({
+				url: "?op=skypepi.widgets.forgotPassword.forgotPassword&emailAddress-forgotPassword=" + $("#emailAddress-forgotPassword").val() + "&option=" + this.optionSelected,
+				dataType: "html",
+				cache: false,
+				success: function(data) {
+					var dt = data.split("~");
+					var status = dt[0];
+					var msg = dt[1];
+					
+					if(status == "failed") {
+						//$("#tbody-message").show();
+						//$("#error-message").html(msg);
+						Progress.alertMessage("Password Assistance", msg);
+						Progress.hideProgress();
+						jQuery("#emailAddress-forgotPassword").val("");
+					}
+					else {
+						 $("#td-container").attr("width", "700");
+						$("#div-main").hide();
+						Progress.alertMessage("Password Assistance", msg);
+						setTimeout(function(){window.location.href = cancelLink;}, 5000);
+						Progress.hideProgress();
+					}
+					
+				},
+				error: function() {
+					
+				}
+			});	
+			
+		},
+		cancel: function() {
+			$("#form-forgotPassword").attr("action", cancelLink);
+			$("#form-forgotPassword #op").val("");
+			$("#form-forgotPassword").submit();
+		},
+		init: function() {
+			
+			var self = this;
+			
+			jQuery(".options").click(function() {
+				var val = jQuery(this).val();
+				
+				if (val == 'email') {
+					jQuery("#label-email").show();
+					jQuery("#label-user").hide();
+				}
+				else {
+					jQuery("#label-email").hide();
+					jQuery("#label-user").show();
+				}
+				self.optionSelected = val;
+				jQuery("#emailAddress-forgotPassword").val("");
+				jQuery("#emailAddress-forgotPassword").focus();
+				
+			});
+		}
+	};
+}();
+
+jQuery(ForgotPassword.init());</script>
+<script type="text/javascript">
 var Progress = function() {
 	return {
 		myVariable: null,
@@ -2136,9 +2211,8 @@ var Progress = function() {
 		},
 		
 		hideProgress: function() {
-			$(".modal, .fade").hide();
-			$("body").removeClass("modal-open");
-			console.log("hideProgress");
+			var $modal = $('.modal');
+			$modal.modal('hide'); //start hiding
 		},
 		
 		alertMessage: function(title, msg) {

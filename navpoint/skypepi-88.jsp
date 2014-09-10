@@ -1694,9 +1694,8 @@ var Progress = function() {
 		},
 		
 		hideProgress: function() {
-			$(".modal, .fade").hide();
-			$("body").removeClass("modal-open");
-			console.log("hideProgress");
+			var $modal = $('.modal');
+			$modal.modal('hide'); //start hiding
 		},
 		
 		alertMessage: function(title, msg) {

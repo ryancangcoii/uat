@@ -1735,7 +1735,44 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.13 Build 20140905</p></span></td>
+  <td ><%-- Widget skypepi.zones.portal_z_responsiveFooter@64 (type=tooltwist.skypepi.widgets.BuildVersionWidget) --%>
+<%
+try {
+	String snippetVar_widgetName = "@64";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@64";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.BuildVersionProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	// Get the production helper for this widget
+//	BuildVersionProductionHelper h = (BuildVersionProductionHelper) helper;
+//	XData data = h.getData(jh);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%>>
+	<span class="wbdRichText">
+		<p>v <%=BcCache.getProperty("version") %> Build <%=BcCache.getProperty("build") %></p>
+	</span>
+	
+</div>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@64 (type=tooltwist.skypepi.widgets.BuildVersionWidget)", e);
+}
+%>
+</td>
  </tr>
  <tr>
   <td ></td>
@@ -2044,9 +2081,8 @@ var Progress = function() {
 		},
 		
 		hideProgress: function() {
-			$(".modal, .fade").hide();
-			$("body").removeClass("modal-open");
-			console.log("hideProgress");
+			var $modal = $('.modal');
+			$modal.modal('hide'); //start hiding
 		},
 		
 		alertMessage: function(title, msg) {

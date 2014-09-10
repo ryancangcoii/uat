@@ -2044,7 +2044,7 @@ try {
                                         <div class="row">
 								<div class="control-label col-md-2"><%=lang.getString("Phone Type", null, "") %>:</div>
 										<div class="col-md-10">
-											<select id="phoneType<%=id %>" name="phoneType<%=id %>" class="form-control" style="width: 280px;">
+											<select id="phoneType<%=id %>" name="phoneType<%=id %>" class="form-control phoneType" style="width: 280px;">
 												<option value="Home" <%="Home".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
 												<option value="Office" <%="Office".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 												<option value="Mobile" <%="Mobile".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Mobile", null, "") %></option>
@@ -2709,7 +2709,44 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  height='20'></td>
  </tr>
  <tr>
-  <td ><span class="wbdRichText"><p>v 2.13 Build 20140905</p></span></td>
+  <td ><%-- Widget skypepi.zones.portal_z_responsiveFooter@64 (type=tooltwist.skypepi.widgets.BuildVersionWidget) --%>
+<%
+try {
+	String snippetVar_widgetName = "@64";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@64";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.BcCache"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.BuildVersionProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	// Get the production helper for this widget
+//	BuildVersionProductionHelper h = (BuildVersionProductionHelper) helper;
+//	XData data = h.getData(jh);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%>>
+	<span class="wbdRichText">
+		<p>v <%=BcCache.getProperty("version") %> Build <%=BcCache.getProperty("build") %></p>
+	</span>
+	
+</div>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@64 (type=tooltwist.skypepi.widgets.BuildVersionWidget)", e);
+}
+%>
+</td>
  </tr>
  <tr>
   <td ></td>
@@ -2948,7 +2985,13 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 		
 		savePreferredContact: function() {
 			Progress.showProgress();
+			
+			 if (!MyDetails.validatePreferredContact()) {
+				 return false;
+			 }
+			
 			var contactMethod = jQuery("#contactMethod").val();
+			
 			var marketingPref = "";
 			
 			var primaryName = "isPrimaryRadioButtonEmailAddresses";
@@ -2984,11 +3027,53 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 				},
 				success: function(data) {
 				  $("#pId").text(data);
-				  $('#modal-alert').modal();
 				  Progress.hideProgress();
+				  $('#modal-alert').modal();
 				}
 			});
 			$("#btnCancelSave").click();
+		},
+		
+		validatePreferredContact : function() {
+
+			var contactMethod = jQuery("#contactMethod").val();
+			
+			if (contactMethod == "Post") {
+				if ($("input[name='isPrimaryRadioButtonAddress']:checked").length == 0) {
+					Progress.hideProgress();
+					Progress.alertMessage("Contact Preferences", "You must set your primary address to be able to continue.");
+					return false;
+				}
+			} else if (contactMethod == "Phone") {
+				if ($("input[name='isPrimaryRadioButtonPhoneNumbers']:checked").length == 0) {
+					Progress.hideProgress();
+					Progress.alertMessage("Contact Preferences", "You must set your primary phone number to be able to continue.");
+					return false;
+				}
+			} else if (contactMethod == "Email") {
+				if ($("input[name='isPrimaryRadioButtonEmailAddresses']:checked").length == 0) {
+					Progress.hideProgress();
+					Progress.alertMessage("Contact Preferences", "You must set your primary email to be able to continue.");
+					return false;
+				}
+			} else if (contactMethod == "SMS") {
+				var hasMobile = false;
+				$(".phoneType").each(function() {
+					if ($(this).val() == "Mobile") {
+						if (!hasMobile) {
+							hasMobile = true;
+						}
+					}
+				});
+				
+				if (!hasMobile) {
+					Progress.hideProgress();
+					Progress.alertMessage("Contact Preferences", "You must have at least one \"Mobile\" phone type from your phone number list to be able to continue.");
+					return false;
+				}
+			}
+			
+			return true;
 		},
 		
 		saveConfirmation: function(){
@@ -4003,9 +4088,8 @@ var Progress = function() {
 		},
 		
 		hideProgress: function() {
-			$(".modal, .fade").hide();
-			$("body").removeClass("modal-open");
-			console.log("hideProgress");
+			var $modal = $('.modal');
+			$modal.modal('hide'); //start hiding
 		},
 		
 		alertMessage: function(title, msg) {

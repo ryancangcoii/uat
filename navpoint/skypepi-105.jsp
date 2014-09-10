@@ -942,7 +942,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/n/Home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1735,8 +1735,11 @@ var Progress = function() {
 		},
 		
 		hideProgress: function() {
-			var $modal = $('.modal');
-			$modal.modal('hide'); //start hiding
+//			var $modal = $('.modal');
+//			$modal.modal('hide'); //start hiding
+			$(".modal, .fade").hide();
+			$("body").removeClass("modal-open");
+			console.log("hideProgress");
 		},
 		
 		alertMessage: function(title, msg) {

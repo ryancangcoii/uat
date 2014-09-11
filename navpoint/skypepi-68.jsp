@@ -3471,7 +3471,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 			else if ($.trim(number).length < 5) {
 				msg = "The Phone Number is too short.";
 			}
-			else if ($.trim(number).length > 10) {
+			else if ($.trim(number).length > 11) {
 				msg = "The Phone Number is too long. ";
 			}
 			

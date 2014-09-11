@@ -1555,13 +1555,13 @@ try {
 											<td class="add_space_left body-text" style="padding-bottom: 10px;">
 												<select name="pay_method" class="frmselect form-control" style="width: 280px;">
 					                                <option value="100000000000"><%=lang.getString("Credit Card", null, "") %></option>
-					                                <option value="010000000000"><%=lang.getString("By bank transfer", null, "") %></option>
+					                                <%-- <option value="010000000000"><%=lang.getString("By bank transfer", null, "") %></option>
 					                                <option value="001000000000"><%=lang.getString("Virtual account", null, "") %></option>
 					                                <option value="000100000000"><%=lang.getString("Point", null, "") %></option>
 					                                <option value="000010000000"><%=lang.getString("Cellular phone", null, "") %></option>
 					                                <option value="000000001000"><%=lang.getString("Gift Certificates", null, "") %></option>
 					                                <option value="000000000010"><%=lang.getString("ARS", null, "") %></option>
-					                                <option value="111000000000"><%=lang.getString("Credit card / bank account transfer / virtual account", null, "") %></option>
+					                                <option value="111000000000"><%=lang.getString("Credit card / bank account transfer / virtual account", null, "") %></option>--%>
 					                            </select>
 											</td>
 										</tr>

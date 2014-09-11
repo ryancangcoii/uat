@@ -1265,6 +1265,7 @@ try {
 			<input type="hidden" id="defaultOption" value="<%=snippetVar_settingType.equals(DataBlockUtil.SETTING_TYPE_PAYMENT_GATEWAY)?"Please select payment gateway":"Please select environment setting"%>" />
 			<input type="hidden" id="op" name="op" value="skypepi_widgets.paymentSettings.paymentSettings" />
 			<input type="hidden" id="subop" name="subop" value="savePortalSitePaymentGateway" />
+			<input type="hidden" id="settingType" name="settingType" value="<%=h.getSettingType()%>" />
 			<div id="paymentGatewayInner">
 				<% int ctr = 1; %>
 				<% if (sitePaymentGateways.getNumNodes() > 0) { %>

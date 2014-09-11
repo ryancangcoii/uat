@@ -2036,14 +2036,12 @@ try {
 					<tr class="<%=classTag %>" id="phoneNumberEditContainer<%=phoneNumbersCnt %>" style="display: none;">
 						<td colspan="4">
 							<div class="row">
-									<div class="control-label col-md-2"><%=lang.getString("Number", null, "") %>:</div>
-										<div class="col-md-10">
+									<div class="control-label col-md-1"><%=lang.getString("Number", null, "") %>:</div>
+										<div class="col-md-4">
 											<input id="number<%=id %>" name="number<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=number %>" />
 										</div>
-										</div>
-                                        <div class="row">
 								<div class="control-label col-md-2"><%=lang.getString("Phone Type", null, "") %>:</div>
-										<div class="col-md-10">
+										<div class="col-md-4">
 											<select id="phoneType<%=id %>" name="phoneType<%=id %>" class="form-control phoneType" style="width: 280px;">
 												<option value="Home" <%="Home".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Home", null, "") %></option>
 												<option value="Office" <%="Office".equals(phoneType) ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
@@ -2179,18 +2177,17 @@ try {
 					<tr class="<%=classTag %>" id="emailAddressEditContainer<%=emailAddressesCnt %>" style="display: none;">
 						<td colspan="4" valign="top">
 							<div class="row">
-									<div class="control-label col-md-2"><%=lang.getString("Email", null, "") %>:</div>
-									<div class="col-md-10"><input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>" /></div>
-</div>
-<div class="row">
-									<div class="control-label col-md-2"><%=lang.getString("Email Type", null, "") %>:</div>
-									<div class="col-md-10"><select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
+									<div class="control-label col-md-1"><%=lang.getString("Email", null, "") %>:</div>
+									<div class="col-md-4"><input id="emailAdd<%=id %>" name="emailAdd<%=id %>" class="form-control" type="text" autocomplete="off" value="<%=emailAdd %>" /></div>
+
+					<div class="control-label col-md-2"><%=lang.getString("Email Type", null, "") %>:</div>
+									<div class="col-md-3"><select id="emailType<%=id %>" name="emailType<%=id %>" style="width: 280px;" class="form-control">
 											<option <%=emailType.equals("Personal") ? "selected" : "" %>><%=lang.getString("Personal", null, "") %></option>
 											<option <%=emailType.equals("Office") ? "selected" : "" %>><%=lang.getString("Office", null, "") %></option>
 											<option <%=emailType.equals("Temporary") ? "selected" : "" %>><%=lang.getString("Temporary", null, "") %></option>
 											<option <%=emailType.equals("Other") ? "selected" : "" %>><%=lang.getString("Other", null, "") %></option>
 									</select></div>
-                    </div>
+									</div>
                     <table width="100%">
                  		<tr>
 									<td colspan="2" align="right">

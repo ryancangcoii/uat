@@ -1479,6 +1479,7 @@ div.media, div.media > iframe {
 }
 div.media {
 	margin-top: 0px;
+	height: 910px !important;
 } 
 .cocAccept td {
 	padding: 10px;

@@ -239,14 +239,25 @@ try {
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-
-
-<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- 
- <!--  Create a fluid-->
- <!-- <div class="container-fluid" -->
- 
-<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+  
+  	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-29XL');</script>
+	<!-- End Google Tag Manager -->
+  	
+	
+	
+	<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
+	 
+	 <!--  Create a fluid-->
+	 <!-- <div class="container-fluid" -->
+	 
+	<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
@@ -1182,7 +1193,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/View-Receipt/skypepi-76";
+	String snippetVar_navpointId = "/ttsvr/n/myCurrentEnrolment/skypepi-69";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -1644,7 +1655,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
-	String snippetVar_currentNavpoint = "skypepi-76";
+	String snippetVar_currentNavpoint = "skypepi-69";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_widgetName = "@54";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@54";

@@ -228,14 +228,25 @@ try {
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-
-
-<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- 
- <!--  Create a fluid-->
- <!-- <div class="container-fluid" -->
- 
-<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+  
+  	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-29XL');</script>
+	<!-- End Google Tag Manager -->
+  	
+	
+	
+	<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
+	 
+	 <!--  Create a fluid-->
+	 <!-- <div class="container-fluid" -->
+	 
+	<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
@@ -1265,6 +1276,7 @@ try {
 			<input type="hidden" id="defaultOption" value="<%=snippetVar_settingType.equals(DataBlockUtil.SETTING_TYPE_PAYMENT_GATEWAY)?"Please select payment gateway":"Please select environment setting"%>" />
 			<input type="hidden" id="op" name="op" value="skypepi_widgets.paymentSettings.paymentSettings" />
 			<input type="hidden" id="subop" name="subop" value="savePortalSitePaymentGateway" />
+			<input type="hidden" id="settingType" name="settingType" value="<%=h.getSettingType()%>" />
 			<div id="paymentGatewayInner">
 				<% int ctr = 1; %>
 				<% if (sitePaymentGateways.getNumNodes() > 0) { %>

@@ -1495,7 +1495,7 @@ try {
 		grossAmount = h.getTotalAmount() + "";
 	}
 	else if(enrolments.size() <= 0) {
-		transactionDetailPayments = transactCollection.getTransactionDetailsPayment(id, feeSelections, "");
+		transactionDetailPayments = transactCollection.getTransactionDetailsPayment(id, feeSelections, "", request);
 		grossAmount = transactionDetailPayments.getGrossAmount();
 		amount = transactionDetailPayments.getAmount();
 	}

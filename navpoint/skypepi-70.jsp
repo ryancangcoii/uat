@@ -1537,7 +1537,7 @@ try {
 							<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
 								<span class="body-text"><%=lang.getString("View Receipt", null, "") %></span></a>
 						</span>
-						<%if (dt.after(dtTo)) { %>
+						<%if (dt.after(dtTo) && 1==2) { %>
 						<br />
 						<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 						<span class="regular-link-underline-light-blue">

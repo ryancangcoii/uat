@@ -171,7 +171,6 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" href="/ttsvr/favicon.ico" type="image/x-icon">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -240,14 +239,25 @@ try {
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-
-
-<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
- 
- <!--  Create a fluid-->
- <!-- <div class="container-fluid" -->
- 
-<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+  
+  	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-29XL');</script>
+	<!-- End Google Tag Manager -->
+  	
+	
+	
+	<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
+	 
+	 <!--  Create a fluid-->
+	 <!-- <div class="container-fluid" -->
+	 
+	<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
@@ -1007,7 +1017,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
-<% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
+<% if (h.isLogged()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
@@ -1031,7 +1041,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
-<% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
+<% if (h.isLogged()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
@@ -1560,12 +1570,18 @@ try {
 																	<% isDisplayed = true; %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																	<span class="regular-link-underline-light-blue">
-																		<a class="lnk-timetable" href="#" streamId="<%=streamID %>" link="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>" >
+																		<a href="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>">
 																			<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
 																	</span>
 																<%-- <% } %> --%>
 																<%-- <% if (attendance.size() > 0) { %> --%>
-<%-- 																	
+																	<% if (isDisplayed) {  %><br /><% } %>
+																	<% isDisplayed = true; %>
+																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
+																	<span class="regular-link-underline-light-blue">
+																		<a class="" href="<%=snippetVar_viewAttendanceNavpoint%>?enrolmentId=<%=enrolmentId %>">
+																			<span class="body-text"><%=lang.getString("View Attendance Records", null, "") %></span></a>
+																	</span>
 																<%-- <% } %> --%>
 																<%-- <% if (receipts.size() > 0) { %> --%>
 																	<% if (isDisplayed) {  %><br /><% } %>
@@ -1693,7 +1709,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
-<% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
+<% if (h.isLogged()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
@@ -1717,7 +1733,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myDetails/skypepi-68"><%=h.getAltLang().getString("myDetails",null,"") %></a></li>
 				<li class="active"><a href="/ttsvr/n/myCurrentEnrolment/skypepi-69"><%=h.getAltLang().getString("myCurrentEnrolment",null,"") %></a><span></span></li>
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
-<% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
+<% if (h.isLogged()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
@@ -2098,38 +2114,10 @@ var BookingsWidget = function() {
 					
 					
 			});
-			
-			jQuery(".lnk-timetable").click(function() {
-				var streamId = jQuery(this).attr("streamId");
-				var link = jQuery(this).attr("link");
-				BookingsWidget.checkTimeTableCount(streamId, link);
-			});
 		},
 		
 		myMethod: function() {
 			alert("BookingsWidget.myMethod()");
-		},
-		
-		checkTimeTableCount : function(streamId, link) {
-			
-			$.ajax({
-				url:location.href,
-				data: {
-					op: "skypepi_widgets.myCurrentEnrolment.myCurrentEnrolment",
-					subop: "getTimeTable",
-					streamId:streamId
-				},
-				success: function(data) {
-					
-					if (data.data == "true") {
-						window.location.href = link;
-					}
-					else {
-						Progress.alertMessage("Timetable", "Timetable not yet available for the selected class.");
-					}
-
-	            }
-			});
 		}
 		// no comma after last method
 	};

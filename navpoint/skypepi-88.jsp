@@ -1252,14 +1252,12 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_viewMarksAndGradesProgession_14;
 	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
-	String snippetVar_navpointId = "skypepi-88";
 	String snippetVar_widgetName = "@14";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_viewMarksAndGradesProgession@14";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="tooltwist.skypepi.util.BcCache"%>
 <%@page import="com.dinaa.misc.AltLang"%>
@@ -1335,13 +1333,8 @@ div.media {
 							String requestURI = request.getRequestURI();
 							int end = requestURL.indexOf(requestURI);
 							requestURL = requestURL.substring(0, end);
-							
-							String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
-							String selector = WebUtil.getSiteSelector(request);
-							String navLink = selector + "/n/" + snippetVar_navpointId;
-							
 							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
-							String encodedURL = navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
+							String encodedURL = "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
 							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
 							%>
 							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>

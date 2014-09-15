@@ -1570,7 +1570,7 @@ try {
 																	<% isDisplayed = true; %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																	<span class="regular-link-underline-light-blue">
-																		<a class="lnk-timetable" href="#" streamId="<%=streamID %>" link="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>">
+																		<a class="lnk-timetable" href="#" streamId="<%=streamID %>" link="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>" >
 																			<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
 																	</span>
 																<%-- <% } %> --%>

@@ -1570,18 +1570,12 @@ try {
 																	<% isDisplayed = true; %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 																	<span class="regular-link-underline-light-blue">
-																		<a href="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>">
+																		<a class="lnk-timetable" href="#" streamId="<%=streamID %>" link="<%=snippetVar_viewTimetableNavpoint%>?streamId=<%=streamID %>" >
 																			<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
 																	</span>
 																<%-- <% } %> --%>
 																<%-- <% if (attendance.size() > 0) { %> --%>
-																	<% if (isDisplayed) {  %><br /><% } %>
-																	<% isDisplayed = true; %>
-																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
-																	<span class="regular-link-underline-light-blue">
-																		<a class="" href="<%=snippetVar_viewAttendanceNavpoint%>?enrolmentId=<%=enrolmentId %>">
-																			<span class="body-text"><%=lang.getString("View Attendance Records", null, "") %></span></a>
-																	</span>
+<%-- 																	
 																<%-- <% } %> --%>
 																<%-- <% if (receipts.size() > 0) { %> --%>
 																	<% if (isDisplayed) {  %><br /><% } %>
@@ -2114,10 +2108,38 @@ var BookingsWidget = function() {
 					
 					
 			});
+			
+			jQuery(".lnk-timetable").click(function() {
+				var streamId = jQuery(this).attr("streamId");
+				var link = jQuery(this).attr("link");
+				BookingsWidget.checkTimeTableCount(streamId, link);
+			});
 		},
 		
 		myMethod: function() {
 			alert("BookingsWidget.myMethod()");
+		},
+		
+		checkTimeTableCount : function(streamId, link) {
+			
+			$.ajax({
+				url:location.href,
+				data: {
+					op: "skypepi_widgets.myCurrentEnrolment.myCurrentEnrolment",
+					subop: "getTimeTable",
+					streamId:streamId
+				},
+				success: function(data) {
+					
+					if (data.data == "true") {
+						window.location.href = link;
+					}
+					else {
+						Progress.alertMessage("Timetable", "Timetable not yet available for the selected class.");
+					}
+
+	            }
+			});
 		}
 		// no comma after last method
 	};

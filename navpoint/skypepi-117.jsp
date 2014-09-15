@@ -121,6 +121,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13Params = new Properties();
+	productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13Params.setProperty("navpointId", "/ttsvr/n/Payment-Receipt-Preview/skypepi-117");
 	productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13Params.setProperty("viewReceipts", "/ttsvr/n/myOnlineBooking/skypepi-72");
 	productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13 = new tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13Params);
 	productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13.callPreFetch(jh);
@@ -1434,6 +1435,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_paymentReceiptPreview_13;
 	String snippetVar_viewReceipts = "/ttsvr/n/myOnlineBooking/skypepi-72";
+	String snippetVar_navpointId = "/ttsvr/n/Payment-Receipt-Preview/skypepi-117";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_paymentReceiptPreview@13";
 	String snippetVar_elementId = "";
@@ -1512,7 +1514,7 @@ try {
 									int end = requestURL.indexOf(requestURI);
 									requestURL = requestURL.substring(0, end);
 									String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
-									String encodedURL = "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=";
+									String encodedURL = snippetVar_navpointId + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=";
 									encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8");
 								%>
 								<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 860px; width: 100%; border: none;"></iframe>

@@ -307,10 +307,10 @@ th.headerSortDown {
 .SimpleDiv .someClass {
 }</style>
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/script/jquery_ui_1.8.22/base/jquery.ui.all.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/paging.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvrnull" media="screen" />
 <script src="/ttsvr/blog/script/jquery_ui_1.8.22/jquery-ui.custom.min.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/paging.js" type="text/javascript"></script>
 

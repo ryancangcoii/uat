@@ -171,6 +171,7 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="/ttsvr/favicon.ico" type="image/x-icon">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -236,25 +237,14 @@ try {
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-  
-  	<!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-29XL');</script>
-	<!-- End Google Tag Manager -->
-  	
-	
-	
-	<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
-	 
-	 <!--  Create a fluid-->
-	 <!-- <div class="container-fluid" -->
-	 
-	<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+
+
+<!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
+ 
+ <!--  Create a fluid-->
+ <!-- <div class="container-fluid" -->
+ 
+<table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
@@ -1430,12 +1420,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13;
 	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
+	String snippetVar_navpointId = "skypepi-121";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_myMarksAndGrades@13";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="tooltwist.skypepi.util.BcCache"%>
 <%@page import="com.dinaa.misc.AltLang"%>
@@ -1511,8 +1503,13 @@ div.media {
 							String requestURI = request.getRequestURI();
 							int end = requestURL.indexOf(requestURI);
 							requestURL = requestURL.substring(0, end);
+							
+							String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
+							String selector = WebUtil.getSiteSelector(request);
+							String navLink = selector + "/n/" + snippetVar_navpointId;
+							
 							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
-							String encodedURL = "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
+							String encodedURL = navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
 							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
 							%>
 							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>

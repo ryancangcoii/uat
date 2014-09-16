@@ -93,8 +93,8 @@ try {
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavPointId", "");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("viewOption", "Student Dashboard Link");
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-67");
-	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("studentDashBoardNavId", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params.setProperty("homeNavId", "/ttsvr/MISSING_LINK/skypepi-94");
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_headerNonRespo_48Params);
 	productionHelper_skypepi_zones_portal_z_headerNonRespo_48.callPreFetch(jh);
 } catch (Exception e) {
@@ -185,9 +185,9 @@ a:hover {
 
 .SimpleDiv .someClass {
 }</style>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
 
 </head> 
 <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="wbd body-production"> 
@@ -198,10 +198,34 @@ a:hover {
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'></td>
- </tr>
- <tr>
-  <td ></td>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_headerNonRespo@50 (type=tooltwist.skypepi.widgets.LibraryImporterWidget) --%>
+<%
+try {
+	String snippetVar_widgetName = "@50";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_headerNonRespo@50";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.LibraryImporterProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%> class="LibraryImporter">
+</div>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_headerNonRespo@50 (type=tooltwist.skypepi.widgets.LibraryImporterWidget)", e);
+}
+%>
+</td>
  </tr>
  <tr>
   <td  class='userInfo' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
@@ -874,8 +898,8 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_headerNonRespo_48;
 	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-67";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-67";
+	String snippetVar_homeNavId = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
 	String snippetVar_navpointId = "/ttsvr/n/View-Marks-and-Grades/skypepi-88";
@@ -1252,12 +1276,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_viewMarksAndGradesProgession_14;
 	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
+	String snippetVar_navpointId = "skypepi-88";
 	String snippetVar_widgetName = "@14";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_viewMarksAndGradesProgession@14";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
 <%@page import="java.net.URLEncoder"%>
 <%@page import="tooltwist.skypepi.util.BcCache"%>
 <%@page import="com.dinaa.misc.AltLang"%>
@@ -1333,8 +1359,13 @@ div.media {
 							String requestURI = request.getRequestURI();
 							int end = requestURL.indexOf(requestURI);
 							requestURL = requestURL.substring(0, end);
+							
+							String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
+							String selector = WebUtil.getSiteSelector(request);
+							String navLink = selector + "/n/" + snippetVar_navpointId;
+							
 							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
-							String encodedURL = "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
+							String encodedURL = navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
 							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
 							%>
 							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>

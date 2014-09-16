@@ -1,0 +1,452 @@
+html { 
+	font-family: Helvetica, sans-serif;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+}
+
+/* HEADER and HEADING TEXT CSS test */
+.heading {
+	font-size: 24px;
+}
+.sub-heading {
+	font-size: 18px;
+}
+
+.header {
+	font-size: 22px;
+}
+.sub-header {
+	font-size: 16px;
+}
+
+.btn {
+	border-radius: 0px !important;
+}
+
+.btn-primary {
+  background-color: #00a3e4 !important;
+}
+
+/* BODY TEXT and HEADING CSS */
+.body-text {
+	font-size: 13px;
+}
+.sub-body-text {
+	font-size: 10px;
+}
+body-text-heading {
+	font-size: 15px;
+}
+
+/* COLOR CSS */
+.color-regular {
+	color: #666666;
+}
+.color-blue {
+	color: #0F71AF;
+}
+.color-light-blue {
+	color: #12A6C3;
+}
+.color-red {
+	color: #FF0000;
+}
+.color-white {
+	color: #FFFFFF;
+}
+
+/* REGULAR BLUE LINK CSS */
+.regular-link-blue a, regular-link-blue a:active, regular-link-blue a:hover, regular-link-blue a:visited {
+	text-decoration: none;
+	color: #0F71AF;
+}
+.regular-link-underline-blue a, regular-link-underline-blue a:active, regular-link-underline-blue a:hover, regular-link-underline-blue a:visited {
+	text-decoration: underline;
+	color: #0F71AF;
+}
+
+/* REGULAR LIGHT-BLUE LINK CSS */
+.regular-link-light-blue a, regular-link-light-blue a:active, regular-link-light-blue a:hover, regular-link-light-blue a:visited {
+	text-decoration: none;
+	color: #12A6C3;
+}
+
+.regular-link-underline-light-blue a, regular-link-underline-light-blue a:active, regular-link-underline-light-blue a:hover, regular-link-underline-light-blue a:visited {
+	text-decoration: underline;
+	color: #12A6C3;
+}
+
+/* REGULAR GRAY LINK CSS */
+.regular-link-gray a, regular-link-gray a:hover, regular-link-gray a:visited {
+	text-decoration: underline;
+	color: #666666;
+}
+.regular-link-gray a:active {
+	text-decoration: none;
+	color: #666666;
+}
+
+/* DROPDOWN CSS */
+.form-dropdown {
+	padding: 3px;
+}
+
+/* TEXTFIELD CSS */
+.form-input-small {
+    border: 0;
+	height: 30px;
+    width: 100px;
+   	background: transparent;
+    font-size: 12px;
+    padding: 6px;
+}
+.form-input-small-container {
+	background:url('/ttsvr/skypepi/images/textbox-small.png')  no-repeat top left;
+	height: 31px;
+    width: 100px;
+}
+
+.form-input-medium {
+    border: 0;
+	height: 30px;
+    width: 280px;
+   	background: transparent;
+    font-size: 12px;
+    padding: 6px;
+}
+.form-input-medium-container {
+	background:url('/ttsvr/skypepi/images/textbox-medium.png')  no-repeat top left;
+	height: 31px;
+    width: 280px;
+}
+
+.form-input-large {
+    border: 0;
+	height: 30px;
+    width: 360px;
+   	background: transparent;
+    font-size: 12px;
+    padding: 6px;
+}
+.form-input-large-container {
+	background:url('/ttsvr/skypepi/images/textbox-large.png')  no-repeat top left;
+	height: 31px;
+    width: 360px;
+}
+
+
+/* TEXTAREA CSS */
+.textarea-medium-container {
+	background:url('/ttsvr/skypepi/images/medium-textarea.png')  no-repeat top left;
+	height: 100px;
+    width: 280px;
+}
+.textarea-medium {
+	border: 0;
+	height: 99px;
+    width: 280px;
+   	background: transparent;
+    font-size: 14px;
+    padding: 6px;
+}
+
+.textarea-large-container {
+	background:url('/ttsvr/skypepi/images/large-textarea.png')  no-repeat top left;
+	height: 100px;
+    width: 360px;
+}
+.textarea-large {
+	border: 0;
+	height: 99px;
+    width: 360px;
+   	background: transparent;
+    font-size: 14px;
+    padding: 6px;
+}
+
+
+/* CSS LIST FOR COURSE CATEGORY and COURSE TYPE */
+.list-gray-bg {
+	background-color: #DADADA;
+}
+.list-gray-bg td {
+	padding: 10px;
+}
+.list-light-gray-bg {
+	background-color: #F3F3F3;
+}
+.list-light-gray-bg td {
+	padding: 10px;
+}
+
+/* LINE SEPARATOR CSS */
+.line-separator {
+	background:url('/ttsvr/skypepi/images/gray-line.png')  repeat;
+}
+
+/* SEPARATOR WIDTH */
+.separator {
+	width: 10px;
+}
+
+/* CURSOR POINTER CSS */
+.cursor-pointer {
+	cursor: pointer;
+}
+
+/* SELECT DROPDOWN MEDIUM CSS */
+.medium-dropdown {
+	width: 200px;
+}
+
+/* ROUNDED CORNER CSS USING IMAGE */
+.roundcont {
+	width: 100%;
+	background-color: #F3F3F3;
+	color: #FFFFFF;
+}
+.roundcont p {
+	margin: 0 10px;
+}
+.roundtop { 
+	background: url(/ttsvr/skypepi/images/skypepi_brtr.png) no-repeat top right; 
+}
+.roundbottom {
+	background: url(/ttsvr/skypepi/images/skypepi_brbr.png) no-repeat top right; 
+}
+img.corner {
+   width: 8px;
+   height: 8px;
+   border: none;
+   display: block  !important;
+}
+
+/* TABLE LIST CSS */
+
+.table-heading {
+	font-size: 15px;
+}
+.table-header {
+	font-size: 14px;
+}
+
+.table-header .number {
+	text-align: right;
+}
+
+.column-text {
+	text-align: left;
+}
+
+.column-amount {
+	text-align: right !important;
+}
+
+.column-date {
+	text-align: center;
+}
+
+.table-data {
+	font-size: 13px;
+}
+.table-list {
+	border: 1px solid #CCCCCC;
+}
+
+.table-list-regular {
+	border: 1px solid #CCCCCC;
+	width: 910px;
+}
+
+.table-list-content {
+	width: 100%;
+}
+
+.list-header {
+	background-color: #CBCBCB;
+}
+.list-header td {
+	padding: 8px;
+}
+
+.list-odd-item {
+	background-color: #EAEAEA;
+}
+.list-odd-item td {
+	padding: 8px;
+}
+
+.list-even-item {
+	background-color: #DFDFDF;
+}
+.list-even-item td {
+	padding: 8px;
+}
+
+
+/* LOGIN CONTAINER CSS */
+.login-container {
+	width: 300px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* ENQUIRY CONTAINER CSS */
+.enquiry-container {
+	width: 300px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* COURSE NAVIGATOR CONTAINER CSS */
+.courseNavigator-container {
+	width: 910px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* COURSE DETAILS CONTAINER CSS */
+.courseDetails-container {
+	width: 910px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.student-container {
+	width: 740px;
+}
+
+/* STUDENT FEES CONTAINER CSS */
+.studentFees-container {
+	width: 740px;
+}
+
+/* STUDENT FUNCTIONS CONTAINER CSS */
+.studentFunctions-container {
+	width: 180px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* FORGOT PASSWORD CONTAINER CSS */
+.forgotPassword-container {
+	width: 500px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Pagination CSS */
+.pagination a:link { font-family: Arial; font-size: 12px; color: #636363; background: none repeat scroll 0 0 #F8FAFB; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+.pagination a:visited { font-family: Arial; font-size: 12px; color: #636363; background: none repeat scroll 0 0 #F8FAFB; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+.pagination a:active { font-family: Arial; font-size: 12px; color: #636363; background: none repeat scroll 0 0 #F8FAFB; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+.pagination a:hover { font-family: Arial; font-size: 12px; color: #636363; background: none repeat scroll 0 0 #EAEAEA; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+
+.paginationSelected a:link { font-family: Arial; font-weight: bold; font-size: 12px; color: #FFFFFF; background: none repeat scroll 0 0 #0066A0; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+.paginationSelected a:visited { font-family: Arial; font-weight: bold; font-size: 12px; color: #FFFFFF; background: none repeat scroll 0 0 #0066A0; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+.paginationSelected a:active { font-family: Arial; font-weight: bold; font-size: 12px; color: #FFFFFF; background: none repeat scroll 0 0 #0066A0; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+.paginationSelected a:hover { font-family: Arial; font-weight: bold; font-size: 12px; color: #FFFFFF; background: none repeat scroll 0 0 #0066A0; border: 1px solid #CBCBCB; padding: 2px 8px; cursor: pointer; text-decoration: none; }
+
+/* mainMenu container css */
+.mainMenu-container {
+	background-color: #7B7B7B;
+	width: 960px;
+}
+
+/* main menu link CSS */
+.menu-link a:link { color: #FFFFFF; cursor: pointer; text-decoration: none; }
+.menu-link a:visited { color: #FFFFFF; cursor: pointer; text-decoration: none; }
+.menu-link a:active { color: #FFFFFF; cursor: pointer; text-decoration: none; }
+.menu-link a:hover { color: #FFFFFF; cursor: pointer; text-decoration: none; }
+
+.menu-item {
+	height: 46px;
+	background-color: #7B7B7B;
+}
+
+.menu-item-selected {
+	background-color: #186A9F;
+	height: 46px;
+}
+ .button_l {
+	background:url("/ttsvr/cropImage/skypepi.images.skypepi_button_l.png") no-repeat right;	
+	height:30px;
+	width: 6px;l
+}
+
+ .button_m {
+	background:url("/ttsvr/cropImage/skypepi.images.skypepi_button_m.png") repeat-x;
+	height:30px;
+	text-align:center;
+}
+ .button_m a {
+	display:block;
+	width:auto;
+	line-height:30px;
+	text-decoration:none;
+	text-transform:capitalize;
+	font-size:13px;
+	height:30px;
+	outline:none;
+	padding:0 4px 0 4px;
+	color:#FFF;
+	text-shadow:-2 -2 #039;
+}
+
+ .button_r {
+	background:url("/ttsvr/cropImage/skypepi.images.skypepi_button_r.png") no-repeat left;	
+	height:30px;
+	width: 11px;
+}
+
+ .button_black_l {
+	background:url("/ttsvr/skypepi/images/logout-left.png") no-repeat right;	
+	height:23px;
+	width: 6px;
+}
+
+ .button_black_m {
+	background:url("/ttsvr/skypepi/images/logout-repeat.png") repeat-x;
+	height:23px;
+	text-align:center;
+}
+ .button_black_m a {
+	display:block;
+	width:auto;
+	line-height:23px;
+	text-decoration:none;
+	text-transform:capitalize;
+	font-size:13px;
+	height:23px;
+	outline:none;
+	padding:0 4px 0 4px;
+	color:#FFF;
+	text-shadow:-2 -2 #039;
+}
+
+ .button_black_r {
+	background:url("/ttsvr/skypepi/images/logout-right.png") no-repeat left;	
+	height:23px;
+	width: 8px;
+}
+
+/* ---- */
+.cocContent {
+	overflow: auto; width: 100%; 
+	height: 400px;
+	color: white;
+}
+
+.cocAccept {
+	width: 100%;
+	color: white;
+}
+
+/* ---- */
+
+
+.modal-backdrop.in {
+opacity: 0.5 !important;
+filter: alpha(opacity=50) !important;
+}

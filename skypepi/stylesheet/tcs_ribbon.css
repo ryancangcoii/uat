@@ -40,14 +40,12 @@
 	z-index: 0;
 	text-align: center;
 	color: #fff;
-	behavior: url(PIE.htc);
 }
 
 .tsc_ribbon_wrap .ribbon-wrap > span {
 	display: block;
 	height: 100%;
 	position: relative;
-	behavior: url(PIE.htc);
 	-pie-watch-ancestors: 1;
 }
 
@@ -617,7 +615,6 @@
 	-moz-border-radius:   3px 3px 0 0;
 	-webkit-border-radius:3px 3px 0 0;
 	border-radius:        3px 3px 0 0;
-	behavior:url(PIE.htc);
 }
 
 .tsc_ribbon_hang.ie8 .ribbon-bookmark {
@@ -630,7 +627,6 @@
 	-moz-border-radius:   3px 3px 0 0;
 	-webkit-border-radius:3px 3px 0 0;
 	border-radius:        3px 3px 0 0;
-	behavior:url(PIE.htc);
 	-pie-watch-ancestors:1;
 }
 
@@ -852,14 +848,12 @@
 	width:320px;
 	height:40px;
 	line-height:40px;	
-	behavior:url(PIE.htc);
 }
 
 .tsc_ribbon_banner .ribbon-banner > span {
 	display:block;
 	position:relative;
 	height:100%;
-	behavior:url(PIE.htc);
 	-pie-watch-ancestors:1;
 }
 

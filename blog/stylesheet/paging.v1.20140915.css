@@ -1,0 +1,105 @@
+.pg-normal {
+	color: black;
+	font-weight: normal;
+	text-decoration: none;
+	cursor: pointer;
+}
+.pg-normal:HOVER {
+	color: orange;
+}
+.pg-selected {
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.txt_font, .tblnavi {
+	color: #5c5c5c;
+	font-family: "Arial";
+	font-size: 11px;
+}
+.navi_font{
+	padding: 3px 10px 3px 10px;
+	text-align: center;
+	cursor: pointer;
+}
+td.navi_font:HOVER {
+	background: #ddd;
+	color: black;
+}
+.navi_font_selected{
+	background: #E3E3E3;
+	color: white;
+	font-family: "Arial";
+	font-size: 11px;
+	padding: 3px 10px 3px 10px;
+	text-align: center;
+	font-weight: bold;
+}
+.divnavi {
+	padding-top: 5px;
+}
+
+/*****************=Pagination**************/
+div.pagination {
+    padding-top: 12px;
+    /* background: transparent url('/qv/images/pagination-bg.png') repeat-x 0 0; */
+    margin-top: 16px;
+    line-height: 16px;
+}	
+
+div.pagination-rev {
+    background: transparent url('/ttsvr/qv/images/pagination-bg-rev.png') repeat-x 0 0;
+    padding-top: 4px;
+}
+
+div.pagination a.prev {
+     font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
+	background-color: #00a3e4 !important;
+	color: #ffffff !important;
+	font-size: 16px !important;
+	padding: 12px !important;
+	cursor: pointer !important;
+	width:100%;
+}
+
+div.pagination a.next {
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
+	background-color: #00a3e4 !important;
+	color: #ffffff !important;
+	font-size: 16px !important;
+	padding: 12px !important;
+	cursor: pointer !important;
+	width:100%;
+}
+
+div.pagination a.prev.innactive {background-position: 0 6px; color: #999;}
+
+div.pagination a.next.innactive {background-position: right 6px; color: #999;}
+
+div.pagination ul {
+    list-style: none;
+   	margin: -17px 86px;
+    padding: 0;
+    width:100%;
+}
+
+div.pagination ul li {
+    float: left;
+    margin-right: 3px;
+}
+
+div.pagination ul li a {
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
+	color: #00a3e4;
+	font-size: 16px !important;
+	padding: 11px !important;
+	cursor: pointer !important;
+}
+
+div.pagination ul li.current a,
+div.pagination ul li a:hover {
+	border: 1px solid #00a3e4;
+	background-color: #00a3e4 !important;
+	color:#ffffff !important;
+    }

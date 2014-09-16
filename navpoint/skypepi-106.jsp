@@ -260,12 +260,12 @@ span.spanBtnSave,span.spanBtnCancel,span.spanBtnApprove{float: right;margin-left
 .SimpleDiv .someClass {
 }</style>
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/script/jquery-ui-1.11.0/jquery-ui.min.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/blog.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/colorbox.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/blog.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/colorbox.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/tango/skin.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_s_ribbon.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
 <script src="/ttsvr/blog/script/jquery-ui-1.11.0/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery-ui-1.11.0/jquery.ui.datepicker.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery.form.js" type="text/javascript"></script>
@@ -277,6 +277,16 @@ span.spanBtnSave,span.spanBtnCancel,span.spanBtnApprove{float: right;margin-left
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
+  <!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-29XL');</script>
+	<!-- End Google Tag Manager -->
+  
 
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
@@ -290,10 +300,34 @@ span.spanBtnSave,span.spanBtnCancel,span.spanBtnApprove{float: right;margin-left
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'></td>
- </tr>
- <tr>
-  <td ></td>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header_adminHeader@58 (type=tooltwist.skypepi.widgets.LibraryImporterWidget) --%>
+<%
+try {
+	String snippetVar_widgetName = "@58";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@58";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.LibraryImporterProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%> class="LibraryImporter">
+</div>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@58 (type=tooltwist.skypepi.widgets.LibraryImporterWidget)", e);
+}
+%>
+</td>
  </tr>
  <tr>
   <td  class='userInfo' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>

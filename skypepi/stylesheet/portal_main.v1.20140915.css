@@ -1,4 +1,4 @@
-/*
+/* 
  *  Stylesheet
  */
 .change-password {
@@ -46,7 +46,7 @@
 }
 
 .portal-ribbon > div {
-	/*margin-bottom: 40px;*/
+	/*margin-bottom: 40px; test*/
 }
 
 .portal-ribbon > div:last-of-type {

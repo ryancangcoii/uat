@@ -1217,6 +1217,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.misc.StringEncrypter"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
@@ -1300,9 +1301,27 @@ try {
 								<tr class="white removable">
 									<td valign="top"><strong><%=sitePaymentGatewayDetails.getText("label")%></strong> : </td>
 									<td>
+									<%
+										if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("22") || sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("23")){
+											StringEncrypter se = new StringEncrypter();
+											String seValue = "";
+											String strValue = "";
+											strValue = sitePaymentGatewayDetails.getText("value");
+											if(!strValue.equals(""))
+												seValue = se.decrypt(sitePaymentGatewayDetails.getText("value"));
+											else
+												seValue = strValue;
+											%>
+												<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
+												id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
+												value="<%=seValue%>" />
+											<%
+										} else {
+									%>
 										<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
 										id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
 										value="<%=sitePaymentGatewayDetails.getText("value")%>" />
+										<% } %>
 									</td>
 								</tr>
 								<% } %>

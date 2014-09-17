@@ -42,7 +42,7 @@
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params = new Properties();
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params.setProperty("validFileExtension", "pdf");
-	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-94");
+	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params.setProperty("selfPage", "/ttsvr/MISSING_LINK/skypepi-67");
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25 = new tooltwist.blog.productionHelpers.FileUploaderProductionHelper(productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25Params);
 	productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25.callPreFetch(jh);
 } catch (Exception e) {
@@ -275,7 +275,7 @@ div.blog_formbottom_style1 {
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-  <!-- Google Tag Manager -->
+   <!-- Google Tag Manager -->
 	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -284,7 +284,7 @@ div.blog_formbottom_style1 {
 	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-29XL');</script>
 	<!-- End Google Tag Manager -->
-  
+	
 
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
@@ -302,7 +302,7 @@ div.blog_formbottom_style1 {
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_bstrapAnnouncementUpload_25;
 	String snippetVar_validFileExtension = "pdf";
-	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-94";
+	String snippetVar_selfPage = "/ttsvr/MISSING_LINK/skypepi-67";
 	String snippetVar_widgetName = "@25";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_bstrapAnnouncementUpload@25";
 	String snippetVar_elementId = "";
@@ -386,24 +386,18 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 </table>
 
 
-<!--
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
- -->
 
-	<!-- footer for responsivePage -->
-
-<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
-<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
-    <!--
-    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
-    <script src="/ttsvr/bootstrap/js/respond.js"></script>
-    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
-    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
-    -->
+    
+    <script>
+	jQuery(window).on("load resize", function() {
+			var windowHeight = jQuery(window.top).height();
+			var lessHeight = ( jQuery(".navbar").height() + parseInt(jQuery(".navbar").css("margin-bottom")) ) + ( jQuery(".footer").height() + parseInt(jQuery(".footer").css("margin-top")) );
+			
+			console.log(windowHeight+" - "+lessHeight);
+			jQuery("#mainArea").css("min-height", windowHeight-lessHeight);
+		});
+	</script>
+	
   <script type="text/javascript">var FileUploader = function() {
 	return {
 		myVariable: null,

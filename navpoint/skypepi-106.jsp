@@ -135,7 +135,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_40 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("homeNavPointLink", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("menuType", "Header");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("currentNavpoint", "skypepi-106");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params);
@@ -147,7 +147,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("homeNavPointLink", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("menuType", "Footer");
 	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("currentNavpoint", "skypepi-106");
 	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params);
@@ -916,7 +916,7 @@ try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_40;
 	String snippetVar_currentNavpoint = "skypepi-106";
 	String snippetVar_menuType = "Header";
-	String snippetVar_homeNavPointLink = "/ttsvr/n/Home/skypepi-67";
+	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@40";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@40";
 	String snippetVar_elementId = "";
@@ -985,7 +985,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/n/Home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1656,7 +1656,7 @@ try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40;
 	String snippetVar_currentNavpoint = "skypepi-106";
 	String snippetVar_menuType = "Footer";
-	String snippetVar_homeNavPointLink = "/ttsvr/n/Home/skypepi-67";
+	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@40";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@40";
 	String snippetVar_elementId = "";

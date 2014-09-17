@@ -1,0 +1,78 @@
+#TitleBar, #TitleBar2 {
+	background: url("../../qv/images/modalbox/texture-overlay-swirl.png") no-repeat scroll right 0pt, url("../../qv/images/modalbox/texture-overlay.png") repeat-x scroll 0 13px #C4E8FF;
+	border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	-o-border-radius: 3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+	color: #ffffff;
+	font-size: 16px;
+	padding: 8px 0px 8px 12px;
+	font-weight: bold;
+}
+.alertbox {
+	background-color: #fff;
+	min-height: 60px;
+}
+.qv_formbottom_style4 {
+	background-color:#EAF9FF;
+	height:36px;
+	padding:12px 0 0 12px;
+	border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	-o-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	clear: both;
+}
+.qv_cancelbutton {
+    background: url("../../qv-designer/images/qv_images.qv_cancel_button.png") no-repeat scroll 0 0 #EAF9FF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 24px;
+    padding: 0;
+    position: relative;
+    width: 62px;
+}
+.qv_closebutton {
+    background: url("../../qv-designer/images/qv_images.qv_close_button.png") no-repeat scroll 0 0 #EAF9FF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 24px;
+    padding: 0;
+    position: relative;
+    width: 62px;
+}
+#dialog_details {
+    background-color: #EDEDED;
+    border-bottom: 1px solid #A0A0A0;
+    padding: 15px 20px;
+}
+#dialog_message_content {
+    background-color: #FFFFFF;
+    border: 1px solid #DCDCDC;
+    padding: 12px 20px 12px 20px;
+    border-radius: 3px;
+}
+
+#ModalBoxWrap, #DialogMessageWrap, .ui-dialog {
+	border: 0 none !important;
+}
+
+.ui-dialog-titlebar {
+	background: none !important;
+	border: 0 none !important;
+}
+
+#contentBox, #cancelWrapButton {
+	clear: both;
+}
+
+#overlaydiv {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #ffffff;
+	z-index: 99999;
+}

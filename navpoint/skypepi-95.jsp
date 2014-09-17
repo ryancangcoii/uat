@@ -84,8 +84,7 @@ try {
 <!-- <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
 <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
 
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
 <script src="/ttsvr/skypepi/scripts/paging.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,7 +92,7 @@ try {
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-  <!-- Google Tag Manager -->
+   <!-- Google Tag Manager -->
 	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -102,7 +101,7 @@ try {
 	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-29XL');</script>
 	<!-- End Google Tag Manager -->
-  
+	
 
 
 <!--  Provides a common fixed-width (and optionally responsive) layout with only <div class="container"> required. -->
@@ -112,34 +111,7 @@ try {
  
 <table border='0' cellpadding='0' cellspacing='0'  width='960' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><%-- Widget skypepi.pages.portal_p_reportTemplate@5 (type=tooltwist.skypepi.widgets.LibraryImporterWidget) --%>
-<%
-try {
-	String snippetVar_widgetName = "@5";
-	String snippetVar_widgetPath = "skypepi.pages.portal_p_reportTemplate@5";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%--
-<%@page import="tooltwist.skyportal.productionHelpers.LibraryImporterProductionHelper"%>
---%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-
-<!-- ********** INSERT HTML HERE ********** -->
-<div <%=snippetVar_idDefinition%> class="LibraryImporter">
-</div>
-
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_p_reportTemplate@5 (type=tooltwist.skypepi.widgets.LibraryImporterWidget)", e);
-}
-%>
-</td>
+  <td  align='left' valign='top'></td>
  </tr>
  <tr>
   <td ></td>
@@ -243,24 +215,18 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 </table>
 
 
-<!--
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
- -->
 
-	<!-- footer for responsivePage -->
-
-<!--     <script src="/ttsvr/bootstrap/js/jquery-1.10.2.min.js?v=1.10.2"></script> -->
-<!--     <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/cloudmall-v1.0.0.js?v=1.0.0"></script> -->
-<!--     <script src="/ttsvr/cloudmall/js/frontend.config.js"></script> -->
-    <!--
-    <script src="/ttsvr/bootstrap/js/bootstrap-v1.0.0.js?v=1.0.0"></script>
-    <script src="/ttsvr/bootstrap/js/respond.js"></script>
-    <script src="/ttsvr/bootstrap/js/less-1.5.0.min.js"></script>
-    <script src="/ttsvr/cloudmall/js/frontend.config.js"></script>
-    -->
+    
+    <script>
+	jQuery(window).on("load resize", function() {
+			var windowHeight = jQuery(window.top).height();
+			var lessHeight = ( jQuery(".navbar").height() + parseInt(jQuery(".navbar").css("margin-bottom")) ) + ( jQuery(".footer").height() + parseInt(jQuery(".footer").css("margin-top")) );
+			
+			console.log(windowHeight+" - "+lessHeight);
+			jQuery("#mainArea").css("min-height", windowHeight-lessHeight);
+		});
+	</script>
+	
   <script type="text/javascript">var pager;
 function loadData(val) {
 	pager = null;

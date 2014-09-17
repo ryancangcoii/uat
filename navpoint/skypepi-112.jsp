@@ -134,7 +134,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_40 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("homeNavPointLink", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("menuType", "Header");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params.setProperty("currentNavpoint", "skypepi-112");
 	productionHelper_skypepi_zones_portal_z_header_adminHeader_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_40Params);
@@ -146,7 +146,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("homeNavPointLink", "/ttsvr/n/Home/skypepi-67");
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("homeNavPointLink", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("menuType", "Footer");
 	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("currentNavpoint", "skypepi-112");
 	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params);
@@ -868,7 +868,7 @@ try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_40;
 	String snippetVar_currentNavpoint = "skypepi-112";
 	String snippetVar_menuType = "Header";
-	String snippetVar_homeNavPointLink = "/ttsvr/n/Home/skypepi-67";
+	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@40";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@40";
 	String snippetVar_elementId = "";
@@ -937,7 +937,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic' align='left' valign='top'>
-<a href="/ttsvr/n/Home/skypepi-67">
+<a href="/ttsvr/home">
 	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_bcLogoWhite.png" border="0">
 </a>
 </td>
@@ -1217,6 +1217,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.misc.StringEncrypter"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="com.dinaa.data.XData"%>
@@ -1300,9 +1301,27 @@ try {
 								<tr class="white removable">
 									<td valign="top"><strong><%=sitePaymentGatewayDetails.getText("label")%></strong> : </td>
 									<td>
+									<%
+										if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("22") || sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("23")){
+											StringEncrypter se = new StringEncrypter();
+											String seValue = "";
+											String strValue = "";
+											strValue = sitePaymentGatewayDetails.getText("value");
+											if(!strValue.equals(""))
+												seValue = se.decrypt(sitePaymentGatewayDetails.getText("value"));
+											else
+												seValue = strValue;
+											%>
+												<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
+												id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
+												value="<%=seValue%>" />
+											<%
+										} else {
+									%>
 										<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
 										id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
 										value="<%=sitePaymentGatewayDetails.getText("value")%>" />
+										<% } %>
 									</td>
 								</tr>
 								<% } %>
@@ -1363,7 +1382,7 @@ try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40;
 	String snippetVar_currentNavpoint = "skypepi-112";
 	String snippetVar_menuType = "Footer";
-	String snippetVar_homeNavPointLink = "/ttsvr/n/Home/skypepi-67";
+	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@40";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@40";
 	String snippetVar_elementId = "";

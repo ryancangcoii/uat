@@ -1460,7 +1460,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_myMarksAndGrades_13;
 	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
-	String snippetVar_navpointId = "skypepi-80";
+	String snippetVar_navpointId = "skypepi-88";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_myMarksAndGrades@13";
 	String snippetVar_elementId = "";

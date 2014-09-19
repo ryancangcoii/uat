@@ -33,6 +33,7 @@
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageTranslatorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LoginButtonProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
@@ -42,6 +43,15 @@
 <%
 	String jspName = "skypepi-101";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_adminHeader_57 = null;
+try {
+	Properties productionHelper_skypepi_zones_portal_z_header_adminHeader_57Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_57 = new tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper(productionHelper_skypepi_zones_portal_z_header_adminHeader_57Params);
+	productionHelper_skypepi_zones_portal_z_header_adminHeader_57.callPreFetch(jh);
+} catch (Exception e) {
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_57", e);
+}
+
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_bstrapTranslationTableAdmin_24 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_bstrapTranslationTableAdmin_24Params = new Properties();
@@ -551,7 +561,51 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 }
 %>
 </td>
-  <td ></td>
+  <td ><%-- Widget skypepi.zones.portal_z_header_adminHeader@57 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget) --%>
+<%
+try {
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_adminHeader_57;
+	String snippetVar_widgetName = "@57";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_header_adminHeader@57";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+<%
+	// Get the production helper for this widget
+	HomeButtonHeaderProductionHelper h = (HomeButtonHeaderProductionHelper) helper;
+	XData data = h.getData(jh);
+%>
+
+<!-- ********** INSERT HTML HERE ********** -->
+<div <%=snippetVar_idDefinition%> class="HomeButtonHeader" style="margin-left: 10px;">
+	<% if (h.isUserLogged()) { %>
+		<form id="form-redirectoBackToParent" action="" method="post">
+		<a href="javascript:void(0);" onclick="redirectBackToParent('<%=h.getSignOnId()%>');">
+			<img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logoHome.png" border="0" />
+		</a>
+		</form>
+	<% } %>
+	</div>
+
+<script>
+	function redirectBackToParent(parentId) {
+		Logout.selectChild(parentId);
+	}
+</script>
+
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header_adminHeader@57 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget)", e);
+}
+%>
+</td>
   <td  width='10' align='center' valign='middle'></td>
   <td  align='center' valign='middle'><%-- Widget skypepi.zones.portal_z_header_adminHeader@37 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
 <%

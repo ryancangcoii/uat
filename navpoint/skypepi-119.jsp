@@ -121,7 +121,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13 = null;
 try {
 	Properties productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params = new Properties();
-	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params.setProperty("navpointId", "skypepi-119");
+	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params.setProperty("navpointId", "/ttsvr/n/Receipt-Preview/skypepi-119");
 	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params.setProperty("viewReceipts", "/ttsvr/n/View-Receipt/skypepi-118");
 	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13 = new tooltwist.skypepi.productionHelpers.PaymentReceiptProductionHelper(productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13Params);
 	productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13.callPreFetch(jh);
@@ -1465,7 +1465,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_btstrap_receiptPreviewProgression_13;
 	String snippetVar_viewReceipts = "/ttsvr/n/View-Receipt/skypepi-118";
-	String snippetVar_navpointId = "skypepi-119";
+	String snippetVar_navpointId = "/ttsvr/n/Receipt-Preview/skypepi-119";
 	String snippetVar_widgetName = "@13";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_btstrap_receiptPreviewProgression@13";
 	String snippetVar_elementId = "";

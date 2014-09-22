@@ -1604,7 +1604,7 @@ try {
 																			<span class="body-text"><%=lang.getString("View Timetable", null, "") %></span></a>
 																	</span>
 																<%-- <% } %> --%>
-																<%-- <% if (attendance.size() > 0) { %> --%>
+																<% if (attendance.size() > 0) { %>
 																	<% if (isDisplayed) {  %><br /><% } %>
 																	<% isDisplayed = true; %>
 																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
@@ -1612,7 +1612,7 @@ try {
 																		<a class="" href="<%=snippetVar_viewAttendanceNavpoint%>?enrolmentId=<%=enrolmentId %>">
 																			<span class="body-text"><%=lang.getString("View Attendance Records", null, "") %></span></a>
 																	</span>
-																<%-- <% } %> --%>
+																<% } %>
 																<%-- <% if (receipts.size() > 0) { %> --%>
 																	<% if (isDisplayed) {  %><br /><% } %>
 																	<% isDisplayed = true; %>

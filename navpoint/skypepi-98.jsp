@@ -1483,11 +1483,11 @@ String defaultDoc = "";
 if (snippetVar_title.equals("myConsent")) {
 	docType = "ParentalConsent";
 	//defaultDoc = "/ttsvr/skypepi/documents/Parent Consent V1.0.pdf";;
-	defaultDoc = googleViewStart + "/Parent Consent V1.0.pdf" + googleViewEnd;
+	defaultDoc = googleViewStart + "/ParentConsentV1.0.pdf" + googleViewEnd;
 } else {
 	docType = "HouseRules";
 	//defaultDoc = "/ttsvr/skypepi/documents/House Rules for YL V1.9.pdf";;
-	defaultDoc = googleViewStart + "/House Rules for YL V1.9.pdf" + googleViewEnd;	
+	defaultDoc = googleViewStart + "/HouseRulesforYLV1.9.pdf" + googleViewEnd;	
 }
 
 //String documentUrl = "/ttsvr/skypepi/documents/"+docType+"-"+site+"-"+lang+".pdf";

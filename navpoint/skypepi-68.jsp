@@ -2423,7 +2423,7 @@ try {
 						<br> <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 numeric character.", null, "") %>
 						<br> <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 Capital alpha character.", null, "") %>
 					</div>
-					<form id="frmChangePassword">
+					<form id="frmChangePassword" method="post">
 						<table width="410" cellpadding="0" cellspacing="0">
 							<tr>
 								<td width="150" class="control-label"><%=lang.getString("Current Password", null, "") %>:</td>

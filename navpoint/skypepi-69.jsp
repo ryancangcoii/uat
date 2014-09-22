@@ -1605,7 +1605,13 @@ try {
 																	</span>
 																<%-- <% } %> --%>
 																<%-- <% if (attendance.size() > 0) { %> --%>
-<%-- 																	
+																	<% if (isDisplayed) {  %><br /><% } %>
+																	<% isDisplayed = true; %>
+																	<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
+																	<span class="regular-link-underline-light-blue">
+																		<a class="" href="<%=snippetVar_viewAttendanceNavpoint%>?enrolmentId=<%=enrolmentId %>">
+																			<span class="body-text"><%=lang.getString("View Attendance Records", null, "") %></span></a>
+																	</span>
 																<%-- <% } %> --%>
 																<%-- <% if (receipts.size() > 0) { %> --%>
 																	<% if (isDisplayed) {  %><br /><% } %>

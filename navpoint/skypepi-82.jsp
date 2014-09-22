@@ -1499,10 +1499,10 @@ try {
 		<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 <!-- 		<input type="button" class="buttonBlue buttonSmall" value="<%=snippetVar_buttonLabel%>" /> -->
 	</a>
-	&nbsp;
+	<%-- &nbsp;
 	<a href="<%=h.getReportUrl() %>" target="_blank">
 		<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Attendance Record", null, "") %>"/>
-	</a>
+	</a> --%>
 	</div>
 <br>
 

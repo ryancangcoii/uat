@@ -1542,10 +1542,11 @@ try {
 	WebUtil.setAttribute(request, DataBlockUtil.SESSION_VARIABLE.LOG_IN_ERROR_MESSAGE, null);
 %>
 <form id="form-login" method="post" action="<%=snippetVar_navpointId%>">
-<input type="hidden" name="op" value="<%=snippetVar_loginOp%>"/>
+					<input type="hidden" name="op" value="<%=snippetVar_loginOp%>"/>
 					<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
 					<input type="hidden" name="forgotPasswordNavPointLink" value="<%=snippetVar_forgotPasswordNavPointLink%>"/>
 					<input type="hidden" name="successLoginNavPointLink" value="<%=snippetVar_successLoginNavPointLink%>"/>
+					<input type="hidden" name="action" value="" id="formActionInput" />
 	<!-- 
 	<div class="form-heading">
 		<h1>Account Login</h1>
@@ -1607,7 +1608,8 @@ var Login = function() {
 		userLogin: function() {
 			if(Login.validateLoginRequiredField()) {
 				var formLogin = $("#form-login");
-				formLogin.attr('action','<%=snippetVar_navpointId%>'+'?action=login');
+				$("#formActionInput").val("login");
+				formLogin.attr('action','<%=snippetVar_navpointId%>');
 				formLogin.submit();
 			}
 		},
@@ -1639,10 +1641,9 @@ var Login = function() {
 		},
 
 		forgotPassword: function() {
-			console.log("forgotPassword", '<%=snippetVar_forgotPasswordNavPointLink%>?action=forgotPassword');
 			var formLogin = $("#form-login");
-			formLogin.attr('action','<%=snippetVar_forgotPasswordNavPointLink%>?action=forgotPassword');
-			console.log("action", formLogin.attr("action"));
+			$("#formActionInput").val("forgotPassword");
+			formLogin.attr('action','<%=snippetVar_forgotPasswordNavPointLink%>');
 			formLogin.submit();
 		},
 

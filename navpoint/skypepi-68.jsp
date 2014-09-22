@@ -2423,7 +2423,7 @@ try {
 						<br> <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 numeric character.", null, "") %>
 						<br> <span class="glyphicon glyphicon-ok"></span>&nbsp;<%=lang.getString("Password must contain atleast 1 Capital alpha character.", null, "") %>
 					</div>
-					<form id="frmChangePassword">
+					<form id="frmChangePassword" method="post">
 						<table width="410" cellpadding="0" cellspacing="0">
 							<tr>
 								<td width="150" class="control-label"><%=lang.getString("Current Password", null, "") %>:</td>
@@ -3232,10 +3232,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 			
 			var self = this;
 			
-			var url = "?op=skypepi_widgets.myDetails.myDetails&subop=updateCurrentPassword&newPassword=" + newPassword;
 			$.ajax({
-				url: url,
+				url: location.href,
 				dataType: "html",
+				data : {
+					op : "skypepi_widgets.myDetails.myDetails",
+					subop : "updateCurrentPassword",
+					newPassword : newPassword
+				},
 				cache: false,
 				success: function(data) {
 					

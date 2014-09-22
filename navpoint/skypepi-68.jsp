@@ -1619,16 +1619,16 @@ try {
 					<tr>
 						<td height="10"></td>
 					</tr>
-					<tr>
+					<%-- <tr>
 						<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("Chinese", null, "") %>):</td>
-					</tr>
+					</tr> --%>
 					<tr>
 						<td align="left" class="mobile-trace">
 							<table width="100%">
 								<tr>
 									<td>
 										<!-- NEW FORM 2 -->
-										<div class="row">
+										<%-- <div class="row">
 											<div class="col-md-6">
 												<div class="row">
 													<div class="col-md-4">
@@ -1649,7 +1649,7 @@ try {
 													</div>
 												</div>
 											</div>
-										</div> <!-- FORM 3 -->
+										</div> --%> <!-- FORM 3 -->
 										<div class="row" style="margin-top: 25px">
 											<div class="col-md-6">
 												<div class="row">

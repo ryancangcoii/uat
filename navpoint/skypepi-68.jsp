@@ -3232,10 +3232,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 			
 			var self = this;
 			
-			var url = "?op=skypepi_widgets.myDetails.myDetails&subop=updateCurrentPassword&newPassword=" + newPassword;
 			$.ajax({
-				url: url,
+				url: location.href,
 				dataType: "html",
+				data : {
+					op : "skypepi_widgets.myDetails.myDetails",
+					subop : "updateCurrentPassword",
+					newPassword : newPassword
+				},
 				cache: false,
 				success: function(data) {
 					

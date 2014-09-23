@@ -251,6 +251,36 @@ try {
 	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-29XL');</script>
 	<!-- End Google Tag Manager -->
+	
+	<!-- START OF SmartSource Data Collector TAG v10.2.29 -->
+	<!-- Copyright (c) 2012 Webtrends Inc.  All rights reserved. -->
+	<script>
+	window.webtrendsAsyncInit=function(){
+	    var dcs=new Webtrends.dcs().init({
+	        dcsid:"dcs222yr3uqow8spu3rba9o5l_2w5b",
+	        domain:"statse.webtrendslive.com",
+	        timezone:0,
+	        i18n:true,
+	        adimpressions:true,
+	        adsparam:"WT.ac",
+	        download:true,
+	        downloadtypes:"xls,doc,pdf,txt,csv,zip,docx,xlsx,rar,gzip,swf,mid,mp3",
+	        offsite:true,
+	        onsitedoms:"britishcouncil.org",
+	        fpcdom:".britishcouncil.org",
+	        plugins:{
+	            hm:{src:"//s.webtrends.com/js/webtrends.hm.js"}
+	        }
+	        });
+	        dcs.track();
+	};
+	(function(){
+	    var s=document.createElement("script"); s.async=true; s.src="/skypepi/scripts/webtrends.min.js";    
+	    var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
+	}());
+	</script>
+	<noscript><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcs222yr3uqow8spu3rba9o5l_2w5b/njs.gif?dcssip=https://english-courses.britishcouncil.org&amp;dcsuri=/nojavascript&amp;WT.dl=0&amp;WT.es=https://english-courses.britishcouncil.org/nojavascript&amp;WT.js=No&amp;WT.tv=BC.nojs.1"/></noscript>
+	<!-- END OF SmartSource Data Collector TAG v10.2.29 -->
   
 
 

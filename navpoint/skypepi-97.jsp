@@ -1469,6 +1469,7 @@ try {
 <%
 AltLang altLang = WebUtil.getAltLang(jh);
 String site = WebUtil.getAttributes(request, SESSION_VARIABLE.SITE_SERVERNAME, "");
+site = site.replace("/", "_");
 String langStringName = WebUtil.getAttributes(request, SESSION_VARIABLE.LANGUAGE, "local_FIL_EN");
 String lang = langStringName.split("_")[1];
 

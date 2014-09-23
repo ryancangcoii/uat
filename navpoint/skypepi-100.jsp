@@ -1256,7 +1256,7 @@ div.media {
 			docType="<%=doc.getType() %>"
 			docId="<%=doc.getDocumentId() %>"
 			langKey="<%=h.getLanguage(doc.getLangCode()) %>"
-			site="<%=h.getSite() %>"
+			site="<%=h.getSite(request) %>"
 			googleViewStart="<%=BcCache.getProperty("googleDocViewStart") %>"
 			googleViewEnd="<%=BcCache.getProperty("googleDocViewEnd") %>"
 			class="img-view"

@@ -1545,7 +1545,7 @@ try {
 				<th width="" class="table-header color-regular column-text"><%=lang.getString("Class", null, "") %></th>
 				<th width="120px"><%=lang.getString("Start Date", null, "") %></th>
 				<th width="120px"><%=lang.getString("End Date", null, "") %></th>
-				<th width="200px"><%=lang.getString("Action", null, "") %></th>
+				<th width="180px"><%=lang.getString("Action", null, "") %></th>
 			</tr>
 			<%
 			boolean hasData = false;

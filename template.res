@@ -290,3 +290,9 @@ Email::
 myStudents::
 Announcements::
 Class Timetable::
+SMS::
+Save::
+Personal::
+Office::
+Temporary::
+Other::

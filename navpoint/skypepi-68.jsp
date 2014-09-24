@@ -1795,7 +1795,7 @@ try {
 									<td>
 										<div align="right" class="button-align" style="margin-top: 20px">
 											<input type="button" style="display:none;" class="buttonBlue buttonSmall" value="Cancel" onclick="javascript:MyDetails.cancelPreferredContact();">
-											<input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.saveConfirmation();"> 
+											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveConfirmation();"> 
 <!-- 											<input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.savePreferredContact();"> -->
 										</div>
 									</td>

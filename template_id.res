@@ -290,3 +290,9 @@ Password must have at least 1 capital alpha character:Sandi harus berisi minimal
 concludeAndConfirm:Ringkasan dan Konfirmasi:
 Select Course Intake:Pilih Tahun Ajaran Kursus:
 Current Enrolment:Pendaftaran Sekarang:
+SMS::
+Save::
+Personal::
+Office::
+Temporary::
+Other::

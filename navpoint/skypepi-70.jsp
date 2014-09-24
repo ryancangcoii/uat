@@ -1545,7 +1545,7 @@ try {
 				<th width="" class="table-header color-regular column-text"><%=lang.getString("Class", null, "") %></th>
 				<th width="120px"><%=lang.getString("Start Date", null, "") %></th>
 				<th width="120px"><%=lang.getString("End Date", null, "") %></th>
-				<th width="180px"><%=lang.getString("Action", null, "") %></th>
+				<th width="200px"><%=lang.getString("Action", null, "") %></th>
 			</tr>
 			<%
 			boolean hasData = false;
@@ -1597,7 +1597,7 @@ try {
 							<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
 								<span class="body-text"><%=lang.getString("View Receipt", null, "") %></span></a>
 						</span>
-						<%if (dt.after(dtTo) && 1==2) { %>
+						<%if (dt.after(dtTo)) { %>
 						<br />
 						<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 						<span class="regular-link-underline-light-blue">

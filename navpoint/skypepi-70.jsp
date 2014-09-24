@@ -273,7 +273,7 @@ try {
 	        dcs.track();
 	};
 	(function(){
-	    var s=document.createElement("script"); s.async=true; s.src="/skypepi/scripts/webtrends.min.js";    
+	    var s=document.createElement("script"); s.async=true; s.src="/ttsvr/skypepi/scripts/webtrends.min.js";    
 	    var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
 	}());
 	</script>
@@ -1597,7 +1597,7 @@ try {
 							<a class="view-receipt" href="#" ref="<%=snippetVar_previewReceiptNavpoint %>" paymentid="<%=paymentId %>" >
 								<span class="body-text"><%=lang.getString("View Receipt", null, "") %></span></a>
 						</span>
-						<%if (dt.after(dtTo)) { %>
+						<%if (dt.after(dtTo) && h.isViewableCertificate()) { %>
 						<br />
 						<img src="/ttsvr/skypepi/images/arrow-course-details.png" class="v-align-middle">
 						<span class="regular-link-underline-light-blue">

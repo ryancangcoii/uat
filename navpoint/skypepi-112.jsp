@@ -254,7 +254,7 @@ try {
 	        dcs.track();
 	};
 	(function(){
-	    var s=document.createElement("script"); s.async=true; s.src="/skypepi/scripts/webtrends.min.js";    
+	    var s=document.createElement("script"); s.async=true; s.src="/ttsvr/skypepi/scripts/webtrends.min.js";    
 	    var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
 	}());
 	</script>
@@ -1277,26 +1277,30 @@ try {
 								<tr class="white removable">
 									<td valign="top"><strong><%=sitePaymentGatewayDetails.getText("label")%></strong> : </td>
 									<td>
-									<%
-										if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("22") || sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("23")){
-											StringEncrypter se = new StringEncrypter();
-											String seValue = "";
-											String strValue = "";
-											strValue = sitePaymentGatewayDetails.getText("value");
-											if(!strValue.equals(""))
-												seValue = se.decrypt(sitePaymentGatewayDetails.getText("value"));
-											else
-												seValue = strValue;
-											%>
-												<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
-												id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
-												value="<%=seValue%>" />
-											<%
-										} else {
-									%>
-										<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
-										id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
-										value="<%=sitePaymentGatewayDetails.getText("value")%>" />
+										<%
+											if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("22") || sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("23")) {
+												StringEncrypter se = new StringEncrypter();
+												String seValue = "";
+												String strValue = "";
+												strValue = sitePaymentGatewayDetails.getText("value");
+												if(!strValue.equals(""))
+													seValue = se.decrypt(sitePaymentGatewayDetails.getText("value"));
+												else
+													seValue = strValue;
+												%>
+													<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
+													id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
+													value="<%=seValue%>" />
+												<%
+											} else if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("24")) {
+										%>
+											<input type="checkbox" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
+											id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="required"
+											value="true" <%=sitePaymentGatewayDetails.getText("value").equals("true") ? "checked='checked'" : ""%> />
+										<% } else { %>
+											<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
+											id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
+											value="<%=sitePaymentGatewayDetails.getText("value")%>" />
 										<% } %>
 									</td>
 								</tr>
@@ -1816,10 +1820,16 @@ var PaymentSettings = function() {
 					},
 					success : function(json) {
 						var html = "";
+						var inputString = "";
 						$.each(json, function(key, value) {
+							if (key == "24") {
+								inputString = "<input type='checkbox' name='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' id='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' class='required' />";
+							} else {
+								inputString = "<input type='text' name='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' id='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' class='form-control required' />";
+							}
 							html += "	<tr class='white removable'>";
 							html += "		<td valign='top' style='min-width:160px;'>"+value+" : </td>";
-							html += "		<td><input type='text' name='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' id='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' class='form-control required' /></td>";
+							html += "		<td>" + inputString + "</td>";
 							html += "	</tr>";
 						});
 						var parent = $(selector).parents(".paymentGatewayContainer").find("table");

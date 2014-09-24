@@ -250,7 +250,7 @@ try {
 	        dcs.track();
 	};
 	(function(){
-	    var s=document.createElement("script"); s.async=true; s.src="/skypepi/scripts/webtrends.min.js";    
+	    var s=document.createElement("script"); s.async=true; s.src="/ttsvr/skypepi/scripts/webtrends.min.js";    
 	    var s2=document.getElementsByTagName("script")[0]; s2.parentNode.insertBefore(s,s2);
 	}());
 	</script>

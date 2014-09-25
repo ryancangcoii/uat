@@ -1260,8 +1260,8 @@ try {
 											<% for (paymentGateways.first(); paymentGateways.next();) { %>
 													<% selected = ""; %>
 													<%
-													if (sitePaymentGateways.getText("paymentGatewayId").equals(paymentGateways.getText("paymentGatewayId"))) {
-														portalSitePaymentGetwayIds += portalSitePaymentGetwayIds.equals("") ? sitePaymentGateways.getText("paymentGatewayId") : "," + sitePaymentGateways.getText("paymentGatewayId");
+													if (sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId").equals(paymentGateways.getText("paymentGatewayId"))) {
+														portalSitePaymentGetwayIds += portalSitePaymentGetwayIds.equals("") ? sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId") : "," + sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId");
 														selected=" selected='selected'";
 													}
 													%>
@@ -1271,36 +1271,36 @@ try {
 									</td>
 								</tr>
 								<% 
-								XNodes sitePaymentGatewayDetails = sitePaymentGateways.getNodes("portalSitePaymentGatewayDetails");
+								XNodes sitePaymentGatewayDetails = sitePaymentGateways.getNodes("portalSitePaymentGateway");
 								%>
 								<% for (sitePaymentGatewayDetails.first();sitePaymentGatewayDetails.next();) { %>
 								<tr class="white removable">
 									<td valign="top"><strong><%=sitePaymentGatewayDetails.getText("label")%></strong> : </td>
 									<td>
 										<%
-											if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("22") || sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("23")) {
+											if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2").equals("22") || sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2").equals("23")) {
 												StringEncrypter se = new StringEncrypter();
 												String seValue = "";
 												String strValue = "";
-												strValue = sitePaymentGatewayDetails.getText("value");
+												strValue = sitePaymentGatewayDetails.getText("portalSitePaymentGatewayDetails/value");
 												if(!strValue.equals(""))
-													seValue = se.decrypt(sitePaymentGatewayDetails.getText("value"));
+													seValue = se.decrypt(sitePaymentGatewayDetails.getText("portalSitePaymentGatewayDetails/value"));
 												else
 													seValue = strValue;
 												%>
-													<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
-													id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
+													<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" 
+													id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" class="form-control required"
 													value="<%=seValue%>" />
 												<%
-											} else if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId").equals("24")) {
+											} else if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2").equals("24")) {
 										%>
-											<input type="checkbox" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
-											id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="required"
-											value="true" <%=sitePaymentGatewayDetails.getText("value").equals("true") ? "checked='checked'" : ""%> />
+											<input type="checkbox" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" 
+											id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" class="required"
+											value="true" <%=sitePaymentGatewayDetails.getText("portalSitePaymentGatewayDetails/value").equals("true") ? "checked='checked'" : ""%> />
 										<% } else { %>
-											<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" 
-											id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId")%>" class="form-control required"
-											value="<%=sitePaymentGatewayDetails.getText("value")%>" />
+											<input type="text" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" 
+											id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" class="form-control required"
+											value="<%=sitePaymentGatewayDetails.getText("portalSitePaymentGatewayDetails/value")%>" />
 										<% } %>
 									</td>
 								</tr>

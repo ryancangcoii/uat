@@ -2053,6 +2053,10 @@ function loadData(val) {
     pager.showSelection = false;
     pager.showPageNav('pager', 'attendance-navi', 3); 
     pager.showPage(1);
+
+    $("#attendance-navi .col-md-4").addClass("col-md-9").removeClass("col-md-4");
+    $("#attendance-navi .col-md-8").addClass("col-md-3").removeClass("col-md-8");
+    $("#attendance-navi .col-md-9").find("table").removeAttr("width").css("float", "right");
 }
 loadData(10);</script>
 <script type="text/javascript">

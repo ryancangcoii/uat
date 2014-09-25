@@ -2044,9 +2044,9 @@ function loadData(val) {
     pager.showPageNav('pager', 'timetable-navi', 3); 
     pager.showPage(1);
     
-    $(".col-md-4").addClass("col-md-9").removeClass("col-md-4");
-    $(".col-md-8").addClass("col-md-3").removeClass("col-md-8");
-    $(".col-md-9").find("table").removeAttr("width").css("float", "right");
+    $("#timetable-navi .col-md-4").addClass("col-md-9").removeClass("col-md-4");
+    $("#timetable-navi .col-md-8").addClass("col-md-3").removeClass("col-md-8");
+    $("#timetable-navi .col-md-9").find("table").removeAttr("width").css("float", "right");
 }
 loadData(10);</script>
 <script type="text/javascript">

@@ -291,3 +291,18 @@ Password must have at least 1 capital alpha character:Sandi harus berisi minimal
 concludeAndConfirm:Ringkasan dan Konfirmasi:
 Select Course Intake:Pilih Tahun Ajaran Kursus:
 Current Enrolment:Pendaftaran Sekarang:
+Surname::
+myHouseRules::
+myConsent::
+Conclude and Confirm::
+Confirm Payment::
+Customer Name::
+Credit Card::
+Course Payment::
+Please enter the username you used to create your account, and we will send your login details.::
+I agree and give consent to my child to participate in the online forum subject to the terms of use stated above.::
+I do not agree to the above terms of use stated above.::
+
+
+
+

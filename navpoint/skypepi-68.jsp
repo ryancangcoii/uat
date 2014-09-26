@@ -1860,7 +1860,7 @@ try {
 						<td width="10%"><%=lang.getString(addressType, null, "")%></td>
 						<td width="50%"><%=completeAddress %></td>
 						<td width="20%" class="right">
-							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(Primary)</span> <% } %> <input id="isPrimaryRadioButtonAddress<%=id %>" name="isPrimaryRadioButtonAddress" value="<%=id %>" type="radio" class="v-align-middle" <%=isPrimaryChecked %> onclick="MyDetails.setAddressAsPrimary();" />
+							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(<%=lang.getString("Primary", null, "") %>)</span> <% } %> <input id="isPrimaryRadioButtonAddress<%=id %>" name="isPrimaryRadioButtonAddress" value="<%=id %>" type="radio" class="v-align-middle" <%=isPrimaryChecked %> onclick="MyDetails.setAddressAsPrimary();" />
 						</td>
 						<td width="15%" align="left"><span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editAddress('<%=addressesCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span> <% if(addresses.size() > 1 && isPrimaryChecked.equals("")) { %> &nbsp;&nbsp; <span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('address','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
 							<% } %></td>
@@ -2099,7 +2099,7 @@ try {
 						<td width="10%"><%=lang.getString(phoneType, null, "") %></td>
 						<td width="60%"><%=number %></td>
 						<td width="15%" align="right">
-							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(Primary)</span> <% } %> <input id="isPrimaryRadioButtonPhoneNumbers<%=id %>" name="isPrimaryRadioButtonPhoneNumbers" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setPhoneNumberAsPrimary();" />
+							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(<%=lang.getString("Primary", null, "") %>)</span> <% } %> <input id="isPrimaryRadioButtonPhoneNumbers<%=id %>" name="isPrimaryRadioButtonPhoneNumbers" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setPhoneNumberAsPrimary();" />
 						</td>
 						<td width="15%"><span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editPhoneNumber('<%=phoneNumbersCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span> <% if(phoneNumbers.size() > 1 && isPrimaryChecked.equals("")) { %> &nbsp;&nbsp; <span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('phone','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
 							<% } %></td>
@@ -2240,7 +2240,7 @@ try {
 						<td width="10%"><%=lang.getString(emailType, null, "") %></td>
 						<td width="60%"><%=emailAdd %></td>
 						<td width="15%" align="right">
-							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(Primary)</span> <% } %> <input id="isPrimaryRadioButtonEmailAddresses<%=id %>" name="isPrimaryRadioButtonEmailAddresses" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setEmailAddressAsPrimary();" />
+							<% if (!isPrimaryChecked.equals("")) { %> <span class="indicator">(<%=lang.getString("Primary", null, "") %>)</span> <% } %> <input id="isPrimaryRadioButtonEmailAddresses<%=id %>" name="isPrimaryRadioButtonEmailAddresses" value="<%=id %>" type="radio" <%=isPrimaryChecked %> class="v-align-middle" onclick="MyDetails.setEmailAddressAsPrimary();" />
 						</td>
 						<td width="15%"><span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.editEmailAddress('<%=emailAddressesCnt %>');"><span class=""><%=lang.getString("Edit", null, "") %></span></a></span> <% if(emailAddresses.size() > 1 && (isPrimaryChecked.trim().equals(""))) { %> &nbsp;&nbsp; <span class="regular-link-underline-light-blue"><a href="javascript:MyDetails.deleteRecord('email','<%=id %>','<%=editor %>');"><span class=""><%=lang.getString("Delete", null, "") %></span></a></span>
 							<% } %></td>

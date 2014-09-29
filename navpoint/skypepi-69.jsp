@@ -54,7 +54,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_51Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/View-Receipt/skypepi-76");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/myCurrentEnrolment/skypepi-69");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
@@ -90,7 +90,7 @@ try {
 	Properties productionHelper_skypepi_zones_portal_z_header_54Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("homeNavPointLink", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("menuType", "Header");
-	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-76");
+	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-69");
 	productionHelper_skypepi_zones_portal_z_header_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_54Params);
 	productionHelper_skypepi_zones_portal_z_header_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -102,7 +102,7 @@ try {
 	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("homeNavPointLink", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("menuType", "Footer");
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-76");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-69");
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params);
 	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -316,7 +316,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_54;
-	String snippetVar_currentNavpoint = "skypepi-76";
+	String snippetVar_currentNavpoint = "skypepi-69";
 	String snippetVar_menuType = "Header";
 	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@54";
@@ -430,7 +430,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/View-Receipt/skypepi-76";
+	String snippetVar_navpointId = "/ttsvr/n/myCurrentEnrolment/skypepi-69";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@55";
 	String snippetVar_elementId = "";
@@ -561,7 +561,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/View-Receipt/skypepi-76";
+	String snippetVar_navpointId = "/ttsvr/n/myCurrentEnrolment/skypepi-69";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -1023,7 +1023,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
-	String snippetVar_currentNavpoint = "skypepi-76";
+	String snippetVar_currentNavpoint = "skypepi-69";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@54";
@@ -1235,7 +1235,7 @@ try {
 if (siteName.contains(snippetVar_siteName)) {
 %>
 
-<div class='' style=""></div>
+<div class='' style=""><div class="wt12 wcGray3" ><p>British Council Korea (주한영국문화원)<br />영국문화원 고유번호: 110-84-01679 대표자: Martin John Fryer&nbsp;<br />서울시 종로구 새문안로 68 (신문로 1가 흥국생명빌딩) 4층 영국문화원 (우) 110-786&nbsp;<br />T +82 (0)2 3702 0600 F +82 (0)2 3702 0660</p></div></div>
 <br />
 <% } %><%
 } catch (Exception e) {

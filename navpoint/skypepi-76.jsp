@@ -1128,7 +1128,7 @@ try {
 if (siteName.contains(snippetVar_siteName)) {
 %>
 
-<div class='' style=""></div>
+<div class='' style=""><div class="wt12 wcGray3" ><p>British Council Korea (주한영국문화원)<br />영국문화원 고유번호: 110-84-01679 대표자: Martin John Fryer&nbsp;<br />서울시 종로구 새문안로 68 (신문로 1가 흥국생명빌딩) 4층 영국문화원 (우) 110-786&nbsp;<br />T +82 (0)2 3702 0600 F +82 (0)2 3702 0660</p></div></div>
 <br />
 <% } %><%
 } catch (Exception e) {

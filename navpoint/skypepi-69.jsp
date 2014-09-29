@@ -1211,7 +1211,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget) --%>
 <%
 try {
-	String snippetVar_siteName = "/kr/portal/";
+	String snippetVar_siteName = "/kr/portal";
 	String snippetVar_widgetName = "@66";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@66";
 	String snippetVar_elementId = "";
@@ -1232,10 +1232,11 @@ try {
 <%
 	String siteName = WebUtil.getAttributes(request, SESSION_VARIABLE.SITE_SERVERNAME, "");
 	System.out.println("siteName:" + siteName);
-if (snippetVar_siteName.contains(siteName)) {
+if (siteName.contains(snippetVar_siteName)) {
 %>
 
 <div class='' style=""></div>
+br />
 <% } %><%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);

@@ -1500,7 +1500,7 @@ if (siteName.contains(snippetVar_siteName)) {
 %>
 
 <div class='' style=""></div>
-br />
+<br />
 <% } %><%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@65 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);

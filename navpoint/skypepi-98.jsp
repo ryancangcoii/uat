@@ -53,7 +53,7 @@ try {
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_51Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/House-Rules/skypepi-98");
+	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("navpointId", "/ttsvr/n/myHouseRules-/skypepi-109");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("authenticatePage", "Yes");
 	productionHelper_skypepi_zones_portal_z_header_51Params.setProperty("homeNavPointId", "");
@@ -80,7 +80,7 @@ try {
 	Properties productionHelper_skypepi_zones_portal_z_header_54Params = new Properties();
 	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("homeNavPointLink", "/ttsvr/home");
 	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("menuType", "Header");
-	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-98");
+	productionHelper_skypepi_zones_portal_z_header_54Params.setProperty("currentNavpoint", "skypepi-109");
 	productionHelper_skypepi_zones_portal_z_header_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_header_54Params);
 	productionHelper_skypepi_zones_portal_z_header_54.callPreFetch(jh);
 } catch (Exception e) {
@@ -303,7 +303,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_54;
-	String snippetVar_currentNavpoint = "skypepi-98";
+	String snippetVar_currentNavpoint = "skypepi-109";
 	String snippetVar_menuType = "Header";
 	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@54";
@@ -349,7 +349,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
-				<li class="active"><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
@@ -387,7 +387,7 @@ try {
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
  <% } %> 
 <% if (h.isCocAccepted() && h.isHasForum()) { %>
-				<li class=""><a href="/ttsvr/n/myHouseRules-/skypepi-109"><%=h.getAltLang().getString("myHouseRules ",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myHouseRules-/skypepi-109"><%=h.getAltLang().getString("myHouseRules ",null,"") %></a><span></span></li>
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
@@ -417,7 +417,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_55;
 	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/House-Rules/skypepi-98";
+	String snippetVar_navpointId = "/ttsvr/n/myHouseRules-/skypepi-109";
 	String snippetVar_widgetName = "@55";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@55";
 	String snippetVar_elementId = "";
@@ -548,7 +548,7 @@ try {
 	String snippetVar_studentDashBoardNavId = "/ttsvr/MISSING_LINK/skypepi-94";
 	String snippetVar_homeNavPointId = "";
 	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/House-Rules/skypepi-98";
+	String snippetVar_navpointId = "/ttsvr/n/myHouseRules-/skypepi-109";
 	String snippetVar_viewOption = "Student Dashboard Link";
 	String snippetVar_widgetName = "@51";
 	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@51";
@@ -928,7 +928,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
-	String snippetVar_currentNavpoint = "skypepi-98";
+	String snippetVar_currentNavpoint = "skypepi-109";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@54";
@@ -963,7 +963,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
-				<li class="active"><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
@@ -1001,7 +1001,7 @@ try {
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a></li>
  <% } %> 
 <% if (h.isCocAccepted() && h.isHasForum()) { %>
-				<li class=""><a href="/ttsvr/n/myHouseRules-/skypepi-109"><%=h.getAltLang().getString("myHouseRules ",null,"") %></a></li>
+				<li class="active"><a href="/ttsvr/n/myHouseRules-/skypepi-109"><%=h.getAltLang().getString("myHouseRules ",null,"") %></a><span></span></li>
  <% } %> 
 <% isPublic = false; %>
  <% } %> 
@@ -1141,7 +1141,7 @@ if (siteName.contains(snippetVar_siteName)) {
 %>
 
 <div class='' style=""></div>
-br />
+<br />
 <% } %><%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);

@@ -1548,7 +1548,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
-	String snippetVar_currentNavpoint = "skypepi-116";
+	String snippetVar_currentNavpoint = "skypepi-105";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_homeNavPointLink = "/ttsvr/home";
 	String snippetVar_widgetName = "@54";
@@ -1584,7 +1584,7 @@ try {
 <% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
 				<li class=""><a href="/ttsvr/n/myConsent/skypepi-97"><%=h.getAltLang().getString("myConsent",null,"") %></a></li>
-				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1608,7 +1608,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
-				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
 <% isPublic = false; %>
  <% } %> 
@@ -1632,7 +1632,7 @@ try {
 				<li class=""><a href="/ttsvr/n/myProgression/skypepi-70"><%=h.getAltLang().getString("myProgression",null,"") %></a></li>
 <% if (h.isLogged() && h.isCocAccepted() && h.isHasForum()){ %>
 				<li class=""><a href="<%=h.getForumLink() %>" target="_blank"><%=h.getAltLang().getString("myForum",null,"") %></a><% } %></li>
-				<li class="active"><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a><span></span></li>
+				<li class=""><a href="/ttsvr/n/myOnlineBooking/skypepi-72"><%=h.getAltLang().getString("myOnlineBooking",null,"") %></a></li>
 				<li class=""><a href="/ttsvr/n/myCodeOfConduct/skypepi-110"><%=h.getAltLang().getString("myCodeOfConduct",null,"") %></a></li>
  <% } 
  %>			</ul>
@@ -1761,7 +1761,7 @@ if (siteName.contains(snippetVar_siteName)) {
 %>
 
 <div class='' style=""></div>
-br />
+<br />
 <% } %><%
 } catch (Exception e) {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);

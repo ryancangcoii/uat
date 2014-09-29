@@ -1786,7 +1786,41 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div>
 <div  class="col-md-7"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'></td>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget) --%>
+<%
+try {
+	String snippetVar_siteName = "/kr/portal";
+	String snippetVar_widgetName = "@66";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@66";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.SiteContainerProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+
+<%
+	String siteName = WebUtil.getAttributes(request, SESSION_VARIABLE.SITE_SERVERNAME, "");
+	System.out.println("siteName:" + siteName);
+if (siteName.contains(snippetVar_siteName)) {
+%>
+
+<div class='' style=""><div class="wt12 wcGray3" ><p>KR Footer</p></div></div>
+<br />
+<% } %><%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);
+}
+%>
+</td>
  </tr>
  <tr>
   <td ></td>

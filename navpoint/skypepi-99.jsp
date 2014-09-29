@@ -1682,41 +1682,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div>
 <div  class="col-md-7"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@65 (type=tooltwist.skypepi.widgets.SiteContainerWidget) --%>
-<%
-try {
-	String snippetVar_siteName = "/kr/portal";
-	String snippetVar_widgetName = "@65";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@65";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%--
-<%@page import="tooltwist.skyportal.productionHelpers.SiteContainerProductionHelper"%>
---%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-
-<%
-	String siteName = WebUtil.getAttributes(request, SESSION_VARIABLE.SITE_SERVERNAME, "");
-	System.out.println("siteName:" + siteName);
-if (siteName.contains(snippetVar_siteName)) {
-%>
-
-<div class='' style=""><div class="wt12 wcGray3" ><p>British Council Korea (주한영국문화원)<br />영국문화원 고유번호: 110-84-01679 대표자: Martin John Fryer&nbsp;<br />서울시 종로구 새문안로 68 (신문로 1가 흥국생명빌딩) 4층 영국문화원 (우) 110-786&nbsp;<br />T +82 (0)2 3702 0600 F +82 (0)2 3702 0660</p></div></div>
-<br />
-<% } %><%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@65 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);
-}
-%>
-</td>
+  <td  align='left' valign='top'></td>
  </tr>
  <tr>
   <td ></td>

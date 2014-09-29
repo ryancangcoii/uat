@@ -2218,7 +2218,7 @@ border-width:0;
   color:#4e4e4e;
   font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Arial;
   font-weight: 300;
-  height: 200px;
+  /* height: 200px; */
 }
 
 .footer p, .footer span {

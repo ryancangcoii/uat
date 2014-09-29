@@ -1588,7 +1588,46 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div>
 <div  class="col-md-7"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@65 (type=tooltwist.skypepi.widgets.SiteContainerWidget) --%>
+<%
+try {
+	String snippetVar_siteName = "/kr/portal/";
+	String snippetVar_widgetName = "@65";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@65";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.SiteContainerProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+
+<%
+	String siteName = WebUtil.getAttributes(request, SESSION_VARIABLE.SITE_SERVERNAME, "");
+	System.out.println("siteName:" + siteName);
+if (snippetVar_siteName.contains(siteName)) {
+%>
+
+<div class='' style=""></div>
+<% } %><%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@65 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);
+}
+%>
+</td>
+ </tr>
+ <tr>
+  <td  height='20'></td>
+ </tr>
+ <tr>
+  <td ><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
  </tr>
  <tr>
   <td  height='20'></td>

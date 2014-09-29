@@ -33,7 +33,6 @@
 <%@page import="tooltwist.wbd.WbdProductionHelper"%>
 <%@page import="tooltwist.wbd.WbdCache"%>
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
 <%@page import="tooltwist.skypepi.productionHelpers.MyDetailsProductionHelper"%>
@@ -43,24 +42,6 @@
 <%
 	String jspName = "skypepi-68";
 	JspHelper jh = JspHelper.getJspHelper(pageContext, jspName);
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_56 = null;
-try {
-	Properties productionHelper_skypepi_zones_portal_z_header_56Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_56 = new tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper(productionHelper_skypepi_zones_portal_z_header_56Params);
-	productionHelper_skypepi_zones_portal_z_header_56.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_56", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_35 = null;
-try {
-	Properties productionHelper_skypepi_zones_portal_z_header_35Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_35 = new tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper(productionHelper_skypepi_zones_portal_z_header_35Params);
-	productionHelper_skypepi_zones_portal_z_header_35.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_35", e);
-}
-
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_55 = null;
 try {
 	Properties productionHelper_skypepi_zones_portal_z_header_55Params = new Properties();
@@ -68,38 +49,6 @@ try {
 	productionHelper_skypepi_zones_portal_z_header_55.callPreFetch(jh);
 } catch (Exception e) {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_55", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_37 = null;
-try {
-	Properties productionHelper_skypepi_zones_portal_z_header_37Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("navpointId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("authenticatePage", "Yes");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavPointId", "skypepi-75");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("viewOption", "Student Selection");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_37Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
-	productionHelper_skypepi_zones_portal_z_header_37 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_37Params);
-	productionHelper_skypepi_zones_portal_z_header_37.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_37", e);
-}
-
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_38 = null;
-try {
-	Properties productionHelper_skypepi_zones_portal_z_header_38Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("navpointId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("logoutOp", "skypepi.widgets.logout.logout");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("authenticatePage", "Yes");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavPointId", "skypepi-75");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("viewOption", "Name");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("studentDashBoardNavId", "/ttsvr/n/myDetails/skypepi-68");
-	productionHelper_skypepi_zones_portal_z_header_38Params.setProperty("homeNavId", "/ttsvr/n/Login/skypepi-75");
-	productionHelper_skypepi_zones_portal_z_header_38 = new tooltwist.skypepi.productionHelpers.LogoutProductionHelper(productionHelper_skypepi_zones_portal_z_header_38Params);
-	productionHelper_skypepi_zones_portal_z_header_38.callPreFetch(jh);
-} catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_38", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_zones_portal_z_header_51 = null;
@@ -236,6 +185,7 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -327,656 +277,14 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  <tr>
   <td  class='userInfo' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='left' valign='middle'>
- <tr>
-  <td  class='magic2' align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_35;
-	String snippetVar_languageSelectorOp = "skypepi.widgets.languageSelector.languageSelector";
-	String snippetVar_navpointId = "/ttsvr/n/myDetails/skypepi-68";
-	String snippetVar_widgetName = "@35";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@35";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.skypepi.util.WebUtil"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="tooltwist.skypepi.util.ProjectUtil"%>
-<%@page import="tooltwist.skypepi.bean.Language"%>
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.LanguageSelectorProductionHelper"%>
-<%
-	LanguageSelectorProductionHelper h = (LanguageSelectorProductionHelper) helper;
-	String languageSelectorGUI = h.getLanguageSelectorGUI();
-	AltLang altLang = WebUtil.getAltLang(jh);
-	
-%>
-<form id="form-languageSelector" method="post" action="<%=snippetVar_navpointId%>" style="height: 24px;margin: 0px; padding: 0px;">
-	<input type="hidden" name="op" value="<%=snippetVar_languageSelectorOp%>"/>
-	<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>"/>
-	<table>
-	<tbody><tr>
-	<%--FOR ALTERNATE LANGUAGE --%>
-		<%
-		String selected = "";
-		boolean isSelected = false;
-		Language alternateLanguage =  ProjectUtil.getSiteAlternateLanguage(jh) ;
-		   if (alternateLanguage != null && !alternateLanguage.getLanguageId().equals("")) {
-			   String languageCode = alternateLanguage.getLanguageCode();
-			   String languageType = alternateLanguage.getLanguageType();
-			   String languageName = alternateLanguage.getLanguageName();
-			   String translation = alternateLanguage.getLanguageTranslation();
-			   String locStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
-			   
-			   if (translation == null || translation.equals("")) {
-				   translation = languageName;
-			   }
-			   
-			   if (altLang.getCurrentLangCode().equals(locStringLangCode)) {
-				   selected = "selected";
-				   isSelected = true;
-			   }
-		%>
-		<td>
-			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=locStringLangCode %>');"><%=translation %></a>
-		</td>
-		<td width="5px"></td>
-		<% } %>
-		
-		<%--FOR LOCAL LANGUAGE --%>
-		<% 
-		selected = "";
-		Language localLanguage =  ProjectUtil.getSiteLocalLanguage(jh) ;
-		   if (localLanguage != null && !localLanguage.getLanguageId().equals("")) {
-			   String languageCode = localLanguage.getLanguageCode();
-			   String languageType = localLanguage.getLanguageType();
-			   String languageName = localLanguage.getLanguageName();
-			   String translation = localLanguage.getLanguageTranslation();
-			   String altStringLangCode = ProjectUtil.getLanguageStringFileName(request, languageCode, languageType);
-			   
-			   if (translation == null || translation.equals("")) {
-				   translation = languageName;
-			   }
-			   if (altLang.getCurrentLangCode().equals(altStringLangCode)) {
-				   selected = "selected";
-				   isSelected = true;
-			   }
-		%>
-		<td>
-			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('<%=altStringLangCode %>');"><%=translation %></a>
-		</td>
-		<td width="5px"></td>
-		<% } %>
-		
-		<%--FOR ENGLISH LANGUAGE --%>
-		<% selected = "";
-			if (!isSelected)
-				selected = "selected";
-		%>
-		<td>
-			<a class="language-selector <%=selected %>" href="#changeLang" onclick="LanguageSelector.changeLanguage('en_EN');">English</a>
-		</td>
-		<td width="5px"></td>
-	</tr>
-</tbody></table>
-</form>
-<script>
-
-var LanguageSelector = function() {
-	return {
-		changeLanguage: function(languageCode) {
-			var formLanguageSelector = $("#form-languageSelector");
-			formLanguageSelector.attr('action','<%=snippetVar_navpointId%>'+'?languageCode='+languageCode+'&enrolmentID=<%=request.getParameter("enrolmentID") %>');
-			formLanguageSelector.submit();
-		},
-
-		init: function() {
-		}
-	};
-}();
-
-</script>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget)", e);
-}
-%>
-</td>
- </tr>
-</table>
-</td>
+  <td  align='left' valign='top'></td>
   <td ></td>
-  <td  align='right'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='middle'>
- <tr>
-  <td  align='left' valign='middle'><%-- Widget skypepi.zones.portal_z_header@38 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_38;
-	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
-	String snippetVar_homeNavPointId = "skypepi-75";
-	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/myDetails/skypepi-68";
-	String snippetVar_viewOption = "Name";
-	String snippetVar_widgetName = "@38";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@38";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
-<%@page import="tooltwist.skypepi.bean.FetchPerson"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="org.w3c.dom.Element"%>
-
-<%
-	LogoutProductionHelper h = (LogoutProductionHelper) helper;
-	h = h.getCachedHelper();
-
-	AltLang lang = h.getAltLang();
-
-	boolean isLoggedIn = h.isLoggedIn();
-	boolean isParent = h.isParent();
-%>
-
-<%
-	if (isLoggedIn) {
-		FetchPerson fetchPerson = h.getFetchPerson();
-%>
-<style>
-.dropdown a.head {
-	background-color: white;
-	z-index: 1030;
-}
-
-.open > .dropdown-menu {
-	z-index: 99999;
-}
-</style>
-
-<form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
-	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
-	<input type="hidden" id="homeNavId" name="homeNavId" value="<%=snippetVar_homeNavId%>"/>
-	<input type="hidden" id="studentDashBoardNavId" name="studentDashBoardNavId" value="<%=snippetVar_studentDashBoardNavId%>"/>
-
-	<%
-	if (snippetVar_viewOption.equals("Name")) {
-	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=h.getParentFullName() %></span>&nbsp;&nbsp;
-	<%
-	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
-	%>
-		<%
-			if (isParent) {
-		%>
-			
-			<!-- Parent -->
-		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table width="100%">
-			<tr>
-				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
-						<tr>
-							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
-							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
-										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
-									</td>	
-									<td>
-									<div>
-									<ul class="nav nav-pills">
-								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
-								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
-								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
-											<%
-												XData childData = h.getChildData();
-													
-																					XNodes childs = childData.getNodes("//Child");
-
-																					for (childs.first(); childs.next();) {
-																						Element child = (Element) childs.getCurrentNode();
-																						String firstName = child.getAttribute("FirstName");
-																						String lastName = child.getAttribute("Surname");
-																						String altFirstName = child.getAttribute("AltFirstName");
-																						String altLastName = child.getAttribute("AltSurname");
-																						String childID = child.getAttribute("ChildID");
-
-																						String selected = "";
-																						if (childID.equals(h.getChildId())) {
-																							selected = "selected='selected'";
-																						}
-																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
-											%>
-														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
-												<% } else {%>
-														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
-												<% } %>
-		
-											<%
-												}
-											%>
-									      </ul>
-									    </li>
-									  </ul> 
-									</div>
-									</td>
-									<%
-										}
-									%>
-							<% } else { %>
-								<% if (isParent) {}
-									%>
-							<% } %>
-						</tr>
-					</table></td>
-			</tr>
-		</table>
-<% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
-<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
-<% } %>
-</div>
-		<!-- Parent -->
-		<%
-			}
-		%>
-	<%
-	} else {
-	%>
-		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
-	<%
-		}
-	%> 
-	</form>
-<%
- 	}
- %>
-
-<script type="text/javascript">
-	var Logout = function() {
-		return {
-			userLogout : function() {
-				$("#form-logout").submit();
-			},
-
-			studentDashboard : function() {
-				var formLogout = $("#form-logout");
-				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
-						+ '?action=studentDashBoard');
-				formLogout.submit();
-			},
-
-			selectChild : function(childId) {
-				
-				var naviId = "<%=snippetVar_navpointId%>";
-				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
-				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
-				
-				var url = "";
-				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
-					url = "/ttsvr/n/skypepi-62";
-				}
-				
-				var formLogout = $("#form-logout");
-				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
-				formLogout.submit();
-
-			},
-
-			init : function() {
-				
-				var browserName=navigator.appName; 
-				var extraIEStyle = "";
-				
-				if (browserName=="Microsoft Internet Explorer") {
-					extraIEStyle = "height: 30px;vertical-align: middle;";
-				}
-				
-				jQuery(".dropdown a[role='menuitem']").click(function() {
-					
-					var selectedName = jQuery(".dropdown a.head").attr("sname");
-					var name = jQuery(this).html();
-					
-					if (selectedName == name) return ;
-					
-					var len = name.length;
-					var space = "&nbsp;";
-					
-					for (var i = 0; i < 40-len; i++) {
-						space += "&nbsp";
-					}
-					
-					jQuery(".dropdown a.head > label").html(name + space);
-					Logout.selectChild(jQuery(this).attr("personId"));
-					
-				});
-				
-
-				$("#logout-childId").change(function() {
-					Logout.selectChild();
-				});
-				
-				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
-				var isParent = <%=isParent %>;
-				
-				if(hasLogged != '' && isParent) {
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideDown();
-					}, 2000);
-					
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideUp();
-						jQuery("#arrow").hide();
-					}, 5000);	
-				}
-				
-			}
-		};
-	}();
-
-	jQuery(Logout.init());
-</script>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@38 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
-}
-%>
-</td>
-  <td ><%-- Widget skypepi.zones.portal_z_header@56 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_56;
-	String snippetVar_widgetName = "@56";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@56";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="tooltwist.skypepi.productionHelpers.HomeButtonHeaderProductionHelper"%>
-<%@page import="tooltwist.misc.JspHelper"%>
-<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
-<%@page import="tooltwist.ecommerce.RoutingUIM"%>
-<%
-	// Get the production helper for this widget
-	HomeButtonHeaderProductionHelper h = (HomeButtonHeaderProductionHelper) helper;
-	XData data = h.getData(jh);
-%>
-
-<!-- ********** INSERT HTML HERE ********** -->
-<div <%=snippetVar_idDefinition%> class="HomeButtonHeader" style="margin-left: 10px;">
-	<% if (h.isUserLogged()) { %>
-		<form id="form-redirectoBackToParent" action="" method="post">
-		<a href="javascript:void(0);" onclick="redirectBackToParent('<%=h.getSignOnId()%>');">
-			<img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logoHome.png" border="0" />
-		</a>
-		</form>
-	<% } %>
-	</div>
-
-<script>
-	function redirectBackToParent(parentId) {
-		Logout.selectChild(parentId);
-	}
-</script>
-
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@56 (type=tooltwist.skypepi.widgets.HomeButtonHeaderWidget)", e);
-}
-%>
-</td>
-  <td  width='10' align='center' valign='middle'></td>
-  <td  align='center' valign='middle'><%-- Widget skypepi.zones.portal_z_header@37 (type=tooltwist.skypepi.widgets.LogoutWidget) --%>
-<%
-try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_header_37;
-	String snippetVar_logoutOp = "skypepi.widgets.logout.logout";
-	String snippetVar_homeNavId = "/ttsvr/n/Login/skypepi-75";
-	String snippetVar_studentDashBoardNavId = "/ttsvr/n/myDetails/skypepi-68";
-	String snippetVar_homeNavPointId = "skypepi-75";
-	String snippetVar_authenticatePage = "Yes";
-	String snippetVar_navpointId = "/ttsvr/n/myDetails/skypepi-68";
-	String snippetVar_viewOption = "Student Selection";
-	String snippetVar_widgetName = "@37";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_header@37";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-
-<%@page import="tooltwist.skypepi.util.DataBlockUtil"%>
-<%@page import="tooltwist.wbd.WbdProductionHelper"%>
-<%@page import="tooltwist.skypepi.productionHelpers.LogoutProductionHelper"%>
-<%@page import="tooltwist.skypepi.bean.FetchPerson"%>
-<%@page import="com.dinaa.misc.AltLang"%>
-<%@page import="com.dinaa.data.XData"%>
-<%@page import="com.dinaa.data.XNodes"%>
-<%@page import="org.w3c.dom.Element"%>
-
-<%
-	LogoutProductionHelper h = (LogoutProductionHelper) helper;
-	h = h.getCachedHelper();
-
-	AltLang lang = h.getAltLang();
-
-	boolean isLoggedIn = h.isLoggedIn();
-	boolean isParent = h.isParent();
-%>
-
-<%
-	if (isLoggedIn) {
-		FetchPerson fetchPerson = h.getFetchPerson();
-%>
-<style>
-.dropdown a.head {
-	background-color: white;
-	z-index: 1030;
-}
-
-.open > .dropdown-menu {
-	z-index: 99999;
-}
-</style>
-
-<form id="form-logout" method="post" action="<%=snippetVar_homeNavId%>">
-	<input type="hidden" name="op" value="<%=snippetVar_logoutOp%>"/>
-	<input type="hidden" id="homeNavId" name="homeNavId" value="<%=snippetVar_homeNavId%>"/>
-	<input type="hidden" id="studentDashBoardNavId" name="studentDashBoardNavId" value="<%=snippetVar_studentDashBoardNavId%>"/>
-
-	<%
-	if (snippetVar_viewOption.equals("Name")) {
-	%>
-		<span class="body-text color-white"><%=lang.getString("Welcome", null, "")%>&nbsp;<%=h.getParentFullName() %></span>&nbsp;&nbsp;
-	<%
-	} else if ("Student Dashboard Link".equals(snippetVar_viewOption)) {
-	%>
-		<%
-			if (isParent) {
-		%>
-			
-			<!-- Parent -->
-		<div style="position: relative;width:100%;" class="drop-selection-color">
-		<table width="100%">
-			<tr>
-				<td align="left">
-					<table border="0" cellpadding="0" cellspacing="0" class="push-content-bot" width="100%">
-						<tr>
-							<% if ("Student Dashboard Link".equals(snippetVar_viewOption)) { %>
-							<% if (isParent) { %>
-									<td style="padding-right: 5px;" align="right" class="color-blackgrey bg-magic-student magic-width" width="">
-										<span class="magic2"><%=lang.getString("If you have more than one student studying with us, please select here", null, "") %></span>
-									</td>	
-									<td>
-									<div>
-									<ul class="nav nav-pills">
-								      <li class="dropdown">
-								        <a id="drop6" role="button" data-toggle="dropdown" href="#" class="head" sname="<%=h.getFetchPerson().getFullName() %>"><label><%=h.getFetchPerson().getFullName() %><%=h.getDropDownSpaces(h.getFetchPerson().getFullName()) %></label><div class="caret"></div></a>
-								        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
-								        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=h.getParentId() %>"><%=h.getParentFullName() %></a></li>
-											<%
-												XData childData = h.getChildData();
-													
-																					XNodes childs = childData.getNodes("//Child");
-
-																					for (childs.first(); childs.next();) {
-																						Element child = (Element) childs.getCurrentNode();
-																						String firstName = child.getAttribute("FirstName");
-																						String lastName = child.getAttribute("Surname");
-																						String altFirstName = child.getAttribute("AltFirstName");
-																						String altLastName = child.getAttribute("AltSurname");
-																						String childID = child.getAttribute("ChildID");
-
-																						String selected = "";
-																						if (childID.equals(h.getChildId())) {
-																							selected = "selected='selected'";
-																						}
-																						if (!DataBlockUtil.DEFAULT_LANGUAGE_CODE.equals(lang.getCurrentLangCode())) {
-											%>
-														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
-												<% } else {%>
-														<li role="presentation"><a role="menuitem" tabindex="-1" href="#" personId="<%=childID%>"><%=(firstName + " " + lastName)%></a></li>
-												<% } %>
-		
-											<%
-												}
-											%>
-									      </ul>
-									    </li>
-									  </ul> 
-									</div>
-									</td>
-									<%
-										}
-									%>
-							<% } else { %>
-								<% if (isParent) {}
-									%>
-							<% } %>
-						</tr>
-					</table></td>
-			</tr>
-		</table>
-<% if(!"".equals(h.getIsFirstTimeLoggedIn()) && isParent) { %>
-<div style="position: absolute;top: 44px;left: 566px;" id="arrow"><img src="/ttsvr/skypepi/images/animated_arrow.gif" width="30" /> </div>
-<% } %>
-</div>
-		<!-- Parent -->
-		<%
-			}
-		%>
-	<%
-	} else {
-	%>
-		<a href="javascript:Logout.userLogout();"><img onerror="$(this).setStyle({ visibility:'hidden' });"src="/ttsvr/cropImage/skypepi.images.portal_i_logout.png" border="0" /></a>
-	<%
-		}
-	%> 
-	</form>
-<%
- 	}
- %>
-
-<script type="text/javascript">
-	var Logout = function() {
-		return {
-			userLogout : function() {
-				$("#form-logout").submit();
-			},
-
-			studentDashboard : function() {
-				var formLogout = $("#form-logout");
-				formLogout.attr('action', '<%=snippetVar_studentDashBoardNavId%>'
-						+ '?action=studentDashBoard');
-				formLogout.submit();
-			},
-
-			selectChild : function(childId) {
-				
-				var naviId = "<%=snippetVar_navpointId%>";
-				var receiptNavi = "<%=h.getPreviewReceiptNav() %>";
-				var gradesNavi = "<%=h.getPreviewMarksGradesNav() %>";
-				
-				var url = "";
-				if(naviId.indexOf(receiptNavi) > -1 || naviId.indexOf(gradesNavi) > -1) {
-					url = "/ttsvr/n/skypepi-62";
-				}
-				
-				var formLogout = $("#form-logout");
-				formLogout.attr('action',url + '?action=childSelected&childId='+ childId);
-				formLogout.submit();
-
-			},
-
-			init : function() {
-				
-				var browserName=navigator.appName; 
-				var extraIEStyle = "";
-				
-				if (browserName=="Microsoft Internet Explorer") {
-					extraIEStyle = "height: 30px;vertical-align: middle;";
-				}
-				
-				jQuery(".dropdown a[role='menuitem']").click(function() {
-					
-					var selectedName = jQuery(".dropdown a.head").attr("sname");
-					var name = jQuery(this).html();
-					
-					if (selectedName == name) return ;
-					
-					var len = name.length;
-					var space = "&nbsp;";
-					
-					for (var i = 0; i < 40-len; i++) {
-						space += "&nbsp";
-					}
-					
-					jQuery(".dropdown a.head > label").html(name + space);
-					Logout.selectChild(jQuery(this).attr("personId"));
-					
-				});
-				
-
-				$("#logout-childId").change(function() {
-					Logout.selectChild();
-				});
-				
-				var hasLogged = "<%=h.getIsFirstTimeLoggedIn() %>";
-				var isParent = <%=isParent %>;
-				
-				if(hasLogged != '' && isParent) {
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideDown();
-					}, 2000);
-					
-					window.setTimeout(function() {
-						jQuery(".hjsel_options").slideUp();
-						jQuery("#arrow").hide();
-					}, 5000);	
-				}
-				
-			}
-		};
-	}();
-
-	jQuery(Logout.init());
-</script>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@37 (type=tooltwist.skypepi.widgets.LogoutWidget)", e);
-}
-%>
-</td>
+  <td ></td>
  </tr>
-</table>
-</td>
+ <tr>
+  <td ></td>
+  <td ></td>
+  <td ></td>
  </tr>
 </table>
 </div>
@@ -2775,7 +2083,46 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </div>
 <div  class="col-md-7"><table border='0' cellpadding='0' cellspacing='0'  align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget) --%>
+<%
+try {
+	String snippetVar_siteName = "/kr/portal/";
+	String snippetVar_widgetName = "@66";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@66";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+
+<%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
+<%@page import="tooltwist.skypepi.util.WebUtil"%>
+<%@page import="tooltwist.wbd.WbdProductionHelper"%>
+<%@page import="com.dinaa.data.XData"%>
+<%--
+<%@page import="tooltwist.skyportal.productionHelpers.SiteContainerProductionHelper"%>
+--%>
+<%@page import="tooltwist.misc.JspHelper"%>
+<%@page import="tooltwist.ecommerce.AutomaticUrlParametersMode"%>
+<%@page import="tooltwist.ecommerce.RoutingUIM"%>
+
+<%
+	String siteName = WebUtil.getAttributes(request, SESSION_VARIABLE.SITE_SERVERNAME, "");
+	System.out.println("siteName:" + siteName);
+if (snippetVar_siteName.contains(siteName)) {
+%>
+
+<div class='' style=""></div>
+<% } %><%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@66 (type=tooltwist.skypepi.widgets.SiteContainerWidget)", e);
+}
+%>
+</td>
+ </tr>
+ <tr>
+  <td  height='20'></td>
+ </tr>
+ <tr>
+  <td ><span class="wbdRichText"><p>The United Kingdom's international organisation for cultural relations and educational opportunities. A registered charity: 209131 (England and Wales) SC037733 (Scotland Our privacy and copyright statements. Our commitment to freedom of information.</p></span></td>
  </tr>
  <tr>
   <td  height='20'></td>
@@ -2879,6 +2226,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 }
 %>
 </div>
+<div  ></div>
 </div>
 </td>
  </tr>

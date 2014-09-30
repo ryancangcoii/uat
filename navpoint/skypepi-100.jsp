@@ -1279,7 +1279,7 @@ div.media {
     %>
     <tr class="<%=clss %>">
 		<td>
-			<a href="#view" data-target="#modal-<%=doc.getTitle() + "-" + langName%>" data-toggle="modal"
+			<a href="#view" data-target="#modal-<%=doc.getTitle().replace("\\s", "-") + "-" + langName%>" data-toggle="modal"
 			<%-- data-toggle="modal" href="#view"
 			data-target=".modal-view" data-toggle="modal"
 			title="<%=doc.getTitle()%>"
@@ -1293,7 +1293,7 @@ div.media {
 			googleViewEnd="<%=BcCache.getProperty("googleDocViewEnd") %>"
 			class="img-view" --%>
 			>
-				<div id="modal-<%=doc.getTitle() + "-" + langName%>" class="modal fade modal-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+				<div id="modal-<%=doc.getTitle().replace("\\s", "-") + "-" + langName%>" class="modal fade modal-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
 					<div class="modal-dialog" style="height: 100%">
 				    	<div class="modal-content" style="padding: 5px;height: 100%">
 				     		<div class="modal-header">

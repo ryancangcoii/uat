@@ -1287,7 +1287,7 @@ div.media {
 			        		<h4 class="modal-title"><%=doc.getTitle() + " (" + langName + ")" %></h4>
 			      		</div>
 			     		<div class="modal-body" style="padding: 0px;height: 90%">
-			     			<iframe src="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + h.getLanguage(doc.getLangCode()) + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" 
+			     			<iframe src="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" 
 			     				width="600" height="780" style="border: none;"></iframe>
 			     		</div>
 			    	</div>

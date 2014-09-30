@@ -1278,7 +1278,9 @@ div.media {
     	
     %>
     <tr class="<%=clss %>">
-		<td><a data-toggle="modal" href="#view"
+		<td>
+			<a href="#view" data-target="#modal-<%=h.getSite(request) + "-" + h.getLanguage(doc.getLangCode())%>" data-toggle="modal"
+			<%-- data-toggle="modal" href="#view"
 			data-target=".modal-view" data-toggle="modal"
 			title="<%=doc.getTitle()%>"
 			lang="<%=doc.getLanguage()%>"
@@ -1289,9 +1291,24 @@ div.media {
 			site="<%=h.getSite(request) %>"
 			googleViewStart="<%=BcCache.getProperty("googleDocViewStart") %>"
 			googleViewEnd="<%=BcCache.getProperty("googleDocViewEnd") %>"
-			class="img-view"
+			class="img-view" --%>
 			>
-			<img src="/ttsvr/skypepi/images/open.png" /></a>
+				<div id="modal-<%=h.getSite(request) + "-" + h.getLanguage(doc.getLangCode())%>" class="modal fade modal-view" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
+					<div class="modal-dialog" style="height: 100%">
+				    	<div class="modal-content" style="padding: 5px;height: 100%">
+				     		<div class="modal-header">
+				        		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				        		<h4 class="modal-title"><%=doc.getTitle() + " (" + langName + ")" %></h4>
+				      		</div>
+				     		<div class="modal-body" style="padding: 0px;height: 90%">
+				     			<iframe src="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + h.getLanguage(doc.getLangCode()) + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" 
+				     				width="600" height="780" style="border: none;"></iframe>
+				     		</div>
+				    	</div>
+			 		</div>
+				</div>
+				<img src="/ttsvr/skypepi/images/open.png" />
+			</a>
 			
 		</td>
 		<td><%=doc.getTitle() %></td>

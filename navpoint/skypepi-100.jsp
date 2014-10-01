@@ -1288,7 +1288,7 @@ div.media {
 			      		</div>
 			     		<div class="modal-body" style="padding: 0px;height: 90%">
 			     			<iframe src="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" 
-			     				width="600" height="780" style="border: none;"></iframe>
+			     				width="800" height="780" style="border: none;"></iframe>
 			     		</div>
 			    	</div>
 		 		</div>

@@ -1577,10 +1577,10 @@ try {
 									String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
 									String selector = WebUtil.getSiteSelector(request);
 									String navLink = selector + BcCache.getProperty("viewerJsPrefix") + "/n/" + snippetVar_navpointId;
-									String encodedURL = requestURL + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID;
+									String encodedURL = requestURL.replace("http://", "https://") + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID;
 									/* encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8"); */
 								%>
-								<iframe src="<%=encodedURL%>" style="height: 860px; width: 100%; border: none;"></iframe>
+								<iframe src="<%=encodedURL%>" style="border: none;" width="500" height="1135"></iframe>
 								<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 								<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 							</td>

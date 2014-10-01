@@ -1579,7 +1579,7 @@ div.media {
 							String navLink = selector + BcCache.getProperty("viewerJsPrefix") + "/n/" + snippetVar_navpointId;
 							
 							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
-							String encodedURL = requestURL + navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=" + enrolmentID;
+							String encodedURL = requestURL.replace("http://", "https://") + navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=" + enrolmentID;
 							
 							/* encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8"); */
 							%>

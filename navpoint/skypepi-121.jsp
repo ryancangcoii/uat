@@ -1576,13 +1576,15 @@ div.media {
 							
 							String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
 							String selector = WebUtil.getSiteSelector(request);
-							String navLink = selector + "/n/" + snippetVar_navpointId;
+							String navLink = selector + BcCache.getProperty("viewerJsPrefix") + "/n/" + snippetVar_navpointId;
 							
 							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
-							String encodedURL = navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=";
-							encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8");
+							String encodedURL = requestURL + navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=" + enrolmentID;
+							
+							/* encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8"); */
 							%>
-							<iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>
+							<iframe src="<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe>
+							<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 						</td>
 					</tr>

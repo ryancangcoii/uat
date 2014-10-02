@@ -1555,7 +1555,7 @@ div.media {
 										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
 									</a>
 									&nbsp;
-									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&paymentId=<%=(request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"))%>">
+									<a class="buttonBlue buttonSmall" href="<%=WebUtil.getSiteSelector(request) + h.getFileName() %>">
 									Download and Print Certificate
 									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
 									</a>
@@ -1575,15 +1575,15 @@ div.media {
 							requestURL = requestURL.substring(0, end);
 							
 							String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
+							
 							String selector = WebUtil.getSiteSelector(request);
-							String navLink = selector + BcCache.getProperty("viewerJsPrefix") + "/n/" + snippetVar_navpointId;
 							
-							String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID");
-							String encodedURL = requestURL.replace("http://", "https://") + navLink + "?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=" + enrolmentID;
-							
-							/* encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8"); */
+							String navLink = selector + BcCache.getProperty("viewerJsPrefix"); /* + "/n/" + snippetVar_navpointId; */
+//								String[] navId = snippetVar_navpointId.split("-");
+							String encodedURL = requestURL.replace("http://", "//").replace("https://", "//") + navLink + h.getFileName(); /* + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID; */
+							/* encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8"); */
 							%>
-							<iframe src="<%=encodedURL%>&embedded=true"style="height: 975px; width: 100%; border: none;"></iframe>
+							<iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe>
 							<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 						</td>

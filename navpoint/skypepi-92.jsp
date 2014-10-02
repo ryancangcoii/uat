@@ -1556,7 +1556,7 @@ try {
 											<a href="<%=snippetVar_viewReceipts%>">
 												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 											</a>
-											<a href="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))%>" target="_blank">
+											<a href="<%=WebUtil.getSiteSelector(request) + h.getFileName() %>" download>
 												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
 											</a>
 										</td>
@@ -1574,10 +1574,14 @@ try {
 									String requestURI = request.getRequestURI();
 									int end = requestURL.indexOf(requestURI);
 									requestURL = requestURL.substring(0, end);
+									
 									String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
+									
 									String selector = WebUtil.getSiteSelector(request);
-									String navLink = selector + BcCache.getProperty("viewerJsPrefix") + "/n/" + snippetVar_navpointId;
-									String encodedURL = requestURL.replace("http://", "https://") + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID;
+									
+									String navLink = selector + BcCache.getProperty("viewerJsPrefix"); /* + "/n/" + snippetVar_navpointId; */
+// 									String[] navId = snippetVar_navpointId.split("-");
+									String encodedURL = requestURL.replace("http://", "//").replace("https://", "//") + navLink + h.getFileName(); /* + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID; */
 									/* encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8"); */
 								%>
 								<iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe>

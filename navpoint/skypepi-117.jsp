@@ -238,6 +238,7 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
+<script src="/ttsvr/skypepi/scripts/pdfobject.js" type="text/javascript"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -1584,7 +1585,9 @@ try {
 									String encodedURL = requestURL.replace("http://", "//").replace("https://", "//") + navLink + h.getFileName(); /* + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID; */
 									/* encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8"); */
 								%>
-								<iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe>
+								<%-- <iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe> --%>
+								<input id="displayPdfLink" value="<%=encodedURL%>" type="hidden" />
+								<div id="displayPdf" style="height: 975px; width: 100%; border: none;"></div>
 								<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 								<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 							</td>
@@ -2114,6 +2117,12 @@ var PaymentReceipt = function() {
 		myVariable: null,
 
 		init: function() {
+			
+
+			window.onload = function() {
+				var myPDF = new PDFObject({ url: $("#displayPdfLink").val() }).embed("displayPdf");
+			};
+
 			
 //			$("#receipts-link").click(function() {
 //				jQuery("#fraPreviewReceipt").attr("src", $("receiptUrl").val());

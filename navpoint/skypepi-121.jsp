@@ -1556,7 +1556,8 @@ div.media {
 										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
 									</a>
 									&nbsp;
-									<a class="buttonBlue buttonSmall" href="<%=WebUtil.getSiteSelector(request) + h.getFileName() %>">
+									<% String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"); %>
+									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=enrolmentID%>&isDownload=true">
 									Download and Print Certificate
 									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
 									</a>
@@ -1575,18 +1576,18 @@ div.media {
 							int end = requestURL.indexOf(requestURI);
 							requestURL = requestURL.substring(0, end);
 							
-							String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
-							
 							String selector = WebUtil.getSiteSelector(request);
 							
 							String navLink = selector; /* + BcCache.getProperty("viewerJsPrefix"); /* + "/n/" + snippetVar_navpointId; */
 //								String[] navId = snippetVar_navpointId.split("-");
-							String encodedURL = requestURL.replace("http://", "//").replace("https://", "//") + navLink + h.getFileName(); /* + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID; */
-							/* encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8"); */
+							String encodedURL = requestURL.replace("http://", "//").replace("https://", "//") + navLink + h.getFileName(); /* + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&enrolmentID=" + enrolmentID; */
+							/* encodedURL = URLEncoder.encode(requestURL + encodedURL + enrolmentID, "UTF-8"); */
 							%>
 							<input id="displayPdfLink" value="<%=encodedURL%>" type="hidden" />
 							<div id="displayPdf" style="height: 975px; width: 100%; border: none;">
-								<object data="<%=encodedURL%>" type="application/pdf" width="100%" height="100%"></object>
+								<object data="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=enrolmentID%>" type="application/pdf" width="100%" height="100%">
+									<embed src="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=enrolmentID%>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
+								</object>
 							</div>
 							<%-- <iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe> --%>
 							<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe> --%>

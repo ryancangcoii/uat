@@ -1557,7 +1557,8 @@ try {
 											<a href="<%=snippetVar_viewReceipts%>">
 												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
 											</a>
-											<a href="<%=WebUtil.getSiteSelector(request) + h.getFileName() %>" download>
+											<%  String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"); %>
+											<a href="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentDetailID=<%=paymentDetailID%>&isDownload=true" download>
 												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
 											</a>
 										</td>
@@ -1576,8 +1577,6 @@ try {
 									int end = requestURL.indexOf(requestURI);
 									requestURL = requestURL.substring(0, end);
 									
-									String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID");
-									
 									String selector = WebUtil.getSiteSelector(request);
 									
 									String navLink = selector; /* + BcCache.getProperty("viewerJsPrefix"); /* + "/n/" + snippetVar_navpointId; */
@@ -1588,7 +1587,9 @@ try {
 								<%-- <iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe> --%>
 								<input id="displayPdfLink" value="<%=encodedURL%>" type="hidden" />
 								<div id="displayPdf" style="height: 975px; width: 100%; border: none;">
-									<embed src="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentDetailID=<%=paymentDetailID %>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%">
+									<object data="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentDetailID=<%=paymentDetailID%>" type="application/pdf" width="100%" height="100%">
+										<embed src="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentDetailID=<%=paymentDetailID%>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
+									</object>
 								</div>
 								<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 								<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe> --%>

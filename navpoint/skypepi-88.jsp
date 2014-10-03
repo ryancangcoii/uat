@@ -1337,15 +1337,15 @@ div.media {
 							<table width="100%">
 								<tr>
 									<td align="right" width="100%">
-									<a class="buttonBlue buttonSmall" href="<%=snippetVar_targetPage%>">
-									Back
-										<!-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> -->
+									<a class="buttonBlue" href="<%=snippetVar_targetPage%>">
+										<%=lang.getString("Back", null, "") %>
+										<%-- <input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" /> --%>
 									</a>
 									&nbsp;
 									<% String enrolmentID = request.getParameter("enrolmentID") == null ? "0" : request.getParameter("enrolmentID"); %>
-									<a class="buttonBlue buttonSmall" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=enrolmentID%>&isDownload=true">
-									Download and Print Certificate
-									<!-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> -->
+									<a class="buttonBlue" href="?op=skypepi_widgets.viewMarksAndGrades.viewMarksAndGrades&enrolmentID=<%=enrolmentID%>&isDownload=true">
+										<%=lang.getString("Download and Print Certificate", null, "") %>
+									<%-- 	<input type="button" class="buttonBlue" value="<%=lang.getString("Download and Print Certificate", null, "") %>" /> --%>
 									</a>
 									<br>
 									<br>

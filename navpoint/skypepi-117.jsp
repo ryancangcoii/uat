@@ -1554,12 +1554,12 @@ try {
 									<tr>
 										<td width="30%"><span class="sub-heading color-blue"><b><%=h.getPaymentReceipt() == null ? "" : h.getPaymentReceipt().getCompanyAbn() %></b></span></td>
 										<td align="right">
-											<a href="<%=snippetVar_viewReceipts%>">
-												<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Back", null, "") %>" />
+											<a href="<%=snippetVar_viewReceipts%>"  class="buttonBlue">
+												<%=lang.getString("Back", null, "") %>
 											</a>
 											<%  String paymentDetailID = request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"); %>
-											<a href="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentDetailID=<%=paymentDetailID%>&isDownload=true" download>
-												<input type="button" class="buttonBlue" value="<%=lang.getString("Download And Print Receipt", null, "") %>"/>
+											<a href="?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentDetailID=<%=paymentDetailID%>&isDownload=true" download class="buttonBlue">
+												<%=lang.getString("Download And Print Receipt", null, "") %>
 											</a>
 										</td>
 									</tr>

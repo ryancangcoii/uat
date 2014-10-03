@@ -175,7 +175,7 @@ try {
 <!-- <script src="/ttsvr/skypepi/scripts/jquery.simplemodal.1.4.4.min.js"></script> -->
 <!-- <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/dialog/confirm.css" media="screen" /> -->
 <script src="/ttsvr/bootstrap/js/bootstrap.min.js?v=3.0.0" type="text/javascript"></script>
-
+<script type="text/javascript">if (typeof console == "undefined" || typeof console.log == "undefined") var console = { log: function() {} };</script>
 <style type='text/css'>
 /* Styles for widget simpleDiv */
 
@@ -1184,6 +1184,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.repository.ToolTwist"%>
 <%@page import="tooltwist.skypepi.bean.Language"%>
 <%@page import="tooltwist.skypepi.util.ProjectUtil"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil"%>

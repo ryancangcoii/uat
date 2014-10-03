@@ -1657,6 +1657,10 @@ var ViewMarksAndGrades = function() {
 
 		init: function() {
 			
+			window.onload = function() {
+				var myPDF = new PDFObject({ url: $("#displayPdfLink").val() }).embed("displayPdf");
+			};
+			
 //			jQuery.ajax({
 //	               url: "",
 //	               data: {

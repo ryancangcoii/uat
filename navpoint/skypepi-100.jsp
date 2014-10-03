@@ -1288,8 +1288,8 @@ div.media {
 			      		</div>
 			     		<div class="modal-body" style="padding: 0px;height: 90%">
 				     		<div id="displayPdf" style="height: 780px; width: 800px; border: none;">
-								<object data="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" type="application/pdf" width="100%" height="100%">
-									<embed src="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
+								<object data="<%= ToolTwist.getWebapp() + "/skypepi/documents/" + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" %>" type="application/pdf" width="100%" height="100%">
+									<embed src="<%= ToolTwist.getWebapp() + "/skypepi/documents/" + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" %>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
 								</object>
 							</div>
 			     		</div>

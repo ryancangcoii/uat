@@ -1371,7 +1371,9 @@ div.media {
 							/* encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8"); */
 							%>
 							<input id="displayPdfLink" value="<%=encodedURL%>" type="hidden" />
-							<div id="displayPdf" style="height: 975px; width: 100%; border: none;"></div>
+							<div id="displayPdf" style="height: 975px; width: 100%; border: none;">
+								<object data="<%=encodedURL%>" type="application/pdf" width="100%" height="100%"></object>
+							</div>
 							<%-- <iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe> --%>
 							<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 975px; width: 100%; border: none;"></iframe> --%>
 							<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fCertificate&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&EnrolmentID=<%=request.getParameter("enrolmentID") %>" style="height: 975px; width: 100%; border: none;"></iframe> --%>
@@ -1658,7 +1660,7 @@ var ViewMarksAndGrades = function() {
 		init: function() {
 			
 			window.onload = function() {
-				var myPDF = new PDFObject({ url: $("#displayPdfLink").val() }).embed("displayPdf");
+//				var myPDF = new PDFObject({ url: $("#displayPdfLink").val() }).embed("displayPdf");
 			};
 			
 //			jQuery.ajax({

@@ -1579,7 +1579,7 @@ try {
 									
 									String selector = WebUtil.getSiteSelector(request);
 									
-									String navLink = selector + BcCache.getProperty("viewerJsPrefix"); /* + "/n/" + snippetVar_navpointId; */
+									String navLink = selector; /* + BcCache.getProperty("viewerJsPrefix"); /* + "/n/" + snippetVar_navpointId; */
 // 									String[] navId = snippetVar_navpointId.split("-");
 									String encodedURL = requestURL.replace("http://", "//").replace("https://", "//") + navLink + h.getFileName(); /* + navLink + "?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentId=" + paymentDetailID; */
 									/* encodedURL = URLEncoder.encode(requestURL + encodedURL + paymentDetailID, "UTF-8"); */

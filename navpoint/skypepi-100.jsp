@@ -1288,7 +1288,7 @@ div.media {
 			        		<h4 class="modal-title"><%=doc.getTitle() + " (" + langName + ")" %></h4>
 			      		</div>
 			     		<div class="modal-body" style="padding: 0px;height: 90%">
-				     		<div id="displayPdf" style="height: 780px; width: 800px; border: none;">
+				     		<div id="displayPdf" style="height: 100%; width: 100%;">
 								<object data="<%= ToolTwist.getWebapp() + "/skypepi/documents/" + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" %>" type="application/pdf" width="100%" height="100%">
 									<embed src="<%= ToolTwist.getWebapp() + "/skypepi/documents/" + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" %>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
 								</object>

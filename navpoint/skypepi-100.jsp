@@ -1287,8 +1287,11 @@ div.media {
 			        		<h4 class="modal-title"><%=doc.getTitle() + " (" + langName + ")" %></h4>
 			      		</div>
 			     		<div class="modal-body" style="padding: 0px;height: 90%">
-			     			<iframe src="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" 
-			     				width="800" height="780" style="border: none;"></iframe>
+				     		<div id="displayPdf" style="height: 780px; width: 800px; border: none;">
+								<object data="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" type="application/pdf" width="100%" height="100%">
+									<embed src="<%=BcCache.getProperty("googleDocViewStart") + doc.getType() + "-" + h.getSite(request) + "-" + doc.getLangCode() + ".pdf" + BcCache.getProperty("googleDocViewEnd") %>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
+								</object>
+							</div>
 			     		</div>
 			    	</div>
 		 		</div>

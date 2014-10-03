@@ -1559,16 +1559,21 @@ div.media {
 	<a href="" target="_blank" id="forum-link" style="display: none;"></a>
 	
 	<%-- if (snippetVar_option.equals("text")) { --%>
-	<a class="media" href="<%=h.getDocumentUrl() %>"></a>
+	<%-- <a class="media" href="<%=h.getDocumentUrl() %>"></a> --%>
 	
-	<script type="text/javascript">
+	<%-- <script type="text/javascript">
     $(function() {
         $('a.media').media({width:500, height:1135});
     });
-</script>
+</script> --%>
 	
 	<%-- } --%>
 	<%-- if (snippetVar_option.equals("radio")) { --%>
+	<div id="displayPdf" style="height: 975px; width: 100%; border: none;">
+		<object data="<%=h.getDocumentUrl() %>" type="application/pdf" width="100%" height="100%">
+			<embed src="<%=h.getDocumentUrl() %>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
+		</object>
+	</div>
 	<div class="cocAccept" style="display: block;color: black;">
 	
 	<table>

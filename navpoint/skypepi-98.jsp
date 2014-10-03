@@ -1489,6 +1489,7 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+<%@page import="tooltwist.repository.ToolTwist"%>
 <%@page import="tooltwist.skypepi.util.DataBlockUtil.SESSION_VARIABLE"%>
 <%@page import="com.tooltwist.filemap.FileMap"%>
 <%@page import="com.dinaa.misc.AltLang"%>
@@ -1514,15 +1515,15 @@ String defaultDoc = "";
 if (snippetVar_title.equals("myConsent")) {
 	docType = "ParentalConsent";
 	//defaultDoc = "/ttsvr/skypepi/documents/Parent Consent V1.0.pdf";;
-	defaultDoc = googleViewStart + "/ParentConsentV1.0.pdf" + googleViewEnd;
+	defaultDoc = ToolTwist.getWebapp() + "/skypepi/documents/" + "/ParentConsentV1.0.pdf";
 } else {
 	docType = "HouseRules";
 	//defaultDoc = "/ttsvr/skypepi/documents/House Rules for YL V1.9.pdf";;
-	defaultDoc = googleViewStart + "/HouseRulesforYLV1.9.pdf" + googleViewEnd;	
+	defaultDoc = ToolTwist.getWebapp() + "/skypepi/documents/" + "/HouseRulesforYLV1.9.pdf";	
 }
 
 //String documentUrl = "/ttsvr/skypepi/documents/"+docType+"-"+site+"-"+lang+".pdf";
-String documentUrl = googleViewStart + docType+"-"+site+"-"+lang+".pdf" + googleViewEnd;
+String documentUrl = ToolTwist.getWebapp() + "/skypepi/documents/" + docType + "-" + site + "-"  +lang + ".pdf";
 
 FileMap fileMap = new FileMap(filemapPath);
 
@@ -1567,9 +1568,14 @@ div.media {
   	<% } %>
 </ul>
 
-<a class="media" href="<%=documentUrl %>"></a>
+<%-- <a class="media" href="<%=documentUrl %>"></a> --%>
 
 
+<div id="displayPdf" style="height: 975px; width: 100%; border: none;">
+	<object data="<%=documentUrl %>" type="application/pdf" width="100%" height="100%">
+		<embed src="<%=documentUrl %>" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%" alt="pdf" type="application/pdf">
+	</object>
+</div>
 <div class="cocAccept" style="display: block;color: black;">
 <br><br>
 <table>

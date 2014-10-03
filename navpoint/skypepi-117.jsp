@@ -1588,7 +1588,7 @@ try {
 								<%-- <iframe src="<%=encodedURL%>"style="height: 975px; width: 100%; border: none;"></iframe> --%>
 								<input id="displayPdfLink" value="<%=encodedURL%>" type="hidden" />
 								<div id="displayPdf" style="height: 975px; width: 100%; border: none;">
-									<object data="<%=encodedURL%>" type="application/pdf" width="100%" height="100%"></object>
+									<embed src="http://localhost:38380/ttsvr/n/skypepi=92?op=skypepi_widgets.paymentReceipt.paymentReceipts&paymentDetailID=172231" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" width="100%" height="100%">
 								</div>
 								<%-- <iframe src="//docs.google.com/viewer?url=<%=encodedURL%>&embedded=true" style="height: 860px; width: 100%; border: none;"></iframe> --%>
 								<%-- <iframe src="https://ReportUser:Report5User@reportsuat.skysoftware.com/ReportServer_SQL2008?%2fUAT%2fQuick+Link+Reports%2fReceipt&rs:Command=Render&rc:Toolbar=false&rc:Javascript=true&PaymentDetailID=<%=(request.getParameter("paymentDetailID") == null ? "0" : request.getParameter("paymentDetailID"))  %>" style="height: 860px; width: 100%; border: none;"></iframe> --%>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- FROM THE TEMPLATE: /ControllerV8/custom-config-files/custom-studentporta-uat/production-tooltwist.conf -->
+
+<config>
+    <!-- This file is read and written by the DataDictionary class -->
+    <developmentMode>core</developmentMode>
+    <fsaLookAndFeel>style1</fsaLookAndFeel>
+    <useFastXml>Y</useFastXml>
+    <urlDebugMessages>N</urlDebugMessages>
+    <uiMappingDebugMessages>Y</uiMappingDebugMessages>
+    <unitTestSnippets>N</unitTestSnippets>
+    <footprintDebugMessages>Y</footprintDebugMessages>
+
+    <webappPrefix>/ttsvr</webappPrefix>
+    <coreConfigDir>/home/studentportal/server/extension-projects/tooltwist/config</coreConfigDir>
+    <customConfigDir>/home/studentportal/server/extension-projects/ttStd/config</customConfigDir>
+    <pluginConfigDir>/home/studentportal/server/extension-projects/ttStd/config</pluginConfigDir>
+    <develDir>/home/studentportal/server/extension-projects</develDir>
+    <binDir>/home/studentportal/server/dummyBinDir</binDir>
+    <webappsDir>/home/studentportal/server/tomcat/webapps</webappsDir>
+    
+<!--
+    <siteSpecificConfigDir>/home/studentportal/server/../site-conf</siteSpecificConfigDir>
+-->
+    <siteSpecificConfigDir>/home/studentportal/server/site-conf</siteSpecificConfigDir>
+    <webdesignProjectsDir>/home/studentportal/server/webdesign-projects</webdesignProjectsDir>
+    <extensionProjectsDir>/home/studentportal/server/extension-projects</extensionProjectsDir>
+    <currentWebapp>webdesign</currentWebapp>
+
+    <project>
+        <name>tooltwist</name>
+        <type>directory</type>
+        <path>tooltwist/config</path>
+    </project>
+	<project><name>xdata</name><type>directory</type><path>xdata/config</path></project>	<project><name>ttStd</name><type>directory</type><path>ttStd/config</path></project>	<project><name>ttWbd</name><type>directory</type><path>ttWbd/config</path></project>	<project><name>skyportal_t</name><type>directory</type><path>skyportal_t/config</path></project>
+    <project>
+        <name>webdesign</name>
+        <type>directory</type>
+        <path>webdesign/config</path>
+    </project>
+
+    <webapp>
+        <name>webdesign</name>
+        <mainProject>skyportal_t</mainProject>
+        <application>webdesign</application>
+        <useDatasource>Y</useDatasource>
+	<dataSource>java:/comp/env/jdbc/portal</dataSource>
+	<!--
+        <dbType>mysql</dbType>
+        <jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
+        <dbUrl>jdbc:mysql://[[hostname]]:[[port]]/[[dbname]]?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;jdbcCompliantTruncation=false</dbUrl>
+        <username>tradmin</username>
+	<password>700l7w157</password>
+        <hostname>tr-rds-syd-dev01.cascuvnqlvjt.ap-southeast-2.rds.amazonaws.com</hostname>
+        <port>3306</port>
+        <dbname>portal</dbname>
+        -->
+        <loginUrl>/tooltwist/basic/login.jsp</loginUrl>
+        <logoutUrl>/tooltwist/basic/loggedOut.jsp</logoutUrl>
+        <badLoginUrl>/tooltwist/basic/badLogin.jsp</badLoginUrl>
+        <timeoutUrl>/tooltwist/basic/timeout.jsp</timeoutUrl>
+        <errorUrl>/tooltwist/basic/error.jsp</errorUrl>
+        <projectLayer>tooltwist</projectLayer>
+	<projectLayer>xdata</projectLayer>	<projectLayer>ttStd</projectLayer>	<projectLayer>ttWbd</projectLayer>	<projectLayer>skyportal_t</projectLayer>
+        <projectLayer>webdesign</projectLayer>
+        <defaultUserPreferences>
+        </defaultUserPreferences>
+	<config>
+		<controllerHome>/ControllerV8</controllerHome>
+		<designerGenerateDirectory>/home/studentportal/server/tomcat/webapps/ttsvr</designerGenerateDirectory>
+	</config>
+    </webapp>
+    <user>
+        <name>adm</name>
+        <description>Administrator</description>
+        <password>demosystem</password>
+        <privileges>aXTDFRMU</privileges>
+    </user>
+</config>

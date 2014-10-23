@@ -1836,13 +1836,13 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
   <div class="carousel-inner">
           
 			<div class="item active">
-				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner1.png" alt="Banner"></a>
+				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner1.jpg" alt="Banner"></a>
 			</div>
 			<div class="item ">
-				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner2.png" alt="Banner"></a>
+				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner2.jpg" alt="Banner"></a>
 			</div>
 			<div class="item ">
-				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner3.png" alt="Banner"></a>
+				<a href="#"><img src="/ttsvr/cropImage/skypepi.images.portal_i_banner3.jpg" alt="Banner"></a>
 			</div>
    
   </div>

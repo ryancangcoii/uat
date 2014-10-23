@@ -129,16 +129,16 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_adminHeader_40", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = null;
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72 = null;
 try {
-	Properties productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("homeNavPointLink", "/ttsvr/home");
-	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("menuType", "Footer");
-	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params.setProperty("currentNavpoint", "skypepi-100");
-	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40Params);
-	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40.callPreFetch(jh);
+	Properties productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72Params.setProperty("homeNavPointLink", "/ttsvr/home");
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72Params.setProperty("menuType", "Footer");
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72Params.setProperty("currentNavpoint", "skypepi-100");
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72Params);
+	productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72", e);
 }
 
 
@@ -204,28 +204,28 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
+}/* Styles for widget simpleDiv */
+
+.SimpleDiv .someClass {
 }</style>
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.skypepi_z_tafeCSS.css" media="screen" />
 <script src="/ttsvr/blog/script/jquery.blockUI.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery.form.js" type="text/javascript"></script>
 
+	<%-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" /> --%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-  <!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-29XL');</script>
-	<!-- End Google Tag Manager -->
-	
 	<!-- START OF SmartSource Data Collector TAG v10.2.29 -->
 	<!-- Copyright (c) 2012 Webtrends Inc.  All rights reserved. -->
 	<script>
@@ -299,11 +299,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
  <tr>
+  <td ></td>
+ </tr>
+ <tr>
   <td  class='userInfo' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='middle'><table border='0' cellpadding='0' cellspacing='0'  align='left' valign='middle'>
  <tr>
-  <td  class='magic2' align='left' valign='top'><img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_BC_logo.png" border="0"></td>
+  <td  class='magic2' align='left' valign='top'>
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_i_tafeLogoSmall.png" border="0">
+</td>
  </tr>
 </table>
 </td>
@@ -1294,7 +1299,7 @@ div.media {
 								</object>
 							</div>
 			     		</div>
-			    	</div>
+			    	</div> 
 		 		</div>
 			</div>
 			<a href="#view" data-target="#modal-<%=doc.getTitle().replaceAll("\\s", "-").replaceAll(" ", "-") + "-" + langName%>" data-toggle="modal"
@@ -1453,22 +1458,15 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 </table>
 <div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  height='20' align='left' valign='top'></td>
- </tr>
- <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="footer-menu"><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@40 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
+  <td  class='footerBG' align='center' valign='top'><div class='DivWidget standard-width' style=""><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@72 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_40;
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooterAdmin_72;
 	String snippetVar_currentNavpoint = "skypepi-100";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_homeNavPointLink = "/ttsvr/home";
-	String snippetVar_widgetName = "@40";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@40";
+	String snippetVar_widgetName = "@72";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@72";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -1515,10 +1513,25 @@ try {
  %>			</ul>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@40 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@72 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
 }
 %>
 </div>
+</td>
+ </tr>
+ <tr>
+  <td  class='footerBG' align='center' valign='top'><div class='DivWidget standard-width' style=""></div>
+</td>
+ </tr>
+ <tr>
+  <td  align='center'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+ <tr>
+  <td  height='20' align='left' valign='top'></td>
+ </tr>
+ <tr>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="footer-menu"></div>
 </div>
 </td>
  </tr>
@@ -1543,61 +1556,13 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_positiveLogo.png" border="0">
 </td>
   <td  class='magic'></td>
-  <td  class='magic'><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
-<%
-try {
-	String snippetVar_dotSize = "5";
-	String snippetVar_widgetName = "@35";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@35";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-<table cellpadding="0" cellspacing="0">
-<tr>
-<td>
-<a href="http://www.tooltwist.com" target="_blank">
-<image src="/ttsvr/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
+  <td  class='magic'><a href="//www.tooltwist.com"  style=" text-decoration:none; color:#666; margin:0; padding:0;"  target="_blank"><img src='/ttsvr/cropImage/skypepi.images.skypepi_i_tooltwistLogo.png' border='0' /></a></td>
+  <td  class='magic'>
+<a href="/ttsvr/n/Admin-Home/skypepi-105">
+	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_i_tafeLogo.png" border="0">
 </a>
 </td>
-
-<%
-	// Check for an error that has occurred since the JSP started.
-	if (WbdSession.numErrors(jh.getCredentials()) > 0)
-	{
-		String snippetVar_divName = "wbdErrorDiv";
-		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		String snippetVar_dotColor = "green";
-%>
-<td width="2" nowrap></td>
-<td valign="bottom">
-<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
-onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
-</td>
-<td>
-<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
-<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
-<code>
-<%=snippetVar_errorMsg%>
-</code>
-</div>
-</td>
-
-<%
-	}
-%>
-</tr>
-</table>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
-}
-%>
-</td>
   <td  class='magic'></td>
-  <td  class='magic'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
-</td>
  </tr>
  <tr>
   <td  height='30'></td>
@@ -1700,60 +1665,12 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  </tr>
 </table>
 </div>
-<div  class="col-md-1 magic2">
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
-</div>
-<div  class="col-md-1 magic2"><%-- Widget skypepi.zones.portal_z_responsiveFooterAdmin@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
-<%
-try {
-	String snippetVar_dotSize = "5";
-	String snippetVar_widgetName = "@29";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooterAdmin@29";
-	String snippetVar_elementId = "";
-	String snippetVar_idDefinition = "";
-%>
-<table cellpadding="0" cellspacing="0">
-<tr>
-<td>
-<a href="http://www.tooltwist.com" target="_blank">
-<image src="/ttsvr/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
+<div  class="col-md-2 magic2">
+<a href="/ttsvr/n/Admin-Home/skypepi-105">
+	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_i_tafeLogoSmall.png" border="0">
 </a>
-</td>
-
-<%
-	// Check for an error that has occurred since the JSP started.
-	if (WbdSession.numErrors(jh.getCredentials()) > 0)
-	{
-		String snippetVar_divName = "wbdErrorDiv";
-		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
-		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
-		String snippetVar_dotColor = "green";
-%>
-<td width="2" nowrap></td>
-<td valign="bottom">
-<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
-onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
-</td>
-<td>
-<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
-<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
-<code>
-<%=snippetVar_errorMsg%>
-</code>
 </div>
-</td>
-
-<%
-	}
-%>
-</tr>
-</table>
-<%
-} catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooterAdmin@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
-}
-%>
-</div>
+<div  class="col-md-1 magic2"><a href="//www.tooltwist.com"  style=" text-decoration:none; color:#666; margin:0; padding:0;"  target="_blank"><img src='/ttsvr/cropImage/skypepi.images.skypepi_i_tooltwistLogo.png' border='0' /></a></div>
 </div>
 </td>
  </tr>

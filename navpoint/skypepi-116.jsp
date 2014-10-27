@@ -244,21 +244,14 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
 <script src="/ttsvr/skypepi/scripts/jquery-input-masked.js" type="text/javascript"></script>
 
+	<%-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" /> --%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-  <!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-29XL');</script>
-	<!-- End Google Tag Manager -->
-	
 	<!-- START OF SmartSource Data Collector TAG v10.2.29 -->
 	<!-- Copyright (c) 2012 Webtrends Inc.  All rights reserved. -->
 	<script>
@@ -1566,7 +1559,7 @@ try {
 .input-cc {font-size: 16px; text-align: center;}
 .credit-card {
 	width: 65px !important;
-	margin: 0px 5px;
+	margin-right: 10px;
 	text-align: center;
 	}
 	.color-red {
@@ -1616,7 +1609,7 @@ try {
 									</table>
 								</td>
 							</tr>
-							<tr>
+							<%-- <tr>
 								<td>
 									<table style="border-spacing:5px">
 										<tr>
@@ -1629,22 +1622,22 @@ try {
 												<input  id="paymentDescription" name="paymentDescription" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
 											</td>
 										</tr>
-										<%--<tr>
+										<tr>
 											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>:</label> </td>
 											<td class="add_space_left body-text">
 												<div class="form-input-medium-container">
 													<input type="text" value="<%=lang.getString(paymentDesc, null, "") %>" autocomplete="off" class="form-input-medium required" id="paymentDescription" name="paymentDescription" readonly="readonly"/>
 												</div>
 											</td>
-										</tr>  --%>
-										<%-- <tr>
+										</tr> 
+										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Balance", null, "") %>:</td>
 											<td class="add_space_left">
 												<div class="form-input-medium-container">
 													<input type="text" value="<%=StringUtil.formatCurrency(grossAmount) %>" autocomplete="off" class=""  readonly="readonly"/>
 												</div>
 											</td>
-										</tr> --%>
+										</tr>
 										<tr>
 											<td height="10px">
 											</td>
@@ -1655,29 +1648,49 @@ try {
 												<input  id="transact_amount" name="transact_amount" class="form-control" type="text" autocomplete="off" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
 											</td>
 										</tr>
-										<%--<tr>
+										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Amount", null, "") %>:</td>
 											<td class="add_space_left">
 												<div class="-container">
 													<input type="text" value="<%=StringUtil.formatCurrency(amount) %>" autocomplete="off" class="" name="transact_amount" id="transact_amount" readonly="readonly"/>
 												</div>
 											</td>
-										</tr>  --%>
-										<%-- <tr>
+										</tr> 
+										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Payment Method", null, "") %>:</td>
 											<td class="add_space_left">
 												<select name="transact_payment_method">
 													<option value="7"><%=lang.getString("Online Payment", null, "") %></option>
 												</select>
-											</td> --%>
+											</td>
 										</tr>	
 									</table>
 								</td>
-							</tr>
+							</tr> --%>
 						</table>
-						</div>
-						<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
-						<div class="roundcont">
+					</div>
+					<div class="row spacing-top" >
+                   		<div class="col-md-4">
+                          	<label class="control-label control-label2" for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>: </label>
+                        </div>
+                        <div class="col-md-4">
+          	             	<input  id="paymentDescription" name="paymentDescription" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
+		            	</div>
+                   		<div class="col-md-4">
+	                    </div>
+                    </div>
+					<div class="row spacing-top" >
+                   		<div class="col-md-4">
+                          	<label class="control-label control-label2" for="transact_amount" id="lbl_transact_amount"><%=lang.getString("Amount", null, "") %>: </label>
+                        </div>
+                        <div class="col-md-4">
+          	             	<input  id="transact_amount" name="transact_amount" class="form-control" type="text" autocomplete="off" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
+		            	</div>
+                   		<div class="col-md-4">
+	                    </div>
+                    </div>
+					<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
+					<div class="roundcont">
 						<table cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td>
@@ -1780,21 +1793,21 @@ try {
 -->						
 
  <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Card Holder's Name", null, "") %>: </label>
                                         </div>
                                         <div class="col-md-4">
                                         <input  id="creditcard_name" name="creditcard_name" class="form-control required" type="text" autocomplete="off" style="width: 100%;" />
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                     <div class="row spacing-top" >
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" for="transact_creditcard" id="lbl_transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>: </label>
                                         </div>
-                                        <div class="col-md-8"><input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
+                                        <div class="col-md-4"><input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
                                         <table cellpadding="0" cellspacing="0">
 													<tr>
 														<td>
@@ -1817,12 +1830,12 @@ try {
 													</tr>
 												</table>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                         <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" id="lbl_transact_creditcard_type" for="transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label>
                                         </div>
                                         <div class="col-md-4">
@@ -1831,15 +1844,15 @@ try {
 													<option value="VISA">Visa</option>
 												</select>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                     <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2"><%=lang.getString("Expiry Date", null, "") %>: </label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-4">
                                       		<table>
 													<tr>
 														<td><label class="control-label"  id="lbl_transact_month"><%=lang.getString("Month", null, "") %>: </label></td>
@@ -1864,18 +1877,18 @@ try {
 													</tr>
 												</table>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                      <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label>
                                         </div>
                                         <div class="col-md-4">
                                       <input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required form-control" style="width: 100px;"/>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
@@ -1996,14 +2009,14 @@ try {
 </div>
 
 <!-- modal content -->
-<div id='confirm' class="simple_dialog">
+<%-- div id='confirm' class="simple_dialog" style="display:none;">
 	<div class='header'><span>Processing Payment...</span></div>
 	<div class='message' style="padding: 0px;">
 		<iframe id="\" style="width: 100%; height: 79%;border: 0px;"></iframe>
 	</div>
 </div>
 
-<div id='div_loading' class="simple_dialog">
+<div id='div_loading' class="simple_dialog" style="display:none;">
 	<div class='header'><span>Please wait...</span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<br/>
@@ -2011,12 +2024,12 @@ try {
 	</div>
 </div>
 
-<div id='receipt_preview' class="simple_dialog">
+<div id='receipt_preview' class="simple_dialog" style="display:none;">
 	<div class='header'><span>Please wait...</span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<iframe id="fraPreviewReceipt" style="width: 100%; height: 79%;border: 0px;"></iframe>
 	</div>
-</div>
+</div --%>
 
 <script type="text/javascript">
 	
@@ -2171,7 +2184,7 @@ var TransactPayment = function() {
 					
 					if (status == 'FAILED') {
 						
-						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "") %><br> <%=lang.getString("Check your payment information.", null, "") %>");
+						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "")%><br> <%=lang.getString("Check your payment information.", null, "") %>");
 						
 						jQuery("#process-containers").css({"height":" 1065px"});
 					}
@@ -2180,9 +2193,10 @@ var TransactPayment = function() {
 						//window.open(data,'myreceipt','width=1000,height=800');
 						$("#paymentDetailID").val(data);
 						
+						Progress.hideProgress();
 						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
 						
-						jQuery(document).on("click","#msgButtonClose", function() {
+						jQuery(document).on("click","#div_message .close, #div_message .btn-primary", function() {
 							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
 						});
 						

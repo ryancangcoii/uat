@@ -2184,6 +2184,7 @@ var TransactPayment = function() {
 					
 					if (status == 'FAILED') {
 						
+						Progress.hideProgress();
 						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "")%><br> <%=lang.getString("Check your payment information.", null, "") %>");
 						
 						jQuery("#process-containers").css({"height":" 1065px"});
@@ -2197,7 +2198,6 @@ var TransactPayment = function() {
 						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
 						
 						jQuery(document).on("click","#div_message .close, #div_message .btn-primary", function() {
-							Progress.hideProgress();
 							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
 						});
 						

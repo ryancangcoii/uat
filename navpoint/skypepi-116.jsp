@@ -1957,13 +1957,13 @@ try {
 											<% if("".equals(feeSelections)) { %>
 											 <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                               <td> <a href="#" id="transact_btn_cancel" class="buttonBlue"> <%=lang.getString("Cancel", null, "") %> </a></td>
+				                               <td> <a href="javascript:void(0);" id="transact_btn_cancel" class="buttonBlue"> <%=lang.getString("Cancel", null, "") %> </a></td>
 				                              </tr>
 				                     		  </table>								
 				                             <% } else { %>
 				                             <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td><a href="#" id="transact_btn_back" class="buttonBlue"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>      
+				                                 <td><a href="javascript:void(0);" id="transact_btn_back" class="buttonBlue"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>      
 				                               </tr>
 				                             </table>
 				                             
@@ -1975,7 +1975,7 @@ try {
 										<td>
 											<table width="149px" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td><a href="#" id="transact_btn_confirm" class="buttonBlue"><%=lang.getString("Confirm Payment", null, "") %></a></td>
+				                                 <td><a href="javascript:void(0);" id="transact_btn_confirm" class="buttonBlue"><%=lang.getString("Confirm Payment", null, "") %></a></td>
 				                                 </tr>
 				                             </table>
 										</td>
@@ -2161,11 +2161,7 @@ var TransactPayment = function() {
 			var self = this;
 			var params = $("#transact_form").serialize();
 			
-			var url = window.location.pathname;
-			url = url
-			+ "?op=skypepi_widgets.transactPayment.transactPayment&subop=asiapay" 
-			+ params;
-			
+			var url = window.location.pathname + "?op=skypepi_widgets.transactPayment.transactPayment&subop=asiapay&" + params;
 			$.ajax({
 				url: url,
 				dataType: "text",
@@ -2185,7 +2181,7 @@ var TransactPayment = function() {
 					if (status == 'FAILED') {
 						
 						Progress.hideProgress();
-						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "")%><br> <%=lang.getString("Check your payment information.", null, "") %>");
+						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "")%><br> " + msg + ".");<%-- =lang.getString("Check your payment information.", null, "") --%>
 						
 						jQuery("#process-containers").css({"height":" 1065px"});
 					}

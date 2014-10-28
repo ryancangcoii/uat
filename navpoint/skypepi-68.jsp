@@ -237,21 +237,14 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
 
+	<%-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" /> --%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-  <!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-29XL');</script>
-	<!-- End Google Tag Manager -->
-	
 	<!-- START OF SmartSource Data Collector TAG v10.2.29 -->
 	<!-- Copyright (c) 2012 Webtrends Inc.  All rights reserved. -->
 	<script>
@@ -1508,6 +1501,8 @@ try {
 	String snippetVar_idDefinition = "";
 %>
 
+	<%@page import="tooltwist.skypepi.util.ProjectUtil"%>
+	<%@page import="tooltwist.skypepi.bean.Language"%>
 	<%@ page pageEncoding="UTF-8"%>
 	<%@page import="tooltwist.wbd.WbdProductionHelper"%>
 	<%@page import="tooltwist.skypepi.productionHelpers.MyDetailsProductionHelper"%>
@@ -1649,37 +1644,42 @@ try {
 					<tr>
 						<td height="10"></td>
 					</tr>
-					<%-- <tr>
-						<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("Chinese", null, "") %>):</td>
-					</tr> --%>
+					<% if (h.isDisplayLocalName()) { %>
+						<tr>
+							<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=h.getTranslation()%>):</td>
+						</tr>
+					<% } %>
 					<tr>
 						<td align="left" class="mobile-trace">
 							<table width="100%">
 								<tr>
 									<td>
 										<!-- NEW FORM 2 -->
-										<%-- <div class="row">
-											<div class="col-md-6">
-												<div class="row">
-													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("Last Name", null, "") %>: </label>
+										<% if (h.isDisplayLocalName()) { %>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-4">
+															<label class="control-label"><%=h.getLocalLang().getString("Last Name", null, "") %>: </label>
+														</div>
+														<div class="col-md-8">
+															<input id="middlenameChineseField" name="middlenameChineseField" class="form-control" type="text" autocomplete="off" value="<%=surNameCn %>" readonly="readonly" />
+														</div>
 													</div>
-													<div class="col-md-8">
-														<input id="middlenameChineseField" name="middlenameChineseField" class="form-control" type="text" autocomplete="off" value="<%=surNameCn %>" readonly="readonly" />
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-4">
+															<label class="control-label"><%=h.getLocalLang().getString("First Name", null, "") %>: </label>
+														</div>
+														<div class="col-md-8">
+															<input id="firstnameChineseField" name="firstnameChineseField" class="form-control" type="text" autocomplete="off" value="<%=firstNameCn %>" readonly="readonly" />
+														</div>
 													</div>
 												</div>
 											</div>
-											<div class="col-md-6">
-												<div class="row">
-													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("First Name", null, "") %>: </label>
-													</div>
-													<div class="col-md-8">
-														<input id="firstnameChineseField" name="firstnameChineseField" class="form-control" type="text" autocomplete="off" value="<%=firstNameCn %>" readonly="readonly" />
-													</div>
-												</div>
-											</div>
-										</div> --%> <!-- FORM 3 -->
+										<% } %>
+										<!-- FORM 3 -->
 										<div class="row" style="margin-top: 25px">
 											<div class="col-md-6">
 												<div class="row">

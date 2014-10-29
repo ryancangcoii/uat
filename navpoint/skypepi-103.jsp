@@ -1806,7 +1806,7 @@ var PaymentSettings = function() {
 				PaymentSettings.addNewPaymentGateway();
 			});
 			
-			$("#paymentGatewayForm").submit(function() {
+			$("#paymentGatewayForm").submit(function(event) {
 				event.preventDefault();
 				var valid = true;
 				
@@ -1814,11 +1814,11 @@ var PaymentSettings = function() {
 					$.ajax({
 						url : location.href,
 						data : $(this).serialize(),
-						success : function() {
+						success : function(data) {
 							location.reload();
 							return false;
 						},
-						error : function() {
+						error : function(data) {
 							location.reload();
 							return false;
 						}

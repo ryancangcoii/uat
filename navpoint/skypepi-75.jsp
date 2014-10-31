@@ -250,9 +250,7 @@ try {
 
 .SimpleDiv .someClass {
 }</style>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/null" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.portal_z_css.css" media="screen" />
 
 	<%-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -1588,7 +1586,7 @@ try {
 			<div class="col-md-12">
 				<div class="row push-top">
 					<div class="col-md-4 align-left">
-						<label class="control-label" id="username-login-text"><%=lang.getString("Username", null, "") %>: </label>
+						<label class="control-label" id="username-login-text"><%=lang.getString("Username", null, "") %>:  Test</label>
 					</div>
 					<div class="col-md-8">
 						<input class="form-control" id="username-login" name="username-login" type="text" autocomplete="off"/>

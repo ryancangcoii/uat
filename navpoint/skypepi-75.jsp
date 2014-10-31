@@ -1586,7 +1586,7 @@ try {
 			<div class="col-md-12">
 				<div class="row push-top">
 					<div class="col-md-4 align-left">
-						<label class="control-label" id="username-login-text"><%=lang.getString("Username", null, "") %>:  Test</label>
+						<label class="control-label" id="username-login-text"><%=lang.getString("Username", null, "") %>: </label>
 					</div>
 					<div class="col-md-8">
 						<input class="form-control" id="username-login" name="username-login" type="text" autocomplete="off"/>

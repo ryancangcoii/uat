@@ -1,0 +1,5 @@
+<project default="makejars">
+        <target name="makejars">
+            <jar destfile="/Users/myronlao/Desktop/uat/lib/skypepi_t.jar" basedir="/Users/myronlao/Development/Tooltwist-8.3.1/skyportal/bin" />
+        </target>
+    </project>

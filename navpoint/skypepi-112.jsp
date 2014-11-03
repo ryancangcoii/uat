@@ -158,7 +158,7 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" href="/ttsvr/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/ttsvr/favicon.ico?v=2.0" type="image/x-icon">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -216,21 +216,14 @@ try {
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
 
+	<%-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" /> --%>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="/ttsvr/bootstrap/css/bootstrap.min.css?v=3.0.0" rel="stylesheet" media="screen">
   </head>
   <body>
-  <!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-29XL"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-29XL');</script>
-	<!-- End Google Tag Manager -->
-	
 	<!-- START OF SmartSource Data Collector TAG v10.2.29 -->
 	<!-- Copyright (c) 2012 Webtrends Inc.  All rights reserved. -->
 	<script>
@@ -1292,7 +1285,7 @@ try {
 													id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" class="form-control required"
 													value="<%=seValue%>" />
 												<%
-											} else if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2").equals("24")) {
+											} else if (sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2").equals("24") || sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2").equals("27")) {
 										%>
 											<input type="checkbox" name="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" 
 											id="portalSitePaymentDetail-<%=sitePaymentGateways.getText("portalSitePaymentGateway/paymentGatewayId")%>-<%=sitePaymentGatewayDetails.getText("paymentGatewayDetailsId2")%>" class="required"
@@ -1813,7 +1806,7 @@ var PaymentSettings = function() {
 				PaymentSettings.addNewPaymentGateway();
 			});
 			
-			$("#paymentGatewayForm").submit(function() {
+			$("#paymentGatewayForm").submit(function(event) {
 				event.preventDefault();
 				var valid = true;
 				
@@ -1821,11 +1814,11 @@ var PaymentSettings = function() {
 					$.ajax({
 						url : location.href,
 						data : $(this).serialize(),
-						success : function() {
+						success : function(data) {
 							location.reload();
 							return false;
 						},
-						error : function() {
+						error : function(data) {
 							location.reload();
 							return false;
 						}
@@ -1862,7 +1855,7 @@ var PaymentSettings = function() {
 						var html = "";
 						var inputString = "";
 						$.each(json, function(key, value) {
-							if (key == "24") {
+							if (key == "24" || key == "27") {
 								inputString = "<input type='checkbox' name='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' id='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' class='required' />";
 							} else {
 								inputString = "<input type='text' name='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' id='portalSitePaymentDetail-"+paymentGatewayId+"-"+key+"' class='form-control required' />";

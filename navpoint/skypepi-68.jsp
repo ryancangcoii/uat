@@ -173,7 +173,7 @@ try {
 	<meta name="keywords" content="">
 	<meta name="generator" content="ToolTwist" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" href="/ttsvr/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/ttsvr/favicon.ico?v=2.0" type="image/x-icon">
 	
 <!--[if lte IE 9]>
     <script src="/ttsvr/skypepi/scripts/jquery/1.11.0/jquery-1.11.0.min.js"></script>
@@ -233,9 +233,11 @@ try {
 
 .SimpleDiv .someClass {
 }</style>
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/script/jquery-ui-1.11.0/jquery-ui.min.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
+<script src="/ttsvr/blog/script/jquery-ui-1.11.0/jquery.ui.datepicker.js" type="text/javascript"></script>
 
 	<%-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
@@ -1585,230 +1587,301 @@ try {
 			<span><%=lang.getString("myDetails", null, "") %></span>
 		</div>
 		<br /> <br /> <br />
-		<form id="form-myDetails" name="form-myDetails" method="post" class="bc-form">
-			<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>" />
-			<div>
-				<!--  -->
-				<table width="100%">
+		<input type="hidden" name="navpointId" value="<%=snippetVar_navpointId%>" />
+		<div>
+			<!--  -->
+			<table width="100%">
+				<tr>
+					<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %></span></td>
+					<td width="" align="right"></td>
+				</tr>
+				<tr>
+					<td height="30"></td>
+				</tr>
+				<tr>
+					<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("English", null, "") %>)</td>
+				</tr>
+				<tr>
+					<td align="left" class="mobile-trace">
+						<table width="100%">
+							<tr>
+								<td>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="control-label"><%=lang.getString("Last Name", null, "") %>: </label>
+												</div>
+												<div class="col-md-8">
+													<input id="surnameEnglishField" name="surnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=surname %>" readonly="readonly" />
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="control-label"><%=lang.getString("First Name", null, "") %>: </label>
+												</div>
+												<div class="col-md-8">
+													<input id="firstnameEnglishField" name="firstnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=firstName %>" readonly="readonly" />
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row" style="margin-top: 10px;">
+										<div class="col-md-2">
+											<label class="control-label"><%=lang.getString("Preferred Name", null, "") %>: </label>
+										</div>
+										<div class="col-md-10">
+											<input id="middlenameEnglishField" name="middlenameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=middleName %>" readonly="readonly" />
+										</div>
+										<div class="col-md-2"></div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="10"></td>
+				</tr>
+				<% if (h.isDisplayLocalName()) { %>
 					<tr>
-						<td width="" align="left" class="heading color-blue"><span class="color-regular"><%=fullName %></span></td>
-						<td width="" align="right"></td>
+						<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=h.getTranslation()%>):</td>
 					</tr>
-					<tr>
-						<td height="30"></td>
-					</tr>
-					<tr>
-						<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=lang.getString("English", null, "") %>)</td>
-					</tr>
-					<tr>
-						<td align="left" class="mobile-trace">
-							<table width="100%">
-								<tr>
-									<td>
+				<% } %>
+				<tr>
+					<td align="left" class="mobile-trace">
+						<table width="100%">
+							<tr>
+								<td>
+									<!-- NEW FORM 2 -->
+									<% if (h.isDisplayLocalName()) { %>
 										<div class="row">
 											<div class="col-md-6">
 												<div class="row">
 													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("Last Name", null, "") %>: </label>
+														<label class="control-label"><%=h.getLocalLang().getString("Last Name", null, "") %>: </label>
 													</div>
 													<div class="col-md-8">
-														<input id="surnameEnglishField" name="surnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=surname %>" readonly="readonly" />
+														<input id="middlenameChineseField" name="middlenameChineseField" class="form-control" type="text" autocomplete="off" value="<%=surNameCn %>" readonly="readonly" />
 													</div>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="row">
 													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("First Name", null, "") %>: </label>
+														<label class="control-label"><%=h.getLocalLang().getString("First Name", null, "") %>: </label>
 													</div>
 													<div class="col-md-8">
-														<input id="firstnameEnglishField" name="firstnameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=firstName %>" readonly="readonly" />
+														<input id="firstnameChineseField" name="firstnameChineseField" class="form-control" type="text" autocomplete="off" value="<%=firstNameCn %>" readonly="readonly" />
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="row" style="margin-top: 10px;">
-											<div class="col-md-2">
-												<label class="control-label"><%=lang.getString("Preferred Name", null, "") %>: </label>
+									<% } %>
+									<!-- FORM 3 -->
+									<div class="row" style="margin-top: 25px">
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="control-label"><%=lang.getString("Date of Birth", null, "") %>:</label>
+												</div>
+												<div class="col-md-5">
+													<input id="dobField" name="dobField" class="form-control" type="text" autocomplete="off" value="<%=dobMonth%>/<%=dobDay%>/<%=dobYear%>" readonly="readonly" />
+												</div>
+												<div class="col-md-3"></div>
 											</div>
-											<div class="col-md-10">
-												<input id="middlenameEnglishField" name="middlenameEnglishField" class="form-control" type="text" autocomplete="off" value="<%=middleName %>" readonly="readonly" />
-											</div>
-											<div class="col-md-2"></div>
 										</div>
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-						<td height="10"></td>
-					</tr>
-					<% if (h.isDisplayLocalName()) { %>
-						<tr>
-							<td align="left" class="control-label"><%=lang.getString("Name", null, "") %> (<%=h.getTranslation()%>):</td>
-						</tr>
-					<% } %>
-					<tr>
-						<td align="left" class="mobile-trace">
+									</div>
+									<div class="row" style="margin-top: 10px">
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="control-label"><%=lang.getString("Gender", null, "") %>:</label>
+												</div>
+												<div class="col-md-5">
+													<input id="gender" name="gender" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(gender, null, "") %>" readonly="readonly" />
+												</div>
+												<div class="col-md-3"></div>
+											</div>
+										</div>
+									</div>
+									<div class="row" style="margin-top: 10px">
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="control-label"><%=lang.getString("Student ID", null, "") %>:</label>
+												</div>
+												<div class="col-md-5">
+													<input id="studentId" name="studentId" class="form-control" type="text" autocomplete="off" value="" readonly="readonly" />
+												</div>
+												<div class="col-md-2"></div>
+											</div>
+										</div>
+									</div> <% if (nationalId != null && !(nationalId.equals(""))) { %>
+									<div class="row" style="margin-top: 10px">
+										<div class="col-md-6">
+											<div class="row">
+												<div class="col-md-4">
+													<label class="control-label"><%=lang.getString("National ID", null, "") %>:</label>
+												</div>
+												<div class="col-md-5">
+													<input id="nationalId" name="nationalId" class="form-control" type="text" autocomplete="off" value="<%=nationalId %>" readonly="readonly" />
+												</div>
+												<div class="col-md-3"></div>
+											</div>
+										</div>
+									</div> <% } %>
+									<div class="row" style="margin-top: 10px">
+										<div class="col-md-2">
+											<label class="control-label"><%=lang.getString("Account Name", null, "") %>:</label>
+										</div>
+										<div class="col-md-5">
+											<input id="accountName" name="accountName" class="form-control" type="text" autocomplete="off" value="<%=accountName %>" readonly="readonly" />
+										</div>
+										<div class="col-md-5 magic-push">
+											<a href="#" id="lnk-ChangePassword"> <span class="regular-link-underline-light-blue"><%=lang.getString("Change Password", null, "") %></span>
+											</a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<%-- <% if (h.isPLUDisabled()) { %>
+				<tr>
+					<td>
+						<form id="formPLU" name="formPLU" method="POST">
 							<table width="100%">
 								<tr>
-									<td>
-										<!-- NEW FORM 2 -->
-										<% if (h.isDisplayLocalName()) { %>
-											<div class="row">
-												<div class="col-md-6">
-													<div class="row">
-														<div class="col-md-4">
-															<label class="control-label"><%=h.getLocalLang().getString("Last Name", null, "") %>: </label>
-														</div>
-														<div class="col-md-8">
-															<input id="middlenameChineseField" name="middlenameChineseField" class="form-control" type="text" autocomplete="off" value="<%=surNameCn %>" readonly="readonly" />
-														</div>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="row">
-														<div class="col-md-4">
-															<label class="control-label"><%=h.getLocalLang().getString("First Name", null, "") %>: </label>
-														</div>
-														<div class="col-md-8">
-															<input id="firstnameChineseField" name="firstnameChineseField" class="form-control" type="text" autocomplete="off" value="<%=firstNameCn %>" readonly="readonly" />
-														</div>
-													</div>
-												</div>
-											</div>
-										<% } %>
-										<!-- FORM 3 -->
-										<div class="row" style="margin-top: 25px">
-											<div class="col-md-6">
-												<div class="row">
-													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("Date of Birth", null, "") %>:</label>
-													</div>
-													<div class="col-md-5">
-														<input id="dobField" name="dobField" class="form-control" type="text" autocomplete="off" value="<%=dobMonth%>/<%=dobDay%>/<%=dobYear%>" readonly="readonly" />
-													</div>
-													<div class="col-md-3"></div>
-												</div>
-											</div>
-										</div>
-										<div class="row" style="margin-top: 10px">
-											<div class="col-md-6">
-												<div class="row">
-													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("Gender", null, "") %>:</label>
-													</div>
-													<div class="col-md-5">
-														<input id="gender" name="gender" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(gender, null, "") %>" readonly="readonly" />
-													</div>
-													<div class="col-md-3"></div>
-												</div>
-											</div>
-										</div>
-										<div class="row" style="margin-top: 10px">
-											<div class="col-md-6">
-												<div class="row">
-													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("Student ID", null, "") %>:</label>
-													</div>
-													<div class="col-md-5">
-														<input id="studentId" name="studentId" class="form-control" type="text" autocomplete="off" value="" readonly="readonly" />
-													</div>
-													<div class="col-md-2"></div>
-												</div>
-											</div>
-										</div> <% if (nationalId != null && !(nationalId.equals(""))) { %>
-										<div class="row" style="margin-top: 10px">
-											<div class="col-md-6">
-												<div class="row">
-													<div class="col-md-4">
-														<label class="control-label"><%=lang.getString("National ID", null, "") %>:</label>
-													</div>
-													<div class="col-md-5">
-														<input id="nationalId" name="nationalId" class="form-control" type="text" autocomplete="off" value="<%=nationalId %>" readonly="readonly" />
-													</div>
-													<div class="col-md-3"></div>
-												</div>
-											</div>
-										</div> <% } %>
-										<div class="row" style="margin-top: 10px">
-											<div class="col-md-2">
-												<label class="control-label"><%=lang.getString("Account Name", null, "") %>:</label>
-											</div>
-											<div class="col-md-5">
-												<input id="accountName" name="accountName" class="form-control" type="text" autocomplete="off" value="<%=accountName %>" readonly="readonly" />
-											</div>
-											<div class="col-md-5 magic-push">
-												<a href="#" id="lnk-ChangePassword"> <span class="regular-link-underline-light-blue"><%=lang.getString("Change Password", null, "") %></span>
-												</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-						<td height="20px"></td>
-					</tr>
-					<tr>
-						<td align="left" class="border-style">
-							<table>
-								<tr>
-									<td>&nbsp;</td>
+									<td height="20px"></td>
 								</tr>
 								<tr>
-									<td><label class="control-label"><%=lang.getString("Preferred Contact Method", null, "") %>:</label></td>
-								</tr>
-								<tr>
-									<td><select id="contactMethod" class="form-control">
-											<option <% if (h.getPreferredContact().equals("Address")) { %> selected="selected" <% } %> value="Post"><%=lang.getString("Mailing address", null, "") %></option>
-											<option <% if (h.getPreferredContact().equals("Phone")) { %> selected="selected" <% } %>><%=lang.getString("Phone", null, "") %></option>
-											<option <% if (h.getPreferredContact().equals("Email")) { %> selected="selected" <% } %>><%=lang.getString("Email", null, "") %></option>
-											<option <% if (h.getPreferredContact().equals("SMS")) { %> selected="selected" <% } %>><%=lang.getString("SMS", null, "") %></option>
-									</select></td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td align="left"><label class="control-label"> <%=lang.getString("If you would like to be contacted with information about how British Council are improving our products and services and related offers, please tick the text box for the relevant channel. You may choose more than one.", null, "") %>
-									</label></td>
-								</tr>
-								<tr>
-									<td>&nbsp;</td>
-								</tr>
-								<tr>
-									<td align="left" class="">
-										<table width="100%">
+									<td align="left" class="border-style">
+										<table width="98%">
 											<tr>
-												<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" value="Phone" name="chkPreferredContact" <% if (h.isPhoneChecked()) { %> checked="checked" <% } %> /></td>
-												<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" value="Post" name="chkPreferredContact" <% if (h.isMailChecked()) { %> checked="checked" <% } %> /></td>
-												<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" value="SMS" name="chkPreferredContact" <% if (h.isSmsChecked()) { %> checked="checked" <% } %> /></td>
-												<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" value="Email" id="chk-email" name="chkPreferredContact" <% if (h.isEmailChecked()) { %> checked="checked" <% } %> /></td>
+												<td>&nbsp;</td>
 											</tr>
+											<tr>
+												<td class="col-md-4"><label class="control-label"><%=lang.getString("Permission to leave unattended", null, "") %>:</label></td>
+												<td>
+													<div class="col-md-12">
+														<input type="radio" value="yes" checked="checked" name="permissionToLeave" id="pluOptionYes" disabled="disabled" />
+														<label class="control-label" style="margin:0 15px 0 3px;"><%=lang.getString("Yes", null, "") %></label>
+														<input type="radio" value="no" name="permissionToLeave" id="pluOptionNo"disabled="disabled"  />
+														<label class="control-label" style="margin:0 15px 0 3px;"><%=lang.getString("No", null, "") %></label>
+														<input type="radio" value="special" name="permissionToLeave" id="pluOptionSpecial"disabled="disabled"  />
+														<label class="control-label" style="margin:0 15px 0 3px;"><%=lang.getString("Special", null, "") %></label>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td height="10px"></td>
+											</tr>
+											<tr>
+												<td class="col-md-4"><label class="control-label"><%=lang.getString("Expiry Date", null, "") %>:</label></td>
+												<td>
+													<div class="col-md-4">
+														<input class="form-control <% if (h.isParentStudent()) { %>datepickerInput<% } %>" type="text" autocomplete="off" id="pluExpiryDate" name="pluExpiryDate" readonly="readonly" />
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td height="10px"></td>
+											</tr>
+											<tr>
+												<td class="col-md-4"><label class="control-label"><%=lang.getString("Comments", null, "") %>:</label></td>
+												<td>
+													<div class="col-md-12">
+														<input class="form-control" type="text" autocomplete="off" id="pluComment" name="pluComment" readonly="readonly" />
+													</div>
+												</td>
+											</tr>
+											<% if (h.isParentStudent()) { %>
+												<tr>
+													<td colspan="2">
+														<div align="right" class="button-align" style="margin-top: 20px;">
+															<input id="PLUEditButton" type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Edit", null, "") %>" onclick="javascript:MyDetails.editPLU();" />
+															<input id="PLUCancelButton" type="reset" class="buttonBlue buttonSmall" value="<%=lang.getString("Cancel", null, "") %>" onclick="javascript:MyDetails.cancelPLU();" style="display:none;" />
+															<input id="PLUSaveButton" type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.savePLU();" style="display:none;" />
+														</div>
+													</td>
+												</tr>
+											<% } %>
 										</table>
 									</td>
 								</tr>
-								<tr>
-									<td>
-										<div align="right" class="button-align" style="margin-top: 20px">
-											<input type="button" style="display:none;" class="buttonBlue buttonSmall" value="Cancel" onclick="javascript:MyDetails.cancelPreferredContact();">
-											<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveConfirmation();"> 
-<!-- 											<input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.savePreferredContact();"> -->
-										</div>
-									</td>
-								</tr>
 							</table>
-						</td>
-					</tr>
-					<tr>
-						<td height="30"></td>
-					</tr>
-				</table>
-			</div>
-			<br>
+						</form>
+					</td>
+				</tr>
+				<% } %> --%>
+				
+				<tr>
+					<td height="20px"></td>
+				</tr>
+				<tr>
+					<td align="left" class="border-style">
+						<table>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td><label class="control-label"><%=lang.getString("Preferred Contact Method", null, "") %>:</label></td>
+							</tr>
+							<tr>
+								<td><select id="contactMethod" class="form-control">
+										<option <% if (h.getPreferredContact().equals("Address")) { %> selected="selected" <% } %> value="Post"><%=lang.getString("Mailing address", null, "") %></option>
+										<option <% if (h.getPreferredContact().equals("Phone")) { %> selected="selected" <% } %>><%=lang.getString("Phone", null, "") %></option>
+										<option <% if (h.getPreferredContact().equals("Email")) { %> selected="selected" <% } %>><%=lang.getString("Email", null, "") %></option>
+										<option <% if (h.getPreferredContact().equals("SMS")) { %> selected="selected" <% } %>><%=lang.getString("SMS", null, "") %></option>
+								</select></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td align="left"><label class="control-label"> <%=lang.getString("If you would like to be contacted with information about how British Council are improving our products and services and related offers, please tick the text box for the relevant channel. You may choose more than one.", null, "") %>
+								</label></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td align="left" class="">
+									<table width="100%">
+										<tr>
+											<td><label for="chk-phone" class="control-label"><%=lang.getString("Phone", null, "") %></label> <input type="checkbox" id="chk-phone" value="Phone" name="chkPreferredContact" <% if (h.isPhoneChecked()) { %> checked="checked" <% } %> /></td>
+											<td><label for="chk-mail" class="control-label"><%=lang.getString("Mail", null, "") %></label> <input type="checkbox" id="chk-mail" value="Post" name="chkPreferredContact" <% if (h.isMailChecked()) { %> checked="checked" <% } %> /></td>
+											<td><label for="chk-sms" class="control-label"><%=lang.getString("SMS", null, "") %></label> <input type="checkbox" id="chk-sms" value="SMS" name="chkPreferredContact" <% if (h.isSmsChecked()) { %> checked="checked" <% } %> /></td>
+											<td><label for="chk-email" class="control-label"><%=lang.getString("Email", null, "") %></label> <input type="checkbox" value="Email" id="chk-email" name="chkPreferredContact" <% if (h.isEmailChecked()) { %> checked="checked" <% } %> /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div align="right" class="button-align" style="margin-top: 20px">
+										<input type="button" style="display:none;" class="buttonBlue buttonSmall" value="Cancel" onclick="javascript:MyDetails.cancelPreferredContact();">
+										<input type="button" class="buttonBlue buttonSmall" value="<%=lang.getString("Save", null, "") %>" onclick="javascript:MyDetails.saveConfirmation();"> 
+<!-- 											<input type="button" class="buttonBlue buttonSmall" value="Save" onclick="javascript:MyDetails.savePreferredContact();"> -->
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="30"></td>
+				</tr>
+			</table>
+		</div>
+		<br>
+			
+		<form id="form-myDetails" name="form-myDetails" method="post" class="bc-form">
 			<div id="addressContainer" class="table-responsive portalTable">
 				<table class="table" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 0px">
 					<%--<tr class="list-header" style="display: none;">
@@ -4113,6 +4186,12 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 				}
 			});
 			
+			jQuery(".datepickerInput").datepicker({
+				changeMonth: true,
+				changeYear: true
+			});
+			$("#pluExpiryDate").datepicker("disable");
+			
 		},
 		
 		deleteRecord: function(type, id, editorID) {
@@ -4144,6 +4223,47 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 					}
 				});
 			}, 100);
+		},
+		
+		editPLU : function() {
+			$("#PLUEditButton").hide();
+			$("#PLUCancelButton, #PLUSaveButton").show();
+			$("#pluExpiryDate").datepicker("enable");
+			$("#formPLU input[type=text]").removeAttr("readonly");
+			$("#formPLU input[type=radio]").removeAttr("disabled");
+		},
+		
+		cancelPLU : function() {
+			$("#PLUEditButton").show();
+			$("#PLUCancelButton, #PLUSaveButton").hide();
+			$("#pluExpiryDate").datepicker("disable");
+			$("#formPLU input[type=text]").attr("readonly", "readonly");
+			$("#formPLU input[type=radio]").attr("disabled", "disabled");
+		},
+		
+		savePLU : function() {
+			Progress.showProgress();
+			
+			$.ajax({
+				url : servletURL,
+				data : {
+					operation : "setPermissionToLeaveUnattended",
+					permission : $('input:radio[name=permissionToLeave]:checked').val(),
+					expiryDate : $("#pluExpiryDate").val(),
+					comments : $("#pluComment").val()
+				},
+				success : function(data) {
+					$("#PLUEditButton").show();
+					$("#PLUCancelButton, #PLUSaveButton").hide();
+					$("#pluExpiryDate").datepicker("disable");
+					$("#formPLU input[type=text]").attr("readonly", "readonly");
+					$("#formPLU input[type=radio]").attr("disabled", "disabled");
+					MyDetails.refreshPage();
+				},
+				error : function() {
+					MyDetails.refreshPage();
+				}
+			});
 		}
 	};
 }();

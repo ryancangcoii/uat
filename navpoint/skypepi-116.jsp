@@ -139,16 +139,16 @@ try {
 	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_header_54", e);
 }
 
-	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_73 = null;
+	WbdProductionHelper productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = null;
 try {
-	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_73Params = new Properties();
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_73Params.setProperty("homeNavPointLink", "/ttsvr/home");
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_73Params.setProperty("menuType", "Footer");
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_73Params.setProperty("currentNavpoint", "skypepi-116");
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_73 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_73Params);
-	productionHelper_skypepi_zones_portal_z_responsiveFooter_73.callPreFetch(jh);
+	Properties productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params = new Properties();
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("homeNavPointLink", "/ttsvr/home");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("menuType", "Footer");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params.setProperty("currentNavpoint", "skypepi-116");
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54 = new tooltwist.skypepi.productionHelpers.StudentFunctionsMenuProductionHelper(productionHelper_skypepi_zones_portal_z_responsiveFooter_54Params);
+	productionHelper_skypepi_zones_portal_z_responsiveFooter_54.callPreFetch(jh);
 } catch (Exception e) {
-	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_73", e);
+	WbdSession.addError(jh.getCredentials(), "Calling preFetch() for production helper productionHelper_skypepi_zones_portal_z_responsiveFooter_54", e);
 }
 
 	WbdProductionHelper productionHelper_skypepi_pages_portal_p_btstrap_payment3_14 = null;
@@ -238,14 +238,10 @@ try {
 }/* Styles for widget simpleDiv */
 
 .SimpleDiv .someClass {
-}/* Styles for widget simpleDiv */
-
-.SimpleDiv .someClass {
 }</style>
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/stylesheet/skypepi.zones.skypepi_z_tafeCSS.css" media="screen" />
 <script src="/ttsvr/skypepi/scripts/jquery-input-masked.js" type="text/javascript"></script>
 
 	<%-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -297,12 +293,9 @@ try {
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='middle'>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  align='left' valign='top'></td>
- </tr>
- <tr>
-  <td ><%-- Widget skypepi.zones.portal_z_header@57 (type=tooltwist.skypepi.widgets.LibraryImporterWidget) --%>
+  <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header@57 (type=tooltwist.skypepi.widgets.LibraryImporterWidget) --%>
 <%
 try {
 	String snippetVar_widgetName = "@57";
@@ -332,7 +325,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
  <tr>
-  <td  class='userInfo'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+  <td  class='userInfo' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='left' valign='middle'>
  <tr>
@@ -450,13 +443,6 @@ var LanguageSelector = function() {
 WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_header@35 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget)", e);
 }
 %>
-</td>
- </tr>
- <tr>
-  <td  class='magic'>
-<a href="/ttsvr/home">
-	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_i_tafeLogoSmall.png" border="0">
-</a>
 </td>
  </tr>
 </table>
@@ -997,16 +983,16 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
  <tr>
-  <td  class='headerBG magic2' height='75' align='center' valign='middle'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+  <td  class='magic2' height='75' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'>
 <a href="/ttsvr/home">
-	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_i_tafeLogo.png" border="0">
+	<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_logo.png" border="0">
 </a>
 </td>
-  <td  class='magic2' align='right' valign='middle'></td>
+  <td  class='magic2' align='right'></td>
  </tr>
 </table>
 </td>
@@ -1016,7 +1002,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 </td>
  </tr>
  <tr>
-  <td  class='userMenu'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+  <td  class='userMenu' align='center'><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
   <td  align='left' valign='top'><%-- Widget skypepi.zones.portal_z_header@54 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
@@ -1129,7 +1115,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 }
 %>
 </td>
-  <td  class='mobile-push' align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
+  <td  align='right' valign='top'><table border='0' cellpadding='0' cellspacing='0'  align='right' valign='top'>
  <tr>
   <td  class='magic text-push' align='left' valign='middle'><%-- Widget skypepi.zones.portal_z_header@55 (type=tooltwist.skypepi.widgets.LanguageSelectorWidget) --%>
 <%
@@ -1573,7 +1559,7 @@ try {
 .input-cc {font-size: 16px; text-align: center;}
 .credit-card {
 	width: 65px !important;
-	margin: 0px 5px;
+	margin-right: 10px;
 	text-align: center;
 	}
 	.color-red {
@@ -1623,7 +1609,7 @@ try {
 									</table>
 								</td>
 							</tr>
-							<tr>
+							<%-- <tr>
 								<td>
 									<table style="border-spacing:5px">
 										<tr>
@@ -1636,22 +1622,22 @@ try {
 												<input  id="paymentDescription" name="paymentDescription" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
 											</td>
 										</tr>
-										<%--<tr>
+										<tr>
 											<td class="body-text color-regular add_margin_left" style="padding-right:5px"><label for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>:</label> </td>
 											<td class="add_space_left body-text">
 												<div class="form-input-medium-container">
 													<input type="text" value="<%=lang.getString(paymentDesc, null, "") %>" autocomplete="off" class="form-input-medium required" id="paymentDescription" name="paymentDescription" readonly="readonly"/>
 												</div>
 											</td>
-										</tr>  --%>
-										<%-- <tr>
+										</tr> 
+										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Balance", null, "") %>:</td>
 											<td class="add_space_left">
 												<div class="form-input-medium-container">
 													<input type="text" value="<%=StringUtil.formatCurrency(grossAmount) %>" autocomplete="off" class=""  readonly="readonly"/>
 												</div>
 											</td>
-										</tr> --%>
+										</tr>
 										<tr>
 											<td height="10px">
 											</td>
@@ -1662,29 +1648,49 @@ try {
 												<input  id="transact_amount" name="transact_amount" class="form-control" type="text" autocomplete="off" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
 											</td>
 										</tr>
-										<%--<tr>
+										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Amount", null, "") %>:</td>
 											<td class="add_space_left">
 												<div class="-container">
 													<input type="text" value="<%=StringUtil.formatCurrency(amount) %>" autocomplete="off" class="" name="transact_amount" id="transact_amount" readonly="readonly"/>
 												</div>
 											</td>
-										</tr>  --%>
-										<%-- <tr>
+										</tr> 
+										<tr>
 											<td class="body-text color-regular add_margin_left"><%=lang.getString("Payment Method", null, "") %>:</td>
 											<td class="add_space_left">
 												<select name="transact_payment_method">
 													<option value="7"><%=lang.getString("Online Payment", null, "") %></option>
 												</select>
-											</td> --%>
+											</td>
 										</tr>	
 									</table>
 								</td>
-							</tr>
+							</tr> --%>
 						</table>
-						</div>
-						<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
-						<div class="roundcont">
+					</div>
+					<div class="row spacing-top" >
+                   		<div class="col-md-4">
+                          	<label class="control-label control-label2" for="paymentDescription" id="lbl_paymentDescription"><%=lang.getString("Description", null, "") %>: </label>
+                        </div>
+                        <div class="col-md-4">
+          	             	<input  id="paymentDescription" name="paymentDescription" class="form-control" type="text" autocomplete="off" value="<%=lang.getString(paymentDesc, null, "") %>" readonly="readonly"/>
+		            	</div>
+                   		<div class="col-md-4">
+	                    </div>
+                    </div>
+					<div class="row spacing-top" >
+                   		<div class="col-md-4">
+                          	<label class="control-label control-label2" for="transact_amount" id="lbl_transact_amount"><%=lang.getString("Amount", null, "") %>: </label>
+                        </div>
+                        <div class="col-md-4">
+          	             	<input  id="transact_amount" name="transact_amount" class="form-control" type="text" autocomplete="off" value="<%=StringUtil.formatCurrency(amount) %>" readonly="readonly"/>
+		            	</div>
+                   		<div class="col-md-4">
+	                    </div>
+                    </div>
+					<div class="roundcont"><table><tr><td>&nbsp;</td></tr></table></div>
+					<div class="roundcont">
 						<table cellspacing="0" cellpadding="0" border="0" width="100%">
 							<tr>
 								<td>
@@ -1787,21 +1793,21 @@ try {
 -->						
 
  <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" for="creditcard_name" id="lbl_creditcard_name"><%=lang.getString("Card Holder's Name", null, "") %>: </label>
                                         </div>
                                         <div class="col-md-4">
                                         <input  id="creditcard_name" name="creditcard_name" class="form-control required" type="text" autocomplete="off" style="width: 100%;" />
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                     <div class="row spacing-top" >
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" for="transact_creditcard" id="lbl_transact_creditcard"><%=lang.getString("Credit Card Number", null, "") %>: </label>
                                         </div>
-                                        <div class="col-md-8"><input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
+                                        <div class="col-md-4"><input type="hidden" name="transact_creditcard" id="transact_creditcard" value="" autocomplete="off" class="required">
                                         <table cellpadding="0" cellspacing="0">
 													<tr>
 														<td>
@@ -1824,12 +1830,12 @@ try {
 													</tr>
 												</table>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                         <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" id="lbl_transact_creditcard_type" for="transact_creditcard_type"><%=lang.getString("Credit Card Type", null, "") %>: </label>
                                         </div>
                                         <div class="col-md-4">
@@ -1838,15 +1844,15 @@ try {
 													<option value="VISA">Visa</option>
 												</select>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                     <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2"><%=lang.getString("Expiry Date", null, "") %>: </label>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-4">
                                       		<table>
 													<tr>
 														<td><label class="control-label"  id="lbl_transact_month"><%=lang.getString("Month", null, "") %>: </label></td>
@@ -1871,18 +1877,18 @@ try {
 													</tr>
 												</table>
                                         </div>
-                                        <div class="col-md-2">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
                                      <div class="row spacing-top">
-                                    	<div class="col-md-2">
+                                    	<div class="col-md-4">
                                         	<label class="control-label control-label2" id="lbl_transact_card_code" for="transact_card_code"><%=lang.getString("Card Security Code (CW2)", null, "")%>: </label>
                                         </div>
                                         <div class="col-md-4">
                                       <input type="text" value="" name="transact_card_code" id="transact_card_code" autocomplete="off" class=" required form-control" style="width: 100px;"/>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                         </div>
                                     </div>
                                     
@@ -1951,13 +1957,13 @@ try {
 											<% if("".equals(feeSelections)) { %>
 											 <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                               <td> <a href="#" id="transact_btn_cancel" class="buttonBlue"> <%=lang.getString("Cancel", null, "") %> </a></td>
+				                               <td> <a href="javascript:void(0);" id="transact_btn_cancel" class="buttonBlue"> <%=lang.getString("Cancel", null, "") %> </a></td>
 				                              </tr>
 				                     		  </table>								
 				                             <% } else { %>
 				                             <table width="" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td><a href="#" id="transact_btn_back" class="buttonBlue"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>      
+				                                 <td><a href="javascript:void(0);" id="transact_btn_back" class="buttonBlue"><%=lang.getString("Back To Unpaid Fees", null, "") %></a></td>      
 				                               </tr>
 				                             </table>
 				                             
@@ -1969,7 +1975,7 @@ try {
 										<td>
 											<table width="149px" border="0" cellspacing="0" cellpadding="0">
 				                               <tr>
-				                                 <td><a href="#" id="transact_btn_confirm" class="buttonBlue"><%=lang.getString("Confirm Payment", null, "") %></a></td>
+				                                 <td><a href="javascript:void(0);" id="transact_btn_confirm" class="buttonBlue"><%=lang.getString("Confirm Payment", null, "") %></a></td>
 				                                 </tr>
 				                             </table>
 										</td>
@@ -2003,14 +2009,14 @@ try {
 </div>
 
 <!-- modal content -->
-<div id='confirm' class="simple_dialog">
+<%-- div id='confirm' class="simple_dialog" style="display:none;">
 	<div class='header'><span>Processing Payment...</span></div>
 	<div class='message' style="padding: 0px;">
 		<iframe id="\" style="width: 100%; height: 79%;border: 0px;"></iframe>
 	</div>
 </div>
 
-<div id='div_loading' class="simple_dialog">
+<div id='div_loading' class="simple_dialog" style="display:none;">
 	<div class='header'><span>Please wait...</span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<br/>
@@ -2018,12 +2024,12 @@ try {
 	</div>
 </div>
 
-<div id='receipt_preview' class="simple_dialog">
+<div id='receipt_preview' class="simple_dialog" style="display:none;">
 	<div class='header'><span>Please wait...</span></div>
 	<div class='message' style="padding: 0px;" align="center">
 		<iframe id="fraPreviewReceipt" style="width: 100%; height: 79%;border: 0px;"></iframe>
 	</div>
-</div>
+</div --%>
 
 <script type="text/javascript">
 	
@@ -2155,11 +2161,7 @@ var TransactPayment = function() {
 			var self = this;
 			var params = $("#transact_form").serialize();
 			
-			var url = window.location.pathname;
-			url = url
-			+ "?op=skypepi_widgets.transactPayment.transactPayment&subop=asiapay" 
-			+ params;
-			
+			var url = window.location.pathname + "?op=skypepi_widgets.transactPayment.transactPayment&subop=asiapay&" + params;
 			$.ajax({
 				url: url,
 				dataType: "text",
@@ -2178,7 +2180,8 @@ var TransactPayment = function() {
 					
 					if (status == 'FAILED') {
 						
-						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "") %><br> <%=lang.getString("Check your payment information.", null, "") %>");
+						Progress.hideProgress();
+						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Failed.", null, "")%><br> " + msg + ".");<%-- =lang.getString("Check your payment information.", null, "") --%>
 						
 						jQuery("#process-containers").css({"height":" 1065px"});
 					}
@@ -2187,9 +2190,10 @@ var TransactPayment = function() {
 						//window.open(data,'myreceipt','width=1000,height=800');
 						$("#paymentDetailID").val(data);
 						
+						Progress.hideProgress();
 						Progress.alertMessage("Make Payment", "<%=lang.getString("Payment Successful.", null, "") %>");
 						
-						jQuery(document).on("click","#msgButtonClose", function() {
+						jQuery(document).on("click","#div_message .close, #div_message .btn-primary", function() {
 							window.location.href = "/ttsvr/n/skypepi-92?paymentDetailID=" + $("#paymentDetailID").val();
 						});
 						
@@ -2236,15 +2240,22 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.pages.portal_
 </div>
 <div class='DivWidget float-footer' style=""><div class='DivWidget float-footer' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
  <tr>
-  <td  class='footerBG' align='center' valign='top'><div class='DivWidget standard-width' style=""><%-- Widget skypepi.zones.portal_z_responsiveFooter@73 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
+  <td  align='center' valign='top'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+ <tr>
+  <td  height='20' align='left' valign='top'></td>
+ </tr>
+ <tr>
+  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
+ <tr>
+  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="footer-menu"><%-- Widget skypepi.zones.portal_z_responsiveFooter@54 (type=tooltwist.skypepi.widgets.NavBarWidget) --%>
 <%
 try {
-	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_73;
+	WbdProductionHelper helper = productionHelper_skypepi_zones_portal_z_responsiveFooter_54;
 	String snippetVar_currentNavpoint = "skypepi-116";
 	String snippetVar_menuType = "Footer";
 	String snippetVar_homeNavPointLink = "/ttsvr/home";
-	String snippetVar_widgetName = "@73";
-	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@73";
+	String snippetVar_widgetName = "@54";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@54";
 	String snippetVar_elementId = "";
 	String snippetVar_idDefinition = "";
 %>
@@ -2330,21 +2341,10 @@ try {
  %>			</ul>
 <%
 } catch (Exception e) {
-WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@73 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@54 (type=tooltwist.skypepi.widgets.NavBarWidget)", e);
 }
 %>
 </div>
-</td>
- </tr>
- <tr>
-  <td  align='center'><div class='DivWidget footer' style=" width:100%;"><div class='DivWidget standard-width' style=""><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  height='20' align='left' valign='top'></td>
- </tr>
- <tr>
-  <td  align='left' valign='top'><table border='0' cellpadding='0' cellspacing='0'  width='100%' align='center' valign='top'>
- <tr>
-  <td  align='left' valign='top'><div class='DivWidget row' style=""><div  class="footer-menu"></div>
 </div>
 </td>
  </tr>
@@ -2369,11 +2369,61 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_positiveLogo.png" border="0">
 </td>
   <td  class='magic'></td>
-  <td  class='magic' align='left' valign='middle'></td>
-  <td  class='magic'>
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_i_tafeLogoSmall.png" border="0">
+  <td  class='magic'><%-- Widget skypepi.zones.portal_z_responsiveFooter@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
+<%
+try {
+	String snippetVar_dotSize = "5";
+	String snippetVar_widgetName = "@35";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@35";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<a href="http://www.tooltwist.com" target="_blank">
+<image src="/ttsvr/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
+</a>
 </td>
-  <td  class='magic'><a href="//tooltwist.com"  style=" text-decoration:none; color:#666; margin:0; padding:0;"  target="_blank"><img src='/ttsvr/cropImage/skypepi.images.skypepi_i_tooltwistLogo.png' border='0' /></a></td>
+
+<%
+	// Check for an error that has occurred since the JSP started.
+	if (WbdSession.numErrors(jh.getCredentials()) > 0)
+	{
+		String snippetVar_divName = "wbdErrorDiv";
+		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		String snippetVar_dotColor = "green";
+%>
+<td width="2" nowrap></td>
+<td valign="bottom">
+<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
+onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
+</td>
+<td>
+<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
+<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
+<code>
+<%=snippetVar_errorMsg%>
+</code>
+</div>
+</td>
+
+<%
+	}
+%>
+</tr>
+</table>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@35 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
+}
+%>
+</td>
+  <td  class='magic'></td>
+  <td  class='magic'>
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
+</td>
  </tr>
  <tr>
   <td  height='30'></td>
@@ -2476,11 +2526,61 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
  </tr>
 </table>
 </div>
-<div  class="col-md-2 magic2">
-<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.skypepi_i_tafeLogoSmall.png" border="0">
+<div  class="col-md-1 magic2">
+<img onerror="$(this).setStyle({ visibility:'hidden' });" src="/ttsvr/cropImage/skypepi.images.portal_i_skyLogo.png" border="0">
 </div>
-<div  class="col-md-1 magic2"></div>
-<div  class="col-md-1 magic2"><a href="//tooltwist.com"  style=" text-decoration:none; color:#666; margin:0; padding:0;"  target="_blank"><img src='/ttsvr/cropImage/skypepi.images.skypepi_i_tooltwistLogo.png' border='0' /></a></div>
+<div  class="col-md-1 magic2"><%-- Widget skypepi.zones.portal_z_responsiveFooter@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget) --%>
+<%
+try {
+	String snippetVar_dotSize = "5";
+	String snippetVar_widgetName = "@29";
+	String snippetVar_widgetPath = "skypepi.zones.portal_z_responsiveFooter@29";
+	String snippetVar_elementId = "";
+	String snippetVar_idDefinition = "";
+%>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<a href="http://www.tooltwist.com" target="_blank">
+<image src="/ttsvr/tooltwist/images/poweredByTooltwist-small.png" alt="Powered by Tooltwist">
+</a>
+</td>
+
+<%
+	// Check for an error that has occurred since the JSP started.
+	if (WbdSession.numErrors(jh.getCredentials()) > 0)
+	{
+		String snippetVar_divName = "wbdErrorDiv";
+		String snippetVar_errorHeading = "Errors while <i><u>Running</u></i> this production page";
+		String snippetVar_errorMsg = WbdSession.errorDump(jh.getCredentials());
+		String snippetVar_dotColor = "green";
+%>
+<td width="2" nowrap></td>
+<td valign="bottom">
+<div style="width:<%=snippetVar_dotSize%>px; height:<%=snippetVar_dotSize%>px; background-color:<%=snippetVar_dotColor%>"
+onclick="document.getElementById('<%=snippetVar_divName%>').style.display='inline';"></div>
+</td>
+<td>
+<div class="wErrorDiv" style="position:absolute;top:20px;left:20px;display:none;background-color:#fee;border:solid 1px #333;z-index:999999;padding:5px;overflow:scroll;" id="<%=snippetVar_divName%>" onclick="this.style.display='none';">
+<span class="wt wt13"><B><%=snippetVar_errorHeading%></B></span><br/><br/>
+<code>
+<%=snippetVar_errorMsg%>
+</code>
+</div>
+</td>
+
+<%
+	}
+%>
+</tr>
+</table>
+<%
+} catch (Exception e) {
+WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_z_responsiveFooter@29 (type=tooltwist.wbd.WbdPoweredByTooltwistWidget)", e);
+}
+%>
+</div>
+<div  ></div>
 </div>
 </td>
  </tr>

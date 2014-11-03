@@ -252,9 +252,12 @@ span.spanBtnSave,span.spanBtnCancel,span.spanBtnApprove{float: right;margin-left
 .SimpleDiv .someClass {
 }</style>
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/script/jquery-ui-1.11.0/jquery-ui.min.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/null" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/blog.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/colorbox.v1.20140915.css" media="screen" />
 <link type="text/css" rel="stylesheet" href="/ttsvr/blog/stylesheet/tango/skin.css" media="screen" />
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/null" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
 <script src="/ttsvr/blog/script/jquery-ui-1.11.0/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery-ui-1.11.0/jquery.ui.datepicker.js" type="text/javascript"></script>
 <script src="/ttsvr/blog/script/jquery.form.js" type="text/javascript"></script>

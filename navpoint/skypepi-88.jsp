@@ -185,7 +185,9 @@ a:hover {
 
 .SimpleDiv .someClass {
 }</style>
-<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/null" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_main.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/portal_ribbon.v1.20140915.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="/ttsvr/skypepi/stylesheet/skypepi-style.v1.20140915.css" media="screen" />
 <script src="/ttsvr/skypepi/scripts/pdfobject.js" type="text/javascript"></script>
 
 </head> 
@@ -1193,7 +1195,7 @@ try {
 </li><li class="">
 <a href='/ttsvr/n/View-Attendance-Record/skypepi-82'><span>View Attendance Record</span></a>
 </li></ul></li></ul></li><li class=" has-sub">
-<a href='/ttsvr/n/myProgression/skypepi-70'><span>myProgression</span></a>
+<a href='/ttsvr/n/myProgressions/skypepi-70'><span>myProgressions</span></a>
 <ul><li class=" has-sub">
 <a href='/ttsvr/n/Views/skypepi-87'><span>Views</span></a>
 <ul><li class="active">
@@ -1274,7 +1276,7 @@ WbdSession.addError(jh.getCredentials(), "Rendering widget skypepi.zones.portal_
 <%
 try {
 	WbdProductionHelper helper = productionHelper_skypepi_pages_portal_p_viewMarksAndGradesProgession_14;
-	String snippetVar_targetPage = "/ttsvr/n/myProgression/skypepi-70";
+	String snippetVar_targetPage = "/ttsvr/n/myProgressions/skypepi-70";
 	String snippetVar_navpointId = "skypepi-88";
 	String snippetVar_widgetName = "@14";
 	String snippetVar_widgetPath = "skypepi.pages.portal_p_viewMarksAndGradesProgession@14";
